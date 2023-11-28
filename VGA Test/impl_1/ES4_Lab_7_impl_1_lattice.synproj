@@ -1,0 +1,54 @@
+-a "iCE40UP"
+-p iCE40UP5K
+-t SG48
+-sp "High-Performance_1.2V"
+-frequency 200
+-optimization_goal Area
+-bram_utilization 100
+-ramstyle Auto
+-romstyle auto
+-dsp_utilization 100
+-use_dsp 1
+-use_carry_chain 1
+-carry_chain_length 0
+
+-resource_sharing 1
+-propagate_constants 1
+-remove_duplicate_regs 1
+
+-max_fanout 1000
+-fsm_encoding_style Auto
+
+-fix_gated_clocks 1
+-loop_limit 1950
+
+
+
+
+
+
+-use_io_reg auto
+-vh2008
+
+
+
+
+
+-use_io_insertion 1
+-resolve_mixed_drivers 0
+-sdc "ES4_Lab_7_impl_1_cpe.ldc"
+-path "Z:/ES4-Final/VGA Test/pll_component"
+-path "C:/lscc/radiant/2023.1/ispfpga/ice40tp/data" "Z:/ES4-Final/VGA Test/impl_1" "Z:/ES4-Final/VGA Test"
+-ver "C:/lscc/radiant/2023.1/ip/pmi/pmi_iCE40UP.v"
+-lib pmi -vhd "C:/lscc/radiant/2023.1/ip/pmi/pmi_iCE40UP.vhd"
+-ver "Z:/ES4-Final/VGA Test/pll_component/rtl/pll_component.v"
+-lib "work" -vhd "Z:/ES4-Final/VGA Test/impl_1/vhdl/master.vhd"
+"Z:/ES4-Final/VGA Test/impl_1/vhdl/pattern_gen.vhd"
+"Z:/ES4-Final/VGA Test/impl_1/vhdl/vga.vhd"
+
+
+-path "Z:/ES4-Final/VGA Test"
+-top master
+-udb "ES4_Lab_7_impl_1_rtl.udb"
+-output_hdl "ES4_Lab_7_impl_1.vm"
+

@@ -1,0 +1,44 @@
+---------------------------------------------------
+Report for cell master
+   Instance path: master
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	         51        100.0
+                               LUTGATE	         27        100.0
+                                LUTCCU	         24        100.0
+                                 IOBUF	         11        100.0
+                                PFUREG	         20        100.0
+SUB MODULES
+                                  cell	      count    LUT4 Usage(%)
+                           pattern_gen	          1        15.7
+                         pll_component	          1         0.0
+                                   vga	          1        80.4
+---------------------------------------------------
+Report for cell vga
+   Instance path: master/my_vga
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	         41        80.4
+                               LUTGATE	         17        63.0
+                                LUTCCU	         24        100.0
+                                PFUREG	         20        100.0
+---------------------------------------------------
+Report for cell pattern_gen
+   Instance path: master/my_pattern_gen
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	          8        15.7
+                               LUTGATE	          8        29.6
+---------------------------------------------------
+Report for cell pll_component
+   Instance path: master/my_pll
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+SUB MODULES
+                                  cell	      count    LUT4 Usage(%)
+pll_component_ipgen_lscc_pll(DIVR="0",DIVF="66",DIVQ="5",FILTER_RANGE="1",PLLOUT_SELECT_PORTA="GENCLK",PLLOUT_SELECT_PORTB="GENCLK",FREQUENCY_PIN_REFERENCECLK="12.000000")	          1         0.0
+---------------------------------------------------
+Report for cell pll_component_ipgen_lscc_pll(DIVR="0",DIVF="66",DIVQ="5",FILTER_RANGE="1",PLLOUT_SELECT_PORTA="GENCLK",PLLOUT_SELECT_PORTB="GENCLK",FREQUENCY_PIN_REFERENCECLK="12.000000")
+   Instance path: master/my_pll/lscc_pll_inst
+                     Cell usage:
+                                  cell	      count    Res Usage(%)

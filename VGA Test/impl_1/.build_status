@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BuildStatus>
+    <Strategy name="Strategy1">
+        <Milestone name="Export" build_result="2" build_time="1701133275">
+            <Task name="Bitgen" build_result="2" update_result="0" update_time="1701133275"/>
+            <Task name="IBIS" build_result="2" update_result="0" update_time="1701133276"/>
+            <Task name="TimingSimFileVlg" build_result="2" update_result="0" update_time="1701133277"/>
+        </Milestone>
+        <Milestone name="Map" build_result="2" build_time="1701133269">
+            <Task name="Map" build_result="2" update_result="0" update_time="1701133269"/>
+            <Task name="MapTrace" build_result="0" update_result="2" update_time="1699316484"/>
+        </Milestone>
+        <Milestone name="PAR" build_result="2" build_time="1701133273">
+            <Task name="PAR" build_result="2" update_result="0" update_time="1701133273"/>
+            <Task name="PARTrace" build_result="2" update_result="0" update_time="1701133274"/>
+            <Task name="IOTiming" build_result="0" update_result="2" update_time="1699314038"/>
+        </Milestone>
+        <Milestone name="Synthesis" build_result="2" build_time="1701133269">
+            <Task name="Lattice_Synthesis" build_result="2" update_result="0" update_time="1701133269"/>
+            <Task name="LSE_Compile" build_result="2" update_result="0" update_time="1701133277"/>
+            <Task name="SynTrace" build_result="0" update_result="2" update_time="1699317084"/>
+            <Task name="SynVerilogSimFile" build_result="0" update_result="2" update_time="1699317084"/>
+        </Milestone>
+        <Milestone name="TOOL_Report" build_result="0" build_time="0">
+            <Task name="HDLE" build_result="0" update_result="2" update_time="1699314305"/>
+            <Task name="BKM" build_result="0" update_result="2" update_time="1699314305"/>
+            <Task name="SSO" build_result="0" update_result="2" update_time="1699314038"/>
+            <Task name="PIODRC" build_result="0" update_result="2" update_time="1699314038"/>
+            <Task name="DEC" build_result="0" update_result="2" update_time="1699314038"/>
+        </Milestone>
+        <Report name="ES4_Lab_7_impl_1.bgn" last_build_time="1701133275" last_build_size="1018"/>
+        <Report name="ES4_Lab_7_impl_1.bin" last_build_time="1701133275" last_build_size="104156"/>
+        <Report name="ES4_Lab_7_impl_1.lsedata" last_build_time="0" last_build_size="0"/>
+        <Report name="ES4_Lab_7_impl_1.twr.html" last_build_time="1701133274" last_build_size="17467"/>
+        <Report name="ES4_Lab_7_impl_1.udb" last_build_time="1701133273" last_build_size="11165"/>
+        <Report name="ES4_Lab_7_impl_1_map.udb" last_build_time="1701133269" last_build_size="7819"/>
+        <Report name="ES4_Lab_7_impl_1_rtl.udb" last_build_time="1701133268" last_build_size="4916"/>
+        <Report name="ES4_Lab_7_impl_1_syn.udb" last_build_time="1701133269" last_build_size="5854"/>
+        <Report name="ES4_Lab_7_impl_1_vo.sdf" last_build_time="1701133277" last_build_size="41858"/>
+        <Report name="ES4_Lab_7_impl_1_vo.vo" last_build_time="1701133277" last_build_size="42582"/>
+        <Report name="IBIS/ES4_Lab_7_impl_1.ibs" last_build_time="1701133276" last_build_size="54364"/>
+    </Strategy>
+</BuildStatus>
+             

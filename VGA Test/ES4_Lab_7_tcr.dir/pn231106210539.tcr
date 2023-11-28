@@ -1,0 +1,6 @@
+#Start recording tcl command: 11/6/2023 20:15:52
+#Project Location: Z:/ES4_Lab_7; Project name: ES4_Lab_7
+prj_open "Z:/ES4_Lab_7/ES4_Lab_7.rdf"
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+#Stop recording: 11/6/2023 21:05:39
