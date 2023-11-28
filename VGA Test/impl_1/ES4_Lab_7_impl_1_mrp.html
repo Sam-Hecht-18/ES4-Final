@@ -48,7 +48,7 @@ Package: SG48
 Performance Grade:  High-Performance_1.2V
 
 Mapper:    version Radiant Software (64-bit) 2023.1.0.43.3
-Mapped on: Mon Nov 27 20:01:09 2023
+Mapped on: Mon Nov 27 20:45:57 2023
 
 
 <A name="mrp_di"></A><B><U><big>Design Information</big></U></B>
@@ -60,8 +60,9 @@ Command line:   map -i ES4_Lab_7_impl_1_syn.udb -pdc Z:/ES4-Final/VGA
 <A name="mrp_ds"></A><B><U><big>Design Summary</big></U></B>
    Number of slice registers:  20 out of  5280 (<1%)
    Number of I/O registers:      0 out of   117 (0%)
-   Number of LUT4s:            51 out of  5280 (1%)
-      Number of logic LUT4s:              27
+   Number of LUT4s:            67 out of  5280 (1%)
+      Number of logic LUT4s:              35
+      Number of replicated LUT4s:          8
       Number of ripple logic:             12 (24 LUT4s)
    Number of IO sites used:   11 out of 39 (28%)
       Number of IO sites used for general PIO: 11
@@ -82,29 +83,30 @@ Command line:   map -i ES4_Lab_7_impl_1_syn.udb -pdc Z:/ES4-Final/VGA
    Number of SRAMs:            0 out of 4 (0%)
    Number of WARMBOOTs:        0 out of 1 (0%)
    Number of SPIs:             0 out of 2 (0%)
-   Number of EBRs:             0 out of 30 (0%)
+   Number of EBRs:             1 out of 30 (3%)
    Number of PLLs:             1 out of 1 (100%)
    Number of Clocks:  2
-      Net outglobal_o: 12 loads, 12 rising, 0 falling (Driver: Pin
+      Net outglobal_o: 19 loads, 19 rising, 0 falling (Driver: Pin
      my_pll.lscc_pll_inst.u_PLL_B/OUTGLOBAL)
       Net osc_c: 1 loads, 1 rising, 0 falling (Driver: Port osc)
-   Number of Clock Enables:  1
-      Net my_vga.col_0__N_50: 6 loads, 6 SLICEs
+   Number of Clock Enables:  2
+      Net my_vga.col_0__N_26: 5 loads, 5 SLICEs
+      Net rgb_pad[0].vcc: 3 loads, 0 SLICEs
    Number of LSRs:  2
-      Net my_vga.col_0__N_50: 6 loads, 6 SLICEs
-      Net my_vga.row_0__N_30: 6 loads, 6 SLICEs
+      Net my_vga.col_0__N_26: 5 loads, 5 SLICEs
+      Net my_vga.row_0__N_16: 5 loads, 5 SLICEs
    Top 10 highest fanout non-clock nets:
-      Net my_vga.col_0__N_50: 13 loads
-      Net col[8]: 7 loads
-      Net col[9]: 7 loads
-      Net my_vga.row_0__N_30: 6 loads
-      Net col[6]: 5 loads
+      Net my_vga.col_0__N_26: 27 loads
+      Net my_vga.n19: 8 loads
+      Net rgb_c_0_N_114: 6 loads
 
-      Net col[7]: 5 loads
-      Net row[4]: 5 loads
-      Net row[8]: 5 loads
-      Net row[9]: 5 loads
-      Net my_vga.row[5]_2: 4 loads
+      Net rgb_pad[0].vcc: 6 loads
+      Net row[5]: 6 loads
+      Net col[9]: 5 loads
+      Net my_vga.row[2]_2: 5 loads
+      Net my_vga.row[4]_2: 5 loads
+      Net my_vga.row_0__N_16: 5 loads
+      Net row[6]: 5 loads
 
 
 
@@ -127,27 +129,27 @@ Command line:   map -i ES4_Lab_7_impl_1_syn.udb -pdc Z:/ES4-Final/VGA
 | IO Name             | Direction | Levelmode |  IO   |  IO   | Special   |
 |                     |           |  IO_TYPE  |  REG  |  DDR  | IO Buffer |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| rgb[1]              | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
 | rgb[0]              | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hsync               | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| rgb[1]              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | rgb[2]              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | rgb[3]              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| rgb[4]              | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| rgb[5]              | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| hsync               | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
 | vsync               | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| clk_test            | OUTPUT    |           |       |       |           |
+| rgb[4]              | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| osc                 | INPUT     |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | valid_test          | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| osc                 | INPUT     |           |       |       |           |
+| clk_test            | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| rgb[5]              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 
 
@@ -158,12 +160,15 @@ Block i1 was optimized away.
 
 
 
+
+
+
+
 <A name="mrp_pll"></A><B><U><big>PLL/DLL Summary</big></U></B>
 ---------------
 
 PLL 1:                                 Pin/Node Value
   PLL Instance Name:                            my_pll/lscc_pll_inst/u_PLL_B
-
   Input Reference Clock:               PIN      osc_c
   Output Clock(CoreA):                 PIN      clk_test_c
   Output Clock(GlobalA):               NODE     outglobal_o
@@ -197,6 +202,8 @@ PLL 1:                                 Pin/Node Value
 <A name="mrp_asic"></A><B><U><big>ASIC Components</big></U></B>
 ---------------
 
+Instance Name: my_pattern_gen/mux_9
+         Type: EBR
 Instance Name: my_pll/lscc_pll_inst/u_PLL_B
          Type: PLL
 
@@ -216,11 +223,6 @@ Instance Name: my_pll/lscc_pll_inst/u_PLL_B
    Total CPU Time: 0 secs
    Total REAL Time: 0 secs
    Peak Memory Usage: 58 MB
-
-
-
-
-
 
 
 

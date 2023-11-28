@@ -1,6 +1,6 @@
 Lattice Timing Report -  Setup  and Hold, Version Radiant Software (64-bit) 2023.1.0.43.3
 
-Mon Nov 27 20:01:14 2023
+Mon Nov 27 20:46:01 2023
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -77,22 +77,20 @@ Clocked but unconstrained timing end points
 -------------------------------------------------------------------
          Listing 10 End Points          |           Type           
 -------------------------------------------------------------------
-my_vga/col_9__I_0_2/D                   |    No arrival or required
-my_vga/col_9__I_0_2/SR                  |    No arrival or required
-my_vga/col_9__I_10/D                    |    No arrival or required
-my_vga/col_9__I_11/D                    |    No arrival or required
-{my_vga/col_9__I_11/SR   my_vga/col_9__I_10/SR}                           
-                                        |    No arrival or required
-my_vga/col_9__I_16/D                    |    No arrival or required
-my_vga/col_9__I_17/D                    |    No arrival or required
-{my_vga/col_9__I_17/SR   my_vga/col_9__I_16/SR}                           
-                                        |    No arrival or required
-my_vga/col_9__I_12/D                    |    No arrival or required
-my_vga/col_9__I_13/D                    |    No arrival or required
+my_vga/next_row_9__I_0/D                |    No arrival or required
+my_vga/next_row_9__I_0/SP               |    No arrival or required
+my_vga/next_row_9__I_0/SR               |    No arrival or required
+my_vga/next_row_8__I_0/D                |    No arrival or required
+my_vga/next_row_8__I_0/SP               |    No arrival or required
+my_vga/next_row_8__I_0/SR               |    No arrival or required
+my_vga/next_col_3__I_0/D                |    No arrival or required
+my_vga/next_col_3__I_0/SR               |    No arrival or required
+my_vga/next_col_9__I_0/D                |    No arrival or required
+my_vga/next_col_9__I_0/SR               |    No arrival or required
 -------------------------------------------------------------------
                                         |                          
 Number of unconstrained timing end poin |                          
-ts                                      |                        38
+ts                                      |                        35
                                         |                          
 -------------------------------------------------------------------
 
@@ -113,15 +111,15 @@ create_generated_clock,
      Listing 10 Start or End Points     |           Type           
 -------------------------------------------------------------------
 osc                                     |                     input
-rgb[1]                                  |                    output
 rgb[0]                                  |                    output
+hsync                                   |                    output
+rgb[1]                                  |                    output
 rgb[2]                                  |                    output
 rgb[3]                                  |                    output
-rgb[4]                                  |                    output
-rgb[5]                                  |                    output
-hsync                                   |                    output
 vsync                                   |                    output
+rgb[4]                                  |                    output
 valid_test                              |                    output
+rgb[5]                                  |                    output
 -------------------------------------------------------------------
                                         |                          
 Number of I/O ports without constraint  |                        10

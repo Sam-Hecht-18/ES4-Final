@@ -4,10 +4,11 @@ Register bits:  20 of 5280 (0.379%)
 I/O cells:      11
                                   Cell usage:
                                cell     count   Res Usage(%)
+                              EBR_B         1          100.0
                                CCU2        12          100.0
                             FD1P3XZ        20          100.0
                                  IB         1          100.0
-                               LUT4        26          100.0
+                               LUT4        34          100.0
                                  OB        10          100.0
                               PLL_B         1          100.0
 SUB MODULES
@@ -15,7 +16,7 @@ SUB MODULES
                       pll_component         1
 pll_component_ipgen_lscc_pll(DIVR="0",DIVF="66",DIVQ="5",FILTER_RANGE="1",PLLOUT_SELECT_PORTA="GENCLK",PLLOUT_SELECT_PORTB="GENCLK",FREQUENCY_PIN_REFERENCECLK="12.000000")         1
                                 vga         1
-                              TOTAL        74
+                              TOTAL        83
 ----------------------------------------------------------------------
 Report for cell vga.v1
 Instance Path : my_vga
@@ -23,15 +24,16 @@ Instance Path : my_vga
                                cell     count   Res Usage(%)
                                 FA2        12          100.0
                             FD1P3XZ        20          100.0
-                               LUT4        17           65.4
-                              TOTAL        49
+                               LUT4        25           73.5
+                              TOTAL        57
 ----------------------------------------------------------------------
 Report for cell pattern_gen.v1
 Instance Path : my_pattern_gen
                                   Cell usage:
                                cell     count   Res Usage(%)
-                               LUT4         9           34.6
-                              TOTAL         9
+                              EBR_B         1          100.0
+                               LUT4         6           17.6
+                              TOTAL         7
 ----------------------------------------------------------------------
 Report for cell pll_component.v1
 Instance Path : my_pll
