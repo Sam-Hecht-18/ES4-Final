@@ -1,0 +1,25 @@
+#Start recording tcl command: 11/6/2023 18:27:15
+#Project Location: Z:/es4/Lab7/NES_Controller; Project name: NES_Controller
+prj_create -name "NES_Controller" -impl "impl_1" -dev iCE40UP5K-SG48I -performance "High-Performance_1.2V" -synthesis "lse"
+prj_save 
+prj_add_source "Z:/es4/Lab7/NES_Controller/source/impl_1/top.vhd"
+prj_set_strategy_value -strategy Strategy1 lse_vhdl2008=True
+prj_set_impl_opt -impl "impl_1" "top" "top.vhd"
+prj_add_source "Z:/es4/Lab7/NES_Controller/source/impl_1/counter.vhd"
+prj_add_source "Z:/es4/Lab7/NES_Controller/source/impl_1/new_controller.vhd"
+prj_remove_source "Z:/es4/Lab7/NES_Controller/source/impl_1/new_controller.vhd"
+prj_add_source "Z:/es4/Lab7/NES_Controller/source/impl_1/nes_controller.vhd"
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_set_impl_opt -impl "impl_1" "top" "top"
+prj_run Synthesis -impl impl_1
+prj_add_source "Z:/es4/Lab7/NES_Controller/pin_mapping.pdc"
+prj_enable_source "Z:/es4/Lab7/NES_Controller/pin_mapping.pdc"
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+#Stop recording: 11/6/2023 20:37:55

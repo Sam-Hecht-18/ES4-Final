@@ -1,0 +1,33 @@
+---------------------------------------------------
+Report for cell top
+   Instance path: top
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	         42        100.0
+                               LUTGATE	         24        100.0
+                                LUTCCU	         18        100.0
+                                 IOBUF	         11        100.0
+                                PFUREG	         25        100.0
+SUB MODULES
+                                  cell	      count    LUT4 Usage(%)
+                        nes_controller	          1        81.0
+---------------------------------------------------
+Report for cell nes_controller
+   Instance path: top/nes_controller_device
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	         34        81.0
+                               LUTGATE	         16        66.7
+                                LUTCCU	         18        100.0
+                                PFUREG	         25        100.0
+SUB MODULES
+                                  cell	      count    LUT4 Usage(%)
+                               counter	          1        42.9
+---------------------------------------------------
+Report for cell counter
+   Instance path: top/nes_controller_device/counter_device
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	         18        42.9
+                                LUTCCU	         18        100.0
+                                PFUREG	         17        68.0

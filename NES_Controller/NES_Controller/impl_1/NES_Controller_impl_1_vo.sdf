@@ -1,0 +1,831 @@
+(DELAYFILE
+  (SDFVERSION "3.0")
+  (DESIGN "top")
+  (DATE "Mon Nov  6 20:02:32 2023")
+  (VENDOR "Lattice")
+  (PROGRAM "backanno")
+  (VERSION "Radiant Software (64-bit) 2023.1.0.43.3")
+  (DIVIDER /)
+  (VOLTAGE 1.26:1.20:1.14)
+  (PROCESS "default")
+  (TEMPERATURE -40:25:85)
+  (TIMESCALE 1ps)
+  (CELL
+    (CELLTYPE "nes_controller_device_counter_device_SLICE_0")
+    (INSTANCE nes_controller_device\.counter_device\.SLICE_0)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH D1 F1 (449:462:476)(449:462:476))
+        (IOPATH C1 F1 (449:462:476)(449:462:476))
+        (IOPATH C1 COUT1 (52:197:343)(52:197:343))
+        (IOPATH D0 F0 (449:462:476)(449:462:476))
+        (IOPATH C0 F0 (449:462:476)(449:462:476))
+        (IOPATH C0 COUT0 (52:197:343)(52:197:343))
+        (IOPATH CLK Q0 (1388:1388:1388)(1388:1388:1388))
+        (IOPATH CLK Q1 (1388:1388:1388)(1388:1388:1388))
+        (IOPATH CIN0 COUT0 (277:277:277)(277:277:277))
+        (IOPATH CIN1 COUT1 (277:277:277)(277:277:277))
+      )
+    )
+    (TIMINGCHECK
+      (SETUPHOLD DI1 (posedge CLK) (198:198:198)(0:0:0))
+      (SETUPHOLD DI0 (posedge CLK) (198:198:198)(0:0:0))
+    )
+  )
+  (CELL
+    (CELLTYPE "nes_controller_device_counter_device_SLICE_1")
+    (INSTANCE nes_controller_device\.counter_device\.SLICE_1)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH D1 F1 (449:462:476)(449:462:476))
+        (IOPATH C1 F1 (449:462:476)(449:462:476))
+        (IOPATH C1 COUT1 (52:197:343)(52:197:343))
+        (IOPATH D0 F0 (449:462:476)(449:462:476))
+        (IOPATH C0 F0 (449:462:476)(449:462:476))
+        (IOPATH C0 COUT0 (52:197:343)(52:197:343))
+        (IOPATH CLK Q0 (1388:1388:1388)(1388:1388:1388))
+        (IOPATH CLK Q1 (1388:1388:1388)(1388:1388:1388))
+        (IOPATH CIN0 COUT0 (277:277:277)(277:277:277))
+        (IOPATH CIN1 COUT1 (277:277:277)(277:277:277))
+      )
+    )
+    (TIMINGCHECK
+      (SETUPHOLD DI1 (posedge CLK) (198:198:198)(0:0:0))
+      (SETUPHOLD DI0 (posedge CLK) (198:198:198)(0:0:0))
+    )
+  )
+  (CELL
+    (CELLTYPE "nes_controller_device_counter_device_SLICE_2")
+    (INSTANCE nes_controller_device\.counter_device\.SLICE_2)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH D1 F1 (449:462:476)(449:462:476))
+        (IOPATH C1 F1 (449:462:476)(449:462:476))
+        (IOPATH C1 COUT1 (52:197:343)(52:197:343))
+        (IOPATH D0 F0 (449:462:476)(449:462:476))
+        (IOPATH C0 F0 (449:462:476)(449:462:476))
+        (IOPATH C0 COUT0 (52:197:343)(52:197:343))
+        (IOPATH CLK Q0 (1388:1388:1388)(1388:1388:1388))
+        (IOPATH CLK Q1 (1388:1388:1388)(1388:1388:1388))
+        (IOPATH CIN0 COUT0 (277:277:277)(277:277:277))
+        (IOPATH CIN1 COUT1 (277:277:277)(277:277:277))
+      )
+    )
+    (TIMINGCHECK
+      (SETUPHOLD DI1 (posedge CLK) (198:198:198)(0:0:0))
+      (SETUPHOLD DI0 (posedge CLK) (198:198:198)(0:0:0))
+    )
+  )
+  (CELL
+    (CELLTYPE "nes_controller_device_counter_device_SLICE_3")
+    (INSTANCE nes_controller_device\.counter_device\.SLICE_3)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH D1 F1 (449:462:476)(449:462:476))
+        (IOPATH C1 F1 (449:462:476)(449:462:476))
+        (IOPATH C1 COUT1 (52:197:343)(52:197:343))
+        (IOPATH D0 F0 (449:462:476)(449:462:476))
+        (IOPATH C0 F0 (449:462:476)(449:462:476))
+        (IOPATH C0 COUT0 (52:197:343)(52:197:343))
+        (IOPATH CLK Q0 (1388:1388:1388)(1388:1388:1388))
+        (IOPATH CLK Q1 (1388:1388:1388)(1388:1388:1388))
+        (IOPATH CIN0 COUT0 (277:277:277)(277:277:277))
+        (IOPATH CIN1 COUT1 (277:277:277)(277:277:277))
+      )
+    )
+    (TIMINGCHECK
+      (SETUPHOLD DI1 (posedge CLK) (198:198:198)(0:0:0))
+      (SETUPHOLD DI0 (posedge CLK) (198:198:198)(0:0:0))
+    )
+  )
+  (CELL
+    (CELLTYPE "nes_controller_device_counter_device_SLICE_4")
+    (INSTANCE nes_controller_device\.counter_device\.SLICE_4)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH D1 F1 (449:462:476)(449:462:476))
+        (IOPATH C1 F1 (449:462:476)(449:462:476))
+        (IOPATH C1 COUT1 (52:197:343)(52:197:343))
+        (IOPATH D0 F0 (449:462:476)(449:462:476))
+        (IOPATH C0 F0 (449:462:476)(449:462:476))
+        (IOPATH C0 COUT0 (52:197:343)(52:197:343))
+        (IOPATH CLK Q0 (1388:1388:1388)(1388:1388:1388))
+        (IOPATH CLK Q1 (1388:1388:1388)(1388:1388:1388))
+        (IOPATH CIN0 COUT0 (277:277:277)(277:277:277))
+        (IOPATH CIN1 COUT1 (277:277:277)(277:277:277))
+      )
+    )
+    (TIMINGCHECK
+      (SETUPHOLD DI1 (posedge CLK) (198:198:198)(0:0:0))
+      (SETUPHOLD DI0 (posedge CLK) (198:198:198)(0:0:0))
+    )
+  )
+  (CELL
+    (CELLTYPE "nes_controller_device_counter_device_SLICE_5")
+    (INSTANCE nes_controller_device\.counter_device\.SLICE_5)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH D1 F1 (449:462:476)(449:462:476))
+        (IOPATH C1 F1 (449:462:476)(449:462:476))
+        (IOPATH C1 COUT1 (52:197:343)(52:197:343))
+        (IOPATH D0 F0 (449:462:476)(449:462:476))
+        (IOPATH C0 F0 (449:462:476)(449:462:476))
+        (IOPATH C0 COUT0 (52:197:343)(52:197:343))
+        (IOPATH CLK Q0 (1388:1388:1388)(1388:1388:1388))
+        (IOPATH CLK Q1 (1388:1388:1388)(1388:1388:1388))
+        (IOPATH CIN0 COUT0 (277:277:277)(277:277:277))
+        (IOPATH CIN1 COUT1 (277:277:277)(277:277:277))
+      )
+    )
+    (TIMINGCHECK
+      (SETUPHOLD DI1 (posedge CLK) (198:198:198)(0:0:0))
+      (SETUPHOLD DI0 (posedge CLK) (198:198:198)(0:0:0))
+    )
+  )
+  (CELL
+    (CELLTYPE "nes_controller_device_counter_device_SLICE_6")
+    (INSTANCE nes_controller_device\.counter_device\.SLICE_6)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH D1 F1 (449:462:476)(449:462:476))
+        (IOPATH C1 F1 (449:462:476)(449:462:476))
+        (IOPATH C1 COUT1 (52:197:343)(52:197:343))
+        (IOPATH D0 F0 (449:462:476)(449:462:476))
+        (IOPATH C0 F0 (449:462:476)(449:462:476))
+        (IOPATH C0 COUT0 (52:197:343)(52:197:343))
+        (IOPATH CLK Q0 (1388:1388:1388)(1388:1388:1388))
+        (IOPATH CLK Q1 (1388:1388:1388)(1388:1388:1388))
+        (IOPATH CIN0 COUT0 (277:277:277)(277:277:277))
+        (IOPATH CIN1 COUT1 (277:277:277)(277:277:277))
+      )
+    )
+    (TIMINGCHECK
+      (SETUPHOLD DI1 (posedge CLK) (198:198:198)(0:0:0))
+      (SETUPHOLD DI0 (posedge CLK) (198:198:198)(0:0:0))
+    )
+  )
+  (CELL
+    (CELLTYPE "nes_controller_device_counter_device_SLICE_7")
+    (INSTANCE nes_controller_device\.counter_device\.SLICE_7)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH D1 F1 (449:462:476)(449:462:476))
+        (IOPATH C1 F1 (449:462:476)(449:462:476))
+        (IOPATH C1 COUT1 (52:197:343)(52:197:343))
+        (IOPATH B1 F1 (449:462:476)(449:462:476))
+        (IOPATH B1 COUT1 (304:330:357)(304:330:357))
+        (IOPATH CLK Q1 (1388:1388:1388)(1388:1388:1388))
+        (IOPATH CIN1 COUT1 (277:277:277)(277:277:277))
+      )
+    )
+    (TIMINGCHECK
+      (SETUPHOLD DI1 (posedge CLK) (198:198:198)(0:0:0))
+    )
+  )
+  (CELL
+    (CELLTYPE "nes_controller_device_counter_device_SLICE_8")
+    (INSTANCE nes_controller_device\.counter_device\.SLICE_8)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH D1 F1 (449:462:476)(449:462:476))
+        (IOPATH C1 F1 (449:462:476)(449:462:476))
+        (IOPATH D0 F0 (449:462:476)(449:462:476))
+        (IOPATH C0 F0 (449:462:476)(449:462:476))
+        (IOPATH C0 COUT0 (52:197:343)(52:197:343))
+        (IOPATH CLK Q0 (1388:1388:1388)(1388:1388:1388))
+        (IOPATH CLK Q1 (1388:1388:1388)(1388:1388:1388))
+        (IOPATH CIN0 COUT0 (277:277:277)(277:277:277))
+      )
+    )
+    (TIMINGCHECK
+      (SETUPHOLD DI1 (posedge CLK) (198:198:198)(0:0:0))
+      (SETUPHOLD DI0 (posedge CLK) (198:198:198)(0:0:0))
+    )
+  )
+  (CELL
+    (CELLTYPE "nes_controller_device_SLICE_9")
+    (INSTANCE nes_controller_device\.SLICE_9)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH D1 F1 (449:462:476)(449:462:476))
+        (IOPATH D0 F0 (449:462:476)(449:462:476))
+        (IOPATH CLK Q0 (1388:1388:1388)(1388:1388:1388))
+        (IOPATH CLK Q1 (1388:1388:1388)(1388:1388:1388))
+      )
+    )
+    (TIMINGCHECK
+      (SETUPHOLD DI1 (posedge CLK) (198:198:198)(0:0:0))
+      (SETUPHOLD DI0 (posedge CLK) (198:198:198)(0:0:0))
+    )
+  )
+  (CELL
+    (CELLTYPE "nes_controller_device_SLICE_10")
+    (INSTANCE nes_controller_device\.SLICE_10)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH D1 F1 (449:462:476)(449:462:476))
+        (IOPATH D0 F0 (449:462:476)(449:462:476))
+        (IOPATH CLK Q0 (1388:1388:1388)(1388:1388:1388))
+        (IOPATH CLK Q1 (1388:1388:1388)(1388:1388:1388))
+      )
+    )
+    (TIMINGCHECK
+      (SETUPHOLD DI1 (posedge CLK) (198:198:198)(0:0:0))
+      (SETUPHOLD DI0 (posedge CLK) (198:198:198)(0:0:0))
+    )
+  )
+  (CELL
+    (CELLTYPE "nes_controller_device_SLICE_12")
+    (INSTANCE nes_controller_device\.SLICE_12)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH D1 F1 (449:462:476)(449:462:476))
+        (IOPATH D0 F0 (449:462:476)(449:462:476))
+        (IOPATH CLK Q0 (1388:1388:1388)(1388:1388:1388))
+        (IOPATH CLK Q1 (1388:1388:1388)(1388:1388:1388))
+      )
+    )
+    (TIMINGCHECK
+      (SETUPHOLD DI1 (posedge CLK) (198:198:198)(0:0:0))
+      (SETUPHOLD DI0 (posedge CLK) (198:198:198)(0:0:0))
+    )
+  )
+  (CELL
+    (CELLTYPE "nes_controller_device_SLICE_14")
+    (INSTANCE nes_controller_device\.SLICE_14)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH D1 F1 (449:462:476)(449:462:476))
+        (IOPATH D0 F0 (449:462:476)(449:462:476))
+        (IOPATH CLK Q0 (1388:1388:1388)(1388:1388:1388))
+        (IOPATH CLK Q1 (1388:1388:1388)(1388:1388:1388))
+      )
+    )
+    (TIMINGCHECK
+      (SETUPHOLD DI1 (posedge CLK) (198:198:198)(0:0:0))
+      (SETUPHOLD DI0 (posedge CLK) (198:198:198)(0:0:0))
+    )
+  )
+  (CELL
+    (CELLTYPE "nes_controller_device_SLICE_17")
+    (INSTANCE nes_controller_device\.SLICE_17)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH D1 F1 (449:462:476)(449:462:476))
+        (IOPATH C1 F1 (449:462:476)(449:462:476))
+        (IOPATH B1 F1 (449:462:476)(449:462:476))
+        (IOPATH D0 F0 (449:462:476)(449:462:476))
+        (IOPATH B0 F0 (449:462:476)(449:462:476))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "nes_controller_device_SLICE_18")
+    (INSTANCE nes_controller_device\.SLICE_18)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH D1 F1 (449:462:476)(449:462:476))
+        (IOPATH C1 F1 (449:462:476)(449:462:476))
+        (IOPATH B1 F1 (449:462:476)(449:462:476))
+        (IOPATH A1 F1 (449:462:476)(449:462:476))
+        (IOPATH D0 F0 (449:462:476)(449:462:476))
+        (IOPATH C0 F0 (449:462:476)(449:462:476))
+        (IOPATH B0 F0 (449:462:476)(449:462:476))
+        (IOPATH A0 F0 (449:462:476)(449:462:476))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "nes_controller_device_SLICE_19")
+    (INSTANCE nes_controller_device\.SLICE_19)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH D0 F0 (449:462:476)(449:462:476))
+        (IOPATH C0 F0 (449:462:476)(449:462:476))
+        (IOPATH B0 F0 (449:462:476)(449:462:476))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "nes_controller_device_SLICE_20")
+    (INSTANCE nes_controller_device\.SLICE_20)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH D1 F1 (449:462:476)(449:462:476))
+        (IOPATH C1 F1 (449:462:476)(449:462:476))
+        (IOPATH B1 F1 (449:462:476)(449:462:476))
+        (IOPATH D0 F0 (449:462:476)(449:462:476))
+        (IOPATH C0 F0 (449:462:476)(449:462:476))
+        (IOPATH B0 F0 (449:462:476)(449:462:476))
+        (IOPATH A0 F0 (449:462:476)(449:462:476))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "nes_controller_device_SLICE_21")
+    (INSTANCE nes_controller_device\.SLICE_21)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH C1 F1 (449:462:476)(449:462:476))
+        (IOPATH A1 F1 (449:462:476)(449:462:476))
+        (IOPATH D0 F0 (449:462:476)(449:462:476))
+        (IOPATH C0 F0 (449:462:476)(449:462:476))
+        (IOPATH B0 F0 (449:462:476)(449:462:476))
+        (IOPATH A0 F0 (449:462:476)(449:462:476))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "nes_controller_device_SLICE_27")
+    (INSTANCE nes_controller_device\.SLICE_27)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH D1 F1 (449:462:476)(449:462:476))
+        (IOPATH C1 F1 (449:462:476)(449:462:476))
+        (IOPATH A1 F1 (449:462:476)(449:462:476))
+        (IOPATH D0 F0 (449:462:476)(449:462:476))
+        (IOPATH C0 F0 (449:462:476)(449:462:476))
+        (IOPATH B0 F0 (449:462:476)(449:462:476))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "nes_controller_device_SLICE_29")
+    (INSTANCE nes_controller_device\.SLICE_29)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH D1 F1 (449:462:476)(449:462:476))
+        (IOPATH C1 F1 (449:462:476)(449:462:476))
+        (IOPATH B1 F1 (449:462:476)(449:462:476))
+        (IOPATH D0 F0 (449:462:476)(449:462:476))
+        (IOPATH C0 F0 (449:462:476)(449:462:476))
+        (IOPATH A0 F0 (449:462:476)(449:462:476))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "nes_controller_device_SLICE_31")
+    (INSTANCE nes_controller_device\.SLICE_31)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH D1 F1 (449:462:476)(449:462:476))
+        (IOPATH C1 F1 (449:462:476)(449:462:476))
+        (IOPATH B1 F1 (449:462:476)(449:462:476))
+        (IOPATH D0 F0 (449:462:476)(449:462:476))
+        (IOPATH C0 F0 (449:462:476)(449:462:476))
+        (IOPATH B0 F0 (449:462:476)(449:462:476))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "nes_controller_device_counter_device_osc")
+    (INSTANCE nes_controller_device\.counter_device\.osc)
+  )
+  (CELL
+    (CELLTYPE "data")
+    (INSTANCE data_I)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH data PADDI (460:485:510)(460:485:510))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "a")
+    (INSTANCE a_I)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH PADDO a (1914:2001:2088)(1914:2001:2088))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "b")
+    (INSTANCE b_I)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH PADDO b (1914:2001:2088)(1914:2001:2088))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "start")
+    (INSTANCE start_I)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH PADDO start (1914:2001:2088)(1914:2001:2088))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "sel")
+    (INSTANCE sel_I)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH PADDO sel (1914:2001:2088)(1914:2001:2088))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "right")
+    (INSTANCE right_I)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH PADDO right (1914:2001:2088)(1914:2001:2088))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "left")
+    (INSTANCE left_I)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH PADDO left (1914:2001:2088)(1914:2001:2088))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "down")
+    (INSTANCE down_I)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH PADDO down (1914:2001:2088)(1914:2001:2088))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "up")
+    (INSTANCE up_I)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH PADDO up (1914:2001:2088)(1914:2001:2088))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "ctrlr_clk")
+    (INSTANCE ctrlr_clk_I)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH PADDO ctrlr_clk (1914:2001:2088)(1914:2001:2088))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "latch")
+    (INSTANCE latch_I)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH PADDO latch (1914:2001:2088)(1914:2001:2088))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "top")
+    (INSTANCE )
+    (DELAY
+      (ABSOLUTE
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_0/F1 
+          nes_controller_device\.counter_device\.SLICE_0/DI1 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_0/F0 
+          nes_controller_device\.counter_device\.SLICE_0/DI0 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_0/COUT0 
+          nes_controller_device\.counter_device\.SLICE_0/D1 (502:581:661)(502:581:661))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_0/COUT0 
+          nes_controller_device\.counter_device\.SLICE_0/CIN1 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_0/Q1 
+          nes_controller_device\.counter_device\.SLICE_0/C1 (1573:1797:2022)
+          (1573:1797:2022))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_0/Q1 
+          nes_controller_device\.SLICE_18/A0 (1679:1910:2141)(1679:1910:2141))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_0/Q1 
+          nes_controller_device\.SLICE_21/A0 (1679:1910:2141)(1679:1910:2141))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_1/COUT1 
+          nes_controller_device\.counter_device\.SLICE_0/D0 (502:581:661)(502:581:661))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_1/COUT1 
+          nes_controller_device\.counter_device\.SLICE_0/CIN0 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_0/Q0 
+          nes_controller_device\.counter_device\.SLICE_0/C0 (1573:1797:2022)
+          (1573:1797:2022))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_0/Q0 
+          nes_controller_device\.SLICE_18/C0 (1573:1797:2022)(1573:1797:2022))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_0/Q0 
+          nes_controller_device\.SLICE_21/B0 (1626:1850:2075)(1626:1850:2075))
+        (INTERCONNECT nes_controller_device\.counter_device\.osc/CLKHF 
+          nes_controller_device\.counter_device\.SLICE_0/CLK (4177:4838:5499)
+          (4177:4838:5499))
+        (INTERCONNECT nes_controller_device\.counter_device\.osc/CLKHF 
+          nes_controller_device\.counter_device\.SLICE_1/CLK (4177:4838:5499)
+          (4177:4838:5499))
+        (INTERCONNECT nes_controller_device\.counter_device\.osc/CLKHF 
+          nes_controller_device\.counter_device\.SLICE_2/CLK (4177:4838:5499)
+          (4177:4838:5499))
+        (INTERCONNECT nes_controller_device\.counter_device\.osc/CLKHF 
+          nes_controller_device\.counter_device\.SLICE_3/CLK (4177:4838:5499)
+          (4177:4838:5499))
+        (INTERCONNECT nes_controller_device\.counter_device\.osc/CLKHF 
+          nes_controller_device\.counter_device\.SLICE_4/CLK (4177:4838:5499)
+          (4177:4838:5499))
+        (INTERCONNECT nes_controller_device\.counter_device\.osc/CLKHF 
+          nes_controller_device\.counter_device\.SLICE_5/CLK (4177:4838:5499)
+          (4177:4838:5499))
+        (INTERCONNECT nes_controller_device\.counter_device\.osc/CLKHF 
+          nes_controller_device\.counter_device\.SLICE_6/CLK (4177:4838:5499)
+          (4177:4838:5499))
+        (INTERCONNECT nes_controller_device\.counter_device\.osc/CLKHF 
+          nes_controller_device\.counter_device\.SLICE_7/CLK (4177:4838:5499)
+          (4177:4838:5499))
+        (INTERCONNECT nes_controller_device\.counter_device\.osc/CLKHF 
+          nes_controller_device\.counter_device\.SLICE_8/CLK (4177:4838:5499)
+          (4177:4838:5499))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_0/COUT1 
+          nes_controller_device\.counter_device\.SLICE_8/D0 (952:1084:1216)(952:1084:1216))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_0/COUT1 
+          nes_controller_device\.counter_device\.SLICE_8/CIN0 (449:502:555)(449:502:555))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_1/F1 
+          nes_controller_device\.counter_device\.SLICE_1/DI1 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_1/F0 
+          nes_controller_device\.counter_device\.SLICE_1/DI0 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_1/COUT0 
+          nes_controller_device\.counter_device\.SLICE_1/D1 (502:581:661)(502:581:661))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_1/COUT0 
+          nes_controller_device\.counter_device\.SLICE_1/CIN1 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_1/Q1 
+          nes_controller_device\.counter_device\.SLICE_1/C1 (1573:1797:2022)
+          (1573:1797:2022))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_1/Q1 
+          nes_controller_device\.SLICE_17/C1 (1573:1797:2022)(1573:1797:2022))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_1/Q1 
+          nes_controller_device\.SLICE_18/A1 (1679:1910:2141)(1679:1910:2141))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_1/Q1 
+          nes_controller_device\.SLICE_20/D0 (1269:1513:1758)(1269:1513:1758))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_2/COUT1 
+          nes_controller_device\.counter_device\.SLICE_1/D0 (502:581:661)(502:581:661))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_2/COUT1 
+          nes_controller_device\.counter_device\.SLICE_1/CIN0 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_1/Q0 
+          nes_controller_device\.counter_device\.SLICE_1/C0 (1573:1797:2022)
+          (1573:1797:2022))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_1/Q0 
+          nes_controller_device\.SLICE_17/D0 (1269:1513:1758)(1269:1513:1758))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_1/Q0 
+          nes_controller_device\.SLICE_20/B0 (1626:1850:2075)(1626:1850:2075))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_2/F1 
+          nes_controller_device\.counter_device\.SLICE_2/DI1 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_2/F0 
+          nes_controller_device\.counter_device\.SLICE_2/DI0 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_2/COUT0 
+          nes_controller_device\.counter_device\.SLICE_2/D1 (502:581:661)(502:581:661))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_2/COUT0 
+          nes_controller_device\.counter_device\.SLICE_2/CIN1 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_2/Q1 
+          nes_controller_device\.counter_device\.SLICE_2/C1 (1573:1797:2022)
+          (1573:1797:2022))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_2/Q1 
+          nes_controller_device\.SLICE_18/B0 (2273:2471:2670)(2273:2471:2670))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_2/Q1 
+          nes_controller_device\.SLICE_21/A1 (2326:2531:2736)(2326:2531:2736))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_3/COUT1 
+          nes_controller_device\.counter_device\.SLICE_2/D0 (502:581:661)(502:581:661))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_3/COUT1 
+          nes_controller_device\.counter_device\.SLICE_2/CIN0 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_2/Q0 
+          nes_controller_device\.counter_device\.SLICE_2/C0 (1573:1797:2022)
+          (1573:1797:2022))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_2/Q0 
+          nes_controller_device\.SLICE_18/D0 (1269:1513:1758)(1269:1513:1758))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_2/Q0 
+          nes_controller_device\.SLICE_20/A0 (1679:1910:2141)(1679:1910:2141))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_3/F1 
+          nes_controller_device\.counter_device\.SLICE_3/DI1 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_3/F0 
+          nes_controller_device\.counter_device\.SLICE_3/DI0 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_3/COUT0 
+          nes_controller_device\.counter_device\.SLICE_3/D1 (502:581:661)(502:581:661))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_3/COUT0 
+          nes_controller_device\.counter_device\.SLICE_3/CIN1 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_3/Q1 
+          nes_controller_device\.counter_device\.SLICE_3/C1 (1573:1797:2022)
+          (1573:1797:2022))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_3/Q1 
+          nes_controller_device\.SLICE_17/D1 (1269:1513:1758)(1269:1513:1758))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_4/COUT1 
+          nes_controller_device\.counter_device\.SLICE_3/D0 (952:1084:1216)(952:1084:1216))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_4/COUT1 
+          nes_controller_device\.counter_device\.SLICE_3/CIN0 (449:502:555)(449:502:555))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_3/Q0 
+          nes_controller_device\.counter_device\.SLICE_3/C0 (1573:1797:2022)
+          (1573:1797:2022))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_4/F1 
+          nes_controller_device\.counter_device\.SLICE_4/DI1 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_4/F0 
+          nes_controller_device\.counter_device\.SLICE_4/DI0 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_4/COUT0 
+          nes_controller_device\.counter_device\.SLICE_4/D1 (502:581:661)(502:581:661))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_4/COUT0 
+          nes_controller_device\.counter_device\.SLICE_4/CIN1 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_4/Q1 
+          nes_controller_device\.counter_device\.SLICE_4/C1 (1573:1797:2022)
+          (1573:1797:2022))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_5/COUT1 
+          nes_controller_device\.counter_device\.SLICE_4/D0 (502:581:661)(502:581:661))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_5/COUT1 
+          nes_controller_device\.counter_device\.SLICE_4/CIN0 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_4/Q0 
+          nes_controller_device\.counter_device\.SLICE_4/C0 (1573:1797:2022)
+          (1573:1797:2022))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_5/F1 
+          nes_controller_device\.counter_device\.SLICE_5/DI1 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_5/F0 
+          nes_controller_device\.counter_device\.SLICE_5/DI0 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_5/COUT0 
+          nes_controller_device\.counter_device\.SLICE_5/D1 (502:581:661)(502:581:661))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_5/COUT0 
+          nes_controller_device\.counter_device\.SLICE_5/CIN1 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_5/Q1 
+          nes_controller_device\.counter_device\.SLICE_5/C1 (1573:1797:2022)
+          (1573:1797:2022))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_6/COUT1 
+          nes_controller_device\.counter_device\.SLICE_5/D0 (502:581:661)(502:581:661))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_6/COUT1 
+          nes_controller_device\.counter_device\.SLICE_5/CIN0 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_5/Q0 
+          nes_controller_device\.counter_device\.SLICE_5/C0 (1573:1797:2022)
+          (1573:1797:2022))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_6/F1 
+          nes_controller_device\.counter_device\.SLICE_6/DI1 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_6/F0 
+          nes_controller_device\.counter_device\.SLICE_6/DI0 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_6/COUT0 
+          nes_controller_device\.counter_device\.SLICE_6/D1 (502:581:661)(502:581:661))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_6/COUT0 
+          nes_controller_device\.counter_device\.SLICE_6/CIN1 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_6/Q1 
+          nes_controller_device\.counter_device\.SLICE_6/C1 (1573:1797:2022)
+          (1573:1797:2022))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_7/COUT1 
+          nes_controller_device\.counter_device\.SLICE_6/D0 (502:581:661)(502:581:661))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_7/COUT1 
+          nes_controller_device\.counter_device\.SLICE_6/CIN0 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_6/Q0 
+          nes_controller_device\.counter_device\.SLICE_6/C0 (1573:1797:2022)
+          (1573:1797:2022))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_7/F1 
+          nes_controller_device\.counter_device\.SLICE_7/DI1 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_7/COUT0 
+          nes_controller_device\.counter_device\.SLICE_7/D1 (502:581:661)(502:581:661))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_7/COUT0 
+          nes_controller_device\.counter_device\.SLICE_7/CIN1 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_7/Q1 
+          nes_controller_device\.counter_device\.SLICE_7/C1 (1573:1797:2022)
+          (1573:1797:2022))
+        (INTERCONNECT SLICE_25/F0 nes_controller_device\.counter_device\.SLICE_7/B1 
+          (4613:4738:4864)(4613:4738:4864))
+        (INTERCONNECT SLICE_25/F0 nes_controller_device\.counter_device\.osc/CLKHFPU 
+          (6358:6457:6556)(6358:6457:6556))
+        (INTERCONNECT SLICE_25/F0 nes_controller_device\.counter_device\.osc/CLKHFEN 
+          (6358:6457:6556)(6358:6457:6556))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_8/F1 
+          nes_controller_device\.counter_device\.SLICE_8/DI1 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_8/F0 
+          nes_controller_device\.counter_device\.SLICE_8/DI0 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_8/COUT0 
+          nes_controller_device\.counter_device\.SLICE_8/D1 (502:581:661)(502:581:661))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_8/COUT0 
+          nes_controller_device\.counter_device\.SLICE_8/CIN1 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_8/Q1 
+          nes_controller_device\.counter_device\.SLICE_8/C1 (1573:1797:2022)
+          (1573:1797:2022))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_8/Q1 
+          nes_controller_device\.SLICE_17/B0 (1626:1850:2075)(1626:1850:2075))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_8/Q1 
+          nes_controller_device\.SLICE_21/D0 (1269:1513:1758)(1269:1513:1758))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_8/Q0 
+          nes_controller_device\.counter_device\.SLICE_8/C0 (1573:1797:2022)
+          (1573:1797:2022))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_8/Q0 
+          nes_controller_device\.SLICE_18/D1 (1917:2135:2353)(1917:2135:2353))
+        (INTERCONNECT nes_controller_device\.counter_device\.SLICE_8/Q0 
+          nes_controller_device\.SLICE_21/C0 (2221:2419:2617)(2221:2419:2617))
+        (INTERCONNECT nes_controller_device\.SLICE_9/F1 
+          nes_controller_device\.SLICE_9/DI1 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.SLICE_9/F0 
+          nes_controller_device\.SLICE_9/DI0 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.SLICE_9/Q0 nes_controller_device\.SLICE_9/D1 
+          (1269:1513:1758)(1269:1513:1758))
+        (INTERCONNECT nes_controller_device\.SLICE_9/Q0 
+          nes_controller_device\.SLICE_31/C0 (1573:1797:2022)(1573:1797:2022))
+        (INTERCONNECT nes_controller_device\.SLICE_10/Q0 
+          nes_controller_device\.SLICE_9/D0 (1269:1513:1758)(1269:1513:1758))
+        (INTERCONNECT nes_controller_device\.SLICE_10/Q0 
+          nes_controller_device\.SLICE_27/C0 (1573:1797:2022)(1573:1797:2022))
+        (INTERCONNECT nes_controller_device\.SLICE_17/F1 
+          nes_controller_device\.SLICE_9/CLK (4177:4269:4362)(4177:4269:4362))
+        (INTERCONNECT nes_controller_device\.SLICE_17/F1 
+          nes_controller_device\.SLICE_10/CLK (4177:4269:4362)(4177:4269:4362))
+        (INTERCONNECT nes_controller_device\.SLICE_17/F1 
+          nes_controller_device\.SLICE_12/CLK (4177:4269:4362)(4177:4269:4362))
+        (INTERCONNECT nes_controller_device\.SLICE_17/F1 
+          nes_controller_device\.SLICE_14/CLK (2736:2861:2987)(2736:2861:2987))
+        (INTERCONNECT nes_controller_device\.SLICE_17/F1 ctrlr_clk_I/PADDO 
+          (7058:7124:7191)(7058:7124:7191))
+        (INTERCONNECT nes_controller_device\.SLICE_9/Q1 
+          nes_controller_device\.SLICE_29/D1 (1269:1513:1758)(1269:1513:1758))
+        (INTERCONNECT nes_controller_device\.SLICE_10/F1 
+          nes_controller_device\.SLICE_10/DI1 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.SLICE_10/F0 
+          nes_controller_device\.SLICE_10/DI0 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.SLICE_12/Q0 
+          nes_controller_device\.SLICE_10/D1 (1269:1513:1758)(1269:1513:1758))
+        (INTERCONNECT nes_controller_device\.SLICE_12/Q0 
+          nes_controller_device\.SLICE_29/A0 (1679:1910:2141)(1679:1910:2141))
+        (INTERCONNECT nes_controller_device\.SLICE_10/Q1 
+          nes_controller_device\.SLICE_10/D0 (1269:1513:1758)(1269:1513:1758))
+        (INTERCONNECT nes_controller_device\.SLICE_10/Q1 
+          nes_controller_device\.SLICE_31/B1 (1626:1850:2075)(1626:1850:2075))
+        (INTERCONNECT nes_controller_device\.SLICE_12/F1 
+          nes_controller_device\.SLICE_12/DI1 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.SLICE_12/F0 
+          nes_controller_device\.SLICE_12/DI0 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.SLICE_14/Q0 
+          nes_controller_device\.SLICE_12/D1 (2459:2663:2868)(2459:2663:2868))
+        (INTERCONNECT nes_controller_device\.SLICE_14/Q0 
+          nes_controller_device\.SLICE_20/B1 (2273:2471:2670)(2273:2471:2670))
+        (INTERCONNECT nes_controller_device\.SLICE_12/Q1 
+          nes_controller_device\.SLICE_12/D0 (1269:1513:1758)(1269:1513:1758))
+        (INTERCONNECT nes_controller_device\.SLICE_12/Q1 
+          nes_controller_device\.SLICE_27/C1 (1573:1797:2022)(1573:1797:2022))
+        (INTERCONNECT nes_controller_device\.SLICE_14/F1 
+          nes_controller_device\.SLICE_14/DI1 (0:0:0)(0:0:0))
+        (INTERCONNECT nes_controller_device\.SLICE_14/F0 
+          nes_controller_device\.SLICE_14/DI0 (0:0:0)(0:0:0))
+        (INTERCONNECT data_I/PADDI nes_controller_device\.SLICE_14/D1 (6556:6668:6781)
+          (6556:6668:6781))
+        (INTERCONNECT nes_controller_device\.SLICE_14/Q1 
+          nes_controller_device\.SLICE_14/D0 (1269:1513:1758)(1269:1513:1758))
+        (INTERCONNECT nes_controller_device\.SLICE_14/Q1 
+          nes_controller_device\.SLICE_19/C0 (2763:2948:3133)(2763:2948:3133))
+        (INTERCONNECT nes_controller_device\.SLICE_21/F0 
+          nes_controller_device\.SLICE_17/B1 (2022:2253:2485)(2022:2253:2485))
+        (INTERCONNECT nes_controller_device\.SLICE_21/F0 
+          nes_controller_device\.SLICE_21/C1 (264:284:304)(264:284:304))
+        (INTERCONNECT nes_controller_device\.SLICE_17/F0 
+          nes_controller_device\.SLICE_18/B1 (2022:2253:2485)(2022:2253:2485))
+        (INTERCONNECT nes_controller_device\.SLICE_18/F0 
+          nes_controller_device\.SLICE_18/C1 (264:284:304)(264:284:304))
+        (INTERCONNECT nes_controller_device\.SLICE_18/F1 latch_I/PADDO (7058:7124:7191)
+          (7058:7124:7191))
+        (INTERCONNECT nes_controller_device\.SLICE_20/F0 
+          nes_controller_device\.SLICE_19/D0 (2763:2981:3199)(2763:2981:3199))
+        (INTERCONNECT nes_controller_device\.SLICE_20/F0 
+          nes_controller_device\.SLICE_20/C1 (264:284:304)(264:284:304))
+        (INTERCONNECT nes_controller_device\.SLICE_20/F0 
+          nes_controller_device\.SLICE_27/A1 (3172:3377:3582)(3172:3377:3582))
+        (INTERCONNECT nes_controller_device\.SLICE_20/F0 
+          nes_controller_device\.SLICE_27/B0 (3119:3317:3516)(3119:3317:3516))
+        (INTERCONNECT nes_controller_device\.SLICE_20/F0 
+          nes_controller_device\.SLICE_29/C0 (3067:3265:3463)(3067:3265:3463))
+        (INTERCONNECT nes_controller_device\.SLICE_20/F0 
+          nes_controller_device\.SLICE_29/B1 (3119:3317:3516)(3119:3317:3516))
+        (INTERCONNECT nes_controller_device\.SLICE_20/F0 
+          nes_controller_device\.SLICE_31/C1 (3067:3265:3463)(3067:3265:3463))
+        (INTERCONNECT nes_controller_device\.SLICE_20/F0 
+          nes_controller_device\.SLICE_31/B0 (3119:3317:3516)(3119:3317:3516))
+        (INTERCONNECT nes_controller_device\.SLICE_19/F0 
+          nes_controller_device\.SLICE_19/B0 (2022:2253:2485)(2022:2253:2485))
+        (INTERCONNECT nes_controller_device\.SLICE_19/F0 right_I/PADDO (3080:3298:3516)
+          (3080:3298:3516))
+        (INTERCONNECT nes_controller_device\.SLICE_20/F1 
+          nes_controller_device\.SLICE_20/D1 (1665:1916:2168)(1665:1916:2168))
+        (INTERCONNECT nes_controller_device\.SLICE_20/F1 left_I/PADDO (4071:4269:4468)
+          (4071:4269:4468))
+        (INTERCONNECT nes_controller_device\.SLICE_21/F1 
+          nes_controller_device\.SLICE_20/C0 (264:284:304)(264:284:304))
+        (INTERCONNECT nes_controller_device\.SLICE_27/F1 
+          nes_controller_device\.SLICE_27/D1 (1665:1916:2168)(1665:1916:2168))
+        (INTERCONNECT nes_controller_device\.SLICE_27/F1 down_I/PADDO (2432:2676:2921)
+          (2432:2676:2921))
+        (INTERCONNECT nes_controller_device\.SLICE_27/F0 
+          nes_controller_device\.SLICE_27/D0 (1665:1916:2168)(1665:1916:2168))
+        (INTERCONNECT nes_controller_device\.SLICE_27/F0 sel_I/PADDO (2432:2676:2921)
+          (2432:2676:2921))
+        (INTERCONNECT nes_controller_device\.SLICE_29/F1 
+          nes_controller_device\.SLICE_29/C1 (1969:2200:2432)(1969:2200:2432))
+        (INTERCONNECT nes_controller_device\.SLICE_29/F1 a_I/PADDO (3080:3298:3516)
+          (3080:3298:3516))
+        (INTERCONNECT nes_controller_device\.SLICE_29/F0 
+          nes_controller_device\.SLICE_29/D0 (1665:1916:2168)(1665:1916:2168))
+        (INTERCONNECT nes_controller_device\.SLICE_29/F0 up_I/PADDO (3423:3641:3860)
+          (3423:3641:3860))
+        (INTERCONNECT nes_controller_device\.SLICE_31/F1 
+          nes_controller_device\.SLICE_31/D1 (1665:1916:2168)(1665:1916:2168))
+        (INTERCONNECT nes_controller_device\.SLICE_31/F1 start_I/PADDO (3622:3827:4032)
+          (3622:3827:4032))
+        (INTERCONNECT nes_controller_device\.SLICE_31/F0 
+          nes_controller_device\.SLICE_31/D0 (1665:1916:2168)(1665:1916:2168))
+        (INTERCONNECT nes_controller_device\.SLICE_31/F0 b_I/PADDO (3423:3641:3860)
+          (3423:3641:3860))
+      )
+    )
+  )
+)

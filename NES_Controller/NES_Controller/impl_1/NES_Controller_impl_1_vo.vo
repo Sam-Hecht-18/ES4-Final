@@ -1,0 +1,1158 @@
+
+// Verilog netlist produced by program backanno, Version Radiant Software (64-bit) 2023.1.0.43.3
+
+// backanno -o NES_Controller_impl_1_vo.vo -sp High-Performance_1.2V -w -neg -gui NES_Controller_impl_1.udb 
+// Netlist created on Mon Nov  6 20:02:22 2023
+// Netlist written on Mon Nov  6 20:02:32 2023
+// Design is for device iCE40UP5K
+// Design is for package SG48
+// Design is for performance grade High-Performance_1.2V
+
+`timescale 1 ns / 1 ps
+
+module top ( data, a, b, start, sel, right, left, down, up, ctrlr_clk, latch );
+  input  data;
+  output a, b, start, sel, right, left, down, up, ctrlr_clk, latch;
+  wire   \nes_controller_device.counter_device.NEScount_7__N_1[14] , 
+         \nes_controller_device.counter_device.NEScount_7__N_1[13] , 
+         \nes_controller_device.counter_device.n1212 , 
+         \nes_controller_device.NEScount[5] , 
+         \nes_controller_device.counter_device.n762 , 
+         \nes_controller_device.NEScount[4] , 
+         \nes_controller_device.counter_device.clk , 
+         \nes_controller_device.counter_device.n764 , 
+         \nes_controller_device.counter_device.NEScount_7__N_1[12] , 
+         \nes_controller_device.counter_device.NEScount_7__N_1[11] , 
+         \nes_controller_device.counter_device.n1209 , 
+         \nes_controller_device.NEScount[3] , 
+         \nes_controller_device.counter_device.n760 , 
+         \nes_controller_device.NEScount[2] , 
+         \nes_controller_device.counter_device.NEScount_7__N_1[10] , 
+         \nes_controller_device.counter_device.NEScount_7__N_1[9] , 
+         \nes_controller_device.counter_device.n1206 , 
+         \nes_controller_device.NEScount[1] , 
+         \nes_controller_device.counter_device.n758 , 
+         \nes_controller_device.NEScount[0] , 
+         \nes_controller_device.counter_device.NEScount_7__N_1[8] , 
+         \nes_controller_device.counter_device.NEScount_7__N_1[7] , 
+         \nes_controller_device.counter_device.n1203 , 
+         \nes_controller_device.NESclk , 
+         \nes_controller_device.counter_device.n756 , 
+         \nes_controller_device.counter_device.n10 , 
+         \nes_controller_device.counter_device.NEScount_7__N_1[6] , 
+         \nes_controller_device.counter_device.NEScount_7__N_1[5] , 
+         \nes_controller_device.counter_device.n1200 , 
+         \nes_controller_device.counter_device.n11 , 
+         \nes_controller_device.counter_device.n754 , 
+         \nes_controller_device.counter_device.n12 , 
+         \nes_controller_device.counter_device.NEScount_7__N_1[4] , 
+         \nes_controller_device.counter_device.NEScount_7__N_1[3] , 
+         \nes_controller_device.counter_device.n1197 , 
+         \nes_controller_device.counter_device.n13 , 
+         \nes_controller_device.counter_device.n752 , 
+         \nes_controller_device.counter_device.n14 , 
+         \nes_controller_device.counter_device.NEScount_7__N_1[2] , 
+         \nes_controller_device.counter_device.NEScount_7__N_1[1] , 
+         \nes_controller_device.counter_device.n1194 , 
+         \nes_controller_device.counter_device.n15 , 
+         \nes_controller_device.counter_device.n750 , 
+         \nes_controller_device.counter_device.n16 , 
+         \nes_controller_device.counter_device.NEScount_7__N_1[0] , 
+         \nes_controller_device.counter_device.n1191 , 
+         \nes_controller_device.counter_device.n17 , VCC_net, 
+         \nes_controller_device.counter_device.NEScount_7__N_1[16] , 
+         \nes_controller_device.counter_device.NEScount_7__N_1[15] , 
+         \nes_controller_device.counter_device.n1215 , 
+         \nes_controller_device.NEScount[7] , 
+         \nes_controller_device.NEScount[6] , 
+         \nes_controller_device.shift_reg[6].sig_006.FeedThruLUT , 
+         \nes_controller_device.shift_reg[5].sig_000.FeedThruLUT , 
+         \nes_controller_device.shift_reg[6] , 
+         \nes_controller_device.shift_reg[5] , ctrlr_clk_c, 
+         \nes_controller_device.shift_reg[7] , 
+         \nes_controller_device.shift_reg[3].sig_002.FeedThruLUT , 
+         \nes_controller_device.shift_reg[4].sig_001.FeedThruLUT , 
+         \nes_controller_device.shift_reg[3] , 
+         \nes_controller_device.shift_reg[4] , 
+         \nes_controller_device.shift_reg[1].sig_004.FeedThruLUT , 
+         \nes_controller_device.shift_reg[2].sig_003.FeedThruLUT , 
+         \nes_controller_device.shift_reg[1] , 
+         \nes_controller_device.shift_reg[2] , 
+         \nes_controller_device.shift_reg_0__N_9 , 
+         \nes_controller_device.shift_reg[0].sig_005.FeedThruLUT , data_c, 
+         \nes_controller_device.shift_reg[0] , 
+         \nes_controller_device.ctrlr_clk_c_N_12 , 
+         \nes_controller_device.latch_c_N_11 , 
+         \nes_controller_device.latch_c_N_10 , latch_c, 
+         \nes_controller_device.a_c_N_20 , right_c, left_c, 
+         \nes_controller_device.n6 , down_c, sel_c, a_c, up_c, start_c, b_c;
+
+  nes_controller_device_counter_device_SLICE_0 
+    \nes_controller_device.counter_device.SLICE_0 ( 
+    .DI1(\nes_controller_device.counter_device.NEScount_7__N_1[14] ), 
+    .DI0(\nes_controller_device.counter_device.NEScount_7__N_1[13] ), 
+    .D1(\nes_controller_device.counter_device.n1212 ), 
+    .C1(\nes_controller_device.NEScount[5] ), 
+    .D0(\nes_controller_device.counter_device.n762 ), 
+    .C0(\nes_controller_device.NEScount[4] ), 
+    .CLK(\nes_controller_device.counter_device.clk ), 
+    .CIN0(\nes_controller_device.counter_device.n762 ), 
+    .CIN1(\nes_controller_device.counter_device.n1212 ), 
+    .Q0(\nes_controller_device.NEScount[4] ), 
+    .Q1(\nes_controller_device.NEScount[5] ), 
+    .F0(\nes_controller_device.counter_device.NEScount_7__N_1[13] ), 
+    .F1(\nes_controller_device.counter_device.NEScount_7__N_1[14] ), 
+    .COUT1(\nes_controller_device.counter_device.n764 ), 
+    .COUT0(\nes_controller_device.counter_device.n1212 ));
+  nes_controller_device_counter_device_SLICE_1 
+    \nes_controller_device.counter_device.SLICE_1 ( 
+    .DI1(\nes_controller_device.counter_device.NEScount_7__N_1[12] ), 
+    .DI0(\nes_controller_device.counter_device.NEScount_7__N_1[11] ), 
+    .D1(\nes_controller_device.counter_device.n1209 ), 
+    .C1(\nes_controller_device.NEScount[3] ), 
+    .D0(\nes_controller_device.counter_device.n760 ), 
+    .C0(\nes_controller_device.NEScount[2] ), 
+    .CLK(\nes_controller_device.counter_device.clk ), 
+    .CIN0(\nes_controller_device.counter_device.n760 ), 
+    .CIN1(\nes_controller_device.counter_device.n1209 ), 
+    .Q0(\nes_controller_device.NEScount[2] ), 
+    .Q1(\nes_controller_device.NEScount[3] ), 
+    .F0(\nes_controller_device.counter_device.NEScount_7__N_1[11] ), 
+    .F1(\nes_controller_device.counter_device.NEScount_7__N_1[12] ), 
+    .COUT1(\nes_controller_device.counter_device.n762 ), 
+    .COUT0(\nes_controller_device.counter_device.n1209 ));
+  nes_controller_device_counter_device_SLICE_2 
+    \nes_controller_device.counter_device.SLICE_2 ( 
+    .DI1(\nes_controller_device.counter_device.NEScount_7__N_1[10] ), 
+    .DI0(\nes_controller_device.counter_device.NEScount_7__N_1[9] ), 
+    .D1(\nes_controller_device.counter_device.n1206 ), 
+    .C1(\nes_controller_device.NEScount[1] ), 
+    .D0(\nes_controller_device.counter_device.n758 ), 
+    .C0(\nes_controller_device.NEScount[0] ), 
+    .CLK(\nes_controller_device.counter_device.clk ), 
+    .CIN0(\nes_controller_device.counter_device.n758 ), 
+    .CIN1(\nes_controller_device.counter_device.n1206 ), 
+    .Q0(\nes_controller_device.NEScount[0] ), 
+    .Q1(\nes_controller_device.NEScount[1] ), 
+    .F0(\nes_controller_device.counter_device.NEScount_7__N_1[9] ), 
+    .F1(\nes_controller_device.counter_device.NEScount_7__N_1[10] ), 
+    .COUT1(\nes_controller_device.counter_device.n760 ), 
+    .COUT0(\nes_controller_device.counter_device.n1206 ));
+  nes_controller_device_counter_device_SLICE_3 
+    \nes_controller_device.counter_device.SLICE_3 ( 
+    .DI1(\nes_controller_device.counter_device.NEScount_7__N_1[8] ), 
+    .DI0(\nes_controller_device.counter_device.NEScount_7__N_1[7] ), 
+    .D1(\nes_controller_device.counter_device.n1203 ), 
+    .C1(\nes_controller_device.NESclk ), 
+    .D0(\nes_controller_device.counter_device.n756 ), 
+    .C0(\nes_controller_device.counter_device.n10 ), 
+    .CLK(\nes_controller_device.counter_device.clk ), 
+    .CIN0(\nes_controller_device.counter_device.n756 ), 
+    .CIN1(\nes_controller_device.counter_device.n1203 ), 
+    .Q0(\nes_controller_device.counter_device.n10 ), 
+    .Q1(\nes_controller_device.NESclk ), 
+    .F0(\nes_controller_device.counter_device.NEScount_7__N_1[7] ), 
+    .F1(\nes_controller_device.counter_device.NEScount_7__N_1[8] ), 
+    .COUT1(\nes_controller_device.counter_device.n758 ), 
+    .COUT0(\nes_controller_device.counter_device.n1203 ));
+  nes_controller_device_counter_device_SLICE_4 
+    \nes_controller_device.counter_device.SLICE_4 ( 
+    .DI1(\nes_controller_device.counter_device.NEScount_7__N_1[6] ), 
+    .DI0(\nes_controller_device.counter_device.NEScount_7__N_1[5] ), 
+    .D1(\nes_controller_device.counter_device.n1200 ), 
+    .C1(\nes_controller_device.counter_device.n11 ), 
+    .D0(\nes_controller_device.counter_device.n754 ), 
+    .C0(\nes_controller_device.counter_device.n12 ), 
+    .CLK(\nes_controller_device.counter_device.clk ), 
+    .CIN0(\nes_controller_device.counter_device.n754 ), 
+    .CIN1(\nes_controller_device.counter_device.n1200 ), 
+    .Q0(\nes_controller_device.counter_device.n12 ), 
+    .Q1(\nes_controller_device.counter_device.n11 ), 
+    .F0(\nes_controller_device.counter_device.NEScount_7__N_1[5] ), 
+    .F1(\nes_controller_device.counter_device.NEScount_7__N_1[6] ), 
+    .COUT1(\nes_controller_device.counter_device.n756 ), 
+    .COUT0(\nes_controller_device.counter_device.n1200 ));
+  nes_controller_device_counter_device_SLICE_5 
+    \nes_controller_device.counter_device.SLICE_5 ( 
+    .DI1(\nes_controller_device.counter_device.NEScount_7__N_1[4] ), 
+    .DI0(\nes_controller_device.counter_device.NEScount_7__N_1[3] ), 
+    .D1(\nes_controller_device.counter_device.n1197 ), 
+    .C1(\nes_controller_device.counter_device.n13 ), 
+    .D0(\nes_controller_device.counter_device.n752 ), 
+    .C0(\nes_controller_device.counter_device.n14 ), 
+    .CLK(\nes_controller_device.counter_device.clk ), 
+    .CIN0(\nes_controller_device.counter_device.n752 ), 
+    .CIN1(\nes_controller_device.counter_device.n1197 ), 
+    .Q0(\nes_controller_device.counter_device.n14 ), 
+    .Q1(\nes_controller_device.counter_device.n13 ), 
+    .F0(\nes_controller_device.counter_device.NEScount_7__N_1[3] ), 
+    .F1(\nes_controller_device.counter_device.NEScount_7__N_1[4] ), 
+    .COUT1(\nes_controller_device.counter_device.n754 ), 
+    .COUT0(\nes_controller_device.counter_device.n1197 ));
+  nes_controller_device_counter_device_SLICE_6 
+    \nes_controller_device.counter_device.SLICE_6 ( 
+    .DI1(\nes_controller_device.counter_device.NEScount_7__N_1[2] ), 
+    .DI0(\nes_controller_device.counter_device.NEScount_7__N_1[1] ), 
+    .D1(\nes_controller_device.counter_device.n1194 ), 
+    .C1(\nes_controller_device.counter_device.n15 ), 
+    .D0(\nes_controller_device.counter_device.n750 ), 
+    .C0(\nes_controller_device.counter_device.n16 ), 
+    .CLK(\nes_controller_device.counter_device.clk ), 
+    .CIN0(\nes_controller_device.counter_device.n750 ), 
+    .CIN1(\nes_controller_device.counter_device.n1194 ), 
+    .Q0(\nes_controller_device.counter_device.n16 ), 
+    .Q1(\nes_controller_device.counter_device.n15 ), 
+    .F0(\nes_controller_device.counter_device.NEScount_7__N_1[1] ), 
+    .F1(\nes_controller_device.counter_device.NEScount_7__N_1[2] ), 
+    .COUT1(\nes_controller_device.counter_device.n752 ), 
+    .COUT0(\nes_controller_device.counter_device.n1194 ));
+  nes_controller_device_counter_device_SLICE_7 
+    \nes_controller_device.counter_device.SLICE_7 ( 
+    .DI1(\nes_controller_device.counter_device.NEScount_7__N_1[0] ), 
+    .D1(\nes_controller_device.counter_device.n1191 ), 
+    .C1(\nes_controller_device.counter_device.n17 ), .B1(VCC_net), 
+    .CLK(\nes_controller_device.counter_device.clk ), 
+    .CIN1(\nes_controller_device.counter_device.n1191 ), 
+    .Q1(\nes_controller_device.counter_device.n17 ), 
+    .F1(\nes_controller_device.counter_device.NEScount_7__N_1[0] ), 
+    .COUT1(\nes_controller_device.counter_device.n750 ), 
+    .COUT0(\nes_controller_device.counter_device.n1191 ));
+  nes_controller_device_counter_device_SLICE_8 
+    \nes_controller_device.counter_device.SLICE_8 ( 
+    .DI1(\nes_controller_device.counter_device.NEScount_7__N_1[16] ), 
+    .DI0(\nes_controller_device.counter_device.NEScount_7__N_1[15] ), 
+    .D1(\nes_controller_device.counter_device.n1215 ), 
+    .C1(\nes_controller_device.NEScount[7] ), 
+    .D0(\nes_controller_device.counter_device.n764 ), 
+    .C0(\nes_controller_device.NEScount[6] ), 
+    .CLK(\nes_controller_device.counter_device.clk ), 
+    .CIN0(\nes_controller_device.counter_device.n764 ), 
+    .CIN1(\nes_controller_device.counter_device.n1215 ), 
+    .Q0(\nes_controller_device.NEScount[6] ), 
+    .Q1(\nes_controller_device.NEScount[7] ), 
+    .F0(\nes_controller_device.counter_device.NEScount_7__N_1[15] ), 
+    .F1(\nes_controller_device.counter_device.NEScount_7__N_1[16] ), 
+    .COUT0(\nes_controller_device.counter_device.n1215 ));
+  nes_controller_device_SLICE_9 \nes_controller_device.SLICE_9 ( 
+    .DI1(\nes_controller_device.shift_reg[6].sig_006.FeedThruLUT ), 
+    .DI0(\nes_controller_device.shift_reg[5].sig_000.FeedThruLUT ), 
+    .D1(\nes_controller_device.shift_reg[6] ), 
+    .D0(\nes_controller_device.shift_reg[5] ), .CLK(ctrlr_clk_c), 
+    .Q0(\nes_controller_device.shift_reg[6] ), 
+    .Q1(\nes_controller_device.shift_reg[7] ), 
+    .F0(\nes_controller_device.shift_reg[5].sig_000.FeedThruLUT ), 
+    .F1(\nes_controller_device.shift_reg[6].sig_006.FeedThruLUT ));
+  nes_controller_device_SLICE_10 \nes_controller_device.SLICE_10 ( 
+    .DI1(\nes_controller_device.shift_reg[3].sig_002.FeedThruLUT ), 
+    .DI0(\nes_controller_device.shift_reg[4].sig_001.FeedThruLUT ), 
+    .D1(\nes_controller_device.shift_reg[3] ), 
+    .D0(\nes_controller_device.shift_reg[4] ), .CLK(ctrlr_clk_c), 
+    .Q0(\nes_controller_device.shift_reg[5] ), 
+    .Q1(\nes_controller_device.shift_reg[4] ), 
+    .F0(\nes_controller_device.shift_reg[4].sig_001.FeedThruLUT ), 
+    .F1(\nes_controller_device.shift_reg[3].sig_002.FeedThruLUT ));
+  nes_controller_device_SLICE_12 \nes_controller_device.SLICE_12 ( 
+    .DI1(\nes_controller_device.shift_reg[1].sig_004.FeedThruLUT ), 
+    .DI0(\nes_controller_device.shift_reg[2].sig_003.FeedThruLUT ), 
+    .D1(\nes_controller_device.shift_reg[1] ), 
+    .D0(\nes_controller_device.shift_reg[2] ), .CLK(ctrlr_clk_c), 
+    .Q0(\nes_controller_device.shift_reg[3] ), 
+    .Q1(\nes_controller_device.shift_reg[2] ), 
+    .F0(\nes_controller_device.shift_reg[2].sig_003.FeedThruLUT ), 
+    .F1(\nes_controller_device.shift_reg[1].sig_004.FeedThruLUT ));
+  nes_controller_device_SLICE_14 \nes_controller_device.SLICE_14 ( 
+    .DI1(\nes_controller_device.shift_reg_0__N_9 ), 
+    .DI0(\nes_controller_device.shift_reg[0].sig_005.FeedThruLUT ), 
+    .D1(data_c), .D0(\nes_controller_device.shift_reg[0] ), .CLK(ctrlr_clk_c), 
+    .Q0(\nes_controller_device.shift_reg[1] ), 
+    .Q1(\nes_controller_device.shift_reg[0] ), 
+    .F0(\nes_controller_device.shift_reg[0].sig_005.FeedThruLUT ), 
+    .F1(\nes_controller_device.shift_reg_0__N_9 ));
+  nes_controller_device_SLICE_17 \nes_controller_device.SLICE_17 ( 
+    .D1(\nes_controller_device.NESclk ), 
+    .C1(\nes_controller_device.NEScount[3] ), 
+    .B1(\nes_controller_device.ctrlr_clk_c_N_12 ), 
+    .D0(\nes_controller_device.NEScount[2] ), 
+    .B0(\nes_controller_device.NEScount[7] ), 
+    .F0(\nes_controller_device.latch_c_N_11 ), .F1(ctrlr_clk_c));
+  nes_controller_device_SLICE_18 \nes_controller_device.SLICE_18 ( 
+    .D1(\nes_controller_device.NEScount[6] ), 
+    .C1(\nes_controller_device.latch_c_N_10 ), 
+    .B1(\nes_controller_device.latch_c_N_11 ), 
+    .A1(\nes_controller_device.NEScount[3] ), 
+    .D0(\nes_controller_device.NEScount[0] ), 
+    .C0(\nes_controller_device.NEScount[4] ), 
+    .B0(\nes_controller_device.NEScount[1] ), 
+    .A0(\nes_controller_device.NEScount[5] ), 
+    .F0(\nes_controller_device.latch_c_N_10 ), .F1(latch_c));
+  nes_controller_device_SLICE_19 \nes_controller_device.SLICE_19 ( 
+    .D0(\nes_controller_device.a_c_N_20 ), 
+    .C0(\nes_controller_device.shift_reg[0] ), .B0(right_c), .F0(right_c));
+  nes_controller_device_SLICE_20 \nes_controller_device.SLICE_20 ( .D1(left_c), 
+    .C1(\nes_controller_device.a_c_N_20 ), 
+    .B1(\nes_controller_device.shift_reg[1] ), 
+    .D0(\nes_controller_device.NEScount[3] ), .C0(\nes_controller_device.n6 ), 
+    .B0(\nes_controller_device.NEScount[2] ), 
+    .A0(\nes_controller_device.NEScount[0] ), 
+    .F0(\nes_controller_device.a_c_N_20 ), .F1(left_c));
+  nes_controller_device_SLICE_21 \nes_controller_device.SLICE_21 ( 
+    .C1(\nes_controller_device.ctrlr_clk_c_N_12 ), 
+    .A1(\nes_controller_device.NEScount[1] ), 
+    .D0(\nes_controller_device.NEScount[7] ), 
+    .C0(\nes_controller_device.NEScount[6] ), 
+    .B0(\nes_controller_device.NEScount[4] ), 
+    .A0(\nes_controller_device.NEScount[5] ), 
+    .F0(\nes_controller_device.ctrlr_clk_c_N_12 ), 
+    .F1(\nes_controller_device.n6 ));
+  SLICE_25 SLICE_25( .F0(VCC_net));
+  nes_controller_device_SLICE_27 \nes_controller_device.SLICE_27 ( .D1(down_c), 
+    .C1(\nes_controller_device.shift_reg[2] ), 
+    .A1(\nes_controller_device.a_c_N_20 ), .D0(sel_c), 
+    .C0(\nes_controller_device.shift_reg[5] ), 
+    .B0(\nes_controller_device.a_c_N_20 ), .F0(sel_c), .F1(down_c));
+  nes_controller_device_SLICE_29 \nes_controller_device.SLICE_29 ( 
+    .D1(\nes_controller_device.shift_reg[7] ), .C1(a_c), 
+    .B1(\nes_controller_device.a_c_N_20 ), .D0(up_c), 
+    .C0(\nes_controller_device.a_c_N_20 ), 
+    .A0(\nes_controller_device.shift_reg[3] ), .F0(up_c), .F1(a_c));
+  nes_controller_device_SLICE_31 \nes_controller_device.SLICE_31 ( 
+    .D1(start_c), .C1(\nes_controller_device.a_c_N_20 ), 
+    .B1(\nes_controller_device.shift_reg[4] ), .D0(b_c), 
+    .C0(\nes_controller_device.shift_reg[6] ), 
+    .B0(\nes_controller_device.a_c_N_20 ), .F0(b_c), .F1(start_c));
+  nes_controller_device_counter_device_osc 
+    \nes_controller_device.counter_device.osc ( .CLKHFPU(VCC_net), 
+    .CLKHFEN(VCC_net), .CLKHF(\nes_controller_device.counter_device.clk ));
+  data data_I( .PADDI(data_c), .data(data));
+  a a_I( .PADDO(a_c), .a(a));
+  b b_I( .PADDO(b_c), .b(b));
+  start start_I( .PADDO(start_c), .start(start));
+  sel sel_I( .PADDO(sel_c), .sel(sel));
+  right right_I( .PADDO(right_c), .right(right));
+  left left_I( .PADDO(left_c), .left(left));
+  down down_I( .PADDO(down_c), .down(down));
+  up up_I( .PADDO(up_c), .up(up));
+  ctrlr_clk ctrlr_clk_I( .PADDO(ctrlr_clk_c), .ctrlr_clk(ctrlr_clk));
+  latch latch_I( .PADDO(latch_c), .latch(latch));
+endmodule
+
+module nes_controller_device_counter_device_SLICE_0 ( input DI1, DI0, D1, C1, 
+    D0, C0, CLK, CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
+
+  fa2 \nes_controller_device/counter_device/count_39_73_add_4_15 ( .A0(GNDI), 
+    .B0(GNDI), .C0(C0), .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), 
+    .CI0(CIN0), .CI1(CIN1), .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \nes_controller_device/counter_device/NEScount_7__I_3 ( .D0(DI0_dly), 
+    .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \nes_controller_device/counter_device/NEScount_7__I_2 ( .D0(DI1_dly), 
+    .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+  endspecify
+
+endmodule
+
+module fa2 ( input A0, B0, C0, D0, A1, B1, C1, D1, CI0, CI1, output S0, S1, 
+    CO0, CO1 );
+
+  FA2 inst1( .A0(A0), .B0(B0), .C0(C0), .D0(D0), .CI0(CI0), .A1(A1), .B1(B1), 
+    .C1(C1), .D1(D1), .CI1(CI1), .CO0(CO0), .CO1(CO1), .S0(S0), .S1(S1));
+  defparam inst1.INIT0 = "0xc33c";
+  defparam inst1.INIT1 = "0xc33c";
+endmodule
+
+module gnd ( output PWR0 );
+
+  VLO INST1( .Z(PWR0));
+endmodule
+
+module ffsre2 ( input D0, SP, CK, LSR, output Q );
+
+  FD1P3XZ INST01( .D(D0), .SP(SP), .CK(CK), .SR(LSR), .Q(Q));
+  defparam INST01.REGSET = "RESET";
+  defparam INST01.SRMODE = "CE_OVER_LSR";
+endmodule
+
+module vcc ( output PWR1 );
+
+  VHI INST1( .Z(PWR1));
+endmodule
+
+module nes_controller_device_counter_device_SLICE_1 ( input DI1, DI0, D1, C1, 
+    D0, C0, CLK, CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
+
+  fa2 \nes_controller_device/counter_device/count_39_73_add_4_13 ( .A0(GNDI), 
+    .B0(GNDI), .C0(C0), .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), 
+    .CI0(CIN0), .CI1(CIN1), .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \nes_controller_device/counter_device/NEScount_7__I_5 ( .D0(DI0_dly), 
+    .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \nes_controller_device/counter_device/NEScount_7__I_4 ( .D0(DI1_dly), 
+    .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+  endspecify
+
+endmodule
+
+module nes_controller_device_counter_device_SLICE_2 ( input DI1, DI0, D1, C1, 
+    D0, C0, CLK, CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
+
+  fa2 \nes_controller_device/counter_device/count_39_73_add_4_11 ( .A0(GNDI), 
+    .B0(GNDI), .C0(C0), .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), 
+    .CI0(CIN0), .CI1(CIN1), .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \nes_controller_device/counter_device/NEScount_7__I_7 ( .D0(DI0_dly), 
+    .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \nes_controller_device/counter_device/NEScount_7__I_6 ( .D0(DI1_dly), 
+    .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+  endspecify
+
+endmodule
+
+module nes_controller_device_counter_device_SLICE_3 ( input DI1, DI0, D1, C1, 
+    D0, C0, CLK, CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
+
+  fa2 \nes_controller_device/counter_device/count_39_73_add_4_9 ( .A0(GNDI), 
+    .B0(GNDI), .C0(C0), .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), 
+    .CI0(CIN0), .CI1(CIN1), .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \nes_controller_device/counter_device/count_39_73__i8 ( .D0(DI0_dly), 
+    .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \nes_controller_device/counter_device/NEScount_7__I_9 ( .D0(DI1_dly), 
+    .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+  endspecify
+
+endmodule
+
+module nes_controller_device_counter_device_SLICE_4 ( input DI1, DI0, D1, C1, 
+    D0, C0, CLK, CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
+
+  fa2 \nes_controller_device/counter_device/count_39_73_add_4_7 ( .A0(GNDI), 
+    .B0(GNDI), .C0(C0), .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), 
+    .CI0(CIN0), .CI1(CIN1), .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \nes_controller_device/counter_device/count_39_73__i6 ( .D0(DI0_dly), 
+    .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \nes_controller_device/counter_device/count_39_73__i7 ( .D0(DI1_dly), 
+    .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+  endspecify
+
+endmodule
+
+module nes_controller_device_counter_device_SLICE_5 ( input DI1, DI0, D1, C1, 
+    D0, C0, CLK, CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
+
+  fa2 \nes_controller_device/counter_device/count_39_73_add_4_5 ( .A0(GNDI), 
+    .B0(GNDI), .C0(C0), .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), 
+    .CI0(CIN0), .CI1(CIN1), .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \nes_controller_device/counter_device/count_39_73__i4 ( .D0(DI0_dly), 
+    .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \nes_controller_device/counter_device/count_39_73__i5 ( .D0(DI1_dly), 
+    .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+  endspecify
+
+endmodule
+
+module nes_controller_device_counter_device_SLICE_6 ( input DI1, DI0, D1, C1, 
+    D0, C0, CLK, CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
+
+  fa2 \nes_controller_device/counter_device/count_39_73_add_4_3 ( .A0(GNDI), 
+    .B0(GNDI), .C0(C0), .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), 
+    .CI0(CIN0), .CI1(CIN1), .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \nes_controller_device/counter_device/count_39_73__i2 ( .D0(DI0_dly), 
+    .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \nes_controller_device/counter_device/count_39_73__i3 ( .D0(DI1_dly), 
+    .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+  endspecify
+
+endmodule
+
+module nes_controller_device_counter_device_SLICE_7 ( input DI1, D1, C1, B1, 
+    CLK, CIN1, output Q1, F1, COUT1, COUT0 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly;
+
+  fa2 \nes_controller_device/counter_device/count_39_73_add_4_1 ( .A0(GNDI), 
+    .B0(GNDI), .C0(GNDI), .D0(VCCI), .A1(GNDI), .B1(B1), .C1(C1), .D1(D1), 
+    .CI0(VCCI), .CI1(CIN1), .S0(), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \nes_controller_device/counter_device/count_39_73__i1 ( .D0(DI1_dly), 
+    .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (B1 => COUT1) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+  endspecify
+
+endmodule
+
+module nes_controller_device_counter_device_SLICE_8 ( input DI1, DI0, D1, C1, 
+    D0, C0, CLK, CIN0, CIN1, output Q0, Q1, F0, F1, COUT0 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
+
+  fa2 \nes_controller_device/counter_device/count_39_73_add_4_17 ( .A0(GNDI), 
+    .B0(GNDI), .C0(C0), .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), 
+    .CI0(CIN0), .CI1(CIN1), .S0(F0), .S1(F1), .CO0(COUT0), .CO1());
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \nes_controller_device/counter_device/NEScount_7__I_1 ( .D0(DI0_dly), 
+    .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \nes_controller_device/counter_device/NEScount_7__I_0 ( .D0(DI1_dly), 
+    .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+  endspecify
+
+endmodule
+
+module nes_controller_device_SLICE_9 ( input DI1, DI0, D1, D0, CLK, output Q0, 
+    Q1, F0, F1 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
+
+  lut4 \nes_controller_device.SLICE_9_K1 ( .A(GNDI), .B(GNDI), .C(GNDI), 
+    .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40001 \nes_controller_device.SLICE_9_K0 ( .A(GNDI), .B(GNDI), .C(GNDI), 
+    .D(D0), .Z(F0));
+  ffsre2 \nes_controller_device/shift_reg_6__I_0 ( .D0(DI1_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \nes_controller_device/shift_reg_5__I_0 ( .D0(DI0_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+  endspecify
+
+endmodule
+
+module lut4 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFF00") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40001 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFF00") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module nes_controller_device_SLICE_10 ( input DI1, DI0, D1, D0, CLK, output Q0, 
+    Q1, F0, F1 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
+
+  lut4 \nes_controller_device.SLICE_10_K1 ( .A(GNDI), .B(GNDI), .C(GNDI), 
+    .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40001 \nes_controller_device.SLICE_10_K0 ( .A(GNDI), .B(GNDI), .C(GNDI), 
+    .D(D0), .Z(F0));
+  ffsre2 \nes_controller_device/shift_reg_3__I_0 ( .D0(DI1_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \nes_controller_device/shift_reg_4__I_0 ( .D0(DI0_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+  endspecify
+
+endmodule
+
+module nes_controller_device_SLICE_12 ( input DI1, DI0, D1, D0, CLK, output Q0, 
+    Q1, F0, F1 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
+
+  lut4 \nes_controller_device.SLICE_12_K1 ( .A(GNDI), .B(GNDI), .C(GNDI), 
+    .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40001 \nes_controller_device.SLICE_12_K0 ( .A(GNDI), .B(GNDI), .C(GNDI), 
+    .D(D0), .Z(F0));
+  ffsre2 \nes_controller_device/shift_reg_1__I_0 ( .D0(DI1_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \nes_controller_device/shift_reg_2__I_0 ( .D0(DI0_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+  endspecify
+
+endmodule
+
+module nes_controller_device_SLICE_14 ( input DI1, DI0, D1, D0, CLK, output Q0, 
+    Q1, F0, F1 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
+
+  lut40002 \nes_controller_device/i10_1_lut ( .A(GNDI), .B(GNDI), .C(GNDI), 
+    .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40001 \nes_controller_device.SLICE_14_K0 ( .A(GNDI), .B(GNDI), .C(GNDI), 
+    .D(D0), .Z(F0));
+  ffsre2 \nes_controller_device/shift_reg_0__I_8 ( .D0(DI1_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \nes_controller_device/shift_reg_0__I_0 ( .D0(DI0_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+  endspecify
+
+endmodule
+
+module lut40002 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x00FF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module nes_controller_device_SLICE_17 ( input D1, C1, B1, D0, B0, output F0, 
+    F1 );
+  wire   GNDI;
+
+  lut40003 \nes_controller_device/ctrlr_clk_c_I_0 ( .A(GNDI), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40004 \nes_controller_device/i2_2_lut ( .A(GNDI), .B(B0), .C(GNDI), 
+    .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40003 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x0300") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40004 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xCC00") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module nes_controller_device_SLICE_18 ( input D1, C1, B1, A1, D0, C0, B0, A0, 
+    output F0, F1 );
+
+  lut40005 \nes_controller_device/NEScount_3__I_0 ( .A(A1), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  lut40006 \nes_controller_device/i6_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40005 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x8000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40006 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x8000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module nes_controller_device_SLICE_19 ( input D0, C0, B0, output F0 );
+  wire   GNDI;
+
+  lut40007 \nes_controller_device/right_c_I_0 ( .A(GNDI), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40007 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xCCF0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module nes_controller_device_SLICE_20 ( input D1, C1, B1, D0, C0, B0, A0, 
+    output F0, F1 );
+  wire   GNDI;
+
+  lut40008 \nes_controller_device/left_c_I_0 ( .A(GNDI), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40009 \nes_controller_device/i4_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40008 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFC0C") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40009 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFEFF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module nes_controller_device_SLICE_21 ( input C1, A1, D0, C0, B0, A0, output 
+    F0, F1 );
+  wire   GNDI;
+
+  lut40010 \nes_controller_device/i1_2_lut ( .A(A1), .B(GNDI), .C(C1), 
+    .D(GNDI), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40011 \nes_controller_device/i3_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
+
+  specify
+    (C1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40010 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFAFA") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40011 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFFE") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_25 ( output F0 );
+  wire   GNDI;
+
+  lut40012 i4( .A(GNDI), .B(GNDI), .C(GNDI), .D(GNDI), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+  endspecify
+
+endmodule
+
+module lut40012 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFFF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module nes_controller_device_SLICE_27 ( input D1, C1, A1, D0, C0, B0, output 
+    F0, F1 );
+  wire   GNDI;
+
+  lut40013 \nes_controller_device/down_c_I_0 ( .A(A1), .B(GNDI), .C(C1), 
+    .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40014 \nes_controller_device/sel_c_I_0 ( .A(GNDI), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40013 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFA50") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40014 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFC30") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module nes_controller_device_SLICE_29 ( input D1, C1, B1, D0, C0, A0, output 
+    F0, F1 );
+  wire   GNDI;
+
+  lut40015 \nes_controller_device/a_c_I_0 ( .A(GNDI), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40016 \nes_controller_device/up_c_I_0 ( .A(A0), .B(GNDI), .C(C0), .D(D0), 
+    .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40015 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xF3C0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40016 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFA0A") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module nes_controller_device_SLICE_31 ( input D1, C1, B1, D0, C0, B0, output 
+    F0, F1 );
+  wire   GNDI;
+
+  lut40008 \nes_controller_device/start_c_I_0 ( .A(GNDI), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40014 \nes_controller_device/b_c_I_0 ( .A(GNDI), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module nes_controller_device_counter_device_osc ( input CLKHFPU, CLKHFEN, 
+    output CLKHF );
+  wire   GNDI;
+
+  HSOSC_CORE_B \nes_controller_device/counter_device/osc ( .CLKHFPU(CLKHFPU), 
+    .CLKHFEN(CLKHFEN), .TRIM9(GNDI), .TRIM8(GNDI), .TRIM7(GNDI), .TRIM6(GNDI), 
+    .TRIM5(GNDI), .TRIM4(GNDI), .TRIM3(GNDI), .TRIM2(GNDI), .TRIM1(GNDI), 
+    .TRIM0(GNDI), .CLKHF(CLKHF));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+  endspecify
+
+endmodule
+
+module HSOSC_CORE_B ( input CLKHFPU, CLKHFEN, TRIM9, TRIM8, TRIM7, TRIM6, 
+    TRIM5, TRIM4, TRIM3, TRIM2, TRIM1, TRIM0, output CLKHF );
+
+  HSOSC_CORE INST10( .CLKHFPU(CLKHFPU), .CLKHFEN(CLKHFEN), .TRIM9(TRIM9), 
+    .TRIM8(TRIM8), .TRIM7(TRIM7), .TRIM6(TRIM6), .TRIM5(TRIM5), .TRIM4(TRIM4), 
+    .TRIM3(TRIM3), .TRIM2(TRIM2), .TRIM1(TRIM1), .TRIM0(TRIM0), .CLKHF(CLKHF));
+  defparam INST10.CLKHF_DIV = "0b00";
+  defparam INST10.FABRIC_TRIME = "DISABLE";
+endmodule
+
+module data ( output PADDI, input data );
+  wire   GNDI;
+
+  BB_B_B \data_pad.bb_inst ( .T_N(GNDI), .I(GNDI), .O(PADDI), .B(data));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (data => PADDI) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module BB_B_B ( input T_N, I, output O, inout B );
+
+  BB_B INST10( .T_N(T_N), .I(I), .O(O), .B(B));
+endmodule
+
+module a ( input PADDO, output a );
+  wire   VCCI;
+
+  BB_B_B \a_pad.bb_inst ( .T_N(VCCI), .I(PADDO), .O(), .B(a));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => a) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module b ( input PADDO, output b );
+  wire   VCCI;
+
+  BB_B_B \b_pad.bb_inst ( .T_N(VCCI), .I(PADDO), .O(), .B(b));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => b) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module start ( input PADDO, output start );
+  wire   VCCI;
+
+  BB_B_B \start_pad.bb_inst ( .T_N(VCCI), .I(PADDO), .O(), .B(start));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => start) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module sel ( input PADDO, output sel );
+  wire   VCCI;
+
+  BB_B_B \sel_pad.bb_inst ( .T_N(VCCI), .I(PADDO), .O(), .B(sel));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => sel) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module right ( input PADDO, output right );
+  wire   VCCI;
+
+  BB_B_B \right_pad.bb_inst ( .T_N(VCCI), .I(PADDO), .O(), .B(right));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => right) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module left ( input PADDO, output left );
+  wire   VCCI;
+
+  BB_B_B \left_pad.bb_inst ( .T_N(VCCI), .I(PADDO), .O(), .B(left));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => left) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module down ( input PADDO, output down );
+  wire   VCCI;
+
+  BB_B_B \down_pad.bb_inst ( .T_N(VCCI), .I(PADDO), .O(), .B(down));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => down) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module up ( input PADDO, output up );
+  wire   VCCI;
+
+  BB_B_B \up_pad.bb_inst ( .T_N(VCCI), .I(PADDO), .O(), .B(up));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => up) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module ctrlr_clk ( input PADDO, output ctrlr_clk );
+  wire   VCCI;
+
+  BB_B_B \ctrlr_clk_pad.bb_inst ( .T_N(VCCI), .I(PADDO), .O(), .B(ctrlr_clk));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => ctrlr_clk) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module latch ( input PADDO, output latch );
+  wire   VCCI;
+
+  BB_B_B \latch_pad.bb_inst ( .T_N(VCCI), .I(PADDO), .O(), .B(latch));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => latch) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule

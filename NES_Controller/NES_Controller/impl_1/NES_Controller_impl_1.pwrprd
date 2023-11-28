@@ -1,0 +1,15 @@
+Property_Name=CLOCK_NAME_nes_controller_device/counter_device/clk
+Property_Type=String
+Property_Value=nes_controller_device/counter_device/clk
+Property_Name=CLOCK_POINT_NAME_nes_controller_device/counter_device/clk
+Property_Type=String
+Property_Value=
+Property_Name=CLOCK_NETNAME_nes_controller_device/counter_device/clk
+Property_Type=String
+Property_Value=nes_controller_device.counter_device.clk
+Property_Name=REQUIRED_FREQUENCY_nes_controller_device/counter_device/clk
+Property_Type=Float
+Property_Value=48.0008
+Property_Name=ACTUAL_FREQUENCY_nes_controller_device/counter_device/clk
+Property_Type=Float
+Property_Value=48.0954

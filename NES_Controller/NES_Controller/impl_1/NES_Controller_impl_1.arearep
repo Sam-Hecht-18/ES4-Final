@@ -1,0 +1,37 @@
+----------------------------------------------------------------------
+Report for cell top.TECH
+Register bits:  25 of 5280 (0.473%)
+I/O cells:      11
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               CCU2         9          100.0
+                            FD1P3XZ        25          100.0
+                         HSOSC_CORE         1          100.0
+                                 IB         1          100.0
+                               LUT4        16          100.0
+                                 OB        10          100.0
+SUB MODULES
+                            counter         1
+                     nes_controller         1
+                              TOTAL        64
+----------------------------------------------------------------------
+Report for cell nes_controller.v1
+Instance Path : nes_controller_device
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2         9          100.0
+                            FD1P3XZ        25          100.0
+                         HSOSC_CORE         1          100.0
+                               LUT4        16          100.0
+SUB MODULES
+                            counter         1
+                              TOTAL        52
+----------------------------------------------------------------------
+Report for cell counter.v1
+Instance Path : nes_controller_device.counter_device
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2         9          100.0
+                            FD1P3XZ        17           68.0
+                         HSOSC_CORE         1          100.0
+                              TOTAL        27

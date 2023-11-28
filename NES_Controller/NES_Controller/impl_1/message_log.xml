@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BaliMessageLog>
+    <Task name="Export">
+        <Message>
+            <ID>1191031</ID>
+            <Severity>1</Severity>
+        </Message>
+    </Task>
+    <Task name="Synthesis">
+        <Message>
+            <ID>35001786</ID>
+            <Severity>1</Severity>
+        </Message>
+        <Message>
+            <ID>35935050</ID>
+            <Severity>16</Severity>
+            <Dynamic>TRIM9</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935050</ID>
+            <Severity>16</Severity>
+            <Dynamic>TRIM8</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935050</ID>
+            <Severity>16</Severity>
+            <Dynamic>TRIM7</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935050</ID>
+            <Severity>16</Severity>
+            <Dynamic>TRIM6</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935050</ID>
+            <Severity>16</Severity>
+            <Dynamic>TRIM5</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935050</ID>
+            <Severity>16</Severity>
+            <Dynamic>TRIM4</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935050</ID>
+            <Severity>16</Severity>
+            <Dynamic>TRIM3</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935050</ID>
+            <Severity>16</Severity>
+            <Dynamic>TRIM2</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935050</ID>
+            <Severity>16</Severity>
+            <Dynamic>TRIM1</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935050</ID>
+            <Severity>16</Severity>
+            <Dynamic>TRIM0</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935050</ID>
+            <Severity>16</Severity>
+            <Dynamic>I</Dynamic>
+        </Message>
+        <Message>
+            <ID>35921014</ID>
+            <Severity>1</Severity>
+            <Dynamic>c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.vhd(4): </Dynamic>
+            <Dynamic>components</Dynamic>
+            <Navigation>c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.vhd</Navigation>
+            <Navigation>4</Navigation>
+        </Message>
+        <Message>
+            <ID>35921012</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4/lab7/nes_controller/source/impl_1/top.vhd(5): </Dynamic>
+            <Dynamic>top</Dynamic>
+            <Navigation>z:/es4/lab7/nes_controller/source/impl_1/top.vhd</Navigation>
+            <Navigation>5</Navigation>
+        </Message>
+        <Message>
+            <ID>35921010</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4/lab7/nes_controller/source/impl_1/top.vhd(21): </Dynamic>
+            <Dynamic>synth</Dynamic>
+            <Navigation>z:/es4/lab7/nes_controller/source/impl_1/top.vhd</Navigation>
+            <Navigation>21</Navigation>
+        </Message>
+        <Message>
+            <ID>35921012</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4/lab7/nes_controller/source/impl_1/counter.vhd(5): </Dynamic>
+            <Dynamic>counter</Dynamic>
+            <Navigation>z:/es4/lab7/nes_controller/source/impl_1/counter.vhd</Navigation>
+            <Navigation>5</Navigation>
+        </Message>
+        <Message>
+            <ID>35921010</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4/lab7/nes_controller/source/impl_1/counter.vhd(12): </Dynamic>
+            <Dynamic>synth</Dynamic>
+            <Navigation>z:/es4/lab7/nes_controller/source/impl_1/counter.vhd</Navigation>
+            <Navigation>12</Navigation>
+        </Message>
+        <Message>
+            <ID>35921012</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4/lab7/nes_controller/source/impl_1/nes_controller.vhd(5): </Dynamic>
+            <Dynamic>nes_controller</Dynamic>
+            <Navigation>z:/es4/lab7/nes_controller/source/impl_1/nes_controller.vhd</Navigation>
+            <Navigation>5</Navigation>
+        </Message>
+        <Message>
+            <ID>35921010</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4/lab7/nes_controller/source/impl_1/nes_controller.vhd(21): </Dynamic>
+            <Dynamic>synth</Dynamic>
+            <Navigation>z:/es4/lab7/nes_controller/source/impl_1/nes_controller.vhd</Navigation>
+            <Navigation>21</Navigation>
+        </Message>
+    </Task>
+</BaliMessageLog>
