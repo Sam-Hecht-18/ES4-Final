@@ -6,7 +6,7 @@ entity clock is
   port(
  myClock : out std_logic
   );
-end counter;
+end clock;
 
 architecture synth of clock is
 
