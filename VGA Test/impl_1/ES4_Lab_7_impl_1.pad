@@ -6,24 +6,25 @@ Performance Grade:      High-Performance_1.2V
 PACKAGE:          SG48
 Package Status:                     Preliminary    Version 1.5
 
-Mon Nov 27 20:46:00 2023
+Thu Nov 30 18:58:46 2023
 
 Pinout by Port Name:
-+------------+----------+--------------+-------+------------------------------------------+
-| Port Name  | Pin/Bank | Buffer Type  | Site  | Properties                               |
-+------------+----------+--------------+-------+------------------------------------------+
-| clk_test   | 28/0     | LVCMOS33_OUT | PR18A | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
-| hsync      | 43/0     | LVCMOS33_OUT | PR10A | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
-| osc        | 12/1     | LVCMOS33_IN  | PL19A | DRIVE:NA IO_TYPE:LVCMOS33 PULLMODE:100K  |
-| rgb[0]     | 27/0     | LVCMOS33_OUT | PR19B | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
-| rgb[1]     | 32/0     | LVCMOS33_OUT | PR17A | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
-| rgb[2]     | 35/0     | LVCMOS33_OUT | PR13B | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
-| rgb[3]     | 31/0     | LVCMOS33_OUT | PR17B | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
-| rgb[4]     | 37/0     | LVCMOS33_OUT | PR14A | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
-| rgb[5]     | 34/0     | LVCMOS33_OUT | PR14B | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
-| valid_test | 26/0     | LVCMOS33_OUT | PR19A | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
-| vsync      | 36/0     | LVCMOS33_OUT | PR10B | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
-+------------+----------+--------------+-------+------------------------------------------+
++-------------+----------+--------------+-------+------------------------------------------+
+| Port Name   | Pin/Bank | Buffer Type  | Site  | Properties                               |
++-------------+----------+--------------+-------+------------------------------------------+
+| clk_test    | 28/0     | LVCMOS33_OUT | PR18A | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
+| ctrlr_clk   | 4/2      | LVCMOS33_OUT | PL10A | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
+| ctrlr_latch | 3/2      | LVCMOS33_OUT | PL10B | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
+| hsync       | 43/0     | LVCMOS33_OUT | PR10A | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
+| osc         | 12/1     | LVCMOS33_IN  | PL19A | DRIVE:NA IO_TYPE:LVCMOS33 PULLMODE:100K  |
+| rgb[0]      | 34/0     | LVCMOS33_OUT | PR14B | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
+| rgb[1]      | 37/0     | LVCMOS33_OUT | PR14A | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
+| rgb[2]      | 31/0     | LVCMOS33_OUT | PR17B | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
+| rgb[3]      | 35/0     | LVCMOS33_OUT | PR13B | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
+| rgb[4]      | 32/0     | LVCMOS33_OUT | PR17A | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
+| rgb[5]      | 27/0     | LVCMOS33_OUT | PR19B | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
+| vsync       | 36/0     | LVCMOS33_OUT | PR10B | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
++-------------+----------+--------------+-------+------------------------------------------+
 
 Vccio by Bank:
 +------+-------+
@@ -31,6 +32,7 @@ Vccio by Bank:
 +------+-------+
 | 0    | 3.3V  |
 | 1    | 3.3V  |
+| 2    | 3.3V  |
 +------+-------+
 
 Pinout by Pin Number:
@@ -38,8 +40,8 @@ Pinout by Pin Number:
 | Pin/Bank | Pin Info            | Constraint | Buffer Type  | Site  | Dual Function    |
 +----------+---------------------+------------+--------------+-------+------------------+
 | 2/2      |     unused, PULL:UP |            |              | PL9A  |                  |
-| 3/2      |     unused, PULL:UP |            |              | PL10B |                  |
-| 4/2      |     unused, PULL:UP |            |              | PL10A |                  |
+| 3/2      | ctrlr_latch         | LOCATED    | LVCMOS33_OUT | PL10B |                  |
+| 4/2      | ctrlr_clk           | LOCATED    | LVCMOS33_OUT | PL10A |                  |
 | 6/1      |     unused, PULL:UP |            |              | PL14B |                  |
 | 9/1      |     unused, PULL:UP |            |              | PL16A |                  |
 | 10/1     |     unused, PULL:UP |            |              | PL17A |                  |
@@ -56,15 +58,15 @@ Pinout by Pin Number:
 | 21/1     |     unused, PULL:UP |            |              | PL19B |                  |
 | 23/0     |     unused, PULL:UP |            |              | PR20A |                  |
 | 25/0     |     unused, PULL:UP |            |              | PR20B |                  |
-| 26/0     | valid_test          |            | LVCMOS33_OUT | PR19A |                  |
-| 27/0     | rgb[0]              | LOCATED    | LVCMOS33_OUT | PR19B |                  |
+| 26/0     |     unused, PULL:UP |            |              | PR19A |                  |
+| 27/0     | rgb[5]              | LOCATED    | LVCMOS33_OUT | PR19B |                  |
 | 28/0     | clk_test            | LOCATED    | LVCMOS33_OUT | PR18A |                  |
-| 31/0     | rgb[3]              | LOCATED    | LVCMOS33_OUT | PR17B |                  |
-| 32/0     | rgb[1]              | LOCATED    | LVCMOS33_OUT | PR17A |                  |
-| 34/0     | rgb[5]              | LOCATED    | LVCMOS33_OUT | PR14B |                  |
-| 35/0     | rgb[2]              | LOCATED    | LVCMOS33_OUT | PR13B | GPLL_IN/PCLKT0_1 |
+| 31/0     | rgb[2]              | LOCATED    | LVCMOS33_OUT | PR17B |                  |
+| 32/0     | rgb[4]              | LOCATED    | LVCMOS33_OUT | PR17A |                  |
+| 34/0     | rgb[0]              | LOCATED    | LVCMOS33_OUT | PR14B |                  |
+| 35/0     | rgb[3]              | LOCATED    | LVCMOS33_OUT | PR13B | GPLL_IN/PCLKT0_1 |
 | 36/0     | vsync               | LOCATED    | LVCMOS33_OUT | PR10B |                  |
-| 37/0     | rgb[4]              | LOCATED    | LVCMOS33_OUT | PR14A | PCLKT0_0         |
+| 37/0     | rgb[1]              | LOCATED    | LVCMOS33_OUT | PR14A | PCLKT0_0         |
 | 38/0     |     unused, PULL:UP |            |              | PR9B  |                  |
 | 39/0     |                     |            |              | PR5A  | RGB0             |
 | 40/0     |                     |            |              | PR6A  | RGB1             |
@@ -99,15 +101,16 @@ Pinout by Pin Number:
 Locate Constraints for each Pin: 
 
 ldc_set_location -site {28} [ get_ports {clk_test} ]
+ldc_set_location -site {4} [ get_ports {ctrlr_clk} ]
+ldc_set_location -site {3} [ get_ports {ctrlr_latch} ]
 ldc_set_location -site {43} [ get_ports {hsync} ]
 ldc_set_location -site {12} [ get_ports {osc} ]
-ldc_set_location -site {27} [ get_ports {rgb[0]} ]
-ldc_set_location -site {32} [ get_ports {rgb[1]} ]
-ldc_set_location -site {35} [ get_ports {rgb[2]} ]
-ldc_set_location -site {31} [ get_ports {rgb[3]} ]
-ldc_set_location -site {37} [ get_ports {rgb[4]} ]
-ldc_set_location -site {34} [ get_ports {rgb[5]} ]
-ldc_set_location -site {26} [ get_ports {valid_test} ]
+ldc_set_location -site {34} [ get_ports {rgb[0]} ]
+ldc_set_location -site {37} [ get_ports {rgb[1]} ]
+ldc_set_location -site {31} [ get_ports {rgb[2]} ]
+ldc_set_location -site {35} [ get_ports {rgb[3]} ]
+ldc_set_location -site {32} [ get_ports {rgb[4]} ]
+ldc_set_location -site {27} [ get_ports {rgb[5]} ]
 ldc_set_location -site {36} [ get_ports {vsync} ]
 
 
@@ -116,5 +119,5 @@ ldc_set_location -site {36} [ get_ports {vsync} ]
 
 Copyright (c) 2002-2022 Lattice Semiconductor Corporation,  All rights reserved.
 
-Mon Nov 27 20:46:00 2023
+Thu Nov 30 18:58:46 2023
 

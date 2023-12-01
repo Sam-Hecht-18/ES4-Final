@@ -1,6 +1,6 @@
 Lattice Timing Report -  Setup  and Hold, Version Radiant Software (64-bit) 2023.1.0.43.3
 
-Mon Nov 27 20:46:01 2023
+Thu Nov 30 18:58:47 2023
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -77,20 +77,23 @@ Clocked but unconstrained timing end points
 -------------------------------------------------------------------
          Listing 10 End Points          |           Type           
 -------------------------------------------------------------------
-my_vga/next_row_9__I_0/D                |    No arrival or required
-my_vga/next_row_9__I_0/SP               |    No arrival or required
-my_vga/next_row_9__I_0/SR               |    No arrival or required
-my_vga/next_row_8__I_0/D                |    No arrival or required
-my_vga/next_row_8__I_0/SP               |    No arrival or required
-my_vga/next_row_8__I_0/SR               |    No arrival or required
-my_vga/next_col_3__I_0/D                |    No arrival or required
-my_vga/next_col_3__I_0/SR               |    No arrival or required
-my_vga/next_col_9__I_0/D                |    No arrival or required
-my_vga/next_col_9__I_0/SR               |    No arrival or required
+my_vga/row_9__I_0/D                     |    No arrival or required
+my_vga/row_9__I_0/SP                    |    No arrival or required
+my_vga/row_9__I_0/SR                    |    No arrival or required
+my_vga/row_9__I_1/D                     |    No arrival or required
+my_vga/row_9__I_2/D                     |    No arrival or required
+{my_vga/row_9__I_2/SP   my_vga/row_9__I_1/SP}                           
+                                        |    No arrival or required
+{my_vga/row_9__I_2/SR   my_vga/row_9__I_1/SR}                           
+                                        |    No arrival or required
+my_vga/col_9__I_16/D                    |    No arrival or required
+my_vga/col_9__I_17/D                    |    No arrival or required
+{my_vga/col_9__I_17/SR   my_vga/col_9__I_16/SR}                           
+                                        |    No arrival or required
 -------------------------------------------------------------------
                                         |                          
 Number of unconstrained timing end poin |                          
-ts                                      |                        35
+ts                                      |                        67
                                         |                          
 -------------------------------------------------------------------
 
@@ -111,26 +114,33 @@ create_generated_clock,
      Listing 10 Start or End Points     |           Type           
 -------------------------------------------------------------------
 osc                                     |                     input
-rgb[0]                                  |                    output
+ctrlr_data                              |                     input
+ctrlr_clk                               |                    output
+ctrlr_latch                             |                    output
+vsync                                   |                    output
 hsync                                   |                    output
+rgb[0]                                  |                    output
 rgb[1]                                  |                    output
 rgb[2]                                  |                    output
 rgb[3]                                  |                    output
-vsync                                   |                    output
-rgb[4]                                  |                    output
-valid_test                              |                    output
-rgb[5]                                  |                    output
 -------------------------------------------------------------------
                                         |                          
-Number of I/O ports without constraint  |                        10
+Number of I/O ports without constraint  |                        12
                                         |                          
 -------------------------------------------------------------------
 
 Nets without clock definition
 Define a clock on a top level port or a generated clock on a clock divider pin associated with this net(s).
---------------------------------------------------
-There is no instance satisfying reporting criteria
-
+-------------------------------------------------------------------
+            Listing 1 Net(s)            |        Source pin        
+-------------------------------------------------------------------
+game_clock                              |clock_device/NEScount_7__I_29/Q
+-------------------------------------------------------------------
+                                        |                          
+Number of clock nets without clock defi |                          
+nition                                  |                         1
+                                        |                          
+-------------------------------------------------------------------
 
 
 1.5  Combinational Loop

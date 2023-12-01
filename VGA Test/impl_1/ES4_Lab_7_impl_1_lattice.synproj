@@ -45,6 +45,9 @@
 -lib "work" -vhd "Z:/ES4-Final/VGA Test/impl_1/vhdl/master.vhd"
 "Z:/ES4-Final/VGA Test/impl_1/vhdl/pattern_gen.vhd"
 "Z:/ES4-Final/VGA Test/impl_1/vhdl/vga.vhd"
+"Z:/ES4-Final/VGA Test/impl_1/vhdl/piece.vhd"
+"Z:/ES4-Final/VGA Test/impl_1/vhdl/clock.vhd"
+"Z:/ES4-Final/VGA Test/impl_1/vhdl/nes_controller.vhd"
 
 
 -path "Z:/ES4-Final/VGA Test"

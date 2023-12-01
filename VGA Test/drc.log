@@ -1,4 +1,17 @@
 DRC: Design Rule Check Radiant Software (64-bit) 2023.1.0.43.3
-Mon Nov 27 19:46:24 2023
+Thu Nov 30 18:57:19 2023
 
-CRITICAL <71003005> - The clock port [osc] is assigned to a non clock dedicated pin [12], which might affect the clock performance. Use dedicated clock resources for the port.
+WARNING <71003020> - Top module port 'osc' does not connect to anything.
+WARNING <71003020> - Top module port 'rgb[5]' does not connect to anything.
+WARNING <71003020> - Top module port 'rgb[4]' does not connect to anything.
+WARNING <71003020> - Top module port 'rgb[3]' does not connect to anything.
+WARNING <71003020> - Top module port 'rgb[2]' does not connect to anything.
+WARNING <71003020> - Top module port 'rgb[1]' does not connect to anything.
+WARNING <71003020> - Top module port 'rgb[0]' does not connect to anything.
+WARNING <71003020> - Top module port 'hsync' does not connect to anything.
+WARNING <71003020> - Top module port 'vsync' does not connect to anything.
+WARNING <71003020> - Top module port 'clk_test' does not connect to anything.
+WARNING <71003020> - Top module port 'valid_test' does not connect to anything.
+WARNING <71003020> - Top module port 'ctrlr_latch' does not connect to anything.
+WARNING <71003020> - Top module port 'ctrlr_clk' does not connect to anything.
+WARNING <71003020> - Top module port 'ctrlr_data' does not connect to anything.
