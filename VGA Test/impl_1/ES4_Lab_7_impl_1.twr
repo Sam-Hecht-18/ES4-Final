@@ -1,6 +1,6 @@
 Lattice Timing Report -  Setup  and Hold, Version Radiant Software (64-bit) 2023.1.0.43.3
 
-Mon Nov 27 20:46:01 2023
+Thu Nov 30 21:26:57 2023
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -49,12 +49,13 @@ Package Status:                     Preliminary    Version 1.5
 
 1.1  SDC Constraints
 =====================
+create_clock -name {my_pattern_gen/piece_drop_clock/clk} -period 20.8333 [get_pins {my_pattern_gen/piece_drop_clock/osc/CLKHF }] 
 [IGNORED:]create_generated_clock -name {clk_test_c} -source [get_pins my_pll.lscc_pll_inst.u_PLL_B/REFERENCECLK] -divide_by 32 -multiply_by 67 [get_pins my_pll.lscc_pll_inst.u_PLL_B/OUTCORE]
 [IGNORED:]create_generated_clock -name {outglobal_o} -source [get_pins my_pll.lscc_pll_inst.u_PLL_B/REFERENCECLK] -divide_by 32 -multiply_by 67 [get_pins my_pll.lscc_pll_inst.u_PLL_B/OUTGLOBAL]
 
 1.2  Constraint Coverage
 ---------------------------
-Constraint Coverage: 0%
+Constraint Coverage: 20.911%
 
 
 1.3  Overall Summary
@@ -77,20 +78,22 @@ Clocked but unconstrained timing end points
 -------------------------------------------------------------------
          Listing 10 End Points          |           Type           
 -------------------------------------------------------------------
-my_vga/next_row_9__I_0/D                |    No arrival or required
-my_vga/next_row_9__I_0/SP               |    No arrival or required
-my_vga/next_row_9__I_0/SR               |    No arrival or required
-my_vga/next_row_8__I_0/D                |    No arrival or required
-my_vga/next_row_8__I_0/SP               |    No arrival or required
-my_vga/next_row_8__I_0/SR               |    No arrival or required
-my_vga/next_col_3__I_0/D                |    No arrival or required
-my_vga/next_col_3__I_0/SR               |    No arrival or required
-my_vga/next_col_9__I_0/D                |    No arrival or required
-my_vga/next_col_9__I_0/SR               |    No arrival or required
+my_vga/row_9__I_5/D                     |    No arrival or required
+my_vga/row_9__I_6/D                     |    No arrival or required
+{my_vga/row_9__I_6/SP   my_vga/row_9__I_5/SP}                           
+                                        |    No arrival or required
+{my_vga/row_9__I_6/SR   my_vga/row_9__I_5/SR}                           
+                                        |    No arrival or required
+my_vga/col_9__I_0_2/D                   |    No arrival or required
+my_vga/col_9__I_0_2/SR                  |    No arrival or required
+my_vga/row_9__I_0_2/D                   |    No arrival or required
+my_vga/row_9__I_0_2/SP                  |    No arrival or required
+my_vga/row_9__I_0_2/SR                  |    No arrival or required
+my_vga/col_9__I_10/D                    |    No arrival or required
 -------------------------------------------------------------------
                                         |                          
 Number of unconstrained timing end poin |                          
-ts                                      |                        35
+ts                                      |                        38
                                         |                          
 -------------------------------------------------------------------
 
@@ -111,14 +114,14 @@ create_generated_clock,
      Listing 10 Start or End Points     |           Type           
 -------------------------------------------------------------------
 osc                                     |                     input
-rgb[0]                                  |                    output
+valid_test                              |                    output
+vsync                                   |                    output
 hsync                                   |                    output
+rgb[0]                                  |                    output
 rgb[1]                                  |                    output
 rgb[2]                                  |                    output
 rgb[3]                                  |                    output
-vsync                                   |                    output
 rgb[4]                                  |                    output
-valid_test                              |                    output
 rgb[5]                                  |                    output
 -------------------------------------------------------------------
                                         |                          
@@ -128,9 +131,16 @@ Number of I/O ports without constraint  |                        10
 
 Nets without clock definition
 Define a clock on a top level port or a generated clock on a clock divider pin associated with this net(s).
---------------------------------------------------
-There is no instance satisfying reporting criteria
-
+-------------------------------------------------------------------
+            Listing 1 Net(s)            |        Source pin        
+-------------------------------------------------------------------
+my_pattern_gen.game_clock               |my_pattern_gen/piece_drop_clock/game_clock_I_0/Q
+-------------------------------------------------------------------
+                                        |                          
+Number of clock nets without clock defi |                          
+nition                                  |                         1
+                                        |                          
+-------------------------------------------------------------------
 
 
 1.5  Combinational Loop
@@ -169,6 +179,8 @@ Clock Domain Crossing
            Clock outglobal_o            |   Worst Time Between Edges   |           Comment            
 ------------------------------------------------------------------------------------------------------
  From clk_test_c                        |                         ---- |                      No path 
+ From my_pattern_gen/piece_drop_clock/clk                                                              
+                                        |                         ---- |                      No path 
 ------------------------------------------------------------------------------------------------------
 
 2.1.2 Clock "clk_test_c"
@@ -188,15 +200,62 @@ Clock Domain Crossing
             Clock clk_test_c            |   Worst Time Between Edges   |           Comment            
 ------------------------------------------------------------------------------------------------------
  From outglobal_o                       |                         ---- |                      No path 
+ From my_pattern_gen/piece_drop_clock/clk                                                              
+                                        |                         ---- |                      No path 
 ------------------------------------------------------------------------------------------------------
+
+2.1.3 Clock "my_pattern_gen/piece_drop_clock/clk"
+=======================
+create_clock -name {my_pattern_gen/piece_drop_clock/clk} -period 20.8333 [get_pins {my_pattern_gen/piece_drop_clock/osc/CLKHF }] 
+
+Single Clock Domain
+--------------------------------------------------------------------------------------------------------
+Clock my_pattern_gen/piece_drop_clock/clk|                    |       Period       |     Frequency      
+--------------------------------------------------------------------------------------------------------
+ From my_pattern_gen/piece_drop_clock/clk|             Target |          20.833 ns |         48.000 MHz 
+                                         | Actual (all paths) |          20.792 ns |         48.095 MHz 
+my_pattern_gen/piece_drop_clock/osc/CLKHF (MPW)                                                                
+                                         |   (50% duty cycle) |          20.792 ns |         48.095 MHz 
+--------------------------------------------------------------------------------------------------------
+
+Clock Domain Crossing
+-------------------------------------------------------------------------------------------------------
+Clock my_pattern_gen/piece_drop_clock/clk|   Worst Time Between Edges   |           Comment            
+-------------------------------------------------------------------------------------------------------
+ From outglobal_o                        |                         ---- |                      No path 
+ From clk_test_c                         |                         ---- |                      No path 
+-------------------------------------------------------------------------------------------------------
 
 2.2  Endpoint slacks
 =======================
---------------------------------------------------
-There is no end point satisfying reporting criteria
-
-Total Negative Slack: 0
-
+-------------------------------------------------------
+          Listing 10 End Points          |    Slack    
+-------------------------------------------------------
+my_pattern_gen/piece_drop_clock/game_clock_I_0/D              
+                                         |    7.432 ns 
+my_pattern_gen/piece_drop_clock/counter_97__i25/D              
+                                         |    7.709 ns 
+my_pattern_gen/piece_drop_clock/counter_97__i24/D              
+                                         |    7.986 ns 
+my_pattern_gen/piece_drop_clock/counter_97__i23/D              
+                                         |    8.818 ns 
+my_pattern_gen/piece_drop_clock/counter_97__i22/D              
+                                         |    9.095 ns 
+my_pattern_gen/piece_drop_clock/counter_97__i21/D              
+                                         |    9.372 ns 
+my_pattern_gen/piece_drop_clock/counter_97__i20/D              
+                                         |    9.649 ns 
+my_pattern_gen/piece_drop_clock/counter_97__i19/D              
+                                         |    9.926 ns 
+my_pattern_gen/piece_drop_clock/counter_97__i18/D              
+                                         |   10.203 ns 
+my_pattern_gen/piece_drop_clock/counter_97__i17/D              
+                                         |   10.480 ns 
+-------------------------------------------------------
+                                         |             
+Setup # of endpoints with negative slack:|           0 
+                                         |             
+-------------------------------------------------------
 
 2.3  Detailed Report
 =======================
@@ -211,9 +270,1194 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
                     Detailed Report for timing paths 
  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ ++++Path 1  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Path Begin       : my_pattern_gen/piece_drop_clock/counter_97__i1/Q  (SLICE_R15C25A)
+Path End         : my_pattern_gen/piece_drop_clock/game_clock_I_0/D  (SLICE_R15C28B)
+Source Clock     : my_pattern_gen/piece_drop_clock/clk (R)
+Destination Clock: my_pattern_gen/piece_drop_clock/clk (R)
+Logic Level      : 27
+Delay Ratio      : 32.9% (route), 67.1% (logic)
+Clock Skew       : 0.000 ns 
+Setup Constraint : 20.833 ns 
+Path Slack       : 7.432 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  15      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY               5.499                  5.499  15      
+my_pattern_gen/piece_drop_clock/counter_97__i1/CK
+                                                                                     0.000                  5.499  1       
+
+
+Data Path
+Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+my_pattern_gen/piece_drop_clock/counter_97__i1/CK->my_pattern_gen/piece_drop_clock/counter_97__i1/Q
+                                          SLICE_R15C25A      CLK_TO_Q1_DELAY         1.388                  6.887  1       
+my_pattern_gen/piece_drop_clock/n26                          NET DELAY               2.022                  8.909  1       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_1/C1->my_pattern_gen/piece_drop_clock/counter_97_add_4_1/CO1
+                                          SLICE_R15C25A      C1_TO_COUT1_DELAY       0.343                  9.252  2       
+my_pattern_gen/piece_drop_clock/n1536                        NET DELAY               0.000                  9.252  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CO0
+                                          SLICE_R15C25B      CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+my_pattern_gen/piece_drop_clock/n2556                        NET DELAY               0.000                  9.529  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CO1
+                                          SLICE_R15C25B      CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+my_pattern_gen/piece_drop_clock/n1538                        NET DELAY               0.000                  9.806  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CO0
+                                          SLICE_R15C25C      CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+my_pattern_gen/piece_drop_clock/n2559                        NET DELAY               0.000                 10.083  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CO1
+                                          SLICE_R15C25C      CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+my_pattern_gen/piece_drop_clock/n1540                        NET DELAY               0.000                 10.360  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CO0
+                                          SLICE_R15C25D      CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+my_pattern_gen/piece_drop_clock/n2562                        NET DELAY               0.000                 10.637  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CO1
+                                          SLICE_R15C25D      CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+my_pattern_gen/piece_drop_clock/n1542                        NET DELAY               0.555                 11.469  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CO0
+                                          SLICE_R15C26A      CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+my_pattern_gen/piece_drop_clock/n2565                        NET DELAY               0.000                 11.746  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CO1
+                                          SLICE_R15C26A      CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
+my_pattern_gen/piece_drop_clock/n1544                        NET DELAY               0.000                 12.023  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CO0
+                                          SLICE_R15C26B      CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
+my_pattern_gen/piece_drop_clock/n2568                        NET DELAY               0.000                 12.300  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CO1
+                                          SLICE_R15C26B      CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
+my_pattern_gen/piece_drop_clock/n1546                        NET DELAY               0.000                 12.577  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CO0
+                                          SLICE_R15C26C      CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
+my_pattern_gen/piece_drop_clock/n2571                        NET DELAY               0.000                 12.854  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CO1
+                                          SLICE_R15C26C      CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
+my_pattern_gen/piece_drop_clock/n1548                        NET DELAY               0.000                 13.131  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CO0
+                                          SLICE_R15C26D      CIN0_TO_COUT0_DELAY     0.277                 13.408  2       
+my_pattern_gen/piece_drop_clock/n2574                        NET DELAY               0.000                 13.408  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CO1
+                                          SLICE_R15C26D      CIN1_TO_COUT1_DELAY     0.277                 13.685  2       
+my_pattern_gen/piece_drop_clock/n1550                        NET DELAY               0.555                 14.240  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CO0
+                                          SLICE_R15C27A      CIN0_TO_COUT0_DELAY     0.277                 14.517  2       
+my_pattern_gen/piece_drop_clock/n2577                        NET DELAY               0.000                 14.517  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CO1
+                                          SLICE_R15C27A      CIN1_TO_COUT1_DELAY     0.277                 14.794  2       
+my_pattern_gen/piece_drop_clock/n1552                        NET DELAY               0.000                 14.794  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_19/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_19/CO0
+                                          SLICE_R15C27B      CIN0_TO_COUT0_DELAY     0.277                 15.071  2       
+my_pattern_gen/piece_drop_clock/n2580                        NET DELAY               0.000                 15.071  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_19/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_19/CO1
+                                          SLICE_R15C27B      CIN1_TO_COUT1_DELAY     0.277                 15.348  2       
+my_pattern_gen/piece_drop_clock/n1554                        NET DELAY               0.000                 15.348  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_21/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_21/CO0
+                                          SLICE_R15C27C      CIN0_TO_COUT0_DELAY     0.277                 15.625  2       
+my_pattern_gen/piece_drop_clock/n2583                        NET DELAY               0.000                 15.625  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_21/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_21/CO1
+                                          SLICE_R15C27C      CIN1_TO_COUT1_DELAY     0.277                 15.902  2       
+my_pattern_gen/piece_drop_clock/n1556                        NET DELAY               0.000                 15.902  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_23/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_23/CO0
+                                          SLICE_R15C27D      CIN0_TO_COUT0_DELAY     0.277                 16.179  2       
+my_pattern_gen/piece_drop_clock/n2586                        NET DELAY               0.000                 16.179  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_23/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_23/CO1
+                                          SLICE_R15C27D      CIN1_TO_COUT1_DELAY     0.277                 16.456  2       
+my_pattern_gen/piece_drop_clock/n1558                        NET DELAY               0.555                 17.011  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_25/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_25/CO0
+                                          SLICE_R15C28A      CIN0_TO_COUT0_DELAY     0.277                 17.288  2       
+my_pattern_gen/piece_drop_clock/n2589                        NET DELAY               0.000                 17.288  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_25/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_25/CO1
+                                          SLICE_R15C28A      CIN1_TO_COUT1_DELAY     0.277                 17.565  2       
+my_pattern_gen/piece_drop_clock/n1560                        NET DELAY               0.661                 18.226  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_27/D0->my_pattern_gen/piece_drop_clock/counter_97_add_4_27/S0
+                                          SLICE_R15C28B      D0_TO_F0_DELAY          0.476                 18.702  1       
+my_pattern_gen/piece_drop_clock/game_clock_N_72[25]
+                                                             NET DELAY               0.000                 18.702  1       
+my_pattern_gen/piece_drop_clock/game_clock_I_0/D
+                                                                                     0.000                 18.702  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+                                                             CONSTRAINT              0.000                 20.833  1       
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  15      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY               5.499                 26.332  15      
+my_pattern_gen/piece_drop_clock/game_clock_I_0/CK
+                                                                                     0.000                 26.332  1       
+                                                             Uncertainty          -(0.000)                 26.332  
+                                                             Setup time           -(0.198)                 26.134  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+Required Time                                                                                              26.134  
+Arrival Time                                                                                            -(18.701)  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                        7.432  
+
+
+
+
+++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : my_pattern_gen/piece_drop_clock/counter_97__i1/Q  (SLICE_R15C25A)
+Path End         : my_pattern_gen/piece_drop_clock/counter_97__i25/D  (SLICE_R15C28A)
+Source Clock     : my_pattern_gen/piece_drop_clock/clk (R)
+Destination Clock: my_pattern_gen/piece_drop_clock/clk (R)
+Logic Level      : 26
+Delay Ratio      : 33.6% (route), 66.4% (logic)
+Clock Skew       : 0.000 ns 
+Setup Constraint : 20.833 ns 
+Path Slack       : 7.709 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  15      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY               5.499                  5.499  15      
+my_pattern_gen/piece_drop_clock/counter_97__i1/CK
+                                                                                     0.000                  5.499  1       
+
+
+Data Path
+Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+my_pattern_gen/piece_drop_clock/counter_97__i1/CK->my_pattern_gen/piece_drop_clock/counter_97__i1/Q
+                                          SLICE_R15C25A      CLK_TO_Q1_DELAY         1.388                  6.887  1       
+my_pattern_gen/piece_drop_clock/n26                          NET DELAY               2.022                  8.909  1       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_1/C1->my_pattern_gen/piece_drop_clock/counter_97_add_4_1/CO1
+                                          SLICE_R15C25A      C1_TO_COUT1_DELAY       0.343                  9.252  2       
+my_pattern_gen/piece_drop_clock/n1536                        NET DELAY               0.000                  9.252  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CO0
+                                          SLICE_R15C25B      CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+my_pattern_gen/piece_drop_clock/n2556                        NET DELAY               0.000                  9.529  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CO1
+                                          SLICE_R15C25B      CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+my_pattern_gen/piece_drop_clock/n1538                        NET DELAY               0.000                  9.806  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CO0
+                                          SLICE_R15C25C      CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+my_pattern_gen/piece_drop_clock/n2559                        NET DELAY               0.000                 10.083  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CO1
+                                          SLICE_R15C25C      CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+my_pattern_gen/piece_drop_clock/n1540                        NET DELAY               0.000                 10.360  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CO0
+                                          SLICE_R15C25D      CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+my_pattern_gen/piece_drop_clock/n2562                        NET DELAY               0.000                 10.637  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CO1
+                                          SLICE_R15C25D      CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+my_pattern_gen/piece_drop_clock/n1542                        NET DELAY               0.555                 11.469  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CO0
+                                          SLICE_R15C26A      CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+my_pattern_gen/piece_drop_clock/n2565                        NET DELAY               0.000                 11.746  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CO1
+                                          SLICE_R15C26A      CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
+my_pattern_gen/piece_drop_clock/n1544                        NET DELAY               0.000                 12.023  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CO0
+                                          SLICE_R15C26B      CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
+my_pattern_gen/piece_drop_clock/n2568                        NET DELAY               0.000                 12.300  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CO1
+                                          SLICE_R15C26B      CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
+my_pattern_gen/piece_drop_clock/n1546                        NET DELAY               0.000                 12.577  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CO0
+                                          SLICE_R15C26C      CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
+my_pattern_gen/piece_drop_clock/n2571                        NET DELAY               0.000                 12.854  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CO1
+                                          SLICE_R15C26C      CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
+my_pattern_gen/piece_drop_clock/n1548                        NET DELAY               0.000                 13.131  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CO0
+                                          SLICE_R15C26D      CIN0_TO_COUT0_DELAY     0.277                 13.408  2       
+my_pattern_gen/piece_drop_clock/n2574                        NET DELAY               0.000                 13.408  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CO1
+                                          SLICE_R15C26D      CIN1_TO_COUT1_DELAY     0.277                 13.685  2       
+my_pattern_gen/piece_drop_clock/n1550                        NET DELAY               0.555                 14.240  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CO0
+                                          SLICE_R15C27A      CIN0_TO_COUT0_DELAY     0.277                 14.517  2       
+my_pattern_gen/piece_drop_clock/n2577                        NET DELAY               0.000                 14.517  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CO1
+                                          SLICE_R15C27A      CIN1_TO_COUT1_DELAY     0.277                 14.794  2       
+my_pattern_gen/piece_drop_clock/n1552                        NET DELAY               0.000                 14.794  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_19/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_19/CO0
+                                          SLICE_R15C27B      CIN0_TO_COUT0_DELAY     0.277                 15.071  2       
+my_pattern_gen/piece_drop_clock/n2580                        NET DELAY               0.000                 15.071  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_19/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_19/CO1
+                                          SLICE_R15C27B      CIN1_TO_COUT1_DELAY     0.277                 15.348  2       
+my_pattern_gen/piece_drop_clock/n1554                        NET DELAY               0.000                 15.348  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_21/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_21/CO0
+                                          SLICE_R15C27C      CIN0_TO_COUT0_DELAY     0.277                 15.625  2       
+my_pattern_gen/piece_drop_clock/n2583                        NET DELAY               0.000                 15.625  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_21/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_21/CO1
+                                          SLICE_R15C27C      CIN1_TO_COUT1_DELAY     0.277                 15.902  2       
+my_pattern_gen/piece_drop_clock/n1556                        NET DELAY               0.000                 15.902  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_23/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_23/CO0
+                                          SLICE_R15C27D      CIN0_TO_COUT0_DELAY     0.277                 16.179  2       
+my_pattern_gen/piece_drop_clock/n2586                        NET DELAY               0.000                 16.179  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_23/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_23/CO1
+                                          SLICE_R15C27D      CIN1_TO_COUT1_DELAY     0.277                 16.456  2       
+my_pattern_gen/piece_drop_clock/n1558                        NET DELAY               0.555                 17.011  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_25/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_25/CO0
+                                          SLICE_R15C28A      CIN0_TO_COUT0_DELAY     0.277                 17.288  2       
+my_pattern_gen/piece_drop_clock/n2589                        NET DELAY               0.661                 17.949  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_25/D1->my_pattern_gen/piece_drop_clock/counter_97_add_4_25/S1
+                                          SLICE_R15C28A      D1_TO_F1_DELAY          0.476                 18.425  1       
+my_pattern_gen/piece_drop_clock/game_clock_N_72[24]
+                                                             NET DELAY               0.000                 18.425  1       
+my_pattern_gen/piece_drop_clock/counter_97__i25/D
+                                                                                     0.000                 18.425  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+                                                             CONSTRAINT              0.000                 20.833  1       
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  15      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY               5.499                 26.332  15      
+{my_pattern_gen/piece_drop_clock/counter_97__i24/CK   my_pattern_gen/piece_drop_clock/counter_97__i25/CK}
+                                                                                     0.000                 26.332  1       
+                                                             Uncertainty          -(0.000)                 26.332  
+                                                             Setup time           -(0.198)                 26.134  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+Required Time                                                                                              26.134  
+Arrival Time                                                                                            -(18.424)  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                        7.709  
+
+
+
+
+++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : my_pattern_gen/piece_drop_clock/counter_97__i1/Q  (SLICE_R15C25A)
+Path End         : my_pattern_gen/piece_drop_clock/counter_97__i24/D  (SLICE_R15C28A)
+Source Clock     : my_pattern_gen/piece_drop_clock/clk (R)
+Destination Clock: my_pattern_gen/piece_drop_clock/clk (R)
+Logic Level      : 25
+Delay Ratio      : 34.4% (route), 65.6% (logic)
+Clock Skew       : 0.000 ns 
+Setup Constraint : 20.833 ns 
+Path Slack       : 7.986 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  15      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY               5.499                  5.499  15      
+my_pattern_gen/piece_drop_clock/counter_97__i1/CK
+                                                                                     0.000                  5.499  1       
+
+
+Data Path
+Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+my_pattern_gen/piece_drop_clock/counter_97__i1/CK->my_pattern_gen/piece_drop_clock/counter_97__i1/Q
+                                          SLICE_R15C25A      CLK_TO_Q1_DELAY         1.388                  6.887  1       
+my_pattern_gen/piece_drop_clock/n26                          NET DELAY               2.022                  8.909  1       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_1/C1->my_pattern_gen/piece_drop_clock/counter_97_add_4_1/CO1
+                                          SLICE_R15C25A      C1_TO_COUT1_DELAY       0.343                  9.252  2       
+my_pattern_gen/piece_drop_clock/n1536                        NET DELAY               0.000                  9.252  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CO0
+                                          SLICE_R15C25B      CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+my_pattern_gen/piece_drop_clock/n2556                        NET DELAY               0.000                  9.529  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CO1
+                                          SLICE_R15C25B      CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+my_pattern_gen/piece_drop_clock/n1538                        NET DELAY               0.000                  9.806  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CO0
+                                          SLICE_R15C25C      CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+my_pattern_gen/piece_drop_clock/n2559                        NET DELAY               0.000                 10.083  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CO1
+                                          SLICE_R15C25C      CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+my_pattern_gen/piece_drop_clock/n1540                        NET DELAY               0.000                 10.360  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CO0
+                                          SLICE_R15C25D      CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+my_pattern_gen/piece_drop_clock/n2562                        NET DELAY               0.000                 10.637  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CO1
+                                          SLICE_R15C25D      CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+my_pattern_gen/piece_drop_clock/n1542                        NET DELAY               0.555                 11.469  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CO0
+                                          SLICE_R15C26A      CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+my_pattern_gen/piece_drop_clock/n2565                        NET DELAY               0.000                 11.746  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CO1
+                                          SLICE_R15C26A      CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
+my_pattern_gen/piece_drop_clock/n1544                        NET DELAY               0.000                 12.023  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CO0
+                                          SLICE_R15C26B      CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
+my_pattern_gen/piece_drop_clock/n2568                        NET DELAY               0.000                 12.300  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CO1
+                                          SLICE_R15C26B      CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
+my_pattern_gen/piece_drop_clock/n1546                        NET DELAY               0.000                 12.577  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CO0
+                                          SLICE_R15C26C      CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
+my_pattern_gen/piece_drop_clock/n2571                        NET DELAY               0.000                 12.854  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CO1
+                                          SLICE_R15C26C      CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
+my_pattern_gen/piece_drop_clock/n1548                        NET DELAY               0.000                 13.131  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CO0
+                                          SLICE_R15C26D      CIN0_TO_COUT0_DELAY     0.277                 13.408  2       
+my_pattern_gen/piece_drop_clock/n2574                        NET DELAY               0.000                 13.408  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CO1
+                                          SLICE_R15C26D      CIN1_TO_COUT1_DELAY     0.277                 13.685  2       
+my_pattern_gen/piece_drop_clock/n1550                        NET DELAY               0.555                 14.240  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CO0
+                                          SLICE_R15C27A      CIN0_TO_COUT0_DELAY     0.277                 14.517  2       
+my_pattern_gen/piece_drop_clock/n2577                        NET DELAY               0.000                 14.517  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CO1
+                                          SLICE_R15C27A      CIN1_TO_COUT1_DELAY     0.277                 14.794  2       
+my_pattern_gen/piece_drop_clock/n1552                        NET DELAY               0.000                 14.794  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_19/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_19/CO0
+                                          SLICE_R15C27B      CIN0_TO_COUT0_DELAY     0.277                 15.071  2       
+my_pattern_gen/piece_drop_clock/n2580                        NET DELAY               0.000                 15.071  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_19/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_19/CO1
+                                          SLICE_R15C27B      CIN1_TO_COUT1_DELAY     0.277                 15.348  2       
+my_pattern_gen/piece_drop_clock/n1554                        NET DELAY               0.000                 15.348  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_21/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_21/CO0
+                                          SLICE_R15C27C      CIN0_TO_COUT0_DELAY     0.277                 15.625  2       
+my_pattern_gen/piece_drop_clock/n2583                        NET DELAY               0.000                 15.625  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_21/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_21/CO1
+                                          SLICE_R15C27C      CIN1_TO_COUT1_DELAY     0.277                 15.902  2       
+my_pattern_gen/piece_drop_clock/n1556                        NET DELAY               0.000                 15.902  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_23/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_23/CO0
+                                          SLICE_R15C27D      CIN0_TO_COUT0_DELAY     0.277                 16.179  2       
+my_pattern_gen/piece_drop_clock/n2586                        NET DELAY               0.000                 16.179  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_23/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_23/CO1
+                                          SLICE_R15C27D      CIN1_TO_COUT1_DELAY     0.277                 16.456  2       
+my_pattern_gen/piece_drop_clock/n1558                        NET DELAY               1.216                 17.672  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_25/D0->my_pattern_gen/piece_drop_clock/counter_97_add_4_25/S0
+                                          SLICE_R15C28A      D0_TO_F0_DELAY          0.476                 18.148  1       
+my_pattern_gen/piece_drop_clock/game_clock_N_72[23]
+                                                             NET DELAY               0.000                 18.148  1       
+my_pattern_gen/piece_drop_clock/counter_97__i24/D
+                                                                                     0.000                 18.148  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+                                                             CONSTRAINT              0.000                 20.833  1       
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  15      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY               5.499                 26.332  15      
+{my_pattern_gen/piece_drop_clock/counter_97__i24/CK   my_pattern_gen/piece_drop_clock/counter_97__i25/CK}
+                                                                                     0.000                 26.332  1       
+                                                             Uncertainty          -(0.000)                 26.332  
+                                                             Setup time           -(0.198)                 26.134  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+Required Time                                                                                              26.134  
+Arrival Time                                                                                            -(18.147)  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                        7.986  
+
+
+
+
+++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : my_pattern_gen/piece_drop_clock/counter_97__i1/Q  (SLICE_R15C25A)
+Path End         : my_pattern_gen/piece_drop_clock/counter_97__i23/D  (SLICE_R15C27D)
+Source Clock     : my_pattern_gen/piece_drop_clock/clk (R)
+Destination Clock: my_pattern_gen/piece_drop_clock/clk (R)
+Logic Level      : 24
+Delay Ratio      : 32.1% (route), 67.9% (logic)
+Clock Skew       : 0.000 ns 
+Setup Constraint : 20.833 ns 
+Path Slack       : 8.818 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  15      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY               5.499                  5.499  15      
+my_pattern_gen/piece_drop_clock/counter_97__i1/CK
+                                                                                     0.000                  5.499  1       
+
+
+Data Path
+Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+my_pattern_gen/piece_drop_clock/counter_97__i1/CK->my_pattern_gen/piece_drop_clock/counter_97__i1/Q
+                                          SLICE_R15C25A      CLK_TO_Q1_DELAY         1.388                  6.887  1       
+my_pattern_gen/piece_drop_clock/n26                          NET DELAY               2.022                  8.909  1       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_1/C1->my_pattern_gen/piece_drop_clock/counter_97_add_4_1/CO1
+                                          SLICE_R15C25A      C1_TO_COUT1_DELAY       0.343                  9.252  2       
+my_pattern_gen/piece_drop_clock/n1536                        NET DELAY               0.000                  9.252  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CO0
+                                          SLICE_R15C25B      CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+my_pattern_gen/piece_drop_clock/n2556                        NET DELAY               0.000                  9.529  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CO1
+                                          SLICE_R15C25B      CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+my_pattern_gen/piece_drop_clock/n1538                        NET DELAY               0.000                  9.806  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CO0
+                                          SLICE_R15C25C      CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+my_pattern_gen/piece_drop_clock/n2559                        NET DELAY               0.000                 10.083  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CO1
+                                          SLICE_R15C25C      CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+my_pattern_gen/piece_drop_clock/n1540                        NET DELAY               0.000                 10.360  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CO0
+                                          SLICE_R15C25D      CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+my_pattern_gen/piece_drop_clock/n2562                        NET DELAY               0.000                 10.637  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CO1
+                                          SLICE_R15C25D      CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+my_pattern_gen/piece_drop_clock/n1542                        NET DELAY               0.555                 11.469  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CO0
+                                          SLICE_R15C26A      CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+my_pattern_gen/piece_drop_clock/n2565                        NET DELAY               0.000                 11.746  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CO1
+                                          SLICE_R15C26A      CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
+my_pattern_gen/piece_drop_clock/n1544                        NET DELAY               0.000                 12.023  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CO0
+                                          SLICE_R15C26B      CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
+my_pattern_gen/piece_drop_clock/n2568                        NET DELAY               0.000                 12.300  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CO1
+                                          SLICE_R15C26B      CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
+my_pattern_gen/piece_drop_clock/n1546                        NET DELAY               0.000                 12.577  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CO0
+                                          SLICE_R15C26C      CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
+my_pattern_gen/piece_drop_clock/n2571                        NET DELAY               0.000                 12.854  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CO1
+                                          SLICE_R15C26C      CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
+my_pattern_gen/piece_drop_clock/n1548                        NET DELAY               0.000                 13.131  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CO0
+                                          SLICE_R15C26D      CIN0_TO_COUT0_DELAY     0.277                 13.408  2       
+my_pattern_gen/piece_drop_clock/n2574                        NET DELAY               0.000                 13.408  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CO1
+                                          SLICE_R15C26D      CIN1_TO_COUT1_DELAY     0.277                 13.685  2       
+my_pattern_gen/piece_drop_clock/n1550                        NET DELAY               0.555                 14.240  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CO0
+                                          SLICE_R15C27A      CIN0_TO_COUT0_DELAY     0.277                 14.517  2       
+my_pattern_gen/piece_drop_clock/n2577                        NET DELAY               0.000                 14.517  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CO1
+                                          SLICE_R15C27A      CIN1_TO_COUT1_DELAY     0.277                 14.794  2       
+my_pattern_gen/piece_drop_clock/n1552                        NET DELAY               0.000                 14.794  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_19/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_19/CO0
+                                          SLICE_R15C27B      CIN0_TO_COUT0_DELAY     0.277                 15.071  2       
+my_pattern_gen/piece_drop_clock/n2580                        NET DELAY               0.000                 15.071  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_19/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_19/CO1
+                                          SLICE_R15C27B      CIN1_TO_COUT1_DELAY     0.277                 15.348  2       
+my_pattern_gen/piece_drop_clock/n1554                        NET DELAY               0.000                 15.348  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_21/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_21/CO0
+                                          SLICE_R15C27C      CIN0_TO_COUT0_DELAY     0.277                 15.625  2       
+my_pattern_gen/piece_drop_clock/n2583                        NET DELAY               0.000                 15.625  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_21/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_21/CO1
+                                          SLICE_R15C27C      CIN1_TO_COUT1_DELAY     0.277                 15.902  2       
+my_pattern_gen/piece_drop_clock/n1556                        NET DELAY               0.000                 15.902  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_23/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_23/CO0
+                                          SLICE_R15C27D      CIN0_TO_COUT0_DELAY     0.277                 16.179  2       
+my_pattern_gen/piece_drop_clock/n2586                        NET DELAY               0.661                 16.840  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_23/D1->my_pattern_gen/piece_drop_clock/counter_97_add_4_23/S1
+                                          SLICE_R15C27D      D1_TO_F1_DELAY          0.476                 17.316  1       
+my_pattern_gen/piece_drop_clock/game_clock_N_72[22]
+                                                             NET DELAY               0.000                 17.316  1       
+my_pattern_gen/piece_drop_clock/counter_97__i23/D
+                                                                                     0.000                 17.316  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+                                                             CONSTRAINT              0.000                 20.833  1       
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  15      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY               5.499                 26.332  15      
+{my_pattern_gen/piece_drop_clock/counter_97__i22/CK   my_pattern_gen/piece_drop_clock/counter_97__i23/CK}
+                                                                                     0.000                 26.332  1       
+                                                             Uncertainty          -(0.000)                 26.332  
+                                                             Setup time           -(0.198)                 26.134  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+Required Time                                                                                              26.134  
+Arrival Time                                                                                            -(17.315)  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                        8.818  
+
+
+
+
+++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : my_pattern_gen/piece_drop_clock/counter_97__i1/Q  (SLICE_R15C25A)
+Path End         : my_pattern_gen/piece_drop_clock/counter_97__i22/D  (SLICE_R15C27D)
+Source Clock     : my_pattern_gen/piece_drop_clock/clk (R)
+Destination Clock: my_pattern_gen/piece_drop_clock/clk (R)
+Logic Level      : 23
+Delay Ratio      : 32.9% (route), 67.1% (logic)
+Clock Skew       : 0.000 ns 
+Setup Constraint : 20.833 ns 
+Path Slack       : 9.095 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  15      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY               5.499                  5.499  15      
+my_pattern_gen/piece_drop_clock/counter_97__i1/CK
+                                                                                     0.000                  5.499  1       
+
+
+Data Path
+Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+my_pattern_gen/piece_drop_clock/counter_97__i1/CK->my_pattern_gen/piece_drop_clock/counter_97__i1/Q
+                                          SLICE_R15C25A      CLK_TO_Q1_DELAY         1.388                  6.887  1       
+my_pattern_gen/piece_drop_clock/n26                          NET DELAY               2.022                  8.909  1       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_1/C1->my_pattern_gen/piece_drop_clock/counter_97_add_4_1/CO1
+                                          SLICE_R15C25A      C1_TO_COUT1_DELAY       0.343                  9.252  2       
+my_pattern_gen/piece_drop_clock/n1536                        NET DELAY               0.000                  9.252  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CO0
+                                          SLICE_R15C25B      CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+my_pattern_gen/piece_drop_clock/n2556                        NET DELAY               0.000                  9.529  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CO1
+                                          SLICE_R15C25B      CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+my_pattern_gen/piece_drop_clock/n1538                        NET DELAY               0.000                  9.806  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CO0
+                                          SLICE_R15C25C      CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+my_pattern_gen/piece_drop_clock/n2559                        NET DELAY               0.000                 10.083  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CO1
+                                          SLICE_R15C25C      CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+my_pattern_gen/piece_drop_clock/n1540                        NET DELAY               0.000                 10.360  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CO0
+                                          SLICE_R15C25D      CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+my_pattern_gen/piece_drop_clock/n2562                        NET DELAY               0.000                 10.637  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CO1
+                                          SLICE_R15C25D      CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+my_pattern_gen/piece_drop_clock/n1542                        NET DELAY               0.555                 11.469  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CO0
+                                          SLICE_R15C26A      CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+my_pattern_gen/piece_drop_clock/n2565                        NET DELAY               0.000                 11.746  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CO1
+                                          SLICE_R15C26A      CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
+my_pattern_gen/piece_drop_clock/n1544                        NET DELAY               0.000                 12.023  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CO0
+                                          SLICE_R15C26B      CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
+my_pattern_gen/piece_drop_clock/n2568                        NET DELAY               0.000                 12.300  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CO1
+                                          SLICE_R15C26B      CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
+my_pattern_gen/piece_drop_clock/n1546                        NET DELAY               0.000                 12.577  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CO0
+                                          SLICE_R15C26C      CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
+my_pattern_gen/piece_drop_clock/n2571                        NET DELAY               0.000                 12.854  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CO1
+                                          SLICE_R15C26C      CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
+my_pattern_gen/piece_drop_clock/n1548                        NET DELAY               0.000                 13.131  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CO0
+                                          SLICE_R15C26D      CIN0_TO_COUT0_DELAY     0.277                 13.408  2       
+my_pattern_gen/piece_drop_clock/n2574                        NET DELAY               0.000                 13.408  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CO1
+                                          SLICE_R15C26D      CIN1_TO_COUT1_DELAY     0.277                 13.685  2       
+my_pattern_gen/piece_drop_clock/n1550                        NET DELAY               0.555                 14.240  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CO0
+                                          SLICE_R15C27A      CIN0_TO_COUT0_DELAY     0.277                 14.517  2       
+my_pattern_gen/piece_drop_clock/n2577                        NET DELAY               0.000                 14.517  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CO1
+                                          SLICE_R15C27A      CIN1_TO_COUT1_DELAY     0.277                 14.794  2       
+my_pattern_gen/piece_drop_clock/n1552                        NET DELAY               0.000                 14.794  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_19/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_19/CO0
+                                          SLICE_R15C27B      CIN0_TO_COUT0_DELAY     0.277                 15.071  2       
+my_pattern_gen/piece_drop_clock/n2580                        NET DELAY               0.000                 15.071  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_19/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_19/CO1
+                                          SLICE_R15C27B      CIN1_TO_COUT1_DELAY     0.277                 15.348  2       
+my_pattern_gen/piece_drop_clock/n1554                        NET DELAY               0.000                 15.348  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_21/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_21/CO0
+                                          SLICE_R15C27C      CIN0_TO_COUT0_DELAY     0.277                 15.625  2       
+my_pattern_gen/piece_drop_clock/n2583                        NET DELAY               0.000                 15.625  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_21/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_21/CO1
+                                          SLICE_R15C27C      CIN1_TO_COUT1_DELAY     0.277                 15.902  2       
+my_pattern_gen/piece_drop_clock/n1556                        NET DELAY               0.661                 16.563  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_23/D0->my_pattern_gen/piece_drop_clock/counter_97_add_4_23/S0
+                                          SLICE_R15C27D      D0_TO_F0_DELAY          0.476                 17.039  1       
+my_pattern_gen/piece_drop_clock/game_clock_N_72[21]
+                                                             NET DELAY               0.000                 17.039  1       
+my_pattern_gen/piece_drop_clock/counter_97__i22/D
+                                                                                     0.000                 17.039  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+                                                             CONSTRAINT              0.000                 20.833  1       
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  15      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY               5.499                 26.332  15      
+{my_pattern_gen/piece_drop_clock/counter_97__i22/CK   my_pattern_gen/piece_drop_clock/counter_97__i23/CK}
+                                                                                     0.000                 26.332  1       
+                                                             Uncertainty          -(0.000)                 26.332  
+                                                             Setup time           -(0.198)                 26.134  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+Required Time                                                                                              26.134  
+Arrival Time                                                                                            -(17.038)  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                        9.095  
+
+
+
+
+++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : my_pattern_gen/piece_drop_clock/counter_97__i1/Q  (SLICE_R15C25A)
+Path End         : my_pattern_gen/piece_drop_clock/counter_97__i21/D  (SLICE_R15C27C)
+Source Clock     : my_pattern_gen/piece_drop_clock/clk (R)
+Destination Clock: my_pattern_gen/piece_drop_clock/clk (R)
+Logic Level      : 22
+Delay Ratio      : 33.7% (route), 66.3% (logic)
+Clock Skew       : 0.000 ns 
+Setup Constraint : 20.833 ns 
+Path Slack       : 9.372 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  15      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY               5.499                  5.499  15      
+my_pattern_gen/piece_drop_clock/counter_97__i1/CK
+                                                                                     0.000                  5.499  1       
+
+
+Data Path
+Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+my_pattern_gen/piece_drop_clock/counter_97__i1/CK->my_pattern_gen/piece_drop_clock/counter_97__i1/Q
+                                          SLICE_R15C25A      CLK_TO_Q1_DELAY         1.388                  6.887  1       
+my_pattern_gen/piece_drop_clock/n26                          NET DELAY               2.022                  8.909  1       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_1/C1->my_pattern_gen/piece_drop_clock/counter_97_add_4_1/CO1
+                                          SLICE_R15C25A      C1_TO_COUT1_DELAY       0.343                  9.252  2       
+my_pattern_gen/piece_drop_clock/n1536                        NET DELAY               0.000                  9.252  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CO0
+                                          SLICE_R15C25B      CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+my_pattern_gen/piece_drop_clock/n2556                        NET DELAY               0.000                  9.529  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CO1
+                                          SLICE_R15C25B      CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+my_pattern_gen/piece_drop_clock/n1538                        NET DELAY               0.000                  9.806  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CO0
+                                          SLICE_R15C25C      CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+my_pattern_gen/piece_drop_clock/n2559                        NET DELAY               0.000                 10.083  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CO1
+                                          SLICE_R15C25C      CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+my_pattern_gen/piece_drop_clock/n1540                        NET DELAY               0.000                 10.360  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CO0
+                                          SLICE_R15C25D      CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+my_pattern_gen/piece_drop_clock/n2562                        NET DELAY               0.000                 10.637  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CO1
+                                          SLICE_R15C25D      CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+my_pattern_gen/piece_drop_clock/n1542                        NET DELAY               0.555                 11.469  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CO0
+                                          SLICE_R15C26A      CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+my_pattern_gen/piece_drop_clock/n2565                        NET DELAY               0.000                 11.746  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CO1
+                                          SLICE_R15C26A      CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
+my_pattern_gen/piece_drop_clock/n1544                        NET DELAY               0.000                 12.023  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CO0
+                                          SLICE_R15C26B      CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
+my_pattern_gen/piece_drop_clock/n2568                        NET DELAY               0.000                 12.300  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CO1
+                                          SLICE_R15C26B      CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
+my_pattern_gen/piece_drop_clock/n1546                        NET DELAY               0.000                 12.577  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CO0
+                                          SLICE_R15C26C      CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
+my_pattern_gen/piece_drop_clock/n2571                        NET DELAY               0.000                 12.854  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CO1
+                                          SLICE_R15C26C      CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
+my_pattern_gen/piece_drop_clock/n1548                        NET DELAY               0.000                 13.131  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CO0
+                                          SLICE_R15C26D      CIN0_TO_COUT0_DELAY     0.277                 13.408  2       
+my_pattern_gen/piece_drop_clock/n2574                        NET DELAY               0.000                 13.408  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CO1
+                                          SLICE_R15C26D      CIN1_TO_COUT1_DELAY     0.277                 13.685  2       
+my_pattern_gen/piece_drop_clock/n1550                        NET DELAY               0.555                 14.240  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CO0
+                                          SLICE_R15C27A      CIN0_TO_COUT0_DELAY     0.277                 14.517  2       
+my_pattern_gen/piece_drop_clock/n2577                        NET DELAY               0.000                 14.517  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CO1
+                                          SLICE_R15C27A      CIN1_TO_COUT1_DELAY     0.277                 14.794  2       
+my_pattern_gen/piece_drop_clock/n1552                        NET DELAY               0.000                 14.794  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_19/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_19/CO0
+                                          SLICE_R15C27B      CIN0_TO_COUT0_DELAY     0.277                 15.071  2       
+my_pattern_gen/piece_drop_clock/n2580                        NET DELAY               0.000                 15.071  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_19/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_19/CO1
+                                          SLICE_R15C27B      CIN1_TO_COUT1_DELAY     0.277                 15.348  2       
+my_pattern_gen/piece_drop_clock/n1554                        NET DELAY               0.000                 15.348  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_21/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_21/CO0
+                                          SLICE_R15C27C      CIN0_TO_COUT0_DELAY     0.277                 15.625  2       
+my_pattern_gen/piece_drop_clock/n2583                        NET DELAY               0.661                 16.286  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_21/D1->my_pattern_gen/piece_drop_clock/counter_97_add_4_21/S1
+                                          SLICE_R15C27C      D1_TO_F1_DELAY          0.476                 16.762  1       
+my_pattern_gen/piece_drop_clock/game_clock_N_72[20]
+                                                             NET DELAY               0.000                 16.762  1       
+my_pattern_gen/piece_drop_clock/counter_97__i21/D
+                                                                                     0.000                 16.762  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+                                                             CONSTRAINT              0.000                 20.833  1       
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  15      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY               5.499                 26.332  15      
+{my_pattern_gen/piece_drop_clock/counter_97__i20/CK   my_pattern_gen/piece_drop_clock/counter_97__i21/CK}
+                                                                                     0.000                 26.332  1       
+                                                             Uncertainty          -(0.000)                 26.332  
+                                                             Setup time           -(0.198)                 26.134  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+Required Time                                                                                              26.134  
+Arrival Time                                                                                            -(16.761)  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                        9.372  
+
+
+
+
+++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : my_pattern_gen/piece_drop_clock/counter_97__i1/Q  (SLICE_R15C25A)
+Path End         : my_pattern_gen/piece_drop_clock/counter_97__i20/D  (SLICE_R15C27C)
+Source Clock     : my_pattern_gen/piece_drop_clock/clk (R)
+Destination Clock: my_pattern_gen/piece_drop_clock/clk (R)
+Logic Level      : 21
+Delay Ratio      : 34.5% (route), 65.5% (logic)
+Clock Skew       : 0.000 ns 
+Setup Constraint : 20.833 ns 
+Path Slack       : 9.649 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  15      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY               5.499                  5.499  15      
+my_pattern_gen/piece_drop_clock/counter_97__i1/CK
+                                                                                     0.000                  5.499  1       
+
+
+Data Path
+Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+my_pattern_gen/piece_drop_clock/counter_97__i1/CK->my_pattern_gen/piece_drop_clock/counter_97__i1/Q
+                                          SLICE_R15C25A      CLK_TO_Q1_DELAY         1.388                  6.887  1       
+my_pattern_gen/piece_drop_clock/n26                          NET DELAY               2.022                  8.909  1       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_1/C1->my_pattern_gen/piece_drop_clock/counter_97_add_4_1/CO1
+                                          SLICE_R15C25A      C1_TO_COUT1_DELAY       0.343                  9.252  2       
+my_pattern_gen/piece_drop_clock/n1536                        NET DELAY               0.000                  9.252  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CO0
+                                          SLICE_R15C25B      CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+my_pattern_gen/piece_drop_clock/n2556                        NET DELAY               0.000                  9.529  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CO1
+                                          SLICE_R15C25B      CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+my_pattern_gen/piece_drop_clock/n1538                        NET DELAY               0.000                  9.806  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CO0
+                                          SLICE_R15C25C      CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+my_pattern_gen/piece_drop_clock/n2559                        NET DELAY               0.000                 10.083  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CO1
+                                          SLICE_R15C25C      CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+my_pattern_gen/piece_drop_clock/n1540                        NET DELAY               0.000                 10.360  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CO0
+                                          SLICE_R15C25D      CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+my_pattern_gen/piece_drop_clock/n2562                        NET DELAY               0.000                 10.637  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CO1
+                                          SLICE_R15C25D      CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+my_pattern_gen/piece_drop_clock/n1542                        NET DELAY               0.555                 11.469  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CO0
+                                          SLICE_R15C26A      CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+my_pattern_gen/piece_drop_clock/n2565                        NET DELAY               0.000                 11.746  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CO1
+                                          SLICE_R15C26A      CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
+my_pattern_gen/piece_drop_clock/n1544                        NET DELAY               0.000                 12.023  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CO0
+                                          SLICE_R15C26B      CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
+my_pattern_gen/piece_drop_clock/n2568                        NET DELAY               0.000                 12.300  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CO1
+                                          SLICE_R15C26B      CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
+my_pattern_gen/piece_drop_clock/n1546                        NET DELAY               0.000                 12.577  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CO0
+                                          SLICE_R15C26C      CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
+my_pattern_gen/piece_drop_clock/n2571                        NET DELAY               0.000                 12.854  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CO1
+                                          SLICE_R15C26C      CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
+my_pattern_gen/piece_drop_clock/n1548                        NET DELAY               0.000                 13.131  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CO0
+                                          SLICE_R15C26D      CIN0_TO_COUT0_DELAY     0.277                 13.408  2       
+my_pattern_gen/piece_drop_clock/n2574                        NET DELAY               0.000                 13.408  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CO1
+                                          SLICE_R15C26D      CIN1_TO_COUT1_DELAY     0.277                 13.685  2       
+my_pattern_gen/piece_drop_clock/n1550                        NET DELAY               0.555                 14.240  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CO0
+                                          SLICE_R15C27A      CIN0_TO_COUT0_DELAY     0.277                 14.517  2       
+my_pattern_gen/piece_drop_clock/n2577                        NET DELAY               0.000                 14.517  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CO1
+                                          SLICE_R15C27A      CIN1_TO_COUT1_DELAY     0.277                 14.794  2       
+my_pattern_gen/piece_drop_clock/n1552                        NET DELAY               0.000                 14.794  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_19/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_19/CO0
+                                          SLICE_R15C27B      CIN0_TO_COUT0_DELAY     0.277                 15.071  2       
+my_pattern_gen/piece_drop_clock/n2580                        NET DELAY               0.000                 15.071  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_19/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_19/CO1
+                                          SLICE_R15C27B      CIN1_TO_COUT1_DELAY     0.277                 15.348  2       
+my_pattern_gen/piece_drop_clock/n1554                        NET DELAY               0.661                 16.009  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_21/D0->my_pattern_gen/piece_drop_clock/counter_97_add_4_21/S0
+                                          SLICE_R15C27C      D0_TO_F0_DELAY          0.476                 16.485  1       
+my_pattern_gen/piece_drop_clock/game_clock_N_72[19]
+                                                             NET DELAY               0.000                 16.485  1       
+my_pattern_gen/piece_drop_clock/counter_97__i20/D
+                                                                                     0.000                 16.485  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+                                                             CONSTRAINT              0.000                 20.833  1       
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  15      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY               5.499                 26.332  15      
+{my_pattern_gen/piece_drop_clock/counter_97__i20/CK   my_pattern_gen/piece_drop_clock/counter_97__i21/CK}
+                                                                                     0.000                 26.332  1       
+                                                             Uncertainty          -(0.000)                 26.332  
+                                                             Setup time           -(0.198)                 26.134  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+Required Time                                                                                              26.134  
+Arrival Time                                                                                            -(16.484)  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                        9.649  
+
+
+
+
+++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : my_pattern_gen/piece_drop_clock/counter_97__i1/Q  (SLICE_R15C25A)
+Path End         : my_pattern_gen/piece_drop_clock/counter_97__i19/D  (SLICE_R15C27B)
+Source Clock     : my_pattern_gen/piece_drop_clock/clk (R)
+Destination Clock: my_pattern_gen/piece_drop_clock/clk (R)
+Logic Level      : 20
+Delay Ratio      : 35.4% (route), 64.6% (logic)
+Clock Skew       : 0.000 ns 
+Setup Constraint : 20.833 ns 
+Path Slack       : 9.926 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  15      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY               5.499                  5.499  15      
+my_pattern_gen/piece_drop_clock/counter_97__i1/CK
+                                                                                     0.000                  5.499  1       
+
+
+Data Path
+Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+my_pattern_gen/piece_drop_clock/counter_97__i1/CK->my_pattern_gen/piece_drop_clock/counter_97__i1/Q
+                                          SLICE_R15C25A      CLK_TO_Q1_DELAY         1.388                  6.887  1       
+my_pattern_gen/piece_drop_clock/n26                          NET DELAY               2.022                  8.909  1       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_1/C1->my_pattern_gen/piece_drop_clock/counter_97_add_4_1/CO1
+                                          SLICE_R15C25A      C1_TO_COUT1_DELAY       0.343                  9.252  2       
+my_pattern_gen/piece_drop_clock/n1536                        NET DELAY               0.000                  9.252  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CO0
+                                          SLICE_R15C25B      CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+my_pattern_gen/piece_drop_clock/n2556                        NET DELAY               0.000                  9.529  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CO1
+                                          SLICE_R15C25B      CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+my_pattern_gen/piece_drop_clock/n1538                        NET DELAY               0.000                  9.806  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CO0
+                                          SLICE_R15C25C      CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+my_pattern_gen/piece_drop_clock/n2559                        NET DELAY               0.000                 10.083  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CO1
+                                          SLICE_R15C25C      CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+my_pattern_gen/piece_drop_clock/n1540                        NET DELAY               0.000                 10.360  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CO0
+                                          SLICE_R15C25D      CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+my_pattern_gen/piece_drop_clock/n2562                        NET DELAY               0.000                 10.637  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CO1
+                                          SLICE_R15C25D      CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+my_pattern_gen/piece_drop_clock/n1542                        NET DELAY               0.555                 11.469  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CO0
+                                          SLICE_R15C26A      CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+my_pattern_gen/piece_drop_clock/n2565                        NET DELAY               0.000                 11.746  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CO1
+                                          SLICE_R15C26A      CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
+my_pattern_gen/piece_drop_clock/n1544                        NET DELAY               0.000                 12.023  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CO0
+                                          SLICE_R15C26B      CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
+my_pattern_gen/piece_drop_clock/n2568                        NET DELAY               0.000                 12.300  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CO1
+                                          SLICE_R15C26B      CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
+my_pattern_gen/piece_drop_clock/n1546                        NET DELAY               0.000                 12.577  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CO0
+                                          SLICE_R15C26C      CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
+my_pattern_gen/piece_drop_clock/n2571                        NET DELAY               0.000                 12.854  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CO1
+                                          SLICE_R15C26C      CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
+my_pattern_gen/piece_drop_clock/n1548                        NET DELAY               0.000                 13.131  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CO0
+                                          SLICE_R15C26D      CIN0_TO_COUT0_DELAY     0.277                 13.408  2       
+my_pattern_gen/piece_drop_clock/n2574                        NET DELAY               0.000                 13.408  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CO1
+                                          SLICE_R15C26D      CIN1_TO_COUT1_DELAY     0.277                 13.685  2       
+my_pattern_gen/piece_drop_clock/n1550                        NET DELAY               0.555                 14.240  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CO0
+                                          SLICE_R15C27A      CIN0_TO_COUT0_DELAY     0.277                 14.517  2       
+my_pattern_gen/piece_drop_clock/n2577                        NET DELAY               0.000                 14.517  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CO1
+                                          SLICE_R15C27A      CIN1_TO_COUT1_DELAY     0.277                 14.794  2       
+my_pattern_gen/piece_drop_clock/n1552                        NET DELAY               0.000                 14.794  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_19/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_19/CO0
+                                          SLICE_R15C27B      CIN0_TO_COUT0_DELAY     0.277                 15.071  2       
+my_pattern_gen/piece_drop_clock/n2580                        NET DELAY               0.661                 15.732  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_19/D1->my_pattern_gen/piece_drop_clock/counter_97_add_4_19/S1
+                                          SLICE_R15C27B      D1_TO_F1_DELAY          0.476                 16.208  1       
+my_pattern_gen/piece_drop_clock/game_clock_N_72[18]
+                                                             NET DELAY               0.000                 16.208  1       
+my_pattern_gen/piece_drop_clock/counter_97__i19/D
+                                                                                     0.000                 16.208  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+                                                             CONSTRAINT              0.000                 20.833  1       
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  15      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY               5.499                 26.332  15      
+{my_pattern_gen/piece_drop_clock/counter_97__i18/CK   my_pattern_gen/piece_drop_clock/counter_97__i19/CK}
+                                                                                     0.000                 26.332  1       
+                                                             Uncertainty          -(0.000)                 26.332  
+                                                             Setup time           -(0.198)                 26.134  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+Required Time                                                                                              26.134  
+Arrival Time                                                                                            -(16.207)  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                        9.926  
+
+
+
+
+++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : my_pattern_gen/piece_drop_clock/counter_97__i1/Q  (SLICE_R15C25A)
+Path End         : my_pattern_gen/piece_drop_clock/counter_97__i18/D  (SLICE_R15C27B)
+Source Clock     : my_pattern_gen/piece_drop_clock/clk (R)
+Destination Clock: my_pattern_gen/piece_drop_clock/clk (R)
+Logic Level      : 19
+Delay Ratio      : 36.4% (route), 63.6% (logic)
+Clock Skew       : 0.000 ns 
+Setup Constraint : 20.833 ns 
+Path Slack       : 10.203 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  15      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY               5.499                  5.499  15      
+my_pattern_gen/piece_drop_clock/counter_97__i1/CK
+                                                                                     0.000                  5.499  1       
+
+
+Data Path
+Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+my_pattern_gen/piece_drop_clock/counter_97__i1/CK->my_pattern_gen/piece_drop_clock/counter_97__i1/Q
+                                          SLICE_R15C25A      CLK_TO_Q1_DELAY         1.388                  6.887  1       
+my_pattern_gen/piece_drop_clock/n26                          NET DELAY               2.022                  8.909  1       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_1/C1->my_pattern_gen/piece_drop_clock/counter_97_add_4_1/CO1
+                                          SLICE_R15C25A      C1_TO_COUT1_DELAY       0.343                  9.252  2       
+my_pattern_gen/piece_drop_clock/n1536                        NET DELAY               0.000                  9.252  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CO0
+                                          SLICE_R15C25B      CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+my_pattern_gen/piece_drop_clock/n2556                        NET DELAY               0.000                  9.529  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CO1
+                                          SLICE_R15C25B      CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+my_pattern_gen/piece_drop_clock/n1538                        NET DELAY               0.000                  9.806  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CO0
+                                          SLICE_R15C25C      CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+my_pattern_gen/piece_drop_clock/n2559                        NET DELAY               0.000                 10.083  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CO1
+                                          SLICE_R15C25C      CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+my_pattern_gen/piece_drop_clock/n1540                        NET DELAY               0.000                 10.360  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CO0
+                                          SLICE_R15C25D      CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+my_pattern_gen/piece_drop_clock/n2562                        NET DELAY               0.000                 10.637  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CO1
+                                          SLICE_R15C25D      CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+my_pattern_gen/piece_drop_clock/n1542                        NET DELAY               0.555                 11.469  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CO0
+                                          SLICE_R15C26A      CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+my_pattern_gen/piece_drop_clock/n2565                        NET DELAY               0.000                 11.746  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CO1
+                                          SLICE_R15C26A      CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
+my_pattern_gen/piece_drop_clock/n1544                        NET DELAY               0.000                 12.023  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CO0
+                                          SLICE_R15C26B      CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
+my_pattern_gen/piece_drop_clock/n2568                        NET DELAY               0.000                 12.300  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CO1
+                                          SLICE_R15C26B      CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
+my_pattern_gen/piece_drop_clock/n1546                        NET DELAY               0.000                 12.577  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CO0
+                                          SLICE_R15C26C      CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
+my_pattern_gen/piece_drop_clock/n2571                        NET DELAY               0.000                 12.854  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CO1
+                                          SLICE_R15C26C      CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
+my_pattern_gen/piece_drop_clock/n1548                        NET DELAY               0.000                 13.131  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CO0
+                                          SLICE_R15C26D      CIN0_TO_COUT0_DELAY     0.277                 13.408  2       
+my_pattern_gen/piece_drop_clock/n2574                        NET DELAY               0.000                 13.408  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CO1
+                                          SLICE_R15C26D      CIN1_TO_COUT1_DELAY     0.277                 13.685  2       
+my_pattern_gen/piece_drop_clock/n1550                        NET DELAY               0.555                 14.240  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CO0
+                                          SLICE_R15C27A      CIN0_TO_COUT0_DELAY     0.277                 14.517  2       
+my_pattern_gen/piece_drop_clock/n2577                        NET DELAY               0.000                 14.517  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CO1
+                                          SLICE_R15C27A      CIN1_TO_COUT1_DELAY     0.277                 14.794  2       
+my_pattern_gen/piece_drop_clock/n1552                        NET DELAY               0.661                 15.455  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_19/D0->my_pattern_gen/piece_drop_clock/counter_97_add_4_19/S0
+                                          SLICE_R15C27B      D0_TO_F0_DELAY          0.476                 15.931  1       
+my_pattern_gen/piece_drop_clock/game_clock_N_72[17]
+                                                             NET DELAY               0.000                 15.931  1       
+my_pattern_gen/piece_drop_clock/counter_97__i18/D
+                                                                                     0.000                 15.931  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+                                                             CONSTRAINT              0.000                 20.833  1       
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  15      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY               5.499                 26.332  15      
+{my_pattern_gen/piece_drop_clock/counter_97__i18/CK   my_pattern_gen/piece_drop_clock/counter_97__i19/CK}
+                                                                                     0.000                 26.332  1       
+                                                             Uncertainty          -(0.000)                 26.332  
+                                                             Setup time           -(0.198)                 26.134  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+Required Time                                                                                              26.134  
+Arrival Time                                                                                            -(15.930)  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                       10.203  
+
+
+
+
+++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : my_pattern_gen/piece_drop_clock/counter_97__i1/Q  (SLICE_R15C25A)
+Path End         : my_pattern_gen/piece_drop_clock/counter_97__i17/D  (SLICE_R15C27A)
+Source Clock     : my_pattern_gen/piece_drop_clock/clk (R)
+Destination Clock: my_pattern_gen/piece_drop_clock/clk (R)
+Logic Level      : 18
+Delay Ratio      : 37.4% (route), 62.6% (logic)
+Clock Skew       : 0.000 ns 
+Setup Constraint : 20.833 ns 
+Path Slack       : 10.480 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  15      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY               5.499                  5.499  15      
+my_pattern_gen/piece_drop_clock/counter_97__i1/CK
+                                                                                     0.000                  5.499  1       
+
+
+Data Path
+Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+my_pattern_gen/piece_drop_clock/counter_97__i1/CK->my_pattern_gen/piece_drop_clock/counter_97__i1/Q
+                                          SLICE_R15C25A      CLK_TO_Q1_DELAY         1.388                  6.887  1       
+my_pattern_gen/piece_drop_clock/n26                          NET DELAY               2.022                  8.909  1       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_1/C1->my_pattern_gen/piece_drop_clock/counter_97_add_4_1/CO1
+                                          SLICE_R15C25A      C1_TO_COUT1_DELAY       0.343                  9.252  2       
+my_pattern_gen/piece_drop_clock/n1536                        NET DELAY               0.000                  9.252  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CO0
+                                          SLICE_R15C25B      CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+my_pattern_gen/piece_drop_clock/n2556                        NET DELAY               0.000                  9.529  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_3/CO1
+                                          SLICE_R15C25B      CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+my_pattern_gen/piece_drop_clock/n1538                        NET DELAY               0.000                  9.806  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CO0
+                                          SLICE_R15C25C      CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+my_pattern_gen/piece_drop_clock/n2559                        NET DELAY               0.000                 10.083  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_5/CO1
+                                          SLICE_R15C25C      CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+my_pattern_gen/piece_drop_clock/n1540                        NET DELAY               0.000                 10.360  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CO0
+                                          SLICE_R15C25D      CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+my_pattern_gen/piece_drop_clock/n2562                        NET DELAY               0.000                 10.637  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_7/CO1
+                                          SLICE_R15C25D      CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+my_pattern_gen/piece_drop_clock/n1542                        NET DELAY               0.555                 11.469  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CO0
+                                          SLICE_R15C26A      CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+my_pattern_gen/piece_drop_clock/n2565                        NET DELAY               0.000                 11.746  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_9/CO1
+                                          SLICE_R15C26A      CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
+my_pattern_gen/piece_drop_clock/n1544                        NET DELAY               0.000                 12.023  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CO0
+                                          SLICE_R15C26B      CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
+my_pattern_gen/piece_drop_clock/n2568                        NET DELAY               0.000                 12.300  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_11/CO1
+                                          SLICE_R15C26B      CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
+my_pattern_gen/piece_drop_clock/n1546                        NET DELAY               0.000                 12.577  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CO0
+                                          SLICE_R15C26C      CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
+my_pattern_gen/piece_drop_clock/n2571                        NET DELAY               0.000                 12.854  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_13/CO1
+                                          SLICE_R15C26C      CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
+my_pattern_gen/piece_drop_clock/n1548                        NET DELAY               0.000                 13.131  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CO0
+                                          SLICE_R15C26D      CIN0_TO_COUT0_DELAY     0.277                 13.408  2       
+my_pattern_gen/piece_drop_clock/n2574                        NET DELAY               0.000                 13.408  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CI1->my_pattern_gen/piece_drop_clock/counter_97_add_4_15/CO1
+                                          SLICE_R15C26D      CIN1_TO_COUT1_DELAY     0.277                 13.685  2       
+my_pattern_gen/piece_drop_clock/n1550                        NET DELAY               0.555                 14.240  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CI0->my_pattern_gen/piece_drop_clock/counter_97_add_4_17/CO0
+                                          SLICE_R15C27A      CIN0_TO_COUT0_DELAY     0.277                 14.517  2       
+my_pattern_gen/piece_drop_clock/n2577                        NET DELAY               0.661                 15.178  2       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_17/D1->my_pattern_gen/piece_drop_clock/counter_97_add_4_17/S1
+                                          SLICE_R15C27A      D1_TO_F1_DELAY          0.476                 15.654  1       
+my_pattern_gen/piece_drop_clock/game_clock_N_72[16]
+                                                             NET DELAY               0.000                 15.654  1       
+my_pattern_gen/piece_drop_clock/counter_97__i17/D
+                                                                                     0.000                 15.654  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+                                                             CONSTRAINT              0.000                 20.833  1       
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  15      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY               5.499                 26.332  15      
+{my_pattern_gen/piece_drop_clock/counter_97__i16/CK   my_pattern_gen/piece_drop_clock/counter_97__i17/CK}
+                                                                                     0.000                 26.332  1       
+                                                             Uncertainty          -(0.000)                 26.332  
+                                                             Setup time           -(0.198)                 26.134  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+Required Time                                                                                              26.134  
+Arrival Time                                                                                            -(15.653)  
+----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                       10.480  
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
                     End of Detailed Report for timing paths 
- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
 
 ##########################################################
@@ -226,11 +1470,34 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 3.1  Endpoint slacks
 =======================
---------------------------------------------------
-There is no end point satisfying reporting criteria
-
-Total Negative Slack: 0
-
+-------------------------------------------------------
+          Listing 10 End Points          |    Slack    
+-------------------------------------------------------
+my_pattern_gen/piece_drop_clock/counter_97__i13/D              
+                                         |    1.913 ns 
+my_pattern_gen/piece_drop_clock/counter_97__i14/D              
+                                         |    1.913 ns 
+my_pattern_gen/piece_drop_clock/counter_97__i15/D              
+                                         |    1.913 ns 
+my_pattern_gen/piece_drop_clock/counter_97__i1/D              
+                                         |    1.913 ns 
+my_pattern_gen/piece_drop_clock/counter_97__i16/D              
+                                         |    1.913 ns 
+my_pattern_gen/piece_drop_clock/counter_97__i17/D              
+                                         |    1.913 ns 
+my_pattern_gen/piece_drop_clock/counter_97__i18/D              
+                                         |    1.913 ns 
+my_pattern_gen/piece_drop_clock/counter_97__i19/D              
+                                         |    1.913 ns 
+my_pattern_gen/piece_drop_clock/counter_97__i2/D              
+                                         |    1.913 ns 
+my_pattern_gen/piece_drop_clock/counter_97__i3/D              
+                                         |    1.913 ns 
+-------------------------------------------------------
+                                         |             
+Hold # of endpoints with negative slack: |           0 
+                                         |             
+-------------------------------------------------------
 
 3.2  Detailed Report
 =======================
@@ -245,9 +1512,579 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
                     Detailed Report for timing paths 
  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ ++++Path 1  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Path Begin       : my_pattern_gen/piece_drop_clock/counter_97__i13/Q  (SLICE_R15C26C)
+Path End         : my_pattern_gen/piece_drop_clock/counter_97__i13/D  (SLICE_R15C26C)
+Source Clock     : my_pattern_gen/piece_drop_clock/clk (R)
+Destination Clock: my_pattern_gen/piece_drop_clock/clk (R)
+Logic Level      : 2
+Delay Ratio      : 46.1% (route), 53.9% (logic)
+Clock Skew       : 0.000 ns 
+Hold Constraint  : 0.000 ns 
+Path Slack       : 1.913 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY        3.084                  3.084  16      
+{my_pattern_gen/piece_drop_clock/counter_97__i12/CK   my_pattern_gen/piece_drop_clock/counter_97__i13/CK}
+                                                                              0.000                  3.084  1       
+
+
+Data Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+my_pattern_gen/piece_drop_clock/counter_97__i13/CK->my_pattern_gen/piece_drop_clock/counter_97__i13/Q
+                                          SLICE_R15C26C      CLK_TO_Q1_DELAY  0.779                  3.863  1       
+my_pattern_gen/piece_drop_clock/n14                          NET DELAY        0.882                  4.745  1       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_13/C1->my_pattern_gen/piece_drop_clock/counter_97_add_4_13/S1
+                                          SLICE_R15C26C      C1_TO_F1_DELAY   0.252                  4.997  1       
+my_pattern_gen/piece_drop_clock/game_clock_N_72[12]
+                                                             NET DELAY        0.000                  4.997  1       
+my_pattern_gen/piece_drop_clock/counter_97__i13/D
+                                                                              0.000                  4.997  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+                                                             CONSTRAINT       0.000                  0.000  1       
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY        3.084                  3.084  16      
+{my_pattern_gen/piece_drop_clock/counter_97__i12/CK   my_pattern_gen/piece_drop_clock/counter_97__i13/CK}
+                                                                              0.000                  3.084  1       
+                                                             Uncertainty      0.000                  3.084  
+                                                             Hold time        0.000                  3.084  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Required Time                                                                                       -3.084  
+Arrival Time                                                                                         4.997  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Path Slack  (Passed)                                                                                 1.913  
+
+
+
+
+++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : my_pattern_gen/piece_drop_clock/counter_97__i14/Q  (SLICE_R15C26D)
+Path End         : my_pattern_gen/piece_drop_clock/counter_97__i14/D  (SLICE_R15C26D)
+Source Clock     : my_pattern_gen/piece_drop_clock/clk (R)
+Destination Clock: my_pattern_gen/piece_drop_clock/clk (R)
+Logic Level      : 2
+Delay Ratio      : 46.1% (route), 53.9% (logic)
+Clock Skew       : 0.000 ns 
+Hold Constraint  : 0.000 ns 
+Path Slack       : 1.913 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY        3.084                  3.084  16      
+{my_pattern_gen/piece_drop_clock/counter_97__i14/CK   my_pattern_gen/piece_drop_clock/counter_97__i15/CK}
+                                                                              0.000                  3.084  1       
+
+
+Data Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+my_pattern_gen/piece_drop_clock/counter_97__i14/CK->my_pattern_gen/piece_drop_clock/counter_97__i14/Q
+                                          SLICE_R15C26D      CLK_TO_Q0_DELAY  0.779                  3.863  1       
+my_pattern_gen/piece_drop_clock/n13                          NET DELAY        0.882                  4.745  1       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_15/C0->my_pattern_gen/piece_drop_clock/counter_97_add_4_15/S0
+                                          SLICE_R15C26D      C0_TO_F0_DELAY   0.252                  4.997  1       
+my_pattern_gen/piece_drop_clock/game_clock_N_72[13]
+                                                             NET DELAY        0.000                  4.997  1       
+my_pattern_gen/piece_drop_clock/counter_97__i14/D
+                                                                              0.000                  4.997  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+                                                             CONSTRAINT       0.000                  0.000  1       
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY        3.084                  3.084  16      
+{my_pattern_gen/piece_drop_clock/counter_97__i14/CK   my_pattern_gen/piece_drop_clock/counter_97__i15/CK}
+                                                                              0.000                  3.084  1       
+                                                             Uncertainty      0.000                  3.084  
+                                                             Hold time        0.000                  3.084  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Required Time                                                                                       -3.084  
+Arrival Time                                                                                         4.997  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Path Slack  (Passed)                                                                                 1.913  
+
+
+
+
+++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : my_pattern_gen/piece_drop_clock/counter_97__i15/Q  (SLICE_R15C26D)
+Path End         : my_pattern_gen/piece_drop_clock/counter_97__i15/D  (SLICE_R15C26D)
+Source Clock     : my_pattern_gen/piece_drop_clock/clk (R)
+Destination Clock: my_pattern_gen/piece_drop_clock/clk (R)
+Logic Level      : 2
+Delay Ratio      : 46.1% (route), 53.9% (logic)
+Clock Skew       : 0.000 ns 
+Hold Constraint  : 0.000 ns 
+Path Slack       : 1.913 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY        3.084                  3.084  16      
+{my_pattern_gen/piece_drop_clock/counter_97__i14/CK   my_pattern_gen/piece_drop_clock/counter_97__i15/CK}
+                                                                              0.000                  3.084  1       
+
+
+Data Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+my_pattern_gen/piece_drop_clock/counter_97__i15/CK->my_pattern_gen/piece_drop_clock/counter_97__i15/Q
+                                          SLICE_R15C26D      CLK_TO_Q1_DELAY  0.779                  3.863  1       
+my_pattern_gen/piece_drop_clock/n12                          NET DELAY        0.882                  4.745  1       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_15/C1->my_pattern_gen/piece_drop_clock/counter_97_add_4_15/S1
+                                          SLICE_R15C26D      C1_TO_F1_DELAY   0.252                  4.997  1       
+my_pattern_gen/piece_drop_clock/game_clock_N_72[14]
+                                                             NET DELAY        0.000                  4.997  1       
+my_pattern_gen/piece_drop_clock/counter_97__i15/D
+                                                                              0.000                  4.997  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+                                                             CONSTRAINT       0.000                  0.000  1       
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY        3.084                  3.084  16      
+{my_pattern_gen/piece_drop_clock/counter_97__i14/CK   my_pattern_gen/piece_drop_clock/counter_97__i15/CK}
+                                                                              0.000                  3.084  1       
+                                                             Uncertainty      0.000                  3.084  
+                                                             Hold time        0.000                  3.084  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Required Time                                                                                       -3.084  
+Arrival Time                                                                                         4.997  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Path Slack  (Passed)                                                                                 1.913  
+
+
+
+
+++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : my_pattern_gen/piece_drop_clock/counter_97__i1/Q  (SLICE_R15C25A)
+Path End         : my_pattern_gen/piece_drop_clock/counter_97__i1/D  (SLICE_R15C25A)
+Source Clock     : my_pattern_gen/piece_drop_clock/clk (R)
+Destination Clock: my_pattern_gen/piece_drop_clock/clk (R)
+Logic Level      : 2
+Delay Ratio      : 46.1% (route), 53.9% (logic)
+Clock Skew       : 0.000 ns 
+Hold Constraint  : 0.000 ns 
+Path Slack       : 1.913 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY        3.084                  3.084  16      
+my_pattern_gen/piece_drop_clock/counter_97__i1/CK
+                                                                              0.000                  3.084  1       
+
+
+Data Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+my_pattern_gen/piece_drop_clock/counter_97__i1/CK->my_pattern_gen/piece_drop_clock/counter_97__i1/Q
+                                          SLICE_R15C25A      CLK_TO_Q1_DELAY  0.779                  3.863  1       
+my_pattern_gen/piece_drop_clock/n26                          NET DELAY        0.882                  4.745  1       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_1/C1->my_pattern_gen/piece_drop_clock/counter_97_add_4_1/S1
+                                          SLICE_R15C25A      C1_TO_F1_DELAY   0.252                  4.997  1       
+my_pattern_gen/piece_drop_clock/game_clock_N_72[0]
+                                                             NET DELAY        0.000                  4.997  1       
+my_pattern_gen/piece_drop_clock/counter_97__i1/D
+                                                                              0.000                  4.997  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+                                                             CONSTRAINT       0.000                  0.000  1       
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY        3.084                  3.084  16      
+my_pattern_gen/piece_drop_clock/counter_97__i1/CK
+                                                                              0.000                  3.084  1       
+                                                             Uncertainty      0.000                  3.084  
+                                                             Hold time        0.000                  3.084  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Required Time                                                                                       -3.084  
+Arrival Time                                                                                         4.997  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Path Slack  (Passed)                                                                                 1.913  
+
+
+
+
+++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : my_pattern_gen/piece_drop_clock/counter_97__i16/Q  (SLICE_R15C27A)
+Path End         : my_pattern_gen/piece_drop_clock/counter_97__i16/D  (SLICE_R15C27A)
+Source Clock     : my_pattern_gen/piece_drop_clock/clk (R)
+Destination Clock: my_pattern_gen/piece_drop_clock/clk (R)
+Logic Level      : 2
+Delay Ratio      : 46.1% (route), 53.9% (logic)
+Clock Skew       : 0.000 ns 
+Hold Constraint  : 0.000 ns 
+Path Slack       : 1.913 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY        3.084                  3.084  16      
+{my_pattern_gen/piece_drop_clock/counter_97__i16/CK   my_pattern_gen/piece_drop_clock/counter_97__i17/CK}
+                                                                              0.000                  3.084  1       
+
+
+Data Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+my_pattern_gen/piece_drop_clock/counter_97__i16/CK->my_pattern_gen/piece_drop_clock/counter_97__i16/Q
+                                          SLICE_R15C27A      CLK_TO_Q0_DELAY  0.779                  3.863  1       
+my_pattern_gen/piece_drop_clock/n11                          NET DELAY        0.882                  4.745  1       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_17/C0->my_pattern_gen/piece_drop_clock/counter_97_add_4_17/S0
+                                          SLICE_R15C27A      C0_TO_F0_DELAY   0.252                  4.997  1       
+my_pattern_gen/piece_drop_clock/game_clock_N_72[15]
+                                                             NET DELAY        0.000                  4.997  1       
+my_pattern_gen/piece_drop_clock/counter_97__i16/D
+                                                                              0.000                  4.997  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+                                                             CONSTRAINT       0.000                  0.000  1       
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY        3.084                  3.084  16      
+{my_pattern_gen/piece_drop_clock/counter_97__i16/CK   my_pattern_gen/piece_drop_clock/counter_97__i17/CK}
+                                                                              0.000                  3.084  1       
+                                                             Uncertainty      0.000                  3.084  
+                                                             Hold time        0.000                  3.084  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Required Time                                                                                       -3.084  
+Arrival Time                                                                                         4.997  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Path Slack  (Passed)                                                                                 1.913  
+
+
+
+
+++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : my_pattern_gen/piece_drop_clock/counter_97__i17/Q  (SLICE_R15C27A)
+Path End         : my_pattern_gen/piece_drop_clock/counter_97__i17/D  (SLICE_R15C27A)
+Source Clock     : my_pattern_gen/piece_drop_clock/clk (R)
+Destination Clock: my_pattern_gen/piece_drop_clock/clk (R)
+Logic Level      : 2
+Delay Ratio      : 46.1% (route), 53.9% (logic)
+Clock Skew       : 0.000 ns 
+Hold Constraint  : 0.000 ns 
+Path Slack       : 1.913 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY        3.084                  3.084  16      
+{my_pattern_gen/piece_drop_clock/counter_97__i16/CK   my_pattern_gen/piece_drop_clock/counter_97__i17/CK}
+                                                                              0.000                  3.084  1       
+
+
+Data Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+my_pattern_gen/piece_drop_clock/counter_97__i17/CK->my_pattern_gen/piece_drop_clock/counter_97__i17/Q
+                                          SLICE_R15C27A      CLK_TO_Q1_DELAY  0.779                  3.863  1       
+my_pattern_gen/piece_drop_clock/n10                          NET DELAY        0.882                  4.745  1       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_17/C1->my_pattern_gen/piece_drop_clock/counter_97_add_4_17/S1
+                                          SLICE_R15C27A      C1_TO_F1_DELAY   0.252                  4.997  1       
+my_pattern_gen/piece_drop_clock/game_clock_N_72[16]
+                                                             NET DELAY        0.000                  4.997  1       
+my_pattern_gen/piece_drop_clock/counter_97__i17/D
+                                                                              0.000                  4.997  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+                                                             CONSTRAINT       0.000                  0.000  1       
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY        3.084                  3.084  16      
+{my_pattern_gen/piece_drop_clock/counter_97__i16/CK   my_pattern_gen/piece_drop_clock/counter_97__i17/CK}
+                                                                              0.000                  3.084  1       
+                                                             Uncertainty      0.000                  3.084  
+                                                             Hold time        0.000                  3.084  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Required Time                                                                                       -3.084  
+Arrival Time                                                                                         4.997  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Path Slack  (Passed)                                                                                 1.913  
+
+
+
+
+++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : my_pattern_gen/piece_drop_clock/counter_97__i18/Q  (SLICE_R15C27B)
+Path End         : my_pattern_gen/piece_drop_clock/counter_97__i18/D  (SLICE_R15C27B)
+Source Clock     : my_pattern_gen/piece_drop_clock/clk (R)
+Destination Clock: my_pattern_gen/piece_drop_clock/clk (R)
+Logic Level      : 2
+Delay Ratio      : 46.1% (route), 53.9% (logic)
+Clock Skew       : 0.000 ns 
+Hold Constraint  : 0.000 ns 
+Path Slack       : 1.913 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY        3.084                  3.084  16      
+{my_pattern_gen/piece_drop_clock/counter_97__i18/CK   my_pattern_gen/piece_drop_clock/counter_97__i19/CK}
+                                                                              0.000                  3.084  1       
+
+
+Data Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+my_pattern_gen/piece_drop_clock/counter_97__i18/CK->my_pattern_gen/piece_drop_clock/counter_97__i18/Q
+                                          SLICE_R15C27B      CLK_TO_Q0_DELAY  0.779                  3.863  1       
+my_pattern_gen/piece_drop_clock/n9                           NET DELAY        0.882                  4.745  1       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_19/C0->my_pattern_gen/piece_drop_clock/counter_97_add_4_19/S0
+                                          SLICE_R15C27B      C0_TO_F0_DELAY   0.252                  4.997  1       
+my_pattern_gen/piece_drop_clock/game_clock_N_72[17]
+                                                             NET DELAY        0.000                  4.997  1       
+my_pattern_gen/piece_drop_clock/counter_97__i18/D
+                                                                              0.000                  4.997  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+                                                             CONSTRAINT       0.000                  0.000  1       
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY        3.084                  3.084  16      
+{my_pattern_gen/piece_drop_clock/counter_97__i18/CK   my_pattern_gen/piece_drop_clock/counter_97__i19/CK}
+                                                                              0.000                  3.084  1       
+                                                             Uncertainty      0.000                  3.084  
+                                                             Hold time        0.000                  3.084  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Required Time                                                                                       -3.084  
+Arrival Time                                                                                         4.997  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Path Slack  (Passed)                                                                                 1.913  
+
+
+
+
+++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : my_pattern_gen/piece_drop_clock/counter_97__i19/Q  (SLICE_R15C27B)
+Path End         : my_pattern_gen/piece_drop_clock/counter_97__i19/D  (SLICE_R15C27B)
+Source Clock     : my_pattern_gen/piece_drop_clock/clk (R)
+Destination Clock: my_pattern_gen/piece_drop_clock/clk (R)
+Logic Level      : 2
+Delay Ratio      : 46.1% (route), 53.9% (logic)
+Clock Skew       : 0.000 ns 
+Hold Constraint  : 0.000 ns 
+Path Slack       : 1.913 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY        3.084                  3.084  16      
+{my_pattern_gen/piece_drop_clock/counter_97__i18/CK   my_pattern_gen/piece_drop_clock/counter_97__i19/CK}
+                                                                              0.000                  3.084  1       
+
+
+Data Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+my_pattern_gen/piece_drop_clock/counter_97__i19/CK->my_pattern_gen/piece_drop_clock/counter_97__i19/Q
+                                          SLICE_R15C27B      CLK_TO_Q1_DELAY  0.779                  3.863  1       
+my_pattern_gen/piece_drop_clock/n8                           NET DELAY        0.882                  4.745  1       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_19/C1->my_pattern_gen/piece_drop_clock/counter_97_add_4_19/S1
+                                          SLICE_R15C27B      C1_TO_F1_DELAY   0.252                  4.997  1       
+my_pattern_gen/piece_drop_clock/game_clock_N_72[18]
+                                                             NET DELAY        0.000                  4.997  1       
+my_pattern_gen/piece_drop_clock/counter_97__i19/D
+                                                                              0.000                  4.997  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+                                                             CONSTRAINT       0.000                  0.000  1       
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY        3.084                  3.084  16      
+{my_pattern_gen/piece_drop_clock/counter_97__i18/CK   my_pattern_gen/piece_drop_clock/counter_97__i19/CK}
+                                                                              0.000                  3.084  1       
+                                                             Uncertainty      0.000                  3.084  
+                                                             Hold time        0.000                  3.084  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Required Time                                                                                       -3.084  
+Arrival Time                                                                                         4.997  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Path Slack  (Passed)                                                                                 1.913  
+
+
+
+
+++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : my_pattern_gen/piece_drop_clock/counter_97__i2/Q  (SLICE_R15C25B)
+Path End         : my_pattern_gen/piece_drop_clock/counter_97__i2/D  (SLICE_R15C25B)
+Source Clock     : my_pattern_gen/piece_drop_clock/clk (R)
+Destination Clock: my_pattern_gen/piece_drop_clock/clk (R)
+Logic Level      : 2
+Delay Ratio      : 46.1% (route), 53.9% (logic)
+Clock Skew       : 0.000 ns 
+Hold Constraint  : 0.000 ns 
+Path Slack       : 1.913 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY        3.084                  3.084  16      
+{my_pattern_gen/piece_drop_clock/counter_97__i2/CK   my_pattern_gen/piece_drop_clock/counter_97__i3/CK}
+                                                                              0.000                  3.084  1       
+
+
+Data Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+my_pattern_gen/piece_drop_clock/counter_97__i2/CK->my_pattern_gen/piece_drop_clock/counter_97__i2/Q
+                                          SLICE_R15C25B      CLK_TO_Q0_DELAY  0.779                  3.863  1       
+my_pattern_gen/piece_drop_clock/n25                          NET DELAY        0.882                  4.745  1       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_3/C0->my_pattern_gen/piece_drop_clock/counter_97_add_4_3/S0
+                                          SLICE_R15C25B      C0_TO_F0_DELAY   0.252                  4.997  1       
+my_pattern_gen/piece_drop_clock/game_clock_N_72[1]
+                                                             NET DELAY        0.000                  4.997  1       
+my_pattern_gen/piece_drop_clock/counter_97__i2/D
+                                                                              0.000                  4.997  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+                                                             CONSTRAINT       0.000                  0.000  1       
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY        3.084                  3.084  16      
+{my_pattern_gen/piece_drop_clock/counter_97__i2/CK   my_pattern_gen/piece_drop_clock/counter_97__i3/CK}
+                                                                              0.000                  3.084  1       
+                                                             Uncertainty      0.000                  3.084  
+                                                             Hold time        0.000                  3.084  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Required Time                                                                                       -3.084  
+Arrival Time                                                                                         4.997  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Path Slack  (Passed)                                                                                 1.913  
+
+
+
+
+++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : my_pattern_gen/piece_drop_clock/counter_97__i3/Q  (SLICE_R15C25B)
+Path End         : my_pattern_gen/piece_drop_clock/counter_97__i3/D  (SLICE_R15C25B)
+Source Clock     : my_pattern_gen/piece_drop_clock/clk (R)
+Destination Clock: my_pattern_gen/piece_drop_clock/clk (R)
+Logic Level      : 2
+Delay Ratio      : 46.1% (route), 53.9% (logic)
+Clock Skew       : 0.000 ns 
+Hold Constraint  : 0.000 ns 
+Path Slack       : 1.913 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY        3.084                  3.084  16      
+{my_pattern_gen/piece_drop_clock/counter_97__i2/CK   my_pattern_gen/piece_drop_clock/counter_97__i3/CK}
+                                                                              0.000                  3.084  1       
+
+
+Data Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+my_pattern_gen/piece_drop_clock/counter_97__i3/CK->my_pattern_gen/piece_drop_clock/counter_97__i3/Q
+                                          SLICE_R15C25B      CLK_TO_Q1_DELAY  0.779                  3.863  1       
+my_pattern_gen/piece_drop_clock/n24                          NET DELAY        0.882                  4.745  1       
+my_pattern_gen/piece_drop_clock/counter_97_add_4_3/C1->my_pattern_gen/piece_drop_clock/counter_97_add_4_3/S1
+                                          SLICE_R15C25B      C1_TO_F1_DELAY   0.252                  4.997  1       
+my_pattern_gen/piece_drop_clock/game_clock_N_72[2]
+                                                             NET DELAY        0.000                  4.997  1       
+my_pattern_gen/piece_drop_clock/counter_97__i3/D
+                                                                              0.000                  4.997  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+                                                             CONSTRAINT       0.000                  0.000  1       
+my_pattern_gen.piece_drop_clock.osc/CLKHF
+                                          HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+my_pattern_gen/piece_drop_clock/clk                          NET DELAY        3.084                  3.084  16      
+{my_pattern_gen/piece_drop_clock/counter_97__i2/CK   my_pattern_gen/piece_drop_clock/counter_97__i3/CK}
+                                                                              0.000                  3.084  1       
+                                                             Uncertainty      0.000                  3.084  
+                                                             Hold time        0.000                  3.084  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Required Time                                                                                       -3.084  
+Arrival Time                                                                                         4.997  
+----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
+Path Slack  (Passed)                                                                                 1.913  
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
                     End of Detailed Report for timing paths 
- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
 
 ##########################################################

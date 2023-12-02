@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BaliMessageLog>
-    <Task name="Export">
-        <Message>
-            <ID>1081100</ID>
-            <Severity>1</Severity>
-            <Dynamic>Bitstream authenticated.</Dynamic>
-        </Message>
-        <Message>
-            <ID>1191031</ID>
-            <Severity>1</Severity>
-        </Message>
-    </Task>
     <Task name="Map">
         <Message>
             <ID>71003005</ID>
@@ -186,6 +175,14 @@
             <Navigation>63</Navigation>
         </Message>
         <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2023.1/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(756): </Dynamic>
+            <Dynamic>HSOSC</Dynamic>
+            <Navigation>C:/lscc/radiant/2023.1/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v</Navigation>
+            <Navigation>756</Navigation>
+        </Message>
+        <Message>
             <ID>35001786</ID>
             <Severity>1</Severity>
         </Message>
@@ -269,20 +266,28 @@
             <Navigation>16</Navigation>
         </Message>
         <Message>
-            <ID>35921012</ID>
+            <ID>35921014</ID>
             <Severity>1</Severity>
             <Dynamic>z:/es4-final/vga test/impl_1/vhdl/pattern_gen.vhd(5): </Dynamic>
-            <Dynamic>pattern_gen</Dynamic>
+            <Dynamic>my_types_package</Dynamic>
             <Navigation>z:/es4-final/vga test/impl_1/vhdl/pattern_gen.vhd</Navigation>
             <Navigation>5</Navigation>
         </Message>
         <Message>
+            <ID>35921012</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4-final/vga test/impl_1/vhdl/pattern_gen.vhd(15): </Dynamic>
+            <Dynamic>pattern_gen</Dynamic>
+            <Navigation>z:/es4-final/vga test/impl_1/vhdl/pattern_gen.vhd</Navigation>
+            <Navigation>15</Navigation>
+        </Message>
+        <Message>
             <ID>35921010</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4-final/vga test/impl_1/vhdl/pattern_gen.vhd(14): </Dynamic>
+            <Dynamic>z:/es4-final/vga test/impl_1/vhdl/pattern_gen.vhd(25): </Dynamic>
             <Dynamic>synth</Dynamic>
             <Navigation>z:/es4-final/vga test/impl_1/vhdl/pattern_gen.vhd</Navigation>
-            <Navigation>14</Navigation>
+            <Navigation>25</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
@@ -301,6 +306,46 @@
             <Navigation>16</Navigation>
         </Message>
         <Message>
+            <ID>35921014</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4-final/vga test/impl_1/vhdl/bottom_check.vhd(5): </Dynamic>
+            <Dynamic>my_types_package</Dynamic>
+            <Navigation>z:/es4-final/vga test/impl_1/vhdl/bottom_check.vhd</Navigation>
+            <Navigation>5</Navigation>
+        </Message>
+        <Message>
+            <ID>35921012</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4-final/vga test/impl_1/vhdl/bottom_check.vhd(15): </Dynamic>
+            <Dynamic>bottom_check</Dynamic>
+            <Navigation>z:/es4-final/vga test/impl_1/vhdl/bottom_check.vhd</Navigation>
+            <Navigation>15</Navigation>
+        </Message>
+        <Message>
+            <ID>35921010</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4-final/vga test/impl_1/vhdl/bottom_check.vhd(26): </Dynamic>
+            <Dynamic>synth</Dynamic>
+            <Navigation>z:/es4-final/vga test/impl_1/vhdl/bottom_check.vhd</Navigation>
+            <Navigation>26</Navigation>
+        </Message>
+        <Message>
+            <ID>35921012</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4-final/vga test/impl_1/vhdl/clock.vhd(5): </Dynamic>
+            <Dynamic>clock</Dynamic>
+            <Navigation>z:/es4-final/vga test/impl_1/vhdl/clock.vhd</Navigation>
+            <Navigation>5</Navigation>
+        </Message>
+        <Message>
+            <ID>35921010</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4-final/vga test/impl_1/vhdl/clock.vhd(11): </Dynamic>
+            <Dynamic>synth</Dynamic>
+            <Navigation>z:/es4-final/vga test/impl_1/vhdl/clock.vhd</Navigation>
+            <Navigation>11</Navigation>
+        </Message>
+        <Message>
             <ID>35935049</ID>
             <Severity>16</Severity>
             <Dynamic>sclk_i</Dynamic>
@@ -309,6 +354,21 @@
             <ID>35935049</ID>
             <Severity>16</Severity>
             <Dynamic>sdi_i</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001771</ID>
+            <Severity>16</Severity>
+            <Dynamic>game_clock</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001771</ID>
+            <Severity>16</Severity>
+            <Dynamic>collision_temp</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001771</ID>
+            <Severity>16</Severity>
+            <Dynamic>hit_bottom</Dynamic>
         </Message>
         <Message>
             <ID>35001771</ID>
@@ -487,6 +547,17 @@
             <ID>70001944</ID>
             <Severity>16</Severity>
             <Dynamic>create_generated_clock -name {clk_test_c} -source [get_pins {my_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {my_pll/lscc_pll_inst/u_PLL_B/OUTCORE }] </Dynamic>
+        </Message>
+    </Task>
+    <Task name="Export">
+        <Message>
+            <ID>1081100</ID>
+            <Severity>1</Severity>
+            <Dynamic>Bitstream authenticated.</Dynamic>
+        </Message>
+        <Message>
+            <ID>1191031</ID>
+            <Severity>1</Severity>
         </Message>
     </Task>
 </BaliMessageLog>
