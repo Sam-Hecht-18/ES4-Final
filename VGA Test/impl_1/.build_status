@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BuildStatus>
     <Strategy name="Strategy1">
+<<<<<<< HEAD
         <Milestone name="Export" build_result="2" build_time="1701556218">
             <Task name="Bitgen" build_result="2" update_result="0" update_time="1701556218"/>
             <Task name="IBIS" build_result="2" update_result="0" update_time="1701556219"/>
@@ -20,6 +21,27 @@
             <Task name="LSE_Compile" build_result="2" update_result="0" update_time="1701556220"/>
             <Task name="SynTrace" build_result="0" update_result="2" update_time="1701554046"/>
             <Task name="SynVerilogSimFile" build_result="0" update_result="2" update_time="1701554046"/>
+=======
+        <Milestone name="Export" build_result="2" build_time="1701397625">
+            <Task name="Bitgen" build_result="2" update_result="0" update_time="1701397625"/>
+            <Task name="IBIS" build_result="2" update_result="0" update_time="1701397627"/>
+            <Task name="TimingSimFileVlg" build_result="2" update_result="0" update_time="1701397627"/>
+        </Milestone>
+        <Milestone name="Map" build_result="2" build_time="1701397610">
+            <Task name="Map" build_result="2" update_result="0" update_time="1701397610"/>
+            <Task name="MapTrace" build_result="0" update_result="2" update_time="1699316484"/>
+        </Milestone>
+        <Milestone name="PAR" build_result="2" build_time="1701397616">
+            <Task name="PAR" build_result="2" update_result="0" update_time="1701397616"/>
+            <Task name="PARTrace" build_result="2" update_result="0" update_time="1701397625"/>
+            <Task name="IOTiming" build_result="0" update_result="2" update_time="1699314038"/>
+        </Milestone>
+        <Milestone name="Synthesis" build_result="2" build_time="1701397610">
+            <Task name="Lattice_Synthesis" build_result="2" update_result="0" update_time="1701397610"/>
+            <Task name="LSE_Compile" build_result="2" update_result="0" update_time="1701397627"/>
+            <Task name="SynTrace" build_result="0" update_result="2" update_time="1701392391"/>
+            <Task name="SynVerilogSimFile" build_result="0" update_result="2" update_time="1701392391"/>
+>>>>>>> main
         </Milestone>
         <Milestone name="TOOL_Report" build_result="0" build_time="0">
             <Task name="HDLE" build_result="0" update_result="2" update_time="1699314305"/>
@@ -28,6 +50,7 @@
             <Task name="PIODRC" build_result="0" update_result="2" update_time="1701544021"/>
             <Task name="DEC" build_result="0" update_result="2" update_time="1699314038"/>
         </Milestone>
+<<<<<<< HEAD
         <Report name="ES4_Lab_7_impl_1.bgn" last_build_time="1701556218" last_build_size="1018"/>
         <Report name="ES4_Lab_7_impl_1.bin" last_build_time="1701556218" last_build_size="104156"/>
         <Report name="ES4_Lab_7_impl_1.lsedata" last_build_time="0" last_build_size="0"/>
@@ -42,3 +65,18 @@
     </Strategy>
 </BuildStatus>
                        
+=======
+        <Report name="ES4_Lab_7_impl_1.bgn" last_build_time="1701397625" last_build_size="1018"/>
+        <Report name="ES4_Lab_7_impl_1.bin" last_build_time="1701397625" last_build_size="104156"/>
+        <Report name="ES4_Lab_7_impl_1.lsedata" last_build_time="0" last_build_size="0"/>
+        <Report name="ES4_Lab_7_impl_1.twr.html" last_build_time="1701397625" last_build_size="425492"/>
+        <Report name="ES4_Lab_7_impl_1.udb" last_build_time="1701397616" last_build_size="22647"/>
+        <Report name="ES4_Lab_7_impl_1_map.udb" last_build_time="1701397610" last_build_size="15189"/>
+        <Report name="ES4_Lab_7_impl_1_rtl.udb" last_build_time="1701397609" last_build_size="15511"/>
+        <Report name="ES4_Lab_7_impl_1_syn.udb" last_build_time="1701397610" last_build_size="10685"/>
+        <Report name="ES4_Lab_7_impl_1_vo.sdf" last_build_time="1701397627" last_build_size="105076"/>
+        <Report name="ES4_Lab_7_impl_1_vo.vo" last_build_time="1701397627" last_build_size="107592"/>
+        <Report name="IBIS/ES4_Lab_7_impl_1.ibs" last_build_time="1701397626" last_build_size="54364"/>
+    </Strategy>
+</BuildStatus>
+>>>>>>> main

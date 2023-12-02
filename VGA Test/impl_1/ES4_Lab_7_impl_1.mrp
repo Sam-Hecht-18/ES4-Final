@@ -6,7 +6,11 @@ Package: SG48
 Performance Grade:  High-Performance_1.2V
 
 Mapper:    version Radiant Software (64-bit) 2023.1.0.43.3
+<<<<<<< HEAD
 Mapped on: Sat Dec  2 17:30:08 2023
+=======
+Mapped on: Thu Nov 30 21:26:50 2023
+>>>>>>> main
 
 Design Information
 ------------------
@@ -18,6 +22,7 @@ Command line:   map -i ES4_Lab_7_impl_1_syn.udb -pdc Z:/ES4-Final/VGA
 Design Summary
 --------------
 
+<<<<<<< HEAD
    Number of slice registers:  54 out of  5280 (1%)
    Number of I/O registers:      0 out of   117 (0%)
    Number of LUT4s:           137 out of  5280 (3%)
@@ -27,6 +32,15 @@ Design Summary
       Number of ripple logic:             23 (46 LUT4s)
    Number of IO sites used:   16 out of 39 (41%)
       Number of IO sites used for general PIO: 16
+=======
+   Number of slice registers:  50 out of  5280 (1%)
+   Number of I/O registers:      0 out of   117 (0%)
+   Number of LUT4s:           132 out of  5280 (3%)
+      Number of logic LUT4s:              80
+      Number of ripple logic:             26 (52 LUT4s)
+   Number of IO sites used:   11 out of 39 (28%)
+      Number of IO sites used for general PIO: 11
+>>>>>>> main
       Number of IO sites used for I3C: 0 out of 2 (0%)
       (note: If I3C is not used, its site can be used as general PIO)
       Number of IO sites used for PIO+I3C: 16 out of 36 (44%)
@@ -36,7 +50,7 @@ Design Summary
       Number of IO sites used for PIO+I3C+OD+RGB: 16 out of 39 (41%)
    Number of DSPs:             0 out of 8 (0%)
    Number of I2Cs:             0 out of 2 (0%)
-   Number of High Speed OSCs:  0 out of 1 (0%)
+   Number of High Speed OSCs:  1 out of 1 (100%)
    Number of Low Speed OSCs:   0 out of 1 (0%)
    Number of RGB PWM:          0 out of 1 (0%)
    Number of RGB Drivers:      0 out of 1 (0%)
@@ -44,14 +58,24 @@ Design Summary
    Number of SRAMs:            0 out of 4 (0%)
    Number of WARMBOOTs:        0 out of 1 (0%)
    Number of SPIs:             0 out of 2 (0%)
-   Number of EBRs:             1 out of 30 (3%)
+   Number of EBRs:             0 out of 30 (0%)
    Number of PLLs:             1 out of 1 (100%)
+<<<<<<< HEAD
    Number of Clocks:  3
       Net ctrlr_clk_c: 4 loads, 4 rising, 0 falling (Driver: Pin
      clock_device.NEScount_3__I_0/Z)
       Net outglobal_o: 36 loads, 36 rising, 0 falling (Driver: Pin
+=======
+   Number of Clocks:  4
+      Net outglobal_o: 12 loads, 12 rising, 0 falling (Driver: Pin
+>>>>>>> main
      my_pll.lscc_pll_inst.u_PLL_B/OUTGLOBAL)
+      Net my_pattern_gen.game_clock: 4 loads, 4 rising, 0 falling (Driver: Pin
+     my_pattern_gen.piece_drop_clock.game_clock_I_0/Q)
+      Net my_pattern_gen.piece_drop_clock.clk: 14 loads, 14 rising, 0 falling
+     (Driver: Pin my_pattern_gen.piece_drop_clock.osc/CLKHF)
       Net osc_c: 1 loads, 1 rising, 0 falling (Driver: Port osc)
+<<<<<<< HEAD
    Number of Clock Enables:  3
       Net my_vga.col_0__N_50: 6 loads, 6 SLICEs
       Net rotate_out_pad.vcc: 3 loads, 0 SLICEs
@@ -59,6 +83,15 @@ Design Summary
    Number of LSRs:  3
       Net my_vga.col_0__N_50: 6 loads, 6 SLICEs
       Net my_vga.row_0__N_30: 6 loads, 6 SLICEs
+=======
+   Number of Clock Enables:  2
+      Net my_vga.col_0__N_50: 6 loads, 6 SLICEs
+      Net valid_test_pad.vcc: 1 loads, 0 SLICEs
+   Number of LSRs:  2
+      Net my_vga.col_0__N_50: 6 loads, 6 SLICEs
+      Net my_vga.row_0__N_30: 6 loads, 6 SLICEs
+   Top 10 highest fanout non-clock nets:
+>>>>>>> main
 
                                     Page 1
 
@@ -68,6 +101,7 @@ Design Summary
 
 Design Summary (cont)
 ---------------------
+<<<<<<< HEAD
       Net my_pattern_gen.frame_counter_2__N_143[2]: 1 loads, 1 SLICEs
    Top 10 highest fanout non-clock nets:
       Net col[4]: 15 loads
@@ -80,6 +114,18 @@ Design Summary (cont)
       Net rotate_out_pad.vcc: 7 loads
       Net row[4]: 7 loads
       Net row[9]: 7 loads
+=======
+      Net row[4]: 15 loads
+      Net col[5]: 14 loads
+      Net col[6]: 14 loads
+      Net piece_loc_y[0]: 14 loads
+      Net my_vga.col_0__N_50: 13 loads
+      Net piece_loc_y[1]: 13 loads
+      Net col[7]: 12 loads
+      Net row[5]: 12 loads
+      Net col[4]: 11 loads
+      Net row[6]: 11 loads
+>>>>>>> main
 
 
 
@@ -99,6 +145,7 @@ IO (PIO) Attributes
 | IO Name             | Direction | Levelmode |  IO   |  IO   | Special   |
 |                     |           |  IO_TYPE  |  REG  |  DDR  | IO Buffer |
 +---------------------+-----------+-----------+-------+-------+-----------+
+<<<<<<< HEAD
 | ctrlr_data          | INPUT     |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | test_input          | INPUT     |           |       |       |           |
@@ -112,6 +159,11 @@ IO (PIO) Attributes
 | ctrlr_clk           | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | ctrlr_latch         | OUTPUT    |           |       |       |           |
+=======
+| osc                 | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| valid_test          | OUTPUT    |           |       |       |           |
+>>>>>>> main
 +---------------------+-----------+-----------+-------+-------+-----------+
 | clk_test            | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
@@ -146,6 +198,16 @@ Removed logic
 
 Block i1 was optimized away.
 
+<<<<<<< HEAD
+=======
+
+                                    Page 2
+
+
+
+
+
+>>>>>>> main
 PLL/DLL Summary
 ---------------
 
@@ -179,17 +241,35 @@ PLL 1:                                 Pin/Node Value
   EXTERNAL_DIVIDE_FACTOR:                       NONE
   TEST Mode:                                    0
 
+OSC Summary
+-----------
+
+OSC 1:                                 Pin/Node Value
+  OSC Instance Name:
+       my_pattern_gen/piece_drop_clock/osc
+  Power UP:                            NODE     valid_test_pad.vcc
+  Enable Signal:                       NODE     valid_test_pad.vcc
+  OSC Output:                          NODE
+       my_pattern_gen.piece_drop_clock.clk
+  DIV Setting:                                  00
+
 ASIC Components
 ---------------
 
+<<<<<<< HEAD
 Instance Name: my_pattern_gen/piece_device/curr_piece_shape_15__I_0
          Type: EBR
+=======
+Instance Name: my_pattern_gen/piece_drop_clock/osc
+         Type: HFOSC
+>>>>>>> main
 Instance Name: my_pll/lscc_pll_inst/u_PLL_B
          Type: PLL
 
 Constraint Summary
 ------------------
 
+<<<<<<< HEAD
    Total number of constraints: 15
 
                                     Page 3
@@ -200,14 +280,24 @@ Constraint Summary
 
 Constraint Summary (cont)
 -------------------------
+=======
+   Total number of constraints: 13
+>>>>>>> main
    Total number of constraints dropped: 0
+
+
+                                    Page 3
+
+
+
+
 
 Run Time and Memory Usage
 -------------------------
 
    Total CPU Time: 0 secs
    Total REAL Time: 0 secs
-   Peak Memory Usage: 58 MB
+   Peak Memory Usage: 59 MB
 
 
 
@@ -258,6 +348,13 @@ Run Time and Memory Usage
 
 
 
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> main
                                     Page 4
 
 
