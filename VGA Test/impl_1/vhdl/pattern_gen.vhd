@@ -15,6 +15,8 @@ use work.my_types_package.all;
 entity pattern_gen is
 	port(
 		clk: in std_logic;
+		game_clock : in std_logic;
+		rotate : in std_logic;
 		valid: in std_logic;
 		row: in unsigned(9 downto 0);
 		col: in unsigned(9 downto 0);
@@ -26,17 +28,11 @@ architecture synth of pattern_gen is
 
 	component piece is
     port(
+		clk : in std_logic;
         piece_code: in std_logic_vector(2 downto 0);
 		piece_rotation: in std_logic_vector(1 downto 0);
         piece_output: out std_logic_vector(15 downto 0)
     );
-	end component;
-
-	component game_clock_manager is
-	port(
-		clk: in std_logic;
-		game_clock: out std_logic
-	  );
 	end component;
 
 	component bottom_check is
@@ -64,16 +60,17 @@ architecture synth of pattern_gen is
 
 	signal game_clock: std_logic := '1';
 	signal collision: std_logic;
+
+	signal counter : unsigned(31 downto 0);
+	signal frame_counter : unsigned(15 downto 0);
 begin
 
 	piece_loc(0) <= piece_loc_x;
 	piece_loc(1) <= piece_loc_y;
 	bottom_check_portmap: bottom_check port map(clk, 8d"0", piece_loc, piece_shape, board, collision);
 
-	game_clock_manager_portmap: game_clock_manager port map(clk, game_clock);
-
-	--piece_device: piece port map("011", "00", piece_shape);
-	piece_shape <= "1110010000000000";
+	piece_device: piece port map("011", "00", piece_shape);
+	-- piece_shape <= "1110010000000000";
 
 	generate_board_row: for y in 0 to 11 generate
 		board(y) <= 10b"0";
@@ -92,7 +89,8 @@ begin
 	rgb_temp <= 6b"111111" when (to_integer(board_index_x) >= piece_loc_x     and
 							     to_integer(board_index_x) <= piece_loc_x + 3 and
 								 to_integer(board_index_y) >= piece_loc_y     and
-							     to_integer(board_index_y) <= piece_loc_y + 3 and
+								 TO_INTEGER(row_board_index) < unsigned('0' & std_logic_vector(top_left_row)) + to_unsigned(4, 5)  and
+							    --  to_integer(board_index_y) <= piece_loc_y + 3 and
 								 row <= 256 and col < 160                     and
 
 								 piece_shape(
@@ -113,9 +111,17 @@ begin
 	rgb <= rgb_temp when valid = '1' else "000000";
 
 	process (game_clock) begin
-		if rising_edge(game_clock) then
-			if not collision then
-				piece_loc_y <= piece_loc_y + 1;
+		if rising_edge(clk) then
+			if row = 480 and col = 640 and frame_counter(2) = '1' then
+				-- GAME LOGIC
+
+			elsif row = 480 and col = 640 then
+				frame_counter <= frame_counter + 1;
+
+			elsif rising_edge(game_clock) then
+				if not collision then
+					piece_loc_y <= piece_loc_y + 1;
+				end if;
 			end if;
 		end if;
 	end process;
