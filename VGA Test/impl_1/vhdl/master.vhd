@@ -23,9 +23,10 @@ architecture synth of master is
 			outglobal_o: out std_logic -- Output for clock network
 		);
 	end component;
-	
+
 	component pattern_gen is
 		port(
+			clk: in std_logic;
 			valid: in std_logic;
 			row: in unsigned(9 downto 0);
 			col: out unsigned(9 downto 0);
@@ -40,7 +41,7 @@ architecture synth of master is
 			row: out unsigned(9 downto 0);
 			col: out unsigned(9 downto 0);
 			hsync: out std_logic;
-			vsync: out std_logic 
+			vsync: out std_logic
 		);
 	end component;
 
@@ -53,16 +54,16 @@ architecture synth of master is
 
 begin
 
-	my_pll : pll_component 
+	my_pll : pll_component
 	port map (
-		ref_clk_i => osc, 
-		rst_n_i => '1', 
-		outcore_o => outcore_o, 
+		ref_clk_i => osc,
+		rst_n_i => '1',
+		outcore_o => outcore_o,
 		outglobal_o => outglobal_o
 	);
-	
-	my_pattern_gen : pattern_gen port map(valid, row, col, rgb);
-	
+
+	my_pattern_gen : pattern_gen port map(outglobal_o, valid, row, col, rgb);
+
 	my_vga : vga port map(outglobal_o, valid, row, col, hsync, vsync);
 
 	clk_test <= outcore_o;

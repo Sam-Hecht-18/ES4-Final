@@ -39,6 +39,7 @@ Analyzing Verilog file c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v. VERI-1482
 Analyzing Verilog file pll_component.v. VERI-1482
 Top module language type = VHDL.
 INFO <35901018> - pll_component.v(63): compiling module pll_component. VERI-1018
+INFO <35901018> - C:/lscc/radiant/2023.1/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(756): compiling module HSOSC. VERI-1018
 Top module name (VHDL, mixed language): master
 Source compile complete.
 Starting IP constraint check for pll_component.
@@ -54,7 +55,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-Mon Nov 27 20:45:53 2023
+Thu Nov 30 21:26:47 2023
 
 
 Command Line:  C:\lscc\radiant\2023.1\ispfpga\bin\nt64\synthesis.exe -f ES4_Lab_7_impl_1_lattice.synproj -gui -msgset Z:/ES4-Final/VGA Test/promote.xml 
@@ -135,6 +136,10 @@ VHDL library = work
 VHDL design file = Z:/ES4-Final/VGA Test/impl_1/vhdl/pattern_gen.vhd
 VHDL library = work
 VHDL design file = Z:/ES4-Final/VGA Test/impl_1/vhdl/vga.vhd
+VHDL library = work
+VHDL design file = Z:/ES4-Final/VGA Test/impl_1/vhdl/bottom_check.vhd
+VHDL library = work
+VHDL design file = Z:/ES4-Final/VGA Test/impl_1/vhdl/clock.vhd
 The -r option is OFF. [ Remove LOC Properties is OFF. ]
 WARNING <35935050> - input port TRIM9 is not connected on this instance. VDB-5050
 WARNING <35935050> - input port TRIM8 is not connected on this instance. VDB-5050
@@ -196,13 +201,25 @@ INFO <35921010> - z:/es4-final/vga test/impl_1/vhdl/master.vhd(16): analyzing ar
 Analyzing VHDL file z:/es4-final/vga test/impl_1/vhdl/pattern_gen.vhd. VHDL-1481
 Analyzing VHDL file z:/es4-final/vga test/impl_1/vhdl/pattern_gen.vhd
 
-INFO <35921012> - z:/es4-final/vga test/impl_1/vhdl/pattern_gen.vhd(5): analyzing entity pattern_gen. VHDL-1012
-INFO <35921010> - z:/es4-final/vga test/impl_1/vhdl/pattern_gen.vhd(14): analyzing architecture synth. VHDL-1010
+INFO <35921014> - z:/es4-final/vga test/impl_1/vhdl/pattern_gen.vhd(5): analyzing package my_types_package. VHDL-1014
+INFO <35921012> - z:/es4-final/vga test/impl_1/vhdl/pattern_gen.vhd(15): analyzing entity pattern_gen. VHDL-1012
+INFO <35921010> - z:/es4-final/vga test/impl_1/vhdl/pattern_gen.vhd(25): analyzing architecture synth. VHDL-1010
 Analyzing VHDL file z:/es4-final/vga test/impl_1/vhdl/vga.vhd. VHDL-1481
 Analyzing VHDL file z:/es4-final/vga test/impl_1/vhdl/vga.vhd
 
 INFO <35921012> - z:/es4-final/vga test/impl_1/vhdl/vga.vhd(5): analyzing entity vga. VHDL-1012
 INFO <35921010> - z:/es4-final/vga test/impl_1/vhdl/vga.vhd(16): analyzing architecture synth. VHDL-1010
+Analyzing VHDL file z:/es4-final/vga test/impl_1/vhdl/bottom_check.vhd. VHDL-1481
+Analyzing VHDL file z:/es4-final/vga test/impl_1/vhdl/bottom_check.vhd
+
+INFO <35921014> - z:/es4-final/vga test/impl_1/vhdl/bottom_check.vhd(5): analyzing package my_types_package. VHDL-1014
+INFO <35921012> - z:/es4-final/vga test/impl_1/vhdl/bottom_check.vhd(15): analyzing entity bottom_check. VHDL-1012
+INFO <35921010> - z:/es4-final/vga test/impl_1/vhdl/bottom_check.vhd(26): analyzing architecture synth. VHDL-1010
+Analyzing VHDL file z:/es4-final/vga test/impl_1/vhdl/clock.vhd. VHDL-1481
+Analyzing VHDL file z:/es4-final/vga test/impl_1/vhdl/clock.vhd
+
+INFO <35921012> - z:/es4-final/vga test/impl_1/vhdl/clock.vhd(5): analyzing entity clock. VHDL-1012
+INFO <35921010> - z:/es4-final/vga test/impl_1/vhdl/clock.vhd(11): analyzing architecture synth. VHDL-1010
 The default VHDL library search path is now "Z:/ES4-Final/VGA Test/impl_1". VHDL-1504
 Top module language type = VHDL.
 WARNING <35935049> - input port sclk_i remains unconnected for this instance. VDB-5049
@@ -232,6 +249,9 @@ Top module name (VHDL, mixed language): master
                                                          
 
 
+WARNING <35001771> - Initial value found on net game_clock will be ignored due to unrecognized driver type
+WARNING <35001771> - Initial value found on net collision_temp will be ignored due to unrecognized driver type
+WARNING <35001771> - Initial value found on net hit_bottom will be ignored due to unrecognized driver type
 WARNING <35001771> - Initial value found on net next_col[9] will be ignored due to unrecognized driver type
 WARNING <35001771> - Initial value found on net next_col[8] will be ignored due to unrecognized driver type
 WARNING <35001771> - Initial value found on net next_col[7] will be ignored due to unrecognized driver type
@@ -254,849 +274,8 @@ WARNING <35001771> - Initial value found on net next_row[1] will be ignored due 
 WARNING <35001771> - Initial value found on net next_row[0] will be ignored due to unrecognized driver type
 WARNING <35935049> - input port sclk_i remains unconnected for this instance. VDB-5049
 WARNING <35935049> - input port sdi_i remains unconnected for this instance. VDB-5049
-z:/es4-final/vga test/impl_1/vhdl/pattern_gen.vhd(16): net board[9][15][5] does not have a driver. VDB-1002
 z:/es4-final/vga test/pll_component/rtl/pll_component.v(139): net \my_pll/lscc_pll_inst/sclk_i does not have a driver. VDB-1002
 z:/es4-final/vga test/pll_component/rtl/pll_component.v(140): net \my_pll/lscc_pll_inst/sdi_i does not have a driver. VDB-1002
-######## Missing driver on net \my_pattern_gen/board[9][15][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][15][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][15][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][15][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][15][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][15][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][14][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][14][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][14][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][14][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][14][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][14][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][13][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][13][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][13][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][13][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][13][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][13][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][12][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][12][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][12][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][12][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][12][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][12][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][11][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][11][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][11][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][11][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][11][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][11][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][10][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][10][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][10][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][10][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][10][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][10][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][9][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][9][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][9][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][9][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][9][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][9][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][8][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][8][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][8][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][8][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][8][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][8][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][7][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][7][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][7][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][7][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][7][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][7][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][6][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][6][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][6][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][6][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][6][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][6][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][5][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][5][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][5][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][5][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][5][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][5][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][4][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][4][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][4][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][4][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][4][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][4][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][3][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][3][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][3][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][3][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][3][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][3][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][2][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][2][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][2][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][2][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][2][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[9][2][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][15][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][15][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][15][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][15][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][15][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][15][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][14][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][14][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][14][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][14][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][14][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][14][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][13][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][13][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][13][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][13][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][13][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][13][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][12][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][12][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][12][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][12][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][12][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][12][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][11][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][11][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][11][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][11][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][11][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][11][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][10][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][10][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][10][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][10][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][10][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][10][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][9][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][9][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][9][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][9][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][9][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][9][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][8][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][8][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][8][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][8][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][8][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][8][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][7][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][7][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][7][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][7][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][7][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][7][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][6][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][6][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][6][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][6][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][6][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][6][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][5][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][5][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][5][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][5][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][5][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][5][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][4][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][4][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][4][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][4][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][4][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][4][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][3][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][3][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][3][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][3][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][3][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][3][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][2][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][2][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][2][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][2][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][2][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[8][2][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][15][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][15][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][15][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][15][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][15][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][15][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][14][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][14][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][14][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][14][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][14][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][14][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][13][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][13][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][13][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][13][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][13][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][13][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][12][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][12][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][12][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][12][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][12][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][12][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][11][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][11][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][11][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][11][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][11][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][11][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][10][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][10][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][10][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][10][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][10][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][10][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][9][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][9][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][9][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][9][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][9][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][9][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][8][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][8][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][8][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][8][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][8][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][8][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][7][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][7][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][7][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][7][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][7][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][7][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][6][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][6][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][6][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][6][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][6][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][6][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][5][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][5][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][5][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][5][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][5][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][5][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][4][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][4][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][4][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][4][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][4][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][4][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][3][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][3][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][3][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][3][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][3][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][3][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][2][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][2][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][2][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][2][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][2][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[7][2][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][15][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][15][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][15][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][15][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][15][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][15][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][14][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][14][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][14][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][14][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][14][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][14][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][13][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][13][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][13][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][13][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][13][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][13][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][12][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][12][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][12][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][12][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][12][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][12][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][11][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][11][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][11][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][11][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][11][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][11][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][10][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][10][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][10][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][10][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][10][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][10][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][9][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][9][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][9][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][9][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][9][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][9][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][8][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][8][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][8][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][8][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][8][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][8][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][7][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][7][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][7][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][7][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][7][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][7][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][6][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][6][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][6][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][6][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][6][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][6][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][5][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][5][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][5][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][5][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][5][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][5][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][4][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][4][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][4][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][4][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][4][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][4][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][3][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][3][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][3][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][3][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][3][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][3][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][2][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][2][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][2][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][2][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][2][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[6][2][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][15][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][15][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][15][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][15][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][15][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][15][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][14][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][14][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][14][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][14][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][14][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][14][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][13][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][13][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][13][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][13][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][13][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][13][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][12][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][12][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][12][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][12][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][12][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][12][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][11][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][11][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][11][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][11][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][11][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][11][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][10][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][10][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][10][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][10][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][10][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][10][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][9][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][9][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][9][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][9][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][9][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][9][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][8][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][8][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][8][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][8][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][8][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][8][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][7][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][7][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][7][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][7][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][7][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][7][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][6][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][6][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][6][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][6][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][6][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][6][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][5][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][5][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][5][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][5][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][5][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][5][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][4][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][4][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][4][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][4][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][4][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][4][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][3][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][3][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][3][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][3][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][3][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][3][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][2][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][2][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][2][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][2][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][2][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[5][2][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][15][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][15][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][15][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][15][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][15][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][15][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][14][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][14][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][14][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][14][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][14][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][14][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][13][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][13][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][13][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][13][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][13][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][13][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][12][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][12][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][12][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][12][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][12][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][12][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][11][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][11][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][11][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][11][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][11][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][11][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][10][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][10][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][10][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][10][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][10][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][10][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][9][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][9][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][9][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][9][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][9][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][9][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][8][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][8][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][8][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][8][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][8][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][8][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][7][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][7][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][7][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][7][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][7][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][7][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][6][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][6][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][6][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][6][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][6][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][6][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][5][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][5][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][5][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][5][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][5][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][5][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][4][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][4][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][4][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][4][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][4][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][4][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][3][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][3][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][3][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][3][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][3][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][3][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][2][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][2][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][2][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][2][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][2][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[4][2][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][15][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][15][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][15][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][15][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][15][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][15][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][14][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][14][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][14][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][14][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][14][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][14][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][13][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][13][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][13][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][13][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][13][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][13][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][12][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][12][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][12][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][12][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][12][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][12][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][11][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][11][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][11][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][11][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][11][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][11][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][10][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][10][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][10][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][10][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][10][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][10][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][9][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][9][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][9][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][9][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][9][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][9][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][8][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][8][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][8][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][8][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][8][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][8][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][7][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][7][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][7][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][7][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][7][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][7][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][6][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][6][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][6][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][6][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][6][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][6][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][5][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][5][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][5][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][5][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][5][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][5][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][4][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][4][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][4][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][4][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][4][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][4][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][3][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][3][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][3][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][3][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][3][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][3][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][2][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][2][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][2][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][2][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][2][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[3][2][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][15][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][15][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][15][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][15][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][15][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][15][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][14][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][14][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][14][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][14][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][14][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][14][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][13][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][13][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][13][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][13][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][13][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][13][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][12][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][12][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][12][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][12][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][12][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][12][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][11][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][11][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][11][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][11][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][11][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][11][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][10][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][10][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][10][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][10][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][10][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][10][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][9][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][9][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][9][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][9][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][9][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][9][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][8][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][8][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][8][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][8][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][8][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][8][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][7][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][7][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][7][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][7][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][7][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][7][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][6][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][6][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][6][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][6][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][6][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][6][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][5][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][5][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][5][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][5][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][5][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][5][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][4][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][4][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][4][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][4][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][4][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][4][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][3][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][3][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][3][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][3][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][3][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][3][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][2][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][2][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][2][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][2][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][2][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[2][2][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][15][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][15][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][15][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][15][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][15][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][15][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][14][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][14][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][14][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][14][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][14][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][14][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][13][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][13][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][13][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][13][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][13][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][13][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][12][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][12][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][12][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][12][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][12][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][12][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][11][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][11][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][11][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][11][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][11][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][11][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][10][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][10][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][10][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][10][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][10][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][10][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][9][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][9][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][9][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][9][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][9][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][9][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][8][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][8][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][8][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][8][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][8][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][8][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][7][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][7][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][7][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][7][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][7][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][7][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][6][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][6][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][6][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][6][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][6][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][6][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][5][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][5][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][5][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][5][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][5][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][5][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][4][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][4][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][4][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][4][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][4][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][4][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][3][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][3][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][3][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][3][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][3][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][3][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][2][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][2][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][2][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][2][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][2][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[1][2][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][15][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][15][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][15][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][15][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][15][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][15][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][14][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][14][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][14][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][14][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][14][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][14][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][13][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][13][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][13][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][13][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][13][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][13][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][12][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][12][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][12][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][12][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][12][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][12][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][11][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][11][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][11][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][11][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][11][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][11][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][10][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][10][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][10][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][10][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][10][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][10][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][9][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][9][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][9][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][9][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][9][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][9][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][8][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][8][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][8][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][8][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][8][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][8][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][7][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][7][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][7][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][7][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][7][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][7][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][6][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][6][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][6][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][6][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][6][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][6][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][5][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][5][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][5][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][5][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][5][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][5][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][4][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][4][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][4][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][4][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][4][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][4][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][3][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][3][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][3][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][3][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][3][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][3][0]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][2][5]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][2][4]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][2][3]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][2][2]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][2][1]. Patching with GND.
-######## Missing driver on net \my_pattern_gen/board[0][2][0]. Patching with GND.
 ######## Missing driver on net \my_pll/lscc_pll_inst/sclk_i. Patching with GND.
 ######## Missing driver on net \my_pll/lscc_pll_inst/sdi_i. Patching with GND.
 
@@ -1104,45 +283,45 @@ z:/es4-final/vga test/pll_component/rtl/pll_component.v(140): net \my_pll/lscc_p
 
 
 ################### Begin Area Report (master)######################
-Number of register bits => 20 of 5280 (0 % )
-EBR_B => 1
-CCU2 => 12
-FD1P3XZ => 20
+Number of register bits => 50 of 5280 (0 % )
+CCU2 => 26
+FD1P3XZ => 50
+HSOSC_CORE => 1
 IB => 1
-LUT4 => 34
+LUT4 => 79
 OB => 10
 PLL_B => 1
 ################### End Area Report ##################
 Number of odd-length carry chains : 0
-Number of even-length carry chains : 2
+Number of even-length carry chains : 3
 
 ################### Begin Clock Report ######################
 Clock Nets
 Number of Clocks: 3
-  Net : my_pll/lscc_pll_inst/outglobal_o, loads : 0
   Net : osc_c, loads : 1
   Net : my_pll/lscc_pll_inst/clk_test_c, loads : 1
+  Net : my_pll/lscc_pll_inst/outglobal_o, loads : 0
 Clock Enable Nets
 Number of Clock Enables: 0
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : my_vga/col_0__N_26, loads : 21
-  Net : rgb_c_0_N_114, loads : 6
-  Net : my_vga/row_0__N_16, loads : 6
-  Net : my_vga/n19, loads : 5
-  Net : my_vga/row[9], loads : 4
-  Net : my_vga/row[5], loads : 4
-  Net : my_vga/col[9], loads : 4
-  Net : my_vga/col[8], loads : 4
-  Net : my_vga/col[7], loads : 4
-  Net : my_vga/col[5], loads : 4
+  Net : my_pattern_gen/piece_drop_clock/clk, loads : 26
+  Net : my_vga/col_0__N_50, loads : 21
+  Net : my_vga/row[4], loads : 14
+  Net : my_vga/col[5], loads : 13
+  Net : my_pattern_gen/piece_loc_y[0], loads : 13
+  Net : my_vga/col[6], loads : 12
+  Net : my_pattern_gen/piece_loc_y[1], loads : 12
+  Net : my_vga/row[5], loads : 11
+  Net : my_vga/col[7], loads : 11
+  Net : my_vga/row[7], loads : 10
 ################### End Clock Report ##################
 
-Peak Memory Usage: 109 MB
+Peak Memory Usage: 124 MB
 
 --------------------------------------------------------------
 Total CPU Time: 0 secs 
-Total REAL Time: 3 secs 
+Total REAL Time: 2 secs 
 --------------------------------------------------------------
 
 
@@ -1154,10 +333,10 @@ Command Line: postsyn -a iCE40UP -p iCE40UP5K -t SG48 -sp High-Performance_1.2V 
    Package:          SG48
    Performance:      High-Performance_1.2V
 Reading input file 'ES4_Lab_7_impl_1.vm' ...
-CPU Time to convert: 0.03125
+CPU Time to convert: 0.046875
 REAL Time to convert: 0
-convert PEAK Memory Usage: 28 MB
-convert CURRENT Memory Usage: 28 MB
+convert PEAK Memory Usage: 29 MB
+convert CURRENT Memory Usage: 29 MB
 Reading constraint file 'Z:/ES4-Final/VGA Test/impl_1/ES4_Lab_7_impl_1.ldc' ...
 Removing unused logic ...
 Starting design annotation....
@@ -1167,14 +346,14 @@ WARNING <70001944> - No master clock for
 	generated clock	create_generated_clock -name {clk_test_c} -source [get_pins {my_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {my_pll/lscc_pll_inst/u_PLL_B/OUTCORE }] .
  
 Constraint Summary:
-   Total number of constraints: 2
+   Total number of constraints: 3
    Total number of constraints dropped: 0
  
 Writing output file 'ES4_Lab_7_impl_1_syn.udb'.
 POSTSYN finished successfully.
 Total CPU Time: 0 secs 
 Total REAL Time: 0 secs 
-Peak Memory Usage: 36 MB
+Peak Memory Usage: 37 MB
 
 
 map -i "ES4_Lab_7_impl_1_syn.udb" -pdc "Z:/ES4-Final/VGA Test/pins.pdc" -o "ES4_Lab_7_impl_1_map.udb" -mp "ES4_Lab_7_impl_1.mrp" -hierrpt     
@@ -1213,12 +392,11 @@ Optimizing...
 
 
 Design Summary:
-   Number of slice registers:  20 out of  5280 (<1%)
+   Number of slice registers:  50 out of  5280 (1%)
    Number of I/O registers:      0 out of   117 (0%)
-   Number of LUT4s:            67 out of  5280 (1%)
-      Number of logic LUT4s:              35
-      Number of replicated LUT4s:          8
-      Number of ripple logic:             12 (24 LUT4s)
+   Number of LUT4s:           132 out of  5280 (3%)
+      Number of logic LUT4s:              80
+      Number of ripple logic:             26 (52 LUT4s)
    Number of IO sites used:   11 out of 39 (28%)
       Number of IO sites used for general PIO: 11
       Number of IO sites used for I3C: 0 out of 2 (0%)
@@ -1230,7 +408,7 @@ Design Summary:
       Number of IO sites used for PIO+I3C+OD+RGB: 11 out of 39 (28%)
    Number of DSPs:             0 out of 8 (0%)
    Number of I2Cs:             0 out of 2 (0%)
-   Number of High Speed OSCs:  0 out of 1 (0%)
+   Number of High Speed OSCs:  1 out of 1 (100%)
    Number of Low Speed OSCs:   0 out of 1 (0%)
    Number of RGB PWM:          0 out of 1 (0%)
    Number of RGB Drivers:      0 out of 1 (0%)
@@ -1238,28 +416,30 @@ Design Summary:
    Number of SRAMs:            0 out of 4 (0%)
    Number of WARMBOOTs:        0 out of 1 (0%)
    Number of SPIs:             0 out of 2 (0%)
-   Number of EBRs:             1 out of 30 (3%)
+   Number of EBRs:             0 out of 30 (0%)
    Number of PLLs:             1 out of 1 (100%)
-   Number of Clocks:  2
-      Net outglobal_o: 19 loads, 19 rising, 0 falling (Driver: Pin my_pll.lscc_pll_inst.u_PLL_B/OUTGLOBAL)
+   Number of Clocks:  4
+      Net outglobal_o: 12 loads, 12 rising, 0 falling (Driver: Pin my_pll.lscc_pll_inst.u_PLL_B/OUTGLOBAL)
+      Net my_pattern_gen.game_clock: 4 loads, 4 rising, 0 falling (Driver: Pin my_pattern_gen.piece_drop_clock.game_clock_I_0/Q)
+      Net my_pattern_gen.piece_drop_clock.clk: 14 loads, 14 rising, 0 falling (Driver: Pin my_pattern_gen.piece_drop_clock.osc/CLKHF)
       Net osc_c: 1 loads, 1 rising, 0 falling (Driver: Port osc)
    Number of Clock Enables:  2
-      Net my_vga.col_0__N_26: 5 loads, 5 SLICEs
-      Net rgb_pad[0].vcc: 3 loads, 0 SLICEs
+      Net my_vga.col_0__N_50: 6 loads, 6 SLICEs
+      Net valid_test_pad.vcc: 1 loads, 0 SLICEs
    Number of LSRs:  2
-      Net my_vga.col_0__N_26: 5 loads, 5 SLICEs
-      Net my_vga.row_0__N_16: 5 loads, 5 SLICEs
+      Net my_vga.col_0__N_50: 6 loads, 6 SLICEs
+      Net my_vga.row_0__N_30: 6 loads, 6 SLICEs
    Top 10 highest fanout non-clock nets:
-      Net my_vga.col_0__N_26: 27 loads
-      Net my_vga.n19: 8 loads
-      Net rgb_c_0_N_114: 6 loads
-      Net rgb_pad[0].vcc: 6 loads
-      Net row[5]: 6 loads
-      Net col[9]: 5 loads
-      Net my_vga.row[2]_2: 5 loads
-      Net my_vga.row[4]_2: 5 loads
-      Net my_vga.row_0__N_16: 5 loads
-      Net row[6]: 5 loads
+      Net row[4]: 15 loads
+      Net col[5]: 14 loads
+      Net col[6]: 14 loads
+      Net piece_loc_y[0]: 14 loads
+      Net my_vga.col_0__N_50: 13 loads
+      Net piece_loc_y[1]: 13 loads
+      Net col[7]: 12 loads
+      Net row[5]: 12 loads
+      Net col[4]: 11 loads
+      Net row[6]: 11 loads
 Running physical design DRC...
 
 CRITICAL <71003005> - The clock port [osc] is assigned to a non clock dedicated pin [12], which might affect the clock performance. Use dedicated clock resources for the port.
@@ -1269,19 +449,19 @@ CRITICAL <71003005> - The clock port [osc] is assigned to a non clock dedicated 
    Number of errors:    0
 
 Constraint Summary:
-   Total number of constraints: 12
+   Total number of constraints: 13
    Total number of constraints dropped: 0
 
 
 Total CPU Time: 0 secs  
 Total REAL Time: 0 secs  
-Peak Memory Usage: 58 MB
+Peak Memory Usage: 59 MB
 
 
 par -f "ES4_Lab_7_impl_1.p2t" "ES4_Lab_7_impl_1_map.udb" "ES4_Lab_7_impl_1.udb"
 
 Lattice Place and Route Report for Design "ES4_Lab_7_impl_1_map.udb"
-Mon Nov 27 20:45:57 2023
+Thu Nov 30 21:26:50 2023
 
 PAR: Place And Route Radiant Software (64-bit) 2023.1.0.43.3.
 Command Line: par -w -t 1 -cores 1 -exp parPathBased=ON \
@@ -1306,19 +486,19 @@ WARNING <70001944> - No master clock for
 
 WARNING: Database constraint "create_generated_clock -name {clk_test_c} -source [get_pins my_pll.lscc_pll_inst.u_PLL_B/REFERENCECLK] -divide_by 32 -multiply_by 67 [get_pins my_pll.lscc_pll_inst.u_PLL_B/OUTCORE]" does not have corresponding timing constraint. Please check if the resource objects of the constraint are valid carefully!
 CRITICAL <71003005> - The clock port [osc] is assigned to a non clock dedicated pin [12], which might affect the clock performance. Use dedicated clock resources for the port.
-Number of Signals: 115
-Number of Connections: 275
+Number of Signals: 230
+Number of Connections: 526
 Device utilization summary:
 
-   SLICE (est.)      35/2640          1% used
-     LUT             67/5280          1% used
-     REG             20/5280         <1% used
+   SLICE (est.)      68/2640          3% used
+     LUT            132/5280          3% used
+     REG             50/5280          1% used
    PIO               11/56           20% used
                      11/36           30% bonded
    IOLOGIC            0/56            0% used
    DSP                0/8             0% used
    I2C                0/2             0% used
-   HFOSC              0/1             0% used
+   HFOSC              1/1           100% used
    LFOSC              0/1             0% used
    LEDDA_IP           0/1             0% used
    RGBA_DRV           0/1             0% used
@@ -1326,7 +506,7 @@ Device utilization summary:
    SRAM               0/4             0% used
    WARMBOOT           0/1             0% used
    SPI                0/2             0% used
-   EBR                1/30            3% used
+   EBR                0/30            0% used
    PLL                1/1           100% used
    RGBOUTBUF          0/3             0% used
    I3C                0/2             0% used
@@ -1335,7 +515,7 @@ Device utilization summary:
 Pin Constraint Summary:
    10 out of 11 pins locked (90% locked).
 .
-..........
+.........
 Finished Placer Phase 0 (HIER). CPU time: 0 secs , REAL time: 0 secs 
 
 
@@ -1346,30 +526,31 @@ Starting Placer Phase 1. CPU time: 0 secs , REAL time: 0 secs
 ..  ..
 ....................
 
-Placer score = 12943.
+Placer score = 15877.
 
 Device SLICE utilization summary after final SLICE packing:
-   SLICE             35/2640          1% used
+   SLICE             68/2640          2% used
 
 WARNING <70001944> - No master clock for
 	generated clock	create_generated_clock -name {outglobal_o} -source [get_pins {my_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {my_pll/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] .
 WARNING <70001944> - No master clock for
 	generated clock	create_generated_clock -name {clk_test_c} -source [get_pins {my_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {my_pll/lscc_pll_inst/u_PLL_B/OUTCORE }] .
-Finished Placer Phase 1. CPU time: 0 secs , REAL time: 3 secs 
+Finished Placer Phase 1. CPU time: 2 secs , REAL time: 5 secs 
 
 Starting Placer Phase 2.
 .
 
-Placer score =  15649
-Finished Placer Phase 2.  CPU time: 0 secs , REAL time: 3 secs 
+Placer score =  22608
+Finished Placer Phase 2.  CPU time: 2 secs , REAL time: 5 secs 
 
 
 ------------------ Clock Report ------------------
 
 Global Clocks :
-  PRIMARY "outglobal_o" from OUTGLOBAL on comp "my_pll.lscc_pll_inst.u_PLL_B" on site "PLL_R13C32", clk load = 17, ce load = 0, sr load = 0
+  PRIMARY "my_pattern_gen.piece_drop_clock.clk" from comp "my_pattern_gen.piece_drop_clock.osc" on site "HFOSC_R1C32", clk load = 14, ce load = 0, sr load = 0
+  PRIMARY "outglobal_o" from OUTGLOBAL on comp "my_pll.lscc_pll_inst.u_PLL_B" on site "PLL_R13C32", clk load = 12, ce load = 0, sr load = 0
 
-  PRIMARY  : 1 out of 8 (12%)
+  PRIMARY  : 2 out of 8 (25%)
 
 --------------- End of Clock Report ---------------
 
@@ -1389,12 +570,12 @@ I/O Bank Usage Summary:
 | 2        | 0 / 8 (  0%)   | OFF        |            |            |
 +----------+----------------+------------+------------+------------+
 
-Total Placer CPU time: 0 secs , REAL time: 3 secs 
+Total Placer CPU time: 2 secs , REAL time: 5 secs 
 
 Writing design to file ES4_Lab_7_impl_1_par.dir/5_1.udb ...
 
 
-Start NBR router at 20:46:00 11/27/23
+Start NBR router at 21:26:55 11/30/23
 
 *****************************************************************
 Info: NBR allows conflicts(one node used by more than one signal)
@@ -1412,15 +593,20 @@ Note: NBR uses a different method to calculate timing slacks. The
 Starting routing resource preassignment
 Preassignment Summary:
 --------------------------------------------------------------------------------
-41 connections routed with dedicated routing resources
-1 global clock signals routed
-58 connections routed (of 273 total) (21.25%)
+95 connections routed with dedicated routing resources
+2 global clock signals routed
+121 connections routed (of 524 total) (23.09%)
 ---------------------------------------------------------
 Clock routing summary:
-Primary clocks (1 used out of 8 available):
+Primary clocks (2 used out of 8 available):
+#4  Signal "my_pattern_gen.piece_drop_clock.clk"
+       Clock   loads: 14    out of    14 routed (100.00%)
 #7  Signal "outglobal_o"
-       Clock   loads: 17    out of    17 routed (100.00%)
+       Clock   loads: 12    out of    12 routed (100.00%)
 Other clocks:
+    Signal "my_pattern_gen.game_clock"
+       Clock   loads: 0     out of     2 routed (  0.00%)
+       Data    loads: 0     out of     1 routed (  0.00%)
     Signal "osc_c"
        Clock   loads: 0     out of     1 routed (  0.00%)
     Signal "my_pll.lscc_pll_inst.feedback_w"
@@ -1437,22 +623,36 @@ WARNING <70001944> - No master clock for
 Routing in Serial Mode ......
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Start NBR section for initial routing at 20:46:00 11/27/23
+Start NBR section for initial routing at 21:26:55 11/30/23
 Level 4, iteration 1
-7(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
+16(0.01%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 7.432ns/0.000ns; real time: 0 secs 
 
 Info: Initial congestion level at 75.00% usage is 0
 Info: Initial congestion area  at 75.00% usage is 0 (0.00%)
 
-Start NBR section for normal routing at 20:46:00 11/27/23
+Start NBR section for normal routing at 21:26:55 11/30/23
 Level 4, iteration 1
-1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
+1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 7.432ns/0.000ns; real time: 0 secs 
 Level 4, iteration 2
-1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
+1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 7.432ns/0.000ns; real time: 0 secs 
 Level 4, iteration 3
-0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
+1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 7.432ns/0.000ns; real time: 0 secs 
+Level 4, iteration 4
+0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 7.432ns/0.000ns; real time: 0 secs 
 
-Start NBR section for post-routing at 20:46:00 11/27/23
+Start NBR section for setup/hold timing optimization with effort level 3 at 21:26:55 11/30/23
+Changing speed to M
+
+Starting full timing analysis...
+Changing speed to M;   changing temperature to -40
+Changing speed to 6;   changing temperature to 100
+
+Start NBR section for post-routing at 21:26:56 11/30/23
 
 End NBR router with 0 unrouted connection
 WARNING <70001944> - No master clock for
@@ -1463,14 +663,14 @@ Requested speed is the same as database speed
 Changing speed to M
 
 Starting full timing analysis...
-Changing speed to M;   changing temperature to -40
+Requested speed is the same as database speed
 Changing speed to 6;   changing temperature to 100
 
 NBR Summary
 -----------
   Number of unrouted connections : 0 (0.00%)
-  Estimated worst slack<setup> : <n/a>
-  Estimated worst slack<hold > : <n/a>
+  Estimated worst slack<setup> : 7.432ns
+  Estimated worst slack<hold > : 1.913ns
   Timing score<setup> : 0
   Timing score<hold > : 0
   Number of connections with timing violations<setup> : 0 (0.00%)
@@ -1481,22 +681,22 @@ NBR Summary
 Total CPU time 0 secs 
 Total REAL time: 0 secs 
 Completely routed.
-End of route.  273 routed (100.00%); 0 unrouted.
+End of route.  524 routed (100.00%); 0 unrouted.
 
 Writing design to file ES4_Lab_7_impl_1_par.dir/5_1.udb ...
 
 
 PAR_SUMMARY::Run status = Completed
 PAR_SUMMARY::Number of unrouted conns = 0
-PAR_SUMMARY::Worst  slack<setup/<ns>> = <n/a>
-PAR_SUMMARY::Timing score<setup/<ns>> = <n/a>
-PAR_SUMMARY::Worst  slack<hold /<ns>> = <n/a>
-PAR_SUMMARY::Timing score<hold /<ns>> = <n/a>
+PAR_SUMMARY::Worst  slack<setup/<ns>> = 7.432
+PAR_SUMMARY::Timing score<setup/<ns>> = 0.000
+PAR_SUMMARY::Worst  slack<hold /<ns>> = 1.913
+PAR_SUMMARY::Timing score<hold /<ns>> = 0.000
 PAR_SUMMARY::Number of errors = 0
 
-Total CPU  Time: 0 secs 
-Total REAL Time: 4 secs 
-Peak Memory Usage: 105.90 MB
+Total CPU  Time: 2 secs 
+Total REAL Time: 6 secs 
+Peak Memory Usage: 115.31 MB
 
 
 par done!
@@ -1536,15 +736,15 @@ High-Performance_1.2V
 
 Starting full timing analysis...
 Performance Hardware Data Status:   Advanced       Version 1.0.
-Connections ignored  19  counted  210  covered  0
+Connections ignored  30  counted  483  covered  101
 Changing speed to m;   changing temperature to -40
 
 STA Runtime and Peak Memory Usage :
 Total CPU Time: 0 secs 
-Total REAL Time: 0 secs 
-Peak Memory Usage: 93 MB
+Total REAL Time: 9 secs 
+Peak Memory Usage: 94 MB
 
- 0.877872s wall, 0.281250s user + 0.046875s system = 0.328125s CPU (37.4%)
+ 8.480982s wall, 0.203125s user + 0.000000s system = 0.203125s CPU (2.4%)
 
 
 tmcheck -par "ES4_Lab_7_impl_1.par" 
@@ -1598,7 +798,7 @@ Peak Memory Usage: 112 MB
 ibisgen "ES4_Lab_7_impl_1.udb" "C:/lscc/radiant/2023.1/cae_library/ibis/iCE40UP.ibs"
 IBIS Models Generator: Lattice Radiant Software (64-bit) 2023.1.0.43.3
 
-Mon Nov 27 20:46:03 2023
+Thu Nov 30 21:27:05 2023
 
 Loading ES4_Lab_7_impl_1.udb ...
 Loading device for application GENERIC from file 'itpa08.nph' in environment: C:/lscc/radiant/2023.1/ispfpga.
@@ -1650,4 +850,4 @@ Writing SDF timing to file ES4_Lab_7_impl_1_vo.sdf
 Backanno finished with 0 posted error messages.
 Total CPU Time: 0 secs 
 Total REAL Time: 0 secs 
-Peak Memory Usage: 81 MB
+Peak Memory Usage: 84 MB
