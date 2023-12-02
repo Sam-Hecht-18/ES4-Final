@@ -24,9 +24,6 @@
         <Source name="impl_1/vhdl/nes_controller.vhd" type="VHDL" type_short="VHDL">
             <Options/>
         </Source>
-        <Source name="pins.pdc" type="Physical Constraints File" type_short="PDC">
-            <Options/>
-        </Source>
         <Source name="source/impl_1.xcf" type="Programming Project File" type_short="Programming">
             <Options/>
         </Source>

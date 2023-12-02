@@ -13,20 +13,8 @@ entity clock is
 end clock;
 
 architecture synth of clock is
-
--- signal clk : std_logic;
--- signal counter : unsigned(25 downto 0) := 26b"0";  
-
-    -- component HSOSC is
-    --     generic (
-    --     CLKHF_DIV : String := "0b00");
-    --     port(
-    --     CLKHFPU : in std_logic := '1'; -- Set to 1 to power up
-    --     CLKHFEN : in std_logic := '1'; -- Set to 1 to enable output
-    --     CLKHF : out std_logic := '0'); -- Clock output
-    -- end component;
    
-begin 
+begin
     game_clock <= counter(24);
 	NEScount <= counter(15 downto 8);
 	NESclk <= counter(7);

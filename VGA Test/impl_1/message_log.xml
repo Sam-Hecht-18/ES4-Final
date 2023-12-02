@@ -1,27 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BaliMessageLog>
-    <Task name="Export">
-        <Message>
-            <ID>1081100</ID>
-            <Severity>1</Severity>
-            <Dynamic>Bitstream authenticated.</Dynamic>
-        </Message>
-        <Message>
-            <ID>77001032</ID>
-            <Severity>16</Severity>
-            <Dynamic>ctrlr_data</Dynamic>
-            <Dynamic>ldc_set_location -site {48} [get_ports ctrlr_data]</Dynamic>
-        </Message>
-        <Message>
-            <ID>77001031</ID>
-            <Severity>16</Severity>
-            <Dynamic>ldc_set_location -site {48} [get_ports ctrlr_data]</Dynamic>
-        </Message>
-        <Message>
-            <ID>1191031</ID>
-            <Severity>1</Severity>
-        </Message>
-    </Task>
     <Task name="Synthesis">
         <Message>
             <ID>35831026</ID>
@@ -258,6 +236,22 @@
         <Message>
             <ID>35921012</ID>
             <Severity>1</Severity>
+            <Dynamic>z:/es4-final/vga test/impl_1/vhdl/piece.vhd(5): </Dynamic>
+            <Dynamic>piece</Dynamic>
+            <Navigation>z:/es4-final/vga test/impl_1/vhdl/piece.vhd</Navigation>
+            <Navigation>5</Navigation>
+        </Message>
+        <Message>
+            <ID>35921010</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4-final/vga test/impl_1/vhdl/piece.vhd(15): </Dynamic>
+            <Dynamic>synth</Dynamic>
+            <Navigation>z:/es4-final/vga test/impl_1/vhdl/piece.vhd</Navigation>
+            <Navigation>15</Navigation>
+        </Message>
+        <Message>
+            <ID>35921012</ID>
+            <Severity>1</Severity>
             <Dynamic>z:/es4-final/vga test/impl_1/vhdl/master.vhd(5): </Dynamic>
             <Dynamic>master</Dynamic>
             <Navigation>z:/es4-final/vga test/impl_1/vhdl/master.vhd</Navigation>
@@ -266,10 +260,10 @@
         <Message>
             <ID>35921010</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4-final/vga test/impl_1/vhdl/master.vhd(18): </Dynamic>
+            <Dynamic>z:/es4-final/vga test/impl_1/vhdl/master.vhd(21): </Dynamic>
             <Dynamic>synth</Dynamic>
             <Navigation>z:/es4-final/vga test/impl_1/vhdl/master.vhd</Navigation>
-            <Navigation>18</Navigation>
+            <Navigation>21</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
@@ -282,10 +276,10 @@
         <Message>
             <ID>35921010</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4-final/vga test/impl_1/vhdl/pattern_gen.vhd(17): </Dynamic>
+            <Dynamic>z:/es4-final/vga test/impl_1/vhdl/pattern_gen.vhd(18): </Dynamic>
             <Dynamic>synth</Dynamic>
             <Navigation>z:/es4-final/vga test/impl_1/vhdl/pattern_gen.vhd</Navigation>
-            <Navigation>17</Navigation>
+            <Navigation>18</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
@@ -302,22 +296,6 @@
             <Dynamic>synth</Dynamic>
             <Navigation>z:/es4-final/vga test/impl_1/vhdl/vga.vhd</Navigation>
             <Navigation>16</Navigation>
-        </Message>
-        <Message>
-            <ID>35921012</ID>
-            <Severity>1</Severity>
-            <Dynamic>z:/es4-final/vga test/impl_1/vhdl/piece.vhd(5): </Dynamic>
-            <Dynamic>piece</Dynamic>
-            <Navigation>z:/es4-final/vga test/impl_1/vhdl/piece.vhd</Navigation>
-            <Navigation>5</Navigation>
-        </Message>
-        <Message>
-            <ID>35921010</ID>
-            <Severity>1</Severity>
-            <Dynamic>z:/es4-final/vga test/impl_1/vhdl/piece.vhd(15): </Dynamic>
-            <Dynamic>synth</Dynamic>
-            <Navigation>z:/es4-final/vga test/impl_1/vhdl/piece.vhd</Navigation>
-            <Navigation>15</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
@@ -462,6 +440,102 @@
             <Dynamic>next_row[0]</Dynamic>
         </Message>
         <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>15</Dynamic>
+            <Dynamic>board[1]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>14</Dynamic>
+            <Dynamic>board[1]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>13</Dynamic>
+            <Dynamic>board[1]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>12</Dynamic>
+            <Dynamic>board[1]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>11</Dynamic>
+            <Dynamic>board[1]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>10</Dynamic>
+            <Dynamic>board[1]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>9</Dynamic>
+            <Dynamic>board[1]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>8</Dynamic>
+            <Dynamic>board[1]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>7</Dynamic>
+            <Dynamic>board[1]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>6</Dynamic>
+            <Dynamic>board[1]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>5</Dynamic>
+            <Dynamic>board[1]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>4</Dynamic>
+            <Dynamic>board[1]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>3</Dynamic>
+            <Dynamic>board[1]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>2</Dynamic>
+            <Dynamic>board[1]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>1</Dynamic>
+            <Dynamic>board[1]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001748</ID>
+            <Severity>256</Severity>
+            <Dynamic>0</Dynamic>
+            <Dynamic>board[1]</Dynamic>
+        </Message>
+        <Message>
             <ID>35935049</ID>
             <Severity>16</Severity>
             <Dynamic>sclk_i</Dynamic>
@@ -474,129 +548,124 @@
         <Message>
             <ID>35002028</ID>
             <Severity>256</Severity>
-            <Dynamic>ctrlr_data</Dynamic>
+            <Dynamic>test_input</Dynamic>
         </Message>
         <Message>
-            <ID>70001944</ID>
-            <Severity>16</Severity>
-            <Dynamic>create_generated_clock -name {outglobal_o} -source [get_pins {my_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {my_pll/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
-        </Message>
-        <Message>
-            <ID>70001944</ID>
-            <Severity>16</Severity>
-            <Dynamic>create_generated_clock -name {clk_test_c} -source [get_pins {my_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {my_pll/lscc_pll_inst/u_PLL_B/OUTCORE }] </Dynamic>
-        </Message>
-    </Task>
-    <Task name="PAR">
-        <Message>
-            <ID>77001032</ID>
-            <Severity>16</Severity>
-            <Dynamic>ctrlr_data</Dynamic>
-            <Dynamic>ldc_set_location -site {48} [get_ports ctrlr_data]</Dynamic>
-        </Message>
-        <Message>
-            <ID>77001031</ID>
-            <Severity>16</Severity>
-            <Dynamic>ldc_set_location -site {48} [get_ports ctrlr_data]</Dynamic>
-        </Message>
-        <Message>
-            <ID>70001944</ID>
-            <Severity>16</Severity>
-            <Dynamic>create_generated_clock -name {outglobal_o} -source [get_pins {my_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {my_pll/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
-        </Message>
-        <Message>
-            <ID>70001944</ID>
-            <Severity>16</Severity>
-            <Dynamic>create_generated_clock -name {clk_test_c} -source [get_pins {my_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {my_pll/lscc_pll_inst/u_PLL_B/OUTCORE }] </Dynamic>
-        </Message>
-        <Message>
-            <ID>77001032</ID>
-            <Severity>16</Severity>
-            <Dynamic>ctrlr_data</Dynamic>
-            <Dynamic>ldc_set_location -site {48} [get_ports ctrlr_data]</Dynamic>
-        </Message>
-        <Message>
-            <ID>77001031</ID>
-            <Severity>16</Severity>
-            <Dynamic>ldc_set_location -site {48} [get_ports ctrlr_data]</Dynamic>
-        </Message>
-        <Message>
-            <ID>71003020</ID>
-            <Severity>16</Severity>
-            <Dynamic>ctrlr_data</Dynamic>
-        </Message>
-        <Message>
-            <ID>71003020</ID>
-            <Severity>16</Severity>
-            <Dynamic>ctrlr_data</Dynamic>
-        </Message>
-        <Message>
-            <ID>71003020</ID>
-            <Severity>16</Severity>
-            <Dynamic>ctrlr_data</Dynamic>
-        </Message>
-        <Message>
-            <ID>71003020</ID>
-            <Severity>16</Severity>
-            <Dynamic>ctrlr_data</Dynamic>
-        </Message>
-        <Message>
-            <ID>71003005</ID>
+            <ID>35002028</ID>
             <Severity>256</Severity>
-            <Dynamic>osc</Dynamic>
+            <Dynamic>test_output</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>15</Dynamic>
+            <Dynamic>\my_pattern_gen/board[8][15:1]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>14</Dynamic>
+            <Dynamic>\my_pattern_gen/board[8][15:1]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>13</Dynamic>
+            <Dynamic>\my_pattern_gen/board[8][15:1]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
             <Dynamic>12</Dynamic>
+            <Dynamic>\my_pattern_gen/board[8][15:1]</Dynamic>
         </Message>
         <Message>
-            <ID>70001944</ID>
-            <Severity>16</Severity>
-            <Dynamic>create_generated_clock -name {outglobal_o} -source [get_pins {my_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {my_pll/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>11</Dynamic>
+            <Dynamic>\my_pattern_gen/board[8][15:1]</Dynamic>
         </Message>
         <Message>
-            <ID>70001944</ID>
-            <Severity>16</Severity>
-            <Dynamic>create_generated_clock -name {clk_test_c} -source [get_pins {my_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {my_pll/lscc_pll_inst/u_PLL_B/OUTCORE }] </Dynamic>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>10</Dynamic>
+            <Dynamic>\my_pattern_gen/board[8][15:1]</Dynamic>
         </Message>
         <Message>
-            <ID>77001032</ID>
-            <Severity>16</Severity>
-            <Dynamic>ctrlr_data</Dynamic>
-            <Dynamic>ldc_set_location -site {48} [get_ports ctrlr_data]</Dynamic>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>9</Dynamic>
+            <Dynamic>\my_pattern_gen/board[8][15:1]</Dynamic>
         </Message>
         <Message>
-            <ID>77001031</ID>
-            <Severity>16</Severity>
-            <Dynamic>ldc_set_location -site {48} [get_ports ctrlr_data]</Dynamic>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>8</Dynamic>
+            <Dynamic>\my_pattern_gen/board[8][15:1]</Dynamic>
         </Message>
         <Message>
-            <ID>77001032</ID>
-            <Severity>16</Severity>
-            <Dynamic>ctrlr_data</Dynamic>
-            <Dynamic>ldc_set_location -site {48} [get_ports ctrlr_data]</Dynamic>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>7</Dynamic>
+            <Dynamic>\my_pattern_gen/board[8][15:1]</Dynamic>
         </Message>
         <Message>
-            <ID>77001031</ID>
-            <Severity>16</Severity>
-            <Dynamic>ldc_set_location -site {48} [get_ports ctrlr_data]</Dynamic>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>6</Dynamic>
+            <Dynamic>\my_pattern_gen/board[8][15:1]</Dynamic>
         </Message>
         <Message>
-            <ID>70001944</ID>
-            <Severity>16</Severity>
-            <Dynamic>create_generated_clock -name {outglobal_o} -source [get_pins {my_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {my_pll/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>5</Dynamic>
+            <Dynamic>\my_pattern_gen/board[8][15:1]</Dynamic>
         </Message>
         <Message>
-            <ID>70001944</ID>
-            <Severity>16</Severity>
-            <Dynamic>create_generated_clock -name {clk_test_c} -source [get_pins {my_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {my_pll/lscc_pll_inst/u_PLL_B/OUTCORE }] </Dynamic>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>4</Dynamic>
+            <Dynamic>\my_pattern_gen/board[8][15:1]</Dynamic>
         </Message>
         <Message>
-            <ID>70001944</ID>
-            <Severity>16</Severity>
-            <Dynamic>create_generated_clock -name {outglobal_o} -source [get_pins {my_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {my_pll/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>3</Dynamic>
+            <Dynamic>\my_pattern_gen/board[8][15:1]</Dynamic>
         </Message>
         <Message>
-            <ID>70001944</ID>
-            <Severity>16</Severity>
-            <Dynamic>create_generated_clock -name {clk_test_c} -source [get_pins {my_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {my_pll/lscc_pll_inst/u_PLL_B/OUTCORE }] </Dynamic>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>2</Dynamic>
+            <Dynamic>\my_pattern_gen/board[8][15:1]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>1</Dynamic>
+            <Dynamic>\my_pattern_gen/board[8][15:1]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001748</ID>
+            <Severity>256</Severity>
+            <Dynamic>1</Dynamic>
+            <Dynamic>\my_pattern_gen/board[0][1:0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001748</ID>
+            <Severity>256</Severity>
+            <Dynamic>0</Dynamic>
+            <Dynamic>\my_pattern_gen/board[0][1:0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35002028</ID>
+            <Severity>256</Severity>
+            <Dynamic>test_input</Dynamic>
+        </Message>
+        <Message>
+            <ID>35002028</ID>
+            <Severity>256</Severity>
+            <Dynamic>test_output</Dynamic>
         </Message>
         <Message>
             <ID>70001944</ID>
@@ -611,20 +680,79 @@
     </Task>
     <Task name="Map">
         <Message>
-            <ID>71003020</ID>
-            <Severity>16</Severity>
-            <Dynamic>ctrlr_data</Dynamic>
+            <ID>71003005</ID>
+            <Severity>256</Severity>
+            <Dynamic>osc</Dynamic>
+            <Dynamic>12</Dynamic>
+        </Message>
+    </Task>
+    <Task name="Export">
+        <Message>
+            <ID>1081100</ID>
+            <Severity>1</Severity>
+            <Dynamic>Bitstream authenticated.</Dynamic>
         </Message>
         <Message>
-            <ID>71003020</ID>
+            <ID>1191031</ID>
+            <Severity>1</Severity>
+        </Message>
+    </Task>
+    <Task name="PAR">
+        <Message>
+            <ID>70001944</ID>
             <Severity>16</Severity>
-            <Dynamic>ctrlr_data</Dynamic>
+            <Dynamic>create_generated_clock -name {outglobal_o} -source [get_pins {my_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {my_pll/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
+        </Message>
+        <Message>
+            <ID>70001944</ID>
+            <Severity>16</Severity>
+            <Dynamic>create_generated_clock -name {clk_test_c} -source [get_pins {my_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {my_pll/lscc_pll_inst/u_PLL_B/OUTCORE }] </Dynamic>
         </Message>
         <Message>
             <ID>71003005</ID>
             <Severity>256</Severity>
             <Dynamic>osc</Dynamic>
             <Dynamic>12</Dynamic>
+        </Message>
+        <Message>
+            <ID>70001944</ID>
+            <Severity>16</Severity>
+            <Dynamic>create_generated_clock -name {outglobal_o} -source [get_pins {my_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {my_pll/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
+        </Message>
+        <Message>
+            <ID>70001944</ID>
+            <Severity>16</Severity>
+            <Dynamic>create_generated_clock -name {clk_test_c} -source [get_pins {my_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {my_pll/lscc_pll_inst/u_PLL_B/OUTCORE }] </Dynamic>
+        </Message>
+        <Message>
+            <ID>70001944</ID>
+            <Severity>16</Severity>
+            <Dynamic>create_generated_clock -name {outglobal_o} -source [get_pins {my_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {my_pll/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
+        </Message>
+        <Message>
+            <ID>70001944</ID>
+            <Severity>16</Severity>
+            <Dynamic>create_generated_clock -name {clk_test_c} -source [get_pins {my_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {my_pll/lscc_pll_inst/u_PLL_B/OUTCORE }] </Dynamic>
+        </Message>
+        <Message>
+            <ID>70001944</ID>
+            <Severity>16</Severity>
+            <Dynamic>create_generated_clock -name {outglobal_o} -source [get_pins {my_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {my_pll/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
+        </Message>
+        <Message>
+            <ID>70001944</ID>
+            <Severity>16</Severity>
+            <Dynamic>create_generated_clock -name {clk_test_c} -source [get_pins {my_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {my_pll/lscc_pll_inst/u_PLL_B/OUTCORE }] </Dynamic>
+        </Message>
+        <Message>
+            <ID>70001944</ID>
+            <Severity>16</Severity>
+            <Dynamic>create_generated_clock -name {outglobal_o} -source [get_pins {my_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {my_pll/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
+        </Message>
+        <Message>
+            <ID>70001944</ID>
+            <Severity>16</Severity>
+            <Dynamic>create_generated_clock -name {clk_test_c} -source [get_pins {my_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {my_pll/lscc_pll_inst/u_PLL_B/OUTCORE }] </Dynamic>
         </Message>
     </Task>
 </BaliMessageLog>

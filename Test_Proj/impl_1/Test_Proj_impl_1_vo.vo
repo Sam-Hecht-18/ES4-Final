@@ -1,0 +1,1386 @@
+
+// Verilog netlist produced by program backanno, Version Radiant Software (64-bit) 2023.1.0.43.3
+
+// backanno -o Test_Proj_impl_1_vo.vo -sp High-Performance_1.2V -w -neg -gui Test_Proj_impl_1.udb 
+// Netlist created on Sat Dec  2 15:28:17 2023
+// Netlist written on Sat Dec  2 15:28:21 2023
+// Design is for device iCE40UP5K
+// Design is for package SG48
+// Design is for performance grade High-Performance_1.2V
+
+`timescale 1 ns / 1 ps
+
+module master ( test_input, osc, test_output, ctrlr_clk, ctrlr_latch, clk_test, 
+                vsync, hsync, rgb, ctrlr_data );
+  input  test_input, osc, ctrlr_data;
+  output test_output, ctrlr_clk, ctrlr_latch, clk_test, vsync, hsync;
+  output [5:0] rgb;
+  wire   \my_vga.row_9__N_1[9] , \my_vga.n2335 , \my_vga.n1475 , \row[9] , 
+         \my_vga.col_0__N_50 , \my_vga.row_0__N_30 , \my_vga.col_9__N_31[9] , 
+         \my_vga.n2392 , \my_vga.n1486 , \col[9] , \my_vga.row_9__N_1[8] , 
+         \my_vga.row_9__N_1[7] , \my_vga.n2332 , \row[8] , \my_vga.n1473 , 
+         \row[7] , \my_vga.col_9__N_31[8] , \my_vga.col_9__N_31[7] , 
+         \my_vga.n2389 , \col[8] , \my_vga.n1484 , \col[7] , 
+         \my_vga.col_9__N_31[6] , \my_vga.col_9__N_31[5] , \my_vga.n2386 , 
+         \col[6] , \my_vga.n1482 , \col[5] , \my_vga.row_9__N_1[6] , 
+         \my_vga.row_9__N_1[5] , \my_vga.n2329 , \row[6] , \my_vga.n1471 , 
+         \row[5] , \my_vga.col_9__N_31[4] , \my_vga.col_9__N_31[3] , 
+         \my_vga.n2383 , \col[4] , \my_vga.n1480 , \my_vga.col[3]_2 , 
+         \my_vga.row_9__N_1[4] , \my_vga.row_9__N_1[3] , \my_vga.n2326 , 
+         \row[4] , \my_vga.n1469 , \my_vga.row[3]_2 , \my_vga.col_9__N_31[2] , 
+         \my_vga.col_9__N_31[1] , \my_vga.n2380 , \col[2] , \my_vga.n1478 , 
+         \my_vga.col[1]_2 , \my_vga.row_9__N_1[2] , \my_vga.row_9__N_1[1] , 
+         \my_vga.n2323 , \row[2] , \my_vga.n1467 , \row[1] , 
+         \my_vga.col_9__N_31[0] , \my_vga.n2338 , \my_vga.col[0]_2 , 
+         \test_output_pad.vcc , \my_vga.row_9__N_1[0] , \my_vga.n2320 , 
+         \row[0] , \my_vga.n1770 , \my_vga.rgb_c_3_N_67 , \my_vga.n22 , 
+         \my_vga.n4_adj_89 , \my_vga.vsync_c_N_74 , vsync_c, 
+         \my_vga.n12_adj_88 , n1760, n12, \my_vga.rgb_c_0_N_72 , 
+         \my_vga.rgb_c_4_N_65 , rgb_c_4_N_66, \my_vga.rgb_c_4_N_63 , n1078, 
+         \my_vga.n4_c , rgb_c_4, \my_vga.n1068 , \my_vga.rgb_c_0_N_71 , 
+         \my_pattern_gen.n14_adj_86 , \my_pattern_gen.n10_adj_83 , 
+         \my_pattern_gen.n14_adj_85 , \my_pattern_gen.n1876 , rgb_c_0, n4, n10, 
+         n633, \my_vga.hsync_c_N_73 , hsync_c, rgb_c_3_N_70, rgb_c_3, 
+         \my_pattern_gen.n1860 , n659, n1880, \my_vga.n11 , n671, 
+         \my_pattern_gen.n11 , n23, \my_pattern_gen.n8 , 
+         \my_pattern_gen.n12_adj_81 , \my_pattern_gen.n4_adj_80 , 
+         \my_pattern_gen.n10_c , \my_pattern_gen.n6 , ctrlr_latch_c, 
+         test_output_c_c;
+
+  my_vga_SLICE_0 \my_vga.SLICE_0 ( .DI0(\my_vga.row_9__N_1[9] ), 
+    .D1(\my_vga.n2335 ), .D0(\my_vga.n1475 ), .C0(\row[9] ), 
+    .CE(\my_vga.col_0__N_50 ), .LSR(\my_vga.row_0__N_30 ), 
+    .CIN0(\my_vga.n1475 ), .CIN1(\my_vga.n2335 ), .Q0(\row[9] ), 
+    .F0(\my_vga.row_9__N_1[9] ), .COUT0(\my_vga.n2335 ));
+  my_vga_SLICE_1 \my_vga.SLICE_1 ( .DI0(\my_vga.col_9__N_31[9] ), 
+    .D1(\my_vga.n2392 ), .D0(\my_vga.n1486 ), .C0(\col[9] ), 
+    .LSR(\my_vga.col_0__N_50 ), .CIN0(\my_vga.n1486 ), .CIN1(\my_vga.n2392 ), 
+    .Q0(\col[9] ), .F0(\my_vga.col_9__N_31[9] ), .COUT0(\my_vga.n2392 ));
+  my_vga_SLICE_2 \my_vga.SLICE_2 ( .DI1(\my_vga.row_9__N_1[8] ), 
+    .DI0(\my_vga.row_9__N_1[7] ), .D1(\my_vga.n2332 ), .C1(\row[8] ), 
+    .D0(\my_vga.n1473 ), .C0(\row[7] ), .CE(\my_vga.col_0__N_50 ), 
+    .LSR(\my_vga.row_0__N_30 ), .CIN0(\my_vga.n1473 ), .CIN1(\my_vga.n2332 ), 
+    .Q0(\row[7] ), .Q1(\row[8] ), .F0(\my_vga.row_9__N_1[7] ), 
+    .F1(\my_vga.row_9__N_1[8] ), .COUT1(\my_vga.n1475 ), 
+    .COUT0(\my_vga.n2332 ));
+  my_vga_SLICE_3 \my_vga.SLICE_3 ( .DI1(\my_vga.col_9__N_31[8] ), 
+    .DI0(\my_vga.col_9__N_31[7] ), .D1(\my_vga.n2389 ), .C1(\col[8] ), 
+    .D0(\my_vga.n1484 ), .C0(\col[7] ), .LSR(\my_vga.col_0__N_50 ), 
+    .CIN0(\my_vga.n1484 ), .CIN1(\my_vga.n2389 ), .Q0(\col[7] ), .Q1(\col[8] ), 
+    .F0(\my_vga.col_9__N_31[7] ), .F1(\my_vga.col_9__N_31[8] ), 
+    .COUT1(\my_vga.n1486 ), .COUT0(\my_vga.n2389 ));
+  my_vga_SLICE_4 \my_vga.SLICE_4 ( .DI1(\my_vga.col_9__N_31[6] ), 
+    .DI0(\my_vga.col_9__N_31[5] ), .D1(\my_vga.n2386 ), .C1(\col[6] ), 
+    .D0(\my_vga.n1482 ), .C0(\col[5] ), .LSR(\my_vga.col_0__N_50 ), 
+    .CIN0(\my_vga.n1482 ), .CIN1(\my_vga.n2386 ), .Q0(\col[5] ), .Q1(\col[6] ), 
+    .F0(\my_vga.col_9__N_31[5] ), .F1(\my_vga.col_9__N_31[6] ), 
+    .COUT1(\my_vga.n1484 ), .COUT0(\my_vga.n2386 ));
+  my_vga_SLICE_5 \my_vga.SLICE_5 ( .DI1(\my_vga.row_9__N_1[6] ), 
+    .DI0(\my_vga.row_9__N_1[5] ), .D1(\my_vga.n2329 ), .C1(\row[6] ), 
+    .D0(\my_vga.n1471 ), .C0(\row[5] ), .CE(\my_vga.col_0__N_50 ), 
+    .LSR(\my_vga.row_0__N_30 ), .CIN0(\my_vga.n1471 ), .CIN1(\my_vga.n2329 ), 
+    .Q0(\row[5] ), .Q1(\row[6] ), .F0(\my_vga.row_9__N_1[5] ), 
+    .F1(\my_vga.row_9__N_1[6] ), .COUT1(\my_vga.n1473 ), 
+    .COUT0(\my_vga.n2329 ));
+  my_vga_SLICE_6 \my_vga.SLICE_6 ( .DI1(\my_vga.col_9__N_31[4] ), 
+    .DI0(\my_vga.col_9__N_31[3] ), .D1(\my_vga.n2383 ), .C1(\col[4] ), 
+    .D0(\my_vga.n1480 ), .C0(\my_vga.col[3]_2 ), .LSR(\my_vga.col_0__N_50 ), 
+    .CIN0(\my_vga.n1480 ), .CIN1(\my_vga.n2383 ), .Q0(\my_vga.col[3]_2 ), 
+    .Q1(\col[4] ), .F0(\my_vga.col_9__N_31[3] ), .F1(\my_vga.col_9__N_31[4] ), 
+    .COUT1(\my_vga.n1482 ), .COUT0(\my_vga.n2383 ));
+  my_vga_SLICE_7 \my_vga.SLICE_7 ( .DI1(\my_vga.row_9__N_1[4] ), 
+    .DI0(\my_vga.row_9__N_1[3] ), .D1(\my_vga.n2326 ), .C1(\row[4] ), 
+    .D0(\my_vga.n1469 ), .C0(\my_vga.row[3]_2 ), .CE(\my_vga.col_0__N_50 ), 
+    .LSR(\my_vga.row_0__N_30 ), .CIN0(\my_vga.n1469 ), .CIN1(\my_vga.n2326 ), 
+    .Q0(\my_vga.row[3]_2 ), .Q1(\row[4] ), .F0(\my_vga.row_9__N_1[3] ), 
+    .F1(\my_vga.row_9__N_1[4] ), .COUT1(\my_vga.n1471 ), 
+    .COUT0(\my_vga.n2326 ));
+  my_vga_SLICE_8 \my_vga.SLICE_8 ( .DI1(\my_vga.col_9__N_31[2] ), 
+    .DI0(\my_vga.col_9__N_31[1] ), .D1(\my_vga.n2380 ), .C1(\col[2] ), 
+    .D0(\my_vga.n1478 ), .C0(\my_vga.col[1]_2 ), .LSR(\my_vga.col_0__N_50 ), 
+    .CIN0(\my_vga.n1478 ), .CIN1(\my_vga.n2380 ), .Q0(\my_vga.col[1]_2 ), 
+    .Q1(\col[2] ), .F0(\my_vga.col_9__N_31[1] ), .F1(\my_vga.col_9__N_31[2] ), 
+    .COUT1(\my_vga.n1480 ), .COUT0(\my_vga.n2380 ));
+  my_vga_SLICE_9 \my_vga.SLICE_9 ( .DI1(\my_vga.row_9__N_1[2] ), 
+    .DI0(\my_vga.row_9__N_1[1] ), .D1(\my_vga.n2323 ), .C1(\row[2] ), 
+    .D0(\my_vga.n1467 ), .C0(\row[1] ), .CE(\my_vga.col_0__N_50 ), 
+    .LSR(\my_vga.row_0__N_30 ), .CIN0(\my_vga.n1467 ), .CIN1(\my_vga.n2323 ), 
+    .Q0(\row[1] ), .Q1(\row[2] ), .F0(\my_vga.row_9__N_1[1] ), 
+    .F1(\my_vga.row_9__N_1[2] ), .COUT1(\my_vga.n1469 ), 
+    .COUT0(\my_vga.n2323 ));
+  my_vga_SLICE_10 \my_vga.SLICE_10 ( .DI1(\my_vga.col_9__N_31[0] ), 
+    .D1(\my_vga.n2338 ), .C1(\my_vga.col[0]_2 ), .B1(\test_output_pad.vcc ), 
+    .LSR(\my_vga.col_0__N_50 ), .CIN1(\my_vga.n2338 ), .Q1(\my_vga.col[0]_2 ), 
+    .F1(\my_vga.col_9__N_31[0] ), .COUT1(\my_vga.n1478 ), 
+    .COUT0(\my_vga.n2338 ));
+  my_vga_SLICE_11 \my_vga.SLICE_11 ( .DI1(\my_vga.row_9__N_1[0] ), 
+    .D1(\my_vga.n2320 ), .C1(\row[0] ), .B1(\test_output_pad.vcc ), 
+    .CE(\my_vga.col_0__N_50 ), .LSR(\my_vga.row_0__N_30 ), 
+    .CIN1(\my_vga.n2320 ), .Q1(\row[0] ), .F1(\my_vga.row_9__N_1[0] ), 
+    .COUT1(\my_vga.n1467 ), .COUT0(\my_vga.n2320 ));
+  my_vga_SLICE_12 \my_vga.SLICE_12 ( .D1(\col[9] ), .C1(\my_vga.n1770 ), 
+    .B1(\my_vga.rgb_c_3_N_67 ), .A1(\col[7] ), .D0(\col[5] ), 
+    .C0(\my_vga.n22 ), .B0(\col[7] ), .A0(\col[8] ), .F0(\my_vga.n1770 ), 
+    .F1(\my_vga.n4_adj_89 ));
+  my_vga_SLICE_14 \my_vga.SLICE_14 ( .D1(\row[4] ), .C1(\row[8] ), 
+    .B1(\row[1] ), .A1(\row[2] ), .D0(\row[2] ), .C0(\row[4] ), 
+    .B0(\my_vga.vsync_c_N_74 ), .F0(vsync_c), .F1(\my_vga.n12_adj_88 ));
+  my_vga_SLICE_15 \my_vga.SLICE_15 ( .D1(n1760), .C1(n12), .B1(\row[9] ), 
+    .A1(\my_vga.row[3]_2 ), .D0(\row[2] ), .C0(\row[1] ), .F0(n12), 
+    .F1(\my_vga.vsync_c_N_74 ));
+  my_vga_SLICE_16 \my_vga.SLICE_16 ( .B0(\col[8] ), .A0(\col[9] ), 
+    .F0(\my_vga.rgb_c_0_N_72 ));
+  my_vga_SLICE_17 \my_vga.SLICE_17 ( .D1(\my_vga.rgb_c_0_N_72 ), 
+    .C1(\my_vga.rgb_c_4_N_65 ), .B1(rgb_c_4_N_66), .A1(\my_vga.rgb_c_4_N_63 ), 
+    .D0(n1078), .C0(\my_vga.n4_c ), .B0(\col[6] ), .A0(\col[7] ), 
+    .F0(\my_vga.rgb_c_4_N_65 ), .F1(rgb_c_4));
+  my_vga_SLICE_18 \my_vga.SLICE_18 ( .C1(\my_vga.rgb_c_4_N_63 ), 
+    .A1(rgb_c_4_N_66), .D0(\row[9] ), .C0(\my_vga.n4_adj_89 ), 
+    .B0(\my_vga.n1068 ), .A0(n1760), .F0(\my_vga.rgb_c_4_N_63 ), 
+    .F1(\my_vga.rgb_c_0_N_71 ));
+  my_pattern_gen_SLICE_19 \my_pattern_gen.SLICE_19 ( 
+    .D1(\my_vga.rgb_c_4_N_63 ), .C1(rgb_c_4_N_66), .B1(\col[9] ), 
+    .A1(\col[8] ), .D0(\my_pattern_gen.n14_adj_86 ), 
+    .C0(\my_pattern_gen.n10_adj_83 ), .B0(\my_pattern_gen.n14_adj_85 ), 
+    .A0(\my_pattern_gen.n1876 ), .F0(rgb_c_4_N_66), .F1(rgb_c_0));
+  my_vga_SLICE_20 \my_vga.SLICE_20 ( .B1(\row[7] ), .A1(\row[6] ), 
+    .D0(\row[8] ), .C0(\row[7] ), .B0(\row[5] ), .A0(\row[6] ), .F0(n1760), 
+    .F1(n4));
+  my_vga_SLICE_22 \my_vga.SLICE_22 ( .D1(\col[2] ), .C1(n10), .A1(\col[6] ), 
+    .D0(\my_vga.col[0]_2 ), .C0(\my_vga.col[3]_2 ), .B0(\my_vga.col[1]_2 ), 
+    .A0(\col[4] ), .F0(n10), .F1(\my_vga.n22 ));
+  my_pattern_gen_SLICE_23 \my_pattern_gen.SLICE_23 ( .D1(\col[8] ), .C1(n633), 
+    .B1(\col[5] ), .A1(\col[7] ), .D0(\col[6] ), .C0(\col[9] ), .B0(n10), 
+    .A0(\col[2] ), .F0(n633), .F1(\my_vga.col_0__N_50 ));
+  my_vga_SLICE_24 \my_vga.SLICE_24 ( .D1(\col[9] ), .C1(\my_vga.hsync_c_N_73 ), 
+    .B1(\col[8] ), .A1(\col[7] ), .D0(\col[6] ), .C0(\col[4] ), .A0(\col[5] ), 
+    .F0(\my_vga.hsync_c_N_73 ), .F1(hsync_c));
+  my_vga_SLICE_26 \my_vga.SLICE_26 ( .D1(rgb_c_3_N_70), 
+    .C1(\my_vga.rgb_c_3_N_67 ), .B1(\my_vga.rgb_c_0_N_71 ), 
+    .A1(\my_vga.rgb_c_0_N_72 ), .D0(\col[6] ), .B0(\col[5] ), 
+    .F0(\my_vga.rgb_c_3_N_67 ), .F1(rgb_c_3));
+  my_pattern_gen_SLICE_27 \my_pattern_gen.SLICE_27 ( .D1(\row[8] ), 
+    .C1(\my_pattern_gen.n1860 ), .B1(n659), .A1(n1880), .D0(\col[4] ), 
+    .C0(\row[4] ), .B0(\col[8] ), .A0(\col[9] ), .F0(n1880), .F1(rgb_c_3_N_70));
+  my_vga_SLICE_29 \my_vga.SLICE_29 ( .D1(\my_vga.col_0__N_50 ), 
+    .C1(\my_vga.n11 ), .A1(\my_vga.n12_adj_88 ), .D0(n659), .C0(\row[0] ), 
+    .B0(\row[9] ), .A0(\my_vga.row[3]_2 ), .F0(\my_vga.n11 ), 
+    .F1(\my_vga.row_0__N_30 ));
+  my_pattern_gen_SLICE_31 \my_pattern_gen.SLICE_31 ( .D1(\row[4] ), 
+    .C1(\col[5] ), .B1(n659), .A1(\col[4] ), .D0(\row[7] ), .C0(\row[6] ), 
+    .A0(\row[5] ), .F0(n659), .F1(\my_vga.n4_c ));
+  my_pattern_gen_SLICE_33 \my_pattern_gen.SLICE_33 ( .D1(\col[7] ), 
+    .B1(\row[9] ), .D0(\row[8] ), .A0(\row[9] ), .F0(n1078), 
+    .F1(\my_pattern_gen.n1860 ));
+  my_vga_SLICE_34 \my_vga.SLICE_34 ( .C1(\col[5] ), .B1(\col[4] ), 
+    .A1(\col[6] ), .C0(\row[0] ), .B0(n671), .F0(\my_vga.n1068 ), 
+    .F1(\my_pattern_gen.n14_adj_86 ));
+  my_vga_SLICE_35 \my_vga.SLICE_35 ( .D1(n659), .C1(n671), .B1(\row[8] ), 
+    .A1(\row[0] ), .D0(\row[1] ), .C0(\row[4] ), .B0(\my_vga.row[3]_2 ), 
+    .A0(\row[2] ), .F0(n671), .F1(\my_pattern_gen.n1876 ));
+  my_pattern_gen_SLICE_37 \my_pattern_gen.SLICE_37 ( 
+    .D1(\my_pattern_gen.n1860 ), .C1(\my_pattern_gen.n11 ), .B1(n23), .A1(n4), 
+    .D0(\col[4] ), .C0(\my_pattern_gen.n8 ), .B0(\col[6] ), .A0(\col[5] ), 
+    .F0(\my_pattern_gen.n11 ), .F1(\my_pattern_gen.n14_adj_85 ));
+  my_pattern_gen_SLICE_38 \my_pattern_gen.SLICE_38 ( 
+    .D1(\my_pattern_gen.n12_adj_81 ), .C1(\my_pattern_gen.n4_adj_80 ), 
+    .B1(\col[7] ), .A1(\col[6] ), .D0(\col[5] ), .C0(\col[4] ), 
+    .F0(\my_pattern_gen.n4_adj_80 ), .F1(\my_pattern_gen.n10_adj_83 ));
+  my_pattern_gen_SLICE_40 \my_pattern_gen.SLICE_40 ( .D1(\row[5] ), 
+    .C1(\my_pattern_gen.n10_c ), .D0(\col[5] ), .C0(\row[4] ), .B0(\col[6] ), 
+    .A0(\col[4] ), .F0(\my_pattern_gen.n10_c ), 
+    .F1(\my_pattern_gen.n12_adj_81 ));
+  my_pattern_gen_SLICE_42 \my_pattern_gen.SLICE_42 ( .D1(\row[7] ), 
+    .C1(\my_pattern_gen.n6 ), .D0(\row[6] ), .C0(\row[4] ), .B0(\row[5] ), 
+    .F0(\my_pattern_gen.n6 ), .F1(\my_pattern_gen.n8 ));
+  my_vga_SLICE_45 \my_vga.SLICE_45 ( .C0(\row[6] ), .B0(\row[4] ), 
+    .A0(\row[5] ), .F0(n23));
+  clock_device_SLICE_56 \clock_device.SLICE_56 ( .F0(ctrlr_latch_c));
+  test_output_pad_SLICE_57 \test_output_pad.SLICE_57 ( 
+    .F0(\test_output_pad.vcc ));
+  test_input test_input_I( .PADDI(test_output_c_c), .test_input(test_input));
+  osc osc_I( .osc(osc));
+  test_output test_output_I( .PADDO(test_output_c_c), 
+    .test_output(test_output));
+  ctrlr_clk ctrlr_clk_I( .PADDO(ctrlr_latch_c), .ctrlr_clk(ctrlr_clk));
+  ctrlr_latch ctrlr_latch_I( .PADDO(ctrlr_latch_c), .ctrlr_latch(ctrlr_latch));
+  clk_test clk_test_I( .clk_test(clk_test));
+  vsync vsync_I( .PADDO(vsync_c), .vsync(vsync));
+  hsync hsync_I( .PADDO(hsync_c), .hsync(hsync));
+  rgb_0_ \rgb[0]_I ( .PADDO(rgb_c_0), .rgb0(rgb[0]));
+  rgb_1_ \rgb[1]_I ( .PADDO(rgb_c_4), .rgb1(rgb[1]));
+  rgb_2_ \rgb[2]_I ( .PADDO(rgb_c_3), .rgb2(rgb[2]));
+  rgb_3_ \rgb[3]_I ( .PADDO(rgb_c_3), .rgb3(rgb[3]));
+  rgb_4_ \rgb[4]_I ( .PADDO(rgb_c_4), .rgb4(rgb[4]));
+  rgb_5_ \rgb[5]_I ( .PADDO(rgb_c_4), .rgb5(rgb[5]));
+endmodule
+
+module my_vga_SLICE_0 ( input DI0, D1, D0, C0, CE, LSR, CIN0, CIN1, output Q0, 
+    F0, COUT0 );
+  wire   GNDI;
+
+  fa2 \my_vga/row_temp_81_add_4_11 ( .A0(GNDI), .B0(GNDI), .C0(C0), .D0(D0), 
+    .A1(GNDI), .B1(GNDI), .C1(GNDI), .D1(D1), .CI0(CIN0), .CI1(CIN1), .S0(F0), 
+    .S1(), .CO0(COUT0), .CO1());
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \my_vga/row_9__I_0 ( .D0(DI0), .SP(CE), .CK(GNDI), .LSR(LSR), .Q(Q0));
+
+  specify
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module fa2 ( input A0, B0, C0, D0, A1, B1, C1, D1, CI0, CI1, output S0, S1, 
+    CO0, CO1 );
+
+  FA2 inst1( .A0(A0), .B0(B0), .C0(C0), .D0(D0), .CI0(CI0), .A1(A1), .B1(B1), 
+    .C1(C1), .D1(D1), .CI1(CI1), .CO0(CO0), .CO1(CO1), .S0(S0), .S1(S1));
+  defparam inst1.INIT0 = "0xc33c";
+  defparam inst1.INIT1 = "0xc33c";
+endmodule
+
+module gnd ( output PWR0 );
+
+  VLO INST1( .Z(PWR0));
+endmodule
+
+module ffsre2 ( input D0, SP, CK, LSR, output Q );
+
+  FD1P3XZ INST01( .D(D0), .SP(SP), .CK(CK), .SR(LSR), .Q(Q));
+  defparam INST01.REGSET = "RESET";
+  defparam INST01.SRMODE = "CE_OVER_LSR";
+endmodule
+
+module my_vga_SLICE_1 ( input DI0, D1, D0, C0, LSR, CIN0, CIN1, output Q0, F0, 
+    COUT0 );
+  wire   GNDI, VCCI;
+
+  fa2 \my_vga/col_temp_80_add_4_11 ( .A0(GNDI), .B0(GNDI), .C0(C0), .D0(D0), 
+    .A1(GNDI), .B1(GNDI), .C1(GNDI), .D1(D1), .CI0(CIN0), .CI1(CIN1), .S0(F0), 
+    .S1(), .CO0(COUT0), .CO1());
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \my_vga/col_9__I_0_2 ( .D0(DI0), .SP(VCCI), .CK(GNDI), .LSR(LSR), 
+    .Q(Q0));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module vcc ( output PWR1 );
+
+  VHI INST1( .Z(PWR1));
+endmodule
+
+module my_vga_SLICE_2 ( input DI1, DI0, D1, C1, D0, C0, CE, LSR, CIN0, CIN1, 
+    output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI;
+
+  fa2 \my_vga/row_temp_81_add_4_9 ( .A0(GNDI), .B0(GNDI), .C0(C0), .D0(D0), 
+    .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), .S0(F0), 
+    .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \my_vga/row_9__I_2 ( .D0(DI0), .SP(CE), .CK(GNDI), .LSR(LSR), .Q(Q0));
+  ffsre2 \my_vga/row_9__I_1 ( .D0(DI1), .SP(CE), .CK(GNDI), .LSR(LSR), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module my_vga_SLICE_3 ( input DI1, DI0, D1, C1, D0, C0, LSR, CIN0, CIN1, 
+    output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, VCCI;
+
+  fa2 \my_vga/col_temp_80_add_4_9 ( .A0(GNDI), .B0(GNDI), .C0(C0), .D0(D0), 
+    .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), .S0(F0), 
+    .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \my_vga/col_9__I_11 ( .D0(DI0), .SP(VCCI), .CK(GNDI), .LSR(LSR), 
+    .Q(Q0));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \my_vga/col_9__I_10 ( .D0(DI1), .SP(VCCI), .CK(GNDI), .LSR(LSR), 
+    .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module my_vga_SLICE_4 ( input DI1, DI0, D1, C1, D0, C0, LSR, CIN0, CIN1, 
+    output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, VCCI;
+
+  fa2 \my_vga/col_temp_80_add_4_7 ( .A0(GNDI), .B0(GNDI), .C0(C0), .D0(D0), 
+    .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), .S0(F0), 
+    .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \my_vga/col_9__I_13 ( .D0(DI0), .SP(VCCI), .CK(GNDI), .LSR(LSR), 
+    .Q(Q0));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \my_vga/col_9__I_12 ( .D0(DI1), .SP(VCCI), .CK(GNDI), .LSR(LSR), 
+    .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module my_vga_SLICE_5 ( input DI1, DI0, D1, C1, D0, C0, CE, LSR, CIN0, CIN1, 
+    output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI;
+
+  fa2 \my_vga/row_temp_81_add_4_7 ( .A0(GNDI), .B0(GNDI), .C0(C0), .D0(D0), 
+    .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), .S0(F0), 
+    .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \my_vga/row_9__I_4 ( .D0(DI0), .SP(CE), .CK(GNDI), .LSR(LSR), .Q(Q0));
+  ffsre2 \my_vga/row_9__I_3 ( .D0(DI1), .SP(CE), .CK(GNDI), .LSR(LSR), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module my_vga_SLICE_6 ( input DI1, DI0, D1, C1, D0, C0, LSR, CIN0, CIN1, 
+    output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, VCCI;
+
+  fa2 \my_vga/col_temp_80_add_4_5 ( .A0(GNDI), .B0(GNDI), .C0(C0), .D0(D0), 
+    .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), .S0(F0), 
+    .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \my_vga/col_9__I_15 ( .D0(DI0), .SP(VCCI), .CK(GNDI), .LSR(LSR), 
+    .Q(Q0));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \my_vga/col_9__I_14 ( .D0(DI1), .SP(VCCI), .CK(GNDI), .LSR(LSR), 
+    .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module my_vga_SLICE_7 ( input DI1, DI0, D1, C1, D0, C0, CE, LSR, CIN0, CIN1, 
+    output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI;
+
+  fa2 \my_vga/row_temp_81_add_4_5 ( .A0(GNDI), .B0(GNDI), .C0(C0), .D0(D0), 
+    .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), .S0(F0), 
+    .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \my_vga/row_9__I_6 ( .D0(DI0), .SP(CE), .CK(GNDI), .LSR(LSR), .Q(Q0));
+  ffsre2 \my_vga/row_9__I_5 ( .D0(DI1), .SP(CE), .CK(GNDI), .LSR(LSR), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module my_vga_SLICE_8 ( input DI1, DI0, D1, C1, D0, C0, LSR, CIN0, CIN1, 
+    output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, VCCI;
+
+  fa2 \my_vga/col_temp_80_add_4_3 ( .A0(GNDI), .B0(GNDI), .C0(C0), .D0(D0), 
+    .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), .S0(F0), 
+    .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \my_vga/col_9__I_17 ( .D0(DI0), .SP(VCCI), .CK(GNDI), .LSR(LSR), 
+    .Q(Q0));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \my_vga/col_9__I_16 ( .D0(DI1), .SP(VCCI), .CK(GNDI), .LSR(LSR), 
+    .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module my_vga_SLICE_9 ( input DI1, DI0, D1, C1, D0, C0, CE, LSR, CIN0, CIN1, 
+    output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI;
+
+  fa2 \my_vga/row_temp_81_add_4_3 ( .A0(GNDI), .B0(GNDI), .C0(C0), .D0(D0), 
+    .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), .S0(F0), 
+    .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \my_vga/row_9__I_8 ( .D0(DI0), .SP(CE), .CK(GNDI), .LSR(LSR), .Q(Q0));
+  ffsre2 \my_vga/row_9__I_7 ( .D0(DI1), .SP(CE), .CK(GNDI), .LSR(LSR), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module my_vga_SLICE_10 ( input DI1, D1, C1, B1, LSR, CIN1, output Q1, F1, 
+    COUT1, COUT0 );
+  wire   GNDI, VCCI;
+
+  fa2 \my_vga/col_temp_80_add_4_1 ( .A0(GNDI), .B0(GNDI), .C0(GNDI), .D0(VCCI), 
+    .A1(GNDI), .B1(B1), .C1(C1), .D1(D1), .CI0(VCCI), .CI1(CIN1), .S0(), 
+    .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \my_vga/col_9__I_18 ( .D0(DI1), .SP(VCCI), .CK(GNDI), .LSR(LSR), 
+    .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (B1 => COUT1) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module my_vga_SLICE_11 ( input DI1, D1, C1, B1, CE, LSR, CIN1, output Q1, F1, 
+    COUT1, COUT0 );
+  wire   GNDI, VCCI;
+
+  fa2 \my_vga/row_temp_81_add_4_1 ( .A0(GNDI), .B0(GNDI), .C0(GNDI), .D0(VCCI), 
+    .A1(GNDI), .B1(B1), .C1(C1), .D1(D1), .CI0(VCCI), .CI1(CIN1), .S0(), 
+    .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \my_vga/row_9__I_9 ( .D0(DI1), .SP(CE), .CK(GNDI), .LSR(LSR), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (B1 => COUT1) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module my_vga_SLICE_12 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+
+  lut4 \my_vga/i1_4_lut_adj_41 ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40001 \my_vga.i1_4_lut_adj_40 ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut4 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xF888") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40001 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xEEEA") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module my_vga_SLICE_14 ( input D1, C1, B1, A1, D0, C0, B0, output F0, F1 );
+  wire   GNDI;
+
+  lut40002 \my_vga/i5_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40003 \my_vga/row_2__I_0 ( .A(GNDI), .B(B0), .C(C0), .D(D0), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40002 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFFD") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40003 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFF3") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module my_vga_SLICE_15 ( input D1, C1, B1, A1, D0, C0, output F0, F1 );
+  wire   GNDI;
+
+  lut40004 \my_vga/i4_4_lut_adj_35 ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40005 \my_pattern_gen/i2_2_lut ( .A(GNDI), .B(GNDI), .C(C0), .D(D0), 
+    .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40004 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x2000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40005 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFF0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module my_vga_SLICE_16 ( input B0, A0, output F0 );
+  wire   GNDI;
+
+  lut40006 \my_vga/i81_2_lut ( .A(A0), .B(B0), .C(GNDI), .D(GNDI), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40006 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xEEEE") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module my_vga_SLICE_17 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+
+  lut40007 \my_vga/rgb_c_4_I_0 ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40008 \my_vga/i1_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40007 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x0054") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40008 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x00FE") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module my_vga_SLICE_18 ( input C1, A1, D0, C0, B0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40009 \my_vga/i1_2_lut ( .A(A1), .B(GNDI), .C(C1), .D(GNDI), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40010 \my_vga/i1_4_lut_adj_42 ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+
+  specify
+    (C1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40009 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x0A0A") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40010 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFF8") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module my_pattern_gen_SLICE_19 ( input D1, C1, B1, A1, D0, C0, B0, A0, output 
+    F0, F1 );
+
+  lut40011 \my_vga/rgb_c_0_I_0_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40012 \my_pattern_gen/i7_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40011 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x0010") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40012 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x4000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module my_vga_SLICE_20 ( input B1, A1, D0, C0, B0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40013 \my_vga/i1_4_lut_adj_43 ( .A(A1), .B(B1), .C(GNDI), .D(GNDI), 
+    .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40014 \my_vga/i3_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+
+  specify
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40013 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xEEEE") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40014 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x8000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module my_vga_SLICE_22 ( input D1, C1, A1, D0, C0, B0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40015 \my_vga/i5_3_lut ( .A(A1), .B(GNDI), .C(C1), .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40016 \my_vga/i4_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40015 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFFA") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40016 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFFE") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module my_pattern_gen_SLICE_23 ( input D1, C1, B1, A1, D0, C0, B0, A0, output 
+    F0, F1 );
+
+  lut40017 \my_vga/i3_4_lut_adj_37 ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40018 \my_pattern_gen/i1_2_lut_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40017 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x0400") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40018 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFEF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module my_vga_SLICE_24 ( input D1, C1, B1, A1, D0, C0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40019 \my_vga/col_9__I_0 ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40020 \my_vga/i34_3_lut ( .A(A0), .B(GNDI), .C(C0), .D(D0), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40019 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xDFFF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40020 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x5FFA") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module my_vga_SLICE_26 ( input D1, C1, B1, A1, D0, B0, output F0, F1 );
+  wire   GNDI;
+
+  lut40021 \my_vga/rgb_c_3_I_0 ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40022 \my_vga/i1_2_lut_adj_39 ( .A(GNDI), .B(B0), .C(GNDI), .D(D0), 
+    .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40021 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x4445") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40022 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFCC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module my_pattern_gen_SLICE_27 ( input D1, C1, B1, A1, D0, C0, B0, A0, output 
+    F0, F1 );
+
+  lut40023 \my_pattern_gen/i1557_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40024 \my_vga/i1553_3_lut_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40023 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFFE") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40024 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xF888") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module my_vga_SLICE_29 ( input D1, C1, A1, D0, C0, B0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40025 \my_vga/i463_3_lut ( .A(A1), .B(GNDI), .C(C1), .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40026 \my_vga/i4_4_lut_adj_36 ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40025 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x0500") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40026 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFF7F") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module my_pattern_gen_SLICE_31 ( input D1, C1, B1, A1, D0, C0, A0, output F0, 
+    F1 );
+  wire   GNDI;
+
+  lut40027 \my_vga/i1_3_lut_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40028 \my_pattern_gen/i2_3_lut ( .A(A0), .B(GNDI), .C(C0), .D(D0), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40027 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFEFC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40028 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFFA") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module my_pattern_gen_SLICE_33 ( input D1, B1, D0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40029 \my_pattern_gen/i1533_2_lut ( .A(GNDI), .B(B1), .C(GNDI), .D(D1), 
+    .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40030 \my_pattern_gen/i869_2_lut ( .A(A0), .B(GNDI), .C(GNDI), .D(D0), 
+    .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40029 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFCC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40030 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFAA") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module my_vga_SLICE_34 ( input C1, B1, A1, C0, B0, output F0, F1 );
+  wire   GNDI;
+
+  lut40031 \my_pattern_gen/Mux_16_i14_4_lut ( .A(A1), .B(B1), .C(C1), .D(GNDI), 
+    .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40032 \my_vga/i859_2_lut ( .A(GNDI), .B(B0), .C(C0), .D(GNDI), .Z(F0));
+
+  specify
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40031 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x1E1E") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40032 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFCFC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module my_vga_SLICE_35 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+
+  lut40033 \my_pattern_gen/i1549_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40034 \my_vga/i1_2_lut_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40033 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xCCC8") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40034 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFFE") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module my_pattern_gen_SLICE_37 ( input D1, C1, B1, A1, D0, C0, B0, A0, output 
+    F0, F1 );
+
+  lut40035 \my_pattern_gen/i6_4_lut_adj_33 ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40036 \my_pattern_gen.i3_4_lut_adj_32 ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40035 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x00E0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40036 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x77FF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module my_pattern_gen_SLICE_38 ( input D1, C1, B1, A1, D0, C0, output F0, F1 );
+  wire   GNDI;
+
+  lut40037 \my_pattern_gen/i2_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40038 \my_pattern_gen/i1539_2_lut ( .A(GNDI), .B(GNDI), .C(C0), .D(D0), 
+    .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40037 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x926C") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40038 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xF000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module my_pattern_gen_SLICE_40 ( input D1, C1, D0, C0, B0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40039 \my_pattern_gen/i5_3_lut ( .A(GNDI), .B(GNDI), .C(C1), .D(D1), 
+    .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40040 \my_pattern_gen.i3_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40039 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFFF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40040 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xF6FC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module my_pattern_gen_SLICE_42 ( input D1, C1, D0, C0, B0, output F0, F1 );
+  wire   GNDI;
+
+  lut40041 \my_pattern_gen/LessThan_7_i8_4_lut ( .A(GNDI), .B(GNDI), .C(C1), 
+    .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40042 \my_pattern_gen.LessThan_7_i6_3_lut ( .A(GNDI), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40041 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xF0FF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40042 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x3FFF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module my_vga_SLICE_45 ( input C0, B0, A0, output F0 );
+  wire   GNDI;
+
+  lut40043 \my_vga.i1_4_lut_adj_44 ( .A(A0), .B(B0), .C(C0), .D(GNDI), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40043 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFFF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module clock_device_SLICE_56 ( output F0 );
+  wire   GNDI;
+
+  lut40044 \clock_device/NEScount_3__I_0 ( .A(GNDI), .B(GNDI), .C(GNDI), 
+    .D(GNDI), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+  endspecify
+
+endmodule
+
+module lut40044 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x0000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module test_output_pad_SLICE_57 ( output F0 );
+  wire   GNDI;
+
+  lut40045 \test_output_pad.vhi_inst ( .A(GNDI), .B(GNDI), .C(GNDI), .D(GNDI), 
+    .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+  endspecify
+
+endmodule
+
+module lut40045 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFFF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module test_input ( output PADDI, input test_input );
+  wire   GNDI;
+
+  BB_B_B \test_output_c_pad.bb_inst ( .T_N(GNDI), .I(GNDI), .O(PADDI), 
+    .B(test_input));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (test_input => PADDI) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module BB_B_B ( input T_N, I, output O, inout B );
+
+  BB_B INST10( .T_N(T_N), .I(I), .O(O), .B(B));
+endmodule
+
+module osc ( input osc );
+  wire   GNDI;
+
+  BB_B_B \osc_pad.bb_inst ( .T_N(GNDI), .I(GNDI), .O(), .B(osc));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+  endspecify
+
+endmodule
+
+module test_output ( input PADDO, output test_output );
+  wire   VCCI;
+
+  BB_B_B \test_output_pad.bb_inst ( .T_N(VCCI), .I(PADDO), .O(), 
+    .B(test_output));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => test_output) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module ctrlr_clk ( input PADDO, output ctrlr_clk );
+  wire   VCCI;
+
+  BB_B_B \ctrlr_clk_pad.bb_inst ( .T_N(VCCI), .I(PADDO), .O(), .B(ctrlr_clk));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => ctrlr_clk) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module ctrlr_latch ( input PADDO, output ctrlr_latch );
+  wire   VCCI;
+
+  BB_B_B \ctrlr_latch_pad.bb_inst ( .T_N(VCCI), .I(PADDO), .O(), 
+    .B(ctrlr_latch));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => ctrlr_latch) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module clk_test ( output clk_test );
+  wire   VCCI, GNDI;
+
+  BB_B_B \clk_test_pad.bb_inst ( .T_N(VCCI), .I(GNDI), .O(), .B(clk_test));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+  endspecify
+
+endmodule
+
+module vsync ( input PADDO, output vsync );
+  wire   VCCI;
+
+  BB_B_B \vsync_pad.bb_inst ( .T_N(VCCI), .I(PADDO), .O(), .B(vsync));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => vsync) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module hsync ( input PADDO, output hsync );
+  wire   VCCI;
+
+  BB_B_B \hsync_pad.bb_inst ( .T_N(VCCI), .I(PADDO), .O(), .B(hsync));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => hsync) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module rgb_0_ ( input PADDO, output rgb0 );
+  wire   VCCI;
+
+  BB_B_B \rgb_pad[0].bb_inst ( .T_N(VCCI), .I(PADDO), .O(), .B(rgb0));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => rgb0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module rgb_1_ ( input PADDO, output rgb1 );
+  wire   VCCI;
+
+  BB_B_B \rgb_pad[1].bb_inst ( .T_N(VCCI), .I(PADDO), .O(), .B(rgb1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => rgb1) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module rgb_2_ ( input PADDO, output rgb2 );
+  wire   VCCI;
+
+  BB_B_B \rgb_pad[2].bb_inst ( .T_N(VCCI), .I(PADDO), .O(), .B(rgb2));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => rgb2) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module rgb_3_ ( input PADDO, output rgb3 );
+  wire   VCCI;
+
+  BB_B_B \rgb_pad[3].bb_inst ( .T_N(VCCI), .I(PADDO), .O(), .B(rgb3));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => rgb3) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module rgb_4_ ( input PADDO, output rgb4 );
+  wire   VCCI;
+
+  BB_B_B \rgb_pad[4].bb_inst ( .T_N(VCCI), .I(PADDO), .O(), .B(rgb4));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => rgb4) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module rgb_5_ ( input PADDO, output rgb5 );
+  wire   VCCI;
+
+  BB_B_B \rgb_pad[5].bb_inst ( .T_N(VCCI), .I(PADDO), .O(), .B(rgb5));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => rgb5) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule

@@ -1,0 +1,29 @@
+#Start recording tcl command: 12/2/2023 15:02:03
+#Project Location: Z:/ES4-Final/Test_Proj; Project name: Test_Proj
+prj_create -name "Test_Proj" -impl "impl_1" -dev iCE40UP5K-SG48I -performance "High-Performance_1.2V" -synthesis "lse"
+file copy -force -- "Z:/ES4-Final/VGA Test/impl_1/vhdl/clock.vhd" "Z:/ES4-Final/VGA Test/impl_1/vhdl/master.vhd" "Z:/ES4-Final/VGA Test/impl_1/vhdl/nes_controller.vhd" "Z:/ES4-Final/VGA Test/impl_1/vhdl/pattern_gen.vhd" "Z:/ES4-Final/VGA Test/impl_1/vhdl/piece.vhd" "Z:/ES4-Final/Test_Proj/source/impl_1"
+file copy -force -- "Z:/ES4-Final/VGA Test/impl_1/vhdl/vga.vhd" "Z:/ES4-Final/Test_Proj/source/impl_1"
+prj_add_source "Z:/ES4-Final/Test_Proj/source/impl_1/clock.vhd" "Z:/ES4-Final/Test_Proj/source/impl_1/master.vhd" "Z:/ES4-Final/Test_Proj/source/impl_1/nes_controller.vhd" "Z:/ES4-Final/Test_Proj/source/impl_1/pattern_gen.vhd" "Z:/ES4-Final/Test_Proj/source/impl_1/piece.vhd" "Z:/ES4-Final/Test_Proj/source/impl_1/vga.vhd"
+prj_save 
+prj_set_strategy_value -strategy Strategy1 lse_vhdl2008=True
+prj_set_impl_opt -impl "impl_1" "top" "master"
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+prj_run Export -impl impl_1
+prj_add_source "Z:/ES4-Final/Test_Proj/netlist.pdc"
+prj_enable_source "Z:/ES4-Final/Test_Proj/netlist.pdc"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+prj_save 
+prj_close
+#Stop recording: 12/2/2023 15:29:49

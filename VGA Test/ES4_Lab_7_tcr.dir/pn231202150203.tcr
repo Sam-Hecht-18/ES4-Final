@@ -1,0 +1,26 @@
+#Start recording tcl command: 12/2/2023 14:24:41
+#Project Location: Z:/ES4-Final/VGA Test; Project name: ES4_Lab_7
+prj_open "Z:/ES4-Final/VGA Test/ES4_Lab_7.rdf"
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_remove_source "Z:/ES4-Final/VGA Test/pins.pdc"
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_save 
+prj_close
+#Stop recording: 12/2/2023 15:02:03

@@ -48,7 +48,7 @@ Package: SG48
 Performance Grade:  High-Performance_1.2V
 
 Mapper:    version Radiant Software (64-bit) 2023.1.0.43.3
-Mapped on: Thu Nov 30 18:58:41 2023
+Mapped on: Sat Dec  2 17:30:08 2023
 
 
 <A name="mrp_di"></A><B><U><big>Design Information</big></U></B>
@@ -58,21 +58,22 @@ Command line:   map -i ES4_Lab_7_impl_1_syn.udb -pdc Z:/ES4-Final/VGA
      -gui
 
 <A name="mrp_ds"></A><B><U><big>Design Summary</big></U></B>
-   Number of slice registers:  53 out of  5280 (1%)
+   Number of slice registers:  54 out of  5280 (1%)
    Number of I/O registers:      0 out of   117 (0%)
-   Number of LUT4s:           113 out of  5280 (2%)
-      Number of logic LUT4s:              59
-      Number of inserted feedthru LUT4s:   4
-      Number of ripple logic:             25 (50 LUT4s)
-   Number of IO sites used:   12 out of 39 (31%)
-      Number of IO sites used for general PIO: 12
+   Number of LUT4s:           137 out of  5280 (3%)
+      Number of logic LUT4s:              80
+      Number of inserted feedthru LUT4s:   6
+      Number of replicated LUT4s:          5
+      Number of ripple logic:             23 (46 LUT4s)
+   Number of IO sites used:   16 out of 39 (41%)
+      Number of IO sites used for general PIO: 16
       Number of IO sites used for I3C: 0 out of 2 (0%)
       (note: If I3C is not used, its site can be used as general PIO)
-      Number of IO sites used for PIO+I3C: 12 out of 36 (33%)
+      Number of IO sites used for PIO+I3C: 16 out of 36 (44%)
       Number of IO sites used for OD+RGB IO buffers: 0 out of 3 (0%)
       (note: If RGB LED drivers are not used, sites can be used as OD outputs,
        see TN1288 iCE40 LED Driver Usage Guide)
-      Number of IO sites used for PIO+I3C+OD+RGB: 12 out of 39 (31%)
+      Number of IO sites used for PIO+I3C+OD+RGB: 16 out of 39 (41%)
    Number of DSPs:             0 out of 8 (0%)
    Number of I2Cs:             0 out of 2 (0%)
    Number of High Speed OSCs:  0 out of 1 (0%)
@@ -83,36 +84,39 @@ Command line:   map -i ES4_Lab_7_impl_1_syn.udb -pdc Z:/ES4-Final/VGA
    Number of SRAMs:            0 out of 4 (0%)
    Number of WARMBOOTs:        0 out of 1 (0%)
    Number of SPIs:             0 out of 2 (0%)
-   Number of EBRs:             0 out of 30 (0%)
+   Number of EBRs:             1 out of 30 (3%)
    Number of PLLs:             1 out of 1 (100%)
    Number of Clocks:  3
-      Net outglobal_o: 29 loads, 29 rising, 0 falling (Driver: Pin
+      Net ctrlr_clk_c: 4 loads, 4 rising, 0 falling (Driver: Pin
+     clock_device.NEScount_3__I_0/Z)
+      Net outglobal_o: 36 loads, 36 rising, 0 falling (Driver: Pin
      my_pll.lscc_pll_inst.u_PLL_B/OUTGLOBAL)
-      Net game_clock: 4 loads, 4 rising, 0 falling (Driver: Pin
-     clock_device.NEScount_7__I_29/Q)
       Net osc_c: 1 loads, 1 rising, 0 falling (Driver: Port osc)
-   Number of Clock Enables:  1
+   Number of Clock Enables:  3
       Net my_vga.col_0__N_50: 6 loads, 6 SLICEs
-   Number of LSRs:  2
+      Net rotate_out_pad.vcc: 3 loads, 0 SLICEs
+      Net my_pattern_gen.n147: 2 loads, 2 SLICEs
+   Number of LSRs:  3
       Net my_vga.col_0__N_50: 6 loads, 6 SLICEs
       Net my_vga.row_0__N_30: 6 loads, 6 SLICEs
+
+      Net my_pattern_gen.frame_counter_2__N_143[2]: 1 loads, 1 SLICEs
    Top 10 highest fanout non-clock nets:
+      Net col[4]: 15 loads
       Net my_vga.col_0__N_50: 13 loads
-      Net col[5]: 11 loads
-
-      Net col[6]: 10 loads
-      Net col[4]: 9 loads
+      Net col[5]: 12 loads
+      Net col[6]: 9 loads
       Net col[7]: 9 loads
-      Net row[4]: 9 loads
-      Net my_pattern_gen.top_left_row[0]: 8 loads
-      Net row[9]: 8 loads
-      Net row[5]: 7 loads
-      Net row[6]: 7 loads
+      Net my_pattern_gen.n147: 8 loads
+      Net col[8]: 7 loads
+      Net rotate_out_pad.vcc: 7 loads
+      Net row[4]: 7 loads
+      Net row[9]: 7 loads
 
 
 
 
-   Number of warnings:  2
+   Number of warnings:  0
    Number of errors:    0
 
 
@@ -120,10 +124,7 @@ Command line:   map -i ES4_Lab_7_impl_1_syn.udb -pdc Z:/ES4-Final/VGA
 
 <A name="mrp_dwe"></A><B><U><big>Design Errors/Warnings</big></U></B>
 
-WARNING &lt;71003020&gt; - map: Top module port &apos;ctrlr_data&apos; does not connect to
-     anything.
-WARNING &lt;71003020&gt; - map: Top module port &apos;ctrlr_data&apos; does not connect to
-     anything.
+   No errors or warnings present.
 
 
 
@@ -133,7 +134,15 @@ WARNING &lt;71003020&gt; - map: Top module port &apos;ctrlr_data&apos; does not 
 | IO Name             | Direction | Levelmode |  IO   |  IO   | Special   |
 |                     |           |  IO_TYPE  |  REG  |  DDR  | IO Buffer |
 +---------------------+-----------+-----------+-------+-------+-----------+
+| ctrlr_data          | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| test_input          | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
 | osc                 | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| rotate_out          | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| test_output         | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | ctrlr_clk           | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
@@ -151,15 +160,13 @@ WARNING &lt;71003020&gt; - map: Top module port &apos;ctrlr_data&apos; does not 
 +---------------------+-----------+-----------+-------+-------+-----------+
 | rgb[2]              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
+
 | rgb[3]              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | rgb[4]              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | rgb[5]              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-
-
-
 
 
 
@@ -207,40 +214,10 @@ PLL 1:                                 Pin/Node Value
 <A name="mrp_asic"></A><B><U><big>ASIC Components</big></U></B>
 ---------------
 
+Instance Name: my_pattern_gen/piece_device/curr_piece_shape_15__I_0
+         Type: EBR
 Instance Name: my_pll/lscc_pll_inst/u_PLL_B
          Type: PLL
-
-
-
-<A name="mrp_consum"></A><B><U><big>Constraint Summary</big></U></B>
-------------------
-
-   Total number of constraints: 15
-   Total number of constraints dropped: 0
-
-
-
-<A name="mrp_runtime"></A><B><U><big>Run Time and Memory Usage</big></U></B>
--------------------------
-
-   Total CPU Time: 0 secs
-   Total REAL Time: 0 secs
-   Peak Memory Usage: 57 MB
-
-
-
-
-
-
-Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
-Copyright (c) 1995
-     AT&amp;T Corp.   All rights reserved.
-Copyright (c) 1995-2001 Lucent
-     Technologies Inc.  All rights reserved.
-Copyright (c) 2001 Agere Systems
-     All rights reserved.
-Copyright (c) 2002-2023 Lattice Semiconductor
-     Corporation,  All rights reserved.
 
 
 
@@ -305,8 +282,6 @@ Copyright (c) 2002-2023 Lattice Semiconductor
 <LI><A href=#mrp_rm>Removed logic</A></LI>
 <LI><A href=#mrp_pll>PLL/DLL Summary</A></LI>
 <LI><A href=#mrp_asic>ASIC Components</A></LI>
-<LI><A href=#mrp_consum>Constraint Summary</A></LI>
-<LI><A href=#mrp_runtime>Run Time and Memory Usage</A></LI>
 </UL>
 </DIV>
 

@@ -11,6 +11,9 @@ entity master is
 		clk_test : out std_logic;
 		ctrlr_latch : out std_logic;
 		ctrlr_clk : out std_logic;
+		test_input : in std_logic;
+		test_output : out std_logic;
+		rotate_out : out std_logic;
 		ctrlr_data : in std_logic
 	);
 end master;
@@ -34,7 +37,8 @@ architecture synth of master is
 			row: in unsigned(9 downto 0);
 			col: out unsigned(9 downto 0);
 			rgb: out std_logic_vector(5 downto 0);
-			rotate : in std_logic
+			rotate : in std_logic;
+			down : in std_logic
 		);
 	end component;
 
@@ -62,8 +66,8 @@ architecture synth of master is
 		start : out std_logic;
 		b : out std_logic;
 		a : out std_logic;
-	    NEScount : in unsigned(7 downto 0);
-	    NESclk : in std_logic
+		NEScount : in unsigned(7 downto 0);
+		NESclk : in std_logic
 	);
 	end component;
 	
@@ -118,7 +122,8 @@ begin
 		row => row,
 		col => col,
 		rgb => rgb,
-		rotate => rotate);
+		rotate => rotate,
+		down => down_button);
 	
 	my_vga : vga port map(outglobal_o, valid, row, col, hsync, vsync);
 
@@ -133,9 +138,12 @@ begin
 	sel, 
 	start, 
 	a, 
-	b, 
-	NEScount, 
+	b,
+	NEScount,
 	NESclk);
-
+	
+	rotate_out <= rotate;
 	clk_test <= outcore_o;
+	test_output <= test_input;
+	
 end;

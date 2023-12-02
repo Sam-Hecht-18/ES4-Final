@@ -48,7 +48,7 @@ Performance Grade:      High-Performance_1.2V
 PACKAGE:          SG48
 Package Status:                     Preliminary    Version 1.5
 
-Thu Nov 30 18:58:46 2023
+Sat Dec  2 17:30:14 2023
 
 Pinout by Port Name:
 +-------------+----------+--------------+-------+------------------------------------------+
@@ -56,6 +56,7 @@ Pinout by Port Name:
 +-------------+----------+--------------+-------+------------------------------------------+
 | clk_test    | 28/0     | LVCMOS33_OUT | PR18A | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
 | ctrlr_clk   | 4/2      | LVCMOS33_OUT | PL10A | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
+| ctrlr_data  | 46/2     | LVCMOS33_IN  | PL6A  | DRIVE:NA IO_TYPE:LVCMOS33 PULLMODE:100K  |
 | ctrlr_latch | 3/2      | LVCMOS33_OUT | PL10B | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
 | hsync       | 43/0     | LVCMOS33_OUT | PR10A | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
 | osc         | 12/1     | LVCMOS33_IN  | PL19A | DRIVE:NA IO_TYPE:LVCMOS33 PULLMODE:100K  |
@@ -65,6 +66,9 @@ Pinout by Port Name:
 | rgb[3]      | 35/0     | LVCMOS33_OUT | PR13B | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
 | rgb[4]      | 32/0     | LVCMOS33_OUT | PR17A | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
 | rgb[5]      | 27/0     | LVCMOS33_OUT | PR19B | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
+| rotate_out  | 18/1     | LVCMOS33_OUT | PL23B | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
+| test_input  | 38/0     | LVCMOS33_IN  | PR9B  | DRIVE:NA IO_TYPE:LVCMOS33 PULLMODE:100K  |
+| test_output | 42/0     | LVCMOS33_OUT | PR9A  | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
 | vsync       | 36/0     | LVCMOS33_OUT | PR10B | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
 +-------------+----------+--------------+-------+------------------------------------------+
 
@@ -94,7 +98,7 @@ Vccio by Bank:
 | 15/1     |     unused, PULL:UP |            |              | PL25A | SPISCK           |
 | 16/1     |     unused, PULL:UP |            |              | PL25B | SPI_SS           |
 | 17/1     |     unused, PULL:UP |            |              | PL24B | SPI_SI           |
-| 18/1     |     unused, PULL:UP |            |              | PL23B |                  |
+| 18/1     | rotate_out          | LOCATED    | LVCMOS33_OUT | PL23B |                  |
 | 19/1     |     unused, PULL:UP |            |              | PL22B |                  |
 | 20/1     |     unused, PULL:UP |            |              | PL20B | PCLKT1_0         |
 | 21/1     |     unused, PULL:UP |            |              | PL19B |                  |
@@ -102,22 +106,22 @@ Vccio by Bank:
 | 25/0     |     unused, PULL:UP |            |              | PR20B |                  |
 | 26/0     |     unused, PULL:UP |            |              | PR19A |                  |
 | 27/0     | rgb[5]              | LOCATED    | LVCMOS33_OUT | PR19B |                  |
-| 28/0     | clk_test            | LOCATED    | LVCMOS33_OUT | PR18A |                  |
+| 28/0     | clk_test            |            | LVCMOS33_OUT | PR18A |                  |
 | 31/0     | rgb[2]              | LOCATED    | LVCMOS33_OUT | PR17B |                  |
 | 32/0     | rgb[4]              | LOCATED    | LVCMOS33_OUT | PR17A |                  |
 | 34/0     | rgb[0]              | LOCATED    | LVCMOS33_OUT | PR14B |                  |
 | 35/0     | rgb[3]              | LOCATED    | LVCMOS33_OUT | PR13B | GPLL_IN/PCLKT0_1 |
 | 36/0     | vsync               | LOCATED    | LVCMOS33_OUT | PR10B |                  |
 | 37/0     | rgb[1]              | LOCATED    | LVCMOS33_OUT | PR14A | PCLKT0_0         |
-| 38/0     |     unused, PULL:UP |            |              | PR9B  |                  |
+| 38/0     | test_input          |            | LVCMOS33_IN  | PR9B  |                  |
 | 39/0     |                     |            |              | PR5A  | RGB0             |
 | 40/0     |                     |            |              | PR6A  | RGB1             |
 | 41/0     |                     |            |              | PR7A  | RGB2             |
-| 42/0     |     unused, PULL:UP |            |              | PR9A  |                  |
+| 42/0     | test_output         |            | LVCMOS33_OUT | PR9A  |                  |
 | 43/0     | hsync               | LOCATED    | LVCMOS33_OUT | PR10A |                  |
 | 44/2     |     unused, PULL:UP |            |              | PL7B  | PCLKT2_0         |
 | 45/2     |     unused, PULL:UP |            |              | PL8B  |                  |
-| 46/2     |     unused, PULL:UP |            |              | PL6A  |                  |
+| 46/2     | ctrlr_data          | LOCATED    | LVCMOS33_IN  | PL6A  |                  |
 | 47/2     |     unused, PULL:UP |            |              | PL7A  |                  |
 | 48/2     |     unused, PULL:UP |            |              | PL8A  |                  |
 | PL6B/2   |     unused, PULL:UP |            |              | PL6B  |                  |
@@ -144,6 +148,7 @@ Locate Constraints for each Pin:
 
 ldc_set_location -site {28} [ get_ports {clk_test} ]
 ldc_set_location -site {4} [ get_ports {ctrlr_clk} ]
+ldc_set_location -site {46} [ get_ports {ctrlr_data} ]
 ldc_set_location -site {3} [ get_ports {ctrlr_latch} ]
 ldc_set_location -site {43} [ get_ports {hsync} ]
 ldc_set_location -site {12} [ get_ports {osc} ]
@@ -153,6 +158,9 @@ ldc_set_location -site {31} [ get_ports {rgb[2]} ]
 ldc_set_location -site {35} [ get_ports {rgb[3]} ]
 ldc_set_location -site {32} [ get_ports {rgb[4]} ]
 ldc_set_location -site {27} [ get_ports {rgb[5]} ]
+ldc_set_location -site {18} [ get_ports {rotate_out} ]
+ldc_set_location -site {38} [ get_ports {test_input} ]
+ldc_set_location -site {42} [ get_ports {test_output} ]
 ldc_set_location -site {36} [ get_ports {vsync} ]
 
 
@@ -161,7 +169,7 @@ ldc_set_location -site {36} [ get_ports {vsync} ]
 
 Copyright (c) 2002-2022 Lattice Semiconductor Corporation,  All rights reserved.
 
-Thu Nov 30 18:58:46 2023
+Sat Dec  2 17:30:14 2023
 
 
 

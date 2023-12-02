@@ -1,39 +1,70 @@
 ----------------------------------------------------------------------
 Report for cell master.TECH
-Register bits:  53 of 5280 (1.004%)
-I/O cells:      12
+Register bits:  54 of 5280 (1.023%)
+I/O cells:      16
                                   Cell usage:
                                cell     count   Res Usage(%)
-                               CCU2        25          100.0
-                            FD1P3XZ        53          100.0
-                                 IB         1          100.0
-                               LUT4        58          100.0
-                                 OB        11          100.0
+                              EBR_B         1          100.0
+                               CCU2        23          100.0
+                            FD1P3XZ        54          100.0
+                                 IB         3          100.0
+                               LUT4        80          100.0
+                                 OB        13          100.0
                               PLL_B         1          100.0
 SUB MODULES
                               clock         1
+                     nes_controller         1
                         pattern_gen         1
+                              piece         1
                       pll_component         1
 pll_component_ipgen_lscc_pll(DIVR="0",DIVF="66",DIVQ="5",FILTER_RANGE="1",PLLOUT_SELECT_PORTA="GENCLK",PLLOUT_SELECT_PORTB="GENCLK",FREQUENCY_PIN_REFERENCECLK="12.000000")         1
                                 vga         1
-                              TOTAL       154
+                              TOTAL       182
+----------------------------------------------------------------------
+Report for cell nes_controller.v1
+Instance Path : my_nes_controller
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1P3XZ         4            7.4
+                               LUT4         5            6.2
+                              TOTAL         9
 ----------------------------------------------------------------------
 Report for cell vga.v1
 Instance Path : my_vga
                                   Cell usage:
                                cell     count   Res Usage(%)
-                                FA2        12           48.0
-                            FD1P3XZ        20           37.7
-                               LUT4        27           46.6
-                              TOTAL        59
+                                FA2        12           52.2
+                            FD1P3XZ        20           37.0
+                               LUT4        23           28.8
+                              TOTAL        55
+----------------------------------------------------------------------
+Report for cell clock.v1
+Instance Path : clock_device
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2         9           39.1
+                            FD1P3XZ        16           29.6
+                               LUT4         5            6.2
+                              TOTAL        30
 ----------------------------------------------------------------------
 Report for cell pattern_gen.v1
 Instance Path : my_pattern_gen
                                   Cell usage:
                                cell     count   Res Usage(%)
-                            FD1P3XZ         8           15.1
-                               LUT4        26           44.8
-                              TOTAL        34
+                              EBR_B         1          100.0
+                                FA2         2            8.7
+                            FD1P3XZ        14           25.9
+                               LUT4        47           58.7
+SUB MODULES
+                              piece         1
+                              TOTAL        65
+----------------------------------------------------------------------
+Report for cell piece.v1
+Instance Path : my_pattern_gen.piece_device
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              EBR_B         1          100.0
+                              TOTAL         1
 ----------------------------------------------------------------------
 Report for cell pll_component.v1
 Instance Path : my_pll
@@ -50,12 +81,3 @@ Instance Path : my_pll.lscc_pll_inst
                                cell     count   Res Usage(%)
                               PLL_B         1          100.0
                               TOTAL         1
-----------------------------------------------------------------------
-Report for cell clock.v1
-Instance Path : clock_device
-                                  Cell usage:
-                               cell     count   Res Usage(%)
-                                FA2        13           52.0
-                            FD1P3XZ        25           47.2
-                               LUT4         5            8.6
-                              TOTAL        43

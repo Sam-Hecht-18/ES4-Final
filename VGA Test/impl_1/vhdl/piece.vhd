@@ -51,7 +51,7 @@ begin
 		when "10100" => piece_output <= "0000111001000000";
 		when "10101" => piece_output <= "0100110001000000";
 		when "10110" => piece_output <= "0100111000000000";
-		when "10111" => piece_output <= "0010011000100000";
+		when "10111" => piece_output <= "0100011001000000";
 		--O shape
 		when "11000" => piece_output <= "0110011000000000";
 		when "11001" => piece_output <= "0110011000000000";

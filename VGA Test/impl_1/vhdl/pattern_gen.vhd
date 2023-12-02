@@ -10,7 +10,8 @@ entity pattern_gen is
 		row: in unsigned(9 downto 0);
 		col: in unsigned(9 downto 0);
 		rgb: out std_logic_vector(5 downto 0);
-		rotate : in std_logic
+		rotate : in std_logic;
+		down : in std_logic
 	);
 end pattern_gen;
 
@@ -30,7 +31,7 @@ architecture synth of pattern_gen is
 	type board_type is array (9 downto 0, 15 downto 0) of std_logic;
 	signal board : board_type;
 	signal rgb_temp : std_logic_vector(5 downto 0);
-	signal top_left_row : unsigned(3 downto 0) := 4d"0";
+	signal top_left_row : unsigned(3 downto 0) := 4d"4";
 	signal top_left_col : unsigned(3 downto 0) := 4d"3";
 	signal curr_piece_shape : std_logic_vector(15 downto 0);
 	signal row_board_index : unsigned(3 downto 0);
@@ -38,22 +39,27 @@ architecture synth of pattern_gen is
 	signal index_in_piece_shape : unsigned(3 downto 0);
 	signal counter : unsigned(31 downto 0);
 	signal frame_counter : unsigned(15 downto 0);
+	signal piece_rotation : unsigned(1 downto 0);
+	signal piece_code : unsigned(2 downto 0);
+	signal rotate_delay : unsigned(2 downto 0);
+	signal down_delay : unsigned(2 downto 0);
+
 begin
 	
-	piece_device : piece port map(clk, "011", "00", curr_piece_shape);
+	piece_device : piece port map(clk, std_logic_vector(piece_code), std_logic_vector(piece_rotation), curr_piece_shape);
 	--top_left_row <= 4d"0";
 	--top_left_col <= 4d"3";
 	
 	-- index_in_piece_shape <= 15 - (((TO_INTEGER(shift_right(row, 4)) - top_left_row) * 4) + (TO_INTEGER(shift_right(col, 4)) - top_left_col));
 	row_board_index <= row(7 downto 4);
 	col_board_index <= col(7 downto 4);
-	board(5, 5) <= '1' when (rotate = '1');
+	--board(5, 5) <= '1' when (rotate = '1');
 	
 	rgb_temp <= 6b"111111" when (TO_INTEGER(col_board_index) >= top_left_col     and 
 							     TO_INTEGER(col_board_index) < top_left_col + 4  and 
 								 TO_INTEGER(row_board_index) >= top_left_row     and 
 							     TO_INTEGER(row_board_index) < unsigned('0' & std_logic_vector(top_left_row)) + to_unsigned(4, 5)  and
-								 row <= 256 and col < 160                         and
+								 row <= 256 and col < 160                        and
 								 curr_piece_shape(15 - ((TO_INTEGER(row_board_index) - TO_INTEGER(top_left_row)) * 4 + 
 												  (TO_INTEGER(col_board_index) - TO_INTEGER(top_left_col)))) = '1')  -- Pixel of piece should be drawn
 												  else
@@ -67,15 +73,29 @@ begin
 		report "Sanity";
 		if rising_edge(clk) then
 			if row = 480 and col = 640 and frame_counter(2) = '1' then
+				if rotate = '1' and rotate_delay = 0 then
+					piece_rotation <= piece_rotation + 1;
+					rotate_delay <= rotate_delay + 1;
+				end if;
+				if rotate_delay > 0 then
+					rotate_delay <= rotate_delay + 1;
+				end if;
+				if down = '1' and down_delay = 0 then
+					piece_code <= piece_code + 1;
+					down_delay <= down_delay + 1;
+				end if;
+				if down_delay > 0 then
+					down_delay <= down_delay + 1;
+				end if;
 				report "In 1st branch";
-				-- for ROW in 1 to 9 loop
-				-- 	for COL in 1 to 15 loop
-				-- 		board(ROW, COL) <= '0';
-				-- 	end loop;
-				-- end loop;
-				-- board(0, 0) <= '1';
-				-- board(1, 0) <= '1';
-				-- board(0, 1) <= '1';
+				 for ROW in 1 to 9 loop
+				 	for COL in 1 to 15 loop
+				 		board(ROW, COL) <= '0';
+				 	end loop;
+				 end loop;
+				 board(0, 0) <= '1';
+				 board(1, 0) <= '1';
+				 board(0, 1) <= '1';
 				
 			elsif row = 480 and col = 640 then
 				report "In 2nd branch";
@@ -83,9 +103,9 @@ begin
 		
 			elsif rising_edge(game_clock) then
 				report "In 3rd branch";
-				if top_left_row < 14 then
-					top_left_row <= top_left_row + 1;
-				end if;
+				-- if top_left_row < 14 then
+				-- 	top_left_row <= top_left_row + 1;
+				-- end if;
 			end if;
 		end if;
 	end process;

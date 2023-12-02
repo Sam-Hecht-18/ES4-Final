@@ -1,0 +1,47 @@
+----------------------------------------------------------------------
+Report for cell master.TECH
+Register bits:  53 of 5280 (1.004%)
+I/O cells:      14
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               CCU2        25          100.0
+                            FD1P3XZ        53          100.0
+                                 IB         2          100.0
+                               LUT4        64          100.0
+                                 OB        12          100.0
+SUB MODULES
+                              clock         1
+                        pattern_gen         1
+                      pll_component         1
+                                vga         1
+                              TOTAL       160
+----------------------------------------------------------------------
+Report for cell secured_cell.secured_netlist
+Instance Path : secured_path
+                              TOTAL         0
+----------------------------------------------------------------------
+Report for cell vga.v1
+Instance Path : my_vga
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        12           48.0
+                            FD1P3XZ        20           37.7
+                               LUT4        30           46.9
+                              TOTAL        62
+----------------------------------------------------------------------
+Report for cell pattern_gen.v1
+Instance Path : my_pattern_gen
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1P3XZ         8           15.1
+                               LUT4        29           45.3
+                              TOTAL        37
+----------------------------------------------------------------------
+Report for cell clock.v1
+Instance Path : clock_device
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        13           52.0
+                            FD1P3XZ        25           47.2
+                               LUT4         5            7.8
+                              TOTAL        43
