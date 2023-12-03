@@ -1,0 +1,8 @@
+-ver "C:/lscc/radiant/2023.1/ip/pmi/pmi_iCE40UP.v"
+-lib pmi -vhd "C:/lscc/radiant/2023.1/ip/pmi/pmi_iCE40UP.vhd"
+-lib "work" -vhd "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/bottom_check.vhd" "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/clock.vhd" "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/master.vhd" "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/nes_controller.vhd" "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/pattern_gen.vhd" "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/piece.vhd" "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/vga.vhd"
+-path "Z:/es4/ES4-Final/collisions_and_rotations"
+-vh2008
+-top master
+-isTop
+-a "iCE40UP"

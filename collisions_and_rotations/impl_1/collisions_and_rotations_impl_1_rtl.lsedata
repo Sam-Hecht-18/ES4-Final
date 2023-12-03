@@ -1,0 +1,23 @@
+<top name = "master"  library = "work"  arch = "RTL"  entry = "VHDL">
+
+<clocks>
+    <clockitem name = "clk"  type = "net" />
+    <clockitem name = "game_clock"  type = "net" />
+    <clockitem name = "osc"  type = "port" />
+    <clockitem name = "ctrlr_clk"  type = "net" />
+    <clockitem name = "clock_manager_portmap/pll_portmap/lscc_pll_inst/outcoreb_o"  type = "net" />
+    <clockitem name = "clock_manager_portmap/pll_portmap/lscc_pll_inst/outglobalb_o"  type = "net" />
+    <clockitem name = "clock_manager_portmap/pll_portmap/outcore_o"  type = "net" />
+</clocks>
+
+<!--
+    //=============================================================
+    //  Number of Clocks processed: 7
+    //
+    //  If a clock cannot be found in the top level pins section,
+    //  that means it is an internal clock.
+    //
+    //=============================================================
+-->
+
+</top>

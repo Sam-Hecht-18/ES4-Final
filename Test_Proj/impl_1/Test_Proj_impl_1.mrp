@@ -1,0 +1,404 @@
+                         Lattice Mapping Report File
+Design:  master
+Family:  iCE40UP
+Device:  iCE40UP5K
+Package: SG48
+Performance Grade:  High-Performance_1.2V
+
+Mapper:    version Radiant Software (64-bit) 2023.1.0.43.3
+Mapped on: Sat Dec  2 15:28:11 2023
+
+Design Information
+------------------
+
+Command line:   map -i Test_Proj_impl_1_syn.udb -pdc
+     Z:/ES4-Final/Test_Proj/netlist.pdc -o Test_Proj_impl_1_map.udb -mp
+     Test_Proj_impl_1.mrp -hierrpt -gui
+
+Design Summary
+--------------
+
+   Number of slice registers:  20 out of  5280 (<1%)
+   Number of I/O registers:      0 out of   117 (0%)
+   Number of LUT4s:            70 out of  5280 (1%)
+      Number of logic LUT4s:              46
+      Number of ripple logic:             12 (24 LUT4s)
+   Number of IO sites used:   14 out of 39 (36%)
+      Number of IO sites used for general PIO: 14
+      Number of IO sites used for I3C: 0 out of 2 (0%)
+      (note: If I3C is not used, its site can be used as general PIO)
+      Number of IO sites used for PIO+I3C: 14 out of 36 (39%)
+      Number of IO sites used for OD+RGB IO buffers: 0 out of 3 (0%)
+      (note: If RGB LED drivers are not used, sites can be used as OD outputs,
+       see TN1288 iCE40 LED Driver Usage Guide)
+      Number of IO sites used for PIO+I3C+OD+RGB: 14 out of 39 (36%)
+   Number of DSPs:             0 out of 8 (0%)
+   Number of I2Cs:             0 out of 2 (0%)
+   Number of High Speed OSCs:  0 out of 1 (0%)
+   Number of Low Speed OSCs:   0 out of 1 (0%)
+   Number of RGB PWM:          0 out of 1 (0%)
+   Number of RGB Drivers:      0 out of 1 (0%)
+   Number of SCL FILTERs:      0 out of 2 (0%)
+   Number of SRAMs:            0 out of 4 (0%)
+   Number of WARMBOOTs:        0 out of 1 (0%)
+   Number of SPIs:             0 out of 2 (0%)
+   Number of EBRs:             0 out of 30 (0%)
+   Number of PLLs:             0 out of 1 (0%)
+   Number of Clocks:  0
+   Number of Clock Enables:  1
+      Net my_vga.col_0__N_50: 6 loads, 6 SLICEs
+   Number of LSRs:  2
+      Net my_vga.col_0__N_50: 6 loads, 6 SLICEs
+      Net my_vga.row_0__N_30: 6 loads, 6 SLICEs
+   Top 10 highest fanout non-clock nets:
+      Net my_vga.col_0__N_50: 13 loads
+      Net col[5]: 10 loads
+      Net col[6]: 10 loads
+      Net col[4]: 9 loads
+      Net row[4]: 9 loads
+      Net col[7]: 8 loads
+      Net col[8]: 7 loads
+      Net col[9]: 7 loads
+
+                                    Page 1
+
+
+
+
+
+Design Summary (cont)
+---------------------
+      Net my_vga.row_0__N_30: 6 loads
+      Net row[5]: 6 loads
+
+
+
+
+   Number of warnings:  51
+   Number of errors:    0
+
+Design Errors/Warnings
+----------------------
+
+WARNING <71003020> - map: Top module port 'ctrlr_data' does not connect to
+     anything.
+WARNING <51011053> - map: Register my_vga.col_9__I_18 has a clock signal tied to
+     GND.
+WARNING <51011053> - map: Register my_vga.row_9__I_8 has a clock signal tied to
+     GND.
+WARNING <51011053> - map: Register my_vga.row_9__I_7 has a clock signal tied to
+     GND.
+WARNING <51011053> - map: Register my_vga.row_9__I_2 has a clock signal tied to
+     GND.
+WARNING <51011053> - map: Register my_vga.row_9__I_3 has a clock signal tied to
+     GND.
+WARNING <51011053> - map: Register my_vga.row_9__I_4 has a clock signal tied to
+     GND.
+WARNING <51011053> - map: Register my_vga.row_9__I_6 has a clock signal tied to
+     GND.
+WARNING <51011053> - map: Register my_vga.row_9__I_1 has a clock signal tied to
+     GND.
+WARNING <51011053> - map: Register my_vga.row_9__I_9 has a clock signal tied to
+     GND.
+WARNING <51011053> - map: Register my_vga.row_9__I_5 has a clock signal tied to
+     GND.
+WARNING <51011053> - map: Register my_vga.col_9__I_0_2 has a clock signal tied
+     to GND.
+WARNING <51011053> - map: Register my_vga.col_9__I_10 has a clock signal tied to
+     GND.
+WARNING <51011053> - map: Register my_vga.col_9__I_11 has a clock signal tied to
+     GND.
+WARNING <51011053> - map: Register my_vga.col_9__I_12 has a clock signal tied to
+     GND.
+WARNING <51011053> - map: Register my_vga.col_9__I_13 has a clock signal tied to
+     GND.
+WARNING <51011053> - map: Register my_vga.col_9__I_14 has a clock signal tied to
+     GND.
+WARNING <51011053> - map: Register my_vga.col_9__I_15 has a clock signal tied to
+     GND.
+WARNING <51011053> - map: Register my_vga.col_9__I_16 has a clock signal tied to
+     GND.
+WARNING <51011053> - map: Register my_vga.col_9__I_17 has a clock signal tied to
+     GND.
+WARNING <51011053> - map: Register my_vga.row_9__I_0 has a clock signal tied to
+     GND.
+WARNING <51011053> - map: Register my_pattern_gen.top_left_row_3__I_0 has a
+     clock signal tied to GND.
+WARNING <51011053> - map: Register my_pattern_gen.top_left_row_3__I_26 has a
+
+                                    Page 2
+
+
+
+
+
+Design Errors/Warnings (cont)
+-----------------------------
+     clock signal tied to GND.
+WARNING <51011053> - map: Register my_pattern_gen.top_left_row_3__I_27 has a
+     clock signal tied to GND.
+WARNING <51011053> - map: Register my_pattern_gen.top_left_row_3__I_28 has a
+     clock signal tied to GND.
+WARNING <51011053> - map: Register clock_device.NEScount_7__I_29 has a clock
+     signal tied to GND.
+WARNING <51011053> - map: Register clock_device.counter_78_84__i24 has a clock
+     signal tied to GND.
+WARNING <51011053> - map: Register clock_device.counter_78_84__i23 has a clock
+     signal tied to GND.
+WARNING <51011053> - map: Register clock_device.counter_78_84__i22 has a clock
+     signal tied to GND.
+WARNING <51011053> - map: Register clock_device.counter_78_84__i21 has a clock
+     signal tied to GND.
+WARNING <51011053> - map: Register clock_device.counter_78_84__i20 has a clock
+     signal tied to GND.
+WARNING <51011053> - map: Register clock_device.counter_78_84__i19 has a clock
+     signal tied to GND.
+WARNING <51011053> - map: Register clock_device.counter_78_84__i18 has a clock
+     signal tied to GND.
+WARNING <51011053> - map: Register clock_device.NEScount_7__I_0 has a clock
+     signal tied to GND.
+WARNING <51011053> - map: Register clock_device.NEScount_7__I_19 has a clock
+     signal tied to GND.
+WARNING <51011053> - map: Register clock_device.NEScount_7__I_20 has a clock
+     signal tied to GND.
+WARNING <51011053> - map: Register clock_device.NEScount_7__I_21 has a clock
+     signal tied to GND.
+WARNING <51011053> - map: Register clock_device.NEScount_7__I_22 has a clock
+     signal tied to GND.
+WARNING <51011053> - map: Register clock_device.NEScount_7__I_23 has a clock
+     signal tied to GND.
+WARNING <51011053> - map: Register clock_device.NEScount_7__I_24 has a clock
+     signal tied to GND.
+WARNING <51011053> - map: Register clock_device.NEScount_7__I_25 has a clock
+     signal tied to GND.
+WARNING <51011053> - map: Register clock_device.NEScount_7__I_30 has a clock
+     signal tied to GND.
+WARNING <51011053> - map: Register clock_device.counter_78_84__i8 has a clock
+     signal tied to GND.
+WARNING <51011053> - map: Register clock_device.counter_78_84__i7 has a clock
+     signal tied to GND.
+WARNING <51011053> - map: Register clock_device.counter_78_84__i6 has a clock
+     signal tied to GND.
+WARNING <51011053> - map: Register clock_device.counter_78_84__i5 has a clock
+     signal tied to GND.
+WARNING <51011053> - map: Register clock_device.counter_78_84__i4 has a clock
+     signal tied to GND.
+WARNING <51011053> - map: Register clock_device.counter_78_84__i3 has a clock
+     signal tied to GND.
+WARNING <51011053> - map: Register clock_device.counter_78_84__i2 has a clock
+     signal tied to GND.
+WARNING <51011053> - map: Register clock_device.counter_78_84__i1 has a clock
+     signal tied to GND.
+WARNING <71003020> - map: Top module port 'ctrlr_data' does not connect to
+     anything.
+
+                                    Page 3
+
+
+
+
+
+
+IO (PIO) Attributes
+-------------------
+
++---------------------+-----------+-----------+-------+-------+-----------+
+| IO Name             | Direction | Levelmode |  IO   |  IO   | Special   |
+|                     |           |  IO_TYPE  |  REG  |  DDR  | IO Buffer |
++---------------------+-----------+-----------+-------+-------+-----------+
+| test_input          | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| osc                 | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| test_output         | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| ctrlr_clk           | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| ctrlr_latch         | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| clk_test            | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| vsync               | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hsync               | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| rgb[0]              | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| rgb[1]              | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| rgb[2]              | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| rgb[3]              | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| rgb[4]              | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| rgb[5]              | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+
+Removed logic
+-------------
+
+Block clock_device/counter_78_84_add_4_17 undriven or does not drive anything -
+     clipped.
+Block clock_device/counter_78_84_add_4_1 undriven or does not drive anything -
+     clipped.
+Block clock_device/counter_78_84_add_4_19 undriven or does not drive anything -
+     clipped.
+Block clock_device/counter_78_84_add_4_21 undriven or does not drive anything -
+     clipped.
+Block clock_device/counter_78_84_add_4_23 undriven or does not drive anything -
+     clipped.
+Block clock_device/counter_78_84_add_4_25 undriven or does not drive anything -
+     clipped.
+Block clock_device/counter_78_84_add_4_3 undriven or does not drive anything -
+     clipped.
+Block clock_device/counter_78_84_add_4_5 undriven or does not drive anything -
+     clipped.
+Block clock_device/counter_78_84_add_4_7 undriven or does not drive anything -
+     clipped.
+Block clock_device/counter_78_84_add_4_9 undriven or does not drive anything -
+
+                                    Page 4
+
+
+
+
+
+Removed logic (cont)
+--------------------
+     clipped.
+Block clock_device/counter_78_84_add_4_11 undriven or does not drive anything -
+     clipped.
+Block clock_device/counter_78_84_add_4_13 undriven or does not drive anything -
+     clipped.
+Block clock_device/counter_78_84_add_4_15 undriven or does not drive anything -
+     clipped.
+Block my_pattern_gen/top_left_row_2_i0 undriven or does not drive anything -
+     clipped.
+Block my_pattern_gen/i183_2_lut_3_lut undriven or does not drive anything -
+     clipped.
+Block my_pattern_gen/i181_2_lut_3_lut undriven or does not drive anything -
+     clipped.
+Block my_pattern_gen/i188_2_lut_4_lut undriven or does not drive anything -
+     clipped.
+Block my_pattern_gen/top_left_row_2_i1 undriven or does not drive anything -
+     clipped.
+Block my_pattern_gen/top_left_row_2_i2 undriven or does not drive anything -
+     clipped.
+Block my_pattern_gen/i173_2_lut undriven or does not drive anything - clipped.
+Block my_pattern_gen/i856_4_lut undriven or does not drive anything - clipped.
+Block my_pattern_gen/i5_4_lut undriven or does not drive anything - clipped.
+Block my_pattern_gen/i6_4_lut undriven or does not drive anything - clipped.
+Block my_pattern_gen/top_left_row_2_i3 undriven or does not drive anything -
+     clipped.
+Block my_vga/i1_2_lut_adj_34 undriven or does not drive anything - clipped.
+Block my_vga/i37_3_lut undriven or does not drive anything - clipped.
+Block clock_device/counter_78_84__i1 undriven or does not drive anything -
+     clipped.
+Block clock_device/counter_78_84__i2 undriven or does not drive anything -
+     clipped.
+Block clock_device/counter_78_84__i3 undriven or does not drive anything -
+     clipped.
+Block clock_device/counter_78_84__i4 undriven or does not drive anything -
+     clipped.
+Block clock_device/counter_78_84__i5 undriven or does not drive anything -
+     clipped.
+Block clock_device/counter_78_84__i6 undriven or does not drive anything -
+     clipped.
+Block clock_device/counter_78_84__i7 undriven or does not drive anything -
+     clipped.
+Block clock_device/counter_78_84__i8 undriven or does not drive anything -
+     clipped.
+Block clock_device/NEScount_7__I_30 undriven or does not drive anything -
+     clipped.
+Block clock_device/NEScount_7__I_25 undriven or does not drive anything -
+     clipped.
+Block clock_device/NEScount_7__I_24 undriven or does not drive anything -
+     clipped.
+Block clock_device/NEScount_7__I_23 undriven or does not drive anything -
+     clipped.
+Block clock_device/NEScount_7__I_22 undriven or does not drive anything -
+     clipped.
+Block clock_device/NEScount_7__I_21 undriven or does not drive anything -
+     clipped.
+Block clock_device/NEScount_7__I_20 undriven or does not drive anything -
+     clipped.
+
+                                    Page 5
+
+
+
+
+
+Removed logic (cont)
+--------------------
+Block clock_device/NEScount_7__I_19 undriven or does not drive anything -
+     clipped.
+Block clock_device/NEScount_7__I_0 undriven or does not drive anything -
+     clipped.
+Block clock_device/counter_78_84__i18 undriven or does not drive anything -
+     clipped.
+Block clock_device/counter_78_84__i19 undriven or does not drive anything -
+     clipped.
+Block clock_device/counter_78_84__i20 undriven or does not drive anything -
+     clipped.
+Block clock_device/counter_78_84__i21 undriven or does not drive anything -
+     clipped.
+Block clock_device/counter_78_84__i22 undriven or does not drive anything -
+     clipped.
+Block clock_device/counter_78_84__i23 undriven or does not drive anything -
+     clipped.
+Block clock_device/counter_78_84__i24 undriven or does not drive anything -
+     clipped.
+Block clock_device/NEScount_7__I_29 undriven or does not drive anything -
+     clipped.
+Block my_pattern_gen/top_left_row_3__I_28 undriven or does not drive anything -
+     clipped.
+Block my_pattern_gen/top_left_row_3__I_27 undriven or does not drive anything -
+     clipped.
+Block my_pattern_gen/top_left_row_3__I_26 undriven or does not drive anything -
+     clipped.
+Block my_pattern_gen/top_left_row_3__I_0 undriven or does not drive anything -
+     clipped.
+Block clock_device/NEScount_5__I_0 was optimized away.
+Block clock_device/i4_4_lut was optimized away.
+Block clock_device/i6_4_lut was optimized away.
+Block clock_device/i2_2_lut was optimized away.
+Block my_pattern_gen/i1_rep_11_2_lut was optimized away.
+Block my_pattern_gen/i1_2_lut was optimized away.
+Block my_vga/i1_2_lut_adj_38 was optimized away.
+Block i1 was optimized away.
+
+Constraint Summary
+------------------
+
+   Total number of constraints: 12
+   Total number of constraints dropped: 0
+
+Run Time and Memory Usage
+-------------------------
+
+   Total CPU Time: 0 secs
+   Total REAL Time: 0 secs
+   Peak Memory Usage: 57 MB
+
+
+
+
+
+
+
+
+
+                                    Page 6
+
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995
+     AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent
+     Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems
+     All rights reserved.
+Copyright (c) 2002-2023 Lattice Semiconductor
+     Corporation,  All rights reserved.

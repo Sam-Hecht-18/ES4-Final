@@ -36,10 +36,9 @@ begin
 		outglobal_o => clk
 	);
 
-    game_clock <= counter(24);
+    	game_clock <= counter(24);
 	NEScount <= counter(15 downto 8);
 	NESclk <= counter(7);
-    -- clk_test <= outcore_o;
 
     process (clk) begin
         if rising_edge(clk) then

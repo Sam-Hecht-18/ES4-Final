@@ -48,7 +48,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-Thu Nov 30 21:26:47 2023
+Sat Dec  2 17:30:03 2023
 
 
 Command Line:  C:\lscc\radiant\2023.1\ispfpga\bin\nt64\synthesis.exe -f ES4_Lab_7_impl_1_lattice.synproj -gui -msgset Z:/ES4-Final/VGA Test/promote.xml 
@@ -123,15 +123,17 @@ Verilog design file = Z:/ES4-Final/VGA Test/pll_component/rtl/pll_component.v
 VHDL library = pmi
 VHDL design file = C:/lscc/radiant/2023.1/ip/pmi/pmi_iCE40UP.vhd
 VHDL library = work
+VHDL design file = Z:/ES4-Final/VGA Test/impl_1/vhdl/piece.vhd
+VHDL library = work
 VHDL design file = Z:/ES4-Final/VGA Test/impl_1/vhdl/master.vhd
 VHDL library = work
 VHDL design file = Z:/ES4-Final/VGA Test/impl_1/vhdl/pattern_gen.vhd
 VHDL library = work
 VHDL design file = Z:/ES4-Final/VGA Test/impl_1/vhdl/vga.vhd
 VHDL library = work
-VHDL design file = Z:/ES4-Final/VGA Test/impl_1/vhdl/bottom_check.vhd
-VHDL library = work
 VHDL design file = Z:/ES4-Final/VGA Test/impl_1/vhdl/clock.vhd
+VHDL library = work
+VHDL design file = Z:/ES4-Final/VGA Test/impl_1/vhdl/nes_controller.vhd
 The -r option is OFF. [ Remove LOC Properties is OFF. ]
 WARNING <35935050> - synthesis: input port TRIM9 is not connected on this instance. VDB-5050
 WARNING <35935050> - synthesis: input port TRIM8 is not connected on this instance. VDB-5050
@@ -185,33 +187,36 @@ Analyzing VHDL file c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.vhd. VHDL-1481
 Analyzing VHDL file c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.vhd
 
 INFO <35921014> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.vhd(4): analyzing package components. VHDL-1014
+Analyzing VHDL file z:/es4-final/vga test/impl_1/vhdl/piece.vhd. VHDL-1481
+Analyzing VHDL file z:/es4-final/vga test/impl_1/vhdl/piece.vhd
+
+INFO <35921012> - synthesis: z:/es4-final/vga test/impl_1/vhdl/piece.vhd(5): analyzing entity piece. VHDL-1012
+INFO <35921010> - synthesis: z:/es4-final/vga test/impl_1/vhdl/piece.vhd(15): analyzing architecture synth. VHDL-1010
 Analyzing VHDL file z:/es4-final/vga test/impl_1/vhdl/master.vhd. VHDL-1481
 Analyzing VHDL file z:/es4-final/vga test/impl_1/vhdl/master.vhd
 
 INFO <35921012> - synthesis: z:/es4-final/vga test/impl_1/vhdl/master.vhd(5): analyzing entity master. VHDL-1012
-INFO <35921010> - synthesis: z:/es4-final/vga test/impl_1/vhdl/master.vhd(16): analyzing architecture synth. VHDL-1010
+INFO <35921010> - synthesis: z:/es4-final/vga test/impl_1/vhdl/master.vhd(21): analyzing architecture synth. VHDL-1010
 Analyzing VHDL file z:/es4-final/vga test/impl_1/vhdl/pattern_gen.vhd. VHDL-1481
 Analyzing VHDL file z:/es4-final/vga test/impl_1/vhdl/pattern_gen.vhd
 
-INFO <35921014> - synthesis: z:/es4-final/vga test/impl_1/vhdl/pattern_gen.vhd(5): analyzing package my_types_package. VHDL-1014
-INFO <35921012> - synthesis: z:/es4-final/vga test/impl_1/vhdl/pattern_gen.vhd(15): analyzing entity pattern_gen. VHDL-1012
-INFO <35921010> - synthesis: z:/es4-final/vga test/impl_1/vhdl/pattern_gen.vhd(25): analyzing architecture synth. VHDL-1010
+INFO <35921012> - synthesis: z:/es4-final/vga test/impl_1/vhdl/pattern_gen.vhd(5): analyzing entity pattern_gen. VHDL-1012
+INFO <35921010> - synthesis: z:/es4-final/vga test/impl_1/vhdl/pattern_gen.vhd(18): analyzing architecture synth. VHDL-1010
 Analyzing VHDL file z:/es4-final/vga test/impl_1/vhdl/vga.vhd. VHDL-1481
 Analyzing VHDL file z:/es4-final/vga test/impl_1/vhdl/vga.vhd
 
 INFO <35921012> - synthesis: z:/es4-final/vga test/impl_1/vhdl/vga.vhd(5): analyzing entity vga. VHDL-1012
 INFO <35921010> - synthesis: z:/es4-final/vga test/impl_1/vhdl/vga.vhd(16): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4-final/vga test/impl_1/vhdl/bottom_check.vhd. VHDL-1481
-Analyzing VHDL file z:/es4-final/vga test/impl_1/vhdl/bottom_check.vhd
-
-INFO <35921014> - synthesis: z:/es4-final/vga test/impl_1/vhdl/bottom_check.vhd(5): analyzing package my_types_package. VHDL-1014
-INFO <35921012> - synthesis: z:/es4-final/vga test/impl_1/vhdl/bottom_check.vhd(15): analyzing entity bottom_check. VHDL-1012
-INFO <35921010> - synthesis: z:/es4-final/vga test/impl_1/vhdl/bottom_check.vhd(26): analyzing architecture synth. VHDL-1010
 Analyzing VHDL file z:/es4-final/vga test/impl_1/vhdl/clock.vhd. VHDL-1481
 Analyzing VHDL file z:/es4-final/vga test/impl_1/vhdl/clock.vhd
 
 INFO <35921012> - synthesis: z:/es4-final/vga test/impl_1/vhdl/clock.vhd(5): analyzing entity clock. VHDL-1012
-INFO <35921010> - synthesis: z:/es4-final/vga test/impl_1/vhdl/clock.vhd(11): analyzing architecture synth. VHDL-1010
+INFO <35921010> - synthesis: z:/es4-final/vga test/impl_1/vhdl/clock.vhd(15): analyzing architecture synth. VHDL-1010
+Analyzing VHDL file z:/es4-final/vga test/impl_1/vhdl/nes_controller.vhd. VHDL-1481
+Analyzing VHDL file z:/es4-final/vga test/impl_1/vhdl/nes_controller.vhd
+
+INFO <35921012> - synthesis: z:/es4-final/vga test/impl_1/vhdl/nes_controller.vhd(5): analyzing entity nes_controller. VHDL-1012
+INFO <35921010> - synthesis: z:/es4-final/vga test/impl_1/vhdl/nes_controller.vhd(23): analyzing architecture synth. VHDL-1010
 INFO <35921504> - synthesis: The default VHDL library search path is now "Z:/ES4-Final/VGA Test/impl_1". VHDL-1504
 Top module language type = VHDL.
 WARNING <35935049> - synthesis: input port sclk_i remains unconnected for this instance. VDB-5049
@@ -241,9 +246,6 @@ Top module name (VHDL, mixed language): master
                                                          
 
 
-WARNING <35001771> - synthesis: Initial value found on net game_clock will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net collision_temp will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net hit_bottom will be ignored due to unrecognized driver type
 WARNING <35001771> - synthesis: Initial value found on net next_col[9] will be ignored due to unrecognized driver type
 WARNING <35001771> - synthesis: Initial value found on net next_col[8] will be ignored due to unrecognized driver type
 WARNING <35001771> - synthesis: Initial value found on net next_col[7] will be ignored due to unrecognized driver type
@@ -264,30 +266,116 @@ WARNING <35001771> - synthesis: Initial value found on net next_row[3] will be i
 WARNING <35001771> - synthesis: Initial value found on net next_row[2] will be ignored due to unrecognized driver type
 WARNING <35001771> - synthesis: Initial value found on net next_row[1] will be ignored due to unrecognized driver type
 WARNING <35001771> - synthesis: Initial value found on net next_row[0] will be ignored due to unrecognized driver type
+CRITICAL <35001747> - synthesis: Bit 15 of Register board[1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 14 of Register board[1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 13 of Register board[1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 12 of Register board[1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 11 of Register board[1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 10 of Register board[1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 9 of Register board[1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 8 of Register board[1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 7 of Register board[1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 6 of Register board[1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 5 of Register board[1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 4 of Register board[1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 3 of Register board[1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 2 of Register board[1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 1 of Register board[1] is stuck at Zero
+CRITICAL <35001748> - synthesis: Bit 0 of Register board[1] is stuck at One
 WARNING <35935049> - synthesis: input port sclk_i remains unconnected for this instance. VDB-5049
 WARNING <35935049> - synthesis: input port sdi_i remains unconnected for this instance. VDB-5049
+WARNING <35931002> - synthesis: z:/es4-final/vga test/impl_1/vhdl/pattern_gen.vhd(32): net board[9][0] does not have a driver. VDB-1002
+CRITICAL <35002028> - synthesis: I/O Port test_input 's net has no driver and is unused.
+CRITICAL <35002028> - synthesis: I/O Port test_output 's net has no driver and is unused.
 WARNING <35931002> - synthesis: z:/es4-final/vga test/pll_component/rtl/pll_component.v(139): net \my_pll/lscc_pll_inst/sclk_i does not have a driver. VDB-1002
 WARNING <35931002> - synthesis: z:/es4-final/vga test/pll_component/rtl/pll_component.v(140): net \my_pll/lscc_pll_inst/sdi_i does not have a driver. VDB-1002
+######## Missing driver on net \my_pattern_gen/board[9][0]. Patching with GND.
+######## Missing driver on net \my_pattern_gen/board[8][0]. Patching with GND.
+######## Missing driver on net \my_pattern_gen/board[7][0]. Patching with GND.
+######## Missing driver on net \my_pattern_gen/board[6][0]. Patching with GND.
+######## Missing driver on net \my_pattern_gen/board[5][0]. Patching with GND.
+######## Missing driver on net \my_pattern_gen/board[4][0]. Patching with GND.
+######## Missing driver on net \my_pattern_gen/board[3][0]. Patching with GND.
+######## Missing driver on net \my_pattern_gen/board[2][0]. Patching with GND.
+######## Missing driver on net \my_pattern_gen/board[0][15]. Patching with GND.
+######## Missing driver on net \my_pattern_gen/board[0][14]. Patching with GND.
+######## Missing driver on net \my_pattern_gen/board[0][13]. Patching with GND.
+######## Missing driver on net \my_pattern_gen/board[0][12]. Patching with GND.
+######## Missing driver on net \my_pattern_gen/board[0][11]. Patching with GND.
+######## Missing driver on net \my_pattern_gen/board[0][10]. Patching with GND.
+######## Missing driver on net \my_pattern_gen/board[0][9]. Patching with GND.
+######## Missing driver on net \my_pattern_gen/board[0][8]. Patching with GND.
+######## Missing driver on net \my_pattern_gen/board[0][7]. Patching with GND.
+######## Missing driver on net \my_pattern_gen/board[0][6]. Patching with GND.
+######## Missing driver on net \my_pattern_gen/board[0][5]. Patching with GND.
+######## Missing driver on net \my_pattern_gen/board[0][4]. Patching with GND.
+######## Missing driver on net \my_pattern_gen/board[0][3]. Patching with GND.
+######## Missing driver on net \my_pattern_gen/board[0][2]. Patching with GND.
 ######## Missing driver on net \my_pll/lscc_pll_inst/sclk_i. Patching with GND.
 ######## Missing driver on net \my_pll/lscc_pll_inst/sdi_i. Patching with GND.
 
 
+
+Removed duplicate sequential element \my_pattern_gen/board[7][15:1](15 bit), because it is equivalent to \my_pattern_gen/board[8][15:1]
+
+Removed duplicate sequential element \my_pattern_gen/board[6][15:1](15 bit), because it is equivalent to \my_pattern_gen/board[8][15:1]
+
+Removed duplicate sequential element \my_pattern_gen/board[5][15:1](15 bit), because it is equivalent to \my_pattern_gen/board[8][15:1]
+
+Removed duplicate sequential element \my_pattern_gen/board[4][15:1](15 bit), because it is equivalent to \my_pattern_gen/board[8][15:1]
+
+Removed duplicate sequential element \my_pattern_gen/board[3][15:1](15 bit), because it is equivalent to \my_pattern_gen/board[8][15:1]
+
+Removed duplicate sequential element \my_pattern_gen/board[2][15:1](15 bit), because it is equivalent to \my_pattern_gen/board[8][15:1]
+
+Removed duplicate sequential element \my_pattern_gen/board[9][15:1](15 bit), because it is equivalent to \my_pattern_gen/board[8][15:1]
+
+CRITICAL <35001747> - synthesis: Bit 15 of Register \my_pattern_gen/board[8][15:1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 14 of Register \my_pattern_gen/board[8][15:1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 13 of Register \my_pattern_gen/board[8][15:1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 12 of Register \my_pattern_gen/board[8][15:1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 11 of Register \my_pattern_gen/board[8][15:1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 10 of Register \my_pattern_gen/board[8][15:1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 9 of Register \my_pattern_gen/board[8][15:1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 8 of Register \my_pattern_gen/board[8][15:1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 7 of Register \my_pattern_gen/board[8][15:1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 6 of Register \my_pattern_gen/board[8][15:1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 5 of Register \my_pattern_gen/board[8][15:1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 4 of Register \my_pattern_gen/board[8][15:1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 3 of Register \my_pattern_gen/board[8][15:1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 2 of Register \my_pattern_gen/board[8][15:1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 1 of Register \my_pattern_gen/board[8][15:1] is stuck at Zero
+CRITICAL <35001748> - synthesis: Bit 1 of Register \my_pattern_gen/board[0][1:0] is stuck at One
+CRITICAL <35001748> - synthesis: Bit 0 of Register \my_pattern_gen/board[0][1:0] is stuck at One
+CRITICAL <35002028> - synthesis: I/O Port test_input 's net has no driver and is unused.
+CRITICAL <35002028> - synthesis: I/O Port test_output 's net has no driver and is unused.
+Combinational loop found : 1
+
+ Net rotate_out_c 
+
+ Instance \my_nes_controller/mux_7_i4 
+
+Combinational loop found : 2
+
+ Net down_button 
+
+ Instance \my_nes_controller/mux_7_i3 
 
 
 
 <A name="lse_area"></A><B><U><big>Area Report</big></U></B>
 
 ################### Begin Area Report (master)######################
-Number of register bits => 50 of 5280 (0 % )
-CCU2 => 26
-FD1P3XZ => 50
-HSOSC_CORE => 1
-IB => 1
-LUT4 => 79
-OB => 10
+Number of register bits => 54 of 5280 (1 % )
+EBR_B => 1
+CCU2 => 23
+FD1P3XZ => 54
+IB => 3
+LUT4 => 80
+OB => 13
 PLL_B => 1
 ################### End Area Report ##################
-Number of odd-length carry chains : 0
+Number of odd-length carry chains : 1
 Number of even-length carry chains : 3
 
 
@@ -295,31 +383,32 @@ Number of even-length carry chains : 3
 
 ################### Begin Clock Report ######################
 Clock Nets
-Number of Clocks: 3
+Number of Clocks: 4
+  Net : clock_device/ctrlr_clk_c, loads : 1
+  Net : my_pll/lscc_pll_inst/outglobal_o, loads : 0
   Net : osc_c, loads : 1
   Net : my_pll/lscc_pll_inst/clk_test_c, loads : 1
-  Net : my_pll/lscc_pll_inst/outglobal_o, loads : 0
 Clock Enable Nets
 Number of Clock Enables: 0
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : my_pattern_gen/piece_drop_clock/clk, loads : 26
   Net : my_vga/col_0__N_50, loads : 21
-  Net : my_vga/row[4], loads : 14
-  Net : my_vga/col[5], loads : 13
-  Net : my_pattern_gen/piece_loc_y[0], loads : 13
-  Net : my_vga/col[6], loads : 12
-  Net : my_pattern_gen/piece_loc_y[1], loads : 12
-  Net : my_vga/row[5], loads : 11
-  Net : my_vga/col[7], loads : 11
-  Net : my_vga/row[7], loads : 10
+  Net : my_vga/col[4], loads : 14
+  Net : my_vga/col[5], loads : 11
+  Net : my_vga/row_0__N_30, loads : 10
+  Net : my_vga/col[7], loads : 8
+  Net : my_vga/col[6], loads : 8
+  Net : my_pattern_gen/n147, loads : 8
+  Net : my_vga/row[9], loads : 6
+  Net : my_vga/row[4], loads : 6
+  Net : my_vga/col[8], loads : 6
 ################### End Clock Report ##################
 
-Peak Memory Usage: 124 MB
+Peak Memory Usage: 110 MB
 
 --------------------------------------------------------------
-Total CPU Time: 0 secs 
-Total REAL Time: 2 secs 
+Total CPU Time: 2 secs 
+Total REAL Time: 4 secs 
 --------------------------------------------------------------
 
 

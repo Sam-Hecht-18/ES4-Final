@@ -2,17 +2,28 @@
 
 <clocks>
     <clockitem name = "osc"  type = "port" />
+    <clockitem name = "clk_test"  type = "net" />
+    <clockitem name = "ctrlr_clk"  type = "net" />
     <clockitem name = "outglobal_o"  type = "net" />
+<<<<<<< HEAD
+    <clockitem name = "my_pll/lscc_pll_inst/outcoreb_o"  type = "net" />
+    <clockitem name = "my_pll/lscc_pll_inst/outglobalb_o"  type = "net" />
+=======
     <clockitem name = "clk_test"  type = "net" />
     <clockitem name = "my_pattern_gen/piece_drop_clock/clk"  type = "net" />
     <clockitem name = "my_pll/lscc_pll_inst/outcoreb_o"  type = "net" />
     <clockitem name = "my_pll/lscc_pll_inst/outglobalb_o"  type = "net" />
     <clockitem name = "my_pattern_gen/game_clock"  type = "net" />
+>>>>>>> main
 </clocks>
 
 <!--
     //=============================================================
+<<<<<<< HEAD
+    //  Number of Clocks processed: 6
+=======
     //  Number of Clocks processed: 7
+>>>>>>> main
     //
     //  If a clock cannot be found in the top level pins section,
     //  that means it is an internal clock.

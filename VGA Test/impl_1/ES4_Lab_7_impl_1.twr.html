@@ -46,7 +46,11 @@ if (a)
 <A name="Timing_rpt_top">Timing Report</A><B><U><big></big></U></B>
 Lattice Timing Report -  Setup  and Hold, Version Radiant Software (64-bit) 2023.1.0.43.3
 
+<<<<<<< HEAD
+Sat Dec  2 17:30:16 2023
+=======
 Thu Nov 30 21:26:57 2023
+>>>>>>> main
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -120,6 +124,25 @@ Clocked but unconstrained timing end points
 -------------------------------------------------------------------
          Listing 10 End Points          |           Type           
 -------------------------------------------------------------------
+<<<<<<< HEAD
+my_vga/col_9__I_10/D                    |    No arrival or required
+my_vga/col_9__I_11/D                    |    No arrival or required
+{my_vga/col_9__I_11/SR   my_vga/col_9__I_10/SR}                           
+                                        |    No arrival or required
+my_vga/col_9__I_12/D                    |    No arrival or required
+my_vga/col_9__I_13/D                    |    No arrival or required
+{my_vga/col_9__I_13/SR   my_vga/col_9__I_12/SR}                           
+                                        |    No arrival or required
+my_vga/col_9__I_14/D                    |    No arrival or required
+my_vga/col_9__I_15/D                    |    No arrival or required
+{my_vga/col_9__I_15/SR   my_vga/col_9__I_14/SR}                           
+                                        |    No arrival or required
+my_vga/col_9__I_16/D                    |    No arrival or required
+-------------------------------------------------------------------
+                                        |                          
+Number of unconstrained timing end poin |                          
+ts                                      |                        70
+=======
 my_vga/row_9__I_5/D                     |    No arrival or required
 my_vga/row_9__I_6/D                     |    No arrival or required
 {my_vga/row_9__I_6/SP   my_vga/row_9__I_5/SP}                           
@@ -136,6 +159,7 @@ my_vga/col_9__I_10/D                    |    No arrival or required
                                         |                          
 Number of unconstrained timing end poin |                          
 ts                                      |                        38
+>>>>>>> main
                                         |                          
 -------------------------------------------------------------------
 
@@ -154,7 +178,18 @@ create_generated_clock,
 -------------------------------------------------------------------
      Listing 10 Start or End Points     |           Type           
 -------------------------------------------------------------------
+ctrlr_data                              |                     input
+test_input                              |                     input
 osc                                     |                     input
+<<<<<<< HEAD
+rotate_out                              |                    output
+test_output                             |                    output
+ctrlr_clk                               |                    output
+ctrlr_latch                             |                    output
+vsync                                   |                    output
+hsync                                   |                    output
+rgb[0]                                  |                    output
+=======
 valid_test                              |                    output
 vsync                                   |                    output
 hsync                                   |                    output
@@ -164,9 +199,10 @@ rgb[2]                                  |                    output
 rgb[3]                                  |                    output
 rgb[4]                                  |                    output
 rgb[5]                                  |                    output
+>>>>>>> main
 -------------------------------------------------------------------
                                         |                          
-Number of I/O ports without constraint  |                        10
+Number of I/O ports without constraint  |                        15
                                         |                          
 -------------------------------------------------------------------
 
@@ -175,7 +211,11 @@ Define a clock on a top level port or a generated clock on a clock divider pin a
 -------------------------------------------------------------------
             Listing 1 Net(s)            |        Source pin        
 -------------------------------------------------------------------
+<<<<<<< HEAD
+ctrlr_clk_c                             |clock_device/NEScount_3__I_0/Z
+=======
 my_pattern_gen.game_clock               |my_pattern_gen/piece_drop_clock/game_clock_I_0/Q
+>>>>>>> main
 -------------------------------------------------------------------
                                         |                          
 Number of clock nets without clock defi |                          
@@ -186,8 +226,13 @@ nition                                  |                         1
 
 <A name="Timing_rpt_CombinationalLoop"></A><B><U><big>1.5  Combinational Loop</big></U></B>
 
-None
+Combinational Loops
+-------------------
+++++ Loop1
+my_nes_controller/down_button_I_0/A	->	my_nes_controller/down_button_I_0/Z
 
+++++ Loop2
+my_nes_controller/rotate_out_c_I_0/A	->	my_nes_controller/rotate_out_c_I_0/Z
 
 
 <A name="Timing_rpt_ErrorWarningMessage"></A><B><U><big>1.6  Error/Warning Messages</big></U></B>

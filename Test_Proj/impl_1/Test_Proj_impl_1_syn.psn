@@ -1,0 +1,24 @@
+POSTSYN: Post Synthesis Process Radiant Software (64-bit) 2023.1.0.43.3
+Command Line: postsyn -a iCE40UP -p iCE40UP5K -t SG48 -sp High-Performance_1.2V -oc Industrial -top -w -o Test_Proj_impl_1_syn.udb -gui -msgset Z:/ES4-Final/Test_Proj/promote.xml Test_Proj_impl_1.vm 
+   Architecture:     iCE40UP
+   Device:           iCE40UP5K
+   Package:          SG48
+   Performance:      High-Performance_1.2V
+Reading input file 'Test_Proj_impl_1.vm' ...
+Removing unused logic ...
+INFO <35811146> - Signal clock_device/outglobal_o undriven or does not drive anything - clipped
+INFO <35811146> - Signal my_pattern_gen/outglobal_o undriven or does not drive anything - clipped
+INFO <35811146> - Signal my_vga/outglobal_o undriven or does not drive anything - clipped
+INFO <35811146> - Signal clk_test_c undriven or does not drive anything - clipped
+INFO <35811146> - Signal outglobal_o undriven or does not drive anything - clipped
+Starting design annotation....
+ 
+Constraint Summary:
+   Total number of constraints: 0
+   Total number of constraints dropped: 0
+ 
+Writing output file 'Test_Proj_impl_1_syn.udb'.
+POSTSYN finished successfully.
+Total CPU Time: 0 secs 
+Total REAL Time: 0 secs 
+Peak Memory Usage: 32 MB

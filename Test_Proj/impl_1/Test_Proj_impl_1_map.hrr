@@ -1,0 +1,38 @@
+---------------------------------------------------
+Report for cell master
+   Instance path: master
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	         70        100.0
+                               LUTGATE	         46        100.0
+                                LUTCCU	         24        100.0
+                                 IOBUF	         14        100.0
+                                PFUREG	         20        100.0
+SUB MODULES
+                                  cell	      count    LUT4 Usage(%)
+                                 clock	          1         1.4
+                           pattern_gen	          1        20.0
+                                   vga	          1        70.0
+---------------------------------------------------
+Report for cell vga
+   Instance path: master/my_vga
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	         49        70.0
+                               LUTGATE	         25        54.3
+                                LUTCCU	         24        100.0
+                                PFUREG	         20        100.0
+---------------------------------------------------
+Report for cell pattern_gen
+   Instance path: master/my_pattern_gen
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	         14        20.0
+                               LUTGATE	         14        30.4
+---------------------------------------------------
+Report for cell clock
+   Instance path: master/clock_device
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	          1         1.4
+                               LUTGATE	          1         2.2

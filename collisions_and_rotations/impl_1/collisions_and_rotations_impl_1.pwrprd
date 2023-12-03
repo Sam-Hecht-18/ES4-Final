@@ -1,0 +1,15 @@
+Property_Name=CLOCK_NAME_clk
+Property_Type=String
+Property_Value=clk
+Property_Name=CLOCK_POINT_NAME_clk
+Property_Type=String
+Property_Value=
+Property_Name=CLOCK_NETNAME_clk
+Property_Type=String
+Property_Value=clk
+Property_Name=REQUIRED_FREQUENCY_clk
+Property_Type=Float
+Property_Value=-0.000465661
+Property_Name=ACTUAL_FREQUENCY_clk
+Property_Type=Float
+Property_Value=-1

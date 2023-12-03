@@ -2,7 +2,7 @@
 <!DOCTYPE Report>
 <ReportView version="2.0">
     <Implement name="impl_1">
-        <ToolReport id="toolpio" path="" status="0"/>
+        <ToolReport id="toolpio" path="Z:/ES4-Final/VGA Test/drc.log" status="1"/>
         <ToolReport id="toolsso" path="" status="0"/>
     </Implement>
 </ReportView>
