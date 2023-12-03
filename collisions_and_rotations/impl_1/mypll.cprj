@@ -1,0 +1,7 @@
+-ver "C:/lscc/radiant/2023.1/ip/pmi/pmi_iCE40UP.v"
+-lib pmi -vhd "C:/lscc/radiant/2023.1/ip/pmi/pmi_iCE40UP.vhd"
+-ver "Z:/es4/ES4-Final/collisions_and_rotations/mypll/rtl/mypll.v"
+-path "Z:/es4/ES4-Final/collisions_and_rotations/mypll" "Z:/es4/ES4-Final/collisions_and_rotations"
+-vh2008
+-top mypll
+-a "iCE40UP"
