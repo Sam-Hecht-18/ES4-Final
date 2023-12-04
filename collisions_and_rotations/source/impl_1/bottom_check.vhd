@@ -33,11 +33,23 @@ entity bottom_check is
 end bottom_check;
 
 architecture synth of bottom_check is
+
+	component board_overlap is
+		port(
+			clk : in std_logic;
+			union_or_intersection : in std_logic;
+			piece_loc: in piece_loc_type; -- (x, y) from top left of grid to top left of piece 4x4
+			piece_shape: in std_logic_vector(15 downto 0);
+			piece_bottom_row : out unsigned(1 downto 0);
+			overlap_row_1, overlap_row_2, overlap_row_3, overlap_row_4 : out std_logic_vector(3 downto 0);
+		);
+	end component;
+
 	signal future_piece_loc : piece_loc_type;
-	
+
 	signal piece_bottom_row : signed(1 downto 0);
 	signal piece_bottom_row_loc : signed(5 downto 0);
-	
+
 	signal board_shadow_row_1, board_shadow_row_2, board_shadow_row_3, board_shadow_row_4 : std_logic_vector(3 downto 0);
 	signal piece_row_1, piece_row_2, piece_row_3, piece_row_4 : std_logic_vector(3 downto 0);
 	signal overlap_row_1, overlap_row_2, overlap_row_3, overlap_row_4 : std_logic_vector(3 downto 0);
@@ -50,10 +62,10 @@ architecture synth of bottom_check is
 	signal piece_col_2 : std_logic_vector(3 downto 0);
 	signal piece_col_3 : std_logic_vector(3 downto 0);
 	signal piece_col_4 : std_logic_vector(3 downto 0);
-	
+
 	signal piece_left_col : unsigned(1 downto 0);
 	signal piece_right_col : unsigned(1 downto 0);
-	
+
 	signal piece_right_col_loc : signed(3 downto 0);
 	signal piece_left_col_loc : signed(3 downto 0);
 
@@ -61,6 +73,8 @@ begin
 
 	future_piece_loc(0) <= piece_loc(0) + move_right - move_left;
 	future_piece_loc(1) <= piece_loc(1) + move_down + move_down_auto;
+
+	-- board_overlap_portmap : board_overlap port map(clk, '1', future_piece_loc, piece_shape, piece_bottom_row, overlap_row_1, overlap_row_2, overlap_row_3, overlap_row_4);
 
 	-- HERE: check if we have hit right or left board edge !!!
 
@@ -75,7 +89,7 @@ begin
 	piece_right_col_loc <= piece_loc(0) + signed(piece_right_col);
 	hit_right <= '1' when (piece_right_col_loc = 4d"9") else '0';
 	hit_left <= '1' when (piece_left_col_loc = 4d"0") else '0';
-	
+
 
 	-- HERE: check if we have hit bottom !!!
 
@@ -106,8 +120,7 @@ begin
 
 	--collision <= collision_temp or hit_bottom or hit_left or hit_right;
 	collision_down <= hit_piece or hit_bottom;
-	collision_left <= hit_piece or hit_left;	
+	collision_left <= hit_piece or hit_left;
 	collision_right <= hit_piece or hit_right;
-
 
 end;

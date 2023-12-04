@@ -48,10 +48,9 @@ begin
 
     process (ctrlr_clk)
     begin
-            if rising_edge(ctrlr_clk) then
-                    shift_reg <= shift_left(shift_reg, 1);
-                    shift_reg(0) <= not data;
-            end if;
-
+        if rising_edge(ctrlr_clk) then
+            shift_reg <= shift_left(shift_reg, 1);
+            shift_reg(0) <= not data;
+        end if;
     end process;
 end;
