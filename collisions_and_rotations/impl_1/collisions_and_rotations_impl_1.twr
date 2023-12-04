@@ -1,6 +1,6 @@
 Lattice Timing Report -  Setup  and Hold, Version Radiant Software (64-bit) 2023.1.0.43.3
 
-Sun Dec  3 22:28:19 2023
+Mon Dec  4 14:13:44 2023
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -76,24 +76,23 @@ Clocked but unconstrained timing end points
 -------------------------------------------------------------------
          Listing 10 End Points          |           Type           
 -------------------------------------------------------------------
-vga_portmap/row_9__I_1/D                |    No arrival or required
-vga_portmap/row_9__I_2/D                |    No arrival or required
-{vga_portmap/row_9__I_2/SP   vga_portmap/row_9__I_1/SP}                           
+vga_sync_portmap/rgb_row_9__I_0_2/D     |    No arrival or required
+vga_sync_portmap/rgb_row_9__I_0_2/SP    |    No arrival or required
+vga_sync_portmap/rgb_row_9__I_0_2/SR    |    No arrival or required
+vga_sync_portmap/rgb_row_9__I_1/D       |    No arrival or required
+vga_sync_portmap/rgb_row_9__I_2/D       |    No arrival or required
+{vga_sync_portmap/rgb_row_9__I_2/SP   vga_sync_portmap/rgb_row_9__I_1/SP}                           
                                         |    No arrival or required
-{vga_portmap/row_9__I_2/SR   vga_portmap/row_9__I_1/SR}                           
+{vga_sync_portmap/rgb_row_9__I_2/SR   vga_sync_portmap/rgb_row_9__I_1/SR}                           
                                         |    No arrival or required
-vga_portmap/row_9__I_3/D                |    No arrival or required
-vga_portmap/row_9__I_4/D                |    No arrival or required
-{vga_portmap/row_9__I_4/SP   vga_portmap/row_9__I_3/SP}                           
+vga_sync_portmap/rgb_row_9__I_3/D       |    No arrival or required
+vga_sync_portmap/rgb_row_9__I_4/D       |    No arrival or required
+{vga_sync_portmap/rgb_row_9__I_4/SP   vga_sync_portmap/rgb_row_9__I_3/SP}                           
                                         |    No arrival or required
-{vga_portmap/row_9__I_4/SR   vga_portmap/row_9__I_3/SR}                           
-                                        |    No arrival or required
-vga_portmap/col_9__I_0/D                |    No arrival or required
-vga_portmap/col_9__I_0/SR               |    No arrival or required
 -------------------------------------------------------------------
                                         |                          
 Number of unconstrained timing end poin |                          
-ts                                      |                        96
+ts                                      |                        58
                                         |                          
 -------------------------------------------------------------------
 
@@ -134,8 +133,8 @@ Define a clock on a top level port or a generated clock on a clock divider pin a
 -------------------------------------------------------------------
             Listing 2 Net(s)            |        Source pin        
 -------------------------------------------------------------------
-counter[24]                             |clock_manager_portmap/NEScount_7__I_42/Q
 ctrlr_clk_c                             |nes_controller_portmap/ctrlr_clk_c_I_0/Z
+vga_sync_clk_portmap.valid_output       |vga_sync_clk_portmap/rgb_row_9__I_0/Z
 -------------------------------------------------------------------
                                         |                          
 Number of clock nets without clock defi |                          
@@ -149,31 +148,7 @@ nition                                  |                         2
 Combinational Loops
 -------------------
 ++++ Loop1
-pattern_gen_portmap/i2239_3_lut_4_lut/D	->	pattern_gen_portmap/i2239_3_lut_4_lut/Z
-
-++++ Loop2
-pattern_gen_portmap/i2224_3_lut_4_lut/A	->	pattern_gen_portmap/i2224_3_lut_4_lut/Z
-
-++++ Loop3
-pattern_gen_portmap/i2234_3_lut_4_lut/A	->	pattern_gen_portmap/i2234_3_lut_4_lut/Z
-
-++++ Loop4
-pattern_gen_portmap/i2229_3_lut_4_lut/A	->	pattern_gen_portmap/i2229_3_lut_4_lut/Z
-
-++++ Loop5
-nes_controller_portmap/right_button_I_0/A	->	nes_controller_portmap/right_button_I_0/Z
-
-++++ Loop6
-nes_controller_portmap/left_button_I_0/A	->	nes_controller_portmap/left_button_I_0/Z
-
-++++ Loop7
-nes_controller_portmap/down_button_I_0/A	->	nes_controller_portmap/down_button_I_0/Z
-
-++++ Loop8
-nes_controller_portmap/rotate_out_c_I_0/A	->	nes_controller_portmap/rotate_out_c_I_0/Z
-
-++++ Loop9
-nes_controller_portmap/sel_I_0/A	->	nes_controller_portmap/sel_I_0/Z
+nes_controller_portmap/shift_reg_3__I_0/B	->	nes_controller_portmap/shift_reg_3__I_0/Z
 
 
 1.6  Error/Warning Messages

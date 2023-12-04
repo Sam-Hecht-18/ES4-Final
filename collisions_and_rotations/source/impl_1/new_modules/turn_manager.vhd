@@ -17,7 +17,7 @@ entity turn_manager is
 		clk : in std_logic;
 		turn : in unsigned(7 downto 0); -- a number representing the number of times a piece has been added to the grid. starts at 0
 		advance_turn : in std_logic;
-		next_turn : out unsigned(7 downto 0);
+		next_turn : out unsigned(7 downto 0)
 	);
 end turn_manager;
 

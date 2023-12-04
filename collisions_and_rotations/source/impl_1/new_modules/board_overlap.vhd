@@ -19,7 +19,7 @@ entity board_overlap is
 		piece_loc: in piece_loc_type; -- (x, y) from top left of grid to top left of piece 4x4
 		piece_shape: in std_logic_vector(15 downto 0);
 		piece_bottom_row : out unsigned(1 downto 0);
-		overlap_row_1, overlap_row_2, overlap_row_3, overlap_row_4 : out std_logic_vector(3 downto 0);
+		overlap_row_1, overlap_row_2, overlap_row_3, overlap_row_4 : out std_logic_vector(3 downto 0)
 	);
 end board_overlap;
 

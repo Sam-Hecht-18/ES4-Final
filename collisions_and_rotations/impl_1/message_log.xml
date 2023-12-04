@@ -1,36 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BaliMessageLog>
-    <Task name="PAR">
+    <Task name="Export">
         <Message>
-            <ID>70001944</ID>
-            <Severity>16</Severity>
-            <Dynamic>create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
-        </Message>
-        <Message>
-            <ID>71003005</ID>
-            <Severity>256</Severity>
-            <Dynamic>osc</Dynamic>
-            <Dynamic>12</Dynamic>
-        </Message>
-        <Message>
-            <ID>70001944</ID>
-            <Severity>16</Severity>
-            <Dynamic>create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
-        </Message>
-        <Message>
-            <ID>70001944</ID>
-            <Severity>16</Severity>
-            <Dynamic>create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
-        </Message>
-        <Message>
-            <ID>70001944</ID>
-            <Severity>16</Severity>
-            <Dynamic>create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
-        </Message>
-        <Message>
-            <ID>70001944</ID>
-            <Severity>16</Severity>
-            <Dynamic>create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
+            <ID>1191031</ID>
+            <Severity>1</Severity>
         </Message>
     </Task>
     <Task name="Map">
@@ -104,17 +77,17 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>Z:/es4/ES4-Final/collisions_and_rotations/mypll/rtl/mypll.v(11): </Dynamic>
+            <Dynamic>Z:/ES4-Final/collisions_and_rotations/mypll/rtl/mypll.v(11): </Dynamic>
             <Dynamic>mypll</Dynamic>
-            <Navigation>Z:/es4/ES4-Final/collisions_and_rotations/mypll/rtl/mypll.v</Navigation>
+            <Navigation>Z:/ES4-Final/collisions_and_rotations/mypll/rtl/mypll.v</Navigation>
             <Navigation>11</Navigation>
         </Message>
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>Z:/es4/ES4-Final/collisions_and_rotations/mypll/rtl/mypll.v(105): </Dynamic>
+            <Dynamic>Z:/ES4-Final/collisions_and_rotations/mypll/rtl/mypll.v(105): </Dynamic>
             <Dynamic>mypll_ipgen_lscc_pll(DIVR=&quot;0&quot;,DIVF=&quot;66&quot;,DIVQ=&quot;5&quot;,FILTER_RANGE=&quot;1&quot;,PLLOUT_SELECT_PORTA=&quot;GENCLK&quot;,PLLOUT_SELECT_PORTB=&quot;GENCLK&quot;,FREQUENCY_PIN_REFERENCECLK=&quot;12.000000&quot;)</Dynamic>
-            <Navigation>Z:/es4/ES4-Final/collisions_and_rotations/mypll/rtl/mypll.v</Navigation>
+            <Navigation>Z:/ES4-Final/collisions_and_rotations/mypll/rtl/mypll.v</Navigation>
             <Navigation>105</Navigation>
         </Message>
         <Message>
@@ -275,132 +248,276 @@
             <Navigation>4</Navigation>
         </Message>
         <Message>
-            <ID>35921014</ID>
-            <Severity>1</Severity>
-            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/bottom_check.vhd(5): </Dynamic>
-            <Dynamic>my_types_package</Dynamic>
-            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/bottom_check.vhd</Navigation>
-            <Navigation>5</Navigation>
-        </Message>
-        <Message>
             <ID>35921012</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/bottom_check.vhd(15): </Dynamic>
-            <Dynamic>bottom_check</Dynamic>
-            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/bottom_check.vhd</Navigation>
-            <Navigation>15</Navigation>
-        </Message>
-        <Message>
-            <ID>35921010</ID>
-            <Severity>1</Severity>
-            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/bottom_check.vhd(35): </Dynamic>
-            <Dynamic>synth</Dynamic>
-            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/bottom_check.vhd</Navigation>
-            <Navigation>35</Navigation>
-        </Message>
-        <Message>
-            <ID>35921012</ID>
-            <Severity>1</Severity>
-            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock.vhd(5): </Dynamic>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/clock.vhd(5): </Dynamic>
             <Dynamic>clock_manager</Dynamic>
-            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock.vhd</Navigation>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/clock.vhd</Navigation>
             <Navigation>5</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock.vhd(17): </Dynamic>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/clock.vhd(17): </Dynamic>
             <Dynamic>synth</Dynamic>
-            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock.vhd</Navigation>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/clock.vhd</Navigation>
             <Navigation>17</Navigation>
         </Message>
         <Message>
+            <ID>35921014</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/master.vhd(5): </Dynamic>
+            <Dynamic>my_types_package</Dynamic>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/master.vhd</Navigation>
+            <Navigation>5</Navigation>
+        </Message>
+        <Message>
             <ID>35921012</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/master.vhd(5): </Dynamic>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/master.vhd(15): </Dynamic>
             <Dynamic>master</Dynamic>
-            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/master.vhd</Navigation>
-            <Navigation>5</Navigation>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/master.vhd</Navigation>
+            <Navigation>15</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/master.vhd(18): </Dynamic>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/master.vhd(28): </Dynamic>
             <Dynamic>synth</Dynamic>
-            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/master.vhd</Navigation>
-            <Navigation>18</Navigation>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/master.vhd</Navigation>
+            <Navigation>28</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd(5): </Dynamic>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd(5): </Dynamic>
             <Dynamic>nes_controller</Dynamic>
-            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd</Navigation>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd</Navigation>
             <Navigation>5</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd(23): </Dynamic>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd(23): </Dynamic>
             <Dynamic>synth</Dynamic>
-            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd</Navigation>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd</Navigation>
             <Navigation>23</Navigation>
+        </Message>
+        <Message>
+            <ID>35921012</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/vga.vhd(5): </Dynamic>
+            <Dynamic>vga_sync</Dynamic>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/vga.vhd</Navigation>
+            <Navigation>5</Navigation>
+        </Message>
+        <Message>
+            <ID>35921010</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/vga.vhd(16): </Dynamic>
+            <Dynamic>synth</Dynamic>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/vga.vhd</Navigation>
+            <Navigation>16</Navigation>
         </Message>
         <Message>
             <ID>35921014</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd(5): </Dynamic>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(5): </Dynamic>
             <Dynamic>my_types_package</Dynamic>
-            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd</Navigation>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd</Navigation>
             <Navigation>5</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd(15): </Dynamic>
-            <Dynamic>pattern_gen</Dynamic>
-            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd</Navigation>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(15): </Dynamic>
+            <Dynamic>collision_check</Dynamic>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd</Navigation>
             <Navigation>15</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd(32): </Dynamic>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(34): </Dynamic>
             <Dynamic>synth</Dynamic>
-            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd</Navigation>
-            <Navigation>32</Navigation>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd</Navigation>
+            <Navigation>34</Navigation>
+        </Message>
+        <Message>
+            <ID>35921014</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(5): </Dynamic>
+            <Dynamic>my_types_package</Dynamic>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd</Navigation>
+            <Navigation>5</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece.vhd(5): </Dynamic>
-            <Dynamic>piece</Dynamic>
-            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece.vhd</Navigation>
-            <Navigation>5</Navigation>
-        </Message>
-        <Message>
-            <ID>35921010</ID>
-            <Severity>1</Severity>
-            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece.vhd(15): </Dynamic>
-            <Dynamic>synth</Dynamic>
-            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece.vhd</Navigation>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(15): </Dynamic>
+            <Dynamic>game_logic</Dynamic>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd</Navigation>
             <Navigation>15</Navigation>
         </Message>
         <Message>
+            <ID>35921010</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(39): </Dynamic>
+            <Dynamic>synth</Dynamic>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd</Navigation>
+            <Navigation>39</Navigation>
+        </Message>
+        <Message>
             <ID>35921012</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/vga.vhd(5): </Dynamic>
-            <Dynamic>vga</Dynamic>
-            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/vga.vhd</Navigation>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd(5): </Dynamic>
+            <Dynamic>piece_library</Dynamic>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd</Navigation>
             <Navigation>5</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/vga.vhd(16): </Dynamic>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd(14): </Dynamic>
             <Dynamic>synth</Dynamic>
-            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/vga.vhd</Navigation>
-            <Navigation>16</Navigation>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd</Navigation>
+            <Navigation>14</Navigation>
+        </Message>
+        <Message>
+            <ID>35921014</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd(5): </Dynamic>
+            <Dynamic>my_types_package</Dynamic>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd</Navigation>
+            <Navigation>5</Navigation>
+        </Message>
+        <Message>
+            <ID>35921012</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd(15): </Dynamic>
+            <Dynamic>renderer</Dynamic>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd</Navigation>
+            <Navigation>15</Navigation>
+        </Message>
+        <Message>
+            <ID>35921010</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd(30): </Dynamic>
+            <Dynamic>synth</Dynamic>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd</Navigation>
+            <Navigation>30</Navigation>
+        </Message>
+        <Message>
+            <ID>35921014</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/board_updater.vhd(5): </Dynamic>
+            <Dynamic>my_types_package</Dynamic>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/board_updater.vhd</Navigation>
+            <Navigation>5</Navigation>
+        </Message>
+        <Message>
+            <ID>35921012</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/board_updater.vhd(15): </Dynamic>
+            <Dynamic>board_updater</Dynamic>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/board_updater.vhd</Navigation>
+            <Navigation>15</Navigation>
+        </Message>
+        <Message>
+            <ID>35921010</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/board_updater.vhd(28): </Dynamic>
+            <Dynamic>synth</Dynamic>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/board_updater.vhd</Navigation>
+            <Navigation>28</Navigation>
+        </Message>
+        <Message>
+            <ID>35921014</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/piece_picker.vhd(5): </Dynamic>
+            <Dynamic>my_types_package</Dynamic>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/piece_picker.vhd</Navigation>
+            <Navigation>5</Navigation>
+        </Message>
+        <Message>
+            <ID>35921012</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/piece_picker.vhd(15): </Dynamic>
+            <Dynamic>piece_picker</Dynamic>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/piece_picker.vhd</Navigation>
+            <Navigation>15</Navigation>
+        </Message>
+        <Message>
+            <ID>35921010</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/piece_picker.vhd(25): </Dynamic>
+            <Dynamic>synth</Dynamic>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/piece_picker.vhd</Navigation>
+            <Navigation>25</Navigation>
+        </Message>
+        <Message>
+            <ID>35921014</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/row_check.vhd(5): </Dynamic>
+            <Dynamic>my_types_package</Dynamic>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/row_check.vhd</Navigation>
+            <Navigation>5</Navigation>
+        </Message>
+        <Message>
+            <ID>35921012</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/row_check.vhd(15): </Dynamic>
+            <Dynamic>row_check</Dynamic>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/row_check.vhd</Navigation>
+            <Navigation>15</Navigation>
+        </Message>
+        <Message>
+            <ID>35921010</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/row_check.vhd(25): </Dynamic>
+            <Dynamic>synth</Dynamic>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/row_check.vhd</Navigation>
+            <Navigation>25</Navigation>
+        </Message>
+        <Message>
+            <ID>35921014</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd(5): </Dynamic>
+            <Dynamic>my_types_package</Dynamic>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd</Navigation>
+            <Navigation>5</Navigation>
+        </Message>
+        <Message>
+            <ID>35921012</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd(15): </Dynamic>
+            <Dynamic>turn_manager</Dynamic>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd</Navigation>
+            <Navigation>15</Navigation>
+        </Message>
+        <Message>
+            <ID>35921010</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd(24): </Dynamic>
+            <Dynamic>synth</Dynamic>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd</Navigation>
+            <Navigation>24</Navigation>
+        </Message>
+        <Message>
+            <ID>35921012</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/vga_sync_clk.vhd(5): </Dynamic>
+            <Dynamic>vga_sync_clk</Dynamic>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/vga_sync_clk.vhd</Navigation>
+            <Navigation>5</Navigation>
+        </Message>
+        <Message>
+            <ID>35921010</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/vga_sync_clk.vhd(18): </Dynamic>
+            <Dynamic>synth</Dynamic>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/vga_sync_clk.vhd</Navigation>
+            <Navigation>18</Navigation>
         </Message>
         <Message>
             <ID>35935049</ID>
@@ -415,112 +532,7 @@
         <Message>
             <ID>35001771</ID>
             <Severity>16</Severity>
-            <Dynamic>hit_piece</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>hit_bottom</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>next_col[9]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>next_col[8]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>next_col[7]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>next_col[6]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>next_col[5]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>next_col[4]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>next_col[3]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>next_col[2]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>next_col[1]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>next_col[0]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>next_row[9]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>next_row[8]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>next_row[7]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>next_row[6]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>next_row[5]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>next_row[4]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>next_row[3]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>next_row[2]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>next_row[1]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001771</ID>
-            <Severity>16</Severity>
-            <Dynamic>next_row[0]</Dynamic>
+            <Dynamic>gnd_2</Dynamic>
         </Message>
         <Message>
             <ID>35935049</ID>
@@ -531,50 +543,6 @@
             <ID>35935049</ID>
             <Severity>16</Severity>
             <Dynamic>sdi_i</Dynamic>
-        </Message>
-        <Message>
-            <ID>35002032</ID>
-            <Severity>16</Severity>
-            <Dynamic>\pattern_gen_portmap/piece_loc_y_2_i0</Dynamic>
-            <Dynamic>(z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd 147[4] 202[11])</Dynamic>
-        </Message>
-        <Message>
-            <ID>35002032</ID>
-            <Severity>16</Severity>
-            <Dynamic>\pattern_gen_portmap/piece_loc_y_2_i3</Dynamic>
-            <Dynamic>(z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd 147[4] 202[11])</Dynamic>
-        </Message>
-        <Message>
-            <ID>35002032</ID>
-            <Severity>16</Severity>
-            <Dynamic>\pattern_gen_portmap/piece_loc_y_2_i2</Dynamic>
-            <Dynamic>(z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd 147[4] 202[11])</Dynamic>
-        </Message>
-        <Message>
-            <ID>35002032</ID>
-            <Severity>16</Severity>
-            <Dynamic>\pattern_gen_portmap/piece_loc_y_2_i1</Dynamic>
-            <Dynamic>(z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd 147[4] 202[11])</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001783</ID>
-            <Severity>256</Severity>
-            <Dynamic>i2190</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001783</ID>
-            <Severity>256</Severity>
-            <Dynamic>i2194</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001783</ID>
-            <Severity>256</Severity>
-            <Dynamic>i2198</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001783</ID>
-            <Severity>256</Severity>
-            <Dynamic>i2186</Dynamic>
         </Message>
         <Message>
             <ID>70001944</ID>
@@ -582,10 +550,37 @@
             <Dynamic>create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
         </Message>
     </Task>
-    <Task name="Export">
+    <Task name="PAR">
         <Message>
-            <ID>1191031</ID>
-            <Severity>1</Severity>
+            <ID>70001944</ID>
+            <Severity>16</Severity>
+            <Dynamic>create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
+        </Message>
+        <Message>
+            <ID>71003005</ID>
+            <Severity>256</Severity>
+            <Dynamic>osc</Dynamic>
+            <Dynamic>12</Dynamic>
+        </Message>
+        <Message>
+            <ID>70001944</ID>
+            <Severity>16</Severity>
+            <Dynamic>create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
+        </Message>
+        <Message>
+            <ID>70001944</ID>
+            <Severity>16</Severity>
+            <Dynamic>create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
+        </Message>
+        <Message>
+            <ID>70001944</ID>
+            <Severity>16</Severity>
+            <Dynamic>create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
+        </Message>
+        <Message>
+            <ID>70001944</ID>
+            <Severity>16</Severity>
+            <Dynamic>create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
         </Message>
     </Task>
 </BaliMessageLog>

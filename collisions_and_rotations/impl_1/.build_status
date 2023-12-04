@@ -1,43 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BuildStatus>
     <Strategy name="Strategy1">
-        <Milestone name="Export" build_result="2" build_time="1701660500">
-            <Task name="Bitgen" build_result="2" update_result="0" update_time="1701660500"/>
-            <Task name="IBIS" build_result="2" update_result="0" update_time="1701660502"/>
-            <Task name="TimingSimFileVlg" build_result="2" update_result="0" update_time="1701660503"/>
+        <Milestone name="Export" build_result="2" build_time="1701717225">
+            <Task name="Bitgen" build_result="2" update_result="0" update_time="1701717225"/>
+            <Task name="IBIS" build_result="2" update_result="0" update_time="1701717226"/>
+            <Task name="TimingSimFileVlg" build_result="2" update_result="0" update_time="1701717227"/>
         </Milestone>
-        <Milestone name="Map" build_result="2" build_time="1701660491">
-            <Task name="Map" build_result="2" update_result="0" update_time="1701660491"/>
+        <Milestone name="Map" build_result="2" build_time="1701717219">
+            <Task name="Map" build_result="2" update_result="0" update_time="1701717219"/>
             <Task name="MapTrace" build_result="0" update_result="2" update_time="1701560595"/>
         </Milestone>
-        <Milestone name="PAR" build_result="2" build_time="1701660498">
-            <Task name="PAR" build_result="2" update_result="0" update_time="1701660498"/>
-            <Task name="PARTrace" build_result="2" update_result="0" update_time="1701660500"/>
+        <Milestone name="PAR" build_result="2" build_time="1701717223">
+            <Task name="PAR" build_result="2" update_result="0" update_time="1701717223"/>
+            <Task name="PARTrace" build_result="2" update_result="0" update_time="1701717224"/>
             <Task name="IOTiming" build_result="0" update_result="3" update_time="0"/>
         </Milestone>
-        <Milestone name="Synthesis" build_result="2" build_time="1701660491">
-            <Task name="Lattice_Synthesis" build_result="2" update_result="0" update_time="1701660491"/>
-            <Task name="LSE_Compile" build_result="2" update_result="0" update_time="1701660503"/>
-            <Task name="SynTrace" build_result="0" update_result="2" update_time="1701660331"/>
-            <Task name="SynVerilogSimFile" build_result="0" update_result="2" update_time="1701660331"/>
+        <Milestone name="Synthesis" build_result="2" build_time="1701717218">
+            <Task name="Lattice_Synthesis" build_result="2" update_result="0" update_time="1701717218"/>
+            <Task name="LSE_Compile" build_result="2" update_result="0" update_time="1701717227"/>
+            <Task name="SynTrace" build_result="0" update_result="2" update_time="1701714428"/>
+            <Task name="SynVerilogSimFile" build_result="0" update_result="2" update_time="1701714428"/>
         </Milestone>
         <Milestone name="TOOL_Report" build_result="0" build_time="0">
-            <Task name="HDLE" build_result="0" update_result="2" update_time="1701560595"/>
-            <Task name="BKM" build_result="0" update_result="2" update_time="1701560595"/>
+            <Task name="HDLE" build_result="0" update_result="2" update_time="1701710833"/>
+            <Task name="BKM" build_result="0" update_result="2" update_time="1701710833"/>
             <Task name="SSO" build_result="0" update_result="2" update_time="1701560595"/>
             <Task name="PIODRC" build_result="0" update_result="2" update_time="1701560595"/>
             <Task name="DEC" build_result="0" update_result="2" update_time="1701560595"/>
         </Milestone>
-        <Report name="IBIS/collisions_and_rotations_impl_1.ibs" last_build_time="1701660501" last_build_size="54493"/>
-        <Report name="collisions_and_rotations_impl_1.bgn" last_build_time="1701660500" last_build_size="1025"/>
-        <Report name="collisions_and_rotations_impl_1.bin" last_build_time="1701660500" last_build_size="104156"/>
+        <Report name="IBIS/collisions_and_rotations_impl_1.ibs" last_build_time="1701717226" last_build_size="54493"/>
+        <Report name="collisions_and_rotations_impl_1.bgn" last_build_time="1701717225" last_build_size="1021"/>
+        <Report name="collisions_and_rotations_impl_1.bin" last_build_time="1701717225" last_build_size="104156"/>
         <Report name="collisions_and_rotations_impl_1.lsedata" last_build_time="0" last_build_size="0"/>
-        <Report name="collisions_and_rotations_impl_1.twr.html" last_build_time="1701660500" last_build_size="16972"/>
-        <Report name="collisions_and_rotations_impl_1.udb" last_build_time="1701660498" last_build_size="65365"/>
-        <Report name="collisions_and_rotations_impl_1_map.udb" last_build_time="1701660491" last_build_size="38411"/>
-        <Report name="collisions_and_rotations_impl_1_rtl.udb" last_build_time="1701660488" last_build_size="25690"/>
-        <Report name="collisions_and_rotations_impl_1_syn.udb" last_build_time="1701660491" last_build_size="26418"/>
-        <Report name="collisions_and_rotations_impl_1_vo.sdf" last_build_time="1701660503" last_build_size="370230"/>
-        <Report name="collisions_and_rotations_impl_1_vo.vo" last_build_time="1701660502" last_build_size="356991"/>
+        <Report name="collisions_and_rotations_impl_1.twr.html" last_build_time="1701717224" last_build_size="16161"/>
+        <Report name="collisions_and_rotations_impl_1.udb" last_build_time="1701717223" last_build_size="22297"/>
+        <Report name="collisions_and_rotations_impl_1_map.udb" last_build_time="1701717219" last_build_size="15195"/>
+        <Report name="collisions_and_rotations_impl_1_rtl.udb" last_build_time="1701717217" last_build_size="22513"/>
+        <Report name="collisions_and_rotations_impl_1_syn.udb" last_build_time="1701717218" last_build_size="11104"/>
+        <Report name="collisions_and_rotations_impl_1_vo.sdf" last_build_time="1701717227" last_build_size="105925"/>
+        <Report name="collisions_and_rotations_impl_1_vo.vo" last_build_time="1701717227" last_build_size="106233"/>
     </Strategy>
 </BuildStatus>
+                

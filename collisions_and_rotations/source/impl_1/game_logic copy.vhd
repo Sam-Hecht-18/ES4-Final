@@ -17,13 +17,9 @@ entity game_logic is
 		clk : in std_logic;
 		clk_counter : in unsigned(31 downto 0);
 		game_clock : in std_logic;
-		game_clock_ctr : in unsigned(15 downto 0);
 
 		valid_input : in std_logic;
-		valid_output : in std_logic;
-		valid_output_ctr : in unsigned(15 downto 0);
 		valid_rgb: in std_logic;
-
 		press_rotate : in std_logic;
 		press_down : in std_logic;
 		press_left : in std_logic;
@@ -127,9 +123,9 @@ architecture synth of game_logic is
 	signal down_delay : unsigned(2 downto 0);
 
 	signal collision: std_logic;
-	signal collision_left : std_logic := '0';
-	signal collision_right : std_logic := '0';
-	signal collision_down : std_logic := '0';
+	signal collision_left : std_logic;
+	signal collision_right : std_logic;
+	signal collision_down : std_logic;
 	signal collision_rotate : std_logic;
 	signal move_down_auto : std_logic;
 
@@ -137,12 +133,12 @@ architecture synth of game_logic is
 	signal valid_update : std_logic;
 
 begin
-	--turn_manager_portmap : turn_manager port map(
-		--clk => clk,
-		--turn => turn,
-		--advance_turn => advance_turn,
-		--next_turn => turn -- WILL THIS WORK ???
-	--);
+	turn_manager_portmap : turn_manager port map(
+		clk => clk,
+		turn => turn,
+		advance_turn => advance_turn,
+		next_turn => turn -- WILL THIS WORK ???
+	);
 
 	piece_library_portmap : piece_library port map(
 		clk,
@@ -208,62 +204,69 @@ begin
 
 	special_background <= 5d"0" when collision = '0' else 5d"1" when collision_down = '1' else 5d"2" when collision_left = '1' else 5d"3" when collision_right = '1' else 5d"3" when collision_rotate = '1';
 
-	process(clk) begin
+	process (clk) begin
 		if rising_edge(clk) then
+			if falling_edge(valid_rgb) then
+				if frame_counter(2) = '1' then -- WHAT is frame counter, how does it ever increment? doesnt it get stuck once it hits third bit as 1?
 
-			if (valid_input = '1') then
+					-- Rotates piece (TODO: check that rotation is valid, i.e., doesn't overlap on anything after rotation)
+					if press_rotate = '1' and rotate_delay = 0 then
+						piece_rotation <= piece_rotation + 1;
+						rotate_delay <= rotate_delay + 1;
+					end if;
+					if rotate_delay > 0 then
+						rotate_delay <= rotate_delay + 1;
+					end if;
 
-				-- Rotates piece (TODO: check that rotation is valid, i.e., doesn't overlap on anything after rotation)
-				--if press_rotate = '1' and rotate_delay = 0 then
-					--piece_rotation <= piece_rotation + 1;
-					--rotate_delay <= rotate_delay + 1;
-				--end if;
-				--if rotate_delay > 0 then
-					--rotate_delay <= rotate_delay + 1;
-				--end if;
+					-- Swaps falling piece (for testing)
+					if press_sel = '1' and sel_delay = 0 then
+						piece_code <= piece_code + 1;
+						sel_delay <= sel_delay + 1;
+					end if;
+					if sel_delay > 0 then
+						sel_delay <= sel_delay + 1;
+					end if;
 
-				-- Swaps falling piece (for testing)
-				--if press_sel = '1' and sel_delay = 0 then
-					--piece_code <= piece_code + 1;
-					--sel_delay <= sel_delay + 1;
-				--end if;
-				--if sel_delay > 0 then
-					--sel_delay <= sel_delay + 1;
-				--end if;
+					-- Movement left
+					if press_left = '1' and left_delay = 0 and collision_left = '0' then
+						piece_loc(0) <= piece_loc(0) - 1;
+						left_delay <= left_delay + 1;
+					end if;
+					if left_delay > 0 then
+						left_delay <= left_delay + 1;
+					end if;
 
-				-- Movement left
-				--if press_left = '1' and left_delay = 0 and collision_left = '0' then
-					--piece_loc(0) <= piece_loc(0) - 1;
-					--left_delay <= left_delay + 1;
-				--elsif left_delay > 0 then
-					--left_delay <= left_delay + 1;
-				--end if;
+					-- Movement right
+					if press_right = '1' and right_delay = 0 and collision_right = '0' then
+						piece_loc(0) <= piece_loc(0) + 1;
+						right_delay <= right_delay + 1;
+					end if;
+					if right_delay > 0 then
+						right_delay <= right_delay + 1;
+					end if;
 
-				-- Movement right
-				--if press_right = '1' and right_delay = 0 and collision_right = '0' then
-					--piece_loc(0) <= piece_loc(0) + 1;
-					--right_delay <= right_delay + 1;
-				--elsif right_delay > 0 then
-					--right_delay <= right_delay + 1;
-				--end if;
+					-- Movement down
+					if press_down = '1' and down_delay = 0 then
+						piece_loc(1) <= piece_loc(1) + 1;
+						down_delay <= down_delay + 1;
+					end if;
+					if down_delay > 0 then
+						down_delay <= down_delay + 1;
+					end if;
 
-				-- Movement down
-				--if press_down = '1' and down_delay = 0 then
-					--piece_loc(1) <= piece_loc(1) + 1;
-					--down_delay <= down_delay + 1;
-				--end if;
-				--if down_delay > 0 then
-					--down_delay <= down_delay + 1;
-				--end if;
-
+				else
+					frame_counter <= frame_counter + 1;
+				end if;
 			end if;
 
-			if (game_clock_ctr(4) = '1' and valid_output_ctr = 16d"1") then
-				if not collision_down then
-					piece_loc(1) <= piece_loc(1) + 1;
-					--advance_turn <= '0';
-				else
-					--advance_turn <= '1';
+			if rising_edge(game_clock) then
+				if not falling_edge(valid_rgb) then
+					if not collision_down then
+						piece_loc(1) <= piece_loc(1) + 1;
+						advance_turn <= '0';
+					else
+						advance_turn <= '1';
+					end if;
 				end if;
 			end if;
 		end if;

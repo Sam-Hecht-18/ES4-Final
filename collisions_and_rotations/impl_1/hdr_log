@@ -5,7 +5,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-Mon Dec  4 14:13:35 2023
+Mon Dec  4 12:29:56 2023
 
 
 Command Line:  C:\lscc\radiant\2023.1\ispfpga\bin\nt64\synthesis.exe -f collisions_and_rotations_impl_1_lattice.synproj -gui -msgset Z:/ES4-Final/collisions_and_rotations/promote.xml 
@@ -103,8 +103,6 @@ VHDL library = work
 VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/new_modules/row_check.vhd
 VHDL library = work
 VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd
-VHDL library = work
-VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/vga_sync_clk.vhd
 The -r option is OFF. [ Remove LOC Properties is OFF. ]
 WARNING <35935050> - synthesis: input port TRIM9 is not connected on this instance. VDB-5050
 WARNING <35935050> - synthesis: input port TRIM8 is not connected on this instance. VDB-5050
@@ -190,7 +188,7 @@ Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/game_log
 
 INFO <35921014> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(5): analyzing package my_types_package. VHDL-1014
 INFO <35921012> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(15): analyzing entity game_logic. VHDL-1012
-INFO <35921010> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(39): analyzing architecture synth. VHDL-1010
+INFO <35921010> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(36): analyzing architecture synth. VHDL-1010
 Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd. VHDL-1481
 Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd
 
@@ -226,99 +224,8 @@ Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/new_modu
 INFO <35921014> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd(5): analyzing package my_types_package. VHDL-1014
 INFO <35921012> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd(15): analyzing entity turn_manager. VHDL-1012
 INFO <35921010> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd(24): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/vga_sync_clk.vhd. VHDL-1481
-Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/vga_sync_clk.vhd
-
-INFO <35921012> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/vga_sync_clk.vhd(5): analyzing entity vga_sync_clk. VHDL-1012
-INFO <35921010> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/vga_sync_clk.vhd(18): analyzing architecture synth. VHDL-1010
 INFO <35921504> - synthesis: The default VHDL library search path is now "Z:/ES4-Final/collisions_and_rotations/impl_1". VHDL-1504
 Top module language type = VHDL.
 WARNING <35935049> - synthesis: input port sclk_i remains unconnected for this instance. VDB-5049
 WARNING <35935049> - synthesis: input port sdi_i remains unconnected for this instance. VDB-5049
-Top module name (VHDL, mixed language): master
-                                                         
-
-
-### Number of Logic Cells: 5280
-
-
-### Number of RAM Blocks: 30
-
-
-### Number of DSP Blocks: 8
-
-
-### Number of PLLs: 1
-
-
-### Number of IO Pins: 56
-
-
-##########################################################
-
-
-                                                         
-
-
-WARNING <35001771> - synthesis: Initial value found on net gnd_2 will be ignored due to unrecognized driver type
-WARNING <35935049> - synthesis: input port sclk_i remains unconnected for this instance. VDB-5049
-WARNING <35935049> - synthesis: input port sdi_i remains unconnected for this instance. VDB-5049
-WARNING <35931002> - synthesis: z:/es4-final/collisions_and_rotations/mypll/rtl/mypll.v(140): net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sdi_i does not have a driver. VDB-1002
-WARNING <35931002> - synthesis: z:/es4-final/collisions_and_rotations/mypll/rtl/mypll.v(139): net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sclk_i does not have a driver. VDB-1002
-######## Missing driver on net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sdi_i. Patching with GND.
-######## Missing driver on net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sclk_i. Patching with GND.
-
-
-
-######## Missing driver on net special_background[4]. Patching with GND.
-######## Missing driver on net special_background[3]. Patching with GND.
-######## Missing driver on net special_background[2]. Patching with GND.
-######## Missing driver on net special_background[1]. Patching with GND.
-######## Missing driver on net special_background[0]. Patching with GND.
-Combinational loop found : 1
-
- Net rotate_out_c 
-
- Instance \nes_controller_portmap/mux_7_i4 
-
-
-################### Begin Area Report (master)######################
-Number of register bits => 49 of 5280 (0 % )
-CCU2 => 24
-FD1P3XZ => 49
-IB => 2
-LUT4 => 74
-OB => 11
-PLL_B => 1
-################### End Area Report ##################
-Number of odd-length carry chains : 1
-Number of even-length carry chains : 3
-
-################### Begin Clock Report ######################
-Clock Nets
-Number of Clocks: 3
-  Net : nes_controller_portmap/ctrlr_clk_c, loads : 1
-  Net : osc_c, loads : 1
-  Net : clock_manager_portmap/pll_portmap/lscc_pll_inst/clk, loads : 0
-Clock Enable Nets
-Number of Clock Enables: 0
-Highest fanout non-clock nets
-Top 10 highest fanout non-clock nets:
-  Net : vga_sync_portmap/rgb_col_0__N_50, loads : 21
-  Net : vga_sync_portmap/rgb_row[5], loads : 11
-  Net : vga_sync_portmap/rgb_row[4], loads : 10
-  Net : vga_sync_portmap/rgb_row_0__N_30, loads : 10
-  Net : vga_sync_portmap/rgb_row[7], loads : 9
-  Net : vga_sync_portmap/rgb_col[6], loads : 9
-  Net : vga_sync_portmap/rgb_col[4], loads : 9
-  Net : vga_sync_portmap/rgb_row[9], loads : 8
-  Net : vga_sync_portmap/rgb_row[8], loads : 8
-  Net : vga_sync_portmap/rgb_row[6], loads : 8
-################### End Clock Report ##################
-
-Peak Memory Usage: 116 MB
-
---------------------------------------------------------------
-Total CPU Time: 0 secs 
-Total REAL Time: 3 secs 
---------------------------------------------------------------
+ERROR <35921242> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(271): statement is not synthesizable since it does not hold its value under NOT(clock-edge) condition. VHDL-1242

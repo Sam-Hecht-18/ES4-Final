@@ -15,16 +15,17 @@ use work.my_types_package.all;
 entity piece_picker is
   	port(
 		clk : in std_logic;
+		clk_counter : in unsigned(31 downto 0);
 		turn: in unsigned(7 downto 0); -- a number representing the number of times a piece has been added to the grid. starts at 0
 		new_piece_code : out unsigned(2 downto 0) := "000";
-		new_piece_rotation : out unsigned(1 downto 0) := "00";
+		new_piece_rotation : out unsigned(1 downto 0) := "00"
 	);
 end piece_picker;
 
 architecture synth of piece_picker is
 begin
 	process(turn) begin
-		new_piece_code <= clk(2 downto 0);
+		new_piece_code <= clk_counter(2 downto 0);
 		new_piece_rotation <= "00";
 	end process;
 end;

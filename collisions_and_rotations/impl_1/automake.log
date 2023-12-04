@@ -15,8 +15,8 @@ WARNING <35935050> - input port TRIM1 is not connected on this instance. VDB-505
 WARNING <35935050> - input port TRIM0 is not connected on this instance. VDB-5050
 WARNING <35935050> - input port I is not connected on this instance. VDB-5050
 Top module name (Verilog): mypll
-INFO <35901018> - Z:/es4/ES4-Final/collisions_and_rotations/mypll/rtl/mypll.v(11): compiling module mypll. VERI-1018
-INFO <35901018> - Z:/es4/ES4-Final/collisions_and_rotations/mypll/rtl/mypll.v(105): compiling module mypll_ipgen_lscc_pll(DIVR=&quot;0&quot;,DIVF=&quot;66&quot;,DIVQ=&quot;5&quot;,FILTER_RANGE=&quot;1&quot;,PLLOUT_SELECT_PORTA=&quot;GENCLK&quot;,PLLOUT_SELECT_PORTB=&quot;GENCLK&quot;,FREQUENCY_PIN_REFERENCECLK=&quot;12.000000&quot;). VERI-1018
+INFO <35901018> - Z:/ES4-Final/collisions_and_rotations/mypll/rtl/mypll.v(11): compiling module mypll. VERI-1018
+INFO <35901018> - Z:/ES4-Final/collisions_and_rotations/mypll/rtl/mypll.v(105): compiling module mypll_ipgen_lscc_pll(DIVR=&quot;0&quot;,DIVF=&quot;66&quot;,DIVQ=&quot;5&quot;,FILTER_RANGE=&quot;1&quot;,PLLOUT_SELECT_PORTA=&quot;GENCLK&quot;,PLLOUT_SELECT_PORTB=&quot;GENCLK&quot;,FREQUENCY_PIN_REFERENCECLK=&quot;12.000000&quot;). VERI-1018
 INFO <35901018> - C:/lscc/radiant/2023.1/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(428): compiling module PLL_B(PLLOUT_SELECT_PORTA=&quot;GENCLK&quot;,PLLOUT_SELECT_PORTB=&quot;GENCLK&quot;,DIVF=&quot;66&quot;,DIVQ=&quot;5&quot;,FILTER_RANGE=&quot;1&quot;,FREQUENCY_PIN_REFERENCECLK=&quot;12.000000&quot;). VERI-1018
 WARNING <35935049> - input port sclk_i remains unconnected for this instance. VDB-5049
 WARNING <35935049> - input port sdi_i remains unconnected for this instance. VDB-5049
@@ -54,10 +54,10 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-Sun Dec  3 22:28:07 2023
+Mon Dec  4 14:13:35 2023
 
 
-Command Line:  C:\lscc\radiant\2023.1\ispfpga\bin\nt64\synthesis.exe -f collisions_and_rotations_impl_1_lattice.synproj -gui -msgset Z:/es4/ES4-Final/collisions_and_rotations/promote.xml 
+Command Line:  C:\lscc\radiant\2023.1\ispfpga\bin\nt64\synthesis.exe -f collisions_and_rotations_impl_1_lattice.synproj -gui -msgset Z:/ES4-Final/collisions_and_rotations/promote.xml 
 
 INFO <35002000> - synthesis: Lattice Synthesis Engine Launched.
 Synthesis options:
@@ -121,28 +121,40 @@ The -syn option is FALSE.
 -vh2008
 
 -path C:/lscc/radiant/2023.1/ispfpga/ice40tp/data (searchpath added)
--path Z:/es4/ES4-Final/collisions_and_rotations (searchpath added)
--path Z:/es4/ES4-Final/collisions_and_rotations/impl_1 (searchpath added)
--path Z:/es4/ES4-Final/collisions_and_rotations/mypll (searchpath added)
+-path Z:/ES4-Final/collisions_and_rotations (searchpath added)
+-path Z:/ES4-Final/collisions_and_rotations/impl_1 (searchpath added)
+-path Z:/ES4-Final/collisions_and_rotations/mypll (searchpath added)
 Mixed language design
 Verilog design file = C:/lscc/radiant/2023.1/ip/pmi/pmi_iCE40UP.v
-Verilog design file = Z:/es4/ES4-Final/collisions_and_rotations/mypll/rtl/mypll.v
+Verilog design file = Z:/ES4-Final/collisions_and_rotations/mypll/rtl/mypll.v
 VHDL library = pmi
 VHDL design file = C:/lscc/radiant/2023.1/ip/pmi/pmi_iCE40UP.vhd
 VHDL library = work
-VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/bottom_check.vhd
+VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/clock.vhd
 VHDL library = work
-VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/clock.vhd
+VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/master.vhd
 VHDL library = work
-VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/master.vhd
+VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/nes_controller.vhd
 VHDL library = work
-VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/nes_controller.vhd
+VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/vga.vhd
 VHDL library = work
-VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/pattern_gen.vhd
+VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/collision_check.vhd
 VHDL library = work
-VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/piece.vhd
+VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/game_logic.vhd
 VHDL library = work
-VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/vga.vhd
+VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/piece_library.vhd
+VHDL library = work
+VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/renderer.vhd
+VHDL library = work
+VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/new_modules/board_updater.vhd
+VHDL library = work
+VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/new_modules/piece_picker.vhd
+VHDL library = work
+VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/new_modules/row_check.vhd
+VHDL library = work
+VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd
+VHDL library = work
+VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/vga_sync_clk.vhd
 The -r option is OFF. [ Remove LOC Properties is OFF. ]
 WARNING <35935050> - input port TRIM9 is not connected on this instance. VDB-5050
 WARNING <35935050> - input port TRIM8 is not connected on this instance. VDB-5050
@@ -191,49 +203,85 @@ c:/lscc/radiant/2023.1/ip/pmi/pmi_ram_dp_be.v(49): analyzing included file c:/ls
 c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(16): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_ram_dq_be.v. VERI-1328
 c:/lscc/radiant/2023.1/ip/pmi/pmi_ram_dq_be.v(45): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/../avant/ram_dq/rtl/lscc_ram_dq.v. VERI-1328
 c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(17): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_dsp.v. VERI-1328
-Analyzing Verilog file z:/es4/es4-final/collisions_and_rotations/mypll/rtl/mypll.v. VERI-1482
+Analyzing Verilog file z:/es4-final/collisions_and_rotations/mypll/rtl/mypll.v. VERI-1482
 Analyzing VHDL file c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.vhd. VHDL-1481
 Analyzing VHDL file c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.vhd
 
 INFO <35921014> - c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.vhd(4): analyzing package components. VHDL-1014
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/bottom_check.vhd. VHDL-1481
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/bottom_check.vhd
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/clock.vhd. VHDL-1481
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/clock.vhd
 
-INFO <35921014> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/bottom_check.vhd(5): analyzing package my_types_package. VHDL-1014
-INFO <35921012> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/bottom_check.vhd(15): analyzing entity bottom_check. VHDL-1012
-INFO <35921010> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/bottom_check.vhd(35): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock.vhd. VHDL-1481
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock.vhd
+INFO <35921012> - z:/es4-final/collisions_and_rotations/source/impl_1/clock.vhd(5): analyzing entity clock_manager. VHDL-1012
+INFO <35921010> - z:/es4-final/collisions_and_rotations/source/impl_1/clock.vhd(17): analyzing architecture synth. VHDL-1010
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/master.vhd. VHDL-1481
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/master.vhd
 
-INFO <35921012> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock.vhd(5): analyzing entity clock_manager. VHDL-1012
-INFO <35921010> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock.vhd(17): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/master.vhd. VHDL-1481
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/master.vhd
+INFO <35921014> - z:/es4-final/collisions_and_rotations/source/impl_1/master.vhd(5): analyzing package my_types_package. VHDL-1014
+INFO <35921012> - z:/es4-final/collisions_and_rotations/source/impl_1/master.vhd(15): analyzing entity master. VHDL-1012
+INFO <35921010> - z:/es4-final/collisions_and_rotations/source/impl_1/master.vhd(28): analyzing architecture synth. VHDL-1010
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd. VHDL-1481
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd
 
-INFO <35921012> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/master.vhd(5): analyzing entity master. VHDL-1012
-INFO <35921010> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/master.vhd(18): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd. VHDL-1481
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd
+INFO <35921012> - z:/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd(5): analyzing entity nes_controller. VHDL-1012
+INFO <35921010> - z:/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd(23): analyzing architecture synth. VHDL-1010
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/vga.vhd. VHDL-1481
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/vga.vhd
 
-INFO <35921012> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd(5): analyzing entity nes_controller. VHDL-1012
-INFO <35921010> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd(23): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd. VHDL-1481
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd
+INFO <35921012> - z:/es4-final/collisions_and_rotations/source/impl_1/vga.vhd(5): analyzing entity vga_sync. VHDL-1012
+INFO <35921010> - z:/es4-final/collisions_and_rotations/source/impl_1/vga.vhd(16): analyzing architecture synth. VHDL-1010
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd. VHDL-1481
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd
 
-INFO <35921014> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd(5): analyzing package my_types_package. VHDL-1014
-INFO <35921012> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd(15): analyzing entity pattern_gen. VHDL-1012
-INFO <35921010> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd(32): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece.vhd. VHDL-1481
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece.vhd
+INFO <35921014> - z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(5): analyzing package my_types_package. VHDL-1014
+INFO <35921012> - z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(15): analyzing entity collision_check. VHDL-1012
+INFO <35921010> - z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(34): analyzing architecture synth. VHDL-1010
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd. VHDL-1481
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd
 
-INFO <35921012> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece.vhd(5): analyzing entity piece. VHDL-1012
-INFO <35921010> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece.vhd(15): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/vga.vhd. VHDL-1481
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/vga.vhd
+INFO <35921014> - z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(5): analyzing package my_types_package. VHDL-1014
+INFO <35921012> - z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(15): analyzing entity game_logic. VHDL-1012
+INFO <35921010> - z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(39): analyzing architecture synth. VHDL-1010
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd. VHDL-1481
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd
 
-INFO <35921012> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/vga.vhd(5): analyzing entity vga. VHDL-1012
-INFO <35921010> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/vga.vhd(16): analyzing architecture synth. VHDL-1010
-The default VHDL library search path is now "Z:/es4/ES4-Final/collisions_and_rotations/impl_1". VHDL-1504
+INFO <35921012> - z:/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd(5): analyzing entity piece_library. VHDL-1012
+INFO <35921010> - z:/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd(14): analyzing architecture synth. VHDL-1010
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd. VHDL-1481
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd
+
+INFO <35921014> - z:/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd(5): analyzing package my_types_package. VHDL-1014
+INFO <35921012> - z:/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd(15): analyzing entity renderer. VHDL-1012
+INFO <35921010> - z:/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd(30): analyzing architecture synth. VHDL-1010
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/board_updater.vhd. VHDL-1481
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/board_updater.vhd
+
+INFO <35921014> - z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/board_updater.vhd(5): analyzing package my_types_package. VHDL-1014
+INFO <35921012> - z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/board_updater.vhd(15): analyzing entity board_updater. VHDL-1012
+INFO <35921010> - z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/board_updater.vhd(28): analyzing architecture synth. VHDL-1010
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/piece_picker.vhd. VHDL-1481
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/piece_picker.vhd
+
+INFO <35921014> - z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/piece_picker.vhd(5): analyzing package my_types_package. VHDL-1014
+INFO <35921012> - z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/piece_picker.vhd(15): analyzing entity piece_picker. VHDL-1012
+INFO <35921010> - z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/piece_picker.vhd(25): analyzing architecture synth. VHDL-1010
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/row_check.vhd. VHDL-1481
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/row_check.vhd
+
+INFO <35921014> - z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/row_check.vhd(5): analyzing package my_types_package. VHDL-1014
+INFO <35921012> - z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/row_check.vhd(15): analyzing entity row_check. VHDL-1012
+INFO <35921010> - z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/row_check.vhd(25): analyzing architecture synth. VHDL-1010
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd. VHDL-1481
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd
+
+INFO <35921014> - z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd(5): analyzing package my_types_package. VHDL-1014
+INFO <35921012> - z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd(15): analyzing entity turn_manager. VHDL-1012
+INFO <35921010> - z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd(24): analyzing architecture synth. VHDL-1010
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/vga_sync_clk.vhd. VHDL-1481
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/vga_sync_clk.vhd
+
+INFO <35921012> - z:/es4-final/collisions_and_rotations/source/impl_1/vga_sync_clk.vhd(5): analyzing entity vga_sync_clk. VHDL-1012
+INFO <35921010> - z:/es4-final/collisions_and_rotations/source/impl_1/vga_sync_clk.vhd(18): analyzing architecture synth. VHDL-1010
+The default VHDL library search path is now "Z:/ES4-Final/collisions_and_rotations/impl_1". VHDL-1504
 Top module language type = VHDL.
 WARNING <35935049> - input port sclk_i remains unconnected for this instance. VDB-5049
 WARNING <35935049> - input port sdi_i remains unconnected for this instance. VDB-5049
@@ -262,116 +310,63 @@ Top module name (VHDL, mixed language): master
                                                          
 
 
-WARNING <35001771> - Initial value found on net hit_piece will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net hit_bottom will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_col[9] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_col[8] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_col[7] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_col[6] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_col[5] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_col[4] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_col[3] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_col[2] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_col[1] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_col[0] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_row[9] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_row[8] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_row[7] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_row[6] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_row[5] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_row[4] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_row[3] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_row[2] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_row[1] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_row[0] will be ignored due to unrecognized driver type
+WARNING <35001771> - Initial value found on net gnd_2 will be ignored due to unrecognized driver type
 WARNING <35935049> - input port sclk_i remains unconnected for this instance. VDB-5049
 WARNING <35935049> - input port sdi_i remains unconnected for this instance. VDB-5049
-z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd(88): net \pattern_gen_portmap/collision_rotate does not have a driver. VDB-1002
-z:/es4/es4-final/collisions_and_rotations/mypll/rtl/mypll.v(139): net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sclk_i does not have a driver. VDB-1002
-z:/es4/es4-final/collisions_and_rotations/mypll/rtl/mypll.v(140): net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sdi_i does not have a driver. VDB-1002
-######## Missing driver on net \pattern_gen_portmap/collision_rotate. Patching with GND.
-######## Missing driver on net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sclk_i. Patching with GND.
+z:/es4-final/collisions_and_rotations/mypll/rtl/mypll.v(140): net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sdi_i does not have a driver. VDB-1002
+z:/es4-final/collisions_and_rotations/mypll/rtl/mypll.v(139): net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sclk_i does not have a driver. VDB-1002
 ######## Missing driver on net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sdi_i. Patching with GND.
+######## Missing driver on net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sclk_i. Patching with GND.
 
 
 
+######## Missing driver on net special_background[4]. Patching with GND.
+######## Missing driver on net special_background[3]. Patching with GND.
+######## Missing driver on net special_background[2]. Patching with GND.
+######## Missing driver on net special_background[1]. Patching with GND.
+######## Missing driver on net special_background[0]. Patching with GND.
 Combinational loop found : 1
-
- Net left_button 
-
- Instance \nes_controller_portmap/mux_7_i2 
-
-Combinational loop found : 2
-
- Net right_button 
-
- Instance \nes_controller_portmap/mux_7_i1 
-
-Combinational loop found : 3
-
- Net down_button 
-
- Instance \nes_controller_portmap/mux_7_i3 
-
-Combinational loop found : 4
 
  Net rotate_out_c 
 
  Instance \nes_controller_portmap/mux_7_i4 
 
-Combinational loop found : 5
-
- Net sel 
-
- Instance \nes_controller_portmap/mux_7_i6 
-
-WARNING <35002032> - Register \pattern_gen_portmap/piece_loc_y_2_i0 with asynchronous clock enable is not supported. (z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd 147[4] 202[11])
-WARNING <35002032> - Register \pattern_gen_portmap/piece_loc_y_2_i3 with asynchronous clock enable is not supported. (z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd 147[4] 202[11])
-WARNING <35002032> - Register \pattern_gen_portmap/piece_loc_y_2_i2 with asynchronous clock enable is not supported. (z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd 147[4] 202[11])
-WARNING <35002032> - Register \pattern_gen_portmap/piece_loc_y_2_i1 with asynchronous clock enable is not supported. (z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd 147[4] 202[11])
-CRITICAL <35001783> - Mapping latch i2190 to logic since no latches found in device. Possible simulation mismatch. Please check if or case statements
-CRITICAL <35001783> - Mapping latch i2194 to logic since no latches found in device. Possible simulation mismatch. Please check if or case statements
-CRITICAL <35001783> - Mapping latch i2198 to logic since no latches found in device. Possible simulation mismatch. Please check if or case statements
-CRITICAL <35001783> - Mapping latch i2186 to logic since no latches found in device. Possible simulation mismatch. Please check if or case statements
 
 ################### Begin Area Report (master)######################
-Number of register bits => 90 of 5280 (1 % )
-EBR_B => 1
-CCU2 => 27
-FD1P3XZ => 90
+Number of register bits => 49 of 5280 (0 % )
+CCU2 => 24
+FD1P3XZ => 49
 IB => 2
-INV => 1
-LUT4 => 333
+LUT4 => 74
 OB => 11
 PLL_B => 1
 ################### End Area Report ##################
-Number of odd-length carry chains : 2
-Number of even-length carry chains : 2
+Number of odd-length carry chains : 1
+Number of even-length carry chains : 3
 
 ################### Begin Clock Report ######################
 Clock Nets
-Number of Clocks: 4
+Number of Clocks: 3
   Net : nes_controller_portmap/ctrlr_clk_c, loads : 1
-  Net : clock_manager_portmap/pll_portmap/lscc_pll_inst/clk, loads : 0
   Net : osc_c, loads : 1
-  Net : game_clock, loads : 0
+  Net : clock_manager_portmap/pll_portmap/lscc_pll_inst/clk, loads : 0
 Clock Enable Nets
 Number of Clock Enables: 0
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : pattern_gen_portmap/bottom_check_portmap/future_piece_loc[0][0], loads : 43
-  Net : pattern_gen_portmap/bottom_check_portmap/future_piece_loc[1][0], loads : 29
-  Net : pattern_gen_portmap/piece_loc_x[0], loads : 28
-  Net : pattern_gen_portmap/bottom_check_portmap/overlap_row_3_2__N_228, loads : 28
-  Net : pattern_gen_portmap/n39, loads : 25
-  Net : pattern_gen_portmap/bottom_check_portmap/future_piece_loc[1][3], loads : 22
-  Net : vga_portmap/col_0__N_50, loads : 21
-  Net : pattern_gen_portmap/frame_counter[2], loads : 21
-  Net : pattern_gen_portmap/piece_loc_y[2], loads : 20
-  Net : pattern_gen_portmap/piece_loc_y[0], loads : 19
+  Net : vga_sync_portmap/rgb_col_0__N_50, loads : 21
+  Net : vga_sync_portmap/rgb_row[5], loads : 11
+  Net : vga_sync_portmap/rgb_row[4], loads : 10
+  Net : vga_sync_portmap/rgb_row_0__N_30, loads : 10
+  Net : vga_sync_portmap/rgb_row[7], loads : 9
+  Net : vga_sync_portmap/rgb_col[6], loads : 9
+  Net : vga_sync_portmap/rgb_col[4], loads : 9
+  Net : vga_sync_portmap/rgb_row[9], loads : 8
+  Net : vga_sync_portmap/rgb_row[8], loads : 8
+  Net : vga_sync_portmap/rgb_row[6], loads : 8
 ################### End Clock Report ##################
 
-Peak Memory Usage: 136 MB
+Peak Memory Usage: 116 MB
 
 --------------------------------------------------------------
 Total CPU Time: 0 secs 
@@ -379,9 +374,9 @@ Total REAL Time: 3 secs
 --------------------------------------------------------------
 
 
-postsyn -a iCE40UP -p iCE40UP5K -t SG48 -sp High-Performance_1.2V -oc Industrial -top -w -o collisions_and_rotations_impl_1_syn.udb collisions_and_rotations_impl_1.vm -ldc Z:/es4/ES4-Final/collisions_and_rotations/impl_1/collisions_and_rotations_impl_1.ldc
+postsyn -a iCE40UP -p iCE40UP5K -t SG48 -sp High-Performance_1.2V -oc Industrial -top -w -o collisions_and_rotations_impl_1_syn.udb collisions_and_rotations_impl_1.vm -ldc Z:/ES4-Final/collisions_and_rotations/impl_1/collisions_and_rotations_impl_1.ldc
 POSTSYN: Post Synthesis Process Radiant Software (64-bit) 2023.1.0.43.3
-Command Line: postsyn -a iCE40UP -p iCE40UP5K -t SG48 -sp High-Performance_1.2V -oc Industrial -top -w -o collisions_and_rotations_impl_1_syn.udb -ldc Z:/es4/ES4-Final/collisions_and_rotations/impl_1/collisions_and_rotations_impl_1.ldc -gui -msgset Z:/es4/ES4-Final/collisions_and_rotations/promote.xml collisions_and_rotations_impl_1.vm 
+Command Line: postsyn -a iCE40UP -p iCE40UP5K -t SG48 -sp High-Performance_1.2V -oc Industrial -top -w -o collisions_and_rotations_impl_1_syn.udb -ldc Z:/ES4-Final/collisions_and_rotations/impl_1/collisions_and_rotations_impl_1.ldc -gui -msgset Z:/ES4-Final/collisions_and_rotations/promote.xml collisions_and_rotations_impl_1.vm 
    Architecture:     iCE40UP
    Device:           iCE40UP5K
    Package:          SG48
@@ -389,9 +384,9 @@ Command Line: postsyn -a iCE40UP -p iCE40UP5K -t SG48 -sp High-Performance_1.2V 
 Reading input file 'collisions_and_rotations_impl_1.vm' ...
 CPU Time to convert: 0.046875
 REAL Time to convert: 0
-convert PEAK Memory Usage: 32 MB
-convert CURRENT Memory Usage: 31 MB
-Reading constraint file 'Z:/es4/ES4-Final/collisions_and_rotations/impl_1/collisions_and_rotations_impl_1.ldc' ...
+convert PEAK Memory Usage: 27 MB
+convert CURRENT Memory Usage: 27 MB
+Reading constraint file 'Z:/ES4-Final/collisions_and_rotations/impl_1/collisions_and_rotations_impl_1.ldc' ...
 Removing unused logic ...
 Starting design annotation....
 WARNING <70001944> - No master clock for
@@ -405,10 +400,10 @@ Writing output file 'collisions_and_rotations_impl_1_syn.udb'.
 POSTSYN finished successfully.
 Total CPU Time: 0 secs 
 Total REAL Time: 0 secs 
-Peak Memory Usage: 38 MB
+Peak Memory Usage: 35 MB
 
 
-map -i "collisions_and_rotations_impl_1_syn.udb" -pdc "Z:/es4/ES4-Final/collisions_and_rotations/pins.pdc" -o "collisions_and_rotations_impl_1_map.udb" -mp "collisions_and_rotations_impl_1.mrp" -hierrpt     
+map -i "collisions_and_rotations_impl_1_syn.udb" -pdc "Z:/ES4-Final/collisions_and_rotations/pins.pdc" -o "collisions_and_rotations_impl_1_map.udb" -mp "collisions_and_rotations_impl_1.mrp" -hierrpt     
 map:  version Radiant Software (64-bit) 2023.1.0.43.3
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
@@ -417,7 +412,7 @@ Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
 
-Command line:   map -i collisions_and_rotations_impl_1_syn.udb -pdc Z:/es4/ES4-Final/collisions_and_rotations/pins.pdc -o collisions_and_rotations_impl_1_map.udb -mp collisions_and_rotations_impl_1.mrp -hierrpt -gui 
+Command line:   map -i collisions_and_rotations_impl_1_syn.udb -pdc Z:/ES4-Final/collisions_and_rotations/pins.pdc -o collisions_and_rotations_impl_1_map.udb -mp collisions_and_rotations_impl_1.mrp -hierrpt -gui 
 
 Loading device for application GENERIC from file 'itpa08.nph' in environment: C:/lscc/radiant/2023.1/ispfpga.
 Package Status:                     Preliminary    Version 1.5.
@@ -444,13 +439,12 @@ Optimizing...
 
 
 Design Summary:
-   Number of slice registers:  90 out of  5280 (2%)
+   Number of slice registers:  49 out of  5280 (1%)
    Number of I/O registers:      0 out of   117 (0%)
-   Number of LUT4s:           404 out of  5280 (8%)
-      Number of logic LUT4s:             333
-      Number of inserted feedthru LUT4s:   8
-      Number of replicated LUT4s:          9
-      Number of ripple logic:             27 (54 LUT4s)
+   Number of LUT4s:           126 out of  5280 (2%)
+      Number of logic LUT4s:              75
+      Number of inserted feedthru LUT4s:   3
+      Number of ripple logic:             24 (48 LUT4s)
    Number of IO sites used:   13 out of 39 (33%)
       Number of IO sites used for general PIO: 13
       Number of IO sites used for I3C: 0 out of 2 (0%)
@@ -470,40 +464,29 @@ Design Summary:
    Number of SRAMs:            0 out of 4 (0%)
    Number of WARMBOOTs:        0 out of 1 (0%)
    Number of SPIs:             0 out of 2 (0%)
-   Number of EBRs:             1 out of 30 (3%)
+   Number of EBRs:             0 out of 30 (0%)
    Number of PLLs:             1 out of 1 (100%)
    Number of Clocks:  4
-      Net clk: 57 loads, 57 rising, 0 falling (Driver: Pin clock_manager_portmap.pll_portmap.lscc_pll_inst.u_PLL_B/OUTGLOBAL)
-      Net ctrlr_clk_c: 6 loads, 6 rising, 0 falling (Driver: Pin nes_controller_portmap.ctrlr_clk_c_I_0/Z)
-      Net counter[24]: 8 loads, 0 rising, 8 falling (Driver: Pin clock_manager_portmap.NEScount_7__I_42/Q)
+      Net clk: 25 loads, 25 rising, 0 falling (Driver: Pin clock_manager_portmap.pll_portmap.lscc_pll_inst.u_PLL_B/OUTGLOBAL)
       Net osc_c: 1 loads, 1 rising, 0 falling (Driver: Port osc)
-   Number of Clock Enables:  3
-      Net VCC_net: 3 loads, 0 SLICEs
-      Net vga_portmap.col_0__N_50: 6 loads, 6 SLICEs
-      Net pattern_gen_portmap.n443: 2 loads, 2 SLICEs
-   Number of LSRs:  11
-      Net vga_portmap.col_0__N_50: 6 loads, 6 SLICEs
-      Net vga_portmap.row_0__N_30: 6 loads, 6 SLICEs
-      Net pattern_gen_portmap.n777: 1 loads, 1 SLICEs
-      Net pattern_gen_portmap.n775: 1 loads, 1 SLICEs
-      Net pattern_gen_portmap.frame_counter_2__N_148[2]: 1 loads, 1 SLICEs
-      Net pattern_gen_portmap.n774: 1 loads, 1 SLICEs
-      Net pattern_gen_portmap.n772: 1 loads, 1 SLICEs
-      Net pattern_gen_portmap.n771: 1 loads, 1 SLICEs
-      Net pattern_gen_portmap.n769: 1 loads, 1 SLICEs
-      Net pattern_gen_portmap.n780: 1 loads, 1 SLICEs
-      Net pattern_gen_portmap.n778: 1 loads, 1 SLICEs
+      Net ctrlr_clk_c: 4 loads, 4 rising, 0 falling (Driver: Pin nes_controller_portmap.ctrlr_clk_c_I_0/Z)
+      Net vga_sync_clk_portmap.valid_output: 3 loads, 3 rising, 0 falling (Driver: Pin vga_sync_clk_portmap.rgb_row_9__I_0/Z)
+   Number of Clock Enables:  1
+      Net vga_sync_portmap.rgb_col_0__N_50: 6 loads, 6 SLICEs
+   Number of LSRs:  2
+      Net vga_sync_portmap.rgb_col_0__N_50: 6 loads, 6 SLICEs
+      Net vga_sync_portmap.rgb_row_0__N_30: 6 loads, 6 SLICEs
    Top 10 highest fanout non-clock nets:
-      Net pattern_gen_portmap.bottom_check_portmap.future_piece_loc[0][0]: 41 loads
-      Net pattern_gen_portmap.piece_loc_x[0]: 30 loads
-      Net pattern_gen_portmap.n39: 29 loads
-      Net pattern_gen_portmap.bottom_check_portmap.overlap_row_3_2__N_228: 28 loads
-      Net pattern_gen_portmap.bottom_check_portmap.future_piece_loc[1][0]: 27 loads
-      Net pattern_gen_portmap.piece_loc_y[2]: 25 loads
-      Net pattern_gen_portmap.piece_loc_y[0]: 24 loads
-      Net pattern_gen_portmap.frame_counter[2]: 21 loads
-      Net pattern_gen_portmap.bottom_check_portmap.future_piece_loc[1][1]: 20 loads
-      Net pattern_gen_portmap.bottom_check_portmap.future_piece_loc[0][1]: 18 loads
+      Net vga_sync_portmap.rgb_col_0__N_50: 13 loads
+      Net rgb_row[4]: 12 loads
+      Net rgb_row[5]: 12 loads
+      Net rgb_col[4]: 11 loads
+      Net rgb_col[6]: 10 loads
+      Net rgb_row[7]: 10 loads
+      Net rgb_row[6]: 9 loads
+      Net rgb_row[8]: 9 loads
+      Net rgb_row[9]: 9 loads
+      Net rgb_col[5]: 8 loads
 Running physical design DRC...
 
 CRITICAL <71003005> - The clock port [osc] is assigned to a non clock dedicated pin [12], which might affect the clock performance. Use dedicated clock resources for the port.
@@ -519,13 +502,13 @@ Constraint Summary:
 
 Total CPU Time: 0 secs  
 Total REAL Time: 0 secs  
-Peak Memory Usage: 64 MB
+Peak Memory Usage: 58 MB
 
 
 par -f "collisions_and_rotations_impl_1.p2t" "collisions_and_rotations_impl_1_map.udb" "collisions_and_rotations_impl_1.udb"
 
 Lattice Place and Route Report for Design "collisions_and_rotations_impl_1_map.udb"
-Sun Dec  3 22:28:11 2023
+Mon Dec  4 14:13:39 2023
 
 PAR: Place And Route Radiant Software (64-bit) 2023.1.0.43.3.
 Command Line: par -w -t 1 -cores 1 -exp parPathBased=ON \
@@ -549,13 +532,13 @@ WARNING <70001944> - No master clock for
 
 WARNING: Database constraint "create_generated_clock -name {clk} -source [get_pins clock_manager_portmap.pll_portmap.lscc_pll_inst.u_PLL_B/REFERENCECLK] -divide_by 32 -multiply_by 67 [get_pins clock_manager_portmap.pll_portmap.lscc_pll_inst.u_PLL_B/OUTGLOBAL]" does not have corresponding timing constraint. Please check if the resource objects of the constraint are valid carefully!
 CRITICAL <71003005> - The clock port [osc] is assigned to a non clock dedicated pin [12], which might affect the clock performance. Use dedicated clock resources for the port.
-Number of Signals: 558
-Number of Connections: 1601
+Number of Signals: 216
+Number of Connections: 497
 Device utilization summary:
 
-   SLICE (est.)     217/2640          8% used
-     LUT            404/5280          8% used
-     REG             90/5280          2% used
+   SLICE (est.)      66/2640          3% used
+     LUT            126/5280          2% used
+     REG             49/5280          1% used
    PIO               13/56           23% used
                      13/36           36% bonded
    IOLOGIC            0/56            0% used
@@ -569,7 +552,7 @@ Device utilization summary:
    SRAM               0/4             0% used
    WARMBOOT           0/1             0% used
    SPI                0/2             0% used
-   EBR                1/30            3% used
+   EBR                0/30            0% used
    PLL                1/1           100% used
    RGBOUTBUF          0/3             0% used
    I3C                0/2             0% used
@@ -588,26 +571,26 @@ Starting Placer Phase 1. CPU time: 0 secs , REAL time: 0 secs
 ..  ..
 ....................
 
-Placer score = 71360.
+Placer score = 15595.
 
 Device SLICE utilization summary after final SLICE packing:
-   SLICE            217/2640          8% used
+   SLICE             65/2640          2% used
 
 WARNING <70001944> - No master clock for
 	generated clock	create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] .
-Finished Placer Phase 1. CPU time: 1 secs , REAL time: 6 secs 
+Finished Placer Phase 1. CPU time: 1 secs , REAL time: 3 secs 
 
 Starting Placer Phase 2.
 .
 
-Placer score =  101789
-Finished Placer Phase 2.  CPU time: 1 secs , REAL time: 6 secs 
+Placer score =  23367
+Finished Placer Phase 2.  CPU time: 1 secs , REAL time: 3 secs 
 
 
 ------------------ Clock Report ------------------
 
 Global Clocks :
-  PRIMARY "clk" from OUTGLOBAL on comp "clock_manager_portmap.pll_portmap.lscc_pll_inst.u_PLL_B" on site "PLL_R13C32", clk load = 45, ce load = 0, sr load = 0
+  PRIMARY "clk" from OUTGLOBAL on comp "clock_manager_portmap.pll_portmap.lscc_pll_inst.u_PLL_B" on site "PLL_R13C32", clk load = 23, ce load = 0, sr load = 0
 
   PRIMARY  : 1 out of 8 (12%)
 
@@ -629,12 +612,12 @@ I/O Bank Usage Summary:
 | 2        | 3 / 8 ( 37%)  | 3.3V       |            |            |
 +----------+---------------+------------+------------+------------+
 
-Total Placer CPU time: 1 secs , REAL time: 6 secs 
+Total Placer CPU time: 1 secs , REAL time: 3 secs 
 
 Writing design to file collisions_and_rotations_impl_1_par.dir/5_1.udb ...
 
 
-Start NBR router at 22:28:17 12/03/23
+Start NBR router at 14:13:43 12/04/23
 
 *****************************************************************
 Info: NBR allows conflicts(one node used by more than one signal)
@@ -652,25 +635,24 @@ Note: NBR uses a different method to calculate timing slacks. The
 Starting routing resource preassignment
 Preassignment Summary:
 --------------------------------------------------------------------------------
-136 connections routed with dedicated routing resources
+90 connections routed with dedicated routing resources
 1 global clock signals routed
-181 connections routed (of 1585 total) (11.42%)
+113 connections routed (of 493 total) (22.92%)
 ---------------------------------------------------------
 Clock routing summary:
 Primary clocks (1 used out of 8 available):
 #7  Signal "clk"
-       Clock   loads: 45    out of    45 routed (100.00%)
+       Clock   loads: 23    out of    23 routed (100.00%)
 Other clocks:
-    Signal "ctrlr_clk_c"
-       Clock   loads: 0     out of     3 routed (  0.00%)
-       Data    loads: 0     out of     1 routed (  0.00%)
-    Signal "counter[24]"
-       Clock   loads: 0     out of     8 routed (  0.00%)
-       Data    loads: 0     out of     2 routed (  0.00%)
     Signal "osc_c"
        Clock   loads: 0     out of     1 routed (  0.00%)
     Signal "clock_manager_portmap.pll_portmap.lscc_pll_inst.feedback_w"
        Clock   loads: 1     out of     1 routed (100.00%)
+    Signal "ctrlr_clk_c"
+       Clock   loads: 0     out of     2 routed (  0.00%)
+       Data    loads: 0     out of     1 routed (  0.00%)
+    Signal "vga_sync_clk_portmap.valid_output"
+       Clock   loads: 0     out of     3 routed (  0.00%)
 ---------------------------------------------------------
 --------------------------------------------------------------------------------
 Completed routing resource preassignment
@@ -681,22 +663,18 @@ WARNING <70001944> - No master clock for
 Routing in Serial Mode ......
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Start NBR section for initial routing at 22:28:17 12/03/23
+Start NBR section for initial routing at 14:13:43 12/04/23
 Level 4, iteration 1
-75(0.03%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
+14(0.01%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
 
 Info: Initial congestion level at 75.00% usage is 0
 Info: Initial congestion area  at 75.00% usage is 0 (0.00%)
 
-Start NBR section for normal routing at 22:28:18 12/03/23
+Start NBR section for normal routing at 14:13:43 12/04/23
 Level 4, iteration 1
-11(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
-Level 4, iteration 2
-3(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
-Level 4, iteration 3
 0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
 
-Start NBR section for post-routing at 22:28:18 12/03/23
+Start NBR section for post-routing at 14:13:43 12/04/23
 
 End NBR router with 0 unrouted connection
 WARNING <70001944> - No master clock for
@@ -723,7 +701,7 @@ NBR Summary
 Total CPU time 0 secs 
 Total REAL time: 0 secs 
 Completely routed.
-End of route.  1585 routed (100.00%); 0 unrouted.
+End of route.  493 routed (100.00%); 0 unrouted.
 
 Writing design to file collisions_and_rotations_impl_1_par.dir/5_1.udb ...
 
@@ -736,9 +714,9 @@ PAR_SUMMARY::Worst  slack<hold /<ns>> = <n/a>
 PAR_SUMMARY::Timing score<hold /<ns>> = <n/a>
 PAR_SUMMARY::Number of errors = 0
 
-Total CPU  Time: 2 secs 
-Total REAL Time: 7 secs 
-Peak Memory Usage: 121.45 MB
+Total CPU  Time: 1 secs 
+Total REAL Time: 4 secs 
+Peak Memory Usage: 105.92 MB
 
 
 par done!
@@ -776,15 +754,15 @@ High-Performance_1.2V
 
 Starting full timing analysis...
 Performance Hardware Data Status:   Advanced       Version 1.0.
-Connections ignored  107  counted  1386  covered  0
+Connections ignored  29  counted  451  covered  0
 Changing speed to m;   changing temperature to -40
 
 STA Runtime and Peak Memory Usage :
 Total CPU Time: 0 secs 
-Total REAL Time: 2 secs 
-Peak Memory Usage: 98 MB
+Total REAL Time: 0 secs 
+Peak Memory Usage: 93 MB
 
- 1.159009s wall, 0.375000s user + 0.000000s system = 0.375000s CPU (32.4%)
+ 0.877208s wall, 0.187500s user + 0.000000s system = 0.187500s CPU (21.4%)
 
 
 tmcheck -par "collisions_and_rotations_impl_1.par" 
@@ -826,18 +804,18 @@ Preference Summary:
 
 
 Creating bit map...
-Saving bit stream in "Z:\es4\ES4-Final\collisions_and_rotations\impl_1\collisions_and_rotations_impl_1.bin".
+Saving bit stream in "Z:\ES4-Final\collisions_and_rotations\impl_1\collisions_and_rotations_impl_1.bin".
 Bitstream generation complete!
 
 Total CPU Time: 0 secs 
 Total REAL Time: 0 secs 
-Peak Memory Usage: 115 MB
+Peak Memory Usage: 110 MB
 
 
 ibisgen "collisions_and_rotations_impl_1.udb" "C:/lscc/radiant/2023.1/cae_library/ibis/iCE40UP.ibs"
 IBIS Models Generator: Lattice Radiant Software (64-bit) 2023.1.0.43.3
 
-Sun Dec  3 22:28:20 2023
+Mon Dec  4 14:13:45 2023
 
 Loading collisions_and_rotations_impl_1.udb ...
 Loading device for application GENERIC from file 'itpa08.nph' in environment: C:/lscc/radiant/2023.1/ispfpga.
@@ -856,7 +834,7 @@ Successfully loading design udb and device data from disks and to up-layer in CP
 Created design models.
 
 
-Generating: Z:\es4\ES4-Final\collisions_and_rotations\impl_1\IBIS\collisions_and_rotations_impl_1.ibs
+Generating: Z:\ES4-Final\collisions_and_rotations\impl_1\IBIS\collisions_and_rotations_impl_1.ibs
 
 
 INFO <1191031> - Design IBIS models are generated for board level analysis.
@@ -889,4 +867,4 @@ Writing SDF timing to file collisions_and_rotations_impl_1_vo.sdf
 Backanno finished with 0 posted error messages.
 Total CPU Time: 0 secs 
 Total REAL Time: 0 secs 
-Peak Memory Usage: 95 MB
+Peak Memory Usage: 82 MB
