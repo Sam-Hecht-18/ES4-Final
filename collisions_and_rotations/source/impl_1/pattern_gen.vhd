@@ -39,7 +39,7 @@ architecture synth of pattern_gen is
         piece_output : out std_logic_vector(15 downto 0)
     );
 	end component;
-	
+
 	component bottom_check is
 		port(
 			clk : in std_logic;
@@ -58,15 +58,15 @@ architecture synth of pattern_gen is
 			collision_rotate : out std_logic
 		);
 	end component;
-		
+
 	signal board: board_type; -- the tetris board
 	signal rgb_temp: std_logic_vector(5 downto 0); -- the rgb signal we want to send out
-	
+
 	signal piece_loc: piece_loc_type := (4d"2", 4d"0");
 	signal piece_loc_x : signed(3 downto 0) := 4d"2";
 	signal piece_loc_y : signed(3 downto 0) := 4d"0";
 	signal piece_shape: std_logic_vector(15 downto 0);
-	
+
 	signal board_index_y: unsigned(3 downto 0);
 	signal board_index_x: unsigned(3 downto 0);
 
@@ -96,7 +96,7 @@ begin
 	generate_board_row: for y in 0 to 11 generate
 		board(y) <= 10b"0";
 	end generate;
-	
+
 	piece_loc(0) <= piece_loc_x;
 	piece_loc(1) <= piece_loc_y;
 
@@ -137,16 +137,15 @@ begin
 				"111111"	when (row < 256 and col < 160)
 							else
 				"000000";
-	
+
 	rgb <= rgb_temp when valid = '1' else "000000";
-	
-	
+
 	process (clk) begin
-		
+
 		if rising_edge(clk) then
 			if row = 480 and col = 640 and frame_counter(2) = '1' then -- WHAT is frame counter, how does it ever increment? doesnt it get stuck once it hits third bit as 1?
-			
-			
+
+
 				-- Rotates piece (TODO: check that rotation is valid, i.e., doesn't overlap on anything after rotation)
 				if rotate = '1' and rotate_delay = 0 then
 					piece_rotation <= piece_rotation + 1;
@@ -155,7 +154,7 @@ begin
 				if rotate_delay > 0 then
 					rotate_delay <= rotate_delay + 1;
 				end if;
-				
+
 				-- Swaps falling piece (for testing)
 				if sel = '1' and sel_delay = 0 then
 					piece_code <= piece_code + 1;
@@ -164,7 +163,7 @@ begin
 				if sel_delay > 0 then
 					sel_delay <= sel_delay + 1;
 				end if;
-				
+
 				-- Movement left
 				if left = '1' and left_delay = 0 and collision_left = '0' then
 					piece_loc_x <= piece_loc_x - 1;
@@ -173,7 +172,7 @@ begin
 				if left_delay > 0 then
 					left_delay <= left_delay + 1;
 				end if;
-				
+
 				-- Movement right
 				if right = '1' and right_delay = 0 and collision_right = '0' then
 					piece_loc_x <= piece_loc_x + 1;
@@ -182,7 +181,7 @@ begin
 				if right_delay > 0 then
 					right_delay <= right_delay + 1;
 				end if;
-				
+
 				-- Movement down
 				if down = '1' and down_delay = 0 then
 					piece_loc_y <= piece_loc_y + 1;
@@ -191,7 +190,7 @@ begin
 				if down_delay > 0 then
 					down_delay <= down_delay + 1;
 				end if;
-				
+
 			elsif row = 480 and col = 640 then
 				frame_counter <= frame_counter + 1;
 
