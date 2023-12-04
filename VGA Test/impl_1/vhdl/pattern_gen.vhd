@@ -35,7 +35,7 @@ architecture synth of pattern_gen is
         	piece_output : out std_logic_vector(15 downto 0)
     );
 	end component;
-	
+
 	component bottom_check is
 		port(
 			clk: in std_logic;
@@ -46,15 +46,15 @@ architecture synth of pattern_gen is
 			collision: out std_logic
 		);
 	end component;
-		
+
 	signal board: board_type; -- the tetris board
 	signal rgb_temp: std_logic_vector(5 downto 0); -- the rgb signal we want to send out
 	signal piece_loc_y: unsigned(3 downto 0) := 4d"0";
 	signal piece_loc_x: unsigned(3 downto 0) := 4d"2";
-	
+
 	signal piece_loc: piece_loc_type;
 	signal piece_shape: std_logic_vector(15 downto 0);
-	
+
 	signal board_index_y: unsigned(3 downto 0);
 	signal board_index_x: unsigned(3 downto 0);
 
@@ -112,12 +112,12 @@ begin
 				"111111"	when (row < 256 and col < 160)
 							else
 				"000000";
-	
+
 	rgb <= rgb_temp when valid = '1' else "000000";
-	
-	
+
+
 	process (clk) begin
-		
+
 		if rising_edge(clk) then
 			if row = 480 and col = 640 and frame_counter(2) = '1' then
 				if rotate = '1' and rotate_delay = 0 then
@@ -134,7 +134,9 @@ begin
 				if down_delay > 0 then
 					down_delay <= down_delay + 1;
 				end if;
-				
+
+				if  = '1' then
+
 			elsif row = 480 and col = 640 then
 				frame_counter <= frame_counter + 1;
 
