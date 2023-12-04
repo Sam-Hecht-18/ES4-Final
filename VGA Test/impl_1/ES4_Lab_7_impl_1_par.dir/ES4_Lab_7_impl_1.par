@@ -1,10 +1,6 @@
 Copyright (c) 2002-2022 Lattice Semiconductor Corporation,  All rights reserved.
 
-<<<<<<< HEAD
-Sat Dec  2 17:30:08 2023
-=======
-Thu Nov 30 21:26:50 2023
->>>>>>> main
+Sun Dec  3 22:20:52 2023
 
 Command Line: par -w -n 1 -t 1 -s 1 -cores 1 -exp parPathBased=ON \
 	ES4_Lab_7_impl_1_map.udb ES4_Lab_7_impl_1.udb 
@@ -13,18 +9,10 @@ Command Line: par -w -n 1 -t 1 -s 1 -cores 1 -exp parPathBased=ON \
 Level/       Number       Worst        Timing       Worst        Timing       Run          Run
 Cost [udb]   Unrouted     Slack        Score        Slack(hold)  Score(hold)  Time         Status
 ----------   --------     -----        ------       -----------  -----------  ----         ------
-<<<<<<< HEAD
-5_1   *      0            -            0            -            0            07           Completed
+5_1   *      0            -            0            -            0            04           Completed
 
 * : Design saved.
 
-Total (real) run time for 1-seed: 8 secs 
-=======
-5_1   *      0            7.432        0            1.913        0            06           Completed
-
-* : Design saved.
-
-Total (real) run time for 1-seed: 6 secs 
->>>>>>> main
+Total (real) run time for 1-seed: 4 secs 
 
 par done!

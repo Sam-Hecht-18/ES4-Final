@@ -21,12 +21,16 @@ architecture synth of master is
 		port(
 			clk : in std_logic;
 			game_clock : in std_logic;
+			valid_input : in std_logic;
 			valid: in std_logic;
 			row: in unsigned(9 downto 0);
-			col: out unsigned(9 downto 0);
+			col: in unsigned(9 downto 0);
 			rgb: out std_logic_vector(5 downto 0);
 			rotate : in std_logic;
-			down : in std_logic
+			down : in std_logic;
+			left : in std_logic;
+			right : in std_logic;
+			sel : in std_logic
 		);
 	end component;
 
@@ -66,7 +70,9 @@ architecture synth of master is
 			game_clock : out std_logic;
 			counter : out unsigned(31 downto 0);
 			NEScount : out unsigned(7 downto 0);
-			NESclk : out std_logic
+			NESclk : out std_logic;
+			valid_input : out std_logic
+			
 		  );
 	end component;
 	signal valid: std_logic;
@@ -88,20 +94,25 @@ architecture synth of master is
 	signal counter : unsigned(31 downto 0);
 	signal NEScount : unsigned(7 downto 0);
 	signal NESclk : std_logic;
+	signal valid_input : std_logic;
 
 begin
 
-	clock_manager_portmap : clock_manager port map(osc, clk, game_clock, counter, NEScount, NESclk);
+	clock_manager_portmap : clock_manager port map(osc, clk, game_clock, counter, NEScount, NESclk, valid_input);
 	
 	pattern_gen_portmap : pattern_gen port map(
 		clk => clk,
 		game_clock => game_clock,
+		valid_input => valid_input,
 		valid => valid,
 		row => row,
 		col => col,
 		rgb => rgb,
 		rotate => rotate,
-		down => down_button);
+		down => down_button,
+		left => left_button,
+		right => right_button,
+		sel => sel);
 	
 	vga_portmap : vga port map(clk, valid, row, col, hsync, vsync);
 

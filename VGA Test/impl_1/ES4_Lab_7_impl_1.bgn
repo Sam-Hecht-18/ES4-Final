@@ -4,11 +4,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-<<<<<<< HEAD
-Sat Dec  2 17:30:17 2023
-=======
-Thu Nov 30 21:27:05 2023
->>>>>>> main
+Sun Dec  3 22:20:57 2023
 
 
 Command: bitgen -w -freq 0 -gui ES4_Lab_7_impl_1.udb 
@@ -25,6 +21,5 @@ Preference Summary:
 
 
 Creating bit map...
-Saving bit stream in "Z:\ES4-Final\VGA Test\impl_1\ES4_Lab_7_impl_1.bin".
-INFO <1081100> - Bitstream authenticated.
+Saving bit stream in "Z:\es4\ES4-Final\VGA Test\impl_1\ES4_Lab_7_impl_1.bin".
 Bitstream generation complete!

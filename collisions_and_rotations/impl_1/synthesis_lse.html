@@ -48,7 +48,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-Sat Dec  2 19:01:02 2023
+Sun Dec  3 22:28:07 2023
 
 
 Command Line:  C:\lscc\radiant\2023.1\ispfpga\bin\nt64\synthesis.exe -f collisions_and_rotations_impl_1_lattice.synproj -gui -msgset Z:/es4/ES4-Final/collisions_and_rotations/promote.xml 
@@ -194,12 +194,12 @@ Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/bott
 
 INFO <35921014> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/bottom_check.vhd(5): analyzing package my_types_package. VHDL-1014
 INFO <35921012> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/bottom_check.vhd(15): analyzing entity bottom_check. VHDL-1012
-INFO <35921010> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/bottom_check.vhd(26): analyzing architecture synth. VHDL-1010
+INFO <35921010> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/bottom_check.vhd(35): analyzing architecture synth. VHDL-1010
 Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock.vhd. VHDL-1481
 Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock.vhd
 
 INFO <35921012> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock.vhd(5): analyzing entity clock_manager. VHDL-1012
-INFO <35921010> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock.vhd(16): analyzing architecture synth. VHDL-1010
+INFO <35921010> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock.vhd(17): analyzing architecture synth. VHDL-1010
 Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/master.vhd. VHDL-1481
 Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/master.vhd
 
@@ -215,7 +215,7 @@ Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/patt
 
 INFO <35921014> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd(5): analyzing package my_types_package. VHDL-1014
 INFO <35921012> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd(15): analyzing entity pattern_gen. VHDL-1012
-INFO <35921010> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd(28): analyzing architecture synth. VHDL-1010
+INFO <35921010> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd(32): analyzing architecture synth. VHDL-1010
 Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece.vhd. VHDL-1481
 Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece.vhd
 
@@ -255,7 +255,7 @@ Top module name (VHDL, mixed language): master
                                                          
 
 
-WARNING <35001771> - synthesis: Initial value found on net collision_temp will be ignored due to unrecognized driver type
+WARNING <35001771> - synthesis: Initial value found on net hit_piece will be ignored due to unrecognized driver type
 WARNING <35001771> - synthesis: Initial value found on net hit_bottom will be ignored due to unrecognized driver type
 WARNING <35001771> - synthesis: Initial value found on net next_col[9] will be ignored due to unrecognized driver type
 WARNING <35001771> - synthesis: Initial value found on net next_col[8] will be ignored due to unrecognized driver type
@@ -279,8 +279,10 @@ WARNING <35001771> - synthesis: Initial value found on net next_row[1] will be i
 WARNING <35001771> - synthesis: Initial value found on net next_row[0] will be ignored due to unrecognized driver type
 WARNING <35935049> - synthesis: input port sclk_i remains unconnected for this instance. VDB-5049
 WARNING <35935049> - synthesis: input port sdi_i remains unconnected for this instance. VDB-5049
+WARNING <35931002> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd(88): net \pattern_gen_portmap/collision_rotate does not have a driver. VDB-1002
 WARNING <35931002> - synthesis: z:/es4/es4-final/collisions_and_rotations/mypll/rtl/mypll.v(139): net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sclk_i does not have a driver. VDB-1002
 WARNING <35931002> - synthesis: z:/es4/es4-final/collisions_and_rotations/mypll/rtl/mypll.v(140): net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sdi_i does not have a driver. VDB-1002
+######## Missing driver on net \pattern_gen_portmap/collision_rotate. Patching with GND.
 ######## Missing driver on net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sclk_i. Patching with GND.
 ######## Missing driver on net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sdi_i. Patching with GND.
 
@@ -288,27 +290,54 @@ WARNING <35931002> - synthesis: z:/es4/es4-final/collisions_and_rotations/mypll/
 
 Combinational loop found : 1
 
- Net rotate_out_c 
+ Net left_button 
 
- Instance \nes_controller_portmap/mux_7_i4 
+ Instance \nes_controller_portmap/mux_7_i2 
 
 Combinational loop found : 2
+
+ Net right_button 
+
+ Instance \nes_controller_portmap/mux_7_i1 
+
+Combinational loop found : 3
 
  Net down_button 
 
  Instance \nes_controller_portmap/mux_7_i3 
 
+Combinational loop found : 4
+
+ Net rotate_out_c 
+
+ Instance \nes_controller_portmap/mux_7_i4 
+
+Combinational loop found : 5
+
+ Net sel 
+
+ Instance \nes_controller_portmap/mux_7_i6 
+
+WARNING <35002032> - synthesis: Register \pattern_gen_portmap/piece_loc_y_2_i0 with asynchronous clock enable is not supported. (z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd 147[4] 202[11])
+WARNING <35002032> - synthesis: Register \pattern_gen_portmap/piece_loc_y_2_i3 with asynchronous clock enable is not supported. (z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd 147[4] 202[11])
+WARNING <35002032> - synthesis: Register \pattern_gen_portmap/piece_loc_y_2_i2 with asynchronous clock enable is not supported. (z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd 147[4] 202[11])
+WARNING <35002032> - synthesis: Register \pattern_gen_portmap/piece_loc_y_2_i1 with asynchronous clock enable is not supported. (z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd 147[4] 202[11])
+CRITICAL <35001783> - synthesis: Mapping latch i2190 to logic since no latches found in device. Possible simulation mismatch. Please check if or case statements
+CRITICAL <35001783> - synthesis: Mapping latch i2194 to logic since no latches found in device. Possible simulation mismatch. Please check if or case statements
+CRITICAL <35001783> - synthesis: Mapping latch i2198 to logic since no latches found in device. Possible simulation mismatch. Please check if or case statements
+CRITICAL <35001783> - synthesis: Mapping latch i2186 to logic since no latches found in device. Possible simulation mismatch. Please check if or case statements
 
 
 <A name="lse_area"></A><B><U><big>Area Report</big></U></B>
 
 ################### Begin Area Report (master)######################
-Number of register bits => 71 of 5280 (1 % )
+Number of register bits => 90 of 5280 (1 % )
 EBR_B => 1
 CCU2 => 27
-FD1P3XZ => 71
+FD1P3XZ => 90
 IB => 2
-LUT4 => 136
+INV => 1
+LUT4 => 333
 OB => 11
 PLL_B => 1
 ################### End Area Report ##################
@@ -324,28 +353,28 @@ Number of Clocks: 4
   Net : nes_controller_portmap/ctrlr_clk_c, loads : 1
   Net : clock_manager_portmap/pll_portmap/lscc_pll_inst/clk, loads : 0
   Net : osc_c, loads : 1
-  Net : clock_manager_portmap/game_clock, loads : 1
+  Net : game_clock, loads : 0
 Clock Enable Nets
 Number of Clock Enables: 0
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : pattern_gen_portmap/piece_loc_y[0], loads : 23
+  Net : pattern_gen_portmap/bottom_check_portmap/future_piece_loc[0][0], loads : 43
+  Net : pattern_gen_portmap/bottom_check_portmap/future_piece_loc[1][0], loads : 29
+  Net : pattern_gen_portmap/piece_loc_x[0], loads : 28
+  Net : pattern_gen_portmap/bottom_check_portmap/overlap_row_3_2__N_228, loads : 28
+  Net : pattern_gen_portmap/n39, loads : 25
+  Net : pattern_gen_portmap/bottom_check_portmap/future_piece_loc[1][3], loads : 22
   Net : vga_portmap/col_0__N_50, loads : 21
-  Net : vga_portmap/col[5], loads : 20
-  Net : pattern_gen_portmap/piece_loc_y[1], loads : 17
-  Net : vga_portmap/row[4], loads : 11
-  Net : vga_portmap/col[6], loads : 10
-  Net : vga_portmap/row_0__N_30, loads : 10
-  Net : vga_portmap/col[7], loads : 9
-  Net : vga_portmap/col[4], loads : 9
-  Net : pattern_gen_portmap/piece_loc_y[2], loads : 9
+  Net : pattern_gen_portmap/frame_counter[2], loads : 21
+  Net : pattern_gen_portmap/piece_loc_y[2], loads : 20
+  Net : pattern_gen_portmap/piece_loc_y[0], loads : 19
 ################### End Clock Report ##################
 
-Peak Memory Usage: 119 MB
+Peak Memory Usage: 136 MB
 
 --------------------------------------------------------------
-Total CPU Time: 3 secs 
-Total REAL Time: 5 secs 
+Total CPU Time: 0 secs 
+Total REAL Time: 3 secs 
 --------------------------------------------------------------
 
 

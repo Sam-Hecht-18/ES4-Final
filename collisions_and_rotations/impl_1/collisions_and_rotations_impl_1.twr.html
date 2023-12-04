@@ -46,7 +46,7 @@ if (a)
 <A name="Timing_rpt_top">Timing Report</A><B><U><big></big></U></B>
 Lattice Timing Report -  Setup  and Hold, Version Radiant Software (64-bit) 2023.1.0.43.3
 
-Sat Dec  2 19:01:18 2023
+Sun Dec  3 22:28:19 2023
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -118,9 +118,6 @@ Clocked but unconstrained timing end points
 -------------------------------------------------------------------
          Listing 10 End Points          |           Type           
 -------------------------------------------------------------------
-vga_portmap/row_9__I_0/D                |    No arrival or required
-vga_portmap/row_9__I_0/SP               |    No arrival or required
-vga_portmap/row_9__I_0/SR               |    No arrival or required
 vga_portmap/row_9__I_1/D                |    No arrival or required
 vga_portmap/row_9__I_2/D                |    No arrival or required
 {vga_portmap/row_9__I_2/SP   vga_portmap/row_9__I_1/SP}                           
@@ -131,10 +128,14 @@ vga_portmap/row_9__I_3/D                |    No arrival or required
 vga_portmap/row_9__I_4/D                |    No arrival or required
 {vga_portmap/row_9__I_4/SP   vga_portmap/row_9__I_3/SP}                           
                                         |    No arrival or required
+{vga_portmap/row_9__I_4/SR   vga_portmap/row_9__I_3/SR}                           
+                                        |    No arrival or required
+vga_portmap/col_9__I_0/D                |    No arrival or required
+vga_portmap/col_9__I_0/SR               |    No arrival or required
 -------------------------------------------------------------------
                                         |                          
 Number of unconstrained timing end poin |                          
-ts                                      |                        83
+ts                                      |                        96
                                         |                          
 -------------------------------------------------------------------
 
@@ -174,8 +175,8 @@ Define a clock on a top level port or a generated clock on a clock divider pin a
 -------------------------------------------------------------------
             Listing 2 Net(s)            |        Source pin        
 -------------------------------------------------------------------
+counter[24]                             |clock_manager_portmap/NEScount_7__I_42/Q
 ctrlr_clk_c                             |nes_controller_portmap/ctrlr_clk_c_I_0/Z
-game_clock                              |clock_manager_portmap/NEScount_7__I_37/Q
 -------------------------------------------------------------------
                                         |                          
 Number of clock nets without clock defi |                          
@@ -189,10 +190,31 @@ nition                                  |                         2
 Combinational Loops
 -------------------
 ++++ Loop1
-nes_controller_portmap/rotate_out_c_I_0/A	->	nes_controller_portmap/rotate_out_c_I_0/Z
+pattern_gen_portmap/i2239_3_lut_4_lut/D	->	pattern_gen_portmap/i2239_3_lut_4_lut/Z
 
 ++++ Loop2
+pattern_gen_portmap/i2224_3_lut_4_lut/A	->	pattern_gen_portmap/i2224_3_lut_4_lut/Z
+
+++++ Loop3
+pattern_gen_portmap/i2234_3_lut_4_lut/A	->	pattern_gen_portmap/i2234_3_lut_4_lut/Z
+
+++++ Loop4
+pattern_gen_portmap/i2229_3_lut_4_lut/A	->	pattern_gen_portmap/i2229_3_lut_4_lut/Z
+
+++++ Loop5
+nes_controller_portmap/right_button_I_0/A	->	nes_controller_portmap/right_button_I_0/Z
+
+++++ Loop6
+nes_controller_portmap/left_button_I_0/A	->	nes_controller_portmap/left_button_I_0/Z
+
+++++ Loop7
 nes_controller_portmap/down_button_I_0/A	->	nes_controller_portmap/down_button_I_0/Z
+
+++++ Loop8
+nes_controller_portmap/rotate_out_c_I_0/A	->	nes_controller_portmap/rotate_out_c_I_0/Z
+
+++++ Loop9
+nes_controller_portmap/sel_I_0/A	->	nes_controller_portmap/sel_I_0/Z
 
 
 <A name="Timing_rpt_ErrorWarningMessage"></A><B><U><big>1.6  Error/Warning Messages</big></U></B>

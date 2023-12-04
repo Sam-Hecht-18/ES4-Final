@@ -6,7 +6,7 @@ Package: SG48
 Performance Grade:  High-Performance_1.2V
 
 Mapper:    version Radiant Software (64-bit) 2023.1.0.43.3
-Mapped on: Sat Dec  2 19:01:08 2023
+Mapped on: Sun Dec  3 22:28:11 2023
 
 Design Information
 ------------------
@@ -19,12 +19,12 @@ Command line:   map -i collisions_and_rotations_impl_1_syn.udb -pdc
 Design Summary
 --------------
 
-   Number of slice registers:  71 out of  5280 (1%)
+   Number of slice registers:  90 out of  5280 (2%)
    Number of I/O registers:      0 out of   117 (0%)
-   Number of LUT4s:           204 out of  5280 (4%)
-      Number of logic LUT4s:             135
-      Number of inserted feedthru LUT4s:  10
-      Number of replicated LUT4s:          5
+   Number of LUT4s:           404 out of  5280 (8%)
+      Number of logic LUT4s:             333
+      Number of inserted feedthru LUT4s:   8
+      Number of replicated LUT4s:          9
       Number of ripple logic:             27 (54 LUT4s)
    Number of IO sites used:   13 out of 39 (33%)
       Number of IO sites used for general PIO: 13
@@ -48,17 +48,17 @@ Design Summary
    Number of EBRs:             1 out of 30 (3%)
    Number of PLLs:             1 out of 1 (100%)
    Number of Clocks:  4
-      Net clk: 44 loads, 44 rising, 0 falling (Driver: Pin
+      Net clk: 57 loads, 57 rising, 0 falling (Driver: Pin
      clock_manager_portmap.pll_portmap.lscc_pll_inst.u_PLL_B/OUTGLOBAL)
-      Net ctrlr_clk_c: 4 loads, 4 rising, 0 falling (Driver: Pin
+      Net ctrlr_clk_c: 6 loads, 6 rising, 0 falling (Driver: Pin
      nes_controller_portmap.ctrlr_clk_c_I_0/Z)
-      Net game_clock: 4 loads, 4 rising, 0 falling (Driver: Pin
-     clock_manager_portmap.NEScount_7__I_37/Q)
+      Net counter[24]: 8 loads, 0 rising, 8 falling (Driver: Pin
+     clock_manager_portmap.NEScount_7__I_42/Q)
       Net osc_c: 1 loads, 1 rising, 0 falling (Driver: Port osc)
    Number of Clock Enables:  3
       Net VCC_net: 3 loads, 0 SLICEs
       Net vga_portmap.col_0__N_50: 6 loads, 6 SLICEs
-      Net pattern_gen_portmap.n349: 2 loads, 2 SLICEs
+      Net pattern_gen_portmap.n443: 2 loads, 2 SLICEs
 
                                     Page 1
 
@@ -68,21 +68,34 @@ Design Summary
 
 Design Summary (cont)
 ---------------------
-   Number of LSRs:  3
+   Number of LSRs:  11
       Net vga_portmap.col_0__N_50: 6 loads, 6 SLICEs
       Net vga_portmap.row_0__N_30: 6 loads, 6 SLICEs
-      Net pattern_gen_portmap.frame_counter_2__N_144[2]: 1 loads, 1 SLICEs
+      Net pattern_gen_portmap.n777: 1 loads, 1 SLICEs
+      Net pattern_gen_portmap.n775: 1 loads, 1 SLICEs
+      Net pattern_gen_portmap.frame_counter_2__N_148[2]: 1 loads, 1 SLICEs
+      Net pattern_gen_portmap.n774: 1 loads, 1 SLICEs
+      Net pattern_gen_portmap.n772: 1 loads, 1 SLICEs
+      Net pattern_gen_portmap.n771: 1 loads, 1 SLICEs
+      Net pattern_gen_portmap.n769: 1 loads, 1 SLICEs
+      Net pattern_gen_portmap.n780: 1 loads, 1 SLICEs
+      Net pattern_gen_portmap.n778: 1 loads, 1 SLICEs
    Top 10 highest fanout non-clock nets:
-      Net piece_loc_y[0]: 24 loads
-      Net col[5]: 21 loads
-      Net piece_loc_y[1]: 19 loads
-      Net pattern_gen_portmap.piece_loc_y[2]_2: 14 loads
-      Net vga_portmap.col_0__N_50: 13 loads
-      Net row[4]: 12 loads
-      Net col[6]: 11 loads
-      Net col[4]: 10 loads
-      Net col[7]: 10 loads
-      Net pattern_gen_portmap.n39: 9 loads
+      Net pattern_gen_portmap.bottom_check_portmap.future_piece_loc[0][0]: 41
+     loads
+      Net pattern_gen_portmap.piece_loc_x[0]: 30 loads
+      Net pattern_gen_portmap.n39: 29 loads
+      Net pattern_gen_portmap.bottom_check_portmap.overlap_row_3_2__N_228: 28
+     loads
+      Net pattern_gen_portmap.bottom_check_portmap.future_piece_loc[1][0]: 27
+     loads
+      Net pattern_gen_portmap.piece_loc_y[2]: 25 loads
+      Net pattern_gen_portmap.piece_loc_y[0]: 24 loads
+      Net pattern_gen_portmap.frame_counter[2]: 21 loads
+      Net pattern_gen_portmap.bottom_check_portmap.future_piece_loc[1][1]: 20
+     loads
+      Net pattern_gen_portmap.bottom_check_portmap.future_piece_loc[0][1]: 18
+     loads
 
 
 
@@ -112,6 +125,15 @@ IO (PIO) Attributes
 +---------------------+-----------+-----------+-------+-------+-----------+
 | ctrlr_latch         | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
+
+                                    Page 2
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
 | vsync               | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | hsync               | OUTPUT    |           |       |       |           |
@@ -125,15 +147,6 @@ IO (PIO) Attributes
 | rgb[3]              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | rgb[4]              | OUTPUT    |           |       |       |           |
-
-                                    Page 2
-
-
-
-
-
-IO (PIO) Attributes (cont)
---------------------------
 +---------------------+-----------+-----------+-------+-------+-----------+
 | rgb[5]              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
@@ -141,6 +154,7 @@ IO (PIO) Attributes (cont)
 Removed logic
 -------------
 
+Block counter_24__I_0 was optimized away.
 Block i1 was optimized away.
 
 PLL/DLL Summary
@@ -177,20 +191,6 @@ PLL 1:                                 Pin/Node Value
   FDA_FEEDBACK:                                 0
   FILTER_RANGE:                                 1
   EXTERNAL_DIVIDE_FACTOR:                       NONE
-  TEST Mode:                                    0
-
-ASIC Components
----------------
-
-Instance Name: clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B
-         Type: PLL
-Instance Name: pattern_gen_portmap/piece_device/piece_shape_15__I_0_2
-         Type: EBR
-
-Constraint Summary
-------------------
-
-   Total number of constraints: 14
 
                                     Page 3
 
@@ -198,8 +198,22 @@ Constraint Summary
 
 
 
-Constraint Summary (cont)
--------------------------
+PLL/DLL Summary (cont)
+----------------------
+  TEST Mode:                                    0
+
+ASIC Components
+---------------
+
+Instance Name: clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B
+         Type: PLL
+Instance Name: pattern_gen_portmap/piece_device/piece_shape_15__I_0
+         Type: EBR
+
+Constraint Summary
+------------------
+
+   Total number of constraints: 14
    Total number of constraints dropped: 0
 
 Run Time and Memory Usage
@@ -207,21 +221,7 @@ Run Time and Memory Usage
 
    Total CPU Time: 0 secs
    Total REAL Time: 0 secs
-   Peak Memory Usage: 60 MB
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   Peak Memory Usage: 64 MB
 
 
 

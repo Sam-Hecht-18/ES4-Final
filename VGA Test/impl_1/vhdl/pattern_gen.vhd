@@ -68,15 +68,15 @@ architecture synth of pattern_gen is
 	signal down_delay : unsigned(2 downto 0);
 
 
-	signal game_clock: std_logic := '1';
+	--signal game_clock: std_logic := '1';
 	signal collision: std_logic;
 
 begin
 	piece_loc(0) <= piece_loc_x;
 	piece_loc(1) <= piece_loc_y;
-	bottom_check_portmap: bottom_check port map(clk, 8d"0", piece_loc, piece_shape, board, collision);
+	--bottom_check_portmap: bottom_check port map(clk, 8d"0", piece_loc, piece_shape, board, collision);
 
-	piece_device : piece port map(clk, std_logic_vector(piece_code), std_logic_vector(piece_rotation), curr_piece_shape);
+	piece_device : piece port map(clk, std_logic_vector(piece_code), std_logic_vector(piece_rotation), piece_shape);
 	-- piece_shape <= "1110010000000000";
 
 	generate_board_row: for y in 0 to 11 generate

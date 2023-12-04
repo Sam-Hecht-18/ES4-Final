@@ -1,0 +1,8 @@
+#Start recording tcl command: 12/3/2023 22:18:26
+#Project Location: Z:/es4/ES4-Final/VGA Test; Project name: ES4_Lab_7
+prj_open "Z:/es4/ES4-Final/VGA Test/ES4_Lab_7.rdf"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+prj_save 
+prj_close
+#Stop recording: 12/3/2023 22:22:07
