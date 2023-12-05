@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BaliMessageLog>
-    <Task name="Map">
+    <Task name="Export">
         <Message>
-            <ID>71003005</ID>
-            <Severity>256</Severity>
-            <Dynamic>osc</Dynamic>
-            <Dynamic>12</Dynamic>
+            <ID>1081100</ID>
+            <Severity>1</Severity>
+            <Dynamic>Bitstream authenticated.</Dynamic>
+        </Message>
+        <Message>
+            <ID>1191031</ID>
+            <Severity>1</Severity>
         </Message>
     </Task>
     <Task name="PAR">
@@ -15,12 +18,6 @@
             <Dynamic>create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
         </Message>
         <Message>
-            <ID>71003005</ID>
-            <Severity>256</Severity>
-            <Dynamic>osc</Dynamic>
-            <Dynamic>12</Dynamic>
-        </Message>
-        <Message>
             <ID>70001944</ID>
             <Severity>16</Severity>
             <Dynamic>create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
@@ -39,12 +36,6 @@
             <ID>70001944</ID>
             <Severity>16</Severity>
             <Dynamic>create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
-        </Message>
-    </Task>
-    <Task name="Export">
-        <Message>
-            <ID>1191031</ID>
-            <Severity>1</Severity>
         </Message>
     </Task>
     <Task name="Synthesis">
@@ -110,17 +101,17 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>Z:/ES4-Final/collisions_and_rotations/mypll/rtl/mypll.v(11): </Dynamic>
+            <Dynamic>Z:/es4/ES4-Final/collisions_and_rotations/mypll/rtl/mypll.v(11): </Dynamic>
             <Dynamic>mypll</Dynamic>
-            <Navigation>Z:/ES4-Final/collisions_and_rotations/mypll/rtl/mypll.v</Navigation>
+            <Navigation>Z:/es4/ES4-Final/collisions_and_rotations/mypll/rtl/mypll.v</Navigation>
             <Navigation>11</Navigation>
         </Message>
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>Z:/ES4-Final/collisions_and_rotations/mypll/rtl/mypll.v(105): </Dynamic>
+            <Dynamic>Z:/es4/ES4-Final/collisions_and_rotations/mypll/rtl/mypll.v(105): </Dynamic>
             <Dynamic>mypll_ipgen_lscc_pll(DIVR=&quot;0&quot;,DIVF=&quot;66&quot;,DIVQ=&quot;5&quot;,FILTER_RANGE=&quot;1&quot;,PLLOUT_SELECT_PORTA=&quot;GENCLK&quot;,PLLOUT_SELECT_PORTB=&quot;GENCLK&quot;,FREQUENCY_PIN_REFERENCECLK=&quot;12.000000&quot;)</Dynamic>
-            <Navigation>Z:/ES4-Final/collisions_and_rotations/mypll/rtl/mypll.v</Navigation>
+            <Navigation>Z:/es4/ES4-Final/collisions_and_rotations/mypll/rtl/mypll.v</Navigation>
             <Navigation>105</Navigation>
         </Message>
         <Message>
@@ -283,274 +274,218 @@
         <Message>
             <ID>35921014</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/master.vhd(5): </Dynamic>
+            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/master.vhd(5): </Dynamic>
             <Dynamic>my_types_package</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/master.vhd</Navigation>
+            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/master.vhd</Navigation>
             <Navigation>5</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/master.vhd(15): </Dynamic>
+            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/master.vhd(15): </Dynamic>
             <Dynamic>master</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/master.vhd</Navigation>
+            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/master.vhd</Navigation>
             <Navigation>15</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/master.vhd(28): </Dynamic>
+            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/master.vhd(28): </Dynamic>
             <Dynamic>synth</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/master.vhd</Navigation>
+            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/master.vhd</Navigation>
             <Navigation>28</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd(5): </Dynamic>
+            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd(5): </Dynamic>
             <Dynamic>nes_controller</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd</Navigation>
+            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd</Navigation>
             <Navigation>5</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd(23): </Dynamic>
+            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd(23): </Dynamic>
             <Dynamic>synth</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd</Navigation>
+            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd</Navigation>
             <Navigation>23</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/vga.vhd(5): </Dynamic>
+            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/vga.vhd(5): </Dynamic>
             <Dynamic>vga_sync</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/vga.vhd</Navigation>
+            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/vga.vhd</Navigation>
             <Navigation>5</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/vga.vhd(16): </Dynamic>
+            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/vga.vhd(16): </Dynamic>
             <Dynamic>synth</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/vga.vhd</Navigation>
+            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/vga.vhd</Navigation>
             <Navigation>16</Navigation>
         </Message>
         <Message>
             <ID>35921014</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(5): </Dynamic>
+            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(5): </Dynamic>
             <Dynamic>my_types_package</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd</Navigation>
+            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd</Navigation>
             <Navigation>5</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(15): </Dynamic>
+            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(15): </Dynamic>
             <Dynamic>collision_check</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd</Navigation>
+            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd</Navigation>
             <Navigation>15</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(33): </Dynamic>
+            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(34): </Dynamic>
             <Dynamic>synth</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd</Navigation>
-            <Navigation>33</Navigation>
+            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd</Navigation>
+            <Navigation>34</Navigation>
         </Message>
         <Message>
             <ID>35921014</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(5): </Dynamic>
+            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(5): </Dynamic>
             <Dynamic>my_types_package</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd</Navigation>
+            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd</Navigation>
             <Navigation>5</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(15): </Dynamic>
+            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(15): </Dynamic>
             <Dynamic>game_logic</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd</Navigation>
+            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd</Navigation>
             <Navigation>15</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(35): </Dynamic>
+            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(34): </Dynamic>
             <Dynamic>synth</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd</Navigation>
-            <Navigation>35</Navigation>
+            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd</Navigation>
+            <Navigation>34</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd(5): </Dynamic>
+            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd(5): </Dynamic>
             <Dynamic>piece_library</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd</Navigation>
+            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd</Navigation>
             <Navigation>5</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd(14): </Dynamic>
+            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd(14): </Dynamic>
             <Dynamic>synth</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd</Navigation>
+            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd</Navigation>
             <Navigation>14</Navigation>
         </Message>
         <Message>
             <ID>35921014</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd(5): </Dynamic>
+            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd(5): </Dynamic>
             <Dynamic>my_types_package</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd</Navigation>
+            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd</Navigation>
             <Navigation>5</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd(15): </Dynamic>
+            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd(15): </Dynamic>
             <Dynamic>renderer</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd</Navigation>
+            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd</Navigation>
             <Navigation>15</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd(30): </Dynamic>
+            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd(29): </Dynamic>
             <Dynamic>synth</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd</Navigation>
-            <Navigation>30</Navigation>
-        </Message>
-        <Message>
-            <ID>35921014</ID>
-            <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/board_updater.vhd(5): </Dynamic>
-            <Dynamic>my_types_package</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/board_updater.vhd</Navigation>
-            <Navigation>5</Navigation>
+            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd</Navigation>
+            <Navigation>29</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/board_updater.vhd(15): </Dynamic>
-            <Dynamic>board_updater</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/board_updater.vhd</Navigation>
-            <Navigation>15</Navigation>
-        </Message>
-        <Message>
-            <ID>35921010</ID>
-            <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/board_updater.vhd(28): </Dynamic>
-            <Dynamic>synth</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/board_updater.vhd</Navigation>
-            <Navigation>28</Navigation>
-        </Message>
-        <Message>
-            <ID>35921014</ID>
-            <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/piece_picker.vhd(5): </Dynamic>
-            <Dynamic>my_types_package</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/piece_picker.vhd</Navigation>
-            <Navigation>5</Navigation>
-        </Message>
-        <Message>
-            <ID>35921012</ID>
-            <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/piece_picker.vhd(15): </Dynamic>
-            <Dynamic>piece_picker</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/piece_picker.vhd</Navigation>
-            <Navigation>15</Navigation>
-        </Message>
-        <Message>
-            <ID>35921010</ID>
-            <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/piece_picker.vhd(24): </Dynamic>
-            <Dynamic>synth</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/piece_picker.vhd</Navigation>
-            <Navigation>24</Navigation>
-        </Message>
-        <Message>
-            <ID>35921014</ID>
-            <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/row_check.vhd(5): </Dynamic>
-            <Dynamic>my_types_package</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/row_check.vhd</Navigation>
-            <Navigation>5</Navigation>
-        </Message>
-        <Message>
-            <ID>35921012</ID>
-            <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/row_check.vhd(15): </Dynamic>
-            <Dynamic>row_check</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/row_check.vhd</Navigation>
-            <Navigation>15</Navigation>
-        </Message>
-        <Message>
-            <ID>35921010</ID>
-            <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/row_check.vhd(25): </Dynamic>
-            <Dynamic>synth</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/row_check.vhd</Navigation>
-            <Navigation>25</Navigation>
-        </Message>
-        <Message>
-            <ID>35921014</ID>
-            <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd(5): </Dynamic>
-            <Dynamic>my_types_package</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd</Navigation>
-            <Navigation>5</Navigation>
-        </Message>
-        <Message>
-            <ID>35921012</ID>
-            <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd(15): </Dynamic>
-            <Dynamic>turn_manager</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd</Navigation>
-            <Navigation>15</Navigation>
-        </Message>
-        <Message>
-            <ID>35921010</ID>
-            <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd(24): </Dynamic>
-            <Dynamic>synth</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd</Navigation>
-            <Navigation>24</Navigation>
-        </Message>
-        <Message>
-            <ID>35921012</ID>
-            <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/vga_sync_clk.vhd(5): </Dynamic>
-            <Dynamic>vga_sync_clk</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/vga_sync_clk.vhd</Navigation>
-            <Navigation>5</Navigation>
-        </Message>
-        <Message>
-            <ID>35921010</ID>
-            <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/vga_sync_clk.vhd(18): </Dynamic>
-            <Dynamic>synth</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/vga_sync_clk.vhd</Navigation>
-            <Navigation>18</Navigation>
-        </Message>
-        <Message>
-            <ID>35921012</ID>
-            <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd(5): </Dynamic>
+            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd(5): </Dynamic>
             <Dynamic>clock_manager</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd</Navigation>
+            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd</Navigation>
             <Navigation>5</Navigation>
         </Message>
         <Message>
             <ID>35921010</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd(20): </Dynamic>
+            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd(20): </Dynamic>
             <Dynamic>synth</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd</Navigation>
+            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd</Navigation>
             <Navigation>20</Navigation>
+        </Message>
+        <Message>
+            <ID>35921012</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_over.vhd(5): </Dynamic>
+            <Dynamic>game_over_screen</Dynamic>
+            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_over.vhd</Navigation>
+            <Navigation>5</Navigation>
+        </Message>
+        <Message>
+            <ID>35921010</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_over.vhd(16): </Dynamic>
+            <Dynamic>synth</Dynamic>
+            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_over.vhd</Navigation>
+            <Navigation>16</Navigation>
+        </Message>
+        <Message>
+            <ID>35921014</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_state.vhd(5): </Dynamic>
+            <Dynamic>my_types_package</Dynamic>
+            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_state.vhd</Navigation>
+            <Navigation>5</Navigation>
+        </Message>
+        <Message>
+            <ID>35921012</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_state.vhd(16): </Dynamic>
+            <Dynamic>game_state</Dynamic>
+            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_state.vhd</Navigation>
+            <Navigation>16</Navigation>
+        </Message>
+        <Message>
+            <ID>35921010</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_state.vhd(40): </Dynamic>
+            <Dynamic>synth</Dynamic>
+            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_state.vhd</Navigation>
+            <Navigation>40</Navigation>
+        </Message>
+        <Message>
+            <ID>35921012</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/welcome.vhd(5): </Dynamic>
+            <Dynamic>welcome_screen</Dynamic>
+            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/welcome.vhd</Navigation>
+            <Navigation>5</Navigation>
+        </Message>
+        <Message>
+            <ID>35921010</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/welcome.vhd(14): </Dynamic>
+            <Dynamic>synth</Dynamic>
+            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/welcome.vhd</Navigation>
+            <Navigation>14</Navigation>
         </Message>
         <Message>
             <ID>35935049</ID>
@@ -606,1254 +541,6 @@
             <ID>35935049</ID>
             <Severity>16</Severity>
             <Dynamic>sdi_i</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[15]_i0</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[15]_i1</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[15]_i2</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[15]_i3</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[15]_i4</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[15]_i5</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[15]_i6</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[15]_i7</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[15]_i8</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[15]_i9</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[15]_i10</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[15]_i11</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[0]_i0</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[0]_i1</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[0]_i2</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[0]_i3</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[0]_i4</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[0]_i5</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[0]_i6</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[0]_i7</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[0]_i8</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[0]_i9</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[0]_i10</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[0]_i11</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[1]_i0</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[1]_i1</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[1]_i2</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[1]_i3</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[1]_i4</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[1]_i5</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[1]_i6</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[1]_i7</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[1]_i8</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[1]_i9</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[1]_i10</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[1]_i11</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[2]_i0</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[2]_i1</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[2]_i2</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[2]_i3</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[2]_i4</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[2]_i5</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[2]_i6</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[2]_i7</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[2]_i8</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[2]_i9</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[2]_i10</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[2]_i11</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[3]_i0</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[3]_i1</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[3]_i2</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[3]_i3</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[3]_i4</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[3]_i5</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[3]_i6</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[3]_i7</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[3]_i8</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[3]_i9</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[3]_i10</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[3]_i11</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[4]_i0</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[4]_i1</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[4]_i2</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[4]_i3</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[4]_i4</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[4]_i5</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[4]_i6</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[4]_i7</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[4]_i8</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[4]_i9</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[4]_i10</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[4]_i11</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[5]_i0</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[5]_i1</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[5]_i2</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[5]_i3</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[5]_i4</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[5]_i5</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[5]_i6</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[5]_i7</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[5]_i8</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[5]_i9</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[5]_i10</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[5]_i11</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[6]_i0</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[6]_i1</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[6]_i2</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[6]_i3</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[6]_i4</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[6]_i5</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[6]_i6</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[6]_i7</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[6]_i8</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[6]_i9</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[6]_i10</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[6]_i11</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[7]_i0</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[7]_i1</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[7]_i2</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[7]_i3</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[7]_i4</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[7]_i5</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[7]_i6</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[7]_i7</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[7]_i8</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[7]_i9</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[7]_i10</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[7]_i11</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[8]_i0</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[8]_i1</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[8]_i2</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[8]_i3</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[8]_i4</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[8]_i5</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[8]_i6</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[8]_i7</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[8]_i8</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[8]_i9</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[8]_i10</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[8]_i11</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[9]_i0</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[9]_i1</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[9]_i2</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[9]_i3</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[9]_i4</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[9]_i5</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[9]_i6</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[9]_i7</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[9]_i8</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[9]_i9</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[9]_i10</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[9]_i11</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[10]_i0</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[10]_i1</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[10]_i2</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[10]_i3</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[10]_i4</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[10]_i5</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[10]_i6</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[10]_i7</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[10]_i8</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[10]_i9</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[10]_i10</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[10]_i11</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[11]_i0</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[11]_i1</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[11]_i2</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[11]_i3</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[11]_i4</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[11]_i5</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[11]_i6</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[11]_i7</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[11]_i8</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[11]_i9</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[11]_i10</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[11]_i11</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[12]_i0</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[12]_i1</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[12]_i2</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[12]_i3</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[12]_i4</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[12]_i5</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[12]_i6</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[12]_i7</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[12]_i8</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[12]_i9</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[12]_i10</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[12]_i11</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[13]_i0</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[13]_i1</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[13]_i2</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[13]_i3</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[13]_i4</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[13]_i5</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[13]_i6</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[13]_i7</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[13]_i8</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[13]_i9</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[13]_i10</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[13]_i11</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[14]_i0</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[14]_i1</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[14]_i2</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[14]_i3</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[14]_i4</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[14]_i5</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[14]_i6</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[14]_i7</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[14]_i8</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[14]_i9</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[14]_i10</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[14]_i11</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[14]_i12</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[13]_i12</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[12]_i12</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[11]_i12</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[10]_i12</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[9]_i12</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[8]_i12</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[7]_i12</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[6]_i12</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[5]_i12</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[4]_i12</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[3]_i12</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[2]_i12</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[1]_i12</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[0]_i12</Dynamic>
-            <Dynamic>Zero</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935040</ID>
-            <Severity>16</Severity>
-            <Dynamic>\game_logic_portmap/board_updater_portmap/new_board[15]_i12</Dynamic>
-            <Dynamic>Zero</Dynamic>
         </Message>
         <Message>
             <ID>70001944</ID>

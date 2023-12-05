@@ -4,7 +4,7 @@ use IEEE.numeric_std.all;
 
 package my_types_package is
 	type piece_loc_type is array(1 downto 0) of unsigned(3 downto 0);  -- (x, y) from top left of grid to top left of piece 4x4
-	type board_type is array (15 downto 0) of std_logic_vector(0 to 12);
+	type board_type is array (15 downto 0) of std_logic_vector(0 to 15);
 end package;
 
 library IEEE;
@@ -26,6 +26,28 @@ entity master is
 end master;
 
 architecture synth of master is
+
+	component game_state is
+	  port(
+		clk : in std_logic;
+		
+		-- for welcome and gameover states
+		start : in std_logic;
+		
+		-- for render state
+		valid_rgb : in std_logic;
+		rgb_row : in unsigned(9 downto 0);
+		rgb_col : in unsigned(9 downto 0);
+		piece_loc : in piece_loc_type;
+		piece_shape : in std_logic_vector(15 downto 0);
+		board : in board_type;
+		special_background : in unsigned(4 downto 0);
+		
+		game_over : in std_logic;
+		
+		rgb : out std_logic_vector(5 downto 0)
+	  );
+	end component;
 
 	component game_logic is
 		port(
@@ -49,7 +71,6 @@ architecture synth of master is
 
 	component renderer is
 		port(
-			clk : in std_logic;
 			valid_rgb : in std_logic;
 			rgb_row : in unsigned(9 downto 0);
 			rgb_col : in unsigned(9 downto 0);
@@ -134,6 +155,28 @@ architecture synth of master is
 
 begin
 
+
+	--game_state_portmap : game_state port map(
+		--clk => game_clock,
+		
+		 ----for welcome and gameover states
+		--start => start,
+		
+		 ----for render state
+		--valid_rgb => valid_rgb,
+		--rgb_row => rgb_row,
+		--rgb_col => rgb_col,
+		--piece_loc => piece_loc,
+		--piece_shape => piece_shape,
+		--board => board,
+		--special_background => special_background,
+		
+		--game_over => b,
+		
+		--rgb => rgb
+	  --);
+
+
 	clock_manager_portmap : clock_manager port map(
 		osc => osc,
 		clk => clk,
@@ -168,7 +211,6 @@ begin
 	);
 
 	renderer_portmap : renderer port map(
-		clk => clk,
 		valid_rgb => valid_rgb,
 		rgb_row => rgb_row,
 		rgb_col => rgb_col,

@@ -2,11 +2,11 @@
 
 <clocks>
     <clockitem name = "osc"  type = "port" />
-    <clockitem name = "game_clock"  type = "net" />
     <clockitem name = "ctrlr_clk"  type = "net" />
     <clockitem name = "clk"  type = "net" />
-    <clockitem name = "clock_manager_portmap/pll_portmap/lscc_pll_inst/outcoreb_o"  type = "net" />
+    <clockitem name = "game_clock"  type = "net" />
     <clockitem name = "clock_manager_portmap/pll_portmap/outcore_o"  type = "net" />
+    <clockitem name = "clock_manager_portmap/pll_portmap/lscc_pll_inst/outcoreb_o"  type = "net" />
     <clockitem name = "clock_manager_portmap/pll_portmap/lscc_pll_inst/outglobalb_o"  type = "net" />
 </clocks>
 

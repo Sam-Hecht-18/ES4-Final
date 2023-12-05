@@ -6,25 +6,25 @@ Package: SG48
 Performance Grade:  High-Performance_1.2V
 
 Mapper:    version Radiant Software (64-bit) 2023.1.0.43.3
-Mapped on: Mon Dec  4 23:48:14 2023
+Mapped on: Tue Dec  5 18:40:29 2023
 
 Design Information
 ------------------
 
 Command line:   map -i collisions_and_rotations_impl_1_syn.udb -pdc
-     Z:/ES4-Final/collisions_and_rotations/pins.pdc -o
+     Z:/es4/ES4-Final/collisions_and_rotations/pins.pdc -o
      collisions_and_rotations_impl_1_map.udb -mp
      collisions_and_rotations_impl_1.mrp -hierrpt -gui
 
 Design Summary
 --------------
 
-   Number of slice registers:  92 out of  5280 (2%)
+   Number of slice registers:  90 out of  5280 (2%)
    Number of I/O registers:      0 out of   117 (0%)
-   Number of LUT4s:           414 out of  5280 (8%)
-      Number of logic LUT4s:             341
+   Number of LUT4s:           425 out of  5280 (8%)
+      Number of logic LUT4s:             357
       Number of inserted feedthru LUT4s:   5
-      Number of replicated LUT4s:          6
+      Number of replicated LUT4s:          1
       Number of ripple logic:             31 (62 LUT4s)
    Number of IO sites used:   13 out of 39 (33%)
       Number of IO sites used for general PIO: 13
@@ -45,20 +45,20 @@ Design Summary
    Number of SRAMs:            0 out of 4 (0%)
    Number of WARMBOOTs:        0 out of 1 (0%)
    Number of SPIs:             0 out of 2 (0%)
-   Number of EBRs:             1 out of 30 (3%)
+   Number of EBRs:             0 out of 30 (0%)
    Number of PLLs:             1 out of 1 (100%)
    Number of Clocks:  4
       Net clk: 32 loads, 32 rising, 0 falling (Driver: Pin
      clock_manager_portmap.pll_portmap.lscc_pll_inst.u_PLL_B/OUTGLOBAL)
-      Net ctrlr_clk_c: 6 loads, 6 rising, 0 falling (Driver: Pin
-     nes_controller_portmap.NEScount_3__I_0/Z)
-      Net game_clock: 31 loads, 31 rising, 0 falling (Driver: Pin
+      Net game_clock: 28 loads, 28 rising, 0 falling (Driver: Pin
      clock_manager_portmap.game_clock_I_0/Q)
       Net osc_c: 1 loads, 1 rising, 0 falling (Driver: Port osc)
-   Number of Clock Enables:  4
-      Net VCC_net: 3 loads, 0 SLICEs
+      Net ctrlr_clk_c: 6 loads, 6 rising, 0 falling (Driver: Pin
+     nes_controller_portmap.ctrlr_clk_c_I_0/Z)
+   Number of Clock Enables:  3
       Net vga_sync_portmap.rgb_col_0__N_50: 6 loads, 6 SLICEs
-      Net game_logic_portmap.piece_loc_1__2__N_87: 2 loads, 2 SLICEs
+      Net piece_loc_0__0__N_105: 8 loads, 8 SLICEs
+      Net game_logic_portmap.piece_code_0__N_120: 3 loads, 3 SLICEs
 
                                     Page 1
 
@@ -68,29 +68,28 @@ Design Summary
 
 Design Summary (cont)
 ---------------------
-      Net game_logic_portmap.piece_loc_0__0__N_102: 4 loads, 4 SLICEs
    Number of LSRs:  4
       Net vga_sync_portmap.rgb_col_0__N_50: 6 loads, 6 SLICEs
       Net vga_sync_portmap.rgb_row_0__N_30: 6 loads, 6 SLICEs
-      Net game_logic_portmap.piece_loc_0__0__N_103: 7 loads, 7 SLICEs
-      Net clock_manager_portmap.clk_counter_0__N_302: 10 loads, 10 SLICEs
+      Net piece_loc_0__0__N_106: 8 loads, 8 SLICEs
+      Net clock_manager_portmap.clk_counter_0__N_248: 10 loads, 10 SLICEs
    Top 10 highest fanout non-clock nets:
-      Net game_logic_portmap.collision_check_portmap.future_piece_loc[0][0]: 37
+      Net game_logic_portmap.collision_check_portmap.future_piece_loc[0][0]: 48
      loads
-      Net game_logic_portmap.collision_check_portmap.future_piece_loc[0][1]: 29
+      Net game_logic_portmap.collision_check_portmap.future_piece_loc[0][1]: 39
      loads
-      Net game_logic_portmap.collision_check_portmap.future_piece_loc[1][3]: 26
+      Net game_logic_portmap.collision_check_portmap.future_piece_loc[1][0]: 37
      loads
-      Net piece_loc[1][1]: 26 loads
-      Net piece_loc[0][0]: 25 loads
-      Net game_logic_portmap.collision_check_portmap.n50: 24 loads
-      Net rgb_col[4]: 22 loads
-      Net game_logic_portmap.collision_check_portmap.future_piece_loc[1][0]: 17
-     loads
+      Net game_logic_portmap.future_piece_loc[1][2]: 27 loads
+      Net future_piece_loc[1][1]: 25 loads
       Net
-     game_logic_portmap.collision_check_portmap.future_piece_loc_1__1__N_220: 17
+     game_logic_portmap.collision_check_portmap.board_shadow_row_4_2__N_181: 25
      loads
-      Net game_logic_portmap.n6401: 17 loads
+      Net game_logic_portmap.collision_check_portmap.future_piece_loc[1][3]: 23
+     loads
+      Net piece_code[1]: 23 loads
+      Net piece_code[0]: 22 loads
+      Net piece_code[2]: 20 loads
 
 
 
@@ -110,13 +109,15 @@ IO (PIO) Attributes
 | IO Name             | Direction | Levelmode |  IO   |  IO   | Special   |
 |                     |           |  IO_TYPE  |  REG  |  DDR  | IO Buffer |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| ctrlr_latch         | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
 | ctrlr_data          | INPUT     |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | osc                 | INPUT     |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | rotate_out          | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| ctrlr_clk           | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| ctrlr_latch         | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | vsync               | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
@@ -124,7 +125,6 @@ IO (PIO) Attributes
 +---------------------+-----------+-----------+-------+-------+-----------+
 | rgb[0]              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| rgb[1]              | OUTPUT    |           |       |       |           |
 
                                     Page 2
 
@@ -134,6 +134,7 @@ IO (PIO) Attributes
 
 IO (PIO) Attributes (cont)
 --------------------------
+| rgb[1]              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | rgb[2]              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
@@ -142,8 +143,6 @@ IO (PIO) Attributes (cont)
 | rgb[4]              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | rgb[5]              | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| ctrlr_clk           | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 
 Removed logic
@@ -190,7 +189,8 @@ PLL 1:                                 Pin/Node Value
 ASIC Components
 ---------------
 
-Instance Name: game_logic_portmap/piece_library_portmap/piece_shape_15__I_0
+Instance Name: clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B
+         Type: PLL
 
                                     Page 3
 
@@ -198,11 +198,6 @@ Instance Name: game_logic_portmap/piece_library_portmap/piece_shape_15__I_0
 
 
 
-ASIC Components (cont)
-----------------------
-         Type: EBR
-Instance Name: clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B
-         Type: PLL
 
 Constraint Summary
 ------------------
@@ -215,7 +210,12 @@ Run Time and Memory Usage
 
    Total CPU Time: 0 secs
    Total REAL Time: 0 secs
-   Peak Memory Usage: 62 MB
+   Peak Memory Usage: 61 MB
+
+
+
+
+
 
 
 

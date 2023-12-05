@@ -6,7 +6,7 @@ Performance Grade:      High-Performance_1.2V
 PACKAGE:          SG48
 Package Status:                     Preliminary    Version 1.5
 
-Mon Dec  4 23:48:20 2023
+Tue Dec  5 18:40:39 2023
 
 Pinout by Port Name:
 +-------------+----------+--------------+-------+------------------------------------------+
@@ -16,7 +16,7 @@ Pinout by Port Name:
 | ctrlr_data  | 46/2     | LVCMOS33_IN  | PL6A  | DRIVE:NA IO_TYPE:LVCMOS33 PULLMODE:100K  |
 | ctrlr_latch | 3/2      | LVCMOS33_OUT | PL10B | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
 | hsync       | 43/0     | LVCMOS33_OUT | PR10A | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
-| osc         | 12/1     | LVCMOS33_IN  | PL19A | DRIVE:NA IO_TYPE:LVCMOS33 PULLMODE:100K  |
+| osc         | 20/1     | LVCMOS33_IN  | PL20B | DRIVE:NA IO_TYPE:LVCMOS33 PULLMODE:100K  |
 | rgb[0]      | 34/0     | LVCMOS33_OUT | PR14B | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
 | rgb[1]      | 37/0     | LVCMOS33_OUT | PR14A | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
 | rgb[2]      | 31/0     | LVCMOS33_OUT | PR17B | DRIVE:8mA IO_TYPE:LVCMOS33 PULLMODE:NA   |
@@ -47,7 +47,7 @@ Pinout by Pin Number:
 | 9/1      |     unused, PULL:UP |            |              | PL16A |                  |
 | 10/1     |     unused, PULL:UP |            |              | PL17A |                  |
 | 11/1     |     unused, PULL:UP |            |              | PL18A |                  |
-| 12/1     | osc                 | LOCATED    | LVCMOS33_IN  | PL19A |                  |
+| 12/1     |     unused, PULL:UP |            |              | PL19A |                  |
 | 13/1     |     unused, PULL:UP |            |              | PL20A |                  |
 | 14/1     |     unused, PULL:UP |            |              | PL24A | SPI_SO           |
 | 15/1     |     unused, PULL:UP |            |              | PL25A | SPISCK           |
@@ -55,7 +55,7 @@ Pinout by Pin Number:
 | 17/1     |     unused, PULL:UP |            |              | PL24B | SPI_SI           |
 | 18/1     | rotate_out          | LOCATED    | LVCMOS33_OUT | PL23B |                  |
 | 19/1     |     unused, PULL:UP |            |              | PL22B |                  |
-| 20/1     |     unused, PULL:UP |            |              | PL20B | PCLKT1_0         |
+| 20/1     | osc                 | LOCATED    | LVCMOS33_IN  | PL20B | PCLKT1_0         |
 | 21/1     |     unused, PULL:UP |            |              | PL19B |                  |
 | 23/0     |     unused, PULL:UP |            |              | PR20A |                  |
 | 25/0     |     unused, PULL:UP |            |              | PR20B |                  |
@@ -105,7 +105,7 @@ ldc_set_location -site {4} [ get_ports {ctrlr_clk} ]
 ldc_set_location -site {46} [ get_ports {ctrlr_data} ]
 ldc_set_location -site {3} [ get_ports {ctrlr_latch} ]
 ldc_set_location -site {43} [ get_ports {hsync} ]
-ldc_set_location -site {12} [ get_ports {osc} ]
+ldc_set_location -site {20} [ get_ports {osc} ]
 ldc_set_location -site {34} [ get_ports {rgb[0]} ]
 ldc_set_location -site {37} [ get_ports {rgb[1]} ]
 ldc_set_location -site {31} [ get_ports {rgb[2]} ]
@@ -121,5 +121,5 @@ ldc_set_location -site {36} [ get_ports {vsync} ]
 
 Copyright (c) 2002-2022 Lattice Semiconductor Corporation,  All rights reserved.
 
-Mon Dec  4 23:48:20 2023
+Tue Dec  5 18:40:39 2023
 

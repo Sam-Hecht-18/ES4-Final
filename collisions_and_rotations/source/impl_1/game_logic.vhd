@@ -4,7 +4,7 @@ use IEEE.numeric_std.all;
 
 package my_types_package is
 	type piece_loc_type is array(1 downto 0) of unsigned(3 downto 0);  -- (x, y) from top left of grid to top left of piece 4x4
-	type board_type is array (15 downto 0) of std_logic_vector(0 to 12);
+	type board_type is array (15 downto 0) of std_logic_vector(0 to 15);
 end package;
 
 library IEEE;
@@ -152,22 +152,22 @@ begin
 		piece_shape
 	);
 
-	piece_picker_portmap : piece_picker port map(
-		game_clock => game_clock,
-		new_piece_code => new_piece_code,
-		new_piece_rotation => new_piece_rotation
-	);
+	--piece_picker_portmap : piece_picker port map(
+		--game_clock => game_clock,
+		--new_piece_code => new_piece_code,
+		--new_piece_rotation => new_piece_rotation
+	--);
 
-	 board_updater_portmap : board_updater port map(
-	 	game_clock => game_clock,
-	 	board_update_enable => advance_turn,
-		score => score,
-	 	piece_loc => piece_loc,
-	 	piece_shape => piece_shape,
-	 	stable_board => board,
-	 	new_board => new_board,
-		new_score => new_score
-	 );
+	 --board_updater_portmap : board_updater port map(
+	 	--game_clock => game_clock,
+	 	--board_update_enable => advance_turn,
+		--score => score,
+	 	--piece_loc => piece_loc,
+	 	--piece_shape => piece_shape,
+	 	--stable_board => board,
+	 	--new_board => new_board,
+		--new_score => new_score
+	 --);
 
 	 collision_check_portmap : collision_check port map(
 	 	piece_loc,
@@ -206,13 +206,13 @@ begin
 	-- );
 
 	generate_board_row: for y in 0 to 11 generate
-		board(y) <= 13b"0" when first_time = '0' else new_board(y);
+		board(y) <= 16b"0";-- when first_time = '0' else new_board(y);
 	end generate;
 
-	board(12) <= "0001010000000"  when first_time = '0' else new_board(12);
-	board(13) <= "0001010000000" when first_time = '0' else new_board(13);
-	board(14) <= "0001010101110" when first_time = '0' else new_board(14);
-	board(15) <= "0001111111111" when first_time = '0' else new_board(15);
+	board(12) <= "0001010000000000";--  when first_time = '0' else new_board(12);
+	board(13) <= "0001010000000000";-- when first_time = '0' else new_board(13);
+	board(14) <= "0001010101110000";-- when first_time = '0' else new_board(14);
+	board(15) <= "0001111111111000";-- when first_time = '0' else new_board(15);
 
 	collision <= collision_down or collision_left or collision_rotate or collision_right;
 
@@ -229,11 +229,12 @@ begin
 			else
 
 				-- Rotates piece (TODO: check that rotation is valid, i.e., doesn't overlap on anything after rotation)
-				if game_clock_ctr(5 downto 0) > "000011" and game_clock_ctr(5 downto 0) < "111000" then
+				-- if game_clock_ctr(5 downto 0) > "000000" and game_clock_ctr(5 downto 0) < "111000" then
 					advance_turn <= '0';
 
 					if press_rotate = '1' and rotate_delay = 0 then
-						piece_rotation <= piece_rotation + 1;
+						piece_loc(1) <= piece_loc(1) - 1;
+						-- piece_rotation <= piece_rotation + 1;
 						rotate_delay <= rotate_delay + 1;
 					end if;
 					if rotate_delay > 0 then
@@ -275,16 +276,14 @@ begin
 						down_delay <= down_delay + 1;
 					end if;
 
-				elsif game_clock_ctr(5 downto 0) = "111000" then
+				if game_clock_ctr(5 downto 0) = "111110" then
 					move_down_auto <= '1';
 				elsif (collision_down = '0' and game_clock_ctr(5 downto 0) = "111111") then
 					move_down_auto <= '0';
 					piece_loc(1) <= piece_loc(1) + 1;
-					advance_turn <= '0';
-				elsif (collision_down = '1' and game_clock_ctr(5 downto 0) = "111111") then
-					advance_turn <= '1';
-				else
-					advance_turn <= '0';
+					-- advance_turn <= '0';
+				--elsif (collision_down = '1' and game_clock_ctr(5 downto 0) = "111111") then
+					--advance_turn <= '1';
 				end if;
 			end if;
 		end if;

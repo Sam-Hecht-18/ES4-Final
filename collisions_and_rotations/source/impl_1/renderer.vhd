@@ -4,7 +4,7 @@ use IEEE.numeric_std.all;
 
 package my_types_package is
 	type piece_loc_type is array(1 downto 0) of unsigned(3 downto 0);  -- (x, y) from top left of grid to top left of piece 4x4
-	type board_type is array (15 downto 0) of std_logic_vector(0 to 12);
+	type board_type is array (15 downto 0) of std_logic_vector(0 to 15);
 end package;
 
 library IEEE;
@@ -14,7 +14,6 @@ use work.my_types_package.all;
 
 entity renderer is
 	port(
-		clk : in std_logic;
 		valid_rgb : in std_logic;
 		rgb_row : in unsigned(9 downto 0);
 		rgb_col : in unsigned(9 downto 0);

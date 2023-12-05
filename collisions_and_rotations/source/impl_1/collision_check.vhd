@@ -4,7 +4,7 @@ use IEEE.numeric_std.all;
 
 package my_types_package is
 	type piece_loc_type is array(1 downto 0) of unsigned(3 downto 0);  -- (x, y) from top left of grid to top left of piece 4x4
-	type board_type is array (15 downto 0) of std_logic_vector(0 to 12);
+	type board_type is array (15 downto 0) of std_logic_vector(0 to 15);
 end package;
 
 library IEEE;
@@ -33,16 +33,16 @@ end collision_check;
 
 architecture synth of collision_check is
 
-	component board_overlap is
-		port(
-			clk : in std_logic;
-			union_or_intersection : in std_logic;
-			piece_loc: in piece_loc_type; -- (x, y) from top left of grid to top left of piece 4x4
-			piece_shape: in std_logic_vector(15 downto 0);
-			piece_bottom_row : out unsigned(1 downto 0);
-			overlap_row_1, overlap_row_2, overlap_row_3, overlap_row_4 : out std_logic_vector(3 downto 0)
-		);
-	end component;
+	--component board_overlap is
+		--port(
+			--clk : in std_logic;
+			--union_or_intersection : in std_logic;
+			--piece_loc: in piece_loc_type; -- (x, y) from top left of grid to top left of piece 4x4
+			--piece_shape: in std_logic_vector(15 downto 0);
+			--piece_bottom_row : out unsigned(1 downto 0);
+			--overlap_row_1, overlap_row_2, overlap_row_3, overlap_row_4 : out std_logic_vector(3 downto 0)
+		--);
+	--end component;
 
 	signal future_piece_loc : piece_loc_type;
 
@@ -72,7 +72,7 @@ begin
 
 	-- future_piece_loc(0) <= piece_loc(0) + press_right - press_left;
 	future_piece_loc(0) <= piece_loc(0) + press_right - press_left when (move_down_auto = '0' and press_down = '0') else piece_loc(0);
-	future_piece_loc(1) <= piece_loc(1) + press_down + move_down_auto;
+	future_piece_loc(1) <= piece_loc(1) + 1 when (press_down = '1' or move_down_auto = '1');
 
 	-- board_overlap_portmap : board_overlap port map(clk, '1', future_piece_loc, piece_shape, piece_bottom_row, overlap_row_1, overlap_row_2, overlap_row_3, overlap_row_4);
 

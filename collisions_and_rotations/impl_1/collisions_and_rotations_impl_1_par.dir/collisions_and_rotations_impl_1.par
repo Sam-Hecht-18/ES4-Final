@@ -1,6 +1,6 @@
 Copyright (c) 2002-2022 Lattice Semiconductor Corporation,  All rights reserved.
 
-Mon Dec  4 23:48:14 2023
+Tue Dec  5 18:40:30 2023
 
 Command Line: par -w -n 1 -t 1 -s 1 -cores 1 -exp parPathBased=ON \
 	collisions_and_rotations_impl_1_map.udb collisions_and_rotations_impl_1.udb 
@@ -9,10 +9,10 @@ Command Line: par -w -n 1 -t 1 -s 1 -cores 1 -exp parPathBased=ON \
 Level/       Number       Worst        Timing       Worst        Timing       Run          Run
 Cost [udb]   Unrouted     Slack        Score        Slack(hold)  Score(hold)  Time         Status
 ----------   --------     -----        ------       -----------  -----------  ----         ------
-5_1   *      0            -            0            -            0            07           Completed
+5_1   *      0            -            0            -            0            11           Completed
 
 * : Design saved.
 
-Total (real) run time for 1-seed: 7 secs 
+Total (real) run time for 1-seed: 11 secs 
 
 par done!
