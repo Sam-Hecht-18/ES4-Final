@@ -93,9 +93,11 @@ begin
 	-- temp_board <= temp_board_shadow or stable_board; -- MAY NOT WORK !!!
 	-- new_board <= temp_board when valid_update = '1' else stable_board;
 
-	process(game_clock) begin
-		if rising_edge(game_clock) then
-			if valid_update = '1' then
+	-- process(game_clock) begin
+	-- 	if rising_edge(game_clock) then
+	process(valid_update) begin
+		if rising_edge(valid_update) then
+			-- if valid_update = '1' then
 				for i in 15 downto 0 loop
 					if (temp_board(i) = "1111111111" and i /= 0) then
 						new_score <= score + 1;
@@ -108,7 +110,7 @@ begin
 						new_board(i) <= temp_board(i);
 					end if;
 				end loop;
-			end if;
+			-- end if;
 		end if;
 	end process;
 

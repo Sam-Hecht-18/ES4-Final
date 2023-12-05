@@ -134,7 +134,7 @@ architecture synth of game_logic is
 	signal first_time : std_logic := '0';
 	signal piece_loc_x : unsigned(3 downto 0) := 4d"3";
 	signal piece_loc_y : unsigned(3 downto 0) := 4d"0";
-	
+
 	signal new_board : board_type;
 	signal new_score : unsigned(23 downto 0);
 
@@ -162,7 +162,7 @@ begin
 
 	 board_updater_portmap : board_updater port map(
 	 	game_clock => game_clock,
-	 	valid_update => valid_update,
+	 	valid_update => advance_turn,
 		score => 24d"0",
 	 	piece_loc => piece_loc,
 	 	piece_shape => piece_shape,
@@ -203,14 +203,14 @@ begin
 	board(13) <= "0001010000000" when first_time = '0' else new_board(13);
 	board(14) <= "0001010101110" when first_time = '0' else new_board(14);
 	board(15) <= "0001111111111" when first_time = '0' else new_board(15);
-	
+
 	collision <= collision_down or collision_left or collision_rotate or collision_right;
 
 	special_background <= 5d"0" when collision = '0' else 5d"1" when collision_down = '1' else 5d"2" when collision_left = '1' else 5d"3" when collision_right = '1' else 5d"3" when collision_rotate = '1';
 
 	process(game_clock) begin
 		if rising_edge(game_clock) then
-				
+
 			if game_clock_ctr < 16d"60" and first_time = '0' then
 				piece_loc(0) <= 4d"3";
 				piece_loc(1) <= 4d"0";
@@ -220,6 +220,8 @@ begin
 
 				-- Rotates piece (TODO: check that rotation is valid, i.e., doesn't overlap on anything after rotation)
 				if game_clock_ctr(5 downto 0) > "000011" and game_clock_ctr(5 downto 0) < "111000" then
+					advance_turn <= '0';
+
 					if press_rotate = '1' and rotate_delay = 0 then
 						piece_rotation <= piece_rotation + 1;
 						rotate_delay <= rotate_delay + 1;
@@ -268,11 +270,11 @@ begin
 				elsif (collision_down = '0' and game_clock_ctr(5 downto 0) = "111111") then
 					move_down_auto <= '0';
 					piece_loc(1) <= piece_loc(1) + 1;
-					--advance_turn <= '0';
-				--elsif (collision_down = '1' and game_clock_ctr(5 downto 0) = "000001") then
-					--advance_turn <= '1';
-				--else
-					--advance_turn <= '0';
+					advance_turn <= '0';
+				elsif (collision_down = '1' and game_clock_ctr(5 downto 0) = "111111") then
+					advance_turn <= '1';
+				else
+					advance_turn <= '0';
 				end if;
 			end if;
 		end if;
