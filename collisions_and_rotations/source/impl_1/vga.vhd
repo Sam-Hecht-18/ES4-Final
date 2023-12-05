@@ -22,10 +22,10 @@ begin
     process(clk) begin
         if rising_edge(clk) then
 
-			if col_temp = 800 then
+			if col_temp = 799 then
 				col_temp <= 10b"0";
 
-				if row_temp = 525 then
+				if row_temp = 524 then
 					row_temp <= 10b"0";
 				else
 					row_temp <= row_temp + 1;
