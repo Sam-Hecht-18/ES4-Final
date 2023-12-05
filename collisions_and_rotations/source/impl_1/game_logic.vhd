@@ -14,10 +14,9 @@ use work.my_types_package.all;
 
 entity game_logic is
 	port(
-		game_clock : in std_logic;
-		game_clock_ctr : in unsigned(15 downto 0);
-
-		valid_rgb: in std_logic;
+		game_clock : in std_logic; -- Game clock (ticks once per frame when it finishes drawing on screen, 60 Hz)
+		game_clock_ctr : in unsigned(15 downto 0); -- Game clock counter (increments once with each game_clock tick)
+		valid_rgb: in std_logic; -- True: screen currently being drawn. False: in buffer zones (includes columnnar buffer -- beware).
 
 		press_rotate : in std_logic;
 		press_down : in std_logic;
@@ -64,7 +63,7 @@ architecture synth of game_logic is
 	component board_updater is
 		port(
 			game_clock : in std_logic;
-			valid_update : in std_logic;
+			board_update_enable : in std_logic;
 			score : in unsigned(23 downto 0);
 			piece_loc: in piece_loc_type; -- (x, y) from top left of grid to top left of piece 4x4
 			piece_shape: in std_logic_vector(15 downto 0);
@@ -76,19 +75,20 @@ architecture synth of game_logic is
 
 	component collision_check is
 		port(
-			turn : in unsigned(7 downto 0); -- a number representing the number of times a piece has been added to the grid. starts at 0
 			piece_loc : in piece_loc_type; -- (x, y) from top left of grid to top left of piece 4x4
 			piece_shape : in std_logic_vector(15 downto 0);
 			stable_board : in board_type;
-			move_left : in std_logic;
-			move_right : in std_logic;
-			move_down : in std_logic;
+			press_left : in std_logic;
+			press_right : in std_logic;
+			press_down : in std_logic;
 			press_rotate : in std_logic;
 			move_down_auto : in std_logic;
 			collision_left : out std_logic;
 			collision_right : out std_logic;
 			collision_down : out std_logic;
 			collision_rotate : out std_logic
+			-- hit_piece : out std_logic;
+			-- hit_edge : out std_logic
 		);
 	end component;
 
@@ -102,10 +102,11 @@ architecture synth of game_logic is
 	  );
 	end component;
 
-	signal rgb_temp : std_logic_vector(5 downto 0); -- the rgb signal we want to send out
+	signal new_board : board_type;
 
 	signal turn : unsigned(7 downto 0); -- a number representing the number of times a piece has been added to the grid. starts at 0
-
+	signal score : unsigned(23 downto 0) := 24d"0";
+	signal new_score : unsigned(23 downto 0);
 	-- signal piece_loc: piece_loc_type := (4d"2", 4d"0");
 	-- signal piece_shape: std_logic_vector(15 downto 0);
 	-- signal board: board_type; -- the tetris board
@@ -132,14 +133,9 @@ architecture synth of game_logic is
 
 	signal move_down_auto : std_logic;
 	signal advance_turn : std_logic;
-	signal valid_update : std_logic;
+	-- signal board_update_enable : std_logic;
 
 	signal first_time : std_logic := '0';
-	signal piece_loc_x : unsigned(3 downto 0) := 4d"3";
-	signal piece_loc_y : unsigned(3 downto 0) := 4d"0";
-
-	signal new_board : board_type;
-	signal new_score : unsigned(23 downto 0);
 
 begin
 	--turn_manager_portmap : turn_manager port map(
@@ -164,17 +160,16 @@ begin
 
 	 board_updater_portmap : board_updater port map(
 	 	game_clock => game_clock,
-	 	valid_update => advance_turn,
-		score => 24d"0",
+	 	board_update_enable => advance_turn,
+		score => score,
 	 	piece_loc => piece_loc,
 	 	piece_shape => piece_shape,
 	 	stable_board => board,
-	 	new_board => new_board, ---- WILL THIS WORK ???
+	 	new_board => new_board,
 		new_score => new_score
 	 );
 
 	 collision_check_portmap : collision_check port map(
-	 	8d"0",
 	 	piece_loc,
 	 	piece_shape,
 	 	board,
@@ -188,6 +183,19 @@ begin
 	 	collision_down,
 	 	collision_rotate
 	 );
+
+	--  collision_check_portmap_down : collision_check port map(
+	-- 	piece_loc,
+	-- 	piece_shape,
+	-- 	board,
+	-- 	'0',
+	-- 	'0',
+	-- 	'1',
+	-- 	'0,
+	-- 	'0',
+	-- 	hit_piece_down,
+	-- 	hit_edge_down
+	-- );
 
 	-- row_check_portmap : row_check port map(
 	-- 	clk => clk,

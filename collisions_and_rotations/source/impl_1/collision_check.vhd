@@ -14,19 +14,20 @@ use work.my_types_package.all;
 
 entity collision_check is
   	port(
-		turn : in unsigned(7 downto 0); -- a number representing the number of times a piece has been added to the grid. starts at 0
 		piece_loc : in piece_loc_type; -- (x, y) from top left of grid to top left of piece 4x4
 		piece_shape : in std_logic_vector(15 downto 0);
 		stable_board : in board_type;
-		move_left : in std_logic;
-		move_right : in std_logic;
-		move_down : in std_logic;
+		press_left : in std_logic;
+		press_right : in std_logic;
+		press_down : in std_logic;
 		press_rotate : in std_logic;
 		move_down_auto : in std_logic;
 		collision_left : out std_logic;
 		collision_right : out std_logic;
 		collision_down : out std_logic;
 		collision_rotate : out std_logic
+		-- hit_piece : out std_logic;
+		-- hit_edge : out std_logic
 );
 end collision_check;
 
@@ -69,8 +70,9 @@ architecture synth of collision_check is
 
 begin
 
-	future_piece_loc(0) <= piece_loc(0) + move_right - move_left when (move_down_auto = '0' and move_down = '0') else piece_loc(0);
-	future_piece_loc(1) <= piece_loc(1) + move_down + move_down_auto;
+	-- future_piece_loc(0) <= piece_loc(0) + press_right - press_left;
+	future_piece_loc(0) <= piece_loc(0) + press_right - press_left when (move_down_auto = '0' and press_down = '0') else piece_loc(0);
+	future_piece_loc(1) <= piece_loc(1) + press_down + move_down_auto;
 
 	-- board_overlap_portmap : board_overlap port map(clk, '1', future_piece_loc, piece_shape, piece_bottom_row, overlap_row_1, overlap_row_2, overlap_row_3, overlap_row_4);
 
@@ -83,11 +85,10 @@ begin
 	piece_left_col <= 2d"0" when (piece_col_1 /= 4b"0") else 2d"1" when (piece_col_2 /= 4b"0") else 2d"2" when (piece_col_3 /= 4b"0") else 2d"3";
 	piece_right_col <= 2d"3" when (piece_col_4 /= 4b"0") else 2d"2" when (piece_col_3 /= 4b"0") else 2d"1" when (piece_col_2 /= 4b"0") else 2d"0";
 
-	piece_left_col_loc <= piece_loc(0) + unsigned(piece_left_col);
-	piece_right_col_loc <= piece_loc(0) + unsigned(piece_right_col);
+	piece_left_col_loc <= piece_loc(0) + piece_left_col;
+	piece_right_col_loc <= piece_loc(0) + piece_right_col;
 	hit_right <= '1' when (piece_right_col_loc = 4d"12") else '0';
 	hit_left <= '1' when (piece_left_col_loc = 4d"3") else '0';
-
 
 	-- HERE: check if we have hit bottom !!!
 
@@ -98,7 +99,7 @@ begin
 	piece_row_4 <= piece_shape(3 downto 0);
 
 	piece_bottom_row <= 2d"3" when (piece_row_4 /= 4b"0") else 2d"2" when (piece_row_3 /= 4b"0") else 2d"1" when (piece_row_2 /= 4b"0") else 2d"0";
-	piece_bottom_row_loc <= 6b"0" + piece_loc(1) + unsigned(piece_bottom_row);
+	piece_bottom_row_loc <= 6b"0" + piece_loc(1) + piece_bottom_row;
 	hit_bottom <= '1' when (piece_bottom_row_loc = 5d"15") else '0';
 
 	-- HERE: check if we have hit a piece BEFORE 4x4 hits bottom !!!
@@ -117,8 +118,12 @@ begin
 	hit_piece <= '1' when (overlap_row_1 & overlap_row_2 & overlap_row_3 & overlap_row_4 /= 16b"0") else '0';
 
 	--collision <= collision_temp or hit_bottom or hit_left or hit_right;
-	collision_down <= (hit_piece or hit_bottom) and (move_down or move_down_auto);
-	collision_left <= ((hit_piece or hit_left) and move_left) or move_down_auto or move_down;
-	collision_right <= ((hit_piece or hit_right) and move_right) or move_down_auto or move_down;
+	collision_down <= (hit_piece or hit_bottom) and (press_down or move_down_auto);
+	collision_left <= ((hit_piece or hit_left) and press_left) or move_down_auto or press_down;
+	collision_right <= ((hit_piece or hit_right) and press_right) or move_down_auto or press_down;
+
+	-- collision_down <= (hit_piece or hit_bottom);
+	-- collision_left <= ((hit_piece or hit_left));
+	-- collision_right <= ((hit_piece or hit_right));
 
 end;

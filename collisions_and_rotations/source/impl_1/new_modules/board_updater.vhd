@@ -15,7 +15,7 @@ use work.my_types_package.all;
 entity board_updater is
   	port(
 		game_clock : in std_logic;
-		valid_update : in std_logic;
+		board_update_enable : in std_logic;
 		score : in unsigned(23 downto 0);
 		piece_loc: in piece_loc_type; -- (x, y) from top left of grid to top left of piece 4x4
 		piece_shape: in std_logic_vector(15 downto 0);
@@ -95,13 +95,13 @@ begin
 	end generate;
 
 	-- temp_board <= temp_board_shadow or stable_board; -- MAY NOT WORK !!!
-	-- new_board <= temp_board when valid_update = '1' else stable_board;
+	-- new_board <= temp_board when board_update_enable = '1' else stable_board;
 
 	-- process(game_clock) begin
 	-- 	if rising_edge(game_clock) then
-	process(valid_update) begin
-		if rising_edge(valid_update) then
-			-- if valid_update = '1' then
+	process(board_update_enable) begin
+		if rising_edge(board_update_enable) then
+			-- if board_update_enable = '1' then
 				for i in 15 downto 0 loop
 					if (temp_board(i) = "0001111111111" and i /= 0) then
 						new_score <= score + 1;
