@@ -44,6 +44,8 @@ architecture synth of board_updater is
 	signal piece_bottom_row : unsigned(1 downto 0);
 	signal piece_bottom_row_loc : unsigned(5 downto 0);
 
+	-- signal piece_rows : std_logic_vector(3 downto 0);
+
 	signal board_shadow_row_1, board_shadow_row_2, board_shadow_row_3, board_shadow_row_4 : std_logic_vector(3 downto 0);
 	signal piece_row_1, piece_row_2, piece_row_3, piece_row_4 : std_logic_vector(3 downto 0);
 	signal overlap_row_1, overlap_row_2, overlap_row_3, overlap_row_4 : std_logic_vector(3 downto 0);
@@ -65,8 +67,10 @@ begin
 	piece_row_4 <= piece_shape(3 downto 0);
 
 	piece_bottom_row <= 2d"3" when (piece_row_4 /= 4b"0") else 2d"2" when (piece_row_3 /= 4b"0") else 2d"1" when (piece_row_2 /= 4b"0") else 2d"0";
-	-- piece_bottom_row_loc <= 6b"0" + piece_loc(1) + signed(piece_bottom_row);
+	piece_bottom_row_loc <= 6b"0" + piece_loc(1) + piece_bottom_row;
 	-- hit_bottom <= '1' when (piece_bottom_row_loc = 5d"15") else '0';
+
+	-- piece_rows <= (piece_row_4 /= "0000") & (piece_row_3 /= "0000") & (piece_row_2 /= "0000") & (piece_row_1 /= "0000");
 
 	-- HERE: check if we have hit a piece BEFORE 4x4 hits bottom !!!
 
@@ -99,13 +103,13 @@ begin
 		if rising_edge(valid_update) then
 			-- if valid_update = '1' then
 				for i in 15 downto 0 loop
-					if (temp_board(i) = "1111111111" and i /= 0) then
+					if (temp_board(i) = "0001111111111" and i /= 0) then
 						new_score <= score + 1;
 						for j in i downto 1 loop
 							new_board(j) <= temp_board(j - 1);
 						end loop;
-					elsif (temp_board(i) = "1111111111" and i = 0) then
-						new_board(i) <= "0000000000";
+					elsif (temp_board(i) = "0001111111111" and i = 0) then
+						new_board(i) <= "0000000000000";
 					else
 						new_board(i) <= temp_board(i);
 					end if;

@@ -45,10 +45,10 @@ architecture synth of game_logic is
 
 	component piece_picker is
 		port(
-		  clk : in std_logic;
-		  turn: in unsigned(7 downto 0); -- a number representing the number of times a piece has been added to the grid. starts at 0
-		  new_piece_code : out unsigned(2 downto 0) := "000";
-		  new_piece_rotation : out unsigned(1 downto 0) := "00"
+		  game_clock : in std_logic;
+		  game_clock_ctr : in unsigned(15 downto 0);
+		  new_piece_code : out unsigned(2 downto 0);
+		  new_piece_rotation : out unsigned(1 downto 0)
 	  );
 	end component;
 
@@ -113,8 +113,11 @@ architecture synth of game_logic is
 	signal counter : unsigned(31 downto 0);
 	signal frame_counter : unsigned(15 downto 0);
 
-	signal piece_rotation : unsigned(1 downto 0);
 	signal piece_code : unsigned(2 downto 0);
+	signal piece_rotation : unsigned(1 downto 0);
+	signal new_piece_code : unsigned(2 downto 0);
+	signal new_piece_rotation : unsigned(1 downto 0);
+
 	signal rotate_delay : unsigned(2 downto 0);
 	signal sel_delay : unsigned(2 downto 0);
 	signal right_delay : unsigned(2 downto 0);
@@ -153,12 +156,11 @@ begin
 		piece_shape
 	);
 
-	-- piece_picker_portmap : piece_picker port map(
-	-- 	clk => clk,
-	-- 	turn => turn,
-	-- 	new_piece_code => piece_code,
-	-- 	new_piece_rotation => piece_rotation
-	-- );
+	piece_picker_portmap : piece_picker port map(
+		game_clock => game_clock,
+		new_piece_code => new_piece_code,
+		new_piece_rotation => new_piece_rotation
+	);
 
 	 board_updater_portmap : board_updater port map(
 	 	game_clock => game_clock,

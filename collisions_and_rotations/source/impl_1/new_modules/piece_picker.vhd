@@ -14,8 +14,8 @@ use work.my_types_package.all;
 
 entity piece_picker is
   	port(
-		clk : in std_logic;
-		turn: in unsigned(7 downto 0); -- a number representing the number of times a piece has been added to the grid. starts at 0
+		game_clock : in std_logic;
+		game_clock_ctr : in unsigned(15 downto 0);
 		new_piece_code : out unsigned(2 downto 0) := "000";
 		new_piece_rotation : out unsigned(1 downto 0) := "00"
 	);
@@ -23,11 +23,9 @@ end piece_picker;
 
 architecture synth of piece_picker is
 
-signal clk_counter : unsigned(31 downto 0);
-
 begin
-	process(turn) begin
-		new_piece_code <= clk_counter(2 downto 0);
-		new_piece_rotation <= "00";
+	process(game_clock) begin
+		new_piece_code <= game_clock_ctr(2 downto 0);
+		new_piece_rotation <= game_clock_ctr(4 downto 3);
 	end process;
 end;
