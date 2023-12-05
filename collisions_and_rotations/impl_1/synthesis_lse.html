@@ -48,7 +48,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-Mon Dec  4 20:00:08 2023
+Mon Dec  4 23:48:09 2023
 
 
 Command Line:  C:\lscc\radiant\2023.1\ispfpga\bin\nt64\synthesis.exe -f collisions_and_rotations_impl_1_lattice.synproj -gui -msgset Z:/ES4-Final/collisions_and_rotations/promote.xml 
@@ -222,7 +222,7 @@ Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/collisio
 
 INFO <35921014> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(5): analyzing package my_types_package. VHDL-1014
 INFO <35921012> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(15): analyzing entity collision_check. VHDL-1012
-INFO <35921010> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(34): analyzing architecture synth. VHDL-1010
+INFO <35921010> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(33): analyzing architecture synth. VHDL-1010
 Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd. VHDL-1481
 Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd
 
@@ -303,55 +303,360 @@ Top module name (VHDL, mixed language): master
                                                          
 
 
-WARNING <35001771> - synthesis: Initial value found on net gnd_2 will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net pwr_2 will be ignored due to unrecognized driver type
+WARNING <35001771> - synthesis: Initial value found on net collision will be ignored due to unrecognized driver type
+WARNING <35001771> - synthesis: Initial value found on net collision_left will be ignored due to unrecognized driver type
+WARNING <35001771> - synthesis: Initial value found on net collision_right will be ignored due to unrecognized driver type
+WARNING <35001771> - synthesis: Initial value found on net collision_down will be ignored due to unrecognized driver type
+WARNING <35001771> - synthesis: Initial value found on net collision_rotate will be ignored due to unrecognized driver type
+WARNING <35001771> - synthesis: Initial value found on net hit_piece will be ignored due to unrecognized driver type
+WARNING <35001771> - synthesis: Initial value found on net hit_bottom will be ignored due to unrecognized driver type
 WARNING <35935049> - synthesis: input port sclk_i remains unconnected for this instance. VDB-5049
 WARNING <35935049> - synthesis: input port sdi_i remains unconnected for this instance. VDB-5049
+WARNING <35931002> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(128): net \game_logic_portmap/collision_rotate does not have a driver. VDB-1002
 WARNING <35931002> - synthesis: z:/es4-final/collisions_and_rotations/mypll/rtl/mypll.v(139): net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sclk_i does not have a driver. VDB-1002
 WARNING <35931002> - synthesis: z:/es4-final/collisions_and_rotations/mypll/rtl/mypll.v(140): net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sdi_i does not have a driver. VDB-1002
+######## Missing driver on net \game_logic_portmap/collision_rotate. Patching with GND.
 ######## Missing driver on net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sclk_i. Patching with GND.
 ######## Missing driver on net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sdi_i. Patching with GND.
 
 
 
-######## Missing driver on net special_background[4]. Patching with GND.
-######## Missing driver on net special_background[3]. Patching with GND.
-######## Missing driver on net special_background[2]. Patching with GND.
-######## Missing driver on net special_background[1]. Patching with GND.
-######## Missing driver on net special_background[0]. Patching with GND.
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[15]_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[15]_i1 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[15]_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[15]_i3 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[15]_i4 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[15]_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[15]_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[15]_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[15]_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[15]_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[15]_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[15]_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[0]_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[0]_i1 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[0]_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[0]_i3 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[0]_i4 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[0]_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[0]_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[0]_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[0]_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[0]_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[0]_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[0]_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[1]_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[1]_i1 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[1]_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[1]_i3 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[1]_i4 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[1]_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[1]_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[1]_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[1]_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[1]_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[1]_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[1]_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[2]_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[2]_i1 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[2]_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[2]_i3 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[2]_i4 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[2]_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[2]_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[2]_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[2]_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[2]_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[2]_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[2]_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[3]_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[3]_i1 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[3]_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[3]_i3 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[3]_i4 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[3]_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[3]_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[3]_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[3]_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[3]_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[3]_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[3]_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[4]_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[4]_i1 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[4]_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[4]_i3 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[4]_i4 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[4]_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[4]_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[4]_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[4]_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[4]_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[4]_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[4]_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[5]_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[5]_i1 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[5]_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[5]_i3 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[5]_i4 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[5]_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[5]_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[5]_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[5]_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[5]_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[5]_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[5]_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[6]_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[6]_i1 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[6]_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[6]_i3 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[6]_i4 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[6]_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[6]_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[6]_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[6]_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[6]_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[6]_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[6]_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[7]_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[7]_i1 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[7]_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[7]_i3 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[7]_i4 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[7]_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[7]_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[7]_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[7]_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[7]_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[7]_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[7]_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[8]_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[8]_i1 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[8]_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[8]_i3 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[8]_i4 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[8]_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[8]_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[8]_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[8]_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[8]_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[8]_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[8]_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[9]_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[9]_i1 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[9]_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[9]_i3 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[9]_i4 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[9]_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[9]_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[9]_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[9]_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[9]_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[9]_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[9]_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[10]_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[10]_i1 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[10]_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[10]_i3 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[10]_i4 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[10]_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[10]_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[10]_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[10]_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[10]_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[10]_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[10]_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[11]_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[11]_i1 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[11]_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[11]_i3 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[11]_i4 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[11]_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[11]_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[11]_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[11]_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[11]_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[11]_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[11]_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[12]_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[12]_i1 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[12]_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[12]_i3 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[12]_i4 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[12]_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[12]_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[12]_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[12]_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[12]_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[12]_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[12]_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[13]_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[13]_i1 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[13]_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[13]_i3 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[13]_i4 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[13]_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[13]_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[13]_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[13]_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[13]_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[13]_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[13]_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[14]_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[14]_i1 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[14]_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[14]_i3 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[14]_i4 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[14]_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[14]_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[14]_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[14]_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[14]_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[14]_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[14]_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[14]_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[13]_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[12]_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[11]_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[10]_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[9]_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[8]_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[7]_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[6]_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[5]_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[4]_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[3]_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[2]_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[1]_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[0]_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - synthesis: Register \game_logic_portmap/board_updater_portmap/new_board[15]_i12 clock is stuck at Zero. VDB-5040
 Combinational loop found : 1
+
+ Net rotate_out_c 
+
+ Instance \nes_controller_portmap/mux_7_i4 
+
+Combinational loop found : 2
+
+ Net down_button 
+
+ Instance \nes_controller_portmap/mux_7_i3 
+
+Combinational loop found : 3
 
  Net left_button 
 
  Instance \nes_controller_portmap/mux_7_i2 
 
-Combinational loop found : 2
+Combinational loop found : 4
 
  Net right_button 
 
  Instance \nes_controller_portmap/mux_7_i1 
 
-Combinational loop found : 3
+Combinational loop found : 5
 
- Net rotate_out_c 
+ Net sel 
 
- Instance \nes_controller_portmap/mux_7_i4 
+ Instance \nes_controller_portmap/mux_7_i6 
+
+Combinational loop found : 6
+
+ Net special_background[1] 
+
+ Instance \game_logic_portmap/mux_43_i2 
+
+ Net \game_logic_portmap/n1029 
+
+ Instance \game_logic_portmap/mux_42_i2 
+
+ Net \game_logic_portmap/n1023 
+
+ Instance \game_logic_portmap/mux_41_i2 
+
+ Net \game_logic_portmap/n1017 
+
+ Instance \game_logic_portmap/mux_39_i2 
+
+Combinational loop found : 7
+
+ Net special_background[0] 
+
+ Instance \game_logic_portmap/mux_43_i1 
+
+ Net \game_logic_portmap/n1030 
+
+ Instance \game_logic_portmap/mux_42_i1 
+
+ Net \game_logic_portmap/n1024 
+
+ Instance \game_logic_portmap/mux_41_i1 
+
+Combinational loop found : 8
+
+ Net special_background[2] 
+
+ Instance \game_logic_portmap/mux_43_i3 
+
+ Net \game_logic_portmap/n1028 
+
+ Instance \game_logic_portmap/mux_42_i3 
+
+Combinational loop found : 9
+
+ Net special_background[3] 
+
+ Instance \game_logic_portmap/mux_43_i4 
+
+ Net \game_logic_portmap/n1027 
+
+ Instance \game_logic_portmap/mux_42_i4 
+
+ Net \game_logic_portmap/n1021 
+
+ Instance \game_logic_portmap/mux_41_i4 
+
+ Net \equal_745/n4 
+
+ Instance equal_745_i4 
+
+ Net \game_logic_portmap/n1015 
+
+ Instance \game_logic_portmap/mux_39_i4 
+
+Combinational loop found : 10
+
+ Net special_background[4] 
+
+ Instance \game_logic_portmap/mux_43_i5 
+
+ Net \game_logic_portmap/n1026 
+
+ Instance \game_logic_portmap/mux_42_i5 
+
+ Net \equal_745/n4 
+
+ Instance equal_745_i4 
+
+ Net \game_logic_portmap/n1020 
+
+ Instance \game_logic_portmap/mux_41_i5 
 
 
 
 <A name="lse_area"></A><B><U><big>Area Report</big></U></B>
 
 ################### Begin Area Report (master)######################
-Number of register bits => 54 of 5280 (1 % )
-CCU2 => 22
-FD1P3XZ => 54
+Number of register bits => 92 of 5280 (1 % )
+EBR_B => 1
+CCU2 => 31
+FD1P3XZ => 92
 IB => 2
-LUT4 => 84
+LUT4 => 340
 OB => 11
 PLL_B => 1
 ################### End Area Report ##################
 Number of odd-length carry chains : 1
-Number of even-length carry chains : 2
+Number of even-length carry chains : 3
 
 
 <A name="lse_clock"></A><B><U><big>Clock Report</big></U></B>
@@ -367,23 +672,23 @@ Clock Enable Nets
 Number of Clock Enables: 0
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
+  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[0][0], loads : 37
+  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[0][1], loads : 29
+  Net : game_logic_portmap/piece_loc[0][0], loads : 24
+  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[1][3], loads : 24
+  Net : game_logic_portmap/collision_check_portmap/n50, loads : 24
+  Net : vga_sync_portmap/rgb_col[4], loads : 21
   Net : vga_sync_portmap/rgb_col_0__N_50, loads : 21
-  Net : clock_manager_portmap/clk_counter_0__N_120, loads : 19
-  Net : vga_sync_portmap/rgb_col[4], loads : 10
-  Net : vga_sync_portmap/rgb_row_0__N_30, loads : 10
-  Net : vga_sync_portmap/rgb_row[6], loads : 8
-  Net : vga_sync_portmap/rgb_col[5], loads : 8
-  Net : game_logic_portmap/piece_loc[0][0], loads : 8
-  Net : vga_sync_portmap/rgb_row[7], loads : 7
-  Net : vga_sync_portmap/rgb_row[5], loads : 7
-  Net : vga_sync_portmap/rgb_row[4], loads : 7
+  Net : game_logic_portmap/piece_loc[1][1], loads : 19
+  Net : clock_manager_portmap/clk_counter_0__N_302, loads : 19
+  Net : game_logic_portmap/n6401, loads : 17
 ################### End Clock Report ##################
 
-Peak Memory Usage: 131 MB
+Peak Memory Usage: 155 MB
 
 --------------------------------------------------------------
 Total CPU Time: 0 secs 
-Total REAL Time: 3 secs 
+Total REAL Time: 4 secs 
 --------------------------------------------------------------
 
 

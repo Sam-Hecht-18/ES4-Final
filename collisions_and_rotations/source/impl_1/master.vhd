@@ -4,7 +4,7 @@ use IEEE.numeric_std.all;
 
 package my_types_package is
 	type piece_loc_type is array(1 downto 0) of unsigned(3 downto 0);  -- (x, y) from top left of grid to top left of piece 4x4
-	type board_type is array (15 downto 0) of std_logic_vector(0 to 9);
+	type board_type is array (15 downto 0) of std_logic_vector(0 to 12);
 end package;
 
 library IEEE;
@@ -31,7 +31,7 @@ architecture synth of master is
 		port(
 			game_clock : in std_logic;
 			game_clock_ctr : in unsigned(15 downto 0);
-			
+
 			valid_rgb: in std_logic;
 
 			press_rotate : in std_logic;
@@ -40,7 +40,7 @@ architecture synth of master is
 			press_right : in std_logic;
 			press_sel : in std_logic;
 
-			piece_loc : out piece_loc_type := (4d"2", 4d"0"); -- (x, y) from top left of grid to top left of piece 4x4
+			piece_loc : out piece_loc_type; -- (x, y) from top left of grid to top left of piece 4x4
 			piece_shape : out std_logic_vector(15 downto 0);
 			board : out board_type;
 			special_background : out unsigned(4 downto 0)

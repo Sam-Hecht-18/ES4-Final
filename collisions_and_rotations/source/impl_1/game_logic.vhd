@@ -4,7 +4,7 @@ use IEEE.numeric_std.all;
 
 package my_types_package is
 	type piece_loc_type is array(1 downto 0) of unsigned(3 downto 0);  -- (x, y) from top left of grid to top left of piece 4x4
-	type board_type is array (15 downto 0) of std_logic_vector(0 to 9);
+	type board_type is array (15 downto 0) of std_logic_vector(0 to 12);
 end package;
 
 library IEEE;
@@ -25,7 +25,7 @@ entity game_logic is
 		press_right : in std_logic;
 		press_sel : in std_logic;
 
-		piece_loc : out piece_loc_type := (4d"2", 4d"0"); -- (x, y) from top left of grid to top left of piece 4x4
+		piece_loc : out piece_loc_type; -- (y,x) from top left of grid to top left of piece 4x4
 		piece_shape : out std_logic_vector(15 downto 0);
 		board : out board_type;
 		special_background : out unsigned(4 downto 0)
@@ -63,18 +63,19 @@ architecture synth of game_logic is
 
 	component board_updater is
 		port(
-		  clk : in std_logic;
-		  valid_update : in std_logic;
-		  piece_loc: in piece_loc_type; -- (x, y) from top left of grid to top left of piece 4x4
-		  piece_shape: in std_logic_vector(15 downto 0);
-		  stable_board : in board_type;
-		  new_board : out board_type
-	  );
+			game_clock : in std_logic;
+			valid_update : in std_logic;
+			score : in unsigned(23 downto 0);
+			piece_loc: in piece_loc_type; -- (x, y) from top left of grid to top left of piece 4x4
+			piece_shape: in std_logic_vector(15 downto 0);
+			stable_board : in board_type;
+			new_board : out board_type;
+			new_score : out unsigned(23 downto 0)
+		  );
 	end component;
 
 	component collision_check is
 		port(
-			clk : in std_logic;
 			turn : in unsigned(7 downto 0); -- a number representing the number of times a piece has been added to the grid. starts at 0
 			piece_loc : in piece_loc_type; -- (x, y) from top left of grid to top left of piece 4x4
 			piece_shape : in std_logic_vector(15 downto 0);
@@ -120,14 +121,22 @@ architecture synth of game_logic is
 	signal left_delay : unsigned(2 downto 0);
 	signal down_delay : unsigned(2 downto 0);
 
-	signal collision: std_logic;
+	signal collision: std_logic := '0';
 	signal collision_left : std_logic := '0';
 	signal collision_right : std_logic := '0';
 	signal collision_down : std_logic := '0';
-	signal collision_rotate : std_logic;
+	signal collision_rotate : std_logic := '0';
 
+	signal move_down_auto : std_logic;
 	signal advance_turn : std_logic;
 	signal valid_update : std_logic;
+
+	signal first_time : std_logic := '0';
+	signal piece_loc_x : unsigned(3 downto 0) := 4d"3";
+	signal piece_loc_y : unsigned(3 downto 0) := 4d"0";
+	
+	signal new_board : board_type;
+	signal new_score : unsigned(23 downto 0);
 
 begin
 	--turn_manager_portmap : turn_manager port map(
@@ -151,31 +160,32 @@ begin
 	-- 	new_piece_rotation => piece_rotation
 	-- );
 
-	-- board_updater_portmap : board_updater port map(
-	-- 	clk => clk,
-	-- 	valid_update => valid_update,
-	-- 	piece_loc => piece_loc,
-	-- 	piece_shape => piece_shape,
-	-- 	stable_board => board,
-	-- 	new_board => board ---- WILL THIS WORK ???
-	-- );
+	 board_updater_portmap : board_updater port map(
+	 	game_clock => game_clock,
+	 	valid_update => valid_update,
+		score => 24d"0",
+	 	piece_loc => piece_loc,
+	 	piece_shape => piece_shape,
+	 	stable_board => board,
+	 	new_board => new_board, ---- WILL THIS WORK ???
+		new_score => new_score
+	 );
 
-	-- collision_check_portmap : collision_check port map(
-	-- 	clk,
-	-- 	8d"0",
-	-- 	piece_loc,
-	-- 	piece_shape,
-	-- 	board,
-	-- 	press_left,
-	-- 	press_right,
-	-- 	press_down,
-	-- 	press_rotate,
-	-- 	move_down_auto,
-	-- 	collision_left,
-	-- 	collision_right,
-	-- 	collision_down,
-	-- 	collision_rotate
-	-- );
+	 collision_check_portmap : collision_check port map(
+	 	8d"0",
+	 	piece_loc,
+	 	piece_shape,
+	 	board,
+	 	press_left,
+	 	press_right,
+	 	press_down,
+	 	press_rotate,
+	 	move_down_auto,
+	 	collision_left,
+	 	collision_right,
+	 	collision_down,
+	 	collision_rotate
+	 );
 
 	-- row_check_portmap : row_check port map(
 	-- 	clk => clk,
@@ -186,74 +196,85 @@ begin
 	-- );
 
 	generate_board_row: for y in 0 to 11 generate
-		board(y) <= 10b"0";
+		board(y) <= 13b"0" when first_time = '0' else new_board(y);
 	end generate;
 
-	board(12) <= "1010000000";
-	board(13) <= "1010000000";
-	board(14) <= "1010101110";
-	board(15) <= "1111111111";
-
+	board(12) <= "0001010000000"  when first_time = '0' else new_board(12);
+	board(13) <= "0001010000000" when first_time = '0' else new_board(13);
+	board(14) <= "0001010101110" when first_time = '0' else new_board(14);
+	board(15) <= "0001111111111" when first_time = '0' else new_board(15);
+	
 	collision <= collision_down or collision_left or collision_rotate or collision_right;
 
 	special_background <= 5d"0" when collision = '0' else 5d"1" when collision_down = '1' else 5d"2" when collision_left = '1' else 5d"3" when collision_right = '1' else 5d"3" when collision_rotate = '1';
 
 	process(game_clock) begin
 		if rising_edge(game_clock) then
-
-			-- if (valid_input = '1') then
+				
+			if game_clock_ctr < 16d"60" and first_time = '0' then
+				piece_loc(0) <= 4d"3";
+				piece_loc(1) <= 4d"0";
+			elsif game_clock_ctr = 16d"60" then
+				first_time <= '1';
+			else
 
 				-- Rotates piece (TODO: check that rotation is valid, i.e., doesn't overlap on anything after rotation)
-				--if press_rotate = '1' and rotate_delay = 0 then
-					--piece_rotation <= piece_rotation + 1;
-					--rotate_delay <= rotate_delay + 1;
-				--end if;
-				--if rotate_delay > 0 then
-					--rotate_delay <= rotate_delay + 1;
-				--end if;
+				if game_clock_ctr(5 downto 0) > "000011" and game_clock_ctr(5 downto 0) < "111000" then
+					if press_rotate = '1' and rotate_delay = 0 then
+						piece_rotation <= piece_rotation + 1;
+						rotate_delay <= rotate_delay + 1;
+					end if;
+					if rotate_delay > 0 then
+						rotate_delay <= rotate_delay + 1;
+					end if;
 
-				-- Swaps falling piece (for testing)
-				--if press_sel = '1' and sel_delay = 0 then
-					--piece_code <= piece_code + 1;
-					--sel_delay <= sel_delay + 1;
-				--end if;
-				--if sel_delay > 0 then
-					--sel_delay <= sel_delay + 1;
-				--end if;
+					-- Swaps falling piece (for testing)
+					if press_sel = '1' and sel_delay = 0 then
+						-- first_time <= '1';
+						piece_code <= piece_code + 1;
+						sel_delay <= sel_delay + 1;
 
-				-- Movement left
-				if press_left = '1' and left_delay = 0 and collision_left = '0' then
-					piece_loc(0) <= piece_loc(0) - 1;
-					left_delay <= left_delay + 1;
-				elsif left_delay > 0 then
-					left_delay <= left_delay + 1;
+					elsif sel_delay > 0 then
+						sel_delay <= sel_delay + 1;
+					end if;
+
+					-- Movement left
+					 if press_left = '1' and left_delay = 0 and collision_left = '0' then
+						piece_loc(0) <= piece_loc(0) - 1;
+						left_delay <= left_delay + 1;
+					 elsif left_delay > 0 then
+						left_delay <= left_delay + 1;
+					 end if;
+
+					-- Movement right
+					 if press_right = '1' and right_delay = 0 and collision_right = '0' then
+						piece_loc(0) <= piece_loc(0) + 1;
+						right_delay <= right_delay + 1;
+					 elsif right_delay > 0 then
+						right_delay <= right_delay + 1;
+					 end if;
+
+					-- Movement down
+					if press_down = '1' and down_delay = 0 and collision_down = '0' then
+						piece_loc(1) <= piece_loc(1) + 1;
+						down_delay <= down_delay + 1;
+					end if;
+					if down_delay > 0 then
+						down_delay <= down_delay + 1;
+					end if;
+
+				elsif game_clock_ctr(5 downto 0) = "111000" then
+					move_down_auto <= '1';
+				elsif (collision_down = '0' and game_clock_ctr(5 downto 0) = "111111") then
+					move_down_auto <= '0';
+					piece_loc(1) <= piece_loc(1) + 1;
+					--advance_turn <= '0';
+				--elsif (collision_down = '1' and game_clock_ctr(5 downto 0) = "000001") then
+					--advance_turn <= '1';
+				--else
+					--advance_turn <= '0';
 				end if;
-
-				-- Movement right
-				if press_right = '1' and right_delay = 0 and collision_right = '0' then
-					piece_loc(0) <= piece_loc(0) + 1;
-					right_delay <= right_delay + 1;
-				elsif right_delay > 0 then
-					right_delay <= right_delay + 1;
-				end if;
-
-				-- Movement down
-				--if press_down = '1' and down_delay = 0 then
-					--piece_loc(1) <= piece_loc(1) + 1;
-					--down_delay <= down_delay + 1;
-				--end if;
-				--if down_delay > 0 then
-					--down_delay <= down_delay + 1;
-				--end if;
-
-			-- end if;
-
-			--if (collision_down = '0' and game_clock_ctr(5 downto 0) = "000000") then
-				--piece_loc(1) <= piece_loc(1) + 1;
-				advance_turn <= '0';
-			--else
-				advance_turn <= '1';
-			--end if;
+			end if;
 		end if;
 	end process;
 

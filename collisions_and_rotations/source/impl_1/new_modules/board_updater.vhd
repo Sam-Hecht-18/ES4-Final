@@ -4,7 +4,7 @@ use IEEE.numeric_std.all;
 
 package my_types_package is
 	type piece_loc_type is array(1 downto 0) of unsigned(3 downto 0);  -- (x, y) from top left of grid to top left of piece 4x4
-	type board_type is array (15 downto 0) of std_logic_vector(0 to 9);
+	type board_type is array (15 downto 0) of std_logic_vector(0 to 12);
 end package;
 
 library IEEE;
@@ -14,7 +14,7 @@ use work.my_types_package.all;
 
 entity board_updater is
   	port(
-		clk : in std_logic;
+		game_clock : in std_logic;
 		valid_update : in std_logic;
 		score : in unsigned(23 downto 0);
 		piece_loc: in piece_loc_type; -- (x, y) from top left of grid to top left of piece 4x4
@@ -27,16 +27,16 @@ end board_updater;
 
 architecture synth of board_updater is
 
-	component board_overlap is
-		port(
-			clk : in std_logic;
-			union_or_intersection : in std_logic;
-			piece_loc: in piece_loc_type; -- (x, y) from top left of grid to top left of piece 4x4
-			piece_shape: in std_logic_vector(15 downto 0);
-			piece_bottom_row : out unsigned(1 downto 0);
-			overlap_row_1, overlap_row_2, overlap_row_3, overlap_row_4 : out std_logic_vector(3 downto 0)
-		);
-	end component;
+	--component board_overlap is
+		--port(
+			--clk : in std_logic;
+			--union_or_intersection : in std_logic;
+			--piece_loc: in piece_loc_type; -- (x, y) from top left of grid to top left of piece 4x4
+			--piece_shape: in std_logic_vector(15 downto 0);
+			--piece_bottom_row : out unsigned(1 downto 0);
+			--overlap_row_1, overlap_row_2, overlap_row_3, overlap_row_4 : out std_logic_vector(3 downto 0)
+		--);
+	--end component;
 
 	signal temp_board_shadow : board_type;
 	signal temp_board : board_type;
@@ -93,8 +93,8 @@ begin
 	-- temp_board <= temp_board_shadow or stable_board; -- MAY NOT WORK !!!
 	-- new_board <= temp_board when valid_update = '1' else stable_board;
 
-	process(clk) begin
-		if rising_edge(clk) then
+	process(game_clock) begin
+		if rising_edge(game_clock) then
 			if valid_update = '1' then
 				for i in 15 downto 0 loop
 					if (temp_board(i) = "1111111111" and i /= 0) then

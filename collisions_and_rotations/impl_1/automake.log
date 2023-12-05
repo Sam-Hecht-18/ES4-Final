@@ -54,7 +54,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-Mon Dec  4 20:00:08 2023
+Mon Dec  4 23:48:09 2023
 
 
 Command Line:  C:\lscc\radiant\2023.1\ispfpga\bin\nt64\synthesis.exe -f collisions_and_rotations_impl_1_lattice.synproj -gui -msgset Z:/ES4-Final/collisions_and_rotations/promote.xml 
@@ -229,7 +229,7 @@ Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/collisio
 
 INFO <35921014> - z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(5): analyzing package my_types_package. VHDL-1014
 INFO <35921012> - z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(15): analyzing entity collision_check. VHDL-1012
-INFO <35921010> - z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(34): analyzing architecture synth. VHDL-1010
+INFO <35921010> - z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(33): analyzing architecture synth. VHDL-1010
 Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd. VHDL-1481
 Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd
 
@@ -310,52 +310,357 @@ Top module name (VHDL, mixed language): master
                                                          
 
 
-WARNING <35001771> - Initial value found on net gnd_2 will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net pwr_2 will be ignored due to unrecognized driver type
+WARNING <35001771> - Initial value found on net collision will be ignored due to unrecognized driver type
+WARNING <35001771> - Initial value found on net collision_left will be ignored due to unrecognized driver type
+WARNING <35001771> - Initial value found on net collision_right will be ignored due to unrecognized driver type
+WARNING <35001771> - Initial value found on net collision_down will be ignored due to unrecognized driver type
+WARNING <35001771> - Initial value found on net collision_rotate will be ignored due to unrecognized driver type
+WARNING <35001771> - Initial value found on net hit_piece will be ignored due to unrecognized driver type
+WARNING <35001771> - Initial value found on net hit_bottom will be ignored due to unrecognized driver type
 WARNING <35935049> - input port sclk_i remains unconnected for this instance. VDB-5049
 WARNING <35935049> - input port sdi_i remains unconnected for this instance. VDB-5049
+z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(128): net \game_logic_portmap/collision_rotate does not have a driver. VDB-1002
 z:/es4-final/collisions_and_rotations/mypll/rtl/mypll.v(139): net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sclk_i does not have a driver. VDB-1002
 z:/es4-final/collisions_and_rotations/mypll/rtl/mypll.v(140): net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sdi_i does not have a driver. VDB-1002
+######## Missing driver on net \game_logic_portmap/collision_rotate. Patching with GND.
 ######## Missing driver on net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sclk_i. Patching with GND.
 ######## Missing driver on net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sdi_i. Patching with GND.
 
 
 
-######## Missing driver on net special_background[4]. Patching with GND.
-######## Missing driver on net special_background[3]. Patching with GND.
-######## Missing driver on net special_background[2]. Patching with GND.
-######## Missing driver on net special_background[1]. Patching with GND.
-######## Missing driver on net special_background[0]. Patching with GND.
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[15]_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[15]_i1 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[15]_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[15]_i3 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[15]_i4 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[15]_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[15]_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[15]_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[15]_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[15]_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[15]_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[15]_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[0]_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[0]_i1 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[0]_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[0]_i3 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[0]_i4 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[0]_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[0]_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[0]_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[0]_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[0]_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[0]_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[0]_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[1]_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[1]_i1 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[1]_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[1]_i3 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[1]_i4 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[1]_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[1]_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[1]_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[1]_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[1]_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[1]_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[1]_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[2]_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[2]_i1 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[2]_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[2]_i3 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[2]_i4 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[2]_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[2]_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[2]_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[2]_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[2]_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[2]_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[2]_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[3]_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[3]_i1 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[3]_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[3]_i3 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[3]_i4 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[3]_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[3]_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[3]_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[3]_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[3]_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[3]_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[3]_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[4]_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[4]_i1 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[4]_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[4]_i3 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[4]_i4 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[4]_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[4]_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[4]_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[4]_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[4]_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[4]_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[4]_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[5]_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[5]_i1 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[5]_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[5]_i3 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[5]_i4 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[5]_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[5]_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[5]_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[5]_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[5]_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[5]_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[5]_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[6]_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[6]_i1 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[6]_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[6]_i3 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[6]_i4 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[6]_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[6]_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[6]_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[6]_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[6]_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[6]_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[6]_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[7]_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[7]_i1 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[7]_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[7]_i3 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[7]_i4 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[7]_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[7]_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[7]_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[7]_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[7]_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[7]_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[7]_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[8]_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[8]_i1 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[8]_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[8]_i3 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[8]_i4 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[8]_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[8]_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[8]_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[8]_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[8]_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[8]_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[8]_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[9]_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[9]_i1 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[9]_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[9]_i3 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[9]_i4 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[9]_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[9]_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[9]_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[9]_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[9]_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[9]_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[9]_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[10]_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[10]_i1 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[10]_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[10]_i3 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[10]_i4 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[10]_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[10]_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[10]_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[10]_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[10]_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[10]_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[10]_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[11]_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[11]_i1 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[11]_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[11]_i3 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[11]_i4 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[11]_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[11]_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[11]_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[11]_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[11]_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[11]_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[11]_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[12]_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[12]_i1 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[12]_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[12]_i3 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[12]_i4 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[12]_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[12]_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[12]_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[12]_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[12]_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[12]_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[12]_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[13]_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[13]_i1 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[13]_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[13]_i3 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[13]_i4 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[13]_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[13]_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[13]_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[13]_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[13]_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[13]_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[13]_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[14]_i0 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[14]_i1 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[14]_i2 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[14]_i3 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[14]_i4 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[14]_i5 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[14]_i6 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[14]_i7 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[14]_i8 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[14]_i9 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[14]_i10 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[14]_i11 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[14]_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[13]_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[12]_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[11]_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[10]_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[9]_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[8]_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[7]_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[6]_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[5]_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[4]_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[3]_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[2]_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[1]_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[0]_i12 clock is stuck at Zero. VDB-5040
+WARNING <35935040> - Register \game_logic_portmap/board_updater_portmap/new_board[15]_i12 clock is stuck at Zero. VDB-5040
 Combinational loop found : 1
-
- Net left_button 
-
- Instance \nes_controller_portmap/mux_7_i2 
-
-Combinational loop found : 2
-
- Net right_button 
-
- Instance \nes_controller_portmap/mux_7_i1 
-
-Combinational loop found : 3
 
  Net rotate_out_c 
 
  Instance \nes_controller_portmap/mux_7_i4 
 
+Combinational loop found : 2
+
+ Net down_button 
+
+ Instance \nes_controller_portmap/mux_7_i3 
+
+Combinational loop found : 3
+
+ Net left_button 
+
+ Instance \nes_controller_portmap/mux_7_i2 
+
+Combinational loop found : 4
+
+ Net right_button 
+
+ Instance \nes_controller_portmap/mux_7_i1 
+
+Combinational loop found : 5
+
+ Net sel 
+
+ Instance \nes_controller_portmap/mux_7_i6 
+
+Combinational loop found : 6
+
+ Net special_background[1] 
+
+ Instance \game_logic_portmap/mux_43_i2 
+
+ Net \game_logic_portmap/n1029 
+
+ Instance \game_logic_portmap/mux_42_i2 
+
+ Net \game_logic_portmap/n1023 
+
+ Instance \game_logic_portmap/mux_41_i2 
+
+ Net \game_logic_portmap/n1017 
+
+ Instance \game_logic_portmap/mux_39_i2 
+
+Combinational loop found : 7
+
+ Net special_background[0] 
+
+ Instance \game_logic_portmap/mux_43_i1 
+
+ Net \game_logic_portmap/n1030 
+
+ Instance \game_logic_portmap/mux_42_i1 
+
+ Net \game_logic_portmap/n1024 
+
+ Instance \game_logic_portmap/mux_41_i1 
+
+Combinational loop found : 8
+
+ Net special_background[2] 
+
+ Instance \game_logic_portmap/mux_43_i3 
+
+ Net \game_logic_portmap/n1028 
+
+ Instance \game_logic_portmap/mux_42_i3 
+
+Combinational loop found : 9
+
+ Net special_background[3] 
+
+ Instance \game_logic_portmap/mux_43_i4 
+
+ Net \game_logic_portmap/n1027 
+
+ Instance \game_logic_portmap/mux_42_i4 
+
+ Net \game_logic_portmap/n1021 
+
+ Instance \game_logic_portmap/mux_41_i4 
+
+ Net \equal_745/n4 
+
+ Instance equal_745_i4 
+
+ Net \game_logic_portmap/n1015 
+
+ Instance \game_logic_portmap/mux_39_i4 
+
+Combinational loop found : 10
+
+ Net special_background[4] 
+
+ Instance \game_logic_portmap/mux_43_i5 
+
+ Net \game_logic_portmap/n1026 
+
+ Instance \game_logic_portmap/mux_42_i5 
+
+ Net \equal_745/n4 
+
+ Instance equal_745_i4 
+
+ Net \game_logic_portmap/n1020 
+
+ Instance \game_logic_portmap/mux_41_i5 
+
 
 ################### Begin Area Report (master)######################
-Number of register bits => 54 of 5280 (1 % )
-CCU2 => 22
-FD1P3XZ => 54
+Number of register bits => 92 of 5280 (1 % )
+EBR_B => 1
+CCU2 => 31
+FD1P3XZ => 92
 IB => 2
-LUT4 => 84
+LUT4 => 340
 OB => 11
 PLL_B => 1
 ################### End Area Report ##################
 Number of odd-length carry chains : 1
-Number of even-length carry chains : 2
+Number of even-length carry chains : 3
 
 ################### Begin Clock Report ######################
 Clock Nets
@@ -368,23 +673,23 @@ Clock Enable Nets
 Number of Clock Enables: 0
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
+  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[0][0], loads : 37
+  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[0][1], loads : 29
+  Net : game_logic_portmap/piece_loc[0][0], loads : 24
+  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[1][3], loads : 24
+  Net : game_logic_portmap/collision_check_portmap/n50, loads : 24
+  Net : vga_sync_portmap/rgb_col[4], loads : 21
   Net : vga_sync_portmap/rgb_col_0__N_50, loads : 21
-  Net : clock_manager_portmap/clk_counter_0__N_120, loads : 19
-  Net : vga_sync_portmap/rgb_col[4], loads : 10
-  Net : vga_sync_portmap/rgb_row_0__N_30, loads : 10
-  Net : vga_sync_portmap/rgb_row[6], loads : 8
-  Net : vga_sync_portmap/rgb_col[5], loads : 8
-  Net : game_logic_portmap/piece_loc[0][0], loads : 8
-  Net : vga_sync_portmap/rgb_row[7], loads : 7
-  Net : vga_sync_portmap/rgb_row[5], loads : 7
-  Net : vga_sync_portmap/rgb_row[4], loads : 7
+  Net : game_logic_portmap/piece_loc[1][1], loads : 19
+  Net : clock_manager_portmap/clk_counter_0__N_302, loads : 19
+  Net : game_logic_portmap/n6401, loads : 17
 ################### End Clock Report ##################
 
-Peak Memory Usage: 131 MB
+Peak Memory Usage: 155 MB
 
 --------------------------------------------------------------
 Total CPU Time: 0 secs 
-Total REAL Time: 3 secs 
+Total REAL Time: 4 secs 
 --------------------------------------------------------------
 
 
@@ -396,10 +701,10 @@ Command Line: postsyn -a iCE40UP -p iCE40UP5K -t SG48 -sp High-Performance_1.2V 
    Package:          SG48
    Performance:      High-Performance_1.2V
 Reading input file 'collisions_and_rotations_impl_1.vm' ...
-CPU Time to convert: 0
+CPU Time to convert: 0.046875
 REAL Time to convert: 0
-convert PEAK Memory Usage: 27 MB
-convert CURRENT Memory Usage: 27 MB
+convert PEAK Memory Usage: 31 MB
+convert CURRENT Memory Usage: 30 MB
 Reading constraint file 'Z:/ES4-Final/collisions_and_rotations/impl_1/collisions_and_rotations_impl_1.ldc' ...
 Removing unused logic ...
 Starting design annotation....
@@ -414,7 +719,7 @@ Writing output file 'collisions_and_rotations_impl_1_syn.udb'.
 POSTSYN finished successfully.
 Total CPU Time: 0 secs 
 Total REAL Time: 0 secs 
-Peak Memory Usage: 35 MB
+Peak Memory Usage: 36 MB
 
 
 map -i "collisions_and_rotations_impl_1_syn.udb" -pdc "Z:/ES4-Final/collisions_and_rotations/pins.pdc" -o "collisions_and_rotations_impl_1_map.udb" -mp "collisions_and_rotations_impl_1.mrp" -hierrpt     
@@ -453,12 +758,13 @@ Optimizing...
 
 
 Design Summary:
-   Number of slice registers:  54 out of  5280 (1%)
+   Number of slice registers:  92 out of  5280 (2%)
    Number of I/O registers:      0 out of   117 (0%)
-   Number of LUT4s:           132 out of  5280 (3%)
-      Number of logic LUT4s:              85
-      Number of inserted feedthru LUT4s:   3
-      Number of ripple logic:             22 (44 LUT4s)
+   Number of LUT4s:           414 out of  5280 (8%)
+      Number of logic LUT4s:             341
+      Number of inserted feedthru LUT4s:   5
+      Number of replicated LUT4s:          6
+      Number of ripple logic:             31 (62 LUT4s)
    Number of IO sites used:   13 out of 39 (33%)
       Number of IO sites used for general PIO: 13
       Number of IO sites used for I3C: 0 out of 2 (0%)
@@ -478,30 +784,34 @@ Design Summary:
    Number of SRAMs:            0 out of 4 (0%)
    Number of WARMBOOTs:        0 out of 1 (0%)
    Number of SPIs:             0 out of 2 (0%)
-   Number of EBRs:             0 out of 30 (0%)
+   Number of EBRs:             1 out of 30 (3%)
    Number of PLLs:             1 out of 1 (100%)
    Number of Clocks:  4
-      Net clk: 23 loads, 23 rising, 0 falling (Driver: Pin clock_manager_portmap.pll_portmap.lscc_pll_inst.u_PLL_B/OUTGLOBAL)
-      Net ctrlr_clk_c: 4 loads, 4 rising, 0 falling (Driver: Pin nes_controller_portmap.ctrlr_clk_c_I_0/Z)
-      Net game_clock: 10 loads, 10 rising, 0 falling (Driver: Pin clock_manager_portmap.game_clock_I_0/Q)
+      Net clk: 32 loads, 32 rising, 0 falling (Driver: Pin clock_manager_portmap.pll_portmap.lscc_pll_inst.u_PLL_B/OUTGLOBAL)
+      Net ctrlr_clk_c: 6 loads, 6 rising, 0 falling (Driver: Pin nes_controller_portmap.NEScount_3__I_0/Z)
+      Net game_clock: 31 loads, 31 rising, 0 falling (Driver: Pin clock_manager_portmap.game_clock_I_0/Q)
       Net osc_c: 1 loads, 1 rising, 0 falling (Driver: Port osc)
-   Number of Clock Enables:  1
+   Number of Clock Enables:  4
+      Net VCC_net: 3 loads, 0 SLICEs
       Net vga_sync_portmap.rgb_col_0__N_50: 6 loads, 6 SLICEs
-   Number of LSRs:  3
+      Net game_logic_portmap.piece_loc_1__2__N_87: 2 loads, 2 SLICEs
+      Net game_logic_portmap.piece_loc_0__0__N_102: 4 loads, 4 SLICEs
+   Number of LSRs:  4
       Net vga_sync_portmap.rgb_col_0__N_50: 6 loads, 6 SLICEs
       Net vga_sync_portmap.rgb_row_0__N_30: 6 loads, 6 SLICEs
-      Net clock_manager_portmap.clk_counter_0__N_120: 10 loads, 10 SLICEs
+      Net game_logic_portmap.piece_loc_0__0__N_103: 7 loads, 7 SLICEs
+      Net clock_manager_portmap.clk_counter_0__N_302: 10 loads, 10 SLICEs
    Top 10 highest fanout non-clock nets:
-      Net vga_sync_portmap.rgb_col_0__N_50: 13 loads
-      Net rgb_col[4]: 11 loads
-      Net clock_manager_portmap.clk_counter_0__N_120: 10 loads
-      Net piece_loc[0][0]: 9 loads
-      Net rgb_col[5]: 9 loads
-      Net rgb_row[6]: 9 loads
-      Net rgb_col[6]: 8 loads
-      Net rgb_col[7]: 8 loads
-      Net rgb_row[4]: 8 loads
-      Net rgb_row[5]: 8 loads
+      Net game_logic_portmap.collision_check_portmap.future_piece_loc[0][0]: 37 loads
+      Net game_logic_portmap.collision_check_portmap.future_piece_loc[0][1]: 29 loads
+      Net game_logic_portmap.collision_check_portmap.future_piece_loc[1][3]: 26 loads
+      Net piece_loc[1][1]: 26 loads
+      Net piece_loc[0][0]: 25 loads
+      Net game_logic_portmap.collision_check_portmap.n50: 24 loads
+      Net rgb_col[4]: 22 loads
+      Net game_logic_portmap.collision_check_portmap.future_piece_loc[1][0]: 17 loads
+      Net game_logic_portmap.collision_check_portmap.future_piece_loc_1__1__N_220: 17 loads
+      Net game_logic_portmap.n6401: 17 loads
 Running physical design DRC...
 
 CRITICAL <71003005> - The clock port [osc] is assigned to a non clock dedicated pin [12], which might affect the clock performance. Use dedicated clock resources for the port.
@@ -517,13 +827,13 @@ Constraint Summary:
 
 Total CPU Time: 0 secs  
 Total REAL Time: 0 secs  
-Peak Memory Usage: 58 MB
+Peak Memory Usage: 62 MB
 
 
 par -f "collisions_and_rotations_impl_1.p2t" "collisions_and_rotations_impl_1_map.udb" "collisions_and_rotations_impl_1.udb"
 
 Lattice Place and Route Report for Design "collisions_and_rotations_impl_1_map.udb"
-Mon Dec  4 20:00:12 2023
+Mon Dec  4 23:48:14 2023
 
 PAR: Place And Route Radiant Software (64-bit) 2023.1.0.43.3.
 Command Line: par -w -t 1 -cores 1 -exp parPathBased=ON \
@@ -547,13 +857,13 @@ WARNING <70001944> - No master clock for
 
 WARNING: Database constraint "create_generated_clock -name {clk} -source [get_pins clock_manager_portmap.pll_portmap.lscc_pll_inst.u_PLL_B/REFERENCECLK] -divide_by 32 -multiply_by 67 [get_pins clock_manager_portmap.pll_portmap.lscc_pll_inst.u_PLL_B/OUTGLOBAL]" does not have corresponding timing constraint. Please check if the resource objects of the constraint are valid carefully!
 CRITICAL <71003005> - The clock port [osc] is assigned to a non clock dedicated pin [12], which might affect the clock performance. Use dedicated clock resources for the port.
-Number of Signals: 226
-Number of Connections: 541
+Number of Signals: 577
+Number of Connections: 1644
 Device utilization summary:
 
-   SLICE (est.)      70/2640          3% used
-     LUT            132/5280          3% used
-     REG             54/5280          1% used
+   SLICE (est.)     218/2640          8% used
+     LUT            414/5280          8% used
+     REG             92/5280          2% used
    PIO               13/56           23% used
                      13/36           36% bonded
    IOLOGIC            0/56            0% used
@@ -567,7 +877,7 @@ Device utilization summary:
    SRAM               0/4             0% used
    WARMBOOT           0/1             0% used
    SPI                0/2             0% used
-   EBR                0/30            0% used
+   EBR                1/30            3% used
    PLL                1/1           100% used
    RGBOUTBUF          0/3             0% used
    I3C                0/2             0% used
@@ -586,27 +896,27 @@ Starting Placer Phase 1. CPU time: 0 secs , REAL time: 0 secs
 ..  ..
 ....................
 
-Placer score = 25155.
+Placer score = 77879.
 
 Device SLICE utilization summary after final SLICE packing:
-   SLICE             69/2640          2% used
+   SLICE            218/2640          8% used
 
 WARNING <70001944> - No master clock for
 	generated clock	create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] .
-Finished Placer Phase 1. CPU time: 0 secs , REAL time: 3 secs 
+Finished Placer Phase 1. CPU time: 2 secs , REAL time: 6 secs 
 
 Starting Placer Phase 2.
 .
 
-Placer score =  31585
-Finished Placer Phase 2.  CPU time: 0 secs , REAL time: 3 secs 
+Placer score =  107347
+Finished Placer Phase 2.  CPU time: 2 secs , REAL time: 6 secs 
 
 
 ------------------ Clock Report ------------------
 
 Global Clocks :
-  PRIMARY "clk" from OUTGLOBAL on comp "clock_manager_portmap.pll_portmap.lscc_pll_inst.u_PLL_B" on site "PLL_R13C32", clk load = 23, ce load = 0, sr load = 0
-  PRIMARY "game_clock" from Q1 on comp "clock_manager_portmap.SLICE_102" on site "R14C4C", clk load = 6, ce load = 0, sr load = 0
+  PRIMARY "clk" from OUTGLOBAL on comp "clock_manager_portmap.pll_portmap.lscc_pll_inst.u_PLL_B" on site "PLL_R13C32", clk load = 32, ce load = 0, sr load = 0
+  PRIMARY "game_clock" from Q0 on comp "clock_manager_portmap.SLICE_67" on site "R13C2D", clk load = 20, ce load = 0, sr load = 0
 
   PRIMARY  : 2 out of 8 (25%)
 
@@ -628,12 +938,12 @@ I/O Bank Usage Summary:
 | 2        | 3 / 8 ( 37%)  | 3.3V       |            |            |
 +----------+---------------+------------+------------+------------+
 
-Total Placer CPU time: 0 secs , REAL time: 3 secs 
+Total Placer CPU time: 2 secs , REAL time: 6 secs 
 
 Writing design to file collisions_and_rotations_impl_1_par.dir/5_1.udb ...
 
 
-Start NBR router at 20:00:15 12/04/23
+Start NBR router at 23:48:20 12/04/23
 
 *****************************************************************
 Info: NBR allows conflicts(one node used by more than one signal)
@@ -651,19 +961,19 @@ Note: NBR uses a different method to calculate timing slacks. The
 Starting routing resource preassignment
 Preassignment Summary:
 --------------------------------------------------------------------------------
-92 connections routed with dedicated routing resources
+145 connections routed with dedicated routing resources
 2 global clock signals routed
-121 connections routed (of 535 total) (22.62%)
+197 connections routed (of 1624 total) (12.13%)
 ---------------------------------------------------------
 Clock routing summary:
 Primary clocks (2 used out of 8 available):
-#0  Signal "game_clock"
-       Clock   loads: 6     out of     6 routed (100.00%)
+#5  Signal "game_clock"
+       Clock   loads: 20    out of    20 routed (100.00%)
 #7  Signal "clk"
-       Clock   loads: 23    out of    23 routed (100.00%)
+       Clock   loads: 32    out of    32 routed (100.00%)
 Other clocks:
     Signal "ctrlr_clk_c"
-       Clock   loads: 0     out of     2 routed (  0.00%)
+       Clock   loads: 0     out of     3 routed (  0.00%)
        Data    loads: 0     out of     1 routed (  0.00%)
     Signal "osc_c"
        Clock   loads: 0     out of     1 routed (  0.00%)
@@ -679,18 +989,26 @@ WARNING <70001944> - No master clock for
 Routing in Serial Mode ......
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Start NBR section for initial routing at 20:00:15 12/04/23
+Start NBR section for initial routing at 23:48:20 12/04/23
 Level 4, iteration 1
-16(0.01%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
+78(0.03%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
 
 Info: Initial congestion level at 75.00% usage is 0
 Info: Initial congestion area  at 75.00% usage is 0 (0.00%)
 
-Start NBR section for normal routing at 20:00:16 12/04/23
+Start NBR section for normal routing at 23:48:21 12/04/23
 Level 4, iteration 1
+8(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
+Level 4, iteration 2
+7(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
+Level 4, iteration 3
+2(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
+Level 4, iteration 4
+1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
+Level 4, iteration 5
 0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
 
-Start NBR section for post-routing at 20:00:16 12/04/23
+Start NBR section for post-routing at 23:48:21 12/04/23
 
 End NBR router with 0 unrouted connection
 WARNING <70001944> - No master clock for
@@ -717,7 +1035,7 @@ NBR Summary
 Total CPU time 0 secs 
 Total REAL time: 0 secs 
 Completely routed.
-End of route.  535 routed (100.00%); 0 unrouted.
+End of route.  1624 routed (100.00%); 0 unrouted.
 
 Writing design to file collisions_and_rotations_impl_1_par.dir/5_1.udb ...
 
@@ -730,9 +1048,9 @@ PAR_SUMMARY::Worst  slack<hold /<ns>> = <n/a>
 PAR_SUMMARY::Timing score<hold /<ns>> = <n/a>
 PAR_SUMMARY::Number of errors = 0
 
-Total CPU  Time: 1 secs 
-Total REAL Time: 4 secs 
-Peak Memory Usage: 108.44 MB
+Total CPU  Time: 2 secs 
+Total REAL Time: 7 secs 
+Peak Memory Usage: 119.32 MB
 
 
 par done!
@@ -770,15 +1088,15 @@ High-Performance_1.2V
 
 Starting full timing analysis...
 Performance Hardware Data Status:   Advanced       Version 1.0.
-Connections ignored  32  counted  496  covered  0
+Connections ignored  111  counted  1418  covered  0
 Changing speed to m;   changing temperature to -40
 
 STA Runtime and Peak Memory Usage :
 Total CPU Time: 0 secs 
 Total REAL Time: 0 secs 
-Peak Memory Usage: 92 MB
+Peak Memory Usage: 96 MB
 
- 0.888822s wall, 0.187500s user + 0.015625s system = 0.203125s CPU (22.9%)
+ 1.151146s wall, 0.203125s user + 0.000000s system = 0.203125s CPU (17.6%)
 
 
 tmcheck -par "collisions_and_rotations_impl_1.par" 
@@ -821,18 +1139,17 @@ Preference Summary:
 
 Creating bit map...
 Saving bit stream in "Z:\ES4-Final\collisions_and_rotations\impl_1\collisions_and_rotations_impl_1.bin".
-INFO <1081100> - Bitstream authenticated.
 Bitstream generation complete!
 
 Total CPU Time: 0 secs 
 Total REAL Time: 0 secs 
-Peak Memory Usage: 111 MB
+Peak Memory Usage: 114 MB
 
 
 ibisgen "collisions_and_rotations_impl_1.udb" "C:/lscc/radiant/2023.1/cae_library/ibis/iCE40UP.ibs"
 IBIS Models Generator: Lattice Radiant Software (64-bit) 2023.1.0.43.3
 
-Mon Dec  4 20:00:18 2023
+Mon Dec  4 23:48:23 2023
 
 Loading collisions_and_rotations_impl_1.udb ...
 Loading device for application GENERIC from file 'itpa08.nph' in environment: C:/lscc/radiant/2023.1/ispfpga.
@@ -884,4 +1201,4 @@ Writing SDF timing to file collisions_and_rotations_impl_1_vo.sdf
 Backanno finished with 0 posted error messages.
 Total CPU Time: 0 secs 
 Total REAL Time: 0 secs 
-Peak Memory Usage: 83 MB
+Peak Memory Usage: 93 MB

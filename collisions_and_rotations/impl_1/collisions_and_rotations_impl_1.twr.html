@@ -46,7 +46,7 @@ if (a)
 <A name="Timing_rpt_top">Timing Report</A><B><U><big></big></U></B>
 Lattice Timing Report -  Setup  and Hold, Version Radiant Software (64-bit) 2023.1.0.43.3
 
-Mon Dec  4 20:00:17 2023
+Mon Dec  4 23:48:22 2023
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -118,24 +118,21 @@ Clocked but unconstrained timing end points
 -------------------------------------------------------------------
          Listing 10 End Points          |           Type           
 -------------------------------------------------------------------
-vga_sync_portmap/rgb_row_9__I_3/D       |    No arrival or required
-vga_sync_portmap/rgb_row_9__I_4/D       |    No arrival or required
-{vga_sync_portmap/rgb_row_9__I_4/SP   vga_sync_portmap/rgb_row_9__I_3/SP}                           
-                                        |    No arrival or required
-{vga_sync_portmap/rgb_row_9__I_4/SR   vga_sync_portmap/rgb_row_9__I_3/SR}                           
-                                        |    No arrival or required
-vga_sync_portmap/rgb_row_9__I_5/D       |    No arrival or required
-vga_sync_portmap/rgb_row_9__I_6/D       |    No arrival or required
-{vga_sync_portmap/rgb_row_9__I_6/SP   vga_sync_portmap/rgb_row_9__I_5/SP}                           
-                                        |    No arrival or required
-{vga_sync_portmap/rgb_row_9__I_6/SR   vga_sync_portmap/rgb_row_9__I_5/SR}                           
-                                        |    No arrival or required
+vga_sync_portmap/rgb_col_9__I_18/D      |    No arrival or required
+vga_sync_portmap/rgb_col_9__I_18/SR     |    No arrival or required
 vga_sync_portmap/rgb_col_9__I_0_2/D     |    No arrival or required
 vga_sync_portmap/rgb_col_9__I_0_2/SR    |    No arrival or required
+vga_sync_portmap/rgb_row_9__I_0_2/D     |    No arrival or required
+vga_sync_portmap/rgb_row_9__I_0_2/SP    |    No arrival or required
+vga_sync_portmap/rgb_row_9__I_0_2/SR    |    No arrival or required
+vga_sync_portmap/rgb_row_9__I_1/D       |    No arrival or required
+vga_sync_portmap/rgb_row_9__I_2/D       |    No arrival or required
+{vga_sync_portmap/rgb_row_9__I_2/SP   vga_sync_portmap/rgb_row_9__I_1/SP}                           
+                                        |    No arrival or required
 -------------------------------------------------------------------
                                         |                          
 Number of unconstrained timing end poin |                          
-ts                                      |                        68
+ts                                      |                        84
                                         |                          
 -------------------------------------------------------------------
 
@@ -156,14 +153,14 @@ create_generated_clock,
 -------------------------------------------------------------------
 ctrlr_data                              |                     input
 osc                                     |                     input
-rotate_out                              |                    output
-ctrlr_clk                               |                    output
 ctrlr_latch                             |                    output
+rotate_out                              |                    output
 vsync                                   |                    output
 hsync                                   |                    output
 rgb[0]                                  |                    output
 rgb[1]                                  |                    output
 rgb[2]                                  |                    output
+rgb[3]                                  |                    output
 -------------------------------------------------------------------
                                         |                          
 Number of I/O ports without constraint  |                        13
@@ -175,7 +172,7 @@ Define a clock on a top level port or a generated clock on a clock divider pin a
 -------------------------------------------------------------------
             Listing 2 Net(s)            |        Source pin        
 -------------------------------------------------------------------
-ctrlr_clk_c                             |nes_controller_portmap/ctrlr_clk_c_I_0/Z
+ctrlr_clk_c                             |nes_controller_portmap/NEScount_3__I_0/Z
 game_clock                              |clock_manager_portmap/game_clock_I_0/Q
 -------------------------------------------------------------------
                                         |                          
@@ -190,13 +187,19 @@ nition                                  |                         2
 Combinational Loops
 -------------------
 ++++ Loop1
-nes_controller_portmap/rotate_out_c_I_0/A	->	nes_controller_portmap/rotate_out_c_I_0/Z
+nes_controller_portmap/right_button_I_0/A	->	nes_controller_portmap/right_button_I_0/Z
 
 ++++ Loop2
-nes_controller_portmap/left_button_I_0/A	->	nes_controller_portmap/left_button_I_0/Z
+nes_controller_portmap/down_button_I_0/A	->	nes_controller_portmap/down_button_I_0/Z
 
 ++++ Loop3
-nes_controller_portmap/right_button_I_0/A	->	nes_controller_portmap/right_button_I_0/Z
+nes_controller_portmap/left_button_I_0/A	->	nes_controller_portmap/left_button_I_0/Z
+
+++++ Loop4
+nes_controller_portmap/rotate_out_c_I_0/A	->	nes_controller_portmap/rotate_out_c_I_0/Z
+
+++++ Loop5
+nes_controller_portmap/sel_I_0/A	->	nes_controller_portmap/sel_I_0/Z
 
 
 <A name="Timing_rpt_ErrorWarningMessage"></A><B><U><big>1.6  Error/Warning Messages</big></U></B>

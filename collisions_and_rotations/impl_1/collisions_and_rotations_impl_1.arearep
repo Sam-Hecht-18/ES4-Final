@@ -1,54 +1,99 @@
 ----------------------------------------------------------------------
 Report for cell master.TECH
-Register bits:  54 of 5280 (1.023%)
+Register bits:  92 of 5280 (1.742%)
 I/O cells:      13
                                   Cell usage:
                                cell     count   Res Usage(%)
-                               CCU2        22          100.0
-                            FD1P3XZ        54          100.0
+                              EBR_B         1          100.0
+                               CCU2        31          100.0
+                            FD1P3XZ        92          100.0
                                  IB         2          100.0
-                               LUT4        84          100.0
+                               LUT4       340          100.0
                                  OB        11          100.0
                               PLL_B         1          100.0
 SUB MODULES
+                      board_updater         1
                       clock_manager         1
+                    collision_check         1
                          game_logic         1
                               mypll         1
 mypll_ipgen_lscc_pll(DIVR="0",DIVF="66",DIVQ="5",FILTER_RANGE="1",PLLOUT_SELECT_PORTA="GENCLK",PLLOUT_SELECT_PORTB="GENCLK",FREQUENCY_PIN_REFERENCECLK="12.000000")         1
                      nes_controller         1
+                      piece_library         1
                            renderer         1
                            vga_sync         1
-                              TOTAL       181
+                              TOTAL       488
 ----------------------------------------------------------------------
 Report for cell vga_sync.v1
 Instance Path : vga_sync_portmap
                                   Cell usage:
                                cell     count   Res Usage(%)
-                                FA2        12           54.5
-                            FD1P3XZ        20           37.0
-                               LUT4        21           25.0
-                              TOTAL        53
+                                FA2        12           38.7
+                            FD1P3XZ        20           21.7
+                               LUT4        35           10.3
+                              TOTAL        67
+----------------------------------------------------------------------
+Report for cell renderer.v1
+Instance Path : renderer_portmap
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               LUT4        47           13.8
+                              TOTAL        47
 ----------------------------------------------------------------------
 Report for cell nes_controller.v1
 Instance Path : nes_controller_portmap
                                   Cell usage:
                                cell     count   Res Usage(%)
-                            FD1P3XZ         4            7.4
-                               LUT4        13           15.5
+                            FD1P3XZ         6            6.5
+                               LUT4        11            3.2
                               TOTAL        17
+----------------------------------------------------------------------
+Report for cell game_logic.v1
+Instance Path : game_logic_portmap
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              EBR_B         1          100.0
+                            FD1P3XZ        30           32.6
+                               LUT4       228           67.1
+SUB MODULES
+                      board_updater         1
+                    collision_check         1
+                      piece_library         1
+                              TOTAL       262
+----------------------------------------------------------------------
+Report for cell piece_library.v1
+Instance Path : game_logic_portmap.piece_library_portmap
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              EBR_B         1          100.0
+                              TOTAL         1
+----------------------------------------------------------------------
+Report for cell collision_check.v1
+Instance Path : game_logic_portmap.collision_check_portmap
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               LUT4       155           45.6
+                              TOTAL       155
+----------------------------------------------------------------------
+Report for cell board_updater.v1
+Instance Path : game_logic_portmap.board_updater_portmap
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               LUT4         6            1.8
+                              TOTAL         6
 ----------------------------------------------------------------------
 Report for cell clock_manager.v1
 Instance Path : clock_manager_portmap
                                   Cell usage:
                                cell     count   Res Usage(%)
-                                FA2        10           45.5
-                            FD1P3XZ        20           37.0
-                               LUT4         8            9.5
+                                FA2        19           61.3
+                            FD1P3XZ        36           39.1
+                               LUT4        14            4.1
                               PLL_B         1          100.0
 SUB MODULES
                               mypll         1
 mypll_ipgen_lscc_pll(DIVR="0",DIVF="66",DIVQ="5",FILTER_RANGE="1",PLLOUT_SELECT_PORTA="GENCLK",PLLOUT_SELECT_PORTB="GENCLK",FREQUENCY_PIN_REFERENCECLK="12.000000")         1
-                              TOTAL        41
+                              TOTAL        72
 ----------------------------------------------------------------------
 Report for cell mypll.v1
 Instance Path : clock_manager_portmap.pll_portmap
@@ -65,18 +110,3 @@ Instance Path : clock_manager_portmap.pll_portmap.lscc_pll_inst
                                cell     count   Res Usage(%)
                               PLL_B         1          100.0
                               TOTAL         1
-----------------------------------------------------------------------
-Report for cell renderer.v1
-Instance Path : renderer_portmap
-                                  Cell usage:
-                               cell     count   Res Usage(%)
-                               LUT4        29           34.5
-                              TOTAL        29
-----------------------------------------------------------------------
-Report for cell game_logic.v1
-Instance Path : game_logic_portmap
-                                  Cell usage:
-                               cell     count   Res Usage(%)
-                            FD1P3XZ        10           18.5
-                               LUT4        13           15.5
-                              TOTAL        23
