@@ -1,17 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BaliMessageLog>
-    <Task name="Export">
-        <Message>
-            <ID>1191031</ID>
-            <Severity>1</Severity>
-        </Message>
-    </Task>
     <Task name="Map">
         <Message>
             <ID>71003005</ID>
             <Severity>256</Severity>
             <Dynamic>osc</Dynamic>
             <Dynamic>12</Dynamic>
+        </Message>
+    </Task>
+    <Task name="PAR">
+        <Message>
+            <ID>70001944</ID>
+            <Severity>16</Severity>
+            <Dynamic>create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
+        </Message>
+        <Message>
+            <ID>71003005</ID>
+            <Severity>256</Severity>
+            <Dynamic>osc</Dynamic>
+            <Dynamic>12</Dynamic>
+        </Message>
+        <Message>
+            <ID>70001944</ID>
+            <Severity>16</Severity>
+            <Dynamic>create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
+        </Message>
+        <Message>
+            <ID>70001944</ID>
+            <Severity>16</Severity>
+            <Dynamic>create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
+        </Message>
+        <Message>
+            <ID>70001944</ID>
+            <Severity>16</Severity>
+            <Dynamic>create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
+        </Message>
+        <Message>
+            <ID>70001944</ID>
+            <Severity>16</Severity>
+            <Dynamic>create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
+        </Message>
+    </Task>
+    <Task name="Export">
+        <Message>
+            <ID>1081100</ID>
+            <Severity>1</Severity>
+            <Dynamic>Bitstream authenticated.</Dynamic>
+        </Message>
+        <Message>
+            <ID>1191031</ID>
+            <Severity>1</Severity>
         </Message>
     </Task>
     <Task name="Synthesis">
@@ -248,22 +286,6 @@
             <Navigation>4</Navigation>
         </Message>
         <Message>
-            <ID>35921012</ID>
-            <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/clock.vhd(5): </Dynamic>
-            <Dynamic>clock_manager</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/clock.vhd</Navigation>
-            <Navigation>5</Navigation>
-        </Message>
-        <Message>
-            <ID>35921010</ID>
-            <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/clock.vhd(17): </Dynamic>
-            <Dynamic>synth</Dynamic>
-            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/clock.vhd</Navigation>
-            <Navigation>17</Navigation>
-        </Message>
-        <Message>
             <ID>35921014</ID>
             <Severity>1</Severity>
             <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/master.vhd(5): </Dynamic>
@@ -362,10 +384,10 @@
         <Message>
             <ID>35921010</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(39): </Dynamic>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(35): </Dynamic>
             <Dynamic>synth</Dynamic>
             <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd</Navigation>
-            <Navigation>39</Navigation>
+            <Navigation>35</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>
@@ -450,10 +472,10 @@
         <Message>
             <ID>35921010</ID>
             <Severity>1</Severity>
-            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/piece_picker.vhd(25): </Dynamic>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/piece_picker.vhd(24): </Dynamic>
             <Dynamic>synth</Dynamic>
             <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/piece_picker.vhd</Navigation>
-            <Navigation>25</Navigation>
+            <Navigation>24</Navigation>
         </Message>
         <Message>
             <ID>35921014</ID>
@@ -520,6 +542,22 @@
             <Navigation>18</Navigation>
         </Message>
         <Message>
+            <ID>35921012</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd(5): </Dynamic>
+            <Dynamic>clock_manager</Dynamic>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd</Navigation>
+            <Navigation>5</Navigation>
+        </Message>
+        <Message>
+            <ID>35921010</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd(20): </Dynamic>
+            <Dynamic>synth</Dynamic>
+            <Navigation>z:/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd</Navigation>
+            <Navigation>20</Navigation>
+        </Message>
+        <Message>
             <ID>35935049</ID>
             <Severity>16</Severity>
             <Dynamic>sclk_i</Dynamic>
@@ -535,6 +573,11 @@
             <Dynamic>gnd_2</Dynamic>
         </Message>
         <Message>
+            <ID>35001771</ID>
+            <Severity>16</Severity>
+            <Dynamic>pwr_2</Dynamic>
+        </Message>
+        <Message>
             <ID>35935049</ID>
             <Severity>16</Severity>
             <Dynamic>sclk_i</Dynamic>
@@ -543,39 +586,6 @@
             <ID>35935049</ID>
             <Severity>16</Severity>
             <Dynamic>sdi_i</Dynamic>
-        </Message>
-        <Message>
-            <ID>70001944</ID>
-            <Severity>16</Severity>
-            <Dynamic>create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
-        </Message>
-    </Task>
-    <Task name="PAR">
-        <Message>
-            <ID>70001944</ID>
-            <Severity>16</Severity>
-            <Dynamic>create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
-        </Message>
-        <Message>
-            <ID>71003005</ID>
-            <Severity>256</Severity>
-            <Dynamic>osc</Dynamic>
-            <Dynamic>12</Dynamic>
-        </Message>
-        <Message>
-            <ID>70001944</ID>
-            <Severity>16</Severity>
-            <Dynamic>create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
-        </Message>
-        <Message>
-            <ID>70001944</ID>
-            <Severity>16</Severity>
-            <Dynamic>create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
-        </Message>
-        <Message>
-            <ID>70001944</ID>
-            <Severity>16</Severity>
-            <Dynamic>create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] </Dynamic>
         </Message>
         <Message>
             <ID>70001944</ID>

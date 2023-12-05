@@ -4,7 +4,7 @@ use IEEE.numeric_std.all;
 
 entity piece_library is
     port(
-		clk : in std_logic;
+		game_clock : in std_logic;
         piece_code : in std_logic_vector(2 downto 0);
 		piece_rotation : in std_logic_vector(1 downto 0);
         piece_output : out std_logic_vector(15 downto 0)
@@ -15,7 +15,7 @@ architecture synth of piece_library is
 begin
 	-- piece_output(3 downto 0) <= piece_output(0, 0) & piece_output(0, 1) & piece_output(0, 2) & piece_output(0, 3);
 	--  x then --I block
-	process(clk) begin
+	process(game_clock) begin
 		case piece_code & piece_rotation is
 			--I shape
 			when "00000" => piece_output <= "0100010001000100";

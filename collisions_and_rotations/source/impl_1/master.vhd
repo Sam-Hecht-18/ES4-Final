@@ -29,14 +29,9 @@ architecture synth of master is
 
 	component game_logic is
 		port(
-			clk : in std_logic;
-			clk_counter : in unsigned(31 downto 0);
 			game_clock : in std_logic;
 			game_clock_ctr : in unsigned(15 downto 0);
-
-			valid_input : in std_logic;
-			valid_output : in std_logic;
-			valid_output_ctr : in unsigned(15 downto 0);
+			
 			valid_rgb: in std_logic;
 
 			press_rotate : in std_logic;
@@ -110,25 +105,16 @@ architecture synth of master is
 	end component;
 
 	component clock_manager is
-		port(
+		  port(
 			osc : in std_logic;
+			clk : out std_logic; -- VGA clock
 
-			rgb_row : in unsigned(9 downto 0);
-			rgb_col : in unsigned(9 downto 0);
-			valid_rgb : in std_logic;
-
-			clk : out std_logic;
-			clk_counter : out unsigned(31 downto 0);
-
-			game_clock : out std_logic; -- goes high after X frames, 1 only during valid_output = '1'
-			game_clock_ctr : out unsigned(15 downto 0); -- counts to the number of frames in game_clock, then resets to 0
+			game_clock : out std_logic; -- Game clock
+			game_clock_ctr : out unsigned(15 downto 0); -- Game clock counter
 
 			NEScount : out unsigned(7 downto 0);
-			NESclk : out std_logic;
-			valid_input : out std_logic;
+			NESclk : out std_logic
 
-			valid_output : out std_logic;
-			valid_output_ctr : out unsigned(15 downto 0) := 16b"0"
 		);
 	end component;
 
@@ -145,16 +131,12 @@ architecture synth of master is
 	signal a : std_logic;
 	signal b : std_logic;
 
+	-- Clock manager signals
 	signal clk : std_logic;
-	signal clk_counter : unsigned(31 downto 0);
 	signal game_clock : std_logic;
 	signal game_clock_ctr : unsigned(15 downto 0); -- counts to the number of frames in game_clock, then resets to 0
 	signal NEScount : unsigned(7 downto 0);
 	signal NESclk : std_logic;
-
-	signal valid_input : std_logic;
-	signal valid_output : std_logic;
-	signal valid_output_ctr : unsigned(15 downto 0);
 
 	signal piece_loc : piece_loc_type;
 	signal piece_shape : std_logic_vector(15 downto 0);
@@ -165,41 +147,18 @@ begin
 
 	clock_manager_portmap : clock_manager port map(
 		osc => osc,
-		rgb_row => rgb_row,
-		rgb_col => rgb_col,
-		valid_rgb => valid_rgb,
 		clk => clk,
-		clk_counter => clk_counter,
 		game_clock => game_clock,
 		game_clock_ctr => game_clock_ctr,
 		NEScount => NEScount,
-		NESclk => NESclk,
-		valid_input => valid_input,
-		valid_output => valid_output,
-		valid_output_ctr => valid_output_ctr
+		NESclk => NESclk
 	);
 
 	vga_sync_portmap : vga_sync port map(clk, valid_rgb, rgb_row, rgb_col, hsync, vsync);
 
-	-- vga_sync_clk_portmap : vga_sync_clk port map(
-	-- 	clk => clk,
-	-- 	clk_counter => clk_counter,
-	-- 	rgb_row => rgb_row,
-	-- 	rgb_col => rgb_col,
-	-- 	valid_rgb => valid_rgb,
-	-- 	valid_input => valid_input,
-	-- 	valid_output => valid_output,
-	-- 	valid_output_ctr => valid_output_ctr
-	-- );
-
 	game_logic_portmap : game_logic port map(
-		clk => clk,
-		clk_counter => clk_counter,
 		game_clock => game_clock,
 		game_clock_ctr => game_clock_ctr,
-		valid_input => valid_input,
-		valid_output => valid_output,
-		valid_output_ctr => valid_output_ctr,
 		valid_rgb => valid_rgb,
 		press_rotate => press_rotate,
 		press_down => down_button,

@@ -6,7 +6,7 @@ Package: SG48
 Performance Grade:  High-Performance_1.2V
 
 Mapper:    version Radiant Software (64-bit) 2023.1.0.43.3
-Mapped on: Mon Dec  4 14:13:39 2023
+Mapped on: Mon Dec  4 20:00:12 2023
 
 Design Information
 ------------------
@@ -19,12 +19,12 @@ Command line:   map -i collisions_and_rotations_impl_1_syn.udb -pdc
 Design Summary
 --------------
 
-   Number of slice registers:  49 out of  5280 (1%)
+   Number of slice registers:  54 out of  5280 (1%)
    Number of I/O registers:      0 out of   117 (0%)
-   Number of LUT4s:           126 out of  5280 (2%)
-      Number of logic LUT4s:              75
+   Number of LUT4s:           132 out of  5280 (3%)
+      Number of logic LUT4s:              85
       Number of inserted feedthru LUT4s:   3
-      Number of ripple logic:             24 (48 LUT4s)
+      Number of ripple logic:             22 (44 LUT4s)
    Number of IO sites used:   13 out of 39 (33%)
       Number of IO sites used for general PIO: 13
       Number of IO sites used for I3C: 0 out of 2 (0%)
@@ -47,16 +47,16 @@ Design Summary
    Number of EBRs:             0 out of 30 (0%)
    Number of PLLs:             1 out of 1 (100%)
    Number of Clocks:  4
-      Net clk: 25 loads, 25 rising, 0 falling (Driver: Pin
+      Net clk: 23 loads, 23 rising, 0 falling (Driver: Pin
      clock_manager_portmap.pll_portmap.lscc_pll_inst.u_PLL_B/OUTGLOBAL)
-      Net osc_c: 1 loads, 1 rising, 0 falling (Driver: Port osc)
       Net ctrlr_clk_c: 4 loads, 4 rising, 0 falling (Driver: Pin
      nes_controller_portmap.ctrlr_clk_c_I_0/Z)
-      Net vga_sync_clk_portmap.valid_output: 3 loads, 3 rising, 0 falling
-     (Driver: Pin vga_sync_clk_portmap.rgb_row_9__I_0/Z)
+      Net game_clock: 10 loads, 10 rising, 0 falling (Driver: Pin
+     clock_manager_portmap.game_clock_I_0/Q)
+      Net osc_c: 1 loads, 1 rising, 0 falling (Driver: Port osc)
    Number of Clock Enables:  1
       Net vga_sync_portmap.rgb_col_0__N_50: 6 loads, 6 SLICEs
-   Number of LSRs:  2
+   Number of LSRs:  3
       Net vga_sync_portmap.rgb_col_0__N_50: 6 loads, 6 SLICEs
       Net vga_sync_portmap.rgb_row_0__N_30: 6 loads, 6 SLICEs
 
@@ -68,17 +68,18 @@ Design Summary
 
 Design Summary (cont)
 ---------------------
+      Net clock_manager_portmap.clk_counter_0__N_120: 10 loads, 10 SLICEs
    Top 10 highest fanout non-clock nets:
       Net vga_sync_portmap.rgb_col_0__N_50: 13 loads
-      Net rgb_row[4]: 12 loads
-      Net rgb_row[5]: 12 loads
       Net rgb_col[4]: 11 loads
-      Net rgb_col[6]: 10 loads
-      Net rgb_row[7]: 10 loads
+      Net clock_manager_portmap.clk_counter_0__N_120: 10 loads
+      Net piece_loc[0][0]: 9 loads
+      Net rgb_col[5]: 9 loads
       Net rgb_row[6]: 9 loads
-      Net rgb_row[8]: 9 loads
-      Net rgb_row[9]: 9 loads
-      Net rgb_col[5]: 8 loads
+      Net rgb_col[6]: 8 loads
+      Net rgb_col[7]: 8 loads
+      Net rgb_row[4]: 8 loads
+      Net rgb_row[5]: 8 loads
 
 
 
@@ -125,8 +126,8 @@ IO (PIO) Attributes
 | rgb[5]              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 
-
                                     Page 2
+
 
 
 
@@ -190,9 +191,74 @@ Run Time and Memory Usage
 
    Total CPU Time: 0 secs
    Total REAL Time: 0 secs
-   Peak Memory Usage: 58 MB
 
                                     Page 3
+
+
+
+
+
+Run Time and Memory Usage (cont)
+--------------------------------
+   Peak Memory Usage: 58 MB
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    Page 4
 
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.

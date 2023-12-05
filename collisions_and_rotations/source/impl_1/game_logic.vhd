@@ -14,14 +14,9 @@ use work.my_types_package.all;
 
 entity game_logic is
 	port(
-		clk : in std_logic;
-		clk_counter : in unsigned(31 downto 0);
 		game_clock : in std_logic;
 		game_clock_ctr : in unsigned(15 downto 0);
 
-		valid_input : in std_logic;
-		valid_output : in std_logic;
-		valid_output_ctr : in unsigned(15 downto 0);
 		valid_rgb: in std_logic;
 
 		press_rotate : in std_logic;
@@ -41,7 +36,7 @@ architecture synth of game_logic is
 
 	component piece_library is
 		port(
-			clk : in std_logic;
+			game_clock : in std_logic;
 			piece_code : in std_logic_vector(2 downto 0);
 			piece_rotation : in std_logic_vector(1 downto 0);
 			piece_output : out std_logic_vector(15 downto 0)
@@ -51,7 +46,6 @@ architecture synth of game_logic is
 	component piece_picker is
 		port(
 		  clk : in std_logic;
-		  clk_counter : in unsigned(31 downto 0);
 		  turn: in unsigned(7 downto 0); -- a number representing the number of times a piece has been added to the grid. starts at 0
 		  new_piece_code : out unsigned(2 downto 0) := "000";
 		  new_piece_rotation : out unsigned(1 downto 0) := "00"
@@ -131,7 +125,6 @@ architecture synth of game_logic is
 	signal collision_right : std_logic := '0';
 	signal collision_down : std_logic := '0';
 	signal collision_rotate : std_logic;
-	signal move_down_auto : std_logic;
 
 	signal advance_turn : std_logic;
 	signal valid_update : std_logic;
@@ -145,7 +138,7 @@ begin
 	--);
 
 	piece_library_portmap : piece_library port map(
-		clk,
+		game_clock,
 		std_logic_vector(piece_code),
 		std_logic_vector(piece_rotation),
 		piece_shape
@@ -153,7 +146,6 @@ begin
 
 	-- piece_picker_portmap : piece_picker port map(
 	-- 	clk => clk,
-	-- 	clk_counter => clk_counter,
 	-- 	turn => turn,
 	-- 	new_piece_code => piece_code,
 	-- 	new_piece_rotation => piece_rotation
@@ -204,14 +196,12 @@ begin
 
 	collision <= collision_down or collision_left or collision_rotate or collision_right;
 
-	move_down_auto <= not valid_input;
-
 	special_background <= 5d"0" when collision = '0' else 5d"1" when collision_down = '1' else 5d"2" when collision_left = '1' else 5d"3" when collision_right = '1' else 5d"3" when collision_rotate = '1';
 
-	process(clk) begin
-		if rising_edge(clk) then
+	process(game_clock) begin
+		if rising_edge(game_clock) then
 
-			if (valid_input = '1') then
+			-- if (valid_input = '1') then
 
 				-- Rotates piece (TODO: check that rotation is valid, i.e., doesn't overlap on anything after rotation)
 				--if press_rotate = '1' and rotate_delay = 0 then
@@ -232,20 +222,20 @@ begin
 				--end if;
 
 				-- Movement left
-				--if press_left = '1' and left_delay = 0 and collision_left = '0' then
-					--piece_loc(0) <= piece_loc(0) - 1;
-					--left_delay <= left_delay + 1;
-				--elsif left_delay > 0 then
-					--left_delay <= left_delay + 1;
-				--end if;
+				if press_left = '1' and left_delay = 0 and collision_left = '0' then
+					piece_loc(0) <= piece_loc(0) - 1;
+					left_delay <= left_delay + 1;
+				elsif left_delay > 0 then
+					left_delay <= left_delay + 1;
+				end if;
 
 				-- Movement right
-				--if press_right = '1' and right_delay = 0 and collision_right = '0' then
-					--piece_loc(0) <= piece_loc(0) + 1;
-					--right_delay <= right_delay + 1;
-				--elsif right_delay > 0 then
-					--right_delay <= right_delay + 1;
-				--end if;
+				if press_right = '1' and right_delay = 0 and collision_right = '0' then
+					piece_loc(0) <= piece_loc(0) + 1;
+					right_delay <= right_delay + 1;
+				elsif right_delay > 0 then
+					right_delay <= right_delay + 1;
+				end if;
 
 				-- Movement down
 				--if press_down = '1' and down_delay = 0 then
@@ -256,16 +246,14 @@ begin
 					--down_delay <= down_delay + 1;
 				--end if;
 
-			end if;
+			-- end if;
 
-			if (game_clock_ctr(4) = '1' and valid_output_ctr = 16d"1") then
-				if not collision_down then
-					piece_loc(1) <= piece_loc(1) + 1;
-					--advance_turn <= '0';
-				else
-					--advance_turn <= '1';
-				end if;
-			end if;
+			--if (collision_down = '0' and game_clock_ctr(5 downto 0) = "000000") then
+				--piece_loc(1) <= piece_loc(1) + 1;
+				advance_turn <= '0';
+			--else
+				advance_turn <= '1';
+			--end if;
 		end if;
 	end process;
 

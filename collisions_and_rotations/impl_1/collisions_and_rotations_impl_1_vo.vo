@@ -2,8 +2,8 @@
 // Verilog netlist produced by program backanno, Version Radiant Software (64-bit) 2023.1.0.43.3
 
 // backanno -o collisions_and_rotations_impl_1_vo.vo -sp High-Performance_1.2V -w -neg -gui collisions_and_rotations_impl_1.udb 
-// Netlist created on Mon Dec  4 14:13:43 2023
-// Netlist written on Mon Dec  4 14:13:47 2023
+// Netlist created on Mon Dec  4 20:00:16 2023
+// Netlist written on Mon Dec  4 20:00:19 2023
 // Design is for device iCE40UP5K
 // Design is for package SG48
 // Design is for performance grade High-Performance_1.2V
@@ -15,383 +15,377 @@ module master ( ctrlr_data, osc, rotate_out, ctrlr_clk, ctrlr_latch, vsync,
   input  ctrlr_data, osc;
   output rotate_out, ctrlr_clk, ctrlr_latch, vsync, hsync;
   output [5:0] rgb;
-  wire   \vga_sync_portmap.rgb_row_9__N_1[9] , \vga_sync_portmap.n3096 , 
-         \vga_sync_portmap.n2143 , \rgb_row[9] , 
+  wire   \vga_sync_portmap.rgb_row_9__N_1[6] , 
+         \vga_sync_portmap.rgb_row_9__N_1[5] , \vga_sync_portmap.n3135 , 
+         \rgb_row[6] , \vga_sync_portmap.n2141 , \rgb_row[5] , 
          \vga_sync_portmap.rgb_col_0__N_50 , 
-         \vga_sync_portmap.rgb_row_0__N_30 , clk, 
-         \vga_sync_portmap.rgb_row_9__N_1[8] , 
-         \vga_sync_portmap.rgb_row_9__N_1[7] , \vga_sync_portmap.n3066 , 
-         \rgb_row[8] , \vga_sync_portmap.n2141 , \rgb_row[7] , 
-         \vga_sync_portmap.rgb_row_9__N_1[6] , 
-         \vga_sync_portmap.rgb_row_9__N_1[5] , \vga_sync_portmap.n3063 , 
-         \rgb_row[6] , \vga_sync_portmap.n2139 , \rgb_row[5] , 
+         \vga_sync_portmap.rgb_row_0__N_30 , clk, \vga_sync_portmap.n2143 , 
          \vga_sync_portmap.rgb_row_9__N_1[4] , 
-         \vga_sync_portmap.rgb_row_9__N_1[3] , \vga_sync_portmap.n3060 , 
-         \rgb_row[4] , \vga_sync_portmap.n2137 , 
-         \vga_sync_portmap.rgb_row[3]_2 , \vga_sync_portmap.rgb_row_9__N_1[2] , 
-         \vga_sync_portmap.rgb_row_9__N_1[1] , \vga_sync_portmap.n3057 , 
-         \vga_sync_portmap.rgb_row[2]_2 , \vga_sync_portmap.n2135 , 
-         \vga_sync_portmap.rgb_row[1]_2 , \vga_sync_portmap.rgb_row_9__N_1[0] , 
-         \vga_sync_portmap.n3054 , \vga_sync_portmap.rgb_row[0]_2 , VCC_net, 
+         \vga_sync_portmap.rgb_row_9__N_1[3] , \vga_sync_portmap.n3132 , 
+         \rgb_row[4] , \vga_sync_portmap.n2139 , 
+         \vga_sync_portmap.rgb_row[3]_2 , 
+         \vga_sync_portmap.rgb_col_9__N_31[9] , \vga_sync_portmap.n3198 , 
+         \vga_sync_portmap.n2134 , \rgb_col[9] , 
+         \vga_sync_portmap.rgb_row_9__N_1[2] , 
+         \vga_sync_portmap.rgb_row_9__N_1[1] , \vga_sync_portmap.n3129 , 
+         \vga_sync_portmap.rgb_row[2]_2 , \vga_sync_portmap.n2137 , 
+         \vga_sync_portmap.rgb_row[1]_2 , 
+         \vga_sync_portmap.rgb_col_9__N_31[6] , 
+         \vga_sync_portmap.rgb_col_9__N_31[5] , \vga_sync_portmap.n3192 , 
+         \rgb_col[6] , \vga_sync_portmap.n2130 , \rgb_col[5] , 
+         \vga_sync_portmap.n2132 , \vga_sync_portmap.rgb_col_9__N_31[2] , 
+         \vga_sync_portmap.rgb_col_9__N_31[1] , \vga_sync_portmap.n3186 , 
+         \vga_sync_portmap.rgb_col[2] , \vga_sync_portmap.n2126 , 
+         \vga_sync_portmap.rgb_col[1] , \vga_sync_portmap.n2128 , 
+         \vga_sync_portmap.rgb_row_9__N_1[0] , \vga_sync_portmap.n3126 , 
+         \vga_sync_portmap.rgb_row[0]_2 , VCC_net, 
          \vga_sync_portmap.rgb_col_9__N_31[8] , 
-         \vga_sync_portmap.rgb_col_9__N_31[7] , \vga_sync_portmap.n3108 , 
-         \rgb_col[8] , \vga_sync_portmap.n2130 , \rgb_col[7] , 
-         \vga_sync_portmap.n2132 , \vga_sync_portmap.rgb_col_9__N_31[6] , 
-         \vga_sync_portmap.rgb_col_9__N_31[5] , \vga_sync_portmap.n3105 , 
-         \rgb_col[6] , \vga_sync_portmap.n2128 , \rgb_col[5] , 
-         \vga_sync_portmap.rgb_col_9__N_31[4] , 
-         \vga_sync_portmap.rgb_col_9__N_31[3] , \vga_sync_portmap.n3102 , 
-         \rgb_col[4] , \vga_sync_portmap.n2126 , 
-         \vga_sync_portmap.rgb_col[3]_2 , 
-         \vga_sync_portmap.rgb_col_9__N_31[2] , 
-         \vga_sync_portmap.rgb_col_9__N_31[1] , \vga_sync_portmap.n3099 , 
-         \vga_sync_portmap.rgb_col[2]_2 , \vga_sync_portmap.n2124 , 
-         \vga_sync_portmap.rgb_col[1]_2 , 
-         \vga_sync_portmap.rgb_col_9__N_31[0] , \vga_sync_portmap.n3051 , 
-         \vga_sync_portmap.rgb_col[0]_2 , 
-         \vga_sync_portmap.rgb_col_9__N_31[9] , \vga_sync_portmap.n3111 , 
-         \rgb_col[9] , \clock_manager_portmap.clk_counter_15__N_51[15] , 
-         \clock_manager_portmap.n3093 , \clock_manager_portmap.n2160 , 
-         \clk_counter[15] , \clock_manager_portmap.clk_counter_15__N_51[14] , 
-         \clock_manager_portmap.clk_counter_15__N_51[13] , 
-         \clock_manager_portmap.n3090 , \clk_counter[14] , 
-         \clock_manager_portmap.n2158 , \clk_counter[13] , 
-         \clock_manager_portmap.clk_counter_15__N_51[12] , 
-         \clock_manager_portmap.clk_counter_15__N_51[11] , 
-         \clock_manager_portmap.n3087 , \clk_counter[12] , 
-         \clock_manager_portmap.n2156 , \clk_counter[11] , 
-         \clock_manager_portmap.clk_counter_15__N_51[10] , 
-         \clock_manager_portmap.clk_counter_15__N_51[9] , 
-         \clock_manager_portmap.n3084 , \clk_counter[10] , 
-         \clock_manager_portmap.n2154 , \clk_counter[9] , 
-         \clock_manager_portmap.clk_counter_15__N_51[8] , 
-         \clock_manager_portmap.clk_counter_15__N_51[7] , 
-         \clock_manager_portmap.n3081 , \clk_counter[8] , 
-         \clock_manager_portmap.n2152 , \clk_counter[7] , 
-         \clock_manager_portmap.clk_counter_15__N_51[6] , 
-         \clock_manager_portmap.clk_counter_15__N_51[5] , 
-         \clock_manager_portmap.n3078 , \clock_manager_portmap.n10 , 
-         \clock_manager_portmap.n2150 , \clock_manager_portmap.n11 , 
-         \clock_manager_portmap.clk_counter_15__N_51[4] , 
-         \clock_manager_portmap.clk_counter_15__N_51[3] , 
-         \clock_manager_portmap.n3075 , \clock_manager_portmap.n12 , 
-         \clock_manager_portmap.n2148 , \clock_manager_portmap.n13 , 
-         \clock_manager_portmap.clk_counter_15__N_51[2] , 
-         \clock_manager_portmap.clk_counter_15__N_51[1] , 
-         \clock_manager_portmap.n3072 , \clock_manager_portmap.n14 , 
-         \clock_manager_portmap.n2146 , \clock_manager_portmap.n15 , 
-         \clock_manager_portmap.clk_counter_15__N_51[0] , 
-         \clock_manager_portmap.n3069 , \clock_manager_portmap.n16 , 
-         \vga_sync_clk_portmap.valid_output_ctr_4__N_60[2] , 
-         \vga_sync_clk_portmap.valid_output_ctr_4__N_60[1] , 
-         \vga_sync_clk_portmap.n3114 , \vga_sync_clk_portmap.n3 , 
-         \vga_sync_clk_portmap.n2118 , \vga_sync_clk_portmap.n4 , 
-         \vga_sync_clk_portmap.valid_output , \vga_sync_clk_portmap.n2120 , 
-         \vga_sync_clk_portmap.valid_output_ctr_4__N_60[0] , 
-         \vga_sync_clk_portmap.n3048 , \vga_sync_clk_portmap.n5 , 
-         \vga_sync_clk_portmap.valid_output_ctr_4__N_60[4] , 
-         \vga_sync_clk_portmap.valid_output_ctr_4__N_60[3] , 
-         \vga_sync_clk_portmap.n3117 , \valid_output_ctr[4] , 
-         \vga_sync_clk_portmap.n2 , 
-         \game_logic_portmap.piece_loc_1__3__N_61[2] , 
-         \game_logic_portmap.piece_loc_1__3__N_61[3] , \piece_loc[1][1] , 
-         \piece_loc[1][2] , \piece_loc[1][0] , \game_logic_portmap.n955 , 
-         \piece_loc[1][3] , \game_logic_portmap.piece_loc_1__3__N_61[1] , 
-         \game_logic_portmap.piece_loc_1__3__N_61[0] , 
+         \vga_sync_portmap.rgb_col_9__N_31[7] , \vga_sync_portmap.n3195 , 
+         \rgb_col[8] , \rgb_col[7] , \vga_sync_portmap.rgb_col_9__N_31[0] , 
+         \vga_sync_portmap.n3153 , \vga_sync_portmap.rgb_col[0] , 
+         \vga_sync_portmap.rgb_row_9__N_1[9] , \vga_sync_portmap.n3147 , 
+         \vga_sync_portmap.n2145 , \rgb_row[9] , 
+         \vga_sync_portmap.rgb_row_9__N_1[8] , 
+         \vga_sync_portmap.rgb_row_9__N_1[7] , \vga_sync_portmap.n3138 , 
+         \rgb_row[8] , \rgb_row[7] , \vga_sync_portmap.rgb_col_9__N_31[4] , 
+         \vga_sync_portmap.rgb_col_9__N_31[3] , \vga_sync_portmap.n3189 , 
+         \rgb_col[4] , \vga_sync_portmap.rgb_col[3] , 
+         \clock_manager_portmap.NEScount_7__N_51[18] , 
+         \clock_manager_portmap.NEScount_7__N_51[17] , 
+         \clock_manager_portmap.n3180 , \clk_counter[18] , 
+         \clock_manager_portmap.n2164 , 
+         \clock_manager_portmap.clk_counter[17] , 
+         \clock_manager_portmap.clk_counter_0__N_120 , 
+         \clock_manager_portmap.NEScount_7__N_51[16] , 
+         \clock_manager_portmap.NEScount_7__N_51[15] , 
+         \clock_manager_portmap.n3177 , 
+         \clock_manager_portmap.clk_counter[16] , 
+         \clock_manager_portmap.n2162 , \NEScount[7] , 
+         \clock_manager_portmap.NEScount_7__N_51[14] , 
+         \clock_manager_portmap.NEScount_7__N_51[13] , 
+         \clock_manager_portmap.n3174 , \NEScount[6] , 
+         \clock_manager_portmap.n2160 , \NEScount[5] , 
+         \clock_manager_portmap.NEScount_7__N_51[12] , 
+         \clock_manager_portmap.NEScount_7__N_51[11] , 
+         \clock_manager_portmap.n3171 , \NEScount[4] , 
+         \clock_manager_portmap.n2158 , \NEScount[3] , 
+         \clock_manager_portmap.NEScount_7__N_51[10] , 
+         \clock_manager_portmap.NEScount_7__N_51[9] , 
+         \clock_manager_portmap.n3168 , \NEScount[2] , 
+         \clock_manager_portmap.n2156 , \NEScount[1] , 
+         \clock_manager_portmap.NEScount_7__N_51[8] , 
+         \clock_manager_portmap.NEScount_7__N_51[7] , 
+         \clock_manager_portmap.n3165 , \NEScount[0] , 
+         \clock_manager_portmap.n2154 , NESclk, 
+         \clock_manager_portmap.NEScount_7__N_51[6] , 
+         \clock_manager_portmap.NEScount_7__N_51[5] , 
+         \clock_manager_portmap.n3162 , \clk_counter[6] , 
+         \clock_manager_portmap.n2152 , \clock_manager_portmap.clk_counter[5] , 
+         \clock_manager_portmap.NEScount_7__N_51[4] , 
+         \clock_manager_portmap.NEScount_7__N_51[3] , 
+         \clock_manager_portmap.n3159 , \clk_counter[4] , 
+         \clock_manager_portmap.n2150 , \clk_counter[3] , 
+         \clock_manager_portmap.NEScount_7__N_51[2] , 
+         \clock_manager_portmap.NEScount_7__N_51[1] , 
+         \clock_manager_portmap.n3156 , \clk_counter[2] , 
+         \clock_manager_portmap.n2148 , \clk_counter[1] , 
+         \clock_manager_portmap.NEScount_7__N_51[0] , 
+         \clock_manager_portmap.n3150 , \clock_manager_portmap.clk_counter[0] , 
          \nes_controller_portmap.shift_reg[1].sig_001.FeedThruLUT , 
          \nes_controller_portmap.shift_reg[2].sig_000.FeedThruLUT , 
          \nes_controller_portmap.shift_reg[1] , 
          \nes_controller_portmap.shift_reg[2] , ctrlr_clk_c, 
          \nes_controller_portmap.shift_reg[3] , 
-         \nes_controller_portmap.shift_reg_0__N_65 , 
+         \nes_controller_portmap.shift_reg_0__N_77 , 
          \nes_controller_portmap.shift_reg[0].sig_002.FeedThruLUT , 
          ctrlr_data_c, \nes_controller_portmap.shift_reg[0] , 
-         \vga_sync_portmap.n2661 , n112, \vga_sync_portmap.n2679 , n2678, n110, 
-         n18, \renderer_portmap.n4_adj_85 , n6, \renderer_portmap.n2650 , 
-         \renderer_portmap.n6_adj_87 , \renderer_portmap.n992 , 
-         \vga_sync_portmap.vsync_c_N_75 , \vga_sync_portmap.vsync_c_N_76 , 
-         vsync_c, \vga_sync_portmap.hsync_c_N_74 , hsync_c, 
-         \vga_sync_portmap.n2558 , \vga_sync_portmap.n15 , 
-         \vga_sync_portmap.n14 , \vga_sync_portmap.n8 , 
-         \vga_sync_portmap.n114 , \vga_sync_portmap.n129 , 
-         \vga_sync_portmap.n6_c , \vga_sync_portmap.n138 , valid_output_N_84, 
-         \vga_sync_portmap.n1853 , n63, \vga_sync_portmap.n23 , 
-         \vga_sync_portmap.n2560 , valid_output_N_82, valid_output_N_83, n1716, 
-         \renderer_portmap.n2645 , n135, \renderer_portmap.n77 , 
-         \renderer_portmap.n6_adj_86 , \renderer_portmap.n2654 , n1844, 
-         \renderer_portmap.n74 , \renderer_portmap.n2657 , 
-         \renderer_portmap.rgb_c_1_N_70 , \renderer_portmap.n2648 , 
-         \vga_sync_portmap.n2456 , \vga_sync_portmap.n10 , rgb_c_0_N_73, 
-         \renderer_portmap.n4 , \vga_sync_portmap.n1849 , 
-         \vga_sync_portmap.n2338 , \vga_sync_portmap.n2324 , rgb_c_0_N_72, 
-         \renderer_portmap.rgb_c_0_N_71 , rgb_c_0, \renderer_portmap.n833[2] , 
-         \renderer_portmap.n1857 , \renderer_portmap.rgb_c_4_N_66 , rgb_c_4, 
-         rgb_c_1, \nes_controller_portmap.ctrlr_clk_c_N_79 , 
-         \nes_controller_portmap.ctrlr_latch_c_N_78 , 
-         \nes_controller_portmap.ctrlr_latch_c_N_77 , ctrlr_latch_c, 
-         \nes_controller_portmap.rotate_out_c_N_81 , rotate_out_c, 
-         \nes_controller_portmap.rotate_out_c_N_80 , osc_c, 
+         \game_logic_portmap.left_delay_2__N_74[1] , 
+         \game_logic_portmap.left_delay_0__N_76 , 
+         \game_logic_portmap.left_delay[1] , 
+         \game_logic_portmap.left_delay[0] , 
+         \game_logic_portmap.left_delay[2] , left_button, game_clock, 
+         \game_logic_portmap.piece_loc_0__2__N_68 , 
+         \game_logic_portmap.piece_loc_0__3__N_67 , \game_logic_portmap.n4 , 
+         \game_logic_portmap.n65 , \piece_loc[0][2] , \piece_loc[0][3] , 
+         \game_logic_portmap.piece_loc_0__0__N_70 , 
+         \game_logic_portmap.piece_loc_0__1__N_69 , \game_logic_portmap.n33 , 
+         \piece_loc[0][0] , \piece_loc[0][1] , 
+         \game_logic_portmap.left_delay_2__N_74[2] , 
+         \game_logic_portmap.right_delay_2__N_71[2] , 
+         \game_logic_portmap.right_delay[0] , 
+         \game_logic_portmap.right_delay[2] , 
+         \game_logic_portmap.right_delay[1] , 
+         \game_logic_portmap.right_delay_0__N_73 , 
+         \game_logic_portmap.right_delay_2__N_71[1] , right_button, n72, 
+         \vga_sync_portmap.n15 , \vga_sync_portmap.vsync_c_N_90 , 
+         \vga_sync_portmap.vsync_c_N_91 , vsync_c, 
+         \nes_controller_portmap.right_button_N_97 , \renderer_portmap.n8 , 
+         \renderer_portmap.n2924 , \vga_sync_portmap.n6 , 
+         \vga_sync_portmap.n2600 , \vga_sync_portmap.n2620 , 
+         \vga_sync_portmap.n8 , n47, \renderer_portmap.n1832 , n50, 
+         \renderer_portmap.n2614 , \vga_sync_portmap.n10 , n1248, 
+         \renderer_portmap.n2927 , \renderer_portmap.n2 , 
+         \renderer_portmap.n2733 , \renderer_portmap.rgb_c_2_N_85 , 
+         \vga_sync_portmap.n1818 , \vga_sync_portmap.n2632 , 
+         \vga_sync_portmap.n2642 , \vga_sync_portmap.n1794 , rgb_c_2_N_86, 
+         \vga_sync_portmap.hsync_c_N_89 , hsync_c, \renderer_portmap.n1884 , 
+         ctrlr_latch_c_N_92, \clock_manager_portmap.n2616 , 
+         \nes_controller_portmap.ctrlr_latch_c_N_93 , ctrlr_latch_c, 
+         \nes_controller_portmap.n12 , \nes_controller_portmap.n1478 , n1438, 
+         \nes_controller_portmap.ctrlr_clk_c_N_94 , 
+         \clock_manager_portmap.n2628 , \clock_manager_portmap.n10 , 
+         \clock_manager_portmap.n2604 , \clock_manager_portmap.n1475 , 
+         \renderer_portmap.n4 , \renderer_portmap.n6_adj_121 , 
+         \renderer_portmap.n4_2[2] , \renderer_portmap.n4_2[3] , 
+         \renderer_portmap.n1874 , \renderer_portmap.n6_adj_122 , 
+         \renderer_portmap.n1254 , \renderer_portmap.n2401 , 
+         \renderer_portmap.n11 , \renderer_portmap.n1341 , 
+         \renderer_portmap.rgb_c_2_N_87 , \renderer_portmap.rgb_c_2_N_88 , 
+         rgb_c_4, rgb_c_2, \renderer_portmap.n12 , \renderer_portmap.n16 , 
+         \renderer_portmap.n1413 , rgb_c_3, \renderer_portmap.n2353 , 
+         \clock_manager_portmap.game_clock_N_98 , 
+         \clock_manager_portmap.n10_adj_123 , rotate_out_c, osc_c, 
          \clock_manager_portmap.pll_portmap.lscc_pll_inst.feedback_w ;
 
   vga_sync_portmap_SLICE_0 \vga_sync_portmap.SLICE_0 ( 
-    .DI0(\vga_sync_portmap.rgb_row_9__N_1[9] ), .D1(\vga_sync_portmap.n3096 ), 
-    .D0(\vga_sync_portmap.n2143 ), .C0(\rgb_row[9] ), 
-    .CE(\vga_sync_portmap.rgb_col_0__N_50 ), 
-    .LSR(\vga_sync_portmap.rgb_row_0__N_30 ), .CLK(clk), 
-    .CIN0(\vga_sync_portmap.n2143 ), .CIN1(\vga_sync_portmap.n3096 ), 
-    .Q0(\rgb_row[9] ), .F0(\vga_sync_portmap.rgb_row_9__N_1[9] ), 
-    .COUT0(\vga_sync_portmap.n3096 ));
-  vga_sync_portmap_SLICE_1 \vga_sync_portmap.SLICE_1 ( 
-    .DI1(\vga_sync_portmap.rgb_row_9__N_1[8] ), 
-    .DI0(\vga_sync_portmap.rgb_row_9__N_1[7] ), .D1(\vga_sync_portmap.n3066 ), 
-    .C1(\rgb_row[8] ), .D0(\vga_sync_portmap.n2141 ), .C0(\rgb_row[7] ), 
-    .CE(\vga_sync_portmap.rgb_col_0__N_50 ), 
-    .LSR(\vga_sync_portmap.rgb_row_0__N_30 ), .CLK(clk), 
-    .CIN0(\vga_sync_portmap.n2141 ), .CIN1(\vga_sync_portmap.n3066 ), 
-    .Q0(\rgb_row[7] ), .Q1(\rgb_row[8] ), 
-    .F0(\vga_sync_portmap.rgb_row_9__N_1[7] ), 
-    .F1(\vga_sync_portmap.rgb_row_9__N_1[8] ), 
-    .COUT1(\vga_sync_portmap.n2143 ), .COUT0(\vga_sync_portmap.n3066 ));
-  vga_sync_portmap_SLICE_2 \vga_sync_portmap.SLICE_2 ( 
     .DI1(\vga_sync_portmap.rgb_row_9__N_1[6] ), 
-    .DI0(\vga_sync_portmap.rgb_row_9__N_1[5] ), .D1(\vga_sync_portmap.n3063 ), 
-    .C1(\rgb_row[6] ), .D0(\vga_sync_portmap.n2139 ), .C0(\rgb_row[5] ), 
+    .DI0(\vga_sync_portmap.rgb_row_9__N_1[5] ), .D1(\vga_sync_portmap.n3135 ), 
+    .C1(\rgb_row[6] ), .D0(\vga_sync_portmap.n2141 ), .C0(\rgb_row[5] ), 
     .CE(\vga_sync_portmap.rgb_col_0__N_50 ), 
     .LSR(\vga_sync_portmap.rgb_row_0__N_30 ), .CLK(clk), 
-    .CIN0(\vga_sync_portmap.n2139 ), .CIN1(\vga_sync_portmap.n3063 ), 
+    .CIN0(\vga_sync_portmap.n2141 ), .CIN1(\vga_sync_portmap.n3135 ), 
     .Q0(\rgb_row[5] ), .Q1(\rgb_row[6] ), 
     .F0(\vga_sync_portmap.rgb_row_9__N_1[5] ), 
     .F1(\vga_sync_portmap.rgb_row_9__N_1[6] ), 
-    .COUT1(\vga_sync_portmap.n2141 ), .COUT0(\vga_sync_portmap.n3063 ));
-  vga_sync_portmap_SLICE_3 \vga_sync_portmap.SLICE_3 ( 
+    .COUT1(\vga_sync_portmap.n2143 ), .COUT0(\vga_sync_portmap.n3135 ));
+  vga_sync_portmap_SLICE_1 \vga_sync_portmap.SLICE_1 ( 
     .DI1(\vga_sync_portmap.rgb_row_9__N_1[4] ), 
-    .DI0(\vga_sync_portmap.rgb_row_9__N_1[3] ), .D1(\vga_sync_portmap.n3060 ), 
-    .C1(\rgb_row[4] ), .D0(\vga_sync_portmap.n2137 ), 
+    .DI0(\vga_sync_portmap.rgb_row_9__N_1[3] ), .D1(\vga_sync_portmap.n3132 ), 
+    .C1(\rgb_row[4] ), .D0(\vga_sync_portmap.n2139 ), 
     .C0(\vga_sync_portmap.rgb_row[3]_2 ), 
     .CE(\vga_sync_portmap.rgb_col_0__N_50 ), 
     .LSR(\vga_sync_portmap.rgb_row_0__N_30 ), .CLK(clk), 
-    .CIN0(\vga_sync_portmap.n2137 ), .CIN1(\vga_sync_portmap.n3060 ), 
+    .CIN0(\vga_sync_portmap.n2139 ), .CIN1(\vga_sync_portmap.n3132 ), 
     .Q0(\vga_sync_portmap.rgb_row[3]_2 ), .Q1(\rgb_row[4] ), 
     .F0(\vga_sync_portmap.rgb_row_9__N_1[3] ), 
     .F1(\vga_sync_portmap.rgb_row_9__N_1[4] ), 
-    .COUT1(\vga_sync_portmap.n2139 ), .COUT0(\vga_sync_portmap.n3060 ));
-  vga_sync_portmap_SLICE_4 \vga_sync_portmap.SLICE_4 ( 
+    .COUT1(\vga_sync_portmap.n2141 ), .COUT0(\vga_sync_portmap.n3132 ));
+  vga_sync_portmap_SLICE_2 \vga_sync_portmap.SLICE_2 ( 
+    .DI0(\vga_sync_portmap.rgb_col_9__N_31[9] ), .D1(\vga_sync_portmap.n3198 ), 
+    .D0(\vga_sync_portmap.n2134 ), .C0(\rgb_col[9] ), 
+    .LSR(\vga_sync_portmap.rgb_col_0__N_50 ), .CLK(clk), 
+    .CIN0(\vga_sync_portmap.n2134 ), .CIN1(\vga_sync_portmap.n3198 ), 
+    .Q0(\rgb_col[9] ), .F0(\vga_sync_portmap.rgb_col_9__N_31[9] ), 
+    .COUT0(\vga_sync_portmap.n3198 ));
+  vga_sync_portmap_SLICE_3 \vga_sync_portmap.SLICE_3 ( 
     .DI1(\vga_sync_portmap.rgb_row_9__N_1[2] ), 
-    .DI0(\vga_sync_portmap.rgb_row_9__N_1[1] ), .D1(\vga_sync_portmap.n3057 ), 
-    .C1(\vga_sync_portmap.rgb_row[2]_2 ), .D0(\vga_sync_portmap.n2135 ), 
+    .DI0(\vga_sync_portmap.rgb_row_9__N_1[1] ), .D1(\vga_sync_portmap.n3129 ), 
+    .C1(\vga_sync_portmap.rgb_row[2]_2 ), .D0(\vga_sync_portmap.n2137 ), 
     .C0(\vga_sync_portmap.rgb_row[1]_2 ), 
     .CE(\vga_sync_portmap.rgb_col_0__N_50 ), 
     .LSR(\vga_sync_portmap.rgb_row_0__N_30 ), .CLK(clk), 
-    .CIN0(\vga_sync_portmap.n2135 ), .CIN1(\vga_sync_portmap.n3057 ), 
+    .CIN0(\vga_sync_portmap.n2137 ), .CIN1(\vga_sync_portmap.n3129 ), 
     .Q0(\vga_sync_portmap.rgb_row[1]_2 ), .Q1(\vga_sync_portmap.rgb_row[2]_2 ), 
     .F0(\vga_sync_portmap.rgb_row_9__N_1[1] ), 
     .F1(\vga_sync_portmap.rgb_row_9__N_1[2] ), 
-    .COUT1(\vga_sync_portmap.n2137 ), .COUT0(\vga_sync_portmap.n3057 ));
-  vga_sync_portmap_SLICE_5 \vga_sync_portmap.SLICE_5 ( 
-    .DI1(\vga_sync_portmap.rgb_row_9__N_1[0] ), .D1(\vga_sync_portmap.n3054 ), 
-    .C1(\vga_sync_portmap.rgb_row[0]_2 ), .B1(VCC_net), 
-    .CE(\vga_sync_portmap.rgb_col_0__N_50 ), 
-    .LSR(\vga_sync_portmap.rgb_row_0__N_30 ), .CLK(clk), 
-    .CIN1(\vga_sync_portmap.n3054 ), .Q1(\vga_sync_portmap.rgb_row[0]_2 ), 
-    .F1(\vga_sync_portmap.rgb_row_9__N_1[0] ), 
-    .COUT1(\vga_sync_portmap.n2135 ), .COUT0(\vga_sync_portmap.n3054 ));
-  vga_sync_portmap_SLICE_6 \vga_sync_portmap.SLICE_6 ( 
-    .DI1(\vga_sync_portmap.rgb_col_9__N_31[8] ), 
-    .DI0(\vga_sync_portmap.rgb_col_9__N_31[7] ), .D1(\vga_sync_portmap.n3108 ), 
-    .C1(\rgb_col[8] ), .D0(\vga_sync_portmap.n2130 ), .C0(\rgb_col[7] ), 
-    .LSR(\vga_sync_portmap.rgb_col_0__N_50 ), .CLK(clk), 
-    .CIN0(\vga_sync_portmap.n2130 ), .CIN1(\vga_sync_portmap.n3108 ), 
-    .Q0(\rgb_col[7] ), .Q1(\rgb_col[8] ), 
-    .F0(\vga_sync_portmap.rgb_col_9__N_31[7] ), 
-    .F1(\vga_sync_portmap.rgb_col_9__N_31[8] ), 
-    .COUT1(\vga_sync_portmap.n2132 ), .COUT0(\vga_sync_portmap.n3108 ));
-  vga_sync_portmap_SLICE_7 \vga_sync_portmap.SLICE_7 ( 
+    .COUT1(\vga_sync_portmap.n2139 ), .COUT0(\vga_sync_portmap.n3129 ));
+  vga_sync_portmap_SLICE_4 \vga_sync_portmap.SLICE_4 ( 
     .DI1(\vga_sync_portmap.rgb_col_9__N_31[6] ), 
-    .DI0(\vga_sync_portmap.rgb_col_9__N_31[5] ), .D1(\vga_sync_portmap.n3105 ), 
-    .C1(\rgb_col[6] ), .D0(\vga_sync_portmap.n2128 ), .C0(\rgb_col[5] ), 
+    .DI0(\vga_sync_portmap.rgb_col_9__N_31[5] ), .D1(\vga_sync_portmap.n3192 ), 
+    .C1(\rgb_col[6] ), .D0(\vga_sync_portmap.n2130 ), .C0(\rgb_col[5] ), 
     .LSR(\vga_sync_portmap.rgb_col_0__N_50 ), .CLK(clk), 
-    .CIN0(\vga_sync_portmap.n2128 ), .CIN1(\vga_sync_portmap.n3105 ), 
+    .CIN0(\vga_sync_portmap.n2130 ), .CIN1(\vga_sync_portmap.n3192 ), 
     .Q0(\rgb_col[5] ), .Q1(\rgb_col[6] ), 
     .F0(\vga_sync_portmap.rgb_col_9__N_31[5] ), 
     .F1(\vga_sync_portmap.rgb_col_9__N_31[6] ), 
-    .COUT1(\vga_sync_portmap.n2130 ), .COUT0(\vga_sync_portmap.n3105 ));
-  vga_sync_portmap_SLICE_8 \vga_sync_portmap.SLICE_8 ( 
-    .DI1(\vga_sync_portmap.rgb_col_9__N_31[4] ), 
-    .DI0(\vga_sync_portmap.rgb_col_9__N_31[3] ), .D1(\vga_sync_portmap.n3102 ), 
-    .C1(\rgb_col[4] ), .D0(\vga_sync_portmap.n2126 ), 
-    .C0(\vga_sync_portmap.rgb_col[3]_2 ), 
-    .LSR(\vga_sync_portmap.rgb_col_0__N_50 ), .CLK(clk), 
-    .CIN0(\vga_sync_portmap.n2126 ), .CIN1(\vga_sync_portmap.n3102 ), 
-    .Q0(\vga_sync_portmap.rgb_col[3]_2 ), .Q1(\rgb_col[4] ), 
-    .F0(\vga_sync_portmap.rgb_col_9__N_31[3] ), 
-    .F1(\vga_sync_portmap.rgb_col_9__N_31[4] ), 
-    .COUT1(\vga_sync_portmap.n2128 ), .COUT0(\vga_sync_portmap.n3102 ));
-  vga_sync_portmap_SLICE_9 \vga_sync_portmap.SLICE_9 ( 
+    .COUT1(\vga_sync_portmap.n2132 ), .COUT0(\vga_sync_portmap.n3192 ));
+  vga_sync_portmap_SLICE_5 \vga_sync_portmap.SLICE_5 ( 
     .DI1(\vga_sync_portmap.rgb_col_9__N_31[2] ), 
-    .DI0(\vga_sync_portmap.rgb_col_9__N_31[1] ), .D1(\vga_sync_portmap.n3099 ), 
-    .C1(\vga_sync_portmap.rgb_col[2]_2 ), .D0(\vga_sync_portmap.n2124 ), 
-    .C0(\vga_sync_portmap.rgb_col[1]_2 ), 
+    .DI0(\vga_sync_portmap.rgb_col_9__N_31[1] ), .D1(\vga_sync_portmap.n3186 ), 
+    .C1(\vga_sync_portmap.rgb_col[2] ), .D0(\vga_sync_portmap.n2126 ), 
+    .C0(\vga_sync_portmap.rgb_col[1] ), 
     .LSR(\vga_sync_portmap.rgb_col_0__N_50 ), .CLK(clk), 
-    .CIN0(\vga_sync_portmap.n2124 ), .CIN1(\vga_sync_portmap.n3099 ), 
-    .Q0(\vga_sync_portmap.rgb_col[1]_2 ), .Q1(\vga_sync_portmap.rgb_col[2]_2 ), 
+    .CIN0(\vga_sync_portmap.n2126 ), .CIN1(\vga_sync_portmap.n3186 ), 
+    .Q0(\vga_sync_portmap.rgb_col[1] ), .Q1(\vga_sync_portmap.rgb_col[2] ), 
     .F0(\vga_sync_portmap.rgb_col_9__N_31[1] ), 
     .F1(\vga_sync_portmap.rgb_col_9__N_31[2] ), 
-    .COUT1(\vga_sync_portmap.n2126 ), .COUT0(\vga_sync_portmap.n3099 ));
-  vga_sync_portmap_SLICE_10 \vga_sync_portmap.SLICE_10 ( 
-    .DI1(\vga_sync_portmap.rgb_col_9__N_31[0] ), .D1(\vga_sync_portmap.n3051 ), 
-    .C1(\vga_sync_portmap.rgb_col[0]_2 ), .B1(VCC_net), 
+    .COUT1(\vga_sync_portmap.n2128 ), .COUT0(\vga_sync_portmap.n3186 ));
+  vga_sync_portmap_SLICE_6 \vga_sync_portmap.SLICE_6 ( 
+    .DI1(\vga_sync_portmap.rgb_row_9__N_1[0] ), .D1(\vga_sync_portmap.n3126 ), 
+    .C1(\vga_sync_portmap.rgb_row[0]_2 ), .B1(VCC_net), 
+    .CE(\vga_sync_portmap.rgb_col_0__N_50 ), 
+    .LSR(\vga_sync_portmap.rgb_row_0__N_30 ), .CLK(clk), 
+    .CIN1(\vga_sync_portmap.n3126 ), .Q1(\vga_sync_portmap.rgb_row[0]_2 ), 
+    .F1(\vga_sync_portmap.rgb_row_9__N_1[0] ), 
+    .COUT1(\vga_sync_portmap.n2137 ), .COUT0(\vga_sync_portmap.n3126 ));
+  vga_sync_portmap_SLICE_7 \vga_sync_portmap.SLICE_7 ( 
+    .DI1(\vga_sync_portmap.rgb_col_9__N_31[8] ), 
+    .DI0(\vga_sync_portmap.rgb_col_9__N_31[7] ), .D1(\vga_sync_portmap.n3195 ), 
+    .C1(\rgb_col[8] ), .D0(\vga_sync_portmap.n2132 ), .C0(\rgb_col[7] ), 
     .LSR(\vga_sync_portmap.rgb_col_0__N_50 ), .CLK(clk), 
-    .CIN1(\vga_sync_portmap.n3051 ), .Q1(\vga_sync_portmap.rgb_col[0]_2 ), 
+    .CIN0(\vga_sync_portmap.n2132 ), .CIN1(\vga_sync_portmap.n3195 ), 
+    .Q0(\rgb_col[7] ), .Q1(\rgb_col[8] ), 
+    .F0(\vga_sync_portmap.rgb_col_9__N_31[7] ), 
+    .F1(\vga_sync_portmap.rgb_col_9__N_31[8] ), 
+    .COUT1(\vga_sync_portmap.n2134 ), .COUT0(\vga_sync_portmap.n3195 ));
+  vga_sync_portmap_SLICE_8 \vga_sync_portmap.SLICE_8 ( 
+    .DI1(\vga_sync_portmap.rgb_col_9__N_31[0] ), .D1(\vga_sync_portmap.n3153 ), 
+    .C1(\vga_sync_portmap.rgb_col[0] ), .B1(VCC_net), 
+    .LSR(\vga_sync_portmap.rgb_col_0__N_50 ), .CLK(clk), 
+    .CIN1(\vga_sync_portmap.n3153 ), .Q1(\vga_sync_portmap.rgb_col[0] ), 
     .F1(\vga_sync_portmap.rgb_col_9__N_31[0] ), 
-    .COUT1(\vga_sync_portmap.n2124 ), .COUT0(\vga_sync_portmap.n3051 ));
+    .COUT1(\vga_sync_portmap.n2126 ), .COUT0(\vga_sync_portmap.n3153 ));
+  vga_sync_portmap_SLICE_9 \vga_sync_portmap.SLICE_9 ( 
+    .DI0(\vga_sync_portmap.rgb_row_9__N_1[9] ), .D1(\vga_sync_portmap.n3147 ), 
+    .D0(\vga_sync_portmap.n2145 ), .C0(\rgb_row[9] ), 
+    .CE(\vga_sync_portmap.rgb_col_0__N_50 ), 
+    .LSR(\vga_sync_portmap.rgb_row_0__N_30 ), .CLK(clk), 
+    .CIN0(\vga_sync_portmap.n2145 ), .CIN1(\vga_sync_portmap.n3147 ), 
+    .Q0(\rgb_row[9] ), .F0(\vga_sync_portmap.rgb_row_9__N_1[9] ), 
+    .COUT0(\vga_sync_portmap.n3147 ));
+  vga_sync_portmap_SLICE_10 \vga_sync_portmap.SLICE_10 ( 
+    .DI1(\vga_sync_portmap.rgb_row_9__N_1[8] ), 
+    .DI0(\vga_sync_portmap.rgb_row_9__N_1[7] ), .D1(\vga_sync_portmap.n3138 ), 
+    .C1(\rgb_row[8] ), .D0(\vga_sync_portmap.n2143 ), .C0(\rgb_row[7] ), 
+    .CE(\vga_sync_portmap.rgb_col_0__N_50 ), 
+    .LSR(\vga_sync_portmap.rgb_row_0__N_30 ), .CLK(clk), 
+    .CIN0(\vga_sync_portmap.n2143 ), .CIN1(\vga_sync_portmap.n3138 ), 
+    .Q0(\rgb_row[7] ), .Q1(\rgb_row[8] ), 
+    .F0(\vga_sync_portmap.rgb_row_9__N_1[7] ), 
+    .F1(\vga_sync_portmap.rgb_row_9__N_1[8] ), 
+    .COUT1(\vga_sync_portmap.n2145 ), .COUT0(\vga_sync_portmap.n3138 ));
   vga_sync_portmap_SLICE_11 \vga_sync_portmap.SLICE_11 ( 
-    .DI0(\vga_sync_portmap.rgb_col_9__N_31[9] ), .D1(\vga_sync_portmap.n3111 ), 
-    .D0(\vga_sync_portmap.n2132 ), .C0(\rgb_col[9] ), 
+    .DI1(\vga_sync_portmap.rgb_col_9__N_31[4] ), 
+    .DI0(\vga_sync_portmap.rgb_col_9__N_31[3] ), .D1(\vga_sync_portmap.n3189 ), 
+    .C1(\rgb_col[4] ), .D0(\vga_sync_portmap.n2128 ), 
+    .C0(\vga_sync_portmap.rgb_col[3] ), 
     .LSR(\vga_sync_portmap.rgb_col_0__N_50 ), .CLK(clk), 
-    .CIN0(\vga_sync_portmap.n2132 ), .CIN1(\vga_sync_portmap.n3111 ), 
-    .Q0(\rgb_col[9] ), .F0(\vga_sync_portmap.rgb_col_9__N_31[9] ), 
-    .COUT0(\vga_sync_portmap.n3111 ));
+    .CIN0(\vga_sync_portmap.n2128 ), .CIN1(\vga_sync_portmap.n3189 ), 
+    .Q0(\vga_sync_portmap.rgb_col[3] ), .Q1(\rgb_col[4] ), 
+    .F0(\vga_sync_portmap.rgb_col_9__N_31[3] ), 
+    .F1(\vga_sync_portmap.rgb_col_9__N_31[4] ), 
+    .COUT1(\vga_sync_portmap.n2130 ), .COUT0(\vga_sync_portmap.n3189 ));
   clock_manager_portmap_SLICE_12 \clock_manager_portmap.SLICE_12 ( 
-    .DI0(\clock_manager_portmap.clk_counter_15__N_51[15] ), 
-    .D1(\clock_manager_portmap.n3093 ), .D0(\clock_manager_portmap.n2160 ), 
-    .C0(\clk_counter[15] ), .CLK(clk), .CIN0(\clock_manager_portmap.n2160 ), 
-    .CIN1(\clock_manager_portmap.n3093 ), .Q0(\clk_counter[15] ), 
-    .F0(\clock_manager_portmap.clk_counter_15__N_51[15] ), 
-    .COUT0(\clock_manager_portmap.n3093 ));
+    .DI1(\clock_manager_portmap.NEScount_7__N_51[18] ), 
+    .DI0(\clock_manager_portmap.NEScount_7__N_51[17] ), 
+    .D1(\clock_manager_portmap.n3180 ), .C1(\clk_counter[18] ), 
+    .D0(\clock_manager_portmap.n2164 ), 
+    .C0(\clock_manager_portmap.clk_counter[17] ), 
+    .LSR(\clock_manager_portmap.clk_counter_0__N_120 ), .CLK(clk), 
+    .CIN0(\clock_manager_portmap.n2164 ), .CIN1(\clock_manager_portmap.n3180 ), 
+    .Q0(\clock_manager_portmap.clk_counter[17] ), .Q1(\clk_counter[18] ), 
+    .F0(\clock_manager_portmap.NEScount_7__N_51[17] ), 
+    .F1(\clock_manager_portmap.NEScount_7__N_51[18] ), 
+    .COUT0(\clock_manager_portmap.n3180 ));
   clock_manager_portmap_SLICE_13 \clock_manager_portmap.SLICE_13 ( 
-    .DI1(\clock_manager_portmap.clk_counter_15__N_51[14] ), 
-    .DI0(\clock_manager_portmap.clk_counter_15__N_51[13] ), 
-    .D1(\clock_manager_portmap.n3090 ), .C1(\clk_counter[14] ), 
-    .D0(\clock_manager_portmap.n2158 ), .C0(\clk_counter[13] ), .CLK(clk), 
-    .CIN0(\clock_manager_portmap.n2158 ), .CIN1(\clock_manager_portmap.n3090 ), 
-    .Q0(\clk_counter[13] ), .Q1(\clk_counter[14] ), 
-    .F0(\clock_manager_portmap.clk_counter_15__N_51[13] ), 
-    .F1(\clock_manager_portmap.clk_counter_15__N_51[14] ), 
-    .COUT1(\clock_manager_portmap.n2160 ), 
-    .COUT0(\clock_manager_portmap.n3090 ));
+    .DI1(\clock_manager_portmap.NEScount_7__N_51[16] ), 
+    .DI0(\clock_manager_portmap.NEScount_7__N_51[15] ), 
+    .D1(\clock_manager_portmap.n3177 ), 
+    .C1(\clock_manager_portmap.clk_counter[16] ), 
+    .D0(\clock_manager_portmap.n2162 ), .C0(\NEScount[7] ), 
+    .LSR(\clock_manager_portmap.clk_counter_0__N_120 ), .CLK(clk), 
+    .CIN0(\clock_manager_portmap.n2162 ), .CIN1(\clock_manager_portmap.n3177 ), 
+    .Q0(\NEScount[7] ), .Q1(\clock_manager_portmap.clk_counter[16] ), 
+    .F0(\clock_manager_portmap.NEScount_7__N_51[15] ), 
+    .F1(\clock_manager_portmap.NEScount_7__N_51[16] ), 
+    .COUT1(\clock_manager_portmap.n2164 ), 
+    .COUT0(\clock_manager_portmap.n3177 ));
   clock_manager_portmap_SLICE_14 \clock_manager_portmap.SLICE_14 ( 
-    .DI1(\clock_manager_portmap.clk_counter_15__N_51[12] ), 
-    .DI0(\clock_manager_portmap.clk_counter_15__N_51[11] ), 
-    .D1(\clock_manager_portmap.n3087 ), .C1(\clk_counter[12] ), 
-    .D0(\clock_manager_portmap.n2156 ), .C0(\clk_counter[11] ), .CLK(clk), 
-    .CIN0(\clock_manager_portmap.n2156 ), .CIN1(\clock_manager_portmap.n3087 ), 
-    .Q0(\clk_counter[11] ), .Q1(\clk_counter[12] ), 
-    .F0(\clock_manager_portmap.clk_counter_15__N_51[11] ), 
-    .F1(\clock_manager_portmap.clk_counter_15__N_51[12] ), 
-    .COUT1(\clock_manager_portmap.n2158 ), 
-    .COUT0(\clock_manager_portmap.n3087 ));
+    .DI1(\clock_manager_portmap.NEScount_7__N_51[14] ), 
+    .DI0(\clock_manager_portmap.NEScount_7__N_51[13] ), 
+    .D1(\clock_manager_portmap.n3174 ), .C1(\NEScount[6] ), 
+    .D0(\clock_manager_portmap.n2160 ), .C0(\NEScount[5] ), 
+    .LSR(\clock_manager_portmap.clk_counter_0__N_120 ), .CLK(clk), 
+    .CIN0(\clock_manager_portmap.n2160 ), .CIN1(\clock_manager_portmap.n3174 ), 
+    .Q0(\NEScount[5] ), .Q1(\NEScount[6] ), 
+    .F0(\clock_manager_portmap.NEScount_7__N_51[13] ), 
+    .F1(\clock_manager_portmap.NEScount_7__N_51[14] ), 
+    .COUT1(\clock_manager_portmap.n2162 ), 
+    .COUT0(\clock_manager_portmap.n3174 ));
   clock_manager_portmap_SLICE_15 \clock_manager_portmap.SLICE_15 ( 
-    .DI1(\clock_manager_portmap.clk_counter_15__N_51[10] ), 
-    .DI0(\clock_manager_portmap.clk_counter_15__N_51[9] ), 
-    .D1(\clock_manager_portmap.n3084 ), .C1(\clk_counter[10] ), 
-    .D0(\clock_manager_portmap.n2154 ), .C0(\clk_counter[9] ), .CLK(clk), 
-    .CIN0(\clock_manager_portmap.n2154 ), .CIN1(\clock_manager_portmap.n3084 ), 
-    .Q0(\clk_counter[9] ), .Q1(\clk_counter[10] ), 
-    .F0(\clock_manager_portmap.clk_counter_15__N_51[9] ), 
-    .F1(\clock_manager_portmap.clk_counter_15__N_51[10] ), 
-    .COUT1(\clock_manager_portmap.n2156 ), 
-    .COUT0(\clock_manager_portmap.n3084 ));
+    .DI1(\clock_manager_portmap.NEScount_7__N_51[12] ), 
+    .DI0(\clock_manager_portmap.NEScount_7__N_51[11] ), 
+    .D1(\clock_manager_portmap.n3171 ), .C1(\NEScount[4] ), 
+    .D0(\clock_manager_portmap.n2158 ), .C0(\NEScount[3] ), 
+    .LSR(\clock_manager_portmap.clk_counter_0__N_120 ), .CLK(clk), 
+    .CIN0(\clock_manager_portmap.n2158 ), .CIN1(\clock_manager_portmap.n3171 ), 
+    .Q0(\NEScount[3] ), .Q1(\NEScount[4] ), 
+    .F0(\clock_manager_portmap.NEScount_7__N_51[11] ), 
+    .F1(\clock_manager_portmap.NEScount_7__N_51[12] ), 
+    .COUT1(\clock_manager_portmap.n2160 ), 
+    .COUT0(\clock_manager_portmap.n3171 ));
   clock_manager_portmap_SLICE_16 \clock_manager_portmap.SLICE_16 ( 
-    .DI1(\clock_manager_portmap.clk_counter_15__N_51[8] ), 
-    .DI0(\clock_manager_portmap.clk_counter_15__N_51[7] ), 
-    .D1(\clock_manager_portmap.n3081 ), .C1(\clk_counter[8] ), 
-    .D0(\clock_manager_portmap.n2152 ), .C0(\clk_counter[7] ), .CLK(clk), 
-    .CIN0(\clock_manager_portmap.n2152 ), .CIN1(\clock_manager_portmap.n3081 ), 
-    .Q0(\clk_counter[7] ), .Q1(\clk_counter[8] ), 
-    .F0(\clock_manager_portmap.clk_counter_15__N_51[7] ), 
-    .F1(\clock_manager_portmap.clk_counter_15__N_51[8] ), 
-    .COUT1(\clock_manager_portmap.n2154 ), 
-    .COUT0(\clock_manager_portmap.n3081 ));
+    .DI1(\clock_manager_portmap.NEScount_7__N_51[10] ), 
+    .DI0(\clock_manager_portmap.NEScount_7__N_51[9] ), 
+    .D1(\clock_manager_portmap.n3168 ), .C1(\NEScount[2] ), 
+    .D0(\clock_manager_portmap.n2156 ), .C0(\NEScount[1] ), 
+    .LSR(\clock_manager_portmap.clk_counter_0__N_120 ), .CLK(clk), 
+    .CIN0(\clock_manager_portmap.n2156 ), .CIN1(\clock_manager_portmap.n3168 ), 
+    .Q0(\NEScount[1] ), .Q1(\NEScount[2] ), 
+    .F0(\clock_manager_portmap.NEScount_7__N_51[9] ), 
+    .F1(\clock_manager_portmap.NEScount_7__N_51[10] ), 
+    .COUT1(\clock_manager_portmap.n2158 ), 
+    .COUT0(\clock_manager_portmap.n3168 ));
   clock_manager_portmap_SLICE_17 \clock_manager_portmap.SLICE_17 ( 
-    .DI1(\clock_manager_portmap.clk_counter_15__N_51[6] ), 
-    .DI0(\clock_manager_portmap.clk_counter_15__N_51[5] ), 
-    .D1(\clock_manager_portmap.n3078 ), .C1(\clock_manager_portmap.n10 ), 
-    .D0(\clock_manager_portmap.n2150 ), .C0(\clock_manager_portmap.n11 ), 
-    .CLK(clk), .CIN0(\clock_manager_portmap.n2150 ), 
-    .CIN1(\clock_manager_portmap.n3078 ), .Q0(\clock_manager_portmap.n11 ), 
-    .Q1(\clock_manager_portmap.n10 ), 
-    .F0(\clock_manager_portmap.clk_counter_15__N_51[5] ), 
-    .F1(\clock_manager_portmap.clk_counter_15__N_51[6] ), 
-    .COUT1(\clock_manager_portmap.n2152 ), 
-    .COUT0(\clock_manager_portmap.n3078 ));
+    .DI1(\clock_manager_portmap.NEScount_7__N_51[8] ), 
+    .DI0(\clock_manager_portmap.NEScount_7__N_51[7] ), 
+    .D1(\clock_manager_portmap.n3165 ), .C1(\NEScount[0] ), 
+    .D0(\clock_manager_portmap.n2154 ), .C0(NESclk), 
+    .LSR(\clock_manager_portmap.clk_counter_0__N_120 ), .CLK(clk), 
+    .CIN0(\clock_manager_portmap.n2154 ), .CIN1(\clock_manager_portmap.n3165 ), 
+    .Q0(NESclk), .Q1(\NEScount[0] ), 
+    .F0(\clock_manager_portmap.NEScount_7__N_51[7] ), 
+    .F1(\clock_manager_portmap.NEScount_7__N_51[8] ), 
+    .COUT1(\clock_manager_portmap.n2156 ), 
+    .COUT0(\clock_manager_portmap.n3165 ));
   clock_manager_portmap_SLICE_18 \clock_manager_portmap.SLICE_18 ( 
-    .DI1(\clock_manager_portmap.clk_counter_15__N_51[4] ), 
-    .DI0(\clock_manager_portmap.clk_counter_15__N_51[3] ), 
-    .D1(\clock_manager_portmap.n3075 ), .C1(\clock_manager_portmap.n12 ), 
-    .D0(\clock_manager_portmap.n2148 ), .C0(\clock_manager_portmap.n13 ), 
-    .CLK(clk), .CIN0(\clock_manager_portmap.n2148 ), 
-    .CIN1(\clock_manager_portmap.n3075 ), .Q0(\clock_manager_portmap.n13 ), 
-    .Q1(\clock_manager_portmap.n12 ), 
-    .F0(\clock_manager_portmap.clk_counter_15__N_51[3] ), 
-    .F1(\clock_manager_portmap.clk_counter_15__N_51[4] ), 
-    .COUT1(\clock_manager_portmap.n2150 ), 
-    .COUT0(\clock_manager_portmap.n3075 ));
+    .DI1(\clock_manager_portmap.NEScount_7__N_51[6] ), 
+    .DI0(\clock_manager_portmap.NEScount_7__N_51[5] ), 
+    .D1(\clock_manager_portmap.n3162 ), .C1(\clk_counter[6] ), 
+    .D0(\clock_manager_portmap.n2152 ), 
+    .C0(\clock_manager_portmap.clk_counter[5] ), 
+    .LSR(\clock_manager_portmap.clk_counter_0__N_120 ), .CLK(clk), 
+    .CIN0(\clock_manager_portmap.n2152 ), .CIN1(\clock_manager_portmap.n3162 ), 
+    .Q0(\clock_manager_portmap.clk_counter[5] ), .Q1(\clk_counter[6] ), 
+    .F0(\clock_manager_portmap.NEScount_7__N_51[5] ), 
+    .F1(\clock_manager_portmap.NEScount_7__N_51[6] ), 
+    .COUT1(\clock_manager_portmap.n2154 ), 
+    .COUT0(\clock_manager_portmap.n3162 ));
   clock_manager_portmap_SLICE_19 \clock_manager_portmap.SLICE_19 ( 
-    .DI1(\clock_manager_portmap.clk_counter_15__N_51[2] ), 
-    .DI0(\clock_manager_portmap.clk_counter_15__N_51[1] ), 
-    .D1(\clock_manager_portmap.n3072 ), .C1(\clock_manager_portmap.n14 ), 
-    .D0(\clock_manager_portmap.n2146 ), .C0(\clock_manager_portmap.n15 ), 
-    .CLK(clk), .CIN0(\clock_manager_portmap.n2146 ), 
-    .CIN1(\clock_manager_portmap.n3072 ), .Q0(\clock_manager_portmap.n15 ), 
-    .Q1(\clock_manager_portmap.n14 ), 
-    .F0(\clock_manager_portmap.clk_counter_15__N_51[1] ), 
-    .F1(\clock_manager_portmap.clk_counter_15__N_51[2] ), 
-    .COUT1(\clock_manager_portmap.n2148 ), 
-    .COUT0(\clock_manager_portmap.n3072 ));
+    .DI1(\clock_manager_portmap.NEScount_7__N_51[4] ), 
+    .DI0(\clock_manager_portmap.NEScount_7__N_51[3] ), 
+    .D1(\clock_manager_portmap.n3159 ), .C1(\clk_counter[4] ), 
+    .D0(\clock_manager_portmap.n2150 ), .C0(\clk_counter[3] ), 
+    .LSR(\clock_manager_portmap.clk_counter_0__N_120 ), .CLK(clk), 
+    .CIN0(\clock_manager_portmap.n2150 ), .CIN1(\clock_manager_portmap.n3159 ), 
+    .Q0(\clk_counter[3] ), .Q1(\clk_counter[4] ), 
+    .F0(\clock_manager_portmap.NEScount_7__N_51[3] ), 
+    .F1(\clock_manager_portmap.NEScount_7__N_51[4] ), 
+    .COUT1(\clock_manager_portmap.n2152 ), 
+    .COUT0(\clock_manager_portmap.n3159 ));
   clock_manager_portmap_SLICE_20 \clock_manager_portmap.SLICE_20 ( 
-    .DI1(\clock_manager_portmap.clk_counter_15__N_51[0] ), 
-    .D1(\clock_manager_portmap.n3069 ), .C1(\clock_manager_portmap.n16 ), 
-    .B1(VCC_net), .CLK(clk), .CIN1(\clock_manager_portmap.n3069 ), 
-    .Q1(\clock_manager_portmap.n16 ), 
-    .F1(\clock_manager_portmap.clk_counter_15__N_51[0] ), 
-    .COUT1(\clock_manager_portmap.n2146 ), 
-    .COUT0(\clock_manager_portmap.n3069 ));
-  vga_sync_clk_portmap_SLICE_21 \vga_sync_clk_portmap.SLICE_21 ( 
-    .DI1(\vga_sync_clk_portmap.valid_output_ctr_4__N_60[2] ), 
-    .DI0(\vga_sync_clk_portmap.valid_output_ctr_4__N_60[1] ), 
-    .D1(\vga_sync_clk_portmap.n3114 ), .C1(\vga_sync_clk_portmap.n3 ), 
-    .D0(\vga_sync_clk_portmap.n2118 ), .C0(\vga_sync_clk_portmap.n4 ), 
-    .CLK(\vga_sync_clk_portmap.valid_output ), 
-    .CIN0(\vga_sync_clk_portmap.n2118 ), .CIN1(\vga_sync_clk_portmap.n3114 ), 
-    .Q0(\vga_sync_clk_portmap.n4 ), .Q1(\vga_sync_clk_portmap.n3 ), 
-    .F0(\vga_sync_clk_portmap.valid_output_ctr_4__N_60[1] ), 
-    .F1(\vga_sync_clk_portmap.valid_output_ctr_4__N_60[2] ), 
-    .COUT1(\vga_sync_clk_portmap.n2120 ), .COUT0(\vga_sync_clk_portmap.n3114 ));
-  vga_sync_clk_portmap_SLICE_22 \vga_sync_clk_portmap.SLICE_22 ( 
-    .DI1(\vga_sync_clk_portmap.valid_output_ctr_4__N_60[0] ), 
-    .D1(\vga_sync_clk_portmap.n3048 ), .C1(\vga_sync_clk_portmap.n5 ), 
-    .B1(VCC_net), .CLK(\vga_sync_clk_portmap.valid_output ), 
-    .CIN1(\vga_sync_clk_portmap.n3048 ), .Q1(\vga_sync_clk_portmap.n5 ), 
-    .F1(\vga_sync_clk_portmap.valid_output_ctr_4__N_60[0] ), 
-    .COUT1(\vga_sync_clk_portmap.n2118 ), .COUT0(\vga_sync_clk_portmap.n3048 ));
-  vga_sync_clk_portmap_SLICE_23 \vga_sync_clk_portmap.SLICE_23 ( 
-    .DI1(\vga_sync_clk_portmap.valid_output_ctr_4__N_60[4] ), 
-    .DI0(\vga_sync_clk_portmap.valid_output_ctr_4__N_60[3] ), 
-    .D1(\vga_sync_clk_portmap.n3117 ), .C1(\valid_output_ctr[4] ), 
-    .D0(\vga_sync_clk_portmap.n2120 ), .C0(\vga_sync_clk_portmap.n2 ), 
-    .CLK(\vga_sync_clk_portmap.valid_output ), 
-    .CIN0(\vga_sync_clk_portmap.n2120 ), .CIN1(\vga_sync_clk_portmap.n3117 ), 
-    .Q0(\vga_sync_clk_portmap.n2 ), .Q1(\valid_output_ctr[4] ), 
-    .F0(\vga_sync_clk_portmap.valid_output_ctr_4__N_60[3] ), 
-    .F1(\vga_sync_clk_portmap.valid_output_ctr_4__N_60[4] ), 
-    .COUT0(\vga_sync_clk_portmap.n3117 ));
-  game_logic_portmap_SLICE_24 \game_logic_portmap.SLICE_24 ( 
-    .DI1(\game_logic_portmap.piece_loc_1__3__N_61[2] ), 
-    .DI0(\game_logic_portmap.piece_loc_1__3__N_61[3] ), .D1(\piece_loc[1][1] ), 
-    .C1(\piece_loc[1][2] ), .B1(\valid_output_ctr[4] ), .A1(\piece_loc[1][0] ), 
-    .D0(\piece_loc[1][2] ), .C0(\game_logic_portmap.n955 ), 
-    .B0(\piece_loc[1][3] ), .CLK(clk), .Q0(\piece_loc[1][3] ), 
-    .Q1(\piece_loc[1][2] ), .F0(\game_logic_portmap.piece_loc_1__3__N_61[3] ), 
-    .F1(\game_logic_portmap.piece_loc_1__3__N_61[2] ));
-  game_logic_portmap_SLICE_25 \game_logic_portmap.SLICE_25 ( 
-    .DI1(\game_logic_portmap.piece_loc_1__3__N_61[1] ), 
-    .DI0(\game_logic_portmap.piece_loc_1__3__N_61[0] ), .D1(\piece_loc[1][1] ), 
-    .C1(\valid_output_ctr[4] ), .B1(\piece_loc[1][0] ), 
-    .D0(\valid_output_ctr[4] ), .C0(\piece_loc[1][0] ), .CLK(clk), 
-    .Q0(\piece_loc[1][0] ), .Q1(\piece_loc[1][1] ), 
-    .F0(\game_logic_portmap.piece_loc_1__3__N_61[0] ), 
-    .F1(\game_logic_portmap.piece_loc_1__3__N_61[1] ));
-  nes_controller_portmap_SLICE_28 \nes_controller_portmap.SLICE_28 ( 
+    .DI1(\clock_manager_portmap.NEScount_7__N_51[2] ), 
+    .DI0(\clock_manager_portmap.NEScount_7__N_51[1] ), 
+    .D1(\clock_manager_portmap.n3156 ), .C1(\clk_counter[2] ), 
+    .D0(\clock_manager_portmap.n2148 ), .C0(\clk_counter[1] ), 
+    .LSR(\clock_manager_portmap.clk_counter_0__N_120 ), .CLK(clk), 
+    .CIN0(\clock_manager_portmap.n2148 ), .CIN1(\clock_manager_portmap.n3156 ), 
+    .Q0(\clk_counter[1] ), .Q1(\clk_counter[2] ), 
+    .F0(\clock_manager_portmap.NEScount_7__N_51[1] ), 
+    .F1(\clock_manager_portmap.NEScount_7__N_51[2] ), 
+    .COUT1(\clock_manager_portmap.n2150 ), 
+    .COUT0(\clock_manager_portmap.n3156 ));
+  clock_manager_portmap_SLICE_21 \clock_manager_portmap.SLICE_21 ( 
+    .DI1(\clock_manager_portmap.NEScount_7__N_51[0] ), 
+    .D1(\clock_manager_portmap.n3150 ), 
+    .C1(\clock_manager_portmap.clk_counter[0] ), .B1(VCC_net), 
+    .LSR(\clock_manager_portmap.clk_counter_0__N_120 ), .CLK(clk), 
+    .CIN1(\clock_manager_portmap.n3150 ), 
+    .Q1(\clock_manager_portmap.clk_counter[0] ), 
+    .F1(\clock_manager_portmap.NEScount_7__N_51[0] ), 
+    .COUT1(\clock_manager_portmap.n2148 ), 
+    .COUT0(\clock_manager_portmap.n3150 ));
+  nes_controller_portmap_SLICE_22 \nes_controller_portmap.SLICE_22 ( 
     .DI1(\nes_controller_portmap.shift_reg[1].sig_001.FeedThruLUT ), 
     .DI0(\nes_controller_portmap.shift_reg[2].sig_000.FeedThruLUT ), 
     .D1(\nes_controller_portmap.shift_reg[1] ), 
@@ -400,172 +394,254 @@ module master ( ctrlr_data, osc, rotate_out, ctrlr_clk, ctrlr_latch, vsync,
     .Q1(\nes_controller_portmap.shift_reg[2] ), 
     .F0(\nes_controller_portmap.shift_reg[2].sig_000.FeedThruLUT ), 
     .F1(\nes_controller_portmap.shift_reg[1].sig_001.FeedThruLUT ));
-  nes_controller_portmap_SLICE_30 \nes_controller_portmap.SLICE_30 ( 
-    .DI1(\nes_controller_portmap.shift_reg_0__N_65 ), 
+  nes_controller_portmap_SLICE_24 \nes_controller_portmap.SLICE_24 ( 
+    .DI1(\nes_controller_portmap.shift_reg_0__N_77 ), 
     .DI0(\nes_controller_portmap.shift_reg[0].sig_002.FeedThruLUT ), 
     .D1(ctrlr_data_c), .D0(\nes_controller_portmap.shift_reg[0] ), 
     .CLK(ctrlr_clk_c), .Q0(\nes_controller_portmap.shift_reg[1] ), 
     .Q1(\nes_controller_portmap.shift_reg[0] ), 
     .F0(\nes_controller_portmap.shift_reg[0].sig_002.FeedThruLUT ), 
-    .F1(\nes_controller_portmap.shift_reg_0__N_65 ));
-  vga_sync_portmap_SLICE_32 \vga_sync_portmap.SLICE_32 ( 
-    .D1(\vga_sync_portmap.n2661 ), .C1(n112), .B1(\rgb_col[5] ), 
-    .A1(\rgb_col[6] ), .D0(\rgb_col[4] ), .C0(\rgb_row[4] ), .F0(n112), 
-    .F1(\vga_sync_portmap.n2679 ));
-  vga_sync_portmap_SLICE_33 \vga_sync_portmap.SLICE_33 ( .C1(\rgb_col[4] ), 
-    .A1(\rgb_col[6] ), .D0(\rgb_col[4] ), .C0(\vga_sync_portmap.n2679 ), 
-    .B0(\rgb_col[6] ), .A0(\rgb_row[5] ), .F0(n2678), .F1(n110));
-  renderer_portmap_SLICE_34 \renderer_portmap.SLICE_34 ( .D1(n18), 
-    .C1(\renderer_portmap.n4_adj_85 ), .B1(\piece_loc[1][3] ), .A1(n6), 
-    .D0(\rgb_col[4] ), .C0(\rgb_col[6] ), .F0(\renderer_portmap.n4_adj_85 ), 
-    .F1(\renderer_portmap.n2650 ));
-  renderer_portmap_SLICE_35 \renderer_portmap.SLICE_35 ( 
-    .D1(\renderer_portmap.n6_adj_87 ), .C1(\renderer_portmap.n992 ), 
-    .B1(\rgb_row[7] ), .A1(\piece_loc[1][3] ), .D0(\piece_loc[1][2] ), 
-    .C0(\piece_loc[1][1] ), .B0(\piece_loc[1][0] ), 
-    .F0(\renderer_portmap.n992 ), .F1(n18));
-  vga_sync_portmap_SLICE_36 \vga_sync_portmap.SLICE_36 ( 
-    .D1(\vga_sync_portmap.rgb_row[2]_2 ), .C1(\vga_sync_portmap.vsync_c_N_75 ), 
-    .B1(\vga_sync_portmap.vsync_c_N_76 ), .A1(\rgb_row[4] ), 
-    .D0(\vga_sync_portmap.rgb_row[3]_2 ), .C0(\rgb_row[5] ), .B0(\rgb_row[7] ), 
-    .F0(\vga_sync_portmap.vsync_c_N_75 ), .F1(vsync_c));
-  vga_sync_portmap_SLICE_38 \vga_sync_portmap.SLICE_38 ( .D1(\rgb_col[9] ), 
-    .C1(\vga_sync_portmap.hsync_c_N_74 ), .B1(\rgb_col[8] ), .A1(\rgb_col[7] ), 
-    .D0(\rgb_col[5] ), .C0(\rgb_col[4] ), .B0(\rgb_col[6] ), 
-    .F0(\vga_sync_portmap.hsync_c_N_74 ), .F1(hsync_c));
-  vga_sync_portmap_SLICE_40 \vga_sync_portmap.SLICE_40 ( .D1(\rgb_row[6] ), 
-    .C1(\vga_sync_portmap.rgb_row[1]_2 ), .B1(\rgb_row[8] ), .A1(\rgb_row[9] ), 
-    .C0(\rgb_row[6] ), .A0(\rgb_row[8] ), .F0(\vga_sync_portmap.n2558 ), 
-    .F1(\vga_sync_portmap.vsync_c_N_76 ));
-  vga_sync_portmap_SLICE_41 \vga_sync_portmap.SLICE_41 ( 
-    .D1(\vga_sync_portmap.n15 ), .C1(\vga_sync_portmap.n14 ), 
-    .B1(\vga_sync_portmap.n2558 ), .A1(\vga_sync_portmap.rgb_row[1]_2 ), 
-    .D0(\vga_sync_portmap.rgb_row[0]_2 ), 
-    .C0(\vga_sync_portmap.rgb_col_0__N_50 ), .B0(\rgb_row[4] ), 
-    .F0(\vga_sync_portmap.n14 ), .F1(\vga_sync_portmap.rgb_row_0__N_30 ));
-  vga_sync_portmap_SLICE_43 \vga_sync_portmap.SLICE_43 ( .D1(\rgb_col[9] ), 
-    .C1(\vga_sync_portmap.n8 ), .B1(\rgb_col[4] ), .A1(\rgb_col[7] ), 
-    .D0(\rgb_col[5] ), .C0(\vga_sync_portmap.n114 ), .A0(\rgb_col[8] ), 
-    .F0(\vga_sync_portmap.n8 ), .F1(\vga_sync_portmap.rgb_col_0__N_50 ));
-  vga_sync_portmap_SLICE_44 \vga_sync_portmap.SLICE_44 ( .D1(\rgb_row[9] ), 
-    .C1(\vga_sync_portmap.n129 ), .B1(\rgb_row[5] ), .A1(\rgb_row[7] ), 
-    .D0(\vga_sync_portmap.rgb_row[2]_2 ), .B0(\vga_sync_portmap.rgb_row[3]_2 ), 
-    .F0(\vga_sync_portmap.n129 ), .F1(\vga_sync_portmap.n15 ));
-  vga_sync_portmap_SLICE_46 \vga_sync_portmap.SLICE_46 ( 
-    .D1(\vga_sync_portmap.rgb_col[3]_2 ), .C1(\vga_sync_portmap.n6_c ), 
-    .B1(\vga_sync_portmap.rgb_col[0]_2 ), .A1(\vga_sync_portmap.rgb_col[1]_2 ), 
-    .D0(\vga_sync_portmap.rgb_col[2]_2 ), .C0(\rgb_col[6] ), 
-    .F0(\vga_sync_portmap.n6_c ), .F1(\vga_sync_portmap.n114 ));
-  vga_sync_portmap_SLICE_48 \vga_sync_portmap.SLICE_48 ( .D1(\rgb_row[8] ), 
-    .C1(\vga_sync_portmap.n138 ), .D0(\rgb_row[6] ), .C0(\rgb_row[4] ), 
-    .B0(\rgb_row[7] ), .A0(\rgb_row[5] ), .F0(\vga_sync_portmap.n138 ), 
-    .F1(valid_output_N_84));
-  vga_sync_portmap_SLICE_49 \vga_sync_portmap.SLICE_49 ( .D1(\rgb_row[9] ), 
-    .C1(\vga_sync_portmap.n1853 ), .B1(n63), .A1(\rgb_col[7] ), 
-    .D0(\vga_sync_portmap.n23 ), .C0(\vga_sync_portmap.n138 ), 
-    .B0(\rgb_row[8] ), .F0(\vga_sync_portmap.n1853 ), 
-    .F1(\vga_sync_portmap.n2560 ));
-  vga_sync_clk_portmap_SLICE_51 \vga_sync_clk_portmap.SLICE_51 ( 
-    .D1(\rgb_row[9] ), .C1(valid_output_N_82), .B1(valid_output_N_84), 
-    .A1(valid_output_N_83), .D0(\vga_sync_portmap.rgb_row[3]_2 ), 
-    .C0(\vga_sync_portmap.rgb_row[1]_2 ), .B0(\vga_sync_portmap.rgb_row[2]_2 ), 
-    .A0(\vga_sync_portmap.rgb_row[0]_2 ), .F0(valid_output_N_82), 
-    .F1(\vga_sync_clk_portmap.valid_output ));
-  vga_sync_portmap_SLICE_52 \vga_sync_portmap.SLICE_52 ( 
-    .D1(\renderer_portmap.n2650 ), .C1(n1716), .B1(\rgb_col[5] ), 
-    .A1(\renderer_portmap.n2645 ), .D0(n110), .C0(n135), .B0(n112), 
-    .A0(\rgb_row[5] ), .F0(n1716), .F1(\renderer_portmap.n77 ));
-  vga_sync_portmap_SLICE_54 \vga_sync_portmap.SLICE_54 ( 
-    .D1(\renderer_portmap.n6_adj_86 ), .C1(n135), .B1(\rgb_row[5] ), 
-    .A1(\rgb_col[5] ), .D0(\rgb_row[6] ), .B0(\rgb_row[7] ), .F0(n135), 
-    .F1(\renderer_portmap.n2654 ));
-  renderer_portmap_SLICE_55 \renderer_portmap.SLICE_55 ( .D1(n1844), 
-    .C1(\renderer_portmap.n74 ), .B1(\rgb_row[8] ), .A1(\rgb_row[9] ), 
-    .D0(n2678), .C0(\renderer_portmap.n2657 ), .B0(\rgb_col[7] ), .A0(n135), 
-    .F0(\renderer_portmap.n74 ), .F1(\renderer_portmap.rgb_c_1_N_70 ));
-  renderer_portmap_SLICE_57 \renderer_portmap.SLICE_57 ( .D1(\rgb_row[6] ), 
-    .C1(\renderer_portmap.n2648 ), .B1(\rgb_row[7] ), .A1(n110), 
-    .D0(\rgb_col[6] ), .C0(\rgb_row[4] ), .A0(\rgb_row[5] ), 
-    .F0(\renderer_portmap.n2648 ), .F1(\renderer_portmap.n2645 ));
-  vga_sync_portmap_SLICE_58 \vga_sync_portmap.SLICE_58 ( .D1(\rgb_row[5] ), 
-    .C1(\vga_sync_portmap.n23 ), .B1(\rgb_row[7] ), .A1(\rgb_row[4] ), 
-    .D0(\vga_sync_portmap.rgb_row[1]_2 ), .C0(\vga_sync_portmap.rgb_row[0]_2 ), 
-    .B0(\vga_sync_portmap.rgb_row[3]_2 ), .A0(\vga_sync_portmap.rgb_row[2]_2 ), 
-    .F0(\vga_sync_portmap.n23 ), .F1(\vga_sync_portmap.n2456 ));
-  vga_sync_portmap_SLICE_60 \vga_sync_portmap.SLICE_60 ( .D1(\rgb_col[4] ), 
-    .C1(n63), .B1(\rgb_row[4] ), .A1(\rgb_row[5] ), .D0(\rgb_col[5] ), 
-    .C0(\rgb_col[6] ), .F0(n63), .F1(\renderer_portmap.n2657 ));
-  vga_sync_portmap_SLICE_62 \vga_sync_portmap.SLICE_62 ( .D1(n18), 
-    .C1(\vga_sync_portmap.n10 ), .B1(\vga_sync_portmap.n2560 ), 
-    .A1(\rgb_col[4] ), .D0(\piece_loc[1][3] ), .C0(n6), .B0(\rgb_row[7] ), 
-    .A0(n1844), .F0(\vga_sync_portmap.n10 ), .F1(rgb_c_0_N_73));
-  renderer_portmap_SLICE_63 \renderer_portmap.SLICE_63 ( 
-    .D1(\piece_loc[1][2] ), .C1(\renderer_portmap.n4 ), .B1(\rgb_row[6] ), 
-    .D0(\piece_loc[1][0] ), .C0(\piece_loc[1][1] ), .B0(\rgb_row[4] ), 
-    .A0(\rgb_row[5] ), .F0(\renderer_portmap.n4 ), .F1(n6));
-  vga_sync_portmap_SLICE_66 \vga_sync_portmap.SLICE_66 ( .D1(\rgb_col[4] ), 
-    .C1(\rgb_col[5] ), .B1(\rgb_col[8] ), .A1(\vga_sync_portmap.n114 ), 
-    .D0(\rgb_col[7] ), .C0(\rgb_col[9] ), .A0(\rgb_col[8] ), 
-    .F0(\vga_sync_portmap.n1849 ), .F1(\vga_sync_portmap.n2338 ));
-  vga_sync_portmap_SLICE_67 \vga_sync_portmap.SLICE_67 ( 
-    .D1(\vga_sync_portmap.n2338 ), .C1(\vga_sync_portmap.n2324 ), 
-    .B1(\vga_sync_portmap.n1849 ), .A1(\rgb_row[9] ), .D0(\rgb_row[8] ), 
-    .C0(\vga_sync_portmap.n2456 ), .A0(\rgb_row[6] ), 
-    .F0(\vga_sync_portmap.n2324 ), .F1(rgb_c_0_N_72));
-  renderer_portmap_SLICE_68 \renderer_portmap.SLICE_68 ( 
-    .D0(\renderer_portmap.rgb_c_0_N_71 ), .C0(rgb_c_0_N_73), .A0(rgb_c_0_N_72), 
-    .F0(rgb_c_0));
-  renderer_portmap_SLICE_69 \renderer_portmap.SLICE_69 ( 
-    .D1(\renderer_portmap.n74 ), .C1(n1844), .B1(\rgb_row[8] ), 
-    .A1(\rgb_row[9] ), .D0(\rgb_col[8] ), .C0(\rgb_col[9] ), .B0(\rgb_col[7] ), 
-    .A0(n63), .F0(n1844), .F1(\renderer_portmap.rgb_c_0_N_71 ));
-  renderer_portmap_SLICE_70 \renderer_portmap.SLICE_70 ( 
-    .D1(\renderer_portmap.n833[2] ), .C1(\renderer_portmap.n1857 ), 
-    .B1(\rgb_row[6] ), .D0(\piece_loc[1][0] ), .C0(\piece_loc[1][1] ), 
-    .B0(\rgb_row[4] ), .A0(\rgb_row[5] ), .F0(\renderer_portmap.n1857 ), 
-    .F1(\renderer_portmap.n6_adj_87 ));
-  renderer_portmap_SLICE_73 \renderer_portmap.SLICE_73 ( .D1(\rgb_row[4] ), 
-    .C1(\rgb_row[7] ), .D0(\rgb_col[4] ), .C0(\rgb_col[6] ), .A0(\rgb_row[4] ), 
-    .F0(\renderer_portmap.n6_adj_86 ), .F1(\vga_sync_portmap.n2661 ));
-  renderer_portmap_SLICE_74 \renderer_portmap.SLICE_74 ( .D1(\rgb_col[8] ), 
-    .C1(\renderer_portmap.rgb_c_4_N_66 ), .B1(\rgb_row[8] ), .A1(\rgb_row[9] ), 
-    .D0(\renderer_portmap.n77 ), .C0(\renderer_portmap.n2654 ), 
-    .B0(\rgb_col[7] ), .A0(\rgb_col[9] ), .F0(\renderer_portmap.rgb_c_4_N_66 ), 
-    .F1(rgb_c_4));
-  renderer_portmap_SLICE_76 \renderer_portmap.SLICE_76 ( 
-    .D0(\renderer_portmap.rgb_c_0_N_71 ), .C0(\renderer_portmap.rgb_c_1_N_70 ), 
-    .B0(rgb_c_0_N_72), .A0(rgb_c_0_N_73), .F0(rgb_c_1));
-  nes_controller_portmap_SLICE_78 \nes_controller_portmap.SLICE_78 ( 
-    .D1(\nes_controller_portmap.ctrlr_clk_c_N_79 ), .C1(\clk_counter[7] ), 
-    .A1(\clk_counter[11] ), .D0(\clk_counter[10] ), .C0(\clk_counter[15] ), 
-    .F0(\nes_controller_portmap.ctrlr_latch_c_N_78 ), .F1(ctrlr_clk_c));
-  nes_controller_portmap_SLICE_79 \nes_controller_portmap.SLICE_79 ( 
-    .D1(\nes_controller_portmap.ctrlr_latch_c_N_78 ), 
-    .C1(\nes_controller_portmap.ctrlr_latch_c_N_77 ), .B1(\clk_counter[14] ), 
-    .A1(\clk_counter[11] ), .D0(\clk_counter[8] ), .C0(\clk_counter[12] ), 
-    .B0(\clk_counter[9] ), .A0(\clk_counter[13] ), 
-    .F0(\nes_controller_portmap.ctrlr_latch_c_N_77 ), .F1(ctrlr_latch_c));
-  nes_controller_portmap_SLICE_80 \nes_controller_portmap.SLICE_80 ( 
-    .D1(\clk_counter[9] ), .C1(\nes_controller_portmap.ctrlr_clk_c_N_79 ), 
-    .A1(\clk_counter[10] ), .D0(\clk_counter[13] ), .C0(\clk_counter[15] ), 
-    .B0(\clk_counter[12] ), .A0(\clk_counter[14] ), 
-    .F0(\nes_controller_portmap.ctrlr_clk_c_N_79 ), 
-    .F1(\nes_controller_portmap.rotate_out_c_N_81 ));
-  nes_controller_portmap_SLICE_82 \nes_controller_portmap.SLICE_82 ( 
-    .D1(rotate_out_c), .C1(\nes_controller_portmap.rotate_out_c_N_80 ), 
-    .B1(\nes_controller_portmap.rotate_out_c_N_81 ), 
-    .A1(\nes_controller_portmap.shift_reg[3] ), .D0(\clk_counter[8] ), 
-    .B0(\clk_counter[11] ), .F0(\nes_controller_portmap.rotate_out_c_N_80 ), 
-    .F1(rotate_out_c));
-  vga_sync_portmap_SLICE_84 \vga_sync_portmap.SLICE_84 ( 
-    .D0(\vga_sync_portmap.rgb_row[3]_2 ), .C0(\vga_sync_portmap.rgb_row[1]_2 ), 
-    .B0(\vga_sync_portmap.rgb_row[2]_2 ), .A0(\vga_sync_portmap.rgb_row[0]_2 ), 
-    .F0(valid_output_N_83));
-  renderer_portmap_SLICE_89 \renderer_portmap.SLICE_89 ( 
-    .D1(\piece_loc[1][1] ), .C1(\piece_loc[1][0] ), .B1(\valid_output_ctr[4] ), 
-    .D0(\piece_loc[1][2] ), .C0(\piece_loc[1][1] ), .B0(\piece_loc[1][0] ), 
-    .F0(\renderer_portmap.n833[2] ), .F1(\game_logic_portmap.n955 ));
-  SLICE_96 SLICE_96( .F0(VCC_net));
+    .F1(\nes_controller_portmap.shift_reg_0__N_77 ));
+  game_logic_portmap_SLICE_27 \game_logic_portmap.SLICE_27 ( 
+    .DI1(\game_logic_portmap.left_delay_2__N_74[1] ), 
+    .DI0(\game_logic_portmap.left_delay_0__N_76 ), 
+    .D1(\game_logic_portmap.left_delay[1] ), 
+    .C1(\game_logic_portmap.left_delay[0] ), 
+    .D0(\game_logic_portmap.left_delay[2] ), 
+    .C0(\game_logic_portmap.left_delay[1] ), 
+    .B0(\game_logic_portmap.left_delay[0] ), .A0(left_button), 
+    .CLK(game_clock), .Q0(\game_logic_portmap.left_delay[0] ), 
+    .Q1(\game_logic_portmap.left_delay[1] ), 
+    .F0(\game_logic_portmap.left_delay_0__N_76 ), 
+    .F1(\game_logic_portmap.left_delay_2__N_74[1] ));
+  game_logic_portmap_SLICE_28 \game_logic_portmap.SLICE_28 ( 
+    .DI1(\game_logic_portmap.piece_loc_0__2__N_68 ), 
+    .DI0(\game_logic_portmap.piece_loc_0__3__N_67 ), 
+    .D1(\game_logic_portmap.n4 ), .C1(\game_logic_portmap.n65 ), 
+    .B1(\piece_loc[0][2] ), .D0(\game_logic_portmap.n65 ), 
+    .C0(\game_logic_portmap.n4 ), .B0(\piece_loc[0][3] ), 
+    .A0(\piece_loc[0][2] ), .CLK(game_clock), .Q0(\piece_loc[0][3] ), 
+    .Q1(\piece_loc[0][2] ), .F0(\game_logic_portmap.piece_loc_0__3__N_67 ), 
+    .F1(\game_logic_portmap.piece_loc_0__2__N_68 ));
+  game_logic_portmap_SLICE_30 \game_logic_portmap.SLICE_30 ( 
+    .DI1(\game_logic_portmap.piece_loc_0__0__N_70 ), 
+    .DI0(\game_logic_portmap.piece_loc_0__1__N_69 ), 
+    .D1(\game_logic_portmap.n33 ), .C1(\game_logic_portmap.n65 ), 
+    .B1(\piece_loc[0][0] ), .D0(\game_logic_portmap.n65 ), 
+    .C0(\game_logic_portmap.n33 ), .B0(\piece_loc[0][1] ), 
+    .A0(\piece_loc[0][0] ), .CLK(game_clock), .Q0(\piece_loc[0][1] ), 
+    .Q1(\piece_loc[0][0] ), .F0(\game_logic_portmap.piece_loc_0__1__N_69 ), 
+    .F1(\game_logic_portmap.piece_loc_0__0__N_70 ));
+  game_logic_portmap_SLICE_32 \game_logic_portmap.SLICE_32 ( 
+    .DI0(\game_logic_portmap.left_delay_2__N_74[2] ), 
+    .D0(\game_logic_portmap.left_delay[2] ), 
+    .C0(\game_logic_portmap.left_delay[1] ), 
+    .B0(\game_logic_portmap.left_delay[0] ), .CLK(game_clock), 
+    .Q0(\game_logic_portmap.left_delay[2] ), 
+    .F0(\game_logic_portmap.left_delay_2__N_74[2] ));
+  game_logic_portmap_SLICE_34 \game_logic_portmap.SLICE_34 ( 
+    .DI0(\game_logic_portmap.right_delay_2__N_71[2] ), 
+    .D0(\game_logic_portmap.right_delay[0] ), 
+    .C0(\game_logic_portmap.right_delay[2] ), 
+    .B0(\game_logic_portmap.right_delay[1] ), .CLK(game_clock), 
+    .Q0(\game_logic_portmap.right_delay[2] ), 
+    .F0(\game_logic_portmap.right_delay_2__N_71[2] ));
+  game_logic_portmap_SLICE_35 \game_logic_portmap.SLICE_35 ( 
+    .DI1(\game_logic_portmap.right_delay_0__N_73 ), 
+    .DI0(\game_logic_portmap.right_delay_2__N_71[1] ), 
+    .D1(\game_logic_portmap.right_delay[2] ), 
+    .C1(\game_logic_portmap.right_delay[0] ), .B1(right_button), 
+    .A1(\game_logic_portmap.right_delay[1] ), 
+    .D0(\game_logic_portmap.right_delay[0] ), 
+    .B0(\game_logic_portmap.right_delay[1] ), .CLK(game_clock), 
+    .Q0(\game_logic_portmap.right_delay[1] ), 
+    .Q1(\game_logic_portmap.right_delay[0] ), 
+    .F0(\game_logic_portmap.right_delay_2__N_71[1] ), 
+    .F1(\game_logic_portmap.right_delay_0__N_73 ));
+  vga_sync_portmap_SLICE_37 \vga_sync_portmap.SLICE_37 ( .D1(\rgb_row[7] ), 
+    .C1(\rgb_row[5] ), .B1(\rgb_row[6] ), .D0(n72), .C0(\rgb_row[4] ), 
+    .B0(\vga_sync_portmap.rgb_row[1]_2 ), .A0(\vga_sync_portmap.rgb_row[2]_2 ), 
+    .F0(\vga_sync_portmap.n15 ), .F1(n72));
+  vga_sync_portmap_SLICE_38 \vga_sync_portmap.SLICE_38 ( 
+    .D1(\vga_sync_portmap.vsync_c_N_90 ), .C1(\vga_sync_portmap.vsync_c_N_91 ), 
+    .B1(\rgb_row[9] ), .A1(\rgb_row[5] ), .D0(\vga_sync_portmap.n15 ), 
+    .C0(n72), .B0(\vga_sync_portmap.rgb_row[3]_2 ), .A0(\rgb_row[4] ), 
+    .F0(\vga_sync_portmap.vsync_c_N_91 ), .F1(vsync_c));
+  nes_controller_portmap_SLICE_39 \nes_controller_portmap.SLICE_39 ( 
+    .D1(\game_logic_portmap.right_delay[2] ), .C1(right_button), 
+    .B1(\game_logic_portmap.right_delay[0] ), 
+    .A1(\game_logic_portmap.right_delay[1] ), 
+    .D0(\nes_controller_portmap.shift_reg[0] ), .C0(right_button), 
+    .B0(\nes_controller_portmap.right_button_N_97 ), .F0(right_button), 
+    .F1(\game_logic_portmap.n65 ));
+  nes_controller_portmap_SLICE_41 \nes_controller_portmap.SLICE_41 ( 
+    .D1(\game_logic_portmap.left_delay[2] ), .C1(left_button), 
+    .B1(\game_logic_portmap.left_delay[0] ), 
+    .A1(\game_logic_portmap.left_delay[1] ), 
+    .D0(\nes_controller_portmap.shift_reg[1] ), 
+    .C0(\nes_controller_portmap.right_button_N_97 ), .A0(left_button), 
+    .F0(left_button), .F1(\game_logic_portmap.n33 ));
+  renderer_portmap_SLICE_43 \renderer_portmap.SLICE_43 ( .D1(n72), 
+    .C1(\renderer_portmap.n8 ), .B1(\rgb_col[6] ), .A1(\rgb_col[5] ), 
+    .D0(\rgb_row[4] ), .C0(n72), .A0(\rgb_col[4] ), .F0(\renderer_portmap.n8 ), 
+    .F1(\renderer_portmap.n2924 ));
+  vga_sync_portmap_SLICE_45 \vga_sync_portmap.SLICE_45 ( 
+    .D1(\vga_sync_portmap.rgb_col[1] ), .C1(\vga_sync_portmap.n6 ), 
+    .B1(\rgb_col[6] ), .A1(\vga_sync_portmap.rgb_col[0] ), 
+    .D0(\vga_sync_portmap.rgb_col[2] ), .C0(\vga_sync_portmap.rgb_col[3] ), 
+    .F0(\vga_sync_portmap.n6 ), .F1(\vga_sync_portmap.n2600 ));
+  vga_sync_portmap_SLICE_47 \vga_sync_portmap.SLICE_47 ( 
+    .D1(\vga_sync_portmap.rgb_row[1]_2 ), .C1(\vga_sync_portmap.n2620 ), 
+    .B1(\rgb_row[8] ), .A1(\vga_sync_portmap.rgb_row[3]_2 ), 
+    .D0(\vga_sync_portmap.rgb_row[2]_2 ), .C0(\vga_sync_portmap.rgb_row[0]_2 ), 
+    .F0(\vga_sync_portmap.n2620 ), .F1(\vga_sync_portmap.n8 ));
+  vga_sync_portmap_SLICE_49 \vga_sync_portmap.SLICE_49 ( .D0(n47), 
+    .C0(\vga_sync_portmap.n8 ), .B0(\vga_sync_portmap.rgb_col_0__N_50 ), 
+    .A0(\rgb_row[9] ), .F0(\vga_sync_portmap.rgb_row_0__N_30 ));
+  vga_sync_portmap_SLICE_50 \vga_sync_portmap.SLICE_50 ( 
+    .D1(\renderer_portmap.n1832 ), .C1(n47), .B1(\rgb_row[8] ), .A1(n50), 
+    .D0(\rgb_row[7] ), .C0(\rgb_row[5] ), .B0(\rgb_row[4] ), .A0(\rgb_row[6] ), 
+    .F0(n47), .F1(\renderer_portmap.n2614 ));
+  vga_sync_portmap_SLICE_51 \vga_sync_portmap.SLICE_51 ( .D1(\rgb_col[9] ), 
+    .C1(\vga_sync_portmap.n10 ), .A1(\rgb_col[5] ), .D0(\rgb_col[7] ), 
+    .C0(\vga_sync_portmap.n2600 ), .B0(\rgb_col[4] ), .A0(\rgb_col[8] ), 
+    .F0(\vga_sync_portmap.n10 ), .F1(\vga_sync_portmap.rgb_col_0__N_50 ));
+  vga_sync_portmap_SLICE_53 \vga_sync_portmap.SLICE_53 ( .D1(\rgb_col[9] ), 
+    .C1(n1248), .B1(\rgb_col[8] ), .A1(\rgb_col[7] ), .D0(\rgb_col[5] ), 
+    .C0(\rgb_col[6] ), .F0(n1248), .F1(\renderer_portmap.n1832 ));
+  renderer_portmap_SLICE_54 \renderer_portmap.SLICE_54 ( 
+    .D1(\renderer_portmap.n8 ), .C1(\renderer_portmap.n2927 ), .B1(n1248), 
+    .A1(\rgb_col[7] ), .D0(\renderer_portmap.n2 ), 
+    .C0(\renderer_portmap.n2733 ), .B0(\renderer_portmap.n2924 ), 
+    .A0(\rgb_col[6] ), .F0(\renderer_portmap.n2927 ), 
+    .F1(\renderer_portmap.rgb_c_2_N_85 ));
+  vga_sync_portmap_SLICE_55 \vga_sync_portmap.SLICE_55 ( .D1(\rgb_row[4] ), 
+    .C1(n50), .B1(\rgb_row[6] ), .A1(\rgb_row[7] ), 
+    .D0(\vga_sync_portmap.rgb_row[1]_2 ), .C0(\vga_sync_portmap.rgb_row[2]_2 ), 
+    .B0(\vga_sync_portmap.rgb_row[0]_2 ), .A0(\vga_sync_portmap.rgb_row[3]_2 ), 
+    .F0(n50), .F1(\vga_sync_portmap.n1818 ));
+  vga_sync_portmap_SLICE_57 \vga_sync_portmap.SLICE_57 ( .D1(\rgb_col[9] ), 
+    .C1(\vga_sync_portmap.n2632 ), .B1(\rgb_col[8] ), .A1(\rgb_col[7] ), 
+    .D0(\rgb_col[5] ), .C0(\vga_sync_portmap.n2600 ), .B0(\rgb_col[4] ), 
+    .F0(\vga_sync_portmap.n2632 ), .F1(\vga_sync_portmap.n2642 ));
+  vga_sync_portmap_SLICE_59 \vga_sync_portmap.SLICE_59 ( 
+    .D1(\vga_sync_portmap.n1818 ), .C1(\vga_sync_portmap.n1794 ), 
+    .B1(\vga_sync_portmap.n2642 ), .A1(\rgb_row[9] ), .D0(\rgb_row[8] ), 
+    .C0(\rgb_row[5] ), .F0(\vga_sync_portmap.n1794 ), .F1(rgb_c_2_N_86));
+  vga_sync_portmap_SLICE_61 \vga_sync_portmap.SLICE_61 ( .D1(\rgb_col[9] ), 
+    .C1(\vga_sync_portmap.hsync_c_N_89 ), .B1(\rgb_col[8] ), .A1(\rgb_col[7] ), 
+    .D0(\rgb_col[5] ), .C0(\rgb_col[4] ), .A0(\rgb_col[6] ), 
+    .F0(\vga_sync_portmap.hsync_c_N_89 ), .F1(hsync_c));
+  vga_sync_portmap_SLICE_63 \vga_sync_portmap.SLICE_63 ( .D1(\rgb_row[6] ), 
+    .C1(\rgb_row[5] ), .D0(\rgb_row[8] ), .C0(\rgb_row[7] ), .A0(\rgb_row[6] ), 
+    .F0(\vga_sync_portmap.vsync_c_N_90 ), .F1(\renderer_portmap.n1884 ));
+  nes_controller_portmap_SLICE_65 \nes_controller_portmap.SLICE_65 ( 
+    .D1(\clock_manager_portmap.clk_counter[0] ), .C1(ctrlr_latch_c_N_92), 
+    .D0(\NEScount[7] ), .C0(\NEScount[6] ), .B0(\NEScount[2] ), 
+    .A0(\NEScount[4] ), .F0(ctrlr_latch_c_N_92), 
+    .F1(\clock_manager_portmap.n2616 ));
+  nes_controller_portmap_SLICE_67 \nes_controller_portmap.SLICE_67 ( 
+    .D1(\NEScount[5] ), .C1(\nes_controller_portmap.ctrlr_latch_c_N_93 ), 
+    .B1(ctrlr_latch_c_N_92), .A1(\NEScount[0] ), .D0(\NEScount[1] ), 
+    .C0(\NEScount[3] ), .F0(\nes_controller_portmap.ctrlr_latch_c_N_93 ), 
+    .F1(ctrlr_latch_c));
+  nes_controller_portmap_SLICE_69 \nes_controller_portmap.SLICE_69 ( 
+    .D1(\clk_counter[1] ), .C1(\nes_controller_portmap.n12 ), 
+    .B1(\clk_counter[18] ), .A1(\nes_controller_portmap.n1478 ), 
+    .D0(\clk_counter[2] ), .C0(\clk_counter[3] ), .B0(\clk_counter[6] ), 
+    .A0(\clk_counter[4] ), .F0(\nes_controller_portmap.n12 ), .F1(n1438));
+  nes_controller_portmap_SLICE_71 \nes_controller_portmap.SLICE_71 ( 
+    .D1(NESclk), .C1(\nes_controller_portmap.ctrlr_clk_c_N_94 ), 
+    .B1(\NEScount[3] ), .D0(\NEScount[0] ), .C0(\NEScount[3] ), 
+    .B0(\NEScount[1] ), .F0(\nes_controller_portmap.n1478 ), .F1(ctrlr_clk_c));
+  nes_controller_portmap_SLICE_72 \nes_controller_portmap.SLICE_72 ( 
+    .D1(\nes_controller_portmap.n1478 ), 
+    .C1(\nes_controller_portmap.ctrlr_clk_c_N_94 ), .A1(\NEScount[2] ), 
+    .D0(\NEScount[5] ), .C0(\NEScount[7] ), .B0(\NEScount[6] ), 
+    .A0(\NEScount[4] ), .F0(\nes_controller_portmap.ctrlr_clk_c_N_94 ), 
+    .F1(\nes_controller_portmap.right_button_N_97 ));
+  clock_manager_portmap_SLICE_75 \clock_manager_portmap.SLICE_75 ( 
+    .D0(\NEScount[6] ), .C0(NESclk), .A0(\NEScount[5] ), 
+    .F0(\clock_manager_portmap.n2628 ));
+  clock_manager_portmap_SLICE_76 \clock_manager_portmap.SLICE_76 ( 
+    .D1(\clock_manager_portmap.n2628 ), .C1(\clock_manager_portmap.n10 ), 
+    .B1(\clock_manager_portmap.n2604 ), .A1(\clock_manager_portmap.n1475 ), 
+    .D0(\clock_manager_portmap.clk_counter[16] ), .C0(n1438), 
+    .B0(\NEScount[2] ), .A0(\clock_manager_portmap.clk_counter[0] ), 
+    .F0(\clock_manager_portmap.n10 ), 
+    .F1(\clock_manager_portmap.clk_counter_0__N_120 ));
+  renderer_portmap_SLICE_77 \renderer_portmap.SLICE_77 ( 
+    .D1(\piece_loc[0][2] ), .C1(\renderer_portmap.n4 ), .B1(\rgb_col[6] ), 
+    .D0(\piece_loc[0][0] ), .C0(\piece_loc[0][1] ), .B0(\rgb_col[4] ), 
+    .A0(\rgb_col[5] ), .F0(\renderer_portmap.n4 ), 
+    .F1(\renderer_portmap.n6_adj_121 ));
+  renderer_portmap_SLICE_79 \renderer_portmap.SLICE_79 ( 
+    .D1(\piece_loc[0][3] ), .C1(\piece_loc[0][2] ), .B1(\piece_loc[0][0] ), 
+    .A1(\piece_loc[0][1] ), .D0(\piece_loc[0][2] ), .C0(\piece_loc[0][0] ), 
+    .B0(\piece_loc[0][1] ), .F0(\renderer_portmap.n4_2[2] ), 
+    .F1(\renderer_portmap.n4_2[3] ));
+  renderer_portmap_SLICE_80 \renderer_portmap.SLICE_80 ( 
+    .D1(\renderer_portmap.n4_2[2] ), .C1(\renderer_portmap.n1874 ), 
+    .B1(\rgb_col[6] ), .D0(\rgb_col[5] ), .C0(\piece_loc[0][0] ), 
+    .B0(\piece_loc[0][1] ), .A0(\rgb_col[4] ), .F0(\renderer_portmap.n1874 ), 
+    .F1(\renderer_portmap.n6_adj_122 ));
+  renderer_portmap_SLICE_81 \renderer_portmap.SLICE_81 ( .D1(\rgb_row[7] ), 
+    .C1(\renderer_portmap.n1254 ), .D0(\rgb_row[5] ), .C0(\rgb_col[4] ), 
+    .B0(\rgb_row[4] ), .A0(\rgb_row[6] ), .F0(\renderer_portmap.n1254 ), 
+    .F1(\renderer_portmap.n2733 ));
+  renderer_portmap_SLICE_84 \renderer_portmap.SLICE_84 ( 
+    .D1(\renderer_portmap.n6_adj_122 ), .C1(\renderer_portmap.n2401 ), 
+    .B1(\renderer_portmap.n4_2[3] ), .A1(\rgb_col[7] ), .D0(\rgb_row[5] ), 
+    .C0(\rgb_row[6] ), .F0(\renderer_portmap.n2401 ), 
+    .F1(\renderer_portmap.n11 ));
+  renderer_portmap_SLICE_86 \renderer_portmap.SLICE_86 ( .D1(\rgb_col[4] ), 
+    .C1(\renderer_portmap.n1341 ), .B1(\rgb_row[4] ), .A1(n72), 
+    .C0(\rgb_row[7] ), .A0(\rgb_row[6] ), .F0(\renderer_portmap.n1341 ), 
+    .F1(\renderer_portmap.n2 ));
+  renderer_portmap_SLICE_87 \renderer_portmap.SLICE_87 ( 
+    .D1(\renderer_portmap.rgb_c_2_N_85 ), .C1(\renderer_portmap.rgb_c_2_N_87 ), 
+    .B1(\renderer_portmap.rgb_c_2_N_88 ), .A1(rgb_c_2_N_86), 
+    .D0(\renderer_portmap.rgb_c_2_N_87 ), .C0(\renderer_portmap.rgb_c_2_N_85 ), 
+    .B0(rgb_c_2_N_86), .A0(\renderer_portmap.rgb_c_2_N_88 ), .F0(rgb_c_4), 
+    .F1(rgb_c_2));
+  renderer_portmap_SLICE_88 \renderer_portmap.SLICE_88 ( 
+    .D1(\renderer_portmap.n11 ), .C1(\renderer_portmap.n12 ), 
+    .B1(\rgb_row[9] ), .A1(\renderer_portmap.n16 ), .D0(\rgb_col[7] ), 
+    .C0(\renderer_portmap.n6_adj_121 ), .B0(\piece_loc[0][3] ), 
+    .A0(\renderer_portmap.n1413 ), .F0(\renderer_portmap.n12 ), 
+    .F1(\renderer_portmap.rgb_c_2_N_87 ));
+  renderer_portmap_SLICE_89 \renderer_portmap.SLICE_89 ( .D1(rgb_c_2_N_86), 
+    .C1(\renderer_portmap.rgb_c_2_N_88 ), .A1(\renderer_portmap.rgb_c_2_N_87 ), 
+    .D0(\rgb_row[9] ), .C0(\renderer_portmap.n1832 ), .B0(\rgb_row[8] ), 
+    .F0(\renderer_portmap.rgb_c_2_N_88 ), .F1(rgb_c_3));
+  renderer_portmap_SLICE_92 \renderer_portmap.SLICE_92 ( 
+    .D1(\renderer_portmap.n2614 ), .C1(\renderer_portmap.n2353 ), 
+    .B1(\renderer_portmap.n1884 ), .A1(\rgb_row[7] ), .D0(\piece_loc[0][0] ), 
+    .C0(\piece_loc[0][1] ), .B0(\rgb_col[5] ), .A0(\rgb_col[4] ), 
+    .F0(\renderer_portmap.n2353 ), .F1(\renderer_portmap.n16 ));
+  renderer_portmap_SLICE_93 \renderer_portmap.SLICE_93 ( 
+    .D1(\game_logic_portmap.n33 ), .C1(\game_logic_portmap.n65 ), 
+    .B1(\piece_loc[0][0] ), .A1(\piece_loc[0][1] ), .D0(\rgb_col[4] ), 
+    .C0(\piece_loc[0][0] ), .F0(\renderer_portmap.n1413 ), 
+    .F1(\game_logic_portmap.n4 ));
+  clock_manager_portmap_SLICE_99 \clock_manager_portmap.SLICE_99 ( 
+    .D1(\NEScount[4] ), .C1(\NEScount[7] ), 
+    .C0(\clock_manager_portmap.clk_counter[5] ), 
+    .A0(\clock_manager_portmap.clk_counter[17] ), 
+    .F0(\clock_manager_portmap.n2604 ), .F1(\clock_manager_portmap.n1475 ));
+  clock_manager_portmap_SLICE_102 \clock_manager_portmap.SLICE_102 ( 
+    .DI1(\clock_manager_portmap.game_clock_N_98 ), 
+    .D1(\clock_manager_portmap.n2616 ), 
+    .C1(\clock_manager_portmap.n10_adj_123 ), .B1(NESclk), 
+    .A1(\clock_manager_portmap.clk_counter[16] ), .D0(\NEScount[5] ), 
+    .C0(\clock_manager_portmap.clk_counter[5] ), .B0(n1438), 
+    .A0(\clock_manager_portmap.clk_counter[17] ), .CLK(clk), .Q1(game_clock), 
+    .F0(\clock_manager_portmap.n10_adj_123 ), 
+    .F1(\clock_manager_portmap.game_clock_N_98 ));
+  SLICE_105 SLICE_105( .F0(VCC_net));
+  nes_controller_portmap_SLICE_106 \nes_controller_portmap.SLICE_106 ( 
+    .D0(rotate_out_c), .C0(\nes_controller_portmap.right_button_N_97 ), 
+    .B0(\nes_controller_portmap.shift_reg[3] ), .F0(rotate_out_c));
   clock_manager_portmap_pll_portmap_lscc_pll_inst_u_PLL_B 
     \clock_manager_portmap.pll_portmap.lscc_pll_inst.u_PLL_B ( 
     .REFERENCECLK(osc_c), 
@@ -580,31 +656,39 @@ module master ( ctrlr_data, osc, rotate_out, ctrlr_clk, ctrlr_latch, vsync,
   ctrlr_latch ctrlr_latch_I( .PADDO(ctrlr_latch_c), .ctrlr_latch(ctrlr_latch));
   vsync vsync_I( .PADDO(vsync_c), .vsync(vsync));
   hsync hsync_I( .PADDO(hsync_c), .hsync(hsync));
-  rgb_0_ \rgb[0]_I ( .PADDO(rgb_c_0), .rgb0(rgb[0]));
-  rgb_1_ \rgb[1]_I ( .PADDO(rgb_c_1), .rgb1(rgb[1]));
-  rgb_2_ \rgb[2]_I ( .PADDO(rgb_c_0), .rgb2(rgb[2]));
-  rgb_3_ \rgb[3]_I ( .PADDO(rgb_c_1), .rgb3(rgb[3]));
+  rgb_0_ \rgb[0]_I ( .PADDO(rgb_c_2), .rgb0(rgb[0]));
+  rgb_1_ \rgb[1]_I ( .PADDO(rgb_c_3), .rgb1(rgb[1]));
+  rgb_2_ \rgb[2]_I ( .PADDO(rgb_c_2), .rgb2(rgb[2]));
+  rgb_3_ \rgb[3]_I ( .PADDO(rgb_c_3), .rgb3(rgb[3]));
   rgb_4_ \rgb[4]_I ( .PADDO(rgb_c_4), .rgb4(rgb[4]));
-  rgb_5_ \rgb[5]_I ( .PADDO(rgb_c_1), .rgb5(rgb[5]));
+  rgb_5_ \rgb[5]_I ( .PADDO(rgb_c_3), .rgb5(rgb[5]));
 endmodule
 
-module vga_sync_portmap_SLICE_0 ( input DI0, D1, D0, C0, CE, LSR, CLK, CIN0, 
-    CIN1, output Q0, F0, COUT0 );
-  wire   GNDI, DI0_dly, CLK_dly, CE_dly, LSR_dly;
+module vga_sync_portmap_SLICE_0 ( input DI1, DI0, D1, C1, D0, C0, CE, LSR, CLK, 
+    CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
 
-  fa2 \vga_sync_portmap/row_temp_112_add_4_11 ( .A0(GNDI), .B0(GNDI), .C0(C0), 
-    .D0(D0), .A1(GNDI), .B1(GNDI), .C1(GNDI), .D1(D1), .CI0(CIN0), .CI1(CIN1), 
-    .S0(F0), .S1(), .CO0(COUT0), .CO1());
+  fa2 \vga_sync_portmap/row_temp_135_add_4_7 ( .A0(GNDI), .B0(GNDI), .C0(C0), 
+    .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), 
+    .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
   gnd DRIVEGND( .PWR0(GNDI));
-  ffsre2 \vga_sync_portmap/rgb_row_9__I_0_2 ( .D0(DI0_dly), .SP(CE_dly), 
+  ffsre2 \vga_sync_portmap/rgb_row_9__I_4 ( .D0(DI0_dly), .SP(CE_dly), 
     .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
+  ffsre2 \vga_sync_portmap/rgb_row_9__I_3 ( .D0(DI1_dly), .SP(CE_dly), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
 
   specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
     (C0 => COUT0) = (0:0:0,0:0:0);
     (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
     (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
     $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
     $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
     $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
@@ -637,71 +721,7 @@ module vga_sync_portmap_SLICE_1 ( input DI1, DI0, D1, C1, D0, C0, CE, LSR, CLK,
     CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
   wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
 
-  fa2 \vga_sync_portmap/row_temp_112_add_4_9 ( .A0(GNDI), .B0(GNDI), .C0(C0), 
-    .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), 
-    .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
-  gnd DRIVEGND( .PWR0(GNDI));
-  ffsre2 \vga_sync_portmap/rgb_row_9__I_2 ( .D0(DI0_dly), .SP(CE_dly), 
-    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
-  ffsre2 \vga_sync_portmap/rgb_row_9__I_1 ( .D0(DI1_dly), .SP(CE_dly), 
-    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
-
-  specify
-    (D1 => F1) = (0:0:0,0:0:0);
-    (C1 => F1) = (0:0:0,0:0:0);
-    (C1 => COUT1) = (0:0:0,0:0:0);
-    (D0 => F0) = (0:0:0,0:0:0);
-    (C0 => F0) = (0:0:0,0:0:0);
-    (C0 => COUT0) = (0:0:0,0:0:0);
-    (CLK => Q0) = (0:0:0,0:0:0);
-    (CLK => Q1) = (0:0:0,0:0:0);
-    (CIN0 => COUT0) = (0:0:0,0:0:0);
-    (CIN1 => COUT1) = (0:0:0,0:0:0);
-    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
-    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
-    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
-    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
-  endspecify
-
-endmodule
-
-module vga_sync_portmap_SLICE_2 ( input DI1, DI0, D1, C1, D0, C0, CE, LSR, CLK, 
-    CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
-  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
-
-  fa2 \vga_sync_portmap/row_temp_112_add_4_7 ( .A0(GNDI), .B0(GNDI), .C0(C0), 
-    .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), 
-    .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
-  gnd DRIVEGND( .PWR0(GNDI));
-  ffsre2 \vga_sync_portmap/rgb_row_9__I_4 ( .D0(DI0_dly), .SP(CE_dly), 
-    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
-  ffsre2 \vga_sync_portmap/rgb_row_9__I_3 ( .D0(DI1_dly), .SP(CE_dly), 
-    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
-
-  specify
-    (D1 => F1) = (0:0:0,0:0:0);
-    (C1 => F1) = (0:0:0,0:0:0);
-    (C1 => COUT1) = (0:0:0,0:0:0);
-    (D0 => F0) = (0:0:0,0:0:0);
-    (C0 => F0) = (0:0:0,0:0:0);
-    (C0 => COUT0) = (0:0:0,0:0:0);
-    (CLK => Q0) = (0:0:0,0:0:0);
-    (CLK => Q1) = (0:0:0,0:0:0);
-    (CIN0 => COUT0) = (0:0:0,0:0:0);
-    (CIN1 => COUT1) = (0:0:0,0:0:0);
-    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
-    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
-    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
-    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
-  endspecify
-
-endmodule
-
-module vga_sync_portmap_SLICE_3 ( input DI1, DI0, D1, C1, D0, C0, CE, LSR, CLK, 
-    CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
-  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
-
-  fa2 \vga_sync_portmap/row_temp_112_add_4_5 ( .A0(GNDI), .B0(GNDI), .C0(C0), 
+  fa2 \vga_sync_portmap/row_temp_135_add_4_5 ( .A0(GNDI), .B0(GNDI), .C0(C0), 
     .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), 
     .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
   gnd DRIVEGND( .PWR0(GNDI));
@@ -729,11 +749,40 @@ module vga_sync_portmap_SLICE_3 ( input DI1, DI0, D1, C1, D0, C0, CE, LSR, CLK,
 
 endmodule
 
-module vga_sync_portmap_SLICE_4 ( input DI1, DI0, D1, C1, D0, C0, CE, LSR, CLK, 
+module vga_sync_portmap_SLICE_2 ( input DI0, D1, D0, C0, LSR, CLK, CIN0, CIN1, 
+    output Q0, F0, COUT0 );
+  wire   GNDI, VCCI, DI0_dly, CLK_dly, LSR_dly;
+
+  fa2 \vga_sync_portmap/col_temp_136_add_4_11 ( .A0(GNDI), .B0(GNDI), .C0(C0), 
+    .D0(D0), .A1(GNDI), .B1(GNDI), .C1(GNDI), .D1(D1), .CI0(CIN0), .CI1(CIN1), 
+    .S0(F0), .S1(), .CO0(COUT0), .CO1());
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \vga_sync_portmap/rgb_col_9__I_0_2 ( .D0(DI0_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module vcc ( output PWR1 );
+
+  VHI INST1( .Z(PWR1));
+endmodule
+
+module vga_sync_portmap_SLICE_3 ( input DI1, DI0, D1, C1, D0, C0, CE, LSR, CLK, 
     CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
   wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
 
-  fa2 \vga_sync_portmap/row_temp_112_add_4_3 ( .A0(GNDI), .B0(GNDI), .C0(C0), 
+  fa2 \vga_sync_portmap/row_temp_135_add_4_3 ( .A0(GNDI), .B0(GNDI), .C0(C0), 
     .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), 
     .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
   gnd DRIVEGND( .PWR0(GNDI));
@@ -761,75 +810,11 @@ module vga_sync_portmap_SLICE_4 ( input DI1, DI0, D1, C1, D0, C0, CE, LSR, CLK,
 
 endmodule
 
-module vga_sync_portmap_SLICE_5 ( input DI1, D1, C1, B1, CE, LSR, CLK, CIN1, 
-    output Q1, F1, COUT1, COUT0 );
-  wire   GNDI, VCCI, DI1_dly, CLK_dly, CE_dly, LSR_dly;
-
-  fa2 \vga_sync_portmap/row_temp_112_add_4_1 ( .A0(GNDI), .B0(GNDI), .C0(GNDI), 
-    .D0(VCCI), .A1(GNDI), .B1(B1), .C1(C1), .D1(D1), .CI0(VCCI), .CI1(CIN1), 
-    .S0(), .S1(F1), .CO0(COUT0), .CO1(COUT1));
-  gnd DRIVEGND( .PWR0(GNDI));
-  vcc DRIVEVCC( .PWR1(VCCI));
-  ffsre2 \vga_sync_portmap/rgb_row_9__I_9 ( .D0(DI1_dly), .SP(CE_dly), 
-    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
-
-  specify
-    (D1 => F1) = (0:0:0,0:0:0);
-    (C1 => F1) = (0:0:0,0:0:0);
-    (C1 => COUT1) = (0:0:0,0:0:0);
-    (B1 => F1) = (0:0:0,0:0:0);
-    (B1 => COUT1) = (0:0:0,0:0:0);
-    (CLK => Q1) = (0:0:0,0:0:0);
-    (CIN1 => COUT1) = (0:0:0,0:0:0);
-    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
-    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
-    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
-  endspecify
-
-endmodule
-
-module vcc ( output PWR1 );
-
-  VHI INST1( .Z(PWR1));
-endmodule
-
-module vga_sync_portmap_SLICE_6 ( input DI1, DI0, D1, C1, D0, C0, LSR, CLK, 
+module vga_sync_portmap_SLICE_4 ( input DI1, DI0, D1, C1, D0, C0, LSR, CLK, 
     CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
   wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly, LSR_dly;
 
-  fa2 \vga_sync_portmap/col_temp_113_add_4_9 ( .A0(GNDI), .B0(GNDI), .C0(C0), 
-    .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), 
-    .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
-  gnd DRIVEGND( .PWR0(GNDI));
-  ffsre2 \vga_sync_portmap/rgb_col_9__I_11 ( .D0(DI0_dly), .SP(VCCI), 
-    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
-  vcc DRIVEVCC( .PWR1(VCCI));
-  ffsre2 \vga_sync_portmap/rgb_col_9__I_10 ( .D0(DI1_dly), .SP(VCCI), 
-    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
-
-  specify
-    (D1 => F1) = (0:0:0,0:0:0);
-    (C1 => F1) = (0:0:0,0:0:0);
-    (C1 => COUT1) = (0:0:0,0:0:0);
-    (D0 => F0) = (0:0:0,0:0:0);
-    (C0 => F0) = (0:0:0,0:0:0);
-    (C0 => COUT0) = (0:0:0,0:0:0);
-    (CLK => Q0) = (0:0:0,0:0:0);
-    (CLK => Q1) = (0:0:0,0:0:0);
-    (CIN0 => COUT0) = (0:0:0,0:0:0);
-    (CIN1 => COUT1) = (0:0:0,0:0:0);
-    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
-    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
-    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
-  endspecify
-
-endmodule
-
-module vga_sync_portmap_SLICE_7 ( input DI1, DI0, D1, C1, D0, C0, LSR, CLK, 
-    CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
-  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly, LSR_dly;
-
-  fa2 \vga_sync_portmap/col_temp_113_add_4_7 ( .A0(GNDI), .B0(GNDI), .C0(C0), 
+  fa2 \vga_sync_portmap/col_temp_136_add_4_7 ( .A0(GNDI), .B0(GNDI), .C0(C0), 
     .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), 
     .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
   gnd DRIVEGND( .PWR0(GNDI));
@@ -857,43 +842,11 @@ module vga_sync_portmap_SLICE_7 ( input DI1, DI0, D1, C1, D0, C0, LSR, CLK,
 
 endmodule
 
-module vga_sync_portmap_SLICE_8 ( input DI1, DI0, D1, C1, D0, C0, LSR, CLK, 
+module vga_sync_portmap_SLICE_5 ( input DI1, DI0, D1, C1, D0, C0, LSR, CLK, 
     CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
   wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly, LSR_dly;
 
-  fa2 \vga_sync_portmap/col_temp_113_add_4_5 ( .A0(GNDI), .B0(GNDI), .C0(C0), 
-    .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), 
-    .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
-  gnd DRIVEGND( .PWR0(GNDI));
-  ffsre2 \vga_sync_portmap/rgb_col_9__I_15 ( .D0(DI0_dly), .SP(VCCI), 
-    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
-  vcc DRIVEVCC( .PWR1(VCCI));
-  ffsre2 \vga_sync_portmap/rgb_col_9__I_14 ( .D0(DI1_dly), .SP(VCCI), 
-    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
-
-  specify
-    (D1 => F1) = (0:0:0,0:0:0);
-    (C1 => F1) = (0:0:0,0:0:0);
-    (C1 => COUT1) = (0:0:0,0:0:0);
-    (D0 => F0) = (0:0:0,0:0:0);
-    (C0 => F0) = (0:0:0,0:0:0);
-    (C0 => COUT0) = (0:0:0,0:0:0);
-    (CLK => Q0) = (0:0:0,0:0:0);
-    (CLK => Q1) = (0:0:0,0:0:0);
-    (CIN0 => COUT0) = (0:0:0,0:0:0);
-    (CIN1 => COUT1) = (0:0:0,0:0:0);
-    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
-    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
-    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
-  endspecify
-
-endmodule
-
-module vga_sync_portmap_SLICE_9 ( input DI1, DI0, D1, C1, D0, C0, LSR, CLK, 
-    CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
-  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly, LSR_dly;
-
-  fa2 \vga_sync_portmap/col_temp_113_add_4_3 ( .A0(GNDI), .B0(GNDI), .C0(C0), 
+  fa2 \vga_sync_portmap/col_temp_136_add_4_3 ( .A0(GNDI), .B0(GNDI), .C0(C0), 
     .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), 
     .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
   gnd DRIVEGND( .PWR0(GNDI));
@@ -921,11 +874,70 @@ module vga_sync_portmap_SLICE_9 ( input DI1, DI0, D1, C1, D0, C0, LSR, CLK,
 
 endmodule
 
-module vga_sync_portmap_SLICE_10 ( input DI1, D1, C1, B1, LSR, CLK, CIN1, 
+module vga_sync_portmap_SLICE_6 ( input DI1, D1, C1, B1, CE, LSR, CLK, CIN1, 
+    output Q1, F1, COUT1, COUT0 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, CE_dly, LSR_dly;
+
+  fa2 \vga_sync_portmap/row_temp_135_add_4_1 ( .A0(GNDI), .B0(GNDI), .C0(GNDI), 
+    .D0(VCCI), .A1(GNDI), .B1(B1), .C1(C1), .D1(D1), .CI0(VCCI), .CI1(CIN1), 
+    .S0(), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \vga_sync_portmap/rgb_row_9__I_9 ( .D0(DI1_dly), .SP(CE_dly), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (B1 => COUT1) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module vga_sync_portmap_SLICE_7 ( input DI1, DI0, D1, C1, D0, C0, LSR, CLK, 
+    CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly, LSR_dly;
+
+  fa2 \vga_sync_portmap/col_temp_136_add_4_9 ( .A0(GNDI), .B0(GNDI), .C0(C0), 
+    .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), 
+    .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \vga_sync_portmap/rgb_col_9__I_11 ( .D0(DI0_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \vga_sync_portmap/rgb_col_9__I_10 ( .D0(DI1_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module vga_sync_portmap_SLICE_8 ( input DI1, D1, C1, B1, LSR, CLK, CIN1, 
     output Q1, F1, COUT1, COUT0 );
   wire   GNDI, VCCI, DI1_dly, CLK_dly, LSR_dly;
 
-  fa2 \vga_sync_portmap/col_temp_113_add_4_1 ( .A0(GNDI), .B0(GNDI), .C0(GNDI), 
+  fa2 \vga_sync_portmap/col_temp_136_add_4_1 ( .A0(GNDI), .B0(GNDI), .C0(GNDI), 
     .D0(VCCI), .A1(GNDI), .B1(B1), .C1(C1), .D1(D1), .CI0(VCCI), .CI1(CIN1), 
     .S0(), .S1(F1), .CO0(COUT0), .CO1(COUT1));
   gnd DRIVEGND( .PWR0(GNDI));
@@ -947,17 +959,16 @@ module vga_sync_portmap_SLICE_10 ( input DI1, D1, C1, B1, LSR, CLK, CIN1,
 
 endmodule
 
-module vga_sync_portmap_SLICE_11 ( input DI0, D1, D0, C0, LSR, CLK, CIN0, CIN1, 
-    output Q0, F0, COUT0 );
-  wire   GNDI, VCCI, DI0_dly, CLK_dly, LSR_dly;
+module vga_sync_portmap_SLICE_9 ( input DI0, D1, D0, C0, CE, LSR, CLK, CIN0, 
+    CIN1, output Q0, F0, COUT0 );
+  wire   GNDI, DI0_dly, CLK_dly, CE_dly, LSR_dly;
 
-  fa2 \vga_sync_portmap/col_temp_113_add_4_11 ( .A0(GNDI), .B0(GNDI), .C0(C0), 
+  fa2 \vga_sync_portmap/row_temp_135_add_4_11 ( .A0(GNDI), .B0(GNDI), .C0(C0), 
     .D0(D0), .A1(GNDI), .B1(GNDI), .C1(GNDI), .D1(D1), .CI0(CIN0), .CI1(CIN1), 
     .S0(F0), .S1(), .CO0(COUT0), .CO1());
   gnd DRIVEGND( .PWR0(GNDI));
-  ffsre2 \vga_sync_portmap/rgb_col_9__I_0 ( .D0(DI0_dly), .SP(VCCI), 
+  ffsre2 \vga_sync_portmap/rgb_row_9__I_0 ( .D0(DI0_dly), .SP(CE_dly), 
     .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
-  vcc DRIVEVCC( .PWR1(VCCI));
 
   specify
     (D0 => F0) = (0:0:0,0:0:0);
@@ -965,48 +976,120 @@ module vga_sync_portmap_SLICE_11 ( input DI0, D1, D0, C0, LSR, CLK, CIN0, CIN1,
     (C0 => COUT0) = (0:0:0,0:0:0);
     (CLK => Q0) = (0:0:0,0:0:0);
     (CIN0 => COUT0) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module vga_sync_portmap_SLICE_10 ( input DI1, DI0, D1, C1, D0, C0, CE, LSR, 
+    CLK, CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  fa2 \vga_sync_portmap/row_temp_135_add_4_9 ( .A0(GNDI), .B0(GNDI), .C0(C0), 
+    .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), 
+    .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \vga_sync_portmap/rgb_row_9__I_2 ( .D0(DI0_dly), .SP(CE_dly), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
+  ffsre2 \vga_sync_portmap/rgb_row_9__I_1 ( .D0(DI1_dly), .SP(CE_dly), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module vga_sync_portmap_SLICE_11 ( input DI1, DI0, D1, C1, D0, C0, LSR, CLK, 
+    CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly, LSR_dly;
+
+  fa2 \vga_sync_portmap/col_temp_136_add_4_5 ( .A0(GNDI), .B0(GNDI), .C0(C0), 
+    .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), .CI1(CIN1), 
+    .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \vga_sync_portmap/rgb_col_9__I_15 ( .D0(DI0_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \vga_sync_portmap/rgb_col_9__I_14 ( .D0(DI1_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
     $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
     $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
   endspecify
 
 endmodule
 
-module clock_manager_portmap_SLICE_12 ( input DI0, D1, D0, C0, CLK, CIN0, CIN1, 
-    output Q0, F0, COUT0 );
-  wire   GNDI, VCCI, DI0_dly, CLK_dly;
+module clock_manager_portmap_SLICE_12 ( input DI1, DI0, D1, C1, D0, C0, LSR, 
+    CLK, CIN0, CIN1, output Q0, Q1, F0, F1, COUT0 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly, LSR_dly;
 
-  fa2 \clock_manager_portmap/clk_counter_111_144_add_4_17 ( .A0(GNDI), 
-    .B0(GNDI), .C0(C0), .D0(D0), .A1(GNDI), .B1(GNDI), .C1(GNDI), .D1(D1), 
-    .CI0(CIN0), .CI1(CIN1), .S0(F0), .S1(), .CO0(COUT0), .CO1());
+  fa2 \clock_manager_portmap/clk_counter_134_add_4_19 ( .A0(GNDI), .B0(GNDI), 
+    .C0(C0), .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), 
+    .CI1(CIN1), .S0(F0), .S1(F1), .CO0(COUT0), .CO1());
   gnd DRIVEGND( .PWR0(GNDI));
-  ffsre2 \clock_manager_portmap/clk_counter_15__I_0 ( .D0(DI0_dly), .SP(VCCI), 
-    .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
+  ffsre2 \clock_manager_portmap/NEScount_7__I_31 ( .D0(DI0_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
   vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \clock_manager_portmap/NEScount_7__I_30 ( .D0(DI1_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
 
   specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
     (C0 => COUT0) = (0:0:0,0:0:0);
     (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
     (CIN0 => COUT0) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
     $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
   endspecify
 
 endmodule
 
-module clock_manager_portmap_SLICE_13 ( input DI1, DI0, D1, C1, D0, C0, CLK, 
-    CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
-  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
+module clock_manager_portmap_SLICE_13 ( input DI1, DI0, D1, C1, D0, C0, LSR, 
+    CLK, CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly, LSR_dly;
 
-  fa2 \clock_manager_portmap/clk_counter_111_144_add_4_15 ( .A0(GNDI), 
-    .B0(GNDI), .C0(C0), .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), 
-    .CI0(CIN0), .CI1(CIN1), .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  fa2 \clock_manager_portmap/clk_counter_134_add_4_17 ( .A0(GNDI), .B0(GNDI), 
+    .C0(C0), .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), 
+    .CI1(CIN1), .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
   gnd DRIVEGND( .PWR0(GNDI));
-  ffsre2 \clock_manager_portmap/clk_counter_15__I_20 ( .D0(DI0_dly), .SP(VCCI), 
-    .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
+  ffsre2 \clock_manager_portmap/NEScount_7__I_0 ( .D0(DI0_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
   vcc DRIVEVCC( .PWR1(VCCI));
-  ffsre2 \clock_manager_portmap/clk_counter_15__I_19 ( .D0(DI1_dly), .SP(VCCI), 
-    .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
+  ffsre2 \clock_manager_portmap/NEScount_7__I_32 ( .D0(DI1_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
@@ -1021,23 +1104,24 @@ module clock_manager_portmap_SLICE_13 ( input DI1, DI0, D1, C1, D0, C0, CLK,
     (CIN1 => COUT1) = (0:0:0,0:0:0);
     $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
     $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
   endspecify
 
 endmodule
 
-module clock_manager_portmap_SLICE_14 ( input DI1, DI0, D1, C1, D0, C0, CLK, 
-    CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
-  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
+module clock_manager_portmap_SLICE_14 ( input DI1, DI0, D1, C1, D0, C0, LSR, 
+    CLK, CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly, LSR_dly;
 
-  fa2 \clock_manager_portmap/clk_counter_111_144_add_4_13 ( .A0(GNDI), 
-    .B0(GNDI), .C0(C0), .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), 
-    .CI0(CIN0), .CI1(CIN1), .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  fa2 \clock_manager_portmap/clk_counter_134_add_4_15 ( .A0(GNDI), .B0(GNDI), 
+    .C0(C0), .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), 
+    .CI1(CIN1), .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
   gnd DRIVEGND( .PWR0(GNDI));
-  ffsre2 \clock_manager_portmap/clk_counter_15__I_22 ( .D0(DI0_dly), .SP(VCCI), 
-    .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
+  ffsre2 \clock_manager_portmap/NEScount_7__I_20 ( .D0(DI0_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
   vcc DRIVEVCC( .PWR1(VCCI));
-  ffsre2 \clock_manager_portmap/clk_counter_15__I_21 ( .D0(DI1_dly), .SP(VCCI), 
-    .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
+  ffsre2 \clock_manager_portmap/NEScount_7__I_19 ( .D0(DI1_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
@@ -1052,23 +1136,24 @@ module clock_manager_portmap_SLICE_14 ( input DI1, DI0, D1, C1, D0, C0, CLK,
     (CIN1 => COUT1) = (0:0:0,0:0:0);
     $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
     $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
   endspecify
 
 endmodule
 
-module clock_manager_portmap_SLICE_15 ( input DI1, DI0, D1, C1, D0, C0, CLK, 
-    CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
-  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
+module clock_manager_portmap_SLICE_15 ( input DI1, DI0, D1, C1, D0, C0, LSR, 
+    CLK, CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly, LSR_dly;
 
-  fa2 \clock_manager_portmap/clk_counter_111_144_add_4_11 ( .A0(GNDI), 
-    .B0(GNDI), .C0(C0), .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), 
-    .CI0(CIN0), .CI1(CIN1), .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  fa2 \clock_manager_portmap/clk_counter_134_add_4_13 ( .A0(GNDI), .B0(GNDI), 
+    .C0(C0), .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), 
+    .CI1(CIN1), .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
   gnd DRIVEGND( .PWR0(GNDI));
-  ffsre2 \clock_manager_portmap/clk_counter_15__I_24 ( .D0(DI0_dly), .SP(VCCI), 
-    .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
+  ffsre2 \clock_manager_portmap/NEScount_7__I_22 ( .D0(DI0_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
   vcc DRIVEVCC( .PWR1(VCCI));
-  ffsre2 \clock_manager_portmap/clk_counter_15__I_23 ( .D0(DI1_dly), .SP(VCCI), 
-    .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
+  ffsre2 \clock_manager_portmap/NEScount_7__I_21 ( .D0(DI1_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
@@ -1083,23 +1168,24 @@ module clock_manager_portmap_SLICE_15 ( input DI1, DI0, D1, C1, D0, C0, CLK,
     (CIN1 => COUT1) = (0:0:0,0:0:0);
     $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
     $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
   endspecify
 
 endmodule
 
-module clock_manager_portmap_SLICE_16 ( input DI1, DI0, D1, C1, D0, C0, CLK, 
-    CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
-  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
+module clock_manager_portmap_SLICE_16 ( input DI1, DI0, D1, C1, D0, C0, LSR, 
+    CLK, CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly, LSR_dly;
 
-  fa2 \clock_manager_portmap/clk_counter_111_144_add_4_9 ( .A0(GNDI), 
-    .B0(GNDI), .C0(C0), .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), 
-    .CI0(CIN0), .CI1(CIN1), .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  fa2 \clock_manager_portmap/clk_counter_134_add_4_11 ( .A0(GNDI), .B0(GNDI), 
+    .C0(C0), .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), 
+    .CI1(CIN1), .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
   gnd DRIVEGND( .PWR0(GNDI));
-  ffsre2 \clock_manager_portmap/clk_counter_15__I_26 ( .D0(DI0_dly), .SP(VCCI), 
-    .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
+  ffsre2 \clock_manager_portmap/NEScount_7__I_24 ( .D0(DI0_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
   vcc DRIVEVCC( .PWR1(VCCI));
-  ffsre2 \clock_manager_portmap/clk_counter_15__I_25 ( .D0(DI1_dly), .SP(VCCI), 
-    .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
+  ffsre2 \clock_manager_portmap/NEScount_7__I_23 ( .D0(DI1_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
@@ -1114,23 +1200,24 @@ module clock_manager_portmap_SLICE_16 ( input DI1, DI0, D1, C1, D0, C0, CLK,
     (CIN1 => COUT1) = (0:0:0,0:0:0);
     $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
     $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
   endspecify
 
 endmodule
 
-module clock_manager_portmap_SLICE_17 ( input DI1, DI0, D1, C1, D0, C0, CLK, 
-    CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
-  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
+module clock_manager_portmap_SLICE_17 ( input DI1, DI0, D1, C1, D0, C0, LSR, 
+    CLK, CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly, LSR_dly;
 
-  fa2 \clock_manager_portmap/clk_counter_111_144_add_4_7 ( .A0(GNDI), 
-    .B0(GNDI), .C0(C0), .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), 
-    .CI0(CIN0), .CI1(CIN1), .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  fa2 \clock_manager_portmap/clk_counter_134_add_4_9 ( .A0(GNDI), .B0(GNDI), 
+    .C0(C0), .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), 
+    .CI1(CIN1), .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
   gnd DRIVEGND( .PWR0(GNDI));
-  ffsre2 \clock_manager_portmap/clk_counter_111_144__i6 ( .D0(DI0_dly), 
-    .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
+  ffsre2 \clock_manager_portmap/NEScount_7__I_29 ( .D0(DI0_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
   vcc DRIVEVCC( .PWR1(VCCI));
-  ffsre2 \clock_manager_portmap/clk_counter_111_144__i7 ( .D0(DI1_dly), 
-    .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
+  ffsre2 \clock_manager_portmap/NEScount_7__I_25 ( .D0(DI1_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
@@ -1145,23 +1232,24 @@ module clock_manager_portmap_SLICE_17 ( input DI1, DI0, D1, C1, D0, C0, CLK,
     (CIN1 => COUT1) = (0:0:0,0:0:0);
     $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
     $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
   endspecify
 
 endmodule
 
-module clock_manager_portmap_SLICE_18 ( input DI1, DI0, D1, C1, D0, C0, CLK, 
-    CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
-  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
+module clock_manager_portmap_SLICE_18 ( input DI1, DI0, D1, C1, D0, C0, LSR, 
+    CLK, CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly, LSR_dly;
 
-  fa2 \clock_manager_portmap/clk_counter_111_144_add_4_5 ( .A0(GNDI), 
-    .B0(GNDI), .C0(C0), .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), 
-    .CI0(CIN0), .CI1(CIN1), .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  fa2 \clock_manager_portmap/clk_counter_134_add_4_7 ( .A0(GNDI), .B0(GNDI), 
+    .C0(C0), .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), 
+    .CI1(CIN1), .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
   gnd DRIVEGND( .PWR0(GNDI));
-  ffsre2 \clock_manager_portmap/clk_counter_111_144__i4 ( .D0(DI0_dly), 
-    .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
+  ffsre2 \clock_manager_portmap/NEScount_7__I_34 ( .D0(DI0_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
   vcc DRIVEVCC( .PWR1(VCCI));
-  ffsre2 \clock_manager_portmap/clk_counter_111_144__i5 ( .D0(DI1_dly), 
-    .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
+  ffsre2 \clock_manager_portmap/NEScount_7__I_33 ( .D0(DI1_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
@@ -1176,23 +1264,24 @@ module clock_manager_portmap_SLICE_18 ( input DI1, DI0, D1, C1, D0, C0, CLK,
     (CIN1 => COUT1) = (0:0:0,0:0:0);
     $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
     $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
   endspecify
 
 endmodule
 
-module clock_manager_portmap_SLICE_19 ( input DI1, DI0, D1, C1, D0, C0, CLK, 
-    CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
-  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
+module clock_manager_portmap_SLICE_19 ( input DI1, DI0, D1, C1, D0, C0, LSR, 
+    CLK, CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly, LSR_dly;
 
-  fa2 \clock_manager_portmap/clk_counter_111_144_add_4_3 ( .A0(GNDI), 
-    .B0(GNDI), .C0(C0), .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), 
-    .CI0(CIN0), .CI1(CIN1), .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  fa2 \clock_manager_portmap/clk_counter_134_add_4_5 ( .A0(GNDI), .B0(GNDI), 
+    .C0(C0), .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), 
+    .CI1(CIN1), .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
   gnd DRIVEGND( .PWR0(GNDI));
-  ffsre2 \clock_manager_portmap/clk_counter_111_144__i2 ( .D0(DI0_dly), 
-    .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
+  ffsre2 \clock_manager_portmap/NEScount_7__I_36 ( .D0(DI0_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
   vcc DRIVEVCC( .PWR1(VCCI));
-  ffsre2 \clock_manager_portmap/clk_counter_111_144__i3 ( .D0(DI1_dly), 
-    .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
+  ffsre2 \clock_manager_portmap/NEScount_7__I_35 ( .D0(DI1_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
@@ -1207,21 +1296,54 @@ module clock_manager_portmap_SLICE_19 ( input DI1, DI0, D1, C1, D0, C0, CLK,
     (CIN1 => COUT1) = (0:0:0,0:0:0);
     $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
     $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
   endspecify
 
 endmodule
 
-module clock_manager_portmap_SLICE_20 ( input DI1, D1, C1, B1, CLK, CIN1, 
+module clock_manager_portmap_SLICE_20 ( input DI1, DI0, D1, C1, D0, C0, LSR, 
+    CLK, CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly, LSR_dly;
+
+  fa2 \clock_manager_portmap/clk_counter_134_add_4_3 ( .A0(GNDI), .B0(GNDI), 
+    .C0(C0), .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), .CI0(CIN0), 
+    .CI1(CIN1), .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \clock_manager_portmap/NEScount_7__I_38 ( .D0(DI0_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \clock_manager_portmap/NEScount_7__I_37 ( .D0(DI1_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module clock_manager_portmap_SLICE_21 ( input DI1, D1, C1, B1, LSR, CLK, CIN1, 
     output Q1, F1, COUT1, COUT0 );
-  wire   GNDI, VCCI, DI1_dly, CLK_dly;
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, LSR_dly;
 
-  fa2 \clock_manager_portmap/clk_counter_111_144_add_4_1 ( .A0(GNDI), 
-    .B0(GNDI), .C0(GNDI), .D0(VCCI), .A1(GNDI), .B1(B1), .C1(C1), .D1(D1), 
-    .CI0(VCCI), .CI1(CIN1), .S0(), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  fa2 \clock_manager_portmap/clk_counter_134_add_4_1 ( .A0(GNDI), .B0(GNDI), 
+    .C0(GNDI), .D0(VCCI), .A1(GNDI), .B1(B1), .C1(C1), .D1(D1), .CI0(VCCI), 
+    .CI1(CIN1), .S0(), .S1(F1), .CO0(COUT0), .CO1(COUT1));
   gnd DRIVEGND( .PWR0(GNDI));
   vcc DRIVEVCC( .PWR1(VCCI));
-  ffsre2 \clock_manager_portmap/clk_counter_111_144__i1 ( .D0(DI1_dly), 
-    .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
+  ffsre2 \clock_manager_portmap/NEScount_7__I_39 ( .D0(DI1_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
@@ -1232,183 +1354,19 @@ module clock_manager_portmap_SLICE_20 ( input DI1, D1, C1, B1, CLK, CIN1,
     (CLK => Q1) = (0:0:0,0:0:0);
     (CIN1 => COUT1) = (0:0:0,0:0:0);
     $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
   endspecify
 
 endmodule
 
-module vga_sync_clk_portmap_SLICE_21 ( input DI1, DI0, D1, C1, D0, C0, CLK, 
-    CIN0, CIN1, output Q0, Q1, F0, F1, COUT1, COUT0 );
-  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
-
-  fa2 \vga_sync_clk_portmap/valid_output_ctr_114_143_add_4_3 ( .A0(GNDI), 
-    .B0(GNDI), .C0(C0), .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), 
-    .CI0(CIN0), .CI1(CIN1), .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
-  gnd DRIVEGND( .PWR0(GNDI));
-  ffsre2 \vga_sync_clk_portmap/valid_output_ctr_114_143__i2 ( .D0(DI0_dly), 
-    .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
-  vcc DRIVEVCC( .PWR1(VCCI));
-  ffsre2 \vga_sync_clk_portmap/valid_output_ctr_114_143__i3 ( .D0(DI1_dly), 
-    .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
-
-  specify
-    (D1 => F1) = (0:0:0,0:0:0);
-    (C1 => F1) = (0:0:0,0:0:0);
-    (C1 => COUT1) = (0:0:0,0:0:0);
-    (D0 => F0) = (0:0:0,0:0:0);
-    (C0 => F0) = (0:0:0,0:0:0);
-    (C0 => COUT0) = (0:0:0,0:0:0);
-    (CLK => Q0) = (0:0:0,0:0:0);
-    (CLK => Q1) = (0:0:0,0:0:0);
-    (CIN0 => COUT0) = (0:0:0,0:0:0);
-    (CIN1 => COUT1) = (0:0:0,0:0:0);
-    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
-    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
-  endspecify
-
-endmodule
-
-module vga_sync_clk_portmap_SLICE_22 ( input DI1, D1, C1, B1, CLK, CIN1, 
-    output Q1, F1, COUT1, COUT0 );
-  wire   GNDI, VCCI, DI1_dly, CLK_dly;
-
-  fa2 \vga_sync_clk_portmap/valid_output_ctr_114_143_add_4_1 ( .A0(GNDI), 
-    .B0(GNDI), .C0(GNDI), .D0(VCCI), .A1(GNDI), .B1(B1), .C1(C1), .D1(D1), 
-    .CI0(VCCI), .CI1(CIN1), .S0(), .S1(F1), .CO0(COUT0), .CO1(COUT1));
-  gnd DRIVEGND( .PWR0(GNDI));
-  vcc DRIVEVCC( .PWR1(VCCI));
-  ffsre2 \vga_sync_clk_portmap/valid_output_ctr_114_143__i1 ( .D0(DI1_dly), 
-    .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
-
-  specify
-    (D1 => F1) = (0:0:0,0:0:0);
-    (C1 => F1) = (0:0:0,0:0:0);
-    (C1 => COUT1) = (0:0:0,0:0:0);
-    (B1 => F1) = (0:0:0,0:0:0);
-    (B1 => COUT1) = (0:0:0,0:0:0);
-    (CLK => Q1) = (0:0:0,0:0:0);
-    (CIN1 => COUT1) = (0:0:0,0:0:0);
-    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
-  endspecify
-
-endmodule
-
-module vga_sync_clk_portmap_SLICE_23 ( input DI1, DI0, D1, C1, D0, C0, CLK, 
-    CIN0, CIN1, output Q0, Q1, F0, F1, COUT0 );
-  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
-
-  fa2 \vga_sync_clk_portmap/valid_output_ctr_114_143_add_4_5 ( .A0(GNDI), 
-    .B0(GNDI), .C0(C0), .D0(D0), .A1(GNDI), .B1(GNDI), .C1(C1), .D1(D1), 
-    .CI0(CIN0), .CI1(CIN1), .S0(F0), .S1(F1), .CO0(COUT0), .CO1());
-  gnd DRIVEGND( .PWR0(GNDI));
-  ffsre2 \vga_sync_clk_portmap/valid_output_ctr_114_143__i4 ( .D0(DI0_dly), 
-    .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
-  vcc DRIVEVCC( .PWR1(VCCI));
-  ffsre2 \vga_sync_clk_portmap/valid_output_ctr_4__I_0 ( .D0(DI1_dly), 
-    .SP(VCCI), .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
-
-  specify
-    (D1 => F1) = (0:0:0,0:0:0);
-    (C1 => F1) = (0:0:0,0:0:0);
-    (D0 => F0) = (0:0:0,0:0:0);
-    (C0 => F0) = (0:0:0,0:0:0);
-    (C0 => COUT0) = (0:0:0,0:0:0);
-    (CLK => Q0) = (0:0:0,0:0:0);
-    (CLK => Q1) = (0:0:0,0:0:0);
-    (CIN0 => COUT0) = (0:0:0,0:0:0);
-    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
-    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
-  endspecify
-
-endmodule
-
-module game_logic_portmap_SLICE_24 ( input DI1, DI0, D1, C1, B1, A1, D0, C0, 
-    B0, CLK, output Q0, Q1, F0, F1 );
-  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
-
-  lut4 \game_logic_portmap/i204_2_lut_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
-    .Z(F1));
-  lut40001 \game_logic_portmap/i211_3_lut ( .A(GNDI), .B(B0), .C(C0), .D(D0), 
-    .Z(F0));
-  gnd DRIVEGND( .PWR0(GNDI));
-  ffsre2 \game_logic_portmap/piece_loc_1__3__I_27 ( .D0(DI1_dly), .SP(VCCI), 
-    .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
-  vcc DRIVEVCC( .PWR1(VCCI));
-  ffsre2 \game_logic_portmap/piece_loc_1__3__I_0 ( .D0(DI0_dly), .SP(VCCI), 
-    .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
-
-  specify
-    (D1 => F1) = (0:0:0,0:0:0);
-    (C1 => F1) = (0:0:0,0:0:0);
-    (B1 => F1) = (0:0:0,0:0:0);
-    (A1 => F1) = (0:0:0,0:0:0);
-    (D0 => F0) = (0:0:0,0:0:0);
-    (C0 => F0) = (0:0:0,0:0:0);
-    (B0 => F0) = (0:0:0,0:0:0);
-    (CLK => Q0) = (0:0:0,0:0:0);
-    (CLK => Q1) = (0:0:0,0:0:0);
-    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
-    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
-  endspecify
-
-endmodule
-
-module lut4 ( input A, B, C, D, output Z );
-
-  LUT4 #("0x78F0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
-endmodule
-
-module lut40001 ( input A, B, C, D, output Z );
-
-  LUT4 #("0x3CCC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
-endmodule
-
-module game_logic_portmap_SLICE_25 ( input DI1, DI0, D1, C1, B1, D0, C0, CLK, 
-    output Q0, Q1, F0, F1 );
-  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
-
-  lut40002 \game_logic_portmap/i197_2_lut_3_lut ( .A(GNDI), .B(B1), .C(C1), 
-    .D(D1), .Z(F1));
-  gnd DRIVEGND( .PWR0(GNDI));
-  lut40003 \game_logic_portmap/i189_2_lut ( .A(GNDI), .B(GNDI), .C(C0), .D(D0), 
-    .Z(F0));
-  ffsre2 \game_logic_portmap/piece_loc_1__3__I_28 ( .D0(DI1_dly), .SP(VCCI), 
-    .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
-  vcc DRIVEVCC( .PWR1(VCCI));
-  ffsre2 \game_logic_portmap/piece_loc_1__3__I_29 ( .D0(DI0_dly), .SP(VCCI), 
-    .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
-
-  specify
-    (D1 => F1) = (0:0:0,0:0:0);
-    (C1 => F1) = (0:0:0,0:0:0);
-    (B1 => F1) = (0:0:0,0:0:0);
-    (D0 => F0) = (0:0:0,0:0:0);
-    (C0 => F0) = (0:0:0,0:0:0);
-    (CLK => Q0) = (0:0:0,0:0:0);
-    (CLK => Q1) = (0:0:0,0:0:0);
-    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
-    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
-  endspecify
-
-endmodule
-
-module lut40002 ( input A, B, C, D, output Z );
-
-  LUT4 #("0x3FC0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
-endmodule
-
-module lut40003 ( input A, B, C, D, output Z );
-
-  LUT4 #("0x0FF0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
-endmodule
-
-module nes_controller_portmap_SLICE_28 ( input DI1, DI0, D1, D0, CLK, output 
+module nes_controller_portmap_SLICE_22 ( input DI1, DI0, D1, D0, CLK, output 
     Q0, Q1, F0, F1 );
   wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
 
-  lut40004 \nes_controller_portmap.SLICE_28_K1 ( .A(GNDI), .B(GNDI), .C(GNDI), 
+  lut4 \nes_controller_portmap.SLICE_22_K1 ( .A(GNDI), .B(GNDI), .C(GNDI), 
     .D(D1), .Z(F1));
   gnd DRIVEGND( .PWR0(GNDI));
-  lut40005 \nes_controller_portmap.SLICE_28_K0 ( .A(GNDI), .B(GNDI), .C(GNDI), 
+  lut40001 \nes_controller_portmap.SLICE_22_K0 ( .A(GNDI), .B(GNDI), .C(GNDI), 
     .D(D0), .Z(F0));
   ffsre2 \nes_controller_portmap/shift_reg_1__I_0 ( .D0(DI1_dly), .SP(VCCI), 
     .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
@@ -1427,26 +1385,26 @@ module nes_controller_portmap_SLICE_28 ( input DI1, DI0, D1, D0, CLK, output
 
 endmodule
 
-module lut40004 ( input A, B, C, D, output Z );
+module lut4 ( input A, B, C, D, output Z );
 
   LUT4 #("0xFF00") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
-module lut40005 ( input A, B, C, D, output Z );
+module lut40001 ( input A, B, C, D, output Z );
 
   LUT4 #("0xFF00") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
-module nes_controller_portmap_SLICE_30 ( input DI1, DI0, D1, D0, CLK, output 
+module nes_controller_portmap_SLICE_24 ( input DI1, DI0, D1, D0, CLK, output 
     Q0, Q1, F0, F1 );
   wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
 
-  lut40006 \nes_controller_portmap/i10_1_lut ( .A(GNDI), .B(GNDI), .C(GNDI), 
+  lut40002 \nes_controller_portmap/i10_1_lut ( .A(GNDI), .B(GNDI), .C(GNDI), 
     .D(D1), .Z(F1));
   gnd DRIVEGND( .PWR0(GNDI));
-  lut40005 \nes_controller_portmap.SLICE_30_K0 ( .A(GNDI), .B(GNDI), .C(GNDI), 
+  lut40001 \nes_controller_portmap.SLICE_24_K0 ( .A(GNDI), .B(GNDI), .C(GNDI), 
     .D(D0), .Z(F0));
-  ffsre2 \nes_controller_portmap/shift_reg_0__I_30 ( .D0(DI1_dly), .SP(VCCI), 
+  ffsre2 \nes_controller_portmap/shift_reg_0__I_28 ( .D0(DI1_dly), .SP(VCCI), 
     .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
   vcc DRIVEVCC( .PWR1(VCCI));
   ffsre2 \nes_controller_portmap/shift_reg_0__I_0 ( .D0(DI0_dly), .SP(VCCI), 
@@ -1463,19 +1421,197 @@ module nes_controller_portmap_SLICE_30 ( input DI1, DI0, D1, D0, CLK, output
 
 endmodule
 
-module lut40006 ( input A, B, C, D, output Z );
+module lut40002 ( input A, B, C, D, output Z );
 
   LUT4 #("0x00FF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
-module vga_sync_portmap_SLICE_32 ( input D1, C1, B1, A1, D0, C0, output F0, F1 );
-  wire   GNDI;
+module game_logic_portmap_SLICE_27 ( input DI1, DI0, D1, C1, D0, C0, B0, A0, 
+    CLK, output Q0, Q1, F0, F1 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
 
-  lut40007 \vga_sync_portmap/i42_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
+  lut40003 \game_logic_portmap/i1369_2_lut ( .A(GNDI), .B(GNDI), .C(C1), 
+    .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40004 \game_logic_portmap/i1907_3_lut_4_lut ( .A(A0), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+  ffsre2 \game_logic_portmap/left_delay_2__I_27 ( .D0(DI1_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \game_logic_portmap/left_delay_0__I_0 ( .D0(DI0_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+  endspecify
+
+endmodule
+
+module lut40003 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x0FF0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40004 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x3332") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module game_logic_portmap_SLICE_28 ( input DI1, DI0, D1, C1, B1, D0, C0, B0, 
+    A0, CLK, output Q0, Q1, F0, F1 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
+
+  lut40005 \game_logic_portmap/i2_3_lut ( .A(GNDI), .B(B1), .C(C1), .D(D1), 
     .Z(F1));
-  lut40008 \vga_sync_portmap/i1_2_lut_adj_39 ( .A(GNDI), .B(GNDI), .C(C0), 
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40006 \game_logic_portmap/i2_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
+  ffsre2 \game_logic_portmap/piece_loc_0__2__I_0 ( .D0(DI1_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \game_logic_portmap/piece_loc_0__3__I_0 ( .D0(DI0_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+  endspecify
+
+endmodule
+
+module lut40005 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x3CC3") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40006 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x6CC9") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module game_logic_portmap_SLICE_30 ( input DI1, DI0, D1, C1, B1, D0, C0, B0, 
+    A0, CLK, output Q0, Q1, F0, F1 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
+
+  lut40007 \game_logic_portmap/i2_3_lut_adj_42 ( .A(GNDI), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40008 \game_logic_portmap/i2_4_lut_adj_40 ( .A(A0), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+  ffsre2 \game_logic_portmap/piece_loc_0__0__I_0 ( .D0(DI1_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \game_logic_portmap/piece_loc_0__1__I_0 ( .D0(DI0_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+  endspecify
+
+endmodule
+
+module lut40007 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x333C") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40008 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x669C") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module game_logic_portmap_SLICE_32 ( input DI0, D0, C0, B0, CLK, output Q0, F0 );
+  wire   GNDI, VCCI, DI0_dly, CLK_dly;
+
+  lut40009 \game_logic_portmap/i1376_3_lut ( .A(GNDI), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \game_logic_portmap/left_delay_2__I_0 ( .D0(DI0_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+  endspecify
+
+endmodule
+
+module lut40009 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x3FC0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module game_logic_portmap_SLICE_34 ( input DI0, D0, C0, B0, CLK, output Q0, F0 );
+  wire   GNDI, VCCI, DI0_dly, CLK_dly;
+
+  lut40010 \game_logic_portmap/i1355_3_lut ( .A(GNDI), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \game_logic_portmap/right_delay_2__I_0 ( .D0(DI0_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+  endspecify
+
+endmodule
+
+module lut40010 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x3CF0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module game_logic_portmap_SLICE_35 ( input DI1, DI0, D1, C1, B1, A1, D0, B0, 
+    CLK, output Q0, Q1, F0, F1 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly;
+
+  lut40011 \game_logic_portmap/i1904_3_lut_4_lut ( .A(A1), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  lut40012 \game_logic_portmap/i1348_2_lut ( .A(GNDI), .B(B0), .C(GNDI), 
     .D(D0), .Z(F0));
   gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \game_logic_portmap/right_delay_0__I_0 ( .D0(DI1_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \game_logic_portmap/right_delay_2__I_26 ( .D0(DI0_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(GNDI), .Q(Q0));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
@@ -1483,32 +1619,68 @@ module vga_sync_portmap_SLICE_32 ( input D1, C1, B1, A1, D0, C0, output F0, F1 )
     (B1 => F1) = (0:0:0,0:0:0);
     (A1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
-    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
   endspecify
 
 endmodule
 
-module lut40007 ( input A, B, C, D, output Z );
+module lut40011 ( input A, B, C, D, output Z );
 
-  LUT4 #("0xFCB8") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0x0F0E") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
-module lut40008 ( input A, B, C, D, output Z );
+module lut40012 ( input A, B, C, D, output Z );
 
-  LUT4 #("0xF0FF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0x33CC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
-module vga_sync_portmap_SLICE_33 ( input C1, A1, D0, C0, B0, A0, output F0, F1 );
+module vga_sync_portmap_SLICE_37 ( input D1, C1, B1, D0, C0, B0, A0, output F0, 
+    F1 );
   wire   GNDI;
 
-  lut40009 \vga_sync_portmap/i1_2_lut_adj_38 ( .A(A1), .B(GNDI), .C(C1), 
-    .D(GNDI), .Z(F1));
+  lut40013 \renderer_portmap/i1844_2_lut_3_lut ( .A(GNDI), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
   gnd DRIVEGND( .PWR0(GNDI));
-  lut40010 \vga_sync_portmap/i1629_3_lut_4_lut ( .A(A0), .B(B0), .C(C0), 
-    .D(D0), .Z(F0));
+  lut40014 \vga_sync_portmap/i28_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
 
   specify
+    (D1 => F1) = (0:0:0,0:0:0);
     (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40013 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xC000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40014 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x04AE") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module vga_sync_portmap_SLICE_38 ( input D1, C1, B1, A1, D0, C0, B0, A0, 
+    output F0, F1 );
+
+  lut40015 \vga_sync_portmap/vsync_c_I_0 ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40016 \vga_sync_portmap/i1_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
     (A1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
@@ -1518,118 +1690,24 @@ module vga_sync_portmap_SLICE_33 ( input C1, A1, D0, C0, B0, A0, output F0, F1 )
 
 endmodule
 
-module lut40009 ( input A, B, C, D, output Z );
-
-  LUT4 #("0xFAFA") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
-endmodule
-
-module lut40010 ( input A, B, C, D, output Z );
-
-  LUT4 #("0xA0B3") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
-endmodule
-
-module renderer_portmap_SLICE_34 ( input D1, C1, B1, A1, D0, C0, output F0, F1 );
-  wire   GNDI;
-
-  lut40011 \renderer_portmap/i1622_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
-    .Z(F1));
-  lut40012 \renderer_portmap/i1_2_lut ( .A(GNDI), .B(GNDI), .C(C0), .D(D0), 
-    .Z(F0));
-  gnd DRIVEGND( .PWR0(GNDI));
-
-  specify
-    (D1 => F1) = (0:0:0,0:0:0);
-    (C1 => F1) = (0:0:0,0:0:0);
-    (B1 => F1) = (0:0:0,0:0:0);
-    (A1 => F1) = (0:0:0,0:0:0);
-    (D0 => F0) = (0:0:0,0:0:0);
-    (C0 => F0) = (0:0:0,0:0:0);
-  endspecify
-
-endmodule
-
-module lut40011 ( input A, B, C, D, output Z );
-
-  LUT4 #("0xF4FF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
-endmodule
-
-module lut40012 ( input A, B, C, D, output Z );
-
-  LUT4 #("0xF0FF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
-endmodule
-
-module renderer_portmap_SLICE_35 ( input D1, C1, B1, A1, D0, C0, B0, output F0, 
-    F1 );
-  wire   GNDI;
-
-  lut40013 \renderer_portmap/i482_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
-    .Z(F1));
-  lut40014 \renderer_portmap/i236_2_lut_3_lut ( .A(GNDI), .B(B0), .C(C0), 
-    .D(D0), .Z(F0));
-  gnd DRIVEGND( .PWR0(GNDI));
-
-  specify
-    (D1 => F1) = (0:0:0,0:0:0);
-    (C1 => F1) = (0:0:0,0:0:0);
-    (B1 => F1) = (0:0:0,0:0:0);
-    (A1 => F1) = (0:0:0,0:0:0);
-    (D0 => F0) = (0:0:0,0:0:0);
-    (C0 => F0) = (0:0:0,0:0:0);
-    (B0 => F0) = (0:0:0,0:0:0);
-  endspecify
-
-endmodule
-
-module lut40013 ( input A, B, C, D, output Z );
-
-  LUT4 #("0xFBB2") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
-endmodule
-
-module lut40014 ( input A, B, C, D, output Z );
-
-  LUT4 #("0xFC00") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
-endmodule
-
-module vga_sync_portmap_SLICE_36 ( input D1, C1, B1, A1, D0, C0, B0, output F0, 
-    F1 );
-  wire   GNDI;
-
-  lut40015 \vga_sync_portmap/vsync_c_I_0 ( .A(A1), .B(B1), .C(C1), .D(D1), 
-    .Z(F1));
-  lut40016 \vga_sync_portmap/i1_3_lut ( .A(GNDI), .B(B0), .C(C0), .D(D0), 
-    .Z(F0));
-  gnd DRIVEGND( .PWR0(GNDI));
-
-  specify
-    (D1 => F1) = (0:0:0,0:0:0);
-    (C1 => F1) = (0:0:0,0:0:0);
-    (B1 => F1) = (0:0:0,0:0:0);
-    (A1 => F1) = (0:0:0,0:0:0);
-    (D0 => F0) = (0:0:0,0:0:0);
-    (C0 => F0) = (0:0:0,0:0:0);
-    (B0 => F0) = (0:0:0,0:0:0);
-  endspecify
-
-endmodule
-
 module lut40015 ( input A, B, C, D, output Z );
 
-  LUT4 #("0xFFFE") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0xDFFF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
 module lut40016 ( input A, B, C, D, output Z );
 
-  LUT4 #("0x3FFF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0xCE0A") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
-module vga_sync_portmap_SLICE_38 ( input D1, C1, B1, A1, D0, C0, B0, output F0, 
-    F1 );
+module nes_controller_portmap_SLICE_39 ( input D1, C1, B1, A1, D0, C0, B0, 
+    output F0, F1 );
   wire   GNDI;
 
-  lut40017 \vga_sync_portmap/rgb_col_8__I_0 ( .A(A1), .B(B1), .C(C1), .D(D1), 
+  lut40017 \game_logic_portmap/i2_3_lut_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
     .Z(F1));
-  lut40018 \vga_sync_portmap/i25_3_lut ( .A(GNDI), .B(B0), .C(C0), .D(D0), 
-    .Z(F0));
+  lut40018 \nes_controller_portmap/right_button_I_0 ( .A(GNDI), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
   gnd DRIVEGND( .PWR0(GNDI));
 
   specify
@@ -1646,112 +1724,21 @@ endmodule
 
 module lut40017 ( input A, B, C, D, output Z );
 
-  LUT4 #("0xDFFF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0x0010") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
 module lut40018 ( input A, B, C, D, output Z );
 
-  LUT4 #("0x3FFC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0xF3C0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
-module vga_sync_portmap_SLICE_40 ( input D1, C1, B1, A1, C0, A0, output F0, F1 );
+module nes_controller_portmap_SLICE_41 ( input D1, C1, B1, A1, D0, C0, A0, 
+    output F0, F1 );
   wire   GNDI;
 
-  lut40019 \vga_sync_portmap/i6_4_lut_adj_33 ( .A(A1), .B(B1), .C(C1), .D(D1), 
-    .Z(F1));
-  lut40020 \vga_sync_portmap/i1537_2_lut ( .A(A0), .B(GNDI), .C(C0), .D(GNDI), 
-    .Z(F0));
-  gnd DRIVEGND( .PWR0(GNDI));
-
-  specify
-    (D1 => F1) = (0:0:0,0:0:0);
-    (C1 => F1) = (0:0:0,0:0:0);
-    (B1 => F1) = (0:0:0,0:0:0);
-    (A1 => F1) = (0:0:0,0:0:0);
-    (C0 => F0) = (0:0:0,0:0:0);
-    (A0 => F0) = (0:0:0,0:0:0);
-  endspecify
-
-endmodule
-
-module lut40019 ( input A, B, C, D, output Z );
-
-  LUT4 #("0xBFFF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
-endmodule
-
-module lut40020 ( input A, B, C, D, output Z );
-
-  LUT4 #("0xFAFA") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
-endmodule
-
-module vga_sync_portmap_SLICE_41 ( input D1, C1, B1, A1, D0, C0, B0, output F0, 
-    F1 );
-  wire   GNDI;
-
-  lut40021 \vga_sync_portmap/i8_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
-  lut40022 \vga_sync_portmap/i5_3_lut ( .A(GNDI), .B(B0), .C(C0), .D(D0), 
-    .Z(F0));
-  gnd DRIVEGND( .PWR0(GNDI));
-
-  specify
-    (D1 => F1) = (0:0:0,0:0:0);
-    (C1 => F1) = (0:0:0,0:0:0);
-    (B1 => F1) = (0:0:0,0:0:0);
-    (A1 => F1) = (0:0:0,0:0:0);
-    (D0 => F0) = (0:0:0,0:0:0);
-    (C0 => F0) = (0:0:0,0:0:0);
-    (B0 => F0) = (0:0:0,0:0:0);
-  endspecify
-
-endmodule
-
-module lut40021 ( input A, B, C, D, output Z );
-
-  LUT4 #("0x1000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
-endmodule
-
-module lut40022 ( input A, B, C, D, output Z );
-
-  LUT4 #("0x3000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
-endmodule
-
-module vga_sync_portmap_SLICE_43 ( input D1, C1, B1, A1, D0, C0, A0, output F0, 
-    F1 );
-  wire   GNDI;
-
-  lut40023 \vga_sync_portmap/i4_4_lut_adj_34 ( .A(A1), .B(B1), .C(C1), .D(D1), 
-    .Z(F1));
-  lut40024 \vga_sync_portmap/i3_3_lut ( .A(A0), .B(GNDI), .C(C0), .D(D0), 
-    .Z(F0));
-  gnd DRIVEGND( .PWR0(GNDI));
-
-  specify
-    (D1 => F1) = (0:0:0,0:0:0);
-    (C1 => F1) = (0:0:0,0:0:0);
-    (B1 => F1) = (0:0:0,0:0:0);
-    (A1 => F1) = (0:0:0,0:0:0);
-    (D0 => F0) = (0:0:0,0:0:0);
-    (C0 => F0) = (0:0:0,0:0:0);
-    (A0 => F0) = (0:0:0,0:0:0);
-  endspecify
-
-endmodule
-
-module lut40023 ( input A, B, C, D, output Z );
-
-  LUT4 #("0x1000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
-endmodule
-
-module lut40024 ( input A, B, C, D, output Z );
-
-  LUT4 #("0x0A00") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
-endmodule
-
-module vga_sync_portmap_SLICE_44 ( input D1, C1, B1, A1, D0, B0, output F0, F1 );
-  wire   GNDI;
-
-  lut40025 \vga_sync_portmap/i6_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
-  lut40026 \vga_sync_portmap/i1_2_lut_adj_35 ( .A(GNDI), .B(B0), .C(GNDI), 
+  lut40017 \game_logic_portmap/i2_3_lut_4_lut_adj_41 ( .A(A1), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  lut40019 \nes_controller_portmap/left_button_I_0 ( .A(A0), .B(GNDI), .C(C0), 
     .D(D0), .Z(F0));
   gnd DRIVEGND( .PWR0(GNDI));
 
@@ -1761,26 +1748,55 @@ module vga_sync_portmap_SLICE_44 ( input D1, C1, B1, A1, D0, B0, output F0, F1 )
     (B1 => F1) = (0:0:0,0:0:0);
     (A1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
-    (B0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
   endspecify
 
 endmodule
 
-module lut40025 ( input A, B, C, D, output Z );
+module lut40019 ( input A, B, C, D, output Z );
 
-  LUT4 #("0x1000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0xAFA0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
-module lut40026 ( input A, B, C, D, output Z );
-
-  LUT4 #("0xCC00") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
-endmodule
-
-module vga_sync_portmap_SLICE_46 ( input D1, C1, B1, A1, D0, C0, output F0, F1 );
+module renderer_portmap_SLICE_43 ( input D1, C1, B1, A1, D0, C0, A0, output F0, 
+    F1 );
   wire   GNDI;
 
-  lut40027 \vga_sync_portmap/i4_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
-  lut40028 \vga_sync_portmap/i1_2_lut ( .A(GNDI), .B(GNDI), .C(C0), .D(D0), 
+  lut40020 \renderer_portmap/rgb_col[5]_bdd_4_lut ( .A(A1), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  lut40021 \renderer_portmap/i1743_3_lut ( .A(A0), .B(GNDI), .C(C0), .D(D0), 
+    .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40020 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xEA62") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40021 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xF050") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module vga_sync_portmap_SLICE_45 ( input D1, C1, B1, A1, D0, C0, output F0, F1 );
+  wire   GNDI;
+
+  lut40022 \vga_sync_portmap/i1737_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40023 \vga_sync_portmap/i2_2_lut ( .A(GNDI), .B(GNDI), .C(C0), .D(D0), 
     .Z(F0));
   gnd DRIVEGND( .PWR0(GNDI));
 
@@ -1795,27 +1811,108 @@ module vga_sync_portmap_SLICE_46 ( input D1, C1, B1, A1, D0, C0, output F0, F1 )
 
 endmodule
 
-module lut40027 ( input A, B, C, D, output Z );
+module lut40022 ( input A, B, C, D, output Z );
 
   LUT4 #("0xFFFE") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
-module lut40028 ( input A, B, C, D, output Z );
+module lut40023 ( input A, B, C, D, output Z );
 
   LUT4 #("0xFFF0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
-module vga_sync_portmap_SLICE_48 ( input D1, C1, D0, C0, B0, A0, output F0, F1 );
+module vga_sync_portmap_SLICE_47 ( input D1, C1, B1, A1, D0, C0, output F0, F1 );
   wire   GNDI;
 
-  lut40029 \vga_sync_portmap/i1_2_lut_adj_36 ( .A(GNDI), .B(GNDI), .C(C1), 
-    .D(D1), .Z(F1));
+  lut40024 \vga_sync_portmap/i3_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40025 \vga_sync_portmap/i1756_2_lut ( .A(GNDI), .B(GNDI), .C(C0), .D(D0), 
+    .Z(F0));
   gnd DRIVEGND( .PWR0(GNDI));
-  lut40030 \vga_sync_portmap/i3_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
     (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40024 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFDF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40025 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xF000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module vga_sync_portmap_SLICE_49 ( input D0, C0, B0, A0, output F0 );
+
+  lut40026 \vga_sync_portmap/i835_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
+
+  specify
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40026 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x0008") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module vga_sync_portmap_SLICE_50 ( input D1, C1, B1, A1, D0, C0, B0, A0, 
+    output F0, F1 );
+
+  lut40027 \renderer_portmap/i1750_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40028 \vga_sync_portmap/i1_3_lut_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40027 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFC8") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40028 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFFE") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module vga_sync_portmap_SLICE_51 ( input D1, C1, A1, D0, C0, B0, A0, output F0, 
+    F1 );
+  wire   GNDI;
+
+  lut40029 \vga_sync_portmap/i5_3_lut ( .A(A1), .B(GNDI), .C(C1), .D(D1), 
+    .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40030 \vga_sync_portmap/i4_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
     (B0 => F0) = (0:0:0,0:0:0);
@@ -1826,22 +1923,20 @@ endmodule
 
 module lut40029 ( input A, B, C, D, output Z );
 
-  LUT4 #("0xFFF0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0xA000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
 module lut40030 ( input A, B, C, D, output Z );
 
-  LUT4 #("0xFFFE") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0x0002") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
-module vga_sync_portmap_SLICE_49 ( input D1, C1, B1, A1, D0, C0, B0, output F0, 
-    F1 );
+module vga_sync_portmap_SLICE_53 ( input D1, C1, B1, A1, D0, C0, output F0, F1 );
   wire   GNDI;
 
-  lut40031 \vga_sync_portmap/i1539_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
-    .Z(F1));
-  lut40032 \vga_sync_portmap/i1_3_lut_adj_41 ( .A(GNDI), .B(B0), .C(C0), 
-    .D(D0), .Z(F0));
+  lut40031 \renderer_portmap/i2_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40032 \vga_sync_portmap/i1_2_lut ( .A(GNDI), .B(GNDI), .C(C0), .D(D0), 
+    .Z(F0));
   gnd DRIVEGND( .PWR0(GNDI));
 
   specify
@@ -1851,28 +1946,27 @@ module vga_sync_portmap_SLICE_49 ( input D1, C1, B1, A1, D0, C0, B0, output F0,
     (A1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
-    (B0 => F0) = (0:0:0,0:0:0);
   endspecify
 
 endmodule
 
 module lut40031 ( input A, B, C, D, output Z );
 
-  LUT4 #("0xFFFE") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0xFFEC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
 module lut40032 ( input A, B, C, D, output Z );
 
-  LUT4 #("0xCCC0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0xFFF0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
-module vga_sync_clk_portmap_SLICE_51 ( input D1, C1, B1, A1, D0, C0, B0, A0, 
+module renderer_portmap_SLICE_54 ( input D1, C1, B1, A1, D0, C0, B0, A0, 
     output F0, F1 );
 
-  lut40033 \vga_sync_clk_portmap/rgb_row_9__I_0 ( .A(A1), .B(B1), .C(C1), 
-    .D(D1), .Z(F1));
-  lut40034 \vga_sync_portmap/i1_2_lut_4_lut_adj_42 ( .A(A0), .B(B0), .C(C0), 
-    .D(D0), .Z(F0));
+  lut40033 \renderer_portmap/Mux_27_i15_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40034 \renderer_portmap/n2924_bdd_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
@@ -1889,20 +1983,21 @@ endmodule
 
 module lut40033 ( input A, B, C, D, output Z );
 
-  LUT4 #("0x1000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0x7250") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
 module lut40034 ( input A, B, C, D, output Z );
 
-  LUT4 #("0xFE00") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0xDC98") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
-module vga_sync_portmap_SLICE_52 ( input D1, C1, B1, A1, D0, C0, B0, A0, 
+module vga_sync_portmap_SLICE_55 ( input D1, C1, B1, A1, D0, C0, B0, A0, 
     output F0, F1 );
 
-  lut40035 \renderer_portmap/i100_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
-    .Z(F1));
-  lut40036 \vga_sync_portmap/i1_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+  lut40035 \vga_sync_portmap/i1089_3_lut_4_lut ( .A(A1), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  lut40036 \vga_sync_portmap/i3_4_lut_adj_48 ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
@@ -1919,51 +2014,23 @@ endmodule
 
 module lut40035 ( input A, B, C, D, output Z );
 
-  LUT4 #("0xB888") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0x8880") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
 module lut40036 ( input A, B, C, D, output Z );
 
-  LUT4 #("0x80F0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0xFFFE") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
-module vga_sync_portmap_SLICE_54 ( input D1, C1, B1, A1, D0, B0, output F0, F1 );
+module vga_sync_portmap_SLICE_57 ( input D1, C1, B1, A1, D0, C0, B0, output F0, 
+    F1 );
   wire   GNDI;
 
-  lut40037 \renderer_portmap/i1617_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
+  lut40037 \vga_sync_portmap/i1778_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
     .Z(F1));
-  lut40038 \vga_sync_portmap/i1_2_lut_adj_37 ( .A(GNDI), .B(B0), .C(GNDI), 
-    .D(D0), .Z(F0));
-  gnd DRIVEGND( .PWR0(GNDI));
-
-  specify
-    (D1 => F1) = (0:0:0,0:0:0);
-    (C1 => F1) = (0:0:0,0:0:0);
-    (B1 => F1) = (0:0:0,0:0:0);
-    (A1 => F1) = (0:0:0,0:0:0);
-    (D0 => F0) = (0:0:0,0:0:0);
-    (B0 => F0) = (0:0:0,0:0:0);
-  endspecify
-
-endmodule
-
-module lut40037 ( input A, B, C, D, output Z );
-
-  LUT4 #("0x4000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
-endmodule
-
-module lut40038 ( input A, B, C, D, output Z );
-
-  LUT4 #("0xCC00") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
-endmodule
-
-module renderer_portmap_SLICE_55 ( input D1, C1, B1, A1, D0, C0, B0, A0, 
-    output F0, F1 );
-
-  lut40039 \renderer_portmap/i984_2_lut_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
-    .Z(F1));
-  lut40040 \renderer_portmap/i1541_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), 
+  lut40038 \vga_sync_portmap/i1768_3_lut ( .A(GNDI), .B(B0), .C(C0), .D(D0), 
     .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
@@ -1973,28 +2040,57 @@ module renderer_portmap_SLICE_55 ( input D1, C1, B1, A1, D0, C0, B0, A0,
     (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
     (B0 => F0) = (0:0:0,0:0:0);
-    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40037 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xEC00") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40038 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFFC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module vga_sync_portmap_SLICE_59 ( input D1, C1, B1, A1, D0, C0, output F0, F1 );
+  wire   GNDI;
+
+  lut40039 \vga_sync_portmap/i1162_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40040 \vga_sync_portmap/i1065_2_lut ( .A(GNDI), .B(GNDI), .C(C0), .D(D0), 
+    .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
   endspecify
 
 endmodule
 
 module lut40039 ( input A, B, C, D, output Z );
 
-  LUT4 #("0xFFFE") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0xFEEE") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
 module lut40040 ( input A, B, C, D, output Z );
 
-  LUT4 #("0xA280") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0xF000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
-module renderer_portmap_SLICE_57 ( input D1, C1, B1, A1, D0, C0, A0, output F0, 
+module vga_sync_portmap_SLICE_61 ( input D1, C1, B1, A1, D0, C0, A0, output F0, 
     F1 );
   wire   GNDI;
 
-  lut40041 \renderer_portmap/i1614_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
+  lut40041 \vga_sync_portmap/rgb_col_9__I_0 ( .A(A1), .B(B1), .C(C1), .D(D1), 
     .Z(F1));
-  lut40042 \renderer_portmap/i1623_3_lut ( .A(A0), .B(GNDI), .C(C0), .D(D0), 
+  lut40042 \vga_sync_portmap/i22_3_lut ( .A(A0), .B(GNDI), .C(C0), .D(D0), 
     .Z(F0));
   gnd DRIVEGND( .PWR0(GNDI));
 
@@ -2012,30 +2108,28 @@ endmodule
 
 module lut40041 ( input A, B, C, D, output Z );
 
-  LUT4 #("0xC400") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0xDFFF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
 module lut40042 ( input A, B, C, D, output Z );
 
-  LUT4 #("0xAAA0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0x5FFA") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
-module vga_sync_portmap_SLICE_58 ( input D1, C1, B1, A1, D0, C0, B0, A0, 
-    output F0, F1 );
+module vga_sync_portmap_SLICE_63 ( input D1, C1, D0, C0, A0, output F0, F1 );
+  wire   GNDI;
 
-  lut40043 \vga_sync_portmap/i1_4_lut_adj_43 ( .A(A1), .B(B1), .C(C1), .D(D1), 
+  lut40043 \renderer_portmap/i1153_2_lut ( .A(GNDI), .B(GNDI), .C(C1), .D(D1), 
     .Z(F1));
-  lut40030 \vga_sync_portmap/i1_2_lut_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), 
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40044 \vga_sync_portmap/i2_2_lut_3_lut ( .A(A0), .B(GNDI), .C(C0), .D(D0), 
     .Z(F0));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
     (C1 => F1) = (0:0:0,0:0:0);
-    (B1 => F1) = (0:0:0,0:0:0);
-    (A1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
-    (B0 => F0) = (0:0:0,0:0:0);
     (A0 => F0) = (0:0:0,0:0:0);
   endspecify
 
@@ -2043,45 +2137,27 @@ endmodule
 
 module lut40043 ( input A, B, C, D, output Z );
 
-  LUT4 #("0xC800") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
-endmodule
-
-module vga_sync_portmap_SLICE_60 ( input D1, C1, B1, A1, D0, C0, output F0, F1 );
-  wire   GNDI;
-
-  lut40044 \renderer_portmap.i1626_3_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
-    .Z(F1));
-  lut40028 \vga_sync_portmap/i1_2_lut_adj_40 ( .A(GNDI), .B(GNDI), .C(C0), 
-    .D(D0), .Z(F0));
-  gnd DRIVEGND( .PWR0(GNDI));
-
-  specify
-    (D1 => F1) = (0:0:0,0:0:0);
-    (C1 => F1) = (0:0:0,0:0:0);
-    (B1 => F1) = (0:0:0,0:0:0);
-    (A1 => F1) = (0:0:0,0:0:0);
-    (D0 => F0) = (0:0:0,0:0:0);
-    (C0 => F0) = (0:0:0,0:0:0);
-  endspecify
-
+  LUT4 #("0xF000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
 module lut40044 ( input A, B, C, D, output Z );
 
-  LUT4 #("0x080A") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0xA000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
-module vga_sync_portmap_SLICE_62 ( input D1, C1, B1, A1, D0, C0, B0, A0, 
-    output F0, F1 );
+module nes_controller_portmap_SLICE_65 ( input D1, C1, D0, C0, B0, A0, output 
+    F0, F1 );
+  wire   GNDI;
 
-  lut40045 \vga_sync_portmap/i7_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
-  lut40046 \vga_sync_portmap/i2_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+  lut40043 \clock_manager_portmap/i1752_2_lut ( .A(GNDI), .B(GNDI), .C(C1), 
+    .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40045 \nes_controller_portmap/i3_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
     (C1 => F1) = (0:0:0,0:0:0);
-    (B1 => F1) = (0:0:0,0:0:0);
-    (A1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
     (B0 => F0) = (0:0:0,0:0:0);
@@ -2092,28 +2168,48 @@ endmodule
 
 module lut40045 ( input A, B, C, D, output Z );
 
-  LUT4 #("0x2000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0x8000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
-module lut40046 ( input A, B, C, D, output Z );
-
-  LUT4 #("0x4054") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
-endmodule
-
-module renderer_portmap_SLICE_63 ( input D1, C1, B1, D0, C0, B0, A0, output F0, 
-    F1 );
+module nes_controller_portmap_SLICE_67 ( input D1, C1, B1, A1, D0, C0, output 
+    F0, F1 );
   wire   GNDI;
 
-  lut40047 \renderer_portmap/LessThan_6_i6_3_lut ( .A(GNDI), .B(B1), .C(C1), 
+  lut40046 \nes_controller_portmap/ctrlr_latch_c_I_0 ( .A(A1), .B(B1), .C(C1), 
     .D(D1), .Z(F1));
-  gnd DRIVEGND( .PWR0(GNDI));
-  lut40048 \renderer_portmap/LessThan_6_i4_4_lut ( .A(A0), .B(B0), .C(C0), 
+  lut40040 \nes_controller_portmap/i1_2_lut ( .A(GNDI), .B(GNDI), .C(C0), 
     .D(D0), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
     (C1 => F1) = (0:0:0,0:0:0);
     (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40046 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x8000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module nes_controller_portmap_SLICE_69 ( input D1, C1, B1, A1, D0, C0, B0, A0, 
+    output F0, F1 );
+
+  lut40047 \nes_controller_portmap/i6_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40048 \nes_controller_portmap/i5_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
     (B0 => F0) = (0:0:0,0:0:0);
@@ -2124,63 +2220,62 @@ endmodule
 
 module lut40047 ( input A, B, C, D, output Z );
 
-  LUT4 #("0xC0FC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0xFFFB") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
 module lut40048 ( input A, B, C, D, output Z );
 
-  LUT4 #("0x8EAF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0xFFFE") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
-module vga_sync_portmap_SLICE_66 ( input D1, C1, B1, A1, D0, C0, A0, output F0, 
-    F1 );
+module nes_controller_portmap_SLICE_71 ( input D1, C1, B1, D0, C0, B0, output 
+    F0, F1 );
   wire   GNDI;
 
-  lut40049 \vga_sync_portmap/i3_4_lut_adj_44 ( .A(A1), .B(B1), .C(C1), .D(D1), 
-    .Z(F1));
-  lut40050 \vga_sync_portmap/i959_3_lut ( .A(A0), .B(GNDI), .C(C0), .D(D0), 
-    .Z(F0));
+  lut40049 \nes_controller_portmap/ctrlr_clk_c_I_0 ( .A(GNDI), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
   gnd DRIVEGND( .PWR0(GNDI));
+  lut40050 \nes_controller_portmap/i2_3_lut ( .A(GNDI), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
     (C1 => F1) = (0:0:0,0:0:0);
     (B1 => F1) = (0:0:0,0:0:0);
-    (A1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
-    (A0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
   endspecify
 
 endmodule
 
 module lut40049 ( input A, B, C, D, output Z );
 
-  LUT4 #("0xFFFE") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0x0300") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
 module lut40050 ( input A, B, C, D, output Z );
 
-  LUT4 #("0xF0A0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0xFFCF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
-module vga_sync_portmap_SLICE_67 ( input D1, C1, B1, A1, D0, C0, A0, output F0, 
-    F1 );
+module nes_controller_portmap_SLICE_72 ( input D1, C1, A1, D0, C0, B0, A0, 
+    output F0, F1 );
   wire   GNDI;
 
-  lut40051 \vga_sync_portmap/i1_4_lut_adj_45 ( .A(A1), .B(B1), .C(C1), .D(D1), 
-    .Z(F1));
-  lut40052 \vga_sync_portmap/i2_3_lut ( .A(A0), .B(GNDI), .C(C0), .D(D0), 
-    .Z(F0));
+  lut40051 \nes_controller_portmap/i2_3_lut_adj_47 ( .A(A1), .B(GNDI), .C(C1), 
+    .D(D1), .Z(F1));
   gnd DRIVEGND( .PWR0(GNDI));
+  lut40052 \nes_controller_portmap/i2_3_lut_4_lut ( .A(A0), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
     (C1 => F1) = (0:0:0,0:0:0);
-    (B1 => F1) = (0:0:0,0:0:0);
     (A1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
     (A0 => F0) = (0:0:0,0:0:0);
   endspecify
 
@@ -2188,19 +2283,19 @@ endmodule
 
 module lut40051 ( input A, B, C, D, output Z );
 
-  LUT4 #("0xFEFA") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0xFFFA") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
 module lut40052 ( input A, B, C, D, output Z );
 
-  LUT4 #("0xA000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0xFFFE") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
-module renderer_portmap_SLICE_68 ( input D0, C0, A0, output F0 );
+module clock_manager_portmap_SLICE_75 ( input D0, C0, A0, output F0 );
   wire   GNDI;
 
-  lut40053 \renderer_portmap/rgb_c_0_I_0 ( .A(A0), .B(GNDI), .C(C0), .D(D0), 
-    .Z(F0));
+  lut40053 \clock_manager_portmap/i1764_3_lut ( .A(A0), .B(GNDI), .C(C0), 
+    .D(D0), .Z(F0));
   gnd DRIVEGND( .PWR0(GNDI));
 
   specify
@@ -2213,15 +2308,15 @@ endmodule
 
 module lut40053 ( input A, B, C, D, output Z );
 
-  LUT4 #("0x5550") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0xA000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
-module renderer_portmap_SLICE_69 ( input D1, C1, B1, A1, D0, C0, B0, A0, 
+module clock_manager_portmap_SLICE_76 ( input D1, C1, B1, A1, D0, C0, B0, A0, 
     output F0, F1 );
 
-  lut40054 \renderer_portmap/i633_2_lut_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
+  lut40054 \clock_manager_portmap/i1919_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
     .Z(F1));
-  lut40055 \renderer_portmap/i2_4_lut_adj_32 ( .A(A0), .B(B0), .C(C0), .D(D0), 
+  lut40055 \clock_manager_portmap/i4_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), 
     .Z(F0));
 
   specify
@@ -2239,22 +2334,22 @@ endmodule
 
 module lut40054 ( input A, B, C, D, output Z );
 
-  LUT4 #("0x0100") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0x0400") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
 module lut40055 ( input A, B, C, D, output Z );
 
-  LUT4 #("0xFFF8") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0xFFFE") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
-module renderer_portmap_SLICE_70 ( input D1, C1, B1, D0, C0, B0, A0, output F0, 
+module renderer_portmap_SLICE_77 ( input D1, C1, B1, D0, C0, B0, A0, output F0, 
     F1 );
   wire   GNDI;
 
-  lut40056 \renderer_portmap/LessThan_8_i6_3_lut ( .A(GNDI), .B(B1), .C(C1), 
+  lut40056 \renderer_portmap/LessThan_3_i6_3_lut ( .A(GNDI), .B(B1), .C(C1), 
     .D(D1), .Z(F1));
   gnd DRIVEGND( .PWR0(GNDI));
-  lut40057 \renderer_portmap/LessThan_8_i4_4_lut ( .A(A0), .B(B0), .C(C0), 
+  lut40057 \renderer_portmap/LessThan_3_i4_4_lut ( .A(A0), .B(B0), .C(C0), 
     .D(D0), .Z(F0));
 
   specify
@@ -2271,55 +2366,60 @@ endmodule
 
 module lut40056 ( input A, B, C, D, output Z );
 
-  LUT4 #("0x3F03") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0xC0FC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
 module lut40057 ( input A, B, C, D, output Z );
 
-  LUT4 #("0x8EA0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0x8EAF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
-module renderer_portmap_SLICE_73 ( input D1, C1, D0, C0, A0, output F0, F1 );
+module renderer_portmap_SLICE_79 ( input D1, C1, B1, A1, D0, C0, B0, output F0, 
+    F1 );
   wire   GNDI;
 
-  lut40058 \vga_sync_portmap/i1616_2_lut ( .A(GNDI), .B(GNDI), .C(C1), .D(D1), 
+  lut40058 \renderer_portmap/i244_3_lut_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
     .Z(F1));
+  lut40059 \renderer_portmap/i237_2_lut_3_lut ( .A(GNDI), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
   gnd DRIVEGND( .PWR0(GNDI));
-  lut40059 \renderer_portmap/i1_2_lut_3_lut ( .A(A0), .B(GNDI), .C(C0), .D(D0), 
-    .Z(F0));
-
-  specify
-    (D1 => F1) = (0:0:0,0:0:0);
-    (C1 => F1) = (0:0:0,0:0:0);
-    (D0 => F0) = (0:0:0,0:0:0);
-    (C0 => F0) = (0:0:0,0:0:0);
-    (A0 => F0) = (0:0:0,0:0:0);
-  endspecify
-
-endmodule
-
-module lut40058 ( input A, B, C, D, output Z );
-
-  LUT4 #("0xF000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
-endmodule
-
-module lut40059 ( input A, B, C, D, output Z );
-
-  LUT4 #("0x0A0F") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
-endmodule
-
-module renderer_portmap_SLICE_74 ( input D1, C1, B1, A1, D0, C0, B0, A0, 
-    output F0, F1 );
-
-  lut40060 \renderer_portmap/rgb_row_8__I_0 ( .A(A1), .B(B1), .C(C1), .D(D1), 
-    .Z(F1));
-  lut40061 \renderer_portmap/i2_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
     (C1 => F1) = (0:0:0,0:0:0);
     (B1 => F1) = (0:0:0,0:0:0);
     (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40058 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x1FE0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40059 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x03FC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module renderer_portmap_SLICE_80 ( input D1, C1, B1, D0, C0, B0, A0, output F0, 
+    F1 );
+  wire   GNDI;
+
+  lut40060 \renderer_portmap/LessThan_5_i6_3_lut ( .A(GNDI), .B(B1), .C(C1), 
+    .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40061 \renderer_portmap/LessThan_5_i4_4_lut ( .A(A0), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
     (B0 => F0) = (0:0:0,0:0:0);
@@ -2330,20 +2430,26 @@ endmodule
 
 module lut40060 ( input A, B, C, D, output Z );
 
-  LUT4 #("0x0010") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0x3F03") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
 module lut40061 ( input A, B, C, D, output Z );
 
-  LUT4 #("0x5140") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0xBC20") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
-module renderer_portmap_SLICE_76 ( input D0, C0, B0, A0, output F0 );
+module renderer_portmap_SLICE_81 ( input D1, C1, D0, C0, B0, A0, output F0, F1 );
+  wire   GNDI;
 
-  lut40062 \renderer_portmap/rgb_c_1_I_0 ( .A(A0), .B(B0), .C(C0), .D(D0), 
+  lut40043 \renderer_portmap/i1848_2_lut ( .A(GNDI), .B(GNDI), .C(C1), .D(D1), 
+    .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40062 \renderer_portmap/i563_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), 
     .Z(F0));
 
   specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
     (B0 => F0) = (0:0:0,0:0:0);
@@ -2354,22 +2460,22 @@ endmodule
 
 module lut40062 ( input A, B, C, D, output Z );
 
-  LUT4 #("0x3323") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0x8A0A") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
-module nes_controller_portmap_SLICE_78 ( input D1, C1, A1, D0, C0, output F0, 
-    F1 );
+module renderer_portmap_SLICE_84 ( input D1, C1, B1, A1, D0, C0, output F0, F1 );
   wire   GNDI;
 
-  lut40063 \nes_controller_portmap/ctrlr_clk_c_I_0 ( .A(A1), .B(GNDI), .C(C1), 
-    .D(D1), .Z(F1));
+  lut40063 \renderer_portmap/i2_4_lut_adj_45 ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40032 \renderer_portmap/i1_2_lut ( .A(GNDI), .B(GNDI), .C(C0), .D(D0), 
+    .Z(F0));
   gnd DRIVEGND( .PWR0(GNDI));
-  lut40064 \nes_controller_portmap/i2_2_lut ( .A(GNDI), .B(GNDI), .C(C0), 
-    .D(D0), .Z(F0));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
     (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
     (A1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
@@ -2379,53 +2485,106 @@ endmodule
 
 module lut40063 ( input A, B, C, D, output Z );
 
-  LUT4 #("0x0050") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0xD040") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module renderer_portmap_SLICE_86 ( input D1, C1, B1, A1, C0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40064 \renderer_portmap/Mux_27_i2_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40065 \renderer_portmap/i646_2_lut ( .A(A0), .B(GNDI), .C(C0), .D(GNDI), 
+    .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
 endmodule
 
 module lut40064 ( input A, B, C, D, output Z );
 
-  LUT4 #("0xF000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
-endmodule
-
-module nes_controller_portmap_SLICE_79 ( input D1, C1, B1, A1, D0, C0, B0, A0, 
-    output F0, F1 );
-
-  lut40065 \nes_controller_portmap/clk_counter_11__I_0 ( .A(A1), .B(B1), 
-    .C(C1), .D(D1), .Z(F1));
-  lut40066 \nes_controller_portmap/i6_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), 
-    .Z(F0));
-
-  specify
-    (D1 => F1) = (0:0:0,0:0:0);
-    (C1 => F1) = (0:0:0,0:0:0);
-    (B1 => F1) = (0:0:0,0:0:0);
-    (A1 => F1) = (0:0:0,0:0:0);
-    (D0 => F0) = (0:0:0,0:0:0);
-    (C0 => F0) = (0:0:0,0:0:0);
-    (B0 => F0) = (0:0:0,0:0:0);
-    (A0 => F0) = (0:0:0,0:0:0);
-  endspecify
-
+  LUT4 #("0x88F0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
 module lut40065 ( input A, B, C, D, output Z );
 
-  LUT4 #("0x8000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0xA0A0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module renderer_portmap_SLICE_87 ( input D1, C1, B1, A1, D0, C0, B0, A0, 
+    output F0, F1 );
+
+  lut40066 \renderer_portmap/rgb_c_2_I_0 ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40067 \renderer_portmap/rgb_c_4_I_0 ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
 endmodule
 
 module lut40066 ( input A, B, C, D, output Z );
 
-  LUT4 #("0x8000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0x5150") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
-module nes_controller_portmap_SLICE_80 ( input D1, C1, A1, D0, C0, B0, A0, 
+module lut40067 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x0010") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module renderer_portmap_SLICE_88 ( input D1, C1, B1, A1, D0, C0, B0, A0, 
     output F0, F1 );
+
+  lut40068 \renderer_portmap/i1_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40069 \renderer_portmap/i3_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40068 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x2000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40069 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xA220") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module renderer_portmap_SLICE_89 ( input D1, C1, A1, D0, C0, B0, output F0, F1 );
   wire   GNDI;
 
-  lut40067 \nes_controller_portmap/i3_3_lut ( .A(A1), .B(GNDI), .C(C1), .D(D1), 
+  lut40070 \renderer_portmap/rgb_c_3_I_0 ( .A(A1), .B(GNDI), .C(C1), .D(D1), 
     .Z(F1));
   gnd DRIVEGND( .PWR0(GNDI));
-  lut40068 \nes_controller_portmap/i3_4_lut ( .A(A0), .B(B0), .C(C0), .D(D0), 
+  lut40071 \renderer_portmap/i2_3_lut ( .A(GNDI), .B(B0), .C(C0), .D(D0), 
     .Z(F0));
 
   specify
@@ -2435,30 +2594,26 @@ module nes_controller_portmap_SLICE_80 ( input D1, C1, A1, D0, C0, B0, A0,
     (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
     (B0 => F0) = (0:0:0,0:0:0);
-    (A0 => F0) = (0:0:0,0:0:0);
   endspecify
 
 endmodule
 
-module lut40067 ( input A, B, C, D, output Z );
+module lut40070 ( input A, B, C, D, output Z );
 
-  LUT4 #("0xFFFA") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0x00AF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
-module lut40068 ( input A, B, C, D, output Z );
+module lut40071 ( input A, B, C, D, output Z );
 
-  LUT4 #("0xFFFE") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0xFFFC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
-module nes_controller_portmap_SLICE_82 ( input D1, C1, B1, A1, D0, B0, output 
-    F0, F1 );
-  wire   GNDI;
+module renderer_portmap_SLICE_92 ( input D1, C1, B1, A1, D0, C0, B0, A0, 
+    output F0, F1 );
 
-  lut40069 \nes_controller_portmap/shift_reg_3__I_0 ( .A(A1), .B(B1), .C(C1), 
-    .D(D1), .Z(F1));
-  lut40070 \nes_controller_portmap/i2_2_lut_adj_31 ( .A(GNDI), .B(B0), 
-    .C(GNDI), .D(D0), .Z(F0));
-  gnd DRIVEGND( .PWR0(GNDI));
+  lut40072 \renderer_portmap/i7_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40073 \renderer_portmap/i2_4_lut_adj_44 ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
 
   specify
     (D1 => F1) = (0:0:0,0:0:0);
@@ -2466,74 +2621,113 @@ module nes_controller_portmap_SLICE_82 ( input D1, C1, B1, A1, D0, B0, output
     (B1 => F1) = (0:0:0,0:0:0);
     (A1 => F1) = (0:0:0,0:0:0);
     (D0 => F0) = (0:0:0,0:0:0);
-    (B0 => F0) = (0:0:0,0:0:0);
-  endspecify
-
-endmodule
-
-module lut40069 ( input A, B, C, D, output Z );
-
-  LUT4 #("0xFE02") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
-endmodule
-
-module lut40070 ( input A, B, C, D, output Z );
-
-  LUT4 #("0xFF33") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
-endmodule
-
-module vga_sync_portmap_SLICE_84 ( input D0, C0, B0, A0, output F0 );
-
-  lut40071 \vga_sync_portmap/i1_2_lut_3_lut_4_lut ( .A(A0), .B(B0), .C(C0), 
-    .D(D0), .Z(F0));
-
-  specify
-    (D0 => F0) = (0:0:0,0:0:0);
     (C0 => F0) = (0:0:0,0:0:0);
     (B0 => F0) = (0:0:0,0:0:0);
     (A0 => F0) = (0:0:0,0:0:0);
-  endspecify
-
-endmodule
-
-module lut40071 ( input A, B, C, D, output Z );
-
-  LUT4 #("0xC800") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
-endmodule
-
-module renderer_portmap_SLICE_89 ( input D1, C1, B1, D0, C0, B0, output F0, F1 );
-  wire   GNDI;
-
-  lut40072 \game_logic_portmap/i199_2_lut_3_lut ( .A(GNDI), .B(B1), .C(C1), 
-    .D(D1), .Z(F1));
-  gnd DRIVEGND( .PWR0(GNDI));
-  lut40073 \renderer_portmap/i234_2_lut_3_lut ( .A(GNDI), .B(B0), .C(C0), 
-    .D(D0), .Z(F0));
-
-  specify
-    (D1 => F1) = (0:0:0,0:0:0);
-    (C1 => F1) = (0:0:0,0:0:0);
-    (B1 => F1) = (0:0:0,0:0:0);
-    (D0 => F0) = (0:0:0,0:0:0);
-    (C0 => F0) = (0:0:0,0:0:0);
-    (B0 => F0) = (0:0:0,0:0:0);
   endspecify
 
 endmodule
 
 module lut40072 ( input A, B, C, D, output Z );
 
-  LUT4 #("0xC000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0x0010") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
 module lut40073 ( input A, B, C, D, output Z );
 
-  LUT4 #("0x03FC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+  LUT4 #("0x96C3") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
-module SLICE_96 ( output F0 );
+module renderer_portmap_SLICE_93 ( input D1, C1, B1, A1, D0, C0, output F0, F1 );
   wire   GNDI;
 
-  lut40074 i4( .A(GNDI), .B(GNDI), .C(GNDI), .D(GNDI), .Z(F0));
+  lut40074 \game_logic_portmap/i300_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40075 \renderer_portmap/i1_2_lut_adj_43 ( .A(GNDI), .B(GNDI), .C(C0), 
+    .D(D0), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40074 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x8E8F") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40075 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x0FF0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module clock_manager_portmap_SLICE_99 ( input D1, C1, C0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40076 \clock_manager_portmap/i1_2_lut ( .A(GNDI), .B(GNDI), .C(C1), 
+    .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40065 \clock_manager_portmap/i1740_2_lut ( .A(A0), .B(GNDI), .C(C0), 
+    .D(GNDI), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40076 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFF0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module clock_manager_portmap_SLICE_102 ( input DI1, D1, C1, B1, A1, D0, C0, B0, 
+    A0, CLK, output Q1, F0, F1 );
+  wire   VCCI, GNDI, DI1_dly, CLK_dly;
+
+  lut40077 \clock_manager_portmap/i1910_4_lut ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40048 \clock_manager_portmap/i4_4_lut_adj_46 ( .A(A0), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+  ffsre2 \clock_manager_portmap/game_clock_I_0 ( .D0(DI1_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(GNDI), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+  endspecify
+
+endmodule
+
+module lut40077 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x0200") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_105 ( output F0 );
+  wire   GNDI;
+
+  lut40078 i4( .A(GNDI), .B(GNDI), .C(GNDI), .D(GNDI), .Z(F0));
   gnd DRIVEGND( .PWR0(GNDI));
 
   specify
@@ -2541,9 +2735,29 @@ module SLICE_96 ( output F0 );
 
 endmodule
 
-module lut40074 ( input A, B, C, D, output Z );
+module lut40078 ( input A, B, C, D, output Z );
 
   LUT4 #("0xFFFF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module nes_controller_portmap_SLICE_106 ( input D0, C0, B0, output F0 );
+  wire   GNDI;
+
+  lut40079 \nes_controller_portmap/rotate_out_c_I_0 ( .A(GNDI), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40079 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFC0C") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
 endmodule
 
 module clock_manager_portmap_pll_portmap_lscc_pll_inst_u_PLL_B ( input 

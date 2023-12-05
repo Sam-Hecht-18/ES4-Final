@@ -41,8 +41,7 @@
 -path "C:/lscc/radiant/2023.1/ispfpga/ice40tp/data" "Z:/ES4-Final/collisions_and_rotations/impl_1" "Z:/ES4-Final/collisions_and_rotations"
 -ver "C:/lscc/radiant/2023.1/ip/pmi/pmi_iCE40UP.v"
 -lib pmi -vhd "C:/lscc/radiant/2023.1/ip/pmi/pmi_iCE40UP.vhd"
--lib "work" -vhd "Z:/ES4-Final/collisions_and_rotations/source/impl_1/clock.vhd"
-"Z:/ES4-Final/collisions_and_rotations/source/impl_1/master.vhd"
+-lib "work" -vhd "Z:/ES4-Final/collisions_and_rotations/source/impl_1/master.vhd"
 "Z:/ES4-Final/collisions_and_rotations/source/impl_1/nes_controller.vhd"
 "Z:/ES4-Final/collisions_and_rotations/source/impl_1/vga.vhd"
 -ver "Z:/ES4-Final/collisions_and_rotations/mypll/rtl/mypll.v"
@@ -55,6 +54,7 @@
 "Z:/ES4-Final/collisions_and_rotations/source/impl_1/new_modules/row_check.vhd"
 "Z:/ES4-Final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd"
 "Z:/ES4-Final/collisions_and_rotations/source/impl_1/vga_sync_clk.vhd"
+"Z:/ES4-Final/collisions_and_rotations/source/impl_1/clock_manager.vhd"
 
 
 -path "Z:/ES4-Final/collisions_and_rotations"
