@@ -1,6 +1,6 @@
 Copyright (c) 2002-2022 Lattice Semiconductor Corporation,  All rights reserved.
 
-Wed Dec  6 00:22:38 2023
+Wed Dec  6 13:41:17 2023
 
 Command Line: par -w -n 1 -t 1 -s 1 -cores 1 -exp parPathBased=ON \
 	collisions_and_rotations_impl_1_map.udb collisions_and_rotations_impl_1.udb 

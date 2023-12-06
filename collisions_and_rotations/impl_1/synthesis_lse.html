@@ -41,6 +41,18 @@ if (a)
 
 <DIV id="content" onclick="hideTocList()"><PRE>
 <A name="Syn"></A><B><U><big>Synthesis Report</big></U></B>
+synthesis:  version Radiant Software (64-bit) 2023.1.0.43.3
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
+Wed Dec  6 13:41:10 2023
+
+
+Command Line:  C:\lscc\radiant\2023.1\ispfpga\bin\nt64\synthesis.exe -f collisions_and_rotations_impl_1_lattice.synproj -gui -msgset Z:/ES4-Final/collisions_and_rotations/promote.xml 
+
 Synthesis options:
 The -a option is iCE40UP.
 The -t option is SG48.
@@ -113,17 +125,13 @@ VHDL design file = C:/lscc/radiant/2023.1/ip/pmi/pmi_iCE40UP.vhd
 VHDL library = work
 VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/master.vhd
 VHDL library = work
-VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/nes_controller.vhd
-VHDL library = work
-VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/vga.vhd
-VHDL library = work
-VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/collision_check.vhd
+VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/clock_manager.vhd
 VHDL library = work
 VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/game_logic.vhd
 VHDL library = work
-VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/piece_library.vhd
+VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/collision_check.vhd
 VHDL library = work
-VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/renderer.vhd
+VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/piece_library.vhd
 VHDL library = work
 VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/new_modules/board_updater.vhd
 VHDL library = work
@@ -131,7 +139,11 @@ VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/new_modul
 VHDL library = work
 VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd
 VHDL library = work
-VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/clock_manager.vhd
+VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/nes_controller.vhd
+VHDL library = work
+VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/renderer.vhd
+VHDL library = work
+VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/vga.vhd
 The -r option is OFF. [ Remove LOC Properties is OFF. ]
 WARNING <35935050> - synthesis: input port TRIM9 is not connected on this instance. VDB-5050
 WARNING <35935050> - synthesis: input port TRIM8 is not connected on this instance. VDB-5050
@@ -191,41 +203,30 @@ Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/master.v
 INFO <35921014> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/master.vhd(5): analyzing package my_types_package. VHDL-1014
 INFO <35921012> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/master.vhd(15): analyzing entity master. VHDL-1012
 INFO <35921010> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/master.vhd(28): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd. VHDL-1481
-Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd. VHDL-1481
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd
 
-INFO <35921012> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd(5): analyzing entity nes_controller. VHDL-1012
-INFO <35921010> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd(23): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/vga.vhd. VHDL-1481
-Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/vga.vhd
-
-INFO <35921012> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/vga.vhd(5): analyzing entity vga_sync. VHDL-1012
-INFO <35921010> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/vga.vhd(16): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd. VHDL-1481
-Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd
-
-INFO <35921014> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(5): analyzing package my_types_package. VHDL-1014
-INFO <35921012> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(15): analyzing entity collision_check. VHDL-1012
-INFO <35921010> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(35): analyzing architecture synth. VHDL-1010
+INFO <35921012> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd(5): analyzing entity clock_manager. VHDL-1012
+INFO <35921010> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd(20): analyzing architecture synth. VHDL-1010
 Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd. VHDL-1481
 Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd
 
 INFO <35921014> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(5): analyzing package my_types_package. VHDL-1014
 INFO <35921012> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(15): analyzing entity game_logic. VHDL-1012
 INFO <35921010> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(35): analyzing architecture synth. VHDL-1010
-INFO <35929000> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(159): input pin game_clock_ctr has no actual or default value. VHDL-9000
+INFO <35929000> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(149): input pin game_clock_ctr has no actual or default value. VHDL-9000
 INFO <35921259> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(49): game_clock_ctr is declared here. VHDL-1259
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd. VHDL-1481
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd
+
+INFO <35921014> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(5): analyzing package my_types_package. VHDL-1014
+INFO <35921012> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(15): analyzing entity collision_check. VHDL-1012
+INFO <35921010> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(35): analyzing architecture synth. VHDL-1010
 Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd. VHDL-1481
 Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd
 
 INFO <35921012> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd(5): analyzing entity piece_library. VHDL-1012
 INFO <35921010> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd(14): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd. VHDL-1481
-Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd
-
-INFO <35921014> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd(5): analyzing package my_types_package. VHDL-1014
-INFO <35921012> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd(15): analyzing entity renderer. VHDL-1012
-INFO <35921010> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd(29): analyzing architecture synth. VHDL-1010
 Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/board_updater.vhd. VHDL-1481
 Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/board_updater.vhd
 
@@ -244,11 +245,22 @@ Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/new_modu
 INFO <35921014> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd(5): analyzing package my_types_package. VHDL-1014
 INFO <35921012> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd(15): analyzing entity turn_manager. VHDL-1012
 INFO <35921010> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd(24): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd. VHDL-1481
-Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd. VHDL-1481
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd
 
-INFO <35921012> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd(5): analyzing entity clock_manager. VHDL-1012
-INFO <35921010> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd(20): analyzing architecture synth. VHDL-1010
+INFO <35921012> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd(5): analyzing entity nes_controller. VHDL-1012
+INFO <35921010> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd(23): analyzing architecture synth. VHDL-1010
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd. VHDL-1481
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd
+
+INFO <35921014> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd(5): analyzing package my_types_package. VHDL-1014
+INFO <35921012> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd(15): analyzing entity renderer. VHDL-1012
+INFO <35921010> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd(29): analyzing architecture synth. VHDL-1010
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/vga.vhd. VHDL-1481
+Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/vga.vhd
+
+INFO <35921012> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/vga.vhd(5): analyzing entity vga_sync. VHDL-1012
+INFO <35921010> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/vga.vhd(16): analyzing architecture synth. VHDL-1010
 INFO <35921504> - synthesis: The default VHDL library search path is now "Z:/ES4-Final/collisions_and_rotations/impl_1". VHDL-1504
 Top module language type = VHDL.
 WARNING <35935049> - synthesis: input port sclk_i remains unconnected for this instance. VDB-5049
@@ -313,10 +325,363 @@ WARNING <35001771> - synthesis: Initial value found on net exceed_left will be i
 WARNING <35001771> - synthesis: Initial value found on net exceed_right will be ignored due to unrecognized driver type
 WARNING <35935049> - synthesis: input port sclk_i remains unconnected for this instance. VDB-5049
 WARNING <35935049> - synthesis: input port sdi_i remains unconnected for this instance. VDB-5049
+WARNING <35931002> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/board_updater.vhd(33): net temp_board[16][0] does not have a driver. VDB-1002
 WARNING <35931002> - synthesis: z:/es4-final/collisions_and_rotations/mypll/rtl/mypll.v(139): net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sclk_i does not have a driver. VDB-1002
 WARNING <35931002> - synthesis: z:/es4-final/collisions_and_rotations/mypll/rtl/mypll.v(140): net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sdi_i does not have a driver. VDB-1002
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][0]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][1]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][2]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][3]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][4]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][5]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][6]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][7]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][8]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][9]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][10]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][11]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][12]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][13]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][14]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][15]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][0]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][1]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][2]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][3]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][4]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][5]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][6]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][7]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][8]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][9]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][10]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][11]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][12]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][13]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][14]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][15]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][0]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][1]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][2]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][3]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][4]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][5]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][6]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][7]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][8]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][9]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][10]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][11]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][12]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][13]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][14]. Patching with GND.
+######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][15]. Patching with GND.
 ######## Missing driver on net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sclk_i. Patching with GND.
 ######## Missing driver on net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sdi_i. Patching with GND.
+CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
+CRITICAL <35001748> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at One
+CRITICAL <35001748> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at One
+CRITICAL <35001748> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at One
+CRITICAL <35001748> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at One
+CRITICAL <35001748> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at One
+CRITICAL <35001748> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at One
+CRITICAL <35001748> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at One
+CRITICAL <35001748> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at One
+CRITICAL <35001748> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at One
+CRITICAL <35001748> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at One
+CRITICAL <35001748> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at One
+CRITICAL <35001748> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at One
+CRITICAL <35001748> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at One
+CRITICAL <35001748> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at One
+CRITICAL <35001748> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at One
+CRITICAL <35001748> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at One
+CRITICAL <35001748> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at One
+CRITICAL <35001748> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at One
+CRITICAL <35001748> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at One
+CRITICAL <35001748> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at One
+CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at Zero
+CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at Zero
 
 
 
@@ -328,15 +693,15 @@ Combinational loop found : 1
 
 Combinational loop found : 2
 
- Net left_button 
-
- Instance \nes_controller_portmap/mux_7_i2 
-
-Combinational loop found : 3
-
  Net a 
 
  Instance \nes_controller_portmap/mux_7_i7 
+
+Combinational loop found : 3
+
+ Net left_button 
+
+ Instance \nes_controller_portmap/mux_7_i2 
 
 Combinational loop found : 4
 
@@ -352,3356 +717,141 @@ Combinational loop found : 5
 
 Combinational loop found : 6
 
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[14][15] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4634_i3 
-
-Combinational loop found : 7
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[13][15] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4650_i3 
-
-Combinational loop found : 8
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[12][15] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4666_i3 
-
-Combinational loop found : 9
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[11][15] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4682_i3 
-
-Combinational loop found : 10
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[10][15] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4698_i3 
-
-Combinational loop found : 11
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[9][15] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4714_i3 
-
-Combinational loop found : 12
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[8][15] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4730_i3 
-
-Combinational loop found : 13
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[7][15] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4746_i3 
-
-Combinational loop found : 14
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[6][15] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4762_i3 
-
-Combinational loop found : 15
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[5][15] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4778_i3 
-
-Combinational loop found : 16
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[4][15] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4794_i3 
-
-Combinational loop found : 17
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[3][15] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4810_i3 
-
-Combinational loop found : 18
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[2][15] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4826_i3 
-
-Combinational loop found : 19
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[1][15] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4842_i3 
-
-Combinational loop found : 20
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[0][15] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4858_i3 
-
-Combinational loop found : 21
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[15][15] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4618_i3 
-
-Combinational loop found : 22
-
  Net rotate_out_c 
 
  Instance \nes_controller_portmap/mux_7_i4 
 
-Combinational loop found : 23
+Combinational loop found : 7
 
  Net special_background[1] 
 
- Instance \game_logic_portmap/mux_43_i2 
+ Instance \game_logic_portmap/mux_11_i2 
 
- Net \game_logic_portmap/n1225 
+ Net \game_logic_portmap/n777 
 
- Instance \game_logic_portmap/mux_42_i2 
+ Instance \game_logic_portmap/mux_10_i2 
 
- Net \game_logic_portmap/n1219 
+ Net \game_logic_portmap/n771 
 
- Instance \game_logic_portmap/mux_41_i2 
+ Instance \game_logic_portmap/mux_9_i2 
 
- Net \game_logic_portmap/n1213 
+ Net \game_logic_portmap/n765 
 
- Instance \game_logic_portmap/mux_39_i2 
+ Instance \game_logic_portmap/mux_7_i2 
 
-Combinational loop found : 24
+Combinational loop found : 8
 
  Net special_background[0] 
 
- Instance \game_logic_portmap/mux_43_i1 
+ Instance \game_logic_portmap/mux_11_i1 
 
- Net \game_logic_portmap/n1226 
+ Net \game_logic_portmap/n778 
 
- Instance \game_logic_portmap/mux_42_i1 
+ Instance \game_logic_portmap/mux_10_i1 
 
- Net \game_logic_portmap/n1220 
+ Net \game_logic_portmap/n772 
 
- Instance \game_logic_portmap/mux_41_i1 
+ Instance \game_logic_portmap/mux_9_i1 
 
-Combinational loop found : 25
+Combinational loop found : 9
 
  Net special_background[2] 
 
- Instance \game_logic_portmap/mux_43_i3 
+ Instance \game_logic_portmap/mux_11_i3 
 
- Net \game_logic_portmap/n1224 
+ Net \game_logic_portmap/n776 
 
- Instance \game_logic_portmap/mux_42_i3 
+ Instance \game_logic_portmap/mux_10_i3 
 
-Combinational loop found : 26
+Combinational loop found : 10
 
  Net special_background[3] 
 
- Instance \game_logic_portmap/mux_43_i4 
+ Instance \game_logic_portmap/mux_11_i4 
 
- Net \game_logic_portmap/n1223 
+ Net \game_logic_portmap/n775 
 
- Instance \game_logic_portmap/mux_42_i4 
+ Instance \game_logic_portmap/mux_10_i4 
 
- Net \game_logic_portmap/n1217 
+ Net \game_logic_portmap/n769 
 
- Instance \game_logic_portmap/mux_41_i4 
+ Instance \game_logic_portmap/mux_9_i4 
 
- Net \renderer_portmap/equal_66/n7 
+ Net \equal_387/n4 
 
- Instance \renderer_portmap/equal_66_i7 
+ Instance equal_387_i4 
 
- Net \game_logic_portmap/n1211 
+ Net \game_logic_portmap/n763 
 
- Instance \game_logic_portmap/mux_39_i4 
+ Instance \game_logic_portmap/mux_7_i4 
 
-Combinational loop found : 27
+Combinational loop found : 11
 
  Net special_background[4] 
 
- Instance \game_logic_portmap/mux_43_i5 
-
- Net \game_logic_portmap/n1222 
-
- Instance \game_logic_portmap/mux_42_i5 
-
- Net \renderer_portmap/equal_66/n7 
-
- Instance \renderer_portmap/equal_66_i7 
-
- Net \game_logic_portmap/n1216 
-
- Instance \game_logic_portmap/mux_41_i5 
-
-Combinational loop found : 28
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[14][14] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4633_i15 
-
-Combinational loop found : 29
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[14][13] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4632_i15 
-
-Combinational loop found : 30
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[14][12] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4631_i15 
-
-Combinational loop found : 31
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[14][11] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4630_i15 
-
-Combinational loop found : 32
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[14][10] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4629_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4629/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4629_i7 
-
-Combinational loop found : 33
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[14][9] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4628_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4628/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4628_i7 
-
-Combinational loop found : 34
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[14][8] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4627_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4627/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4627_i7 
-
-Combinational loop found : 35
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[14][7] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4626_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4626/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4626_i7 
-
-Combinational loop found : 36
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[14][6] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4625_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4625/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4625_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4625/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4625_i3 
-
-Combinational loop found : 37
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[14][5] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4624_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4624/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4624_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4624/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4624_i3 
-
-Combinational loop found : 38
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[14][4] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4623_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4623/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4623_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4623/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4623_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4623/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4623_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6933 
-
- Instance \game_logic_portmap/board_updater_portmap/i3777 
-
-Combinational loop found : 39
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[14][3] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4622_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4622/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4622_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4622/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4622_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4622/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4622_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6932 
-
- Instance \game_logic_portmap/board_updater_portmap/i3776 
-
-Combinational loop found : 40
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[14][2] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4621_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4621/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4621_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4621/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4621_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4621/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4621_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6931 
-
- Instance \game_logic_portmap/board_updater_portmap/i3775 
-
-Combinational loop found : 41
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[14][1] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4620_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4620/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4620_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4620/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4620_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4620/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4620_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6930 
-
- Instance \game_logic_portmap/board_updater_portmap/i3774 
-
-Combinational loop found : 42
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[14][0] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4619_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4619/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4619_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4619/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4619_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4619/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4619_i1 
-
-Combinational loop found : 43
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[13][14] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4649_i15 
-
-Combinational loop found : 44
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[13][13] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4648_i15 
-
-Combinational loop found : 45
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[13][12] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4647_i15 
-
-Combinational loop found : 46
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[13][11] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4646_i15 
-
-Combinational loop found : 47
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[13][10] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4645_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4645/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4645_i7 
-
-Combinational loop found : 48
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[13][9] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4644_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4644/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4644_i7 
-
-Combinational loop found : 49
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[13][8] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4643_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4643/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4643_i7 
-
-Combinational loop found : 50
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[13][7] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4642_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4642/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4642_i7 
-
-Combinational loop found : 51
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[13][6] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4641_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4641/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4641_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4641/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4641_i3 
-
-Combinational loop found : 52
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[13][5] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4640_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4640/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4640_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4640/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4640_i3 
-
-Combinational loop found : 53
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[13][4] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4639_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4639/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4639_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4639/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4639_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4639/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4639_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6937 
-
- Instance \game_logic_portmap/board_updater_portmap/i3781 
-
-Combinational loop found : 54
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[13][3] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4638_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4638/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4638_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4638/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4638_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4638/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4638_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6936 
-
- Instance \game_logic_portmap/board_updater_portmap/i3780 
-
-Combinational loop found : 55
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[13][2] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4637_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4637/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4637_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4637/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4637_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4637/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4637_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6935 
-
- Instance \game_logic_portmap/board_updater_portmap/i3779 
-
-Combinational loop found : 56
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[13][1] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4636_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4636/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4636_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4636/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4636_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4636/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4636_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6934 
-
- Instance \game_logic_portmap/board_updater_portmap/i3778 
-
-Combinational loop found : 57
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[13][0] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4635_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4635/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4635_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4635/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4635_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4635/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4635_i1 
-
-Combinational loop found : 58
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[12][14] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4665_i15 
-
-Combinational loop found : 59
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[12][13] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4664_i15 
-
-Combinational loop found : 60
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[12][12] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4663_i15 
-
-Combinational loop found : 61
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[12][11] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4662_i15 
-
-Combinational loop found : 62
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[12][10] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4661_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4661/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4661_i7 
-
-Combinational loop found : 63
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[12][9] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4660_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4660/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4660_i7 
-
-Combinational loop found : 64
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[12][8] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4659_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4659/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4659_i7 
-
-Combinational loop found : 65
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[12][7] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4658_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4658/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4658_i7 
-
-Combinational loop found : 66
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[12][6] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4657_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4657/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4657_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4657/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4657_i3 
-
-Combinational loop found : 67
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[12][5] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4656_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4656/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4656_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4656/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4656_i3 
-
-Combinational loop found : 68
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[12][4] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4655_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4655/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4655_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4655/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4655_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4655/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4655_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6941 
-
- Instance \game_logic_portmap/board_updater_portmap/i3785 
-
-Combinational loop found : 69
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[12][3] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4654_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4654/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4654_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4654/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4654_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4654/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4654_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6940 
-
- Instance \game_logic_portmap/board_updater_portmap/i3784 
-
-Combinational loop found : 70
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[12][2] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4653_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4653/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4653_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4653/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4653_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4653/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4653_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6939 
-
- Instance \game_logic_portmap/board_updater_portmap/i3783 
-
-Combinational loop found : 71
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[12][1] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4652_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4652/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4652_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4652/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4652_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4652/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4652_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6938 
-
- Instance \game_logic_portmap/board_updater_portmap/i3782 
-
-Combinational loop found : 72
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[12][0] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4651_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4651/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4651_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4651/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4651_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4651/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4651_i1 
-
-Combinational loop found : 73
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[11][14] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4681_i15 
-
-Combinational loop found : 74
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[11][13] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4680_i15 
-
-Combinational loop found : 75
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[11][12] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4679_i15 
-
-Combinational loop found : 76
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[11][11] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4678_i15 
-
-Combinational loop found : 77
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[11][10] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4677_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4677/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4677_i7 
-
-Combinational loop found : 78
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[11][9] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4676_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4676/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4676_i7 
-
-Combinational loop found : 79
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[11][8] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4675_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4675/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4675_i7 
-
-Combinational loop found : 80
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[11][7] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4674_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4674/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4674_i7 
-
-Combinational loop found : 81
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[11][6] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4673_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4673/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4673_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4673/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4673_i3 
-
-Combinational loop found : 82
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[11][5] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4672_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4672/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4672_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4672/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4672_i3 
-
-Combinational loop found : 83
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[11][4] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4671_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4671/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4671_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4671/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4671_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4671/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4671_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6945 
-
- Instance \game_logic_portmap/board_updater_portmap/i3789 
-
-Combinational loop found : 84
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[11][3] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4670_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4670/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4670_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4670/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4670_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4670/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4670_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6944 
-
- Instance \game_logic_portmap/board_updater_portmap/i3788 
-
-Combinational loop found : 85
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[11][2] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4669_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4669/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4669_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4669/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4669_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4669/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4669_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6943 
-
- Instance \game_logic_portmap/board_updater_portmap/i3787 
-
-Combinational loop found : 86
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[11][1] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4668_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4668/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4668_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4668/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4668_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4668/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4668_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6942 
-
- Instance \game_logic_portmap/board_updater_portmap/i3786 
-
-Combinational loop found : 87
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[11][0] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4667_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4667/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4667_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4667/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4667_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4667/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4667_i1 
-
-Combinational loop found : 88
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[10][14] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4697_i15 
-
-Combinational loop found : 89
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[10][13] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4696_i15 
-
-Combinational loop found : 90
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[10][12] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4695_i15 
-
-Combinational loop found : 91
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[10][11] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4694_i15 
-
-Combinational loop found : 92
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[10][10] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4693_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4693/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4693_i7 
-
-Combinational loop found : 93
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[10][9] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4692_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4692/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4692_i7 
-
-Combinational loop found : 94
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[10][8] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4691_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4691/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4691_i7 
-
-Combinational loop found : 95
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[10][7] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4690_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4690/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4690_i7 
-
-Combinational loop found : 96
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[10][6] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4689_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4689/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4689_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4689/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4689_i3 
-
-Combinational loop found : 97
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[10][5] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4688_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4688/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4688_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4688/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4688_i3 
-
-Combinational loop found : 98
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[10][4] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4687_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4687/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4687_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4687/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4687_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4687/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4687_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6949 
-
- Instance \game_logic_portmap/board_updater_portmap/i3793 
-
-Combinational loop found : 99
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[10][3] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4686_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4686/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4686_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4686/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4686_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4686/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4686_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6948 
-
- Instance \game_logic_portmap/board_updater_portmap/i3792 
-
-Combinational loop found : 100
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[10][2] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4685_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4685/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4685_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4685/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4685_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4685/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4685_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6947 
-
- Instance \game_logic_portmap/board_updater_portmap/i3791 
-
-Combinational loop found : 101
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[10][1] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4684_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4684/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4684_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4684/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4684_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4684/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4684_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6946 
-
- Instance \game_logic_portmap/board_updater_portmap/i3790 
-
-Combinational loop found : 102
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[10][0] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4683_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4683/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4683_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4683/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4683_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4683/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4683_i1 
-
-Combinational loop found : 103
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[9][14] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4713_i15 
-
-Combinational loop found : 104
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[9][13] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4712_i15 
-
-Combinational loop found : 105
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[9][12] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4711_i15 
-
-Combinational loop found : 106
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[9][11] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4710_i15 
-
-Combinational loop found : 107
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[9][10] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4709_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4709/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4709_i7 
-
-Combinational loop found : 108
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[9][9] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4708_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4708/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4708_i7 
-
-Combinational loop found : 109
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[9][8] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4707_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4707/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4707_i7 
-
-Combinational loop found : 110
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[9][7] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4706_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4706/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4706_i7 
-
-Combinational loop found : 111
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[9][6] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4705_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4705/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4705_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4705/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4705_i3 
-
-Combinational loop found : 112
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[9][5] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4704_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4704/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4704_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4704/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4704_i3 
-
-Combinational loop found : 113
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[9][4] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4703_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4703/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4703_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4703/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4703_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4703/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4703_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6953 
-
- Instance \game_logic_portmap/board_updater_portmap/i3797 
-
-Combinational loop found : 114
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[9][3] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4702_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4702/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4702_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4702/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4702_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4702/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4702_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6952 
-
- Instance \game_logic_portmap/board_updater_portmap/i3796 
-
-Combinational loop found : 115
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[9][2] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4701_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4701/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4701_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4701/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4701_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4701/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4701_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6951 
-
- Instance \game_logic_portmap/board_updater_portmap/i3795 
-
-Combinational loop found : 116
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[9][1] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4700_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4700/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4700_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4700/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4700_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4700/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4700_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6950 
-
- Instance \game_logic_portmap/board_updater_portmap/i3794 
-
-Combinational loop found : 117
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[9][0] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4699_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4699/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4699_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4699/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4699_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4699/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4699_i1 
-
-Combinational loop found : 118
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[8][14] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4729_i15 
-
-Combinational loop found : 119
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[8][13] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4728_i15 
-
-Combinational loop found : 120
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[8][12] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4727_i15 
-
-Combinational loop found : 121
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[8][11] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4726_i15 
-
-Combinational loop found : 122
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[8][10] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4725_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4725/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4725_i7 
-
-Combinational loop found : 123
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[8][9] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4724_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4724/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4724_i7 
-
-Combinational loop found : 124
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[8][8] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4723_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4723/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4723_i7 
-
-Combinational loop found : 125
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[8][7] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4722_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4722/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4722_i7 
-
-Combinational loop found : 126
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[8][6] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4721_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4721/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4721_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4721/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4721_i3 
-
-Combinational loop found : 127
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[8][5] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4720_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4720/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4720_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4720/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4720_i3 
-
-Combinational loop found : 128
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[8][4] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4719_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4719/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4719_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4719/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4719_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4719/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4719_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6957 
-
- Instance \game_logic_portmap/board_updater_portmap/i3801 
-
-Combinational loop found : 129
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[8][3] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4718_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4718/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4718_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4718/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4718_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4718/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4718_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6956 
-
- Instance \game_logic_portmap/board_updater_portmap/i3800 
-
-Combinational loop found : 130
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[8][2] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4717_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4717/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4717_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4717/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4717_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4717/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4717_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6955 
-
- Instance \game_logic_portmap/board_updater_portmap/i3799 
-
-Combinational loop found : 131
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[8][1] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4716_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4716/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4716_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4716/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4716_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4716/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4716_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6954 
-
- Instance \game_logic_portmap/board_updater_portmap/i3798 
-
-Combinational loop found : 132
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[8][0] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4715_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4715/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4715_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4715/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4715_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4715/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4715_i1 
-
-Combinational loop found : 133
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[7][14] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4745_i15 
-
-Combinational loop found : 134
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[7][13] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4744_i15 
-
-Combinational loop found : 135
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[7][12] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4743_i15 
-
-Combinational loop found : 136
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[7][11] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4742_i15 
-
-Combinational loop found : 137
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[7][10] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4741_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4741/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4741_i7 
-
-Combinational loop found : 138
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[7][9] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4740_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4740/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4740_i7 
-
-Combinational loop found : 139
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[7][8] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4739_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4739/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4739_i7 
-
-Combinational loop found : 140
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[7][7] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4738_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4738/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4738_i7 
-
-Combinational loop found : 141
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[7][6] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4737_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4737/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4737_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4737/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4737_i3 
-
-Combinational loop found : 142
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[7][5] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4736_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4736/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4736_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4736/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4736_i3 
-
-Combinational loop found : 143
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[7][4] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4735_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4735/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4735_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4735/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4735_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4735/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4735_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6961 
-
- Instance \game_logic_portmap/board_updater_portmap/i3805 
-
-Combinational loop found : 144
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[7][3] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4734_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4734/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4734_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4734/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4734_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4734/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4734_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6960 
-
- Instance \game_logic_portmap/board_updater_portmap/i3804 
-
-Combinational loop found : 145
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[7][2] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4733_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4733/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4733_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4733/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4733_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4733/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4733_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6959 
-
- Instance \game_logic_portmap/board_updater_portmap/i3803 
-
-Combinational loop found : 146
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[7][1] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4732_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4732/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4732_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4732/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4732_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4732/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4732_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6958 
-
- Instance \game_logic_portmap/board_updater_portmap/i3802 
-
-Combinational loop found : 147
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[7][0] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4731_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4731/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4731_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4731/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4731_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4731/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4731_i1 
-
-Combinational loop found : 148
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[6][14] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4761_i15 
-
-Combinational loop found : 149
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[6][13] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4760_i15 
-
-Combinational loop found : 150
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[6][12] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4759_i15 
-
-Combinational loop found : 151
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[6][11] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4758_i15 
-
-Combinational loop found : 152
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[6][10] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4757_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4757/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4757_i7 
-
-Combinational loop found : 153
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[6][9] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4756_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4756/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4756_i7 
-
-Combinational loop found : 154
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[6][8] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4755_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4755/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4755_i7 
-
-Combinational loop found : 155
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[6][7] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4754_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4754/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4754_i7 
-
-Combinational loop found : 156
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[6][6] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4753_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4753/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4753_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4753/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4753_i3 
-
-Combinational loop found : 157
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[6][5] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4752_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4752/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4752_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4752/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4752_i3 
-
-Combinational loop found : 158
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[6][4] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4751_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4751/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4751_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4751/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4751_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4751/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4751_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6965 
-
- Instance \game_logic_portmap/board_updater_portmap/i3809 
-
-Combinational loop found : 159
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[6][3] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4750_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4750/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4750_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4750/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4750_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4750/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4750_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6964 
-
- Instance \game_logic_portmap/board_updater_portmap/i3808 
-
-Combinational loop found : 160
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[6][2] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4749_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4749/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4749_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4749/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4749_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4749/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4749_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6963 
-
- Instance \game_logic_portmap/board_updater_portmap/i3807 
-
-Combinational loop found : 161
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[6][1] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4748_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4748/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4748_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4748/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4748_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4748/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4748_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6962 
-
- Instance \game_logic_portmap/board_updater_portmap/i3806 
-
-Combinational loop found : 162
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[6][0] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4747_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4747/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4747_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4747/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4747_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4747/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4747_i1 
-
-Combinational loop found : 163
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[5][14] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4777_i15 
-
-Combinational loop found : 164
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[5][13] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4776_i15 
-
-Combinational loop found : 165
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[5][12] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4775_i15 
-
-Combinational loop found : 166
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[5][11] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4774_i15 
-
-Combinational loop found : 167
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[5][10] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4773_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4773/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4773_i7 
-
-Combinational loop found : 168
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[5][9] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4772_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4772/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4772_i7 
-
-Combinational loop found : 169
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[5][8] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4771_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4771/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4771_i7 
-
-Combinational loop found : 170
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[5][7] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4770_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4770/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4770_i7 
-
-Combinational loop found : 171
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[5][6] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4769_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4769/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4769_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4769/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4769_i3 
-
-Combinational loop found : 172
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[5][5] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4768_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4768/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4768_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4768/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4768_i3 
-
-Combinational loop found : 173
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[5][4] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4767_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4767/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4767_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4767/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4767_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4767/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4767_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6969 
-
- Instance \game_logic_portmap/board_updater_portmap/i3813 
-
-Combinational loop found : 174
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[5][3] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4766_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4766/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4766_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4766/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4766_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4766/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4766_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6968 
-
- Instance \game_logic_portmap/board_updater_portmap/i3812 
-
-Combinational loop found : 175
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[5][2] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4765_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4765/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4765_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4765/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4765_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4765/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4765_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6967 
-
- Instance \game_logic_portmap/board_updater_portmap/i3811 
-
-Combinational loop found : 176
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[5][1] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4764_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4764/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4764_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4764/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4764_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4764/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4764_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6966 
-
- Instance \game_logic_portmap/board_updater_portmap/i3810 
-
-Combinational loop found : 177
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[5][0] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4763_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4763/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4763_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4763/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4763_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4763/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4763_i1 
-
-Combinational loop found : 178
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[4][14] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4793_i15 
-
-Combinational loop found : 179
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[4][13] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4792_i15 
-
-Combinational loop found : 180
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[4][12] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4791_i15 
-
-Combinational loop found : 181
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[4][11] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4790_i15 
-
-Combinational loop found : 182
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[4][10] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4789_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4789/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4789_i7 
-
-Combinational loop found : 183
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[4][9] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4788_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4788/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4788_i7 
-
-Combinational loop found : 184
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[4][8] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4787_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4787/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4787_i7 
-
-Combinational loop found : 185
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[4][7] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4786_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4786/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4786_i7 
-
-Combinational loop found : 186
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[4][6] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4785_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4785/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4785_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4785/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4785_i3 
-
-Combinational loop found : 187
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[4][5] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4784_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4784/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4784_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4784/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4784_i3 
-
-Combinational loop found : 188
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[4][4] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4783_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4783/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4783_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4783/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4783_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4783/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4783_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6973 
-
- Instance \game_logic_portmap/board_updater_portmap/i3817 
-
-Combinational loop found : 189
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[4][3] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4782_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4782/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4782_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4782/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4782_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4782/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4782_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6972 
-
- Instance \game_logic_portmap/board_updater_portmap/i3816 
-
-Combinational loop found : 190
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[4][2] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4781_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4781/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4781_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4781/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4781_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4781/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4781_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6971 
-
- Instance \game_logic_portmap/board_updater_portmap/i3815 
-
-Combinational loop found : 191
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[4][1] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4780_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4780/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4780_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4780/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4780_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4780/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4780_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6970 
-
- Instance \game_logic_portmap/board_updater_portmap/i3814 
-
-Combinational loop found : 192
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[4][0] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4779_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4779/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4779_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4779/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4779_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4779/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4779_i1 
-
-Combinational loop found : 193
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[3][14] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4809_i15 
-
-Combinational loop found : 194
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[3][13] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4808_i15 
-
-Combinational loop found : 195
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[3][12] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4807_i15 
-
-Combinational loop found : 196
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[3][11] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4806_i15 
-
-Combinational loop found : 197
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[3][10] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4805_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4805/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4805_i7 
-
-Combinational loop found : 198
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[3][9] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4804_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4804/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4804_i7 
-
-Combinational loop found : 199
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[3][8] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4803_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4803/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4803_i7 
-
-Combinational loop found : 200
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[3][7] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4802_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4802/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4802_i7 
-
-Combinational loop found : 201
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[3][6] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4801_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4801/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4801_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4801/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4801_i3 
-
-Combinational loop found : 202
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[3][5] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4800_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4800/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4800_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4800/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4800_i3 
-
-Combinational loop found : 203
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[3][4] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4799_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4799/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4799_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4799/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4799_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4799/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4799_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6977 
-
- Instance \game_logic_portmap/board_updater_portmap/i3821 
-
-Combinational loop found : 204
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[3][3] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4798_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4798/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4798_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4798/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4798_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4798/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4798_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6976 
-
- Instance \game_logic_portmap/board_updater_portmap/i3820 
-
-Combinational loop found : 205
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[3][2] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4797_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4797/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4797_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4797/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4797_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4797/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4797_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6975 
-
- Instance \game_logic_portmap/board_updater_portmap/i3819 
-
-Combinational loop found : 206
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[3][1] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4796_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4796/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4796_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4796/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4796_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4796/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4796_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6974 
-
- Instance \game_logic_portmap/board_updater_portmap/i3818 
-
-Combinational loop found : 207
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[3][0] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4795_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4795/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4795_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4795/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4795_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4795/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4795_i1 
-
-Combinational loop found : 208
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[2][14] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4825_i15 
-
-Combinational loop found : 209
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[2][13] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4824_i15 
-
-Combinational loop found : 210
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[2][12] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4823_i15 
-
-Combinational loop found : 211
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[2][11] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4822_i15 
-
-Combinational loop found : 212
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[2][10] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4821_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4821/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4821_i7 
-
-Combinational loop found : 213
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[2][9] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4820_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4820/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4820_i7 
-
-Combinational loop found : 214
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[2][8] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4819_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4819/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4819_i7 
-
-Combinational loop found : 215
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[2][7] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4818_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4818/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4818_i7 
-
-Combinational loop found : 216
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[2][6] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4817_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4817/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4817_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4817/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4817_i3 
-
-Combinational loop found : 217
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[2][5] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4816_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4816/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4816_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4816/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4816_i3 
-
-Combinational loop found : 218
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[2][4] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4815_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4815/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4815_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4815/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4815_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4815/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4815_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6981 
-
- Instance \game_logic_portmap/board_updater_portmap/i3825 
-
-Combinational loop found : 219
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[2][3] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4814_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4814/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4814_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4814/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4814_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4814/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4814_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6980 
-
- Instance \game_logic_portmap/board_updater_portmap/i3824 
-
-Combinational loop found : 220
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[2][2] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4813_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4813/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4813_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4813/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4813_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4813/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4813_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6979 
-
- Instance \game_logic_portmap/board_updater_portmap/i3823 
-
-Combinational loop found : 221
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[2][1] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4812_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4812/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4812_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4812/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4812_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4812/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4812_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6978 
-
- Instance \game_logic_portmap/board_updater_portmap/i3822 
-
-Combinational loop found : 222
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[2][0] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4811_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4811/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4811_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4811/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4811_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4811/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4811_i1 
-
-Combinational loop found : 223
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[1][14] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4841_i15 
-
-Combinational loop found : 224
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[1][13] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4840_i15 
-
-Combinational loop found : 225
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[1][12] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4839_i15 
-
-Combinational loop found : 226
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[1][11] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4838_i15 
-
-Combinational loop found : 227
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[1][10] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4837_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4837/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4837_i7 
-
-Combinational loop found : 228
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[1][9] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4836_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4836/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4836_i7 
-
-Combinational loop found : 229
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[1][8] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4835_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4835/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4835_i7 
-
-Combinational loop found : 230
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[1][7] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4834_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4834/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4834_i7 
-
-Combinational loop found : 231
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[1][6] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4833_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4833/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4833_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4833/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4833_i3 
-
-Combinational loop found : 232
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[1][5] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4832_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4832/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4832_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4832/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4832_i3 
-
-Combinational loop found : 233
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[1][4] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4831_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4831/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4831_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4831/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4831_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4831/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4831_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6985 
-
- Instance \game_logic_portmap/board_updater_portmap/i3829 
-
-Combinational loop found : 234
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[1][3] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4830_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4830/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4830_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4830/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4830_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4830/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4830_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6984 
-
- Instance \game_logic_portmap/board_updater_portmap/i3828 
-
-Combinational loop found : 235
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[1][2] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4829_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4829/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4829_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4829/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4829_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4829/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4829_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6983 
-
- Instance \game_logic_portmap/board_updater_portmap/i3827 
-
-Combinational loop found : 236
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[1][1] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4828_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4828/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4828_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4828/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4828_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4828/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4828_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6982 
-
- Instance \game_logic_portmap/board_updater_portmap/i3826 
-
-Combinational loop found : 237
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[1][0] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4827_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4827/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4827_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4827/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4827_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4827/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4827_i1 
-
-Combinational loop found : 238
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[0][14] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4857_i15 
-
-Combinational loop found : 239
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[0][13] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4856_i15 
-
-Combinational loop found : 240
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[0][12] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4855_i15 
-
-Combinational loop found : 241
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[0][11] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4854_i15 
-
-Combinational loop found : 242
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[0][10] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4853_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4853/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4853_i7 
-
-Combinational loop found : 243
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[0][9] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4852_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4852/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4852_i7 
-
-Combinational loop found : 244
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[0][8] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4851_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4851/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4851_i7 
-
-Combinational loop found : 245
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[0][7] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4850_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4850/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4850_i7 
-
-Combinational loop found : 246
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[0][6] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4849_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4849/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4849_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4849/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4849_i3 
-
-Combinational loop found : 247
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[0][5] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4848_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4848/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4848_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4848/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4848_i3 
-
-Combinational loop found : 248
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[0][4] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4847_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4847/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4847_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4847/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4847_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4847/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4847_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6989 
-
- Instance \game_logic_portmap/board_updater_portmap/i3833 
-
-Combinational loop found : 249
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[0][3] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4846_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4846/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4846_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4846/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4846_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4846/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4846_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6988 
-
- Instance \game_logic_portmap/board_updater_portmap/i3832 
-
-Combinational loop found : 250
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[0][2] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4845_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4845/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4845_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4845/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4845_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4845/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4845_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6987 
-
- Instance \game_logic_portmap/board_updater_portmap/i3831 
-
-Combinational loop found : 251
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[0][1] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4844_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4844/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4844_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4844/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4844_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4844/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4844_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6986 
-
- Instance \game_logic_portmap/board_updater_portmap/i3830 
-
-Combinational loop found : 252
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[0][0] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4843_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4843/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4843_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4843/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4843_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4843/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4843_i1 
-
-Combinational loop found : 253
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[15][14] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4617_i15 
-
-Combinational loop found : 254
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[15][13] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4616_i15 
-
-Combinational loop found : 255
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[15][12] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4615_i15 
-
-Combinational loop found : 256
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[15][11] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4614_i15 
-
-Combinational loop found : 257
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[15][10] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4613_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4613/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4613_i7 
-
-Combinational loop found : 258
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[15][9] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4612_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4612/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4612_i7 
-
-Combinational loop found : 259
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[15][8] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4611_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4611/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4611_i7 
-
-Combinational loop found : 260
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[15][7] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4610_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4610/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4610_i7 
-
-Combinational loop found : 261
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[15][6] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4609_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4609/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4609_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4609/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4609_i3 
-
-Combinational loop found : 262
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[15][5] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4608_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4608/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4608_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4608/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4608_i3 
-
-Combinational loop found : 263
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[15][4] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4607_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4607/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4607_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4607/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4607_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4607/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4607_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6929 
-
- Instance \game_logic_portmap/board_updater_portmap/i3773 
-
-Combinational loop found : 264
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[15][3] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4606_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4606/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4606_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4606/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4606_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4606/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4606_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6928 
-
- Instance \game_logic_portmap/board_updater_portmap/i3772 
-
-Combinational loop found : 265
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[15][2] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4605_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4605/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4605_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4605/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4605_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4605/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4605_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6927 
-
- Instance \game_logic_portmap/board_updater_portmap/i3771 
-
-Combinational loop found : 266
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[15][1] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4604_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4604/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4604_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4604/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4604_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4604/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4604_i1 
-
- Net \game_logic_portmap/board_updater_portmap/n6926 
-
- Instance \game_logic_portmap/board_updater_portmap/i3770 
-
-Combinational loop found : 267
-
- Net \game_logic_portmap/board_updater_portmap/temp_board_shadow[15][0] 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4603_i15 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4603/n7 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4603_i7 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4603/n3 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4603_i3 
-
- Net \game_logic_portmap/board_updater_portmap/Mux_4603/n1 
-
- Instance \game_logic_portmap/board_updater_portmap/Mux_4603_i1 
-
+ Instance \game_logic_portmap/mux_11_i5 
+
+ Net \game_logic_portmap/n774 
+
+ Instance \game_logic_portmap/mux_10_i5 
+
+ Net \equal_387/n4 
+
+ Instance equal_387_i4 
+
+ Net \game_logic_portmap/n768 
+
+ Instance \game_logic_portmap/mux_9_i5 
+
+
+
+<A name="lse_area"></A><B><U><big>Area Report</big></U></B>
+
+################### Begin Area Report (master)######################
+Number of register bits => 96 of 5280 (1 % )
+EBR_B => 1
+CCU2 => 31
+FD1P3XZ => 96
+IB => 2
+LUT4 => 419
+OB => 11
+PLL_B => 1
+################### End Area Report ##################
+Number of odd-length carry chains : 1
+Number of even-length carry chains : 3
+
+
+<A name="lse_clock"></A><B><U><big>Clock Report</big></U></B>
+
+################### Begin Clock Report ######################
+Clock Nets
+Number of Clocks: 4
+  Net : nes_controller_portmap/ctrlr_clk_c, loads : 1
+  Net : clock_manager_portmap/game_clock, loads : 0
+  Net : osc_c, loads : 1
+  Net : clock_manager_portmap/pll_portmap/lscc_pll_inst/clk, loads : 0
+Clock Enable Nets
+Number of Clock Enables: 0
+Highest fanout non-clock nets
+Top 10 highest fanout non-clock nets:
+  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[0][0], loads : 43
+  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[1][0], loads : 38
+  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[0][1], loads : 36
+  Net : game_logic_portmap/collision_check_portmap/board_shadow_row_4_1__N_257, loads : 32
+  Net : nes_controller_portmap/a, loads : 28
+  Net : vga_sync_portmap/rgb_col_0__N_50, loads : 21
+  Net : game_logic_portmap/piece_rotation[0], loads : 20
+  Net : game_logic_portmap/piece_code[0], loads : 20
+  Net : clock_manager_portmap/clk_counter_0__N_351, loads : 19
+  Net : game_logic_portmap/piece_code[1], loads : 19
+################### End Clock Report ##################
+
+Peak Memory Usage: 145 MB
+
+--------------------------------------------------------------
+Total CPU Time: 4 secs 
+Total REAL Time: 5 secs 
+--------------------------------------------------------------
 
 
 
@@ -3756,6 +906,14 @@ Combinational loop found : 267
 <BR>
 <BR>
 </PRE></DIV>
+
+<DIV id="toc" class="radiant"><span onmousemove="showTocList()">Contents</span>
+<UL id="toc_list">
+<LI><A href=#Syn>Top</A></LI>
+<LI><A href=#lse_area>Area Report</A></LI>
+<LI><A href=#lse_clock>Clock Report</A></LI>
+</UL>
+</DIV>
 
 <button id="back_to_top" class="radiant" onclick="scrollToTop()">&lt;</button>
 <script type="text/javascript">

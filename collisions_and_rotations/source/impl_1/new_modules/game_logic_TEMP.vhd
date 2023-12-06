@@ -4,7 +4,7 @@ use IEEE.numeric_std.all;
 
 package my_types_package is
 	type piece_loc_type is array(1 downto 0) of unsigned(3 downto 0);  -- (x, y) from top left of grid to top left of piece 4x4
-	type board_type is array (15 downto 0) of std_logic_vector(0 to 15);
+	type board_type is array (0 to 18) of std_logic_vector(0 to 15);
 end package;
 
 library IEEE;
@@ -187,7 +187,7 @@ begin
 	 	collision_down,
 	 	collision_rotate
 	 );
-	 
+
 	--  collision_check_portmap_down : collision_check port map(
 	-- 	piece_loc,
 	-- 	piece_shape,
@@ -278,7 +278,7 @@ begin
 					end if;
 					if down_delay > 0 then
 						down_delay <= down_delay + 1;
-					end if; 
+					end if;
 
 				if game_clock_ctr(5 downto 0) = "111110" then
 					move_down_auto <= '1';

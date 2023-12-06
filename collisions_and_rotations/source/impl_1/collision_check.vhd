@@ -4,7 +4,7 @@ use IEEE.numeric_std.all;
 
 package my_types_package is
 	type piece_loc_type is array(1 downto 0) of unsigned(3 downto 0);  -- (x, y) from top left of grid to top left of piece 4x4
-	type board_type is array (15 downto 0) of std_logic_vector(0 to 15);
+	type board_type is array (0 to 18) of std_logic_vector(0 to 15);
 end package;
 
 library IEEE;
@@ -17,7 +17,7 @@ entity collision_check is
 		game_clock : in std_logic;
 		piece_loc : in piece_loc_type; -- (x, y) from top left of grid to top left of piece 4x4
 		piece_shape : in std_logic_vector(15 downto 0);
-		piece_code : in unsigned(2 downto 0); 
+		piece_code : in unsigned(2 downto 0);
 		piece_rotation : in unsigned(1 downto 0);
 		stable_board : in board_type;
 		press_left : in std_logic;
@@ -69,7 +69,7 @@ architecture synth of collision_check is
 
 	signal piece_right_col_loc : unsigned(3 downto 0);
 	signal piece_left_col_loc : unsigned(3 downto 0);
-	
+
 	signal piece_shape_rotated : std_logic_vector(15 downto 0);
 	signal piece_shape_result : std_logic_vector(15 downto 0);
 	signal piece_rotation_next : unsigned(1 downto 0);
@@ -100,8 +100,8 @@ begin
 	exceed_left <= '1' when (piece_left_col_loc < 4d"3") else '0';
 
 	-- HERE: check if we have hit bottom !!!
-	
-	-- Check for valid rotation 
+
+	-- Check for valid rotation
 	piece_library_portmap : piece_library port map(
 		game_clock,
 		std_logic_vector(piece_code),

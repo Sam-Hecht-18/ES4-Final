@@ -4,7 +4,7 @@ use IEEE.numeric_std.all;
 
 package my_types_package is
 	type piece_loc_type is array(1 downto 0) of unsigned(3 downto 0);  -- (x, y) from top left of grid to top left of piece 4x4
-	type board_type is array (15 downto 0) of std_logic_vector(0 to 15);
+	type board_type is array (0 to 18) of std_logic_vector(0 to 15);
 end package;
 
 library IEEE;
@@ -30,10 +30,10 @@ architecture synth of master is
 	component game_state is
 	  port(
 		clk : in std_logic;
-		
+
 		-- for welcome and gameover states
 		start : in std_logic;
-		
+
 		-- for render state
 
 		valid_rgb : in std_logic;
@@ -43,9 +43,9 @@ architecture synth of master is
 		piece_shape : in std_logic_vector(15 downto 0);
 		board : in board_type;
 		special_background : in unsigned(4 downto 0);
-		
+
 		game_over : in std_logic;
-		
+
 		rgb : out std_logic_vector(5 downto 0)
 	  );
 	end component;
@@ -160,10 +160,10 @@ begin
 
 	--game_state_portmap : game_state port map(
 		--clk => game_clock,
-		
+
 		 ----for welcome and gameover states
 		--start => start,
-		
+
 		 ----for render state
 		--valid_rgb => valid_rgb,
 		--rgb_row => rgb_row,
@@ -172,9 +172,9 @@ begin
 		--piece_shape => piece_shape,
 		--board => board,
 		--special_background => special_background,
-		
+
 		--game_over => b,
-		
+
 		--rgb => rgb
 	  --);
 
@@ -210,8 +210,8 @@ begin
 		piece_loc => piece_loc,
 		piece_shape => piece_shape,
 		board => board,
-		
-		
+
+
 		special_background => special_background
 	);
 

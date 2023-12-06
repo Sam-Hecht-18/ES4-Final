@@ -4,7 +4,7 @@ use IEEE.numeric_std.all;
 
 package my_types_package is
 	type piece_loc_type is array(1 downto 0) of unsigned(3 downto 0);  -- (x, y) from top left of grid to top left of piece 4x4
-	type board_type is array (15 downto 0) of std_logic_vector(0 to 15);
+	type board_type is array (0 to 18) of std_logic_vector(0 to 15);
 end package;
 
 library IEEE;
@@ -68,7 +68,7 @@ architecture synth of game_logic is
 			score : in unsigned(23 downto 0);
 			piece_loc: in piece_loc_type; -- (x, y) from top left of grid to top left of piece 4x4
 			piece_shape: in std_logic_vector(15 downto 0);
-			stable_board : in board_type;
+			--stable_board : in board_type;
 			new_board : out board_type;
 			new_score : out unsigned(23 downto 0)
 		  );
@@ -93,16 +93,6 @@ architecture synth of game_logic is
 			collision_rotate : out std_logic
 		);
 	end component;
-
-	--component row_check is
-		--port(
-		  --clk : in std_logic;
-		  --score : in unsigned(23 downto 0);
-		  --stable_board : in board_type;
-		  --new_board : out board_type;
-		  --new_score : out unsigned(23 downto 0)
-	  --);
-	--end component;
 
 	signal new_board : board_type;
 
@@ -164,7 +154,7 @@ begin
 		score => score,
 	 	piece_loc => piece_loc,
 	 	piece_shape => piece_shape,
-	 	stable_board => board,
+	 	--stable_board => board,
 	 	new_board => new_board,
 		new_score => new_score
 	 );
@@ -187,25 +177,27 @@ begin
 	 	collision_rotate
 	 );
 
-	generate_board_row: for y in 0 to 11 generate
-		board(y) <= 16b"0" when first_time = '0' else new_board(y);
-	end generate;
+	--generate_board_row: for y in 0 to 11 generate
+		--board(y) <= 16b"0" when first_time = '0' else new_board(y);
+	--end generate;
 
-	board(12) <= "0001010000000000"  when first_time = '0' else new_board(12);
-	board(13) <= "0001010000000000" when first_time = '0' else new_board(13);
-	board(14) <= "0001010101110000" when first_time = '0' else new_board(14);
-	board(15) <= "0001111111111000" when first_time = '0' else new_board(15);
+	--board(12) <= "0001010000000000"  when first_time = '0' else new_board(12);
+	--board(13) <= "0001010000000000" when first_time = '0' else new_board(13);
+	--board(14) <= "0001010101110000" when first_time = '0' else new_board(14);
+	--board(15) <= "0001111111111000" when first_time = '0' else new_board(15);
 
 	collision <= collision_down or collision_left or collision_rotate or collision_right;
 
 	special_background <= 5d"0" when collision = '0' else 5d"1" when collision_down = '1' else 5d"2" when collision_left = '1' else 5d"3" when collision_right = '1' else 5d"3" when collision_rotate = '1';
+
+	board <= new_board;
 
 	process(game_clock) begin
 		if rising_edge(game_clock) then
 
 			if game_clock_ctr < 16d"60" and first_time = '0' then
 				piece_loc(0) <= 4d"3";
-				piece_loc(1) <= 4d"0";
+				piece_loc(1) <= 4d"2";
 			elsif game_clock_ctr = 16d"60" then
 				first_time <= '1';
 			else
@@ -252,7 +244,7 @@ begin
 				if down_delay > 0 then
 					down_delay <= down_delay + 1;
 				end if;
-				
+
 				if press_up = '1' and up_delay = 0 then
 					piece_loc(1) <= piece_loc(1) - 1;
 					up_delay <= up_delay + 1;

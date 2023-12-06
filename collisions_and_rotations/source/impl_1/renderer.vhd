@@ -4,7 +4,7 @@ use IEEE.numeric_std.all;
 
 package my_types_package is
 	type piece_loc_type is array(1 downto 0) of unsigned(3 downto 0);  -- (x, y) from top left of grid to top left of piece 4x4
-	type board_type is array (15 downto 0) of std_logic_vector(0 to 15);
+	type board_type is array (0 to 18) of std_logic_vector(0 to 15);
 end package;
 
 library IEEE;
@@ -36,21 +36,22 @@ begin
 
 	board_index_y <= rgb_row(7 downto 4);
 	board_index_x <= rgb_col(7 downto 4);
-	board_index_x_real <= to_integer(board_index_x) + 3;
+	board_index_x_real <= to_integer(board_index_x) + 3; 
 
-	rgb_temp <= 6b"101111" when (board_index_x_real >= piece_loc(0)     and
-							     board_index_x_real <= piece_loc(0) + 3     and
-								 to_integer(board_index_y) >= piece_loc(1)     and
-								 to_integer(board_index_y) <= unsigned('0' & std_logic_vector(piece_loc(1))) + to_unsigned(3, 5)  and
-								 rgb_row <= 256 and rgb_col < 160                      and
+	rgb_temp <=
+				-- 6b"101111" when (board_index_x_real >= piece_loc(0)     and
+				-- 			     board_index_x_real <= piece_loc(0) + 3     and
+				-- 				 to_integer(board_index_y) >= piece_loc(1)     and
+				-- 				 to_integer(board_index_y) <= unsigned('0' & std_logic_vector(piece_loc(1))) + to_unsigned(3, 5)  and
+				-- 				 rgb_row <= 256 and rgb_col < 160                      and
 
-								 piece_shape(
-									15 - (    ((to_integer(board_index_y)) - to_integer(piece_loc(1))) * 4      -- relative row in piece (board - top row) * 4
-											+ ((board_index_x_real) - to_integer(piece_loc(0))) 		        -- relative col in piece (board - left col)
-										 )
-									) = '1'
-								 )  -- Pixel of piece should be drawn
-							else
+				-- 				 piece_shape(
+				-- 					15 - (    ((to_integer(board_index_y)) - to_integer(piece_loc(1))) * 4      -- relative row in piece (board - top row) * 4
+				-- 							+ ((board_index_x_real) - to_integer(piece_loc(0))) 		        -- relative col in piece (board - left col)
+				-- 						 )
+				-- 					) = '1'
+				-- 				 )  -- Pixel of piece should be drawn
+				-- 			else
 		        "101010"    when (rgb_row < 256 and rgb_col < 160 and board(to_integer(board_index_y))(board_index_x_real) = '0' and special_background = 5d"0") -- regular gray background
 							else
 				"110000"    when (rgb_row < 256 and rgb_col < 160 and board(to_integer(board_index_y))(board_index_x_real) = '0' and special_background = 5d"1") -- bright red
@@ -63,7 +64,7 @@ begin
 							else
 				"010101"	when (rgb_row < 256 and rgb_col < 160 and board(to_integer(board_index_y))(board_index_x_real) = '0') -- light gray?
 							else
-				"111111"	when (rgb_row < 256 and rgb_col < 160) -- white
+				"111111"	when (rgb_row < 256 and rgb_col < 160 and board(to_integer(board_index_y))(board_index_x_real) = '1') -- white
 							else
 				"000000"; -- black
 

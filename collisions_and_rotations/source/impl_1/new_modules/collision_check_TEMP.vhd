@@ -4,7 +4,7 @@ use IEEE.numeric_std.all;
 
 package my_types_package is
 	type piece_loc_type is array(1 downto 0) of unsigned(3 downto 0);  -- (x, y) from top left of grid to top left of piece 4x4
-	type board_type is array (15 downto 0) of std_logic_vector(0 to 15);
+	type board_type is array (0 to 18) of std_logic_vector(0 to 15);
 end package;
 
 library IEEE;
@@ -47,7 +47,7 @@ architecture synth of collision_check is
 			--overlap_row_1, overlap_row_2, overlap_row_3, overlap_row_4 : out std_logic_vector(3 downto 0)
 		--);
 	--end component;
-	
+
 	component piece_library is
 		port(
 			game_clock : in std_logic;
@@ -80,15 +80,15 @@ architecture synth of collision_check is
 
 	signal piece_right_col_loc : unsigned(3 downto 0);
 	signal piece_left_col_loc : unsigned(3 downto 0);
-	
+
 	signal piece_shape_rotated : std_logic_vector(15 downto 0);
 	signal piece_shape_result : std_logic_vector(15 downto 0);
 
 	signal piece_rotation_next : unsigned(1 downto 0);
 
 begin
-	
-	-- Check for valid rotation 
+
+	-- Check for valid rotation
 	piece_library_portmap : piece_library port map(
 		game_clock,
 		std_logic_vector(piece_code),
