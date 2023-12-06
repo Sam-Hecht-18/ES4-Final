@@ -46,7 +46,7 @@ if (a)
 <A name="Timing_rpt_top">Timing Report</A><B><U><big></big></U></B>
 Lattice Timing Report -  Setup  and Hold, Version Radiant Software (64-bit) 2023.1.0.43.3
 
-Tue Dec  5 19:05:45 2023
+Tue Dec  5 19:11:51 2023
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -124,13 +124,13 @@ vga_sync_portmap/rgb_row_9__I_2/D       |    No arrival or required
                                         |    No arrival or required
 {vga_sync_portmap/rgb_row_9__I_2/SR   vga_sync_portmap/rgb_row_9__I_1/SR}                           
                                         |    No arrival or required
-vga_sync_portmap/rgb_col_9__I_10/D      |    No arrival or required
-vga_sync_portmap/rgb_col_9__I_11/D      |    No arrival or required
-{vga_sync_portmap/rgb_col_9__I_11/SR   vga_sync_portmap/rgb_col_9__I_10/SR}                           
+vga_sync_portmap/rgb_col_9__I_14/D      |    No arrival or required
+vga_sync_portmap/rgb_col_9__I_15/D      |    No arrival or required
+{vga_sync_portmap/rgb_col_9__I_15/SR   vga_sync_portmap/rgb_col_9__I_14/SR}                           
                                         |    No arrival or required
-vga_sync_portmap/rgb_col_9__I_12/D      |    No arrival or required
-vga_sync_portmap/rgb_col_9__I_13/D      |    No arrival or required
-{vga_sync_portmap/rgb_col_9__I_13/SR   vga_sync_portmap/rgb_col_9__I_12/SR}                           
+vga_sync_portmap/rgb_col_9__I_16/D      |    No arrival or required
+vga_sync_portmap/rgb_col_9__I_17/D      |    No arrival or required
+{vga_sync_portmap/rgb_col_9__I_17/SR   vga_sync_portmap/rgb_col_9__I_16/SR}                           
                                         |    No arrival or required
 -------------------------------------------------------------------
                                         |                          
@@ -175,8 +175,8 @@ Define a clock on a top level port or a generated clock on a clock divider pin a
 -------------------------------------------------------------------
             Listing 2 Net(s)            |        Source pin        
 -------------------------------------------------------------------
-game_clock                              |clock_manager_portmap/game_clock_I_0/Q
 ctrlr_clk_c                             |nes_controller_portmap/ctrlr_clk_c_I_0/Z
+game_clock                              |clock_manager_portmap/game_clock_I_0/Q
 -------------------------------------------------------------------
                                         |                          
 Number of clock nets without clock defi |                          
@@ -190,34 +190,31 @@ nition                                  |                         2
 Combinational Loops
 -------------------
 ++++ Loop1
-nes_controller_portmap/rotate_out_c_I_0/A	->	nes_controller_portmap/rotate_out_c_I_0/Z
-
-++++ Loop2
 nes_controller_portmap/sel_I_0/A	->	nes_controller_portmap/sel_I_0/Z
 
+++++ Loop2
+nes_controller_portmap/rotate_out_c_I_0/A	->	nes_controller_portmap/rotate_out_c_I_0/Z
+
 ++++ Loop3
-game_logic_portmap/collision_down_I_0/C	->	game_logic_portmap/collision_down_I_0/Z
+game_logic_portmap/future_piece_loc_1__2__I_0_4_lut/D	->	game_logic_portmap/future_piece_loc_1__2__I_0_4_lut/Z
 
 ++++ Loop4
-renderer_portmap/future_piece_loc_1__1__I_0_4_lut/D	->	renderer_portmap/future_piece_loc_1__1__I_0_4_lut/Z
+game_logic_portmap/future_piece_loc_1__1__I_0_4_lut/D	->	game_logic_portmap/future_piece_loc_1__1__I_0_4_lut/Z
 
 ++++ Loop5
-nes_controller_portmap/down_button_I_0_2/A	->	nes_controller_portmap/down_button_I_0_2/Z
+nes_controller_portmap/down_button_I_0/A	->	nes_controller_portmap/down_button_I_0/Z
 
 ++++ Loop6
 game_logic_portmap/collision_check_portmap/future_piece_loc_1__0__I_0/A	->	game_logic_portmap/collision_check_portmap/future_piece_loc_1__0__I_0/Z
 
 ++++ Loop7
-game_logic_portmap.collision_check_portmap.future_piece_loc_1__2__I_0/C	->	game_logic_portmap.collision_check_portmap.future_piece_loc_1__2__I_0/Z
+game_logic_portmap/collision_check_portmap/future_piece_loc_1__3__I_0_4_lut/A	->	game_logic_portmap/collision_check_portmap/future_piece_loc_1__3__I_0_4_lut/Z
 
 ++++ Loop8
-game_logic_portmap/collision_check_portmap/future_piece_loc_1__3__I_0_4_lut/A	->	game_logic_portmap/collision_check_portmap/future_piece_loc_1__3__I_0_4_lut/Z
+nes_controller_portmap/left_button_I_0/A	->	nes_controller_portmap/left_button_I_0/Z
 
 ++++ Loop9
 nes_controller_portmap/right_button_I_0/A	->	nes_controller_portmap/right_button_I_0/Z
-
-++++ Loop10
-nes_controller_portmap/left_button_I_0/A	->	nes_controller_portmap/left_button_I_0/Z
 
 
 <A name="Timing_rpt_ErrorWarningMessage"></A><B><U><big>1.6  Error/Warning Messages</big></U></B>

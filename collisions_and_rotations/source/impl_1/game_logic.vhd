@@ -42,14 +42,14 @@ architecture synth of game_logic is
 		);
 	end component;
 
-	component piece_picker is
-		port(
-		  game_clock : in std_logic;
-		  game_clock_ctr : in unsigned(15 downto 0);
-		  new_piece_code : out unsigned(2 downto 0);
-		  new_piece_rotation : out unsigned(1 downto 0)
-	  );
-	end component;
+	--component piece_picker is
+		--port(
+		  --game_clock : in std_logic;
+		  --game_clock_ctr : in unsigned(15 downto 0);
+		  --new_piece_code : out unsigned(2 downto 0);
+		  --new_piece_rotation : out unsigned(1 downto 0)
+	  --);
+	--end component;
 
 	component turn_manager is
 		port(
@@ -60,18 +60,18 @@ architecture synth of game_logic is
 	  );
 	end component;
 
-	component board_updater is
-		port(
-			game_clock : in std_logic;
-			board_update_enable : in std_logic;
-			score : in unsigned(23 downto 0);
-			piece_loc: in piece_loc_type; -- (x, y) from top left of grid to top left of piece 4x4
-			piece_shape: in std_logic_vector(15 downto 0);
-			stable_board : in board_type;
-			new_board : out board_type;
-			new_score : out unsigned(23 downto 0)
-		  );
-	end component;
+	--component board_updater is
+		--port(
+			--game_clock : in std_logic;
+			--board_update_enable : in std_logic;
+			--score : in unsigned(23 downto 0);
+			--piece_loc: in piece_loc_type; -- (x, y) from top left of grid to top left of piece 4x4
+			--piece_shape: in std_logic_vector(15 downto 0);
+			--stable_board : in board_type;
+			--new_board : out board_type;
+			--new_score : out unsigned(23 downto 0)
+		  --);
+	--end component;
 
 	component collision_check is
 		port(
@@ -152,22 +152,22 @@ begin
 		piece_shape
 	);
 
-	piece_picker_portmap : piece_picker port map(
-		game_clock => game_clock,
-		new_piece_code => new_piece_code,
-		new_piece_rotation => new_piece_rotation
-	);
+	--piece_picker_portmap : piece_picker port map(
+		--game_clock => game_clock,
+		--new_piece_code => new_piece_code,
+		--new_piece_rotation => new_piece_rotation
+	--);
 
-	 board_updater_portmap : board_updater port map(
-	 	game_clock => game_clock,
-	 	board_update_enable => advance_turn,
-		score => score,
-	 	piece_loc => piece_loc,
-	 	piece_shape => piece_shape,
-	 	stable_board => board,
-	 	new_board => new_board,
-		new_score => new_score
-	 );
+	 --board_updater_portmap : board_updater port map(
+	 	--game_clock => game_clock,
+	 	--board_update_enable => advance_turn,
+		--score => score,
+	 	--piece_loc => piece_loc,
+	 	--piece_shape => piece_shape,
+	 	--stable_board => board,
+	 	--new_board => new_board,
+		--new_score => new_score
+	 --);
 
 	 collision_check_portmap : collision_check port map(
 	 	piece_loc,

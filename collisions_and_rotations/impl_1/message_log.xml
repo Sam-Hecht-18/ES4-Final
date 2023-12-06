@@ -2,6 +2,11 @@
 <BaliMessageLog>
     <Task name="Export">
         <Message>
+            <ID>1081100</ID>
+            <Severity>1</Severity>
+            <Dynamic>Bitstream authenticated.</Dynamic>
+        </Message>
+        <Message>
             <ID>1191031</ID>
             <Severity>1</Severity>
         </Message>
@@ -369,22 +374,6 @@
             <Dynamic>synth</Dynamic>
             <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd</Navigation>
             <Navigation>34</Navigation>
-        </Message>
-        <Message>
-            <ID>35929000</ID>
-            <Severity>1</Severity>
-            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(159): </Dynamic>
-            <Dynamic>game_clock_ctr</Dynamic>
-            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd</Navigation>
-            <Navigation>159</Navigation>
-        </Message>
-        <Message>
-            <ID>35921259</ID>
-            <Severity>1</Severity>
-            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(48): </Dynamic>
-            <Dynamic>game_clock_ctr</Dynamic>
-            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd</Navigation>
-            <Navigation>48</Navigation>
         </Message>
         <Message>
             <ID>35921012</ID>

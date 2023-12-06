@@ -54,7 +54,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-Tue Dec  5 19:05:24 2023
+Tue Dec  5 19:11:30 2023
 
 
 Command Line:  C:\lscc\radiant\2023.1\ispfpga\bin\nt64\synthesis.exe -f collisions_and_rotations_impl_1_lattice.synproj -gui -msgset Z:/es4/ES4-Final/collisions_and_rotations/promote.xml 
@@ -226,8 +226,6 @@ Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/game
 INFO <35921014> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(5): analyzing package my_types_package. VHDL-1014
 INFO <35921012> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(15): analyzing entity game_logic. VHDL-1012
 INFO <35921010> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(34): analyzing architecture synth. VHDL-1010
-INFO <35929000> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(159): input pin game_clock_ctr has no actual or default value. VHDL-9000
-INFO <35921259> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(48): game_clock_ctr is declared here. VHDL-1259
 Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd. VHDL-1481
 Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd
 
@@ -351,15 +349,15 @@ Combinational loop found : 10
 
  Instance \game_logic_portmap/mux_11_i2 
 
- Net \game_logic_portmap/n931 
+ Net \game_logic_portmap/n339 
 
  Instance \game_logic_portmap/mux_10_i2 
 
- Net \game_logic_portmap/n925 
+ Net \game_logic_portmap/n333 
 
  Instance \game_logic_portmap/mux_9_i2 
 
- Net \game_logic_portmap/n919 
+ Net \game_logic_portmap/n327 
 
  Instance \game_logic_portmap/mux_7_i2 
 
@@ -369,11 +367,11 @@ Combinational loop found : 11
 
  Instance \game_logic_portmap/mux_11_i1 
 
- Net \game_logic_portmap/n932 
+ Net \game_logic_portmap/n340 
 
  Instance \game_logic_portmap/mux_10_i1 
 
- Net \game_logic_portmap/n926 
+ Net \game_logic_portmap/n334 
 
  Instance \game_logic_portmap/mux_9_i1 
 
@@ -383,7 +381,7 @@ Combinational loop found : 12
 
  Instance \game_logic_portmap/mux_11_i3 
 
- Net \game_logic_portmap/n930 
+ Net \game_logic_portmap/n338 
 
  Instance \game_logic_portmap/mux_10_i3 
 
@@ -393,11 +391,11 @@ Combinational loop found : 13
 
  Instance \game_logic_portmap/mux_11_i4 
 
- Net \game_logic_portmap/n929 
+ Net \game_logic_portmap/n337 
 
  Instance \game_logic_portmap/mux_10_i4 
 
- Net \game_logic_portmap/n923 
+ Net \game_logic_portmap/n331 
 
  Instance \game_logic_portmap/mux_9_i4 
 
@@ -405,7 +403,7 @@ Combinational loop found : 13
 
  Instance \renderer_portmap/equal_66_i7 
 
- Net \game_logic_portmap/n917 
+ Net \game_logic_portmap/n325 
 
  Instance \game_logic_portmap/mux_7_i4 
 
@@ -415,7 +413,7 @@ Combinational loop found : 14
 
  Instance \game_logic_portmap/mux_11_i5 
 
- Net \game_logic_portmap/n928 
+ Net \game_logic_portmap/n336 
 
  Instance \game_logic_portmap/mux_10_i5 
 
@@ -423,7 +421,7 @@ Combinational loop found : 14
 
  Instance \renderer_portmap/equal_66_i7 
 
- Net \game_logic_portmap/n922 
+ Net \game_logic_portmap/n330 
 
  Instance \game_logic_portmap/mux_9_i5 
 
@@ -434,7 +432,7 @@ EBR_B => 1
 CCU2 => 31
 FD1P3XZ => 92
 IB => 2
-LUT4 => 380
+LUT4 => 365
 OB => 11
 PLL_B => 1
 ################### End Area Report ##################
@@ -452,23 +450,23 @@ Clock Enable Nets
 Number of Clock Enables: 0
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[0][0], loads : 55
+  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[0][0], loads : 46
   Net : game_logic_portmap/collision_check_portmap/future_piece_loc[0][1], loads : 44
-  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[1][0], loads : 36
-  Net : game_logic_portmap/collision_check_portmap/board_shadow_row_4_1__N_281, loads : 28
-  Net : renderer_portmap/future_piece_loc[1][1], loads : 26
-  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[1][2], loads : 25
-  Net : vga_sync_portmap/rgb_col[4], loads : 23
-  Net : game_logic_portmap/piece_loc[0][0], loads : 22
+  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[1][0], loads : 41
+  Net : game_logic_portmap/collision_check_portmap/board_shadow_row_4_1__N_269, loads : 29
+  Net : game_logic_portmap/future_piece_loc[1][1], loads : 27
+  Net : game_logic_portmap/future_piece_loc[1][2], loads : 23
   Net : vga_sync_portmap/rgb_col_0__N_50, loads : 21
-  Net : game_logic_portmap/collision_check_portmap/overlap_row_3_2__N_288, loads : 20
+  Net : game_logic_portmap/collision_check_portmap/overlap_row_2_0__N_285, loads : 20
+  Net : clock_manager_portmap/clk_counter_0__N_355, loads : 19
+  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[1][3], loads : 19
 ################### End Clock Report ##################
 
-Peak Memory Usage: 132 MB
+Peak Memory Usage: 138 MB
 
 --------------------------------------------------------------
-Total CPU Time: 4 secs 
-Total REAL Time: 5 secs 
+Total CPU Time: 3 secs 
+Total REAL Time: 6 secs 
 --------------------------------------------------------------
 
 
@@ -480,7 +478,7 @@ Command Line: postsyn -a iCE40UP -p iCE40UP5K -t SG48 -sp High-Performance_1.2V 
    Package:          SG48
    Performance:      High-Performance_1.2V
 Reading input file 'collisions_and_rotations_impl_1.vm' ...
-CPU Time to convert: 0.125
+CPU Time to convert: 0.140625
 REAL Time to convert: 0
 convert PEAK Memory Usage: 31 MB
 convert CURRENT Memory Usage: 31 MB
@@ -539,8 +537,8 @@ Optimizing...
 Design Summary:
    Number of slice registers:  92 out of  5280 (2%)
    Number of I/O registers:      0 out of   117 (0%)
-   Number of LUT4s:           454 out of  5280 (9%)
-      Number of logic LUT4s:             381
+   Number of LUT4s:           439 out of  5280 (8%)
+      Number of logic LUT4s:             366
       Number of inserted feedthru LUT4s:   5
       Number of replicated LUT4s:          6
       Number of ripple logic:             31 (62 LUT4s)
@@ -577,19 +575,19 @@ Design Summary:
    Number of LSRs:  4
       Net vga_sync_portmap.rgb_col_0__N_50: 6 loads, 6 SLICEs
       Net vga_sync_portmap.rgb_row_0__N_30: 6 loads, 6 SLICEs
-      Net clock_manager_portmap.clk_counter_0__N_352: 10 loads, 10 SLICEs
+      Net clock_manager_portmap.clk_counter_0__N_355: 10 loads, 10 SLICEs
       Net piece_loc_0__0__N_106: 8 loads, 8 SLICEs
    Top 10 highest fanout non-clock nets:
-      Net game_logic_portmap.collision_check_portmap.future_piece_loc[0][0]: 55 loads
+      Net game_logic_portmap.collision_check_portmap.future_piece_loc[0][0]: 46 loads
+      Net game_logic_portmap.collision_check_portmap.future_piece_loc[1][0]: 42 loads
       Net game_logic_portmap.collision_check_portmap.future_piece_loc[0][1]: 41 loads
-      Net game_logic_portmap.collision_check_portmap.future_piece_loc[1][0]: 38 loads
-      Net future_piece_loc[1][1]: 33 loads
-      Net game_logic_portmap.collision_check_portmap.future_piece_loc[1][2]: 30 loads
-      Net game_logic_portmap.collision_check_portmap.board_shadow_row_4_1__N_281: 28 loads
-      Net game_logic_portmap.collision_check_portmap.future_piece_loc[1][3]: 27 loads
-      Net rgb_col[4]: 25 loads
-      Net piece_loc[0][0]: 23 loads
-      Net game_logic_portmap.collision_check_portmap.overlap_row_3_2__N_288: 20 loads
+      Net game_logic_portmap.collision_check_portmap.board_shadow_row_4_1__N_269: 29 loads
+      Net game_logic_portmap.future_piece_loc[1][1]: 29 loads
+      Net game_logic_portmap.future_piece_loc[1][2]: 27 loads
+      Net game_logic_portmap.collision_check_portmap.future_piece_loc[1][3]: 24 loads
+      Net game_logic_portmap.collision_check_portmap.overlap_row_2_0__N_285: 20 loads
+      Net piece_loc[0][0]: 17 loads
+      Net piece_loc[1][0]: 17 loads
 Running physical design DRC...
 
  
@@ -610,7 +608,7 @@ Peak Memory Usage: 62 MB
 par -f "collisions_and_rotations_impl_1.p2t" "collisions_and_rotations_impl_1_map.udb" "collisions_and_rotations_impl_1.udb"
 
 Lattice Place and Route Report for Design "collisions_and_rotations_impl_1_map.udb"
-Tue Dec  5 19:05:31 2023
+Tue Dec  5 19:11:37 2023
 
 PAR: Place And Route Radiant Software (64-bit) 2023.1.0.43.3.
 Command Line: par -w -t 1 -cores 1 -exp parPathBased=ON \
@@ -633,12 +631,12 @@ WARNING <70001944> - No master clock for
 	generated clock	create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] .
 
 WARNING: Database constraint "create_generated_clock -name {clk} -source [get_pins clock_manager_portmap.pll_portmap.lscc_pll_inst.u_PLL_B/REFERENCECLK] -divide_by 32 -multiply_by 67 [get_pins clock_manager_portmap.pll_portmap.lscc_pll_inst.u_PLL_B/OUTGLOBAL]" does not have corresponding timing constraint. Please check if the resource objects of the constraint are valid carefully!
-Number of Signals: 617
-Number of Connections: 1783
+Number of Signals: 602
+Number of Connections: 1738
 Device utilization summary:
 
-   SLICE (est.)     238/2640          9% used
-     LUT            454/5280          9% used
+   SLICE (est.)     232/2640          9% used
+     LUT            439/5280          8% used
      REG             92/5280          2% used
    PIO               13/56           23% used
                      13/36           36% bonded
@@ -672,27 +670,27 @@ Starting Placer Phase 1. CPU time: 1 secs , REAL time: 2 secs
 ..  ..
 ....................
 
-Placer score = 85226.
+Placer score = 83120.
 
 Device SLICE utilization summary after final SLICE packing:
-   SLICE            238/2640          9% used
+   SLICE            232/2640          8% used
 
 WARNING <70001944> - No master clock for
 	generated clock	create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] .
-Finished Placer Phase 1. CPU time: 9 secs , REAL time: 9 secs 
+Finished Placer Phase 1. CPU time: 9 secs , REAL time: 10 secs 
 
 Starting Placer Phase 2.
 .
 
-Placer score =  114839
-Finished Placer Phase 2.  CPU time: 9 secs , REAL time: 9 secs 
+Placer score =  110948
+Finished Placer Phase 2.  CPU time: 9 secs , REAL time: 10 secs 
 
 
 ------------------ Clock Report ------------------
 
 Global Clocks :
   PRIMARY "clk" from OUTGLOBAL on comp "clock_manager_portmap.pll_portmap.lscc_pll_inst.u_PLL_B" on site "PLL_R13C32", clk load = 32, ce load = 0, sr load = 0
-  PRIMARY "game_clock" from Q1 on comp "clock_manager_portmap.SLICE_188" on site "R13C4D", clk load = 19, ce load = 0, sr load = 0
+  PRIMARY "game_clock" from Q1 on comp "clock_manager_portmap.SLICE_180" on site "R13C5A", clk load = 20, ce load = 0, sr load = 0
 
   PRIMARY  : 2 out of 8 (25%)
 
@@ -714,12 +712,12 @@ I/O Bank Usage Summary:
 | 2        | 3 / 8 ( 37%)  | 3.3V       |            |            |
 +----------+---------------+------------+------------+------------+
 
-Total Placer CPU time: 9 secs , REAL time: 9 secs 
+Total Placer CPU time: 9 secs , REAL time: 10 secs 
 
 Writing design to file collisions_and_rotations_impl_1_par.dir/5_1.udb ...
 
 
-Start NBR router at 19:05:41 12/05/23
+Start NBR router at 19:11:47 12/05/23
 
 *****************************************************************
 Info: NBR allows conflicts(one node used by more than one signal)
@@ -739,12 +737,12 @@ Preassignment Summary:
 --------------------------------------------------------------------------------
 145 connections routed with dedicated routing resources
 2 global clock signals routed
-196 connections routed (of 1760 total) (11.14%)
+197 connections routed (of 1716 total) (11.48%)
 ---------------------------------------------------------
 Clock routing summary:
 Primary clocks (2 used out of 8 available):
 #5  Signal "game_clock"
-       Clock   loads: 19    out of    19 routed (100.00%)
+       Clock   loads: 20    out of    20 routed (100.00%)
 #7  Signal "clk"
        Clock   loads: 32    out of    32 routed (100.00%)
 Other clocks:
@@ -765,26 +763,22 @@ WARNING <70001944> - No master clock for
 Routing in Serial Mode ......
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Start NBR section for initial routing at 19:05:41 12/05/23
+Start NBR section for initial routing at 19:11:47 12/05/23
 Level 4, iteration 1
-82(0.03%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
+71(0.03%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 2 secs 
 
 Info: Initial congestion level at 75.00% usage is 0
 Info: Initial congestion area  at 75.00% usage is 0 (0.00%)
 
-Start NBR section for normal routing at 19:05:42 12/05/23
+Start NBR section for normal routing at 19:11:49 12/05/23
 Level 4, iteration 1
-12(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
+10(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 2 secs 
 Level 4, iteration 2
-8(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
+10(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 2 secs 
 Level 4, iteration 3
-1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
-Level 4, iteration 4
-1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
-Level 4, iteration 5
-0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
+0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 2 secs 
 
-Start NBR section for post-routing at 19:05:42 12/05/23
+Start NBR section for post-routing at 19:11:49 12/05/23
 
 End NBR router with 0 unrouted connection
 WARNING <70001944> - No master clock for
@@ -811,7 +805,7 @@ NBR Summary
 Total CPU time 2 secs 
 Total REAL time: 2 secs 
 Completely routed.
-End of route.  1760 routed (100.00%); 0 unrouted.
+End of route.  1716 routed (100.00%); 0 unrouted.
 
 Writing design to file collisions_and_rotations_impl_1_par.dir/5_1.udb ...
 
@@ -825,8 +819,8 @@ PAR_SUMMARY::Timing score<hold /<ns>> = <n/a>
 PAR_SUMMARY::Number of errors = 0
 
 Total CPU  Time: 12 secs 
-Total REAL Time: 12 secs 
-Peak Memory Usage: 119.84 MB
+Total REAL Time: 13 secs 
+Peak Memory Usage: 119.25 MB
 
 
 par done!
@@ -854,7 +848,7 @@ Performance Grade:   High-Performance_1.2V
 
 
 
-Successfully loading udb, 0.05 seconds
+Successfully loading udb, 0.06 seconds
 
 Initializing timer
 Starting design annotation....
@@ -864,15 +858,15 @@ High-Performance_1.2V
 
 Starting full timing analysis...
 Performance Hardware Data Status:   Advanced       Version 1.0.
-Connections ignored  114  counted  1548  covered  0
+Connections ignored  116  counted  1502  covered  0
 Changing speed to m;   changing temperature to -40
 
 STA Runtime and Peak Memory Usage :
 Total CPU Time: 1 secs 
-Total REAL Time: 2 secs 
+Total REAL Time: 0 secs 
 Peak Memory Usage: 96 MB
 
- 1.606672s wall, 1.218750s user + 0.140625s system = 1.359375s CPU (84.6%)
+ 1.559938s wall, 1.234375s user + 0.078125s system = 1.312500s CPU (84.1%)
 
 
 tmcheck -par "collisions_and_rotations_impl_1.par" 
@@ -915,6 +909,7 @@ Preference Summary:
 
 Creating bit map...
 Saving bit stream in "Z:\es4\ES4-Final\collisions_and_rotations\impl_1\collisions_and_rotations_impl_1.bin".
+INFO <1081100> - Bitstream authenticated.
 Bitstream generation complete!
 
 Total CPU Time: 0 secs 
@@ -925,7 +920,7 @@ Peak Memory Usage: 114 MB
 ibisgen "collisions_and_rotations_impl_1.udb" "C:/lscc/radiant/2023.1/cae_library/ibis/iCE40UP.ibs"
 IBIS Models Generator: Lattice Radiant Software (64-bit) 2023.1.0.43.3
 
-Tue Dec  5 19:05:46 2023
+Tue Dec  5 19:11:52 2023
 
 Loading collisions_and_rotations_impl_1.udb ...
 Loading device for application GENERIC from file 'itpa08.nph' in environment: C:/lscc/radiant/2023.1/ispfpga.
@@ -976,5 +971,5 @@ Writing Verilog netlist to file collisions_and_rotations_impl_1_vo.vo
 Writing SDF timing to file collisions_and_rotations_impl_1_vo.sdf
 Backanno finished with 0 posted error messages.
 Total CPU Time: 1 secs 
-Total REAL Time: 2 secs 
-Peak Memory Usage: 95 MB
+Total REAL Time: 0 secs 
+Peak Memory Usage: 94 MB

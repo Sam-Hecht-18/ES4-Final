@@ -1,0 +1,69 @@
+#Start recording tcl command: 12/5/2023 17:14:01
+#Project Location: Z:/es4/ES4-Final/collisions_and_rotations; Project name: collisions_and_rotations
+prj_open "Z:/es4/ES4-Final/collisions_and_rotations/collisions_and_rotations.rdf"
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+prj_disable_source "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/vga_sync_clk.vhd"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+prj_add_source "D:/game_over.vhd" "D:/game_state.vhd" "D:/welcome.vhd"
+prj_remove_source "D:/game_over.vhd" "D:/game_state.vhd" "D:/welcome.vhd"
+prj_add_source "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/game_over.vhd" "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/game_state.vhd" "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/welcome.vhd"
+prj_disable_source "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/new_modules/board_updater.vhd"
+prj_disable_source "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/new_modules/piece_picker.vhd"
+prj_disable_source "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/new_modules/row_check.vhd"
+prj_disable_source "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd"
+prj_run Synthesis -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_set_impl_opt synthesis "synplify"
+prj_set_strategy_value -strategy Strategy1 syn_vhdl2008=True
+prj_run Synthesis -impl impl_1
+prj_set_impl_opt synthesis "lse"
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+prj_run Export -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Export -impl impl_1
+prj_run Synthesis -impl impl_1
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+prj_disable_source "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/game_over.vhd" "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/game_state.vhd" "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/welcome.vhd"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+#Stop recording: 12/5/2023 19:13:42
