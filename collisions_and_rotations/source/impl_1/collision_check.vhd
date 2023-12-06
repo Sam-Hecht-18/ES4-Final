@@ -33,16 +33,16 @@ end collision_check;
 
 architecture synth of collision_check is
 
-	--component board_overlap is
-		--port(
-			--clk : in std_logic;
-			--union_or_intersection : in std_logic;
-			--piece_loc: in piece_loc_type; -- (x, y) from top left of grid to top left of piece 4x4
-			--piece_shape: in std_logic_vector(15 downto 0);
-			--piece_bottom_row : out unsigned(1 downto 0);
-			--overlap_row_1, overlap_row_2, overlap_row_3, overlap_row_4 : out std_logic_vector(3 downto 0)
-		--);
-	--end component;
+	component board_overlap is
+		port(
+			clk : in std_logic;
+			union_or_intersection : in std_logic;
+			piece_loc: in piece_loc_type; -- (x, y) from top left of grid to top left of piece 4x4
+			piece_shape: in std_logic_vector(15 downto 0);
+			piece_bottom_row : out unsigned(1 downto 0);
+			overlap_row_1, overlap_row_2, overlap_row_3, overlap_row_4 : out std_logic_vector(3 downto 0)
+		);
+	end component;
 
 	signal future_piece_loc : piece_loc_type;
 

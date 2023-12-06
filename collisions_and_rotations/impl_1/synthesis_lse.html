@@ -48,7 +48,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-Tue Dec  5 18:40:17 2023
+Tue Dec  5 19:05:24 2023
 
 
 Command Line:  C:\lscc\radiant\2023.1\ispfpga\bin\nt64\synthesis.exe -f collisions_and_rotations_impl_1_lattice.synproj -gui -msgset Z:/es4/ES4-Final/collisions_and_rotations/promote.xml 
@@ -138,12 +138,6 @@ VHDL library = work
 VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/renderer.vhd
 VHDL library = work
 VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/clock_manager.vhd
-VHDL library = work
-VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/game_over.vhd
-VHDL library = work
-VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/game_state.vhd
-VHDL library = work
-VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/welcome.vhd
 The -r option is OFF. [ Remove LOC Properties is OFF. ]
 WARNING <35935050> - synthesis: input port TRIM9 is not connected on this instance. VDB-5050
 WARNING <35935050> - synthesis: input port TRIM8 is not connected on this instance. VDB-5050
@@ -225,6 +219,8 @@ Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/game
 INFO <35921014> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(5): analyzing package my_types_package. VHDL-1014
 INFO <35921012> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(15): analyzing entity game_logic. VHDL-1012
 INFO <35921010> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(34): analyzing architecture synth. VHDL-1010
+INFO <35929000> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(159): input pin game_clock_ctr has no actual or default value. VHDL-9000
+INFO <35921259> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(48): game_clock_ctr is declared here. VHDL-1259
 Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd. VHDL-1481
 Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd
 
@@ -241,22 +237,6 @@ Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/cloc
 
 INFO <35921012> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd(5): analyzing entity clock_manager. VHDL-1012
 INFO <35921010> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd(20): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_over.vhd. VHDL-1481
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_over.vhd
-
-INFO <35921012> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_over.vhd(5): analyzing entity game_over_screen. VHDL-1012
-INFO <35921010> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_over.vhd(16): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_state.vhd. VHDL-1481
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_state.vhd
-
-INFO <35921014> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_state.vhd(5): analyzing package my_types_package. VHDL-1014
-INFO <35921012> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_state.vhd(16): analyzing entity game_state. VHDL-1012
-INFO <35921010> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_state.vhd(40): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/welcome.vhd. VHDL-1481
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/welcome.vhd
-
-INFO <35921012> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/welcome.vhd(5): analyzing entity welcome_screen. VHDL-1012
-INFO <35921010> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/welcome.vhd(14): analyzing architecture synth. VHDL-1010
 INFO <35921504> - synthesis: The default VHDL library search path is now "Z:/es4/ES4-Final/collisions_and_rotations/impl_1". VHDL-1504
 Top module language type = VHDL.
 WARNING <35935049> - synthesis: input port sclk_i remains unconnected for this instance. VDB-5049
@@ -364,15 +344,15 @@ Combinational loop found : 10
 
  Instance \game_logic_portmap/mux_11_i2 
 
- Net \game_logic_portmap/n339 
+ Net \game_logic_portmap/n931 
 
  Instance \game_logic_portmap/mux_10_i2 
 
- Net \game_logic_portmap/n333 
+ Net \game_logic_portmap/n925 
 
  Instance \game_logic_portmap/mux_9_i2 
 
- Net \game_logic_portmap/n327 
+ Net \game_logic_portmap/n919 
 
  Instance \game_logic_portmap/mux_7_i2 
 
@@ -382,11 +362,11 @@ Combinational loop found : 11
 
  Instance \game_logic_portmap/mux_11_i1 
 
- Net \game_logic_portmap/n340 
+ Net \game_logic_portmap/n932 
 
  Instance \game_logic_portmap/mux_10_i1 
 
- Net \game_logic_portmap/n334 
+ Net \game_logic_portmap/n926 
 
  Instance \game_logic_portmap/mux_9_i1 
 
@@ -396,7 +376,7 @@ Combinational loop found : 12
 
  Instance \game_logic_portmap/mux_11_i3 
 
- Net \game_logic_portmap/n338 
+ Net \game_logic_portmap/n930 
 
  Instance \game_logic_portmap/mux_10_i3 
 
@@ -406,11 +386,11 @@ Combinational loop found : 13
 
  Instance \game_logic_portmap/mux_11_i4 
 
- Net \game_logic_portmap/n337 
+ Net \game_logic_portmap/n929 
 
  Instance \game_logic_portmap/mux_10_i4 
 
- Net \game_logic_portmap/n331 
+ Net \game_logic_portmap/n923 
 
  Instance \game_logic_portmap/mux_9_i4 
 
@@ -418,7 +398,7 @@ Combinational loop found : 13
 
  Instance \renderer_portmap/equal_66_i7 
 
- Net \game_logic_portmap/n325 
+ Net \game_logic_portmap/n917 
 
  Instance \game_logic_portmap/mux_7_i4 
 
@@ -428,7 +408,7 @@ Combinational loop found : 14
 
  Instance \game_logic_portmap/mux_11_i5 
 
- Net \game_logic_portmap/n336 
+ Net \game_logic_portmap/n928 
 
  Instance \game_logic_portmap/mux_10_i5 
 
@@ -436,7 +416,7 @@ Combinational loop found : 14
 
  Instance \renderer_portmap/equal_66_i7 
 
- Net \game_logic_portmap/n330 
+ Net \game_logic_portmap/n922 
 
  Instance \game_logic_portmap/mux_9_i5 
 
@@ -445,11 +425,12 @@ Combinational loop found : 14
 <A name="lse_area"></A><B><U><big>Area Report</big></U></B>
 
 ################### Begin Area Report (master)######################
-Number of register bits => 90 of 5280 (1 % )
+Number of register bits => 92 of 5280 (1 % )
+EBR_B => 1
 CCU2 => 31
-FD1P3XZ => 90
+FD1P3XZ => 92
 IB => 2
-LUT4 => 356
+LUT4 => 380
 OB => 11
 PLL_B => 1
 ################### End Area Report ##################
@@ -470,19 +451,19 @@ Clock Enable Nets
 Number of Clock Enables: 0
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[0][0], loads : 48
-  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[0][1], loads : 40
-  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[1][0], loads : 37
-  Net : game_logic_portmap/collision_check_portmap/board_shadow_row_4_2__N_181, loads : 25
-  Net : game_logic_portmap/future_piece_loc[1][2], loads : 22
-  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[1][3], loads : 22
-  Net : renderer_portmap/future_piece_loc[1][1], loads : 21
+  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[0][0], loads : 55
+  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[0][1], loads : 44
+  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[1][0], loads : 36
+  Net : game_logic_portmap/collision_check_portmap/board_shadow_row_4_1__N_281, loads : 28
+  Net : renderer_portmap/future_piece_loc[1][1], loads : 26
+  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[1][2], loads : 25
+  Net : vga_sync_portmap/rgb_col[4], loads : 23
+  Net : game_logic_portmap/piece_loc[0][0], loads : 22
   Net : vga_sync_portmap/rgb_col_0__N_50, loads : 21
-  Net : game_logic_portmap/piece_code[1], loads : 19
-  Net : clock_manager_portmap/clk_counter_0__N_248, loads : 19
+  Net : game_logic_portmap/collision_check_portmap/overlap_row_3_2__N_288, loads : 20
 ################### End Clock Report ##################
 
-Peak Memory Usage: 151 MB
+Peak Memory Usage: 132 MB
 
 --------------------------------------------------------------
 Total CPU Time: 4 secs 

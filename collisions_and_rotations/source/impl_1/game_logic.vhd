@@ -152,22 +152,22 @@ begin
 		piece_shape
 	);
 
-	--piece_picker_portmap : piece_picker port map(
-		--game_clock => game_clock,
-		--new_piece_code => new_piece_code,
-		--new_piece_rotation => new_piece_rotation
-	--);
+	piece_picker_portmap : piece_picker port map(
+		game_clock => game_clock,
+		new_piece_code => new_piece_code,
+		new_piece_rotation => new_piece_rotation
+	);
 
-	 --board_updater_portmap : board_updater port map(
-	 	--game_clock => game_clock,
-	 	--board_update_enable => advance_turn,
-		--score => score,
-	 	--piece_loc => piece_loc,
-	 	--piece_shape => piece_shape,
-	 	--stable_board => board,
-	 	--new_board => new_board,
-		--new_score => new_score
-	 --);
+	 board_updater_portmap : board_updater port map(
+	 	game_clock => game_clock,
+	 	board_update_enable => advance_turn,
+		score => score,
+	 	piece_loc => piece_loc,
+	 	piece_shape => piece_shape,
+	 	stable_board => board,
+	 	new_board => new_board,
+		new_score => new_score
+	 );
 
 	 collision_check_portmap : collision_check port map(
 	 	piece_loc,
@@ -234,7 +234,7 @@ begin
 
 					if press_rotate = '1' and rotate_delay = 0 then
 						piece_loc(1) <= piece_loc(1) - 1;
-						-- piece_rotation <= piece_rotation + 1;
+						piece_rotation <= piece_rotation + 1;
 						rotate_delay <= rotate_delay + 1;
 					end if;
 					if rotate_delay > 0 then

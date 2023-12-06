@@ -50,9 +50,6 @@
 "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/piece_library.vhd"
 "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/renderer.vhd"
 "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/clock_manager.vhd"
-"Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/game_over.vhd"
-"Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/game_state.vhd"
-"Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/welcome.vhd"
 
 
 -path "Z:/es4/ES4-Final/collisions_and_rotations"

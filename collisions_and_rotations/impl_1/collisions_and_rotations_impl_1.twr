@@ -1,6 +1,6 @@
 Lattice Timing Report -  Setup  and Hold, Version Radiant Software (64-bit) 2023.1.0.43.3
 
-Tue Dec  5 18:40:43 2023
+Tue Dec  5 19:05:45 2023
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -76,18 +76,20 @@ Clocked but unconstrained timing end points
 -------------------------------------------------------------------
          Listing 10 End Points          |           Type           
 -------------------------------------------------------------------
-vga_sync_portmap/rgb_row_9__I_0_2/D     |    No arrival or required
-vga_sync_portmap/rgb_row_9__I_0_2/SP    |    No arrival or required
-vga_sync_portmap/rgb_row_9__I_0_2/SR    |    No arrival or required
 vga_sync_portmap/rgb_row_9__I_1/D       |    No arrival or required
 vga_sync_portmap/rgb_row_9__I_2/D       |    No arrival or required
 {vga_sync_portmap/rgb_row_9__I_2/SP   vga_sync_portmap/rgb_row_9__I_1/SP}                           
                                         |    No arrival or required
 {vga_sync_portmap/rgb_row_9__I_2/SR   vga_sync_portmap/rgb_row_9__I_1/SR}                           
                                         |    No arrival or required
-vga_sync_portmap/rgb_col_9__I_0/D       |    No arrival or required
-vga_sync_portmap/rgb_col_9__I_0/SR      |    No arrival or required
 vga_sync_portmap/rgb_col_9__I_10/D      |    No arrival or required
+vga_sync_portmap/rgb_col_9__I_11/D      |    No arrival or required
+{vga_sync_portmap/rgb_col_9__I_11/SR   vga_sync_portmap/rgb_col_9__I_10/SR}                           
+                                        |    No arrival or required
+vga_sync_portmap/rgb_col_9__I_12/D      |    No arrival or required
+vga_sync_portmap/rgb_col_9__I_13/D      |    No arrival or required
+{vga_sync_portmap/rgb_col_9__I_13/SR   vga_sync_portmap/rgb_col_9__I_12/SR}                           
+                                        |    No arrival or required
 -------------------------------------------------------------------
                                         |                          
 Number of unconstrained timing end poin |                          
@@ -153,30 +155,27 @@ nes_controller_portmap/rotate_out_c_I_0/A	->	nes_controller_portmap/rotate_out_c
 nes_controller_portmap/sel_I_0/A	->	nes_controller_portmap/sel_I_0/Z
 
 ++++ Loop3
-renderer_portmap/collision_right_I_0/Z	->	renderer_portmap.i7563_3_lut/Z
+game_logic_portmap/collision_down_I_0/C	->	game_logic_portmap/collision_down_I_0/Z
 
 ++++ Loop4
-renderer_portmap/special_background_0__I_0/C	->	renderer_portmap/special_background_0__I_0/Z
-
-++++ Loop5
-nes_controller_portmap/right_button_I_0/A	->	nes_controller_portmap/right_button_I_0/Z
-
-++++ Loop6
-game_logic_portmap/future_piece_loc_1__2__I_0_4_lut/D	->	game_logic_portmap/future_piece_loc_1__2__I_0_4_lut/Z
-
-++++ Loop7
 renderer_portmap/future_piece_loc_1__1__I_0_4_lut/D	->	renderer_portmap/future_piece_loc_1__1__I_0_4_lut/Z
 
-++++ Loop8
+++++ Loop5
 nes_controller_portmap/down_button_I_0_2/A	->	nes_controller_portmap/down_button_I_0_2/Z
 
-++++ Loop9
+++++ Loop6
 game_logic_portmap/collision_check_portmap/future_piece_loc_1__0__I_0/A	->	game_logic_portmap/collision_check_portmap/future_piece_loc_1__0__I_0/Z
 
-++++ Loop10
+++++ Loop7
+game_logic_portmap.collision_check_portmap.future_piece_loc_1__2__I_0/C	->	game_logic_portmap.collision_check_portmap.future_piece_loc_1__2__I_0/Z
+
+++++ Loop8
 game_logic_portmap/collision_check_portmap/future_piece_loc_1__3__I_0_4_lut/A	->	game_logic_portmap/collision_check_portmap/future_piece_loc_1__3__I_0_4_lut/Z
 
-++++ Loop11
+++++ Loop9
+nes_controller_portmap/right_button_I_0/A	->	nes_controller_portmap/right_button_I_0/Z
+
+++++ Loop10
 nes_controller_portmap/left_button_I_0/A	->	nes_controller_portmap/left_button_I_0/Z
 
 

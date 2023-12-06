@@ -2,11 +2,6 @@
 <BaliMessageLog>
     <Task name="Export">
         <Message>
-            <ID>1081100</ID>
-            <Severity>1</Severity>
-            <Dynamic>Bitstream authenticated.</Dynamic>
-        </Message>
-        <Message>
             <ID>1191031</ID>
             <Severity>1</Severity>
         </Message>
@@ -376,6 +371,22 @@
             <Navigation>34</Navigation>
         </Message>
         <Message>
+            <ID>35929000</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(159): </Dynamic>
+            <Dynamic>game_clock_ctr</Dynamic>
+            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd</Navigation>
+            <Navigation>159</Navigation>
+        </Message>
+        <Message>
+            <ID>35921259</ID>
+            <Severity>1</Severity>
+            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(48): </Dynamic>
+            <Dynamic>game_clock_ctr</Dynamic>
+            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd</Navigation>
+            <Navigation>48</Navigation>
+        </Message>
+        <Message>
             <ID>35921012</ID>
             <Severity>1</Severity>
             <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd(5): </Dynamic>
@@ -430,62 +441,6 @@
             <Dynamic>synth</Dynamic>
             <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd</Navigation>
             <Navigation>20</Navigation>
-        </Message>
-        <Message>
-            <ID>35921012</ID>
-            <Severity>1</Severity>
-            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_over.vhd(5): </Dynamic>
-            <Dynamic>game_over_screen</Dynamic>
-            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_over.vhd</Navigation>
-            <Navigation>5</Navigation>
-        </Message>
-        <Message>
-            <ID>35921010</ID>
-            <Severity>1</Severity>
-            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_over.vhd(16): </Dynamic>
-            <Dynamic>synth</Dynamic>
-            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_over.vhd</Navigation>
-            <Navigation>16</Navigation>
-        </Message>
-        <Message>
-            <ID>35921014</ID>
-            <Severity>1</Severity>
-            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_state.vhd(5): </Dynamic>
-            <Dynamic>my_types_package</Dynamic>
-            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_state.vhd</Navigation>
-            <Navigation>5</Navigation>
-        </Message>
-        <Message>
-            <ID>35921012</ID>
-            <Severity>1</Severity>
-            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_state.vhd(16): </Dynamic>
-            <Dynamic>game_state</Dynamic>
-            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_state.vhd</Navigation>
-            <Navigation>16</Navigation>
-        </Message>
-        <Message>
-            <ID>35921010</ID>
-            <Severity>1</Severity>
-            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_state.vhd(40): </Dynamic>
-            <Dynamic>synth</Dynamic>
-            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_state.vhd</Navigation>
-            <Navigation>40</Navigation>
-        </Message>
-        <Message>
-            <ID>35921012</ID>
-            <Severity>1</Severity>
-            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/welcome.vhd(5): </Dynamic>
-            <Dynamic>welcome_screen</Dynamic>
-            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/welcome.vhd</Navigation>
-            <Navigation>5</Navigation>
-        </Message>
-        <Message>
-            <ID>35921010</ID>
-            <Severity>1</Severity>
-            <Dynamic>z:/es4/es4-final/collisions_and_rotations/source/impl_1/welcome.vhd(14): </Dynamic>
-            <Dynamic>synth</Dynamic>
-            <Navigation>z:/es4/es4-final/collisions_and_rotations/source/impl_1/welcome.vhd</Navigation>
-            <Navigation>14</Navigation>
         </Message>
         <Message>
             <ID>35935049</ID>
