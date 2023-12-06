@@ -29,7 +29,11 @@ architecture synth of board_updater is
 
 	signal blank_board : board_type;
 	signal stable_board : board_type;
+<<<<<<< HEAD
 	signal temp_board_shadow : board_type;
+=======
+	signal temp_board_shadow : board_type := (others => (others => '0'));;
+>>>>>>> fe1bb7f (new idea for board updater - use process instead of generate [untested])
 	signal temp_board : board_type;
 
 	signal piece_bottom_row : unsigned(1 downto 0);
@@ -42,6 +46,7 @@ architecture synth of board_updater is
 	signal piece_row_1, piece_row_2, piece_row_3, piece_row_4 : std_logic_vector(3 downto 0);
 	signal overlap_row_1, overlap_row_2, overlap_row_3, overlap_row_4 : std_logic_vector(3 downto 0);
 
+<<<<<<< HEAD
 	constant START_ROW_ABOVE : integer := 0;
 	constant END_ROW_ABOVE   : integer := to_integer(piece_loc(1)) - 1;
 
@@ -59,6 +64,25 @@ architecture synth of board_updater is
 
 	constant START_COL_RIGHT : integer := to_integer(piece_loc(1)) + 4;
 	constant END_COL_RIGHT   : integer := 15;
+=======
+	-- constant START_ROW_ABOVE : integer := 0;
+	-- constant END_ROW_ABOVE   : integer := to_integer(piece_loc(1)) - 1;
+
+	-- constant START_ROW_BELOW : integer := to_integer(piece_loc(1)) + 4;
+	-- constant END_ROW_BELOW   : integer := 18;
+
+	-- constant START_ROW_BETWEEN : integer := to_integer(piece_loc(1)) + 0;
+	-- constant END_ROW_BETWEEN   : integer := to_integer(piece_loc(1)) + 3;
+
+	-- constant START_COL_LEFT  : integer := 0;
+	-- constant END_COL_LEFT    : integer := to_integer(piece_loc(0)) - 1;
+
+	-- constant START_COL_BETWEEN  : integer := to_integer(piece_loc(0));
+	-- constant END_COL_BETWEEN    : integer := to_integer(piece_loc(0)) + 3;
+
+	-- constant START_COL_RIGHT : integer := to_integer(piece_loc(1)) + 4;
+	-- constant END_COL_RIGHT   : integer := 15;
+>>>>>>> fe1bb7f (new idea for board updater - use process instead of generate [untested])
 
 begin
 
@@ -132,6 +156,7 @@ begin
 
 	-- Generate statements using constants
 	-- SOMETHING IS NOT WORKING HERE -- IT SEEMS TO MAKE ALL ZEROS
+<<<<<<< HEAD
 	generate_temp_board_shadow_row_above_piece : for y in START_ROW_ABOVE to END_ROW_ABOVE generate
 		temp_board_shadow(y) <= (others => '0');
 	end generate;
@@ -177,8 +202,84 @@ begin
 			--else
 				--new_board <= stable_board;
 			end if;
+=======
+	-- generate_temp_board_shadow_row_above_piece : for y in START_ROW_ABOVE to END_ROW_ABOVE generate
+	-- 	temp_board_shadow(y) <= (others => '0');
+	-- end generate;
+
+	-- generate_temp_board_shadow_row_below_piece : for y in START_ROW_BELOW to END_ROW_BELOW generate
+	-- 	temp_board_shadow(y) <= (others => '0');
+	-- end generate;
+
+	-- generate_temp_board_shadow_around_piece : for y in START_ROW_BETWEEN to END_ROW_BETWEEN generate
+	-- 	left_of_piece : for x in START_COL_LEFT to END_COL_LEFT generate
+	-- 		temp_board_shadow(y)(x) <= '0';
+	-- 	end generate;
+
+	-- 	through_piece : for x in START_COL_BETWEEN to END_COL_BETWEEN generate
+	-- 		temp_board_shadow(y)(x) <= piece_rows(y - to_integer(piece_loc(1)))(x - to_integer(piece_loc(0)));
+	-- 	end generate;
+
+	-- 	right_of_piece : for x in START_COL_RIGHT to END_COL_RIGHT generate
+	-- 		temp_board_shadow(y)(x) <= '0';
+	-- 	end generate;
+	-- end generate;
+
+	process(game_clock) begin
+		if rising_edge(game_clock) then
+
+			for y in 0 to to_integer(piece_loc(1)) - 1 loop
+				temp_board_shadow(y) <= (others => '0');
+			end loop;
+
+			for y in to_integer(piece_loc(1)) + 4 to 18 loop
+				temp_board_shadow(y) <= (others => '0');
+			end loop;
+
+			for y in to_integer(piece_loc(1)) + 0 to to_integer(piece_loc(1)) + 3 loop			loop
+				for x in 0 to to_integer(piece_loc(0)) - 1 loop
+					temp_board_shadow(y)(x) <= '0';
+				end generate;
+
+				for x in to_integer(piece_loc(0)) to to_integer(piece_loc(0)) + 3 loop
+					temp_board_shadow(y)(x) <= piece_rows(y - to_integer(piece_loc(1)))(x - to_integer(piece_loc(0)));
+				end loop;
+
+				for x in to_integer(piece_loc(1)) + 4 to 15 loop
+					temp_board_shadow(y)(x) <= '0';
+				end loop;
+			end loop;
+
+			new_board <= temp_board;
+
+>>>>>>> fe1bb7f (new idea for board updater - use process instead of generate [untested])
 		end if;
 	end process;
+
+	--temp_board_shadow(to_integer(piece_loc(1)) + 0)(to_integer(piece_loc(0)) to to_integer(piece_loc(0)) + 3) <= piece_row_1;
+	--temp_board_shadow(to_integer(piece_loc(1)) + 1)(to_integer(piece_loc(0)) to to_integer(piece_loc(0)) + 3) <= piece_row_2 when (piece_bottom_row >= 2d"1") else 4b"0";
+	--temp_board_shadow(to_integer(piece_loc(1)) + 2)(to_integer(piece_loc(0)) to to_integer(piece_loc(0)) + 3) <= piece_row_3 when (piece_bottom_row >= 2d"2") else 4b"0";
+	--temp_board_shadow(to_integer(piece_loc(1)) + 3)(to_integer(piece_loc(0)) to to_integer(piece_loc(0)) + 3) <= piece_row_4 when (piece_bottom_row = 2d"3") else 4b"0";
+	--temp_board_shadow(to_integer(piece_loc(1)) + 0)(to_integer(piece_loc(0)) to to_integer(piece_loc(0)) + 3) <= overlap_row_1;
+	--temp_board_shadow(to_integer(piece_loc(1)) + 1)(to_integer(piece_loc(0)) to to_integer(piece_loc(0)) + 3) <= overlap_row_2 when (piece_bottom_row >= 2d"1") else 4b"0";
+	--temp_board_shadow(to_integer(piece_loc(1)) + 2)(to_integer(piece_loc(0)) to to_integer(piece_loc(0)) + 3) <= overlap_row_3 when (piece_bottom_row >= 2d"2") else 4b"0";
+	--temp_board_shadow(to_integer(piece_loc(1)) + 3)(to_integer(piece_loc(0)) to to_integer(piece_loc(0)) + 3) <= overlap_row_4 when (piece_bottom_row = 2d"3") else 4b"0";
+
+	-- THIS GEN STATEMENT IS VERIFIED TO WORK, i.e. it does what it says
+	generate_board_row_out: for y in 0 to 15 generate
+		temp_board(y) <= temp_board_shadow(y) or blank_board(y);
+	end generate;
+
+	--new_board <= temp_board when board_update_enable = '1' else stable_board;
+	-- process(game_clock) begin
+	-- 	if rising_edge(game_clock) then
+	-- 		if board_update_enable = '0' then
+	-- 			new_board <= temp_board;
+	-- 		--else
+	-- 			--new_board <= stable_board;
+	-- 		end if;
+	-- 	end if;
+	-- end process;
 
 	-- temp_board <= temp_board_shadow or stable_board; -- MAY NOT WORK !!!
 	-- new_board <= temp_board when board_update_enable = '1' else stable_board;
