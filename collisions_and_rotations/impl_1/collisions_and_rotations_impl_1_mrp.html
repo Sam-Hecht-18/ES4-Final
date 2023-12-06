@@ -48,7 +48,7 @@ Package: SG48
 Performance Grade:  High-Performance_1.2V
 
 Mapper:    version Radiant Software (64-bit) 2023.1.0.43.3
-Mapped on: Tue Dec  5 23:21:12 2023
+Mapped on: Wed Dec  6 00:22:37 2023
 
 
 <A name="mrp_di"></A><B><U><big>Design Information</big></U></B>
@@ -61,8 +61,8 @@ Command line:   map -i collisions_and_rotations_impl_1_syn.udb -pdc
 <A name="mrp_ds"></A><B><U><big>Design Summary</big></U></B>
    Number of slice registers:  96 out of  5280 (2%)
    Number of I/O registers:      0 out of   117 (0%)
-   Number of LUT4s:           450 out of  5280 (9%)
-      Number of logic LUT4s:             376
+   Number of LUT4s:           523 out of  5280 (10%)
+      Number of logic LUT4s:             449
       Number of inserted feedthru LUT4s:   6
       Number of replicated LUT4s:          6
       Number of ripple logic:             31 (62 LUT4s)
@@ -90,39 +90,43 @@ Command line:   map -i collisions_and_rotations_impl_1_syn.udb -pdc
    Number of Clocks:  4
       Net clk: 32 loads, 32 rising, 0 falling (Driver: Pin
      clock_manager_portmap.pll_portmap.lscc_pll_inst.u_PLL_B/OUTGLOBAL)
+      Net osc_c: 1 loads, 1 rising, 0 falling (Driver: Port osc)
       Net game_clock: 34 loads, 34 rising, 0 falling (Driver: Pin
      clock_manager_portmap.game_clock_I_0/Q)
-      Net osc_c: 1 loads, 1 rising, 0 falling (Driver: Port osc)
       Net ctrlr_clk_c: 7 loads, 7 rising, 0 falling (Driver: Pin
      nes_controller_portmap.ctrlr_clk_c_I_0/Z)
-   Number of Clock Enables:  3
+   Number of Clock Enables:  4
       Net VCC_net: 3 loads, 0 SLICEs
       Net vga_sync_portmap.rgb_col_0__N_50: 6 loads, 6 SLICEs
-      Net game_logic_portmap.piece_loc_0__0__N_105: 8 loads, 8 SLICEs
+      Net game_logic_portmap.piece_loc_0__0__N_105: 4 loads, 4 SLICEs
 
-   Number of LSRs:  4
+      Net game_logic_portmap.piece_loc_1__0__N_93: 4 loads, 4 SLICEs
+   Number of LSRs:  5
+      Net clock_manager_portmap.clk_counter_0__N_374: 10 loads, 10 SLICEs
+      Net piece_loc_0__0__N_106: 4 loads, 4 SLICEs
       Net vga_sync_portmap.rgb_col_0__N_50: 6 loads, 6 SLICEs
       Net vga_sync_portmap.rgb_row_0__N_30: 6 loads, 6 SLICEs
-      Net clock_manager_portmap.clk_counter_0__N_347: 10 loads, 10 SLICEs
-      Net piece_loc_0__0__N_106: 8 loads, 8 SLICEs
+      Net game_logic_portmap.piece_loc_1__0__N_94: 4 loads, 4 SLICEs
    Top 10 highest fanout non-clock nets:
-      Net game_logic_portmap.collision_check_portmap.future_piece_loc[0][0]: 50
+      Net game_logic_portmap.collision_check_portmap.future_piece_loc[0][0]: 49
      loads
-      Net game_logic_portmap.collision_check_portmap.future_piece_loc[0][1]: 40
+      Net game_logic_portmap.collision_check_portmap.future_piece_loc[0][1]: 41
      loads
       Net game_logic_portmap.collision_check_portmap.future_piece_loc[1][0]: 37
      loads
+      Net a: 28 loads
       Net
-     game_logic_portmap.collision_check_portmap.board_shadow_row_4_1__N_258: 27
+     game_logic_portmap.collision_check_portmap.board_shadow_row_4_2__N_264: 27
      loads
-      Net game_logic_portmap.collision_check_portmap.future_piece_loc[1][1]: 23
+      Net game_logic_portmap.collision_check_portmap.future_piece_loc[1][2]: 24
      loads
-      Net game_logic_portmap.collision_check_portmap.future_piece_loc[0][3]: 20
+      Net
+     game_logic_portmap.collision_check_portmap.future_piece_loc_0__3__N_218: 24
      loads
-      Net piece_loc[1][0]: 20 loads
-      Net piece_loc_0__0__N_106: 19 loads
-      Net down_button: 17 loads
-      Net piece_loc[0][0]: 17 loads
+      Net piece_loc[1][1]: 24 loads
+      Net game_logic_portmap.collision_check_portmap.future_piece_loc[1][3]: 22
+     loads
+      Net game_logic_portmap.piece_code[0]: 22 loads
 
 
 
@@ -156,11 +160,11 @@ Command line:   map -i collisions_and_rotations_impl_1_syn.udb -pdc
 | ctrlr_latch         | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | vsync               | OUTPUT    |           |       |       |           |
+
 +---------------------+-----------+-----------+-------+-------+-----------+
 | hsync               | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | rgb[0]              | OUTPUT    |           |       |       |           |
-
 +---------------------+-----------+-----------+-------+-------+-----------+
 | rgb[1]              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
@@ -177,8 +181,6 @@ Command line:   map -i collisions_and_rotations_impl_1_syn.udb -pdc
 
 <A name="mrp_rm"></A><B><U><big>Removed logic</big></U></B>
 
-Block game_logic_portmap/collision_check_portmap/Mux_66_i5_3_lut_2_lut was
-     optimized away.
 Block i1 was optimized away.
 
 
@@ -218,8 +220,6 @@ PLL 1:                                 Pin/Node Value
   FILTER_RANGE:                                 1
   EXTERNAL_DIVIDE_FACTOR:                       NONE
   TEST Mode:                                    0
-
-
 
 
 

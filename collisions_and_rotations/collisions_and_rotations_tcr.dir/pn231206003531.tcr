@@ -1,0 +1,36 @@
+#Start recording tcl command: 12/5/2023 21:31:01
+#Project Location: Z:/ES4-Final/collisions_and_rotations; Project name: collisions_and_rotations
+prj_open "Z:/ES4-Final/collisions_and_rotations/collisions_and_rotations.rdf"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+prj_run Synthesis -impl impl_1
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_enable_source "Z:/ES4-Final/collisions_and_rotations/source/impl_1/new_modules/board_updater.vhd"
+prj_disable_source "Z:/ES4-Final/collisions_and_rotations/source/impl_1/new_modules/board_updater.vhd"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+prj_set_impl_opt synthesis "synplify"
+prj_run Synthesis -impl impl_1
+prj_set_impl_opt synthesis "lse"
+prj_enable_source "Z:/ES4-Final/collisions_and_rotations/source/impl_1/new_modules/piece_picker.vhd"
+prj_enable_source "Z:/ES4-Final/collisions_and_rotations/source/impl_1/new_modules/board_updater.vhd"
+prj_enable_source "Z:/ES4-Final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd"
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_add_source "Z:/ES4-Final/collisions_and_rotations/source/impl_1/new_modules/game_logic_TEMP.vhd" "Z:/ES4-Final/collisions_and_rotations/source/impl_1/new_modules/collision_check_TEMP.vhd"
+prj_disable_source "Z:/ES4-Final/collisions_and_rotations/source/impl_1/new_modules/game_logic_TEMP.vhd"
+prj_disable_source "Z:/ES4-Final/collisions_and_rotations/source/impl_1/new_modules/collision_check_TEMP.vhd"
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+#Stop recording: 12/6/2023 00:35:32

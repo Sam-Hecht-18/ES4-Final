@@ -93,30 +93,44 @@ begin
 	generate_board_row: for y in 0 to 15 generate
 		temp_board(y) <= temp_board_shadow(y) or stable_board(y);
 	end generate;
+	
+	--new_board <= temp_board when board_update_enable = '1' else stable_board;
+	process(game_clock) begin
+		if rising_edge(game_clock) then
+			if board_update_enable = '1' then
+				new_board <= temp_board;
+			else
+				new_board <= stable_board;
+			end if;
+		end if;
+	end process;
 
 	-- temp_board <= temp_board_shadow or stable_board; -- MAY NOT WORK !!!
 	-- new_board <= temp_board when board_update_enable = '1' else stable_board;
 
 	-- process(game_clock) begin
 	-- 	if rising_edge(game_clock) then
-	process(board_update_enable) begin
-		if rising_edge(board_update_enable) then
-			-- if board_update_enable = '1' then
-				for i in 15 downto 1 loop
-					if (temp_board(i)(3 to 12) = "1111111111" and i /= 0) then
-						new_score <= score + 1;
-						for j in i downto 1 loop
-							new_board(j) <= temp_board(j - 1);
-						end loop;
-						new_board(0) <= "0000000000000000";
-					elsif (temp_board(i)(3 to 12) = "1111111111" and i = 0) then
-						new_board(i) <= "0000000000000000";
-					else
-						new_board(i) <= temp_board(i);
-					end if;
-				end loop;
-			-- end if;
-		end if;
-	end process;
+	--process(board_update_enable) begin
+		--if rising_edge(board_update_enable) then
+			----for index in 0 to 15 loop
+			---- if board_update_enable = '1' then
+				--for i in 15 downto 1 loop
+					--if (temp_board(i)(3 to 12) = "1111111111" and i /= 0) then
+						--new_score <= score + 1;
+						--for j in i downto 1 loop
+							--new_board(j) <= temp_board(j - 1);
+						--end loop;
+						--new_board(0) <= "0000000000000000";
+					--elsif (temp_board(i)(3 to 12) = "1111111111" and i = 0) then
+						--new_board(i) <= "0000000000000000";
+					--else
+						--new_board(i) <= temp_board(i);
+					--end if;
+				--end loop;
+			----end loop;
+			
+			---- end if;
+		--end if;
+	--end process;
 
 end;

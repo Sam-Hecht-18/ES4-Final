@@ -46,7 +46,7 @@ if (a)
 <A name="Timing_rpt_top">Timing Report</A><B><U><big></big></U></B>
 Lattice Timing Report -  Setup  and Hold, Version Radiant Software (64-bit) 2023.1.0.43.3
 
-Tue Dec  5 23:21:27 2023
+Wed Dec  6 00:22:53 2023
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -118,19 +118,21 @@ Clocked but unconstrained timing end points
 -------------------------------------------------------------------
          Listing 10 End Points          |           Type           
 -------------------------------------------------------------------
-vga_sync_portmap/rgb_row_9__I_0/D       |    No arrival or required
-vga_sync_portmap/rgb_row_9__I_0/SP      |    No arrival or required
-vga_sync_portmap/rgb_row_9__I_0/SR      |    No arrival or required
-vga_sync_portmap/rgb_row_9__I_1/D       |    No arrival or required
-vga_sync_portmap/rgb_row_9__I_2/D       |    No arrival or required
-{vga_sync_portmap/rgb_row_9__I_2/SP   vga_sync_portmap/rgb_row_9__I_1/SP}                           
+clock_manager_portmap/game_clock_ctr_15__I_31/D                           
                                         |    No arrival or required
-{vga_sync_portmap/rgb_row_9__I_2/SR   vga_sync_portmap/rgb_row_9__I_1/SR}                           
+clock_manager_portmap/game_clock_ctr_15__I_32/D                           
                                         |    No arrival or required
-vga_sync_portmap/rgb_row_9__I_3/D       |    No arrival or required
-vga_sync_portmap/rgb_row_9__I_4/D       |    No arrival or required
-{vga_sync_portmap/rgb_row_9__I_4/SP   vga_sync_portmap/rgb_row_9__I_3/SP}                           
+clock_manager_portmap/game_clock_ctr_15__I_33/D                           
                                         |    No arrival or required
+clock_manager_portmap/NEScount_7__I_55/D|    No arrival or required
+clock_manager_portmap/NEScount_7__I_56/D|    No arrival or required
+{clock_manager_portmap/NEScount_7__I_56/SR   clock_manager_portmap/NEScount_7__I_55/SR}                           
+                                        |    No arrival or required
+clock_manager_portmap/NEScount_7__I_57/D|    No arrival or required
+clock_manager_portmap/NEScount_7__I_0/D |    No arrival or required
+{clock_manager_portmap/NEScount_7__I_0/SR   clock_manager_portmap/NEScount_7__I_57/SR}                           
+                                        |    No arrival or required
+clock_manager_portmap/NEScount_7__I_34/D|    No arrival or required
 -------------------------------------------------------------------
                                         |                          
 Number of unconstrained timing end poin |                          
@@ -189,24 +191,21 @@ nition                                  |                         2
 Combinational Loops
 -------------------
 ++++ Loop1
-nes_controller_portmap/rotate_out_c_I_0/A	->	nes_controller_portmap/rotate_out_c_I_0/Z
-
-++++ Loop2
-game_logic_portmap/collision_down_I_0/Z	->	game_logic_portmap/i1_4_lut/Z
-
-++++ Loop3
-nes_controller_portmap/down_button_I_0_2/A	->	nes_controller_portmap/down_button_I_0_2/Z
-
-++++ Loop4
 nes_controller_portmap/a_I_0/A	->	nes_controller_portmap/a_I_0/Z
 
-++++ Loop5
+++++ Loop2
 nes_controller_portmap/sel_I_0/A	->	nes_controller_portmap/sel_I_0/Z
 
-++++ Loop6
-nes_controller_portmap/left_button_I_0_2/A	->	nes_controller_portmap/left_button_I_0_2/Z
+++++ Loop3
+nes_controller_portmap/rotate_out_c_I_0/A	->	nes_controller_portmap/rotate_out_c_I_0/Z
 
-++++ Loop7
+++++ Loop4
+nes_controller_portmap/down_button_I_0/A	->	nes_controller_portmap/down_button_I_0/Z
+
+++++ Loop5
+nes_controller_portmap/left_button_I_0/A	->	nes_controller_portmap/left_button_I_0/Z
+
+++++ Loop6
 nes_controller_portmap/right_button_I_0/A	->	nes_controller_portmap/right_button_I_0/Z
 
 

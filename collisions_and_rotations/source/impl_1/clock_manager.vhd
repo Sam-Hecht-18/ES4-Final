@@ -29,7 +29,7 @@ architecture synth of clock_manager is
 	end component;
 
     signal outcore_o : std_logic;
-	signal clk_counter : unsigned(18 downto 0);
+	signal clk_counter : unsigned(18 downto 0) := 19d"0";
 
 begin
 

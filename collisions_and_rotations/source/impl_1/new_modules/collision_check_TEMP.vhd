@@ -17,7 +17,7 @@ entity collision_check is
 		game_clock : in std_logic;
 		piece_loc : in piece_loc_type; -- (x, y) from top left of grid to top left of piece 4x4
 		piece_shape : in std_logic_vector(15 downto 0);
-		piece_code : in unsigned(2 downto 0); 
+		piece_code : in unsigned(2 downto 0);
 		piece_rotation : in unsigned(1 downto 0);
 		stable_board : in board_type;
 		press_left : in std_logic;
@@ -29,11 +29,25 @@ entity collision_check is
 		collision_right : out std_logic;
 		collision_down : out std_logic;
 		collision_rotate : out std_logic
-	);
+		-- hit_piece : out std_logic;
+		-- hit_edge : out std_logic
+);
+
 end collision_check;
 
 architecture synth of collision_check is
 
+	--component board_overlap is
+		--port(
+			--clk : in std_logic;
+			--union_or_intersection : in std_logic;
+			--piece_loc: in piece_loc_type; -- (x, y) from top left of grid to top left of piece 4x4
+			--piece_shape: in std_logic_vector(15 downto 0);
+			--piece_bottom_row : out unsigned(1 downto 0);
+			--overlap_row_1, overlap_row_2, overlap_row_3, overlap_row_4 : out std_logic_vector(3 downto 0)
+		--);
+	--end component;
+	
 	component piece_library is
 		port(
 			game_clock : in std_logic;
@@ -53,11 +67,8 @@ architecture synth of collision_check is
 	signal overlap_row_1, overlap_row_2, overlap_row_3, overlap_row_4 : std_logic_vector(3 downto 0);
 	signal hit_piece : std_logic := '0';
 	signal hit_bottom : std_logic := '0';
-	signal hit_left : std_logic := '0';
-	signal hit_right : std_logic := '0';
-	signal exceed_bottom : std_logic := '0';
-	signal exceed_left : std_logic := '0';
-	signal exceed_right : std_logic := '0';
+	signal hit_left : std_logic;
+	signal hit_right : std_logic;
 
 	signal piece_col_1 : std_logic_vector(3 downto 0);
 	signal piece_col_2 : std_logic_vector(3 downto 0);
@@ -72,14 +83,21 @@ architecture synth of collision_check is
 	
 	signal piece_shape_rotated : std_logic_vector(15 downto 0);
 	signal piece_shape_result : std_logic_vector(15 downto 0);
+
 	signal piece_rotation_next : unsigned(1 downto 0);
 
 begin
-
+	
+	-- Check for valid rotation 
+	piece_library_portmap : piece_library port map(
+		game_clock,
+		std_logic_vector(piece_code),
+		std_logic_vector(piece_rotation_next),
+		piece_shape_rotated
+	);
 	-- future_piece_loc(0) <= piece_loc(0) + press_right - press_left;
-	future_piece_loc(0) <= piece_loc(0) + press_right - press_left when (move_down_auto = '0' and press_down = '0' and press_rotate = '0') else piece_loc(0);
-	future_piece_loc(1) <= piece_loc(1) + '1' when (press_down or move_down_auto) else piece_loc(1);
-	--future_piece_loc(1) <= piece_loc(1) + 1 when (press_down = '1' or move_down_auto = '1') else piece_loc(1);
+	future_piece_loc(0) <= piece_loc(0) + press_right - press_left when (move_down_auto = '0' and press_down = '0') else piece_loc(0);
+	future_piece_loc(1) <= piece_loc(1) + 1 when (press_down = '1' or move_down_auto = '1');
 
 	-- board_overlap_portmap : board_overlap port map(clk, '1', future_piece_loc, piece_shape, piece_bottom_row, overlap_row_1, overlap_row_2, overlap_row_3, overlap_row_4);
 
@@ -94,35 +112,23 @@ begin
 
 	piece_left_col_loc <= piece_loc(0) + piece_left_col;
 	piece_right_col_loc <= piece_loc(0) + piece_right_col;
-	hit_right <= '1' when (piece_right_col_loc >= 4d"12") else '0';
-	hit_left <= '1' when (piece_left_col_loc <= 4d"3") else '0';
-	exceed_right <= '1' when (piece_right_col_loc > 4d"12") else '0';
-	exceed_left <= '1' when (piece_left_col_loc < 4d"3") else '0';
+	hit_right <= '1' when (piece_right_col_loc = 4d"12") else '0';
+	hit_left <= '1' when (piece_left_col_loc = 4d"3") else '0';
 
 	-- HERE: check if we have hit bottom !!!
-	
-	-- Check for valid rotation 
-	piece_library_portmap : piece_library port map(
-		game_clock,
-		std_logic_vector(piece_code),
-		std_logic_vector(piece_rotation_next),
-		piece_shape_rotated
-	);
 
 	-- create piece rotation next
 	piece_rotation_next <= piece_rotation + 1;
-	piece_shape_result <= piece_shape when press_rotate = '0' else piece_shape_rotated;
-
 	-- Get the four rows of the current piece
-	piece_row_1 <= piece_shape_result(15 downto 12);
-	piece_row_2 <= piece_shape_result(11 downto 8);
-	piece_row_3 <= piece_shape_result(7 downto 4);
-	piece_row_4 <= piece_shape_result(3 downto 0);
+	piece_shape_result <= piece_shape when press_rotate = '0' else piece_shape_rotated;
+	piece_row_1 <= piece_shape(15 downto 12);
+	piece_row_2 <= piece_shape(11 downto 8);
+	piece_row_3 <= piece_shape(7 downto 4);
+	piece_row_4 <= piece_shape(3 downto 0);
 
 	piece_bottom_row <= 2d"3" when (piece_row_4 /= 4b"0") else 2d"2" when (piece_row_3 /= 4b"0") else 2d"1" when (piece_row_2 /= 4b"0") else 2d"0";
 	piece_bottom_row_loc <= 6b"0" + piece_loc(1) + piece_bottom_row;
-	hit_bottom <= '1' when (piece_bottom_row_loc >= 5d"15") else '0';
-	exceed_bottom <= '1' when (piece_bottom_row_loc > 5d"15") else '0';
+	hit_bottom <= '1' when (piece_bottom_row_loc = 5d"15") else '0';
 
 	-- HERE: check if we have hit a piece BEFORE 4x4 hits bottom !!!
 
@@ -143,8 +149,6 @@ begin
 	collision_down <= (hit_piece or hit_bottom) and (press_down or move_down_auto);
 	collision_left <= ((hit_piece or hit_left) and press_left) or move_down_auto or press_down;
 	collision_right <= ((hit_piece or hit_right) and press_right) or move_down_auto or press_down;
-	-- moving takes precedence over rotating:
-	collision_rotate <= ((hit_piece or exceed_left or exceed_right or exceed_bottom) and press_rotate) or move_down_auto or press_down or press_left or press_right;
 
 	-- collision_down <= (hit_piece or hit_bottom);
 	-- collision_left <= ((hit_piece or hit_left));
