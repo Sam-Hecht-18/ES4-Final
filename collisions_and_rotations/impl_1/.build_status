@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BuildStatus>
     <Strategy name="Strategy1">
-        <Milestone name="Export" build_result="2" build_time="1701888093">
-            <Task name="Bitgen" build_result="2" update_result="0" update_time="1701888093"/>
-            <Task name="IBIS" build_result="2" update_result="0" update_time="1701888094"/>
-            <Task name="TimingSimFileVlg" build_result="2" update_result="0" update_time="1701888095"/>
+        <Milestone name="Export" build_result="2" build_time="1701906445">
+            <Task name="Bitgen" build_result="2" update_result="0" update_time="1701906445"/>
+            <Task name="IBIS" build_result="2" update_result="0" update_time="1701906447"/>
+            <Task name="TimingSimFileVlg" build_result="2" update_result="0" update_time="1701906460"/>
         </Milestone>
-        <Milestone name="Map" build_result="2" build_time="1701888077">
-            <Task name="Map" build_result="2" update_result="0" update_time="1701888077"/>
+        <Milestone name="Map" build_result="2" build_time="1701906291">
+            <Task name="Map" build_result="2" update_result="0" update_time="1701906291"/>
             <Task name="MapTrace" build_result="0" update_result="2" update_time="1701560595"/>
         </Milestone>
-        <Milestone name="PAR" build_result="2" build_time="1701888090">
-            <Task name="PAR" build_result="2" update_result="0" update_time="1701888090"/>
-            <Task name="PARTrace" build_result="2" update_result="0" update_time="1701888092"/>
+        <Milestone name="PAR" build_result="2" build_time="1701906432">
+            <Task name="PAR" build_result="2" update_result="0" update_time="1701906432"/>
+            <Task name="PARTrace" build_result="2" update_result="0" update_time="1701906443"/>
             <Task name="IOTiming" build_result="0" update_result="3" update_time="0"/>
         </Milestone>
-        <Milestone name="Synthesis" build_result="2" build_time="1701888076">
-            <Task name="Lattice_Synthesis" build_result="2" update_result="0" update_time="1701888076"/>
-            <Task name="LSE_Compile" build_result="2" update_result="0" update_time="1701888095"/>
+        <Milestone name="Synthesis" build_result="2" build_time="1701906288">
+            <Task name="Lattice_Synthesis" build_result="2" update_result="0" update_time="1701906288"/>
+            <Task name="LSE_Compile" build_result="2" update_result="0" update_time="1701906291"/>
             <Task name="SynTrace" build_result="0" update_result="2" update_time="1701881669"/>
             <Task name="SynVerilogSimFile" build_result="0" update_result="2" update_time="1701881669"/>
         </Milestone>
@@ -28,17 +28,17 @@
             <Task name="PIODRC" build_result="0" update_result="2" update_time="1701560595"/>
             <Task name="DEC" build_result="0" update_result="2" update_time="1701560595"/>
         </Milestone>
-        <Report name="IBIS/collisions_and_rotations_impl_1.ibs" last_build_time="1701888094" last_build_size="54493"/>
-        <Report name="collisions_and_rotations_impl_1.bgn" last_build_time="1701888093" last_build_size="1021"/>
-        <Report name="collisions_and_rotations_impl_1.bin" last_build_time="1701888093" last_build_size="104156"/>
+        <Report name="IBIS/collisions_and_rotations_impl_1.ibs" last_build_time="1701906446" last_build_size="54493"/>
+        <Report name="collisions_and_rotations_impl_1.bgn" last_build_time="1701906445" last_build_size="1064"/>
+        <Report name="collisions_and_rotations_impl_1.bin" last_build_time="1701906445" last_build_size="104156"/>
         <Report name="collisions_and_rotations_impl_1.lsedata" last_build_time="0" last_build_size="0"/>
-        <Report name="collisions_and_rotations_impl_1.twr.html" last_build_time="1701888092" last_build_size="16622"/>
-        <Report name="collisions_and_rotations_impl_1.udb" last_build_time="1701888090" last_build_size="78929"/>
-        <Report name="collisions_and_rotations_impl_1_map.udb" last_build_time="1701888077" last_build_size="47128"/>
-        <Report name="collisions_and_rotations_impl_1_rtl.udb" last_build_time="1701888073" last_build_size="60689"/>
-        <Report name="collisions_and_rotations_impl_1_syn.udb" last_build_time="1701888076" last_build_size="34138"/>
-        <Report name="collisions_and_rotations_impl_1_vo.sdf" last_build_time="1701888095" last_build_size="464496"/>
-        <Report name="collisions_and_rotations_impl_1_vo.vo" last_build_time="1701888095" last_build_size="441794"/>
+        <Report name="collisions_and_rotations_impl_1.twr.html" last_build_time="1701906442" last_build_size="16967"/>
+        <Report name="collisions_and_rotations_impl_1.udb" last_build_time="1701906432" last_build_size="562767"/>
+        <Report name="collisions_and_rotations_impl_1_map.udb" last_build_time="1701906290" last_build_size="280709"/>
+        <Report name="collisions_and_rotations_impl_1_rtl.udb" last_build_time="1701906267" last_build_size="143476"/>
+        <Report name="collisions_and_rotations_impl_1_syn.udb" last_build_time="1701906288" last_build_size="167487"/>
+        <Report name="collisions_and_rotations_impl_1_vo.sdf" last_build_time="1701906460" last_build_size="4265586"/>
+        <Report name="collisions_and_rotations_impl_1_vo.vo" last_build_time="1701906459" last_build_size="3431861"/>
     </Strategy>
 </BuildStatus>
-             
+                                  

@@ -5,7 +5,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-Wed Dec  6 13:41:10 2023
+Wed Dec  6 18:44:24 2023
 
 
 Command Line:  C:\lscc\radiant\2023.1\ispfpga\bin\nt64\synthesis.exe -f collisions_and_rotations_impl_1_lattice.synproj -gui -msgset Z:/ES4-Final/collisions_and_rotations/promote.xml 
@@ -171,8 +171,6 @@ Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/game_log
 INFO <35921014> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(5): analyzing package my_types_package. VHDL-1014
 INFO <35921012> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(15): analyzing entity game_logic. VHDL-1012
 INFO <35921010> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(35): analyzing architecture synth. VHDL-1010
-INFO <35929000> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(149): input pin game_clock_ctr has no actual or default value. VHDL-9000
-INFO <35921259> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(49): game_clock_ctr is declared here. VHDL-1259
 Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd. VHDL-1481
 Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd
 
@@ -222,22 +220,6 @@ INFO <35921504> - synthesis: The default VHDL library search path is now "Z:/ES4
 Top module language type = VHDL.
 WARNING <35935049> - synthesis: input port sclk_i remains unconnected for this instance. VDB-5049
 WARNING <35935049> - synthesis: input port sdi_i remains unconnected for this instance. VDB-5049
-WARNING <35935050> - synthesis: input port game_clock_ctr[15] is not connected on this instance. VDB-5050
-WARNING <35935050> - synthesis: input port game_clock_ctr[14] is not connected on this instance. VDB-5050
-WARNING <35935050> - synthesis: input port game_clock_ctr[13] is not connected on this instance. VDB-5050
-WARNING <35935050> - synthesis: input port game_clock_ctr[12] is not connected on this instance. VDB-5050
-WARNING <35935050> - synthesis: input port game_clock_ctr[11] is not connected on this instance. VDB-5050
-WARNING <35935050> - synthesis: input port game_clock_ctr[10] is not connected on this instance. VDB-5050
-WARNING <35935050> - synthesis: input port game_clock_ctr[9] is not connected on this instance. VDB-5050
-WARNING <35935050> - synthesis: input port game_clock_ctr[8] is not connected on this instance. VDB-5050
-WARNING <35935050> - synthesis: input port game_clock_ctr[7] is not connected on this instance. VDB-5050
-WARNING <35935050> - synthesis: input port game_clock_ctr[6] is not connected on this instance. VDB-5050
-WARNING <35935050> - synthesis: input port game_clock_ctr[5] is not connected on this instance. VDB-5050
-WARNING <35935049> - synthesis: input port game_clock_ctr[4] remains unconnected for this instance. VDB-5049
-WARNING <35935049> - synthesis: input port game_clock_ctr[3] remains unconnected for this instance. VDB-5049
-WARNING <35935049> - synthesis: input port game_clock_ctr[2] remains unconnected for this instance. VDB-5049
-WARNING <35935049> - synthesis: input port game_clock_ctr[1] remains unconnected for this instance. VDB-5049
-WARNING <35935049> - synthesis: input port game_clock_ctr[0] remains unconnected for this instance. VDB-5049
 Top module name (VHDL, mixed language): master
                                                          
 
@@ -268,11 +250,15 @@ WARNING <35001771> - synthesis: Initial value found on net collision_left will b
 WARNING <35001771> - synthesis: Initial value found on net collision_right will be ignored due to unrecognized driver type
 WARNING <35001771> - synthesis: Initial value found on net collision_down will be ignored due to unrecognized driver type
 WARNING <35001771> - synthesis: Initial value found on net collision_rotate will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net new_piece_code[2] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net new_piece_code[1] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net new_piece_code[0] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net new_piece_rotation[1] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net new_piece_rotation[0] will be ignored due to unrecognized driver type
+WARNING <35001771> - synthesis: Initial value found on net gnd will be ignored due to unrecognized driver type
+WARNING <35001771> - synthesis: Initial value found on net piece_loc_x[3] will be ignored due to unrecognized driver type
+WARNING <35001771> - synthesis: Initial value found on net piece_loc_x[2] will be ignored due to unrecognized driver type
+WARNING <35001771> - synthesis: Initial value found on net piece_loc_x[1] will be ignored due to unrecognized driver type
+WARNING <35001771> - synthesis: Initial value found on net piece_loc_x[0] will be ignored due to unrecognized driver type
+WARNING <35001771> - synthesis: Initial value found on net piece_loc_y[3] will be ignored due to unrecognized driver type
+WARNING <35001771> - synthesis: Initial value found on net piece_loc_y[2] will be ignored due to unrecognized driver type
+WARNING <35001771> - synthesis: Initial value found on net piece_loc_y[1] will be ignored due to unrecognized driver type
+WARNING <35001771> - synthesis: Initial value found on net piece_loc_y[0] will be ignored due to unrecognized driver type
 WARNING <35001771> - synthesis: Initial value found on net hit_piece will be ignored due to unrecognized driver type
 WARNING <35001771> - synthesis: Initial value found on net hit_bottom will be ignored due to unrecognized driver type
 WARNING <35001771> - synthesis: Initial value found on net hit_left will be ignored due to unrecognized driver type
@@ -282,363 +268,59 @@ WARNING <35001771> - synthesis: Initial value found on net exceed_left will be i
 WARNING <35001771> - synthesis: Initial value found on net exceed_right will be ignored due to unrecognized driver type
 WARNING <35935049> - synthesis: input port sclk_i remains unconnected for this instance. VDB-5049
 WARNING <35935049> - synthesis: input port sdi_i remains unconnected for this instance. VDB-5049
-WARNING <35931002> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/board_updater.vhd(33): net temp_board[16][0] does not have a driver. VDB-1002
+WARNING <35931002> - synthesis: z:/es4-final/collisions_and_rotations/source/impl_1/master.vhd(155): net board[16][0] does not have a driver. VDB-1002
 WARNING <35931002> - synthesis: z:/es4-final/collisions_and_rotations/mypll/rtl/mypll.v(139): net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sclk_i does not have a driver. VDB-1002
 WARNING <35931002> - synthesis: z:/es4-final/collisions_and_rotations/mypll/rtl/mypll.v(140): net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sdi_i does not have a driver. VDB-1002
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][0]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][1]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][2]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][3]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][4]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][5]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][6]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][7]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][8]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][9]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][10]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][11]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][12]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][13]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][14]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][15]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][0]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][1]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][2]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][3]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][4]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][5]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][6]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][7]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][8]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][9]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][10]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][11]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][12]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][13]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][14]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][15]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][0]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][1]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][2]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][3]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][4]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][5]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][6]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][7]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][8]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][9]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][10]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][11]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][12]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][13]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][14]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][15]. Patching with GND.
+######## Missing driver on net board[16][0]. Patching with GND.
+######## Missing driver on net board[16][1]. Patching with GND.
+######## Missing driver on net board[16][2]. Patching with GND.
+######## Missing driver on net board[16][3]. Patching with GND.
+######## Missing driver on net board[16][4]. Patching with GND.
+######## Missing driver on net board[16][5]. Patching with GND.
+######## Missing driver on net board[16][6]. Patching with GND.
+######## Missing driver on net board[16][7]. Patching with GND.
+######## Missing driver on net board[16][8]. Patching with GND.
+######## Missing driver on net board[16][9]. Patching with GND.
+######## Missing driver on net board[16][10]. Patching with GND.
+######## Missing driver on net board[16][11]. Patching with GND.
+######## Missing driver on net board[16][12]. Patching with GND.
+######## Missing driver on net board[16][13]. Patching with GND.
+######## Missing driver on net board[16][14]. Patching with GND.
+######## Missing driver on net board[16][15]. Patching with GND.
+######## Missing driver on net board[17][0]. Patching with GND.
+######## Missing driver on net board[17][1]. Patching with GND.
+######## Missing driver on net board[17][2]. Patching with GND.
+######## Missing driver on net board[17][3]. Patching with GND.
+######## Missing driver on net board[17][4]. Patching with GND.
+######## Missing driver on net board[17][5]. Patching with GND.
+######## Missing driver on net board[17][6]. Patching with GND.
+######## Missing driver on net board[17][7]. Patching with GND.
+######## Missing driver on net board[17][8]. Patching with GND.
+######## Missing driver on net board[17][9]. Patching with GND.
+######## Missing driver on net board[17][10]. Patching with GND.
+######## Missing driver on net board[17][11]. Patching with GND.
+######## Missing driver on net board[17][12]. Patching with GND.
+######## Missing driver on net board[17][13]. Patching with GND.
+######## Missing driver on net board[17][14]. Patching with GND.
+######## Missing driver on net board[17][15]. Patching with GND.
+######## Missing driver on net board[18][0]. Patching with GND.
+######## Missing driver on net board[18][1]. Patching with GND.
+######## Missing driver on net board[18][2]. Patching with GND.
+######## Missing driver on net board[18][3]. Patching with GND.
+######## Missing driver on net board[18][4]. Patching with GND.
+######## Missing driver on net board[18][5]. Patching with GND.
+######## Missing driver on net board[18][6]. Patching with GND.
+######## Missing driver on net board[18][7]. Patching with GND.
+######## Missing driver on net board[18][8]. Patching with GND.
+######## Missing driver on net board[18][9]. Patching with GND.
+######## Missing driver on net board[18][10]. Patching with GND.
+######## Missing driver on net board[18][11]. Patching with GND.
+######## Missing driver on net board[18][12]. Patching with GND.
+######## Missing driver on net board[18][13]. Patching with GND.
+######## Missing driver on net board[18][14]. Patching with GND.
+######## Missing driver on net board[18][15]. Patching with GND.
 ######## Missing driver on net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sclk_i. Patching with GND.
 ######## Missing driver on net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sdi_i. Patching with GND.
-CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
-CRITICAL <35001748> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at One
-CRITICAL <35001748> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at One
-CRITICAL <35001748> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at One
-CRITICAL <35001748> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at One
-CRITICAL <35001748> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at One
-CRITICAL <35001748> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at One
-CRITICAL <35001748> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at One
-CRITICAL <35001748> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at One
-CRITICAL <35001748> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at One
-CRITICAL <35001748> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at One
-CRITICAL <35001748> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at One
-CRITICAL <35001748> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at One
-CRITICAL <35001748> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at One
-CRITICAL <35001748> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at One
-CRITICAL <35001748> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at One
-CRITICAL <35001748> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at One
-CRITICAL <35001748> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at One
-CRITICAL <35001748> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at One
-CRITICAL <35001748> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at One
-CRITICAL <35001748> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at One
-CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at Zero
-CRITICAL <35001747> - synthesis: Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at Zero
 
 
 
@@ -668,15 +350,15 @@ Combinational loop found : 4
 
 Combinational loop found : 5
 
- Net sel 
-
- Instance \nes_controller_portmap/mux_7_i6 
-
-Combinational loop found : 6
-
  Net rotate_out_c 
 
  Instance \nes_controller_portmap/mux_7_i4 
+
+Combinational loop found : 6
+
+ Net sel 
+
+ Instance \nes_controller_portmap/mux_7_i6 
 
 Combinational loop found : 7
 
@@ -684,15 +366,15 @@ Combinational loop found : 7
 
  Instance \game_logic_portmap/mux_11_i2 
 
- Net \game_logic_portmap/n777 
+ Net \game_logic_portmap/n771 
 
  Instance \game_logic_portmap/mux_10_i2 
 
- Net \game_logic_portmap/n771 
+ Net \game_logic_portmap/n765 
 
  Instance \game_logic_portmap/mux_9_i2 
 
- Net \game_logic_portmap/n765 
+ Net \game_logic_portmap/n759 
 
  Instance \game_logic_portmap/mux_7_i2 
 
@@ -702,11 +384,11 @@ Combinational loop found : 8
 
  Instance \game_logic_portmap/mux_11_i1 
 
- Net \game_logic_portmap/n778 
+ Net \game_logic_portmap/n772 
 
  Instance \game_logic_portmap/mux_10_i1 
 
- Net \game_logic_portmap/n772 
+ Net \game_logic_portmap/n766 
 
  Instance \game_logic_portmap/mux_9_i1 
 
@@ -716,7 +398,7 @@ Combinational loop found : 9
 
  Instance \game_logic_portmap/mux_11_i3 
 
- Net \game_logic_portmap/n776 
+ Net \game_logic_portmap/n770 
 
  Instance \game_logic_portmap/mux_10_i3 
 
@@ -726,19 +408,19 @@ Combinational loop found : 10
 
  Instance \game_logic_portmap/mux_11_i4 
 
- Net \game_logic_portmap/n775 
+ Net \game_logic_portmap/n769 
 
  Instance \game_logic_portmap/mux_10_i4 
 
- Net \game_logic_portmap/n769 
+ Net \game_logic_portmap/n763 
 
  Instance \game_logic_portmap/mux_9_i4 
 
- Net \equal_387/n4 
+ Net \equal_419/n4 
 
- Instance equal_387_i4 
+ Instance equal_419_i4 
 
- Net \game_logic_portmap/n763 
+ Net \game_logic_portmap/n757 
 
  Instance \game_logic_portmap/mux_7_i4 
 
@@ -748,26 +430,26 @@ Combinational loop found : 11
 
  Instance \game_logic_portmap/mux_11_i5 
 
- Net \game_logic_portmap/n774 
+ Net \game_logic_portmap/n768 
 
  Instance \game_logic_portmap/mux_10_i5 
 
- Net \equal_387/n4 
+ Net \equal_419/n4 
 
- Instance equal_387_i4 
+ Instance equal_419_i4 
 
- Net \game_logic_portmap/n768 
+ Net \game_logic_portmap/n762 
 
  Instance \game_logic_portmap/mux_9_i5 
 
 
 ################### Begin Area Report (master)######################
-Number of register bits => 96 of 5280 (1 % )
+Number of register bits => 332 of 5280 (6 % )
 EBR_B => 1
 CCU2 => 31
-FD1P3XZ => 96
+FD1P3XZ => 332
 IB => 2
-LUT4 => 419
+LUT4 => 4243
 OB => 11
 PLL_B => 1
 ################### End Area Report ##################
@@ -785,21 +467,21 @@ Clock Enable Nets
 Number of Clock Enables: 0
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[0][0], loads : 43
-  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[1][0], loads : 38
-  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[0][1], loads : 36
-  Net : game_logic_portmap/collision_check_portmap/board_shadow_row_4_1__N_257, loads : 32
-  Net : nes_controller_portmap/a, loads : 28
-  Net : vga_sync_portmap/rgb_col_0__N_50, loads : 21
-  Net : game_logic_portmap/piece_rotation[0], loads : 20
-  Net : game_logic_portmap/piece_code[0], loads : 20
-  Net : clock_manager_portmap/clk_counter_0__N_351, loads : 19
-  Net : game_logic_portmap/piece_code[1], loads : 19
+  Net : game_logic_portmap/piece_loc[0][2], loads : 781
+  Net : game_logic_portmap/piece_loc[0][1], loads : 715
+  Net : game_logic_portmap/piece_loc[0][0], loads : 467
+  Net : game_logic_portmap/board_updater_portmap/n23856, loads : 400
+  Net : game_logic_portmap/piece_loc[0][3], loads : 336
+  Net : game_logic_portmap/piece_loc[1][0], loads : 300
+  Net : nes_controller_portmap/collision_down_N_620, loads : 248
+  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[1][1], loads : 142
+  Net : game_logic_portmap/board_updater_portmap/n12801, loads : 116
+  Net : game_logic_portmap/piece_library_portmap/piece_shape[15], loads : 104
 ################### End Clock Report ##################
 
-Peak Memory Usage: 145 MB
+Peak Memory Usage: 214 MB
 
 --------------------------------------------------------------
-Total CPU Time: 4 secs 
-Total REAL Time: 5 secs 
+Total CPU Time: 14 secs 
+Total REAL Time: 22 secs 
 --------------------------------------------------------------

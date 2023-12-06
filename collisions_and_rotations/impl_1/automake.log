@@ -1,1017 +1,8 @@
 
-"C:/lscc/radiant/2023.1/tcltk/windows/bin/tclsh" "collisions_and_rotations_impl_1_synthesize.tcl"
-
-cpe -f collisions_and_rotations_impl_1.cprj mypll.cprj -a iCE40UP -o collisions_and_rotations_impl_1_cpe.ldc
-WARNING <35831026> - No user LDC/SDC file specified in the project.
-WARNING <35935050> - input port TRIM9 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM8 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM7 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM6 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM5 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM4 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM3 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM2 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM1 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM0 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port I is not connected on this instance. VDB-5050
-Top module name (Verilog): mypll
-INFO <35901018> - Z:/ES4-Final/collisions_and_rotations/mypll/rtl/mypll.v(11): compiling module mypll. VERI-1018
-INFO <35901018> - Z:/ES4-Final/collisions_and_rotations/mypll/rtl/mypll.v(105): compiling module mypll_ipgen_lscc_pll(DIVR=&quot;0&quot;,DIVF=&quot;66&quot;,DIVQ=&quot;5&quot;,FILTER_RANGE=&quot;1&quot;,PLLOUT_SELECT_PORTA=&quot;GENCLK&quot;,PLLOUT_SELECT_PORTB=&quot;GENCLK&quot;,FREQUENCY_PIN_REFERENCECLK=&quot;12.000000&quot;). VERI-1018
-INFO <35901018> - C:/lscc/radiant/2023.1/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(428): compiling module PLL_B(PLLOUT_SELECT_PORTA=&quot;GENCLK&quot;,PLLOUT_SELECT_PORTB=&quot;GENCLK&quot;,DIVF=&quot;66&quot;,DIVQ=&quot;5&quot;,FILTER_RANGE=&quot;1&quot;,FREQUENCY_PIN_REFERENCECLK=&quot;12.000000&quot;). VERI-1018
-WARNING <35935049> - input port sclk_i remains unconnected for this instance. VDB-5049
-WARNING <35935049> - input port sdi_i remains unconnected for this instance. VDB-5049
-Last elaborated design is mypll()
-Source compile complete.
-INFO <35831038> - Setting master as top module.
-WARNING <35831026> - No user LDC/SDC file specified in the project.
-WARNING <35935050> - input port TRIM9 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM8 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM7 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM6 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM5 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM4 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM3 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM2 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM1 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM0 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port I is not connected on this instance. VDB-5050
-Analyzing Verilog file c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v. VERI-1482
-Analyzing Verilog file mypll.v. VERI-1482
-Top module language type = VHDL.
-INFO <35901018> - mypll.v(63): compiling module mypll. VERI-1018
-WARNING <35935050> - input port game_clock_ctr[15] is not connected on this instance. VDB-5050
-WARNING <35935050> - input port game_clock_ctr[14] is not connected on this instance. VDB-5050
-WARNING <35935050> - input port game_clock_ctr[13] is not connected on this instance. VDB-5050
-WARNING <35935050> - input port game_clock_ctr[12] is not connected on this instance. VDB-5050
-WARNING <35935050> - input port game_clock_ctr[11] is not connected on this instance. VDB-5050
-WARNING <35935050> - input port game_clock_ctr[10] is not connected on this instance. VDB-5050
-WARNING <35935050> - input port game_clock_ctr[9] is not connected on this instance. VDB-5050
-WARNING <35935050> - input port game_clock_ctr[8] is not connected on this instance. VDB-5050
-WARNING <35935050> - input port game_clock_ctr[7] is not connected on this instance. VDB-5050
-WARNING <35935050> - input port game_clock_ctr[6] is not connected on this instance. VDB-5050
-WARNING <35935050> - input port game_clock_ctr[5] is not connected on this instance. VDB-5050
-WARNING <35935049> - input port game_clock_ctr[4] remains unconnected for this instance. VDB-5049
-WARNING <35935049> - input port game_clock_ctr[3] remains unconnected for this instance. VDB-5049
-WARNING <35935049> - input port game_clock_ctr[2] remains unconnected for this instance. VDB-5049
-WARNING <35935049> - input port game_clock_ctr[1] remains unconnected for this instance. VDB-5049
-WARNING <35935049> - input port game_clock_ctr[0] remains unconnected for this instance. VDB-5049
-Top module name (VHDL, mixed language): master
-Source compile complete.
-Starting IP constraint check for mypll.
-Writing output files.
-CPE Completed. collisions_and_rotations_impl_1_cpe.ldc and CPEReport.txt produced.
-
-
-synthesis -f collisions_and_rotations_impl_1_lattice.synproj
-synthesis:  version Radiant Software (64-bit) 2023.1.0.43.3
-
-Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
-Copyright (c) 1995 AT&T Corp.   All rights reserved.
-Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
-Copyright (c) 2001 Agere Systems   All rights reserved.
-Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-Wed Dec  6 13:41:10 2023
-
-
-Command Line:  C:\lscc\radiant\2023.1\ispfpga\bin\nt64\synthesis.exe -f collisions_and_rotations_impl_1_lattice.synproj -gui -msgset Z:/ES4-Final/collisions_and_rotations/promote.xml 
-
-INFO <35002000> - synthesis: Lattice Synthesis Engine Launched.
-Synthesis options:
-The -a option is iCE40UP.
-The -t option is SG48.
-The -sp option is High-Performance_1.2V.
-The -p option is iCE40UP5K.
-                                                          
-
-
-##########################################################
-
-
-### Lattice Family     : iCE40UP
-
-
-### Device             : iCE40UP5K
-
-
-### Package            : SG48
-
-
-### Performance Grade  : High-Performance_1.2V
-
-
-                                                         
-
-
-INFO <35001786> - User-Selected Strategy Settings
-Optimization goal = Area
-Top-level module name = master.
-Target frequency = 200.000000 MHz.
-Maximum fanout = 1000.
-Timing path count = 3 (default)
-RWCheckOnRam = 0
-
-BRAM utilization = 100.000000 %
-DSP usage = true
-DSP utilization = 100.000000 %
-fsm_encoding_style = auto
-resolve_mixed_drivers = 0
-fix_gated_clocks = 1
-
-
-Mux style = auto (Default)
-Use Carry Chain = true
-carry_chain_length = 0
-Loop Limit = 1950.
-Use IO Insertion = TRUE
-Use IO Reg = AUTO
-
-Resource Sharing = TRUE
-Propagate Constants = TRUE
-Remove Duplicate Registers = TRUE
-Output HDL file name = collisions_and_rotations_impl_1.vm.
-ROM style = auto
-RAM style = auto
-The -comp option is FALSE.
-The -syn option is FALSE.
--sdc option: SDC file input is collisions_and_rotations_impl_1_cpe.ldc.
--vh2008
-
--path C:/lscc/radiant/2023.1/ispfpga/ice40tp/data (searchpath added)
--path Z:/ES4-Final/collisions_and_rotations (searchpath added)
--path Z:/ES4-Final/collisions_and_rotations/impl_1 (searchpath added)
--path Z:/ES4-Final/collisions_and_rotations/mypll (searchpath added)
-Mixed language design
-Verilog design file = C:/lscc/radiant/2023.1/ip/pmi/pmi_iCE40UP.v
-Verilog design file = Z:/ES4-Final/collisions_and_rotations/mypll/rtl/mypll.v
-VHDL library = pmi
-VHDL design file = C:/lscc/radiant/2023.1/ip/pmi/pmi_iCE40UP.vhd
-VHDL library = work
-VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/master.vhd
-VHDL library = work
-VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/clock_manager.vhd
-VHDL library = work
-VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/game_logic.vhd
-VHDL library = work
-VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/collision_check.vhd
-VHDL library = work
-VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/piece_library.vhd
-VHDL library = work
-VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/new_modules/board_updater.vhd
-VHDL library = work
-VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/new_modules/piece_picker.vhd
-VHDL library = work
-VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd
-VHDL library = work
-VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/nes_controller.vhd
-VHDL library = work
-VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/renderer.vhd
-VHDL library = work
-VHDL design file = Z:/ES4-Final/collisions_and_rotations/source/impl_1/vga.vhd
-The -r option is OFF. [ Remove LOC Properties is OFF. ]
-WARNING <35935050> - input port TRIM9 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM8 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM7 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM6 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM5 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM4 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM3 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM2 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM1 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port TRIM0 is not connected on this instance. VDB-5050
-WARNING <35935050> - input port I is not connected on this instance. VDB-5050
-Compile design.
-Compile Design Begin
-Analyzing Verilog file c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v. VERI-1482
-c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(1): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_addsub.v. VERI-1328
-c:/lscc/radiant/2023.1/ip/pmi/pmi_addsub.v(40): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/../common/adder_subtractor/rtl/lscc_add_sub.v. VERI-1328
-c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(2): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_add.v. VERI-1328
-c:/lscc/radiant/2023.1/ip/pmi/pmi_add.v(50): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/../common/adder/rtl/lscc_adder.v. VERI-1328
-c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(3): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_complex_mult.v. VERI-1328
-c:/lscc/radiant/2023.1/ip/pmi/pmi_complex_mult.v(52): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/../common/complex_mult/rtl/lscc_complex_mult.v. VERI-1328
-c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(4): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_counter.v. VERI-1328
-c:/lscc/radiant/2023.1/ip/pmi/pmi_counter.v(39): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/../common/counter/rtl/lscc_cntr.v. VERI-1328
-c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(5): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_fifo.v. VERI-1328
-c:/lscc/radiant/2023.1/ip/pmi/pmi_fifo.v(44): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/../avant/fifo/rtl/lscc_fifo.v. VERI-1328
-c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(6): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_fifo_dc.v. VERI-1328
-c:/lscc/radiant/2023.1/ip/pmi/pmi_fifo_dc.v(47): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/../avant/fifo_dc/rtl/lscc_fifo_dc.v. VERI-1328
-c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(7): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_mac.v. VERI-1328
-c:/lscc/radiant/2023.1/ip/pmi/pmi_mac.v(52): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/../common/mult_accumulate/rtl/lscc_mult_accumulate.v. VERI-1328
-c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(8): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_multaddsubsum.v. VERI-1328
-c:/lscc/radiant/2023.1/ip/pmi/pmi_multaddsubsum.v(53): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/../common/mult_add_sub_sum/rtl/lscc_mult_add_sub_sum.v. VERI-1328
-c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(9): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_multaddsub.v. VERI-1328
-c:/lscc/radiant/2023.1/ip/pmi/pmi_multaddsub.v(52): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/../common/mult_add_sub/rtl/lscc_mult_add_sub.v. VERI-1328
-c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(10): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_mult.v. VERI-1328
-c:/lscc/radiant/2023.1/ip/pmi/pmi_mult.v(51): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/../common/multiplier/rtl/lscc_multiplier.v. VERI-1328
-c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(11): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_ram_dp.v. VERI-1328
-c:/lscc/radiant/2023.1/ip/pmi/pmi_ram_dp.v(48): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/../avant/ram_dp/rtl/lscc_ram_dp.v. VERI-1328
-c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(12): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_ram_dq.v. VERI-1328
-c:/lscc/radiant/2023.1/ip/pmi/pmi_ram_dq.v(45): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/../avant/ram_dq/rtl/lscc_ram_dq.v. VERI-1328
-c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(13): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_rom.v. VERI-1328
-c:/lscc/radiant/2023.1/ip/pmi/pmi_rom.v(45): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/../avant/rom/rtl/lscc_rom.v. VERI-1328
-c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(14): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_sub.v. VERI-1328
-c:/lscc/radiant/2023.1/ip/pmi/pmi_sub.v(50): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/../common/subtractor/rtl/lscc_subtractor.v. VERI-1328
-c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(15): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_ram_dp_be.v. VERI-1328
-c:/lscc/radiant/2023.1/ip/pmi/pmi_ram_dp_be.v(49): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/../avant/ram_dp/rtl/lscc_ram_dp.v. VERI-1328
-c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(16): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_ram_dq_be.v. VERI-1328
-c:/lscc/radiant/2023.1/ip/pmi/pmi_ram_dq_be.v(45): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/../avant/ram_dq/rtl/lscc_ram_dq.v. VERI-1328
-c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.v(17): analyzing included file c:/lscc/radiant/2023.1/ip/pmi/pmi_dsp.v. VERI-1328
-Analyzing Verilog file z:/es4-final/collisions_and_rotations/mypll/rtl/mypll.v. VERI-1482
-Analyzing VHDL file c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.vhd. VHDL-1481
-Analyzing VHDL file c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.vhd
-
-INFO <35921014> - c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.vhd(4): analyzing package components. VHDL-1014
-Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/master.vhd. VHDL-1481
-Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/master.vhd
-
-INFO <35921014> - z:/es4-final/collisions_and_rotations/source/impl_1/master.vhd(5): analyzing package my_types_package. VHDL-1014
-INFO <35921012> - z:/es4-final/collisions_and_rotations/source/impl_1/master.vhd(15): analyzing entity master. VHDL-1012
-INFO <35921010> - z:/es4-final/collisions_and_rotations/source/impl_1/master.vhd(28): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd. VHDL-1481
-Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd
-
-INFO <35921012> - z:/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd(5): analyzing entity clock_manager. VHDL-1012
-INFO <35921010> - z:/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd(20): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd. VHDL-1481
-Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd
-
-INFO <35921014> - z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(5): analyzing package my_types_package. VHDL-1014
-INFO <35921012> - z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(15): analyzing entity game_logic. VHDL-1012
-INFO <35921010> - z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(35): analyzing architecture synth. VHDL-1010
-INFO <35929000> - z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(149): input pin game_clock_ctr has no actual or default value. VHDL-9000
-INFO <35921259> - z:/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(49): game_clock_ctr is declared here. VHDL-1259
-Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd. VHDL-1481
-Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd
-
-INFO <35921014> - z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(5): analyzing package my_types_package. VHDL-1014
-INFO <35921012> - z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(15): analyzing entity collision_check. VHDL-1012
-INFO <35921010> - z:/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(35): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd. VHDL-1481
-Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd
-
-INFO <35921012> - z:/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd(5): analyzing entity piece_library. VHDL-1012
-INFO <35921010> - z:/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd(14): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/board_updater.vhd. VHDL-1481
-Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/board_updater.vhd
-
-INFO <35921014> - z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/board_updater.vhd(5): analyzing package my_types_package. VHDL-1014
-INFO <35921012> - z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/board_updater.vhd(15): analyzing entity board_updater. VHDL-1012
-INFO <35921010> - z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/board_updater.vhd(28): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/piece_picker.vhd. VHDL-1481
-Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/piece_picker.vhd
-
-INFO <35921014> - z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/piece_picker.vhd(5): analyzing package my_types_package. VHDL-1014
-INFO <35921012> - z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/piece_picker.vhd(15): analyzing entity piece_picker. VHDL-1012
-INFO <35921010> - z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/piece_picker.vhd(24): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd. VHDL-1481
-Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd
-
-INFO <35921014> - z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd(5): analyzing package my_types_package. VHDL-1014
-INFO <35921012> - z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd(15): analyzing entity turn_manager. VHDL-1012
-INFO <35921010> - z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/turn_manager.vhd(24): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd. VHDL-1481
-Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd
-
-INFO <35921012> - z:/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd(5): analyzing entity nes_controller. VHDL-1012
-INFO <35921010> - z:/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd(23): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd. VHDL-1481
-Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd
-
-INFO <35921014> - z:/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd(5): analyzing package my_types_package. VHDL-1014
-INFO <35921012> - z:/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd(15): analyzing entity renderer. VHDL-1012
-INFO <35921010> - z:/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd(29): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/vga.vhd. VHDL-1481
-Analyzing VHDL file z:/es4-final/collisions_and_rotations/source/impl_1/vga.vhd
-
-INFO <35921012> - z:/es4-final/collisions_and_rotations/source/impl_1/vga.vhd(5): analyzing entity vga_sync. VHDL-1012
-INFO <35921010> - z:/es4-final/collisions_and_rotations/source/impl_1/vga.vhd(16): analyzing architecture synth. VHDL-1010
-The default VHDL library search path is now "Z:/ES4-Final/collisions_and_rotations/impl_1". VHDL-1504
-Top module language type = VHDL.
-WARNING <35935049> - input port sclk_i remains unconnected for this instance. VDB-5049
-WARNING <35935049> - input port sdi_i remains unconnected for this instance. VDB-5049
-WARNING <35935050> - input port game_clock_ctr[15] is not connected on this instance. VDB-5050
-WARNING <35935050> - input port game_clock_ctr[14] is not connected on this instance. VDB-5050
-WARNING <35935050> - input port game_clock_ctr[13] is not connected on this instance. VDB-5050
-WARNING <35935050> - input port game_clock_ctr[12] is not connected on this instance. VDB-5050
-WARNING <35935050> - input port game_clock_ctr[11] is not connected on this instance. VDB-5050
-WARNING <35935050> - input port game_clock_ctr[10] is not connected on this instance. VDB-5050
-WARNING <35935050> - input port game_clock_ctr[9] is not connected on this instance. VDB-5050
-WARNING <35935050> - input port game_clock_ctr[8] is not connected on this instance. VDB-5050
-WARNING <35935050> - input port game_clock_ctr[7] is not connected on this instance. VDB-5050
-WARNING <35935050> - input port game_clock_ctr[6] is not connected on this instance. VDB-5050
-WARNING <35935050> - input port game_clock_ctr[5] is not connected on this instance. VDB-5050
-WARNING <35935049> - input port game_clock_ctr[4] remains unconnected for this instance. VDB-5049
-WARNING <35935049> - input port game_clock_ctr[3] remains unconnected for this instance. VDB-5049
-WARNING <35935049> - input port game_clock_ctr[2] remains unconnected for this instance. VDB-5049
-WARNING <35935049> - input port game_clock_ctr[1] remains unconnected for this instance. VDB-5049
-WARNING <35935049> - input port game_clock_ctr[0] remains unconnected for this instance. VDB-5049
-Top module name (VHDL, mixed language): master
-                                                         
-
-
-### Number of Logic Cells: 5280
-
-
-### Number of RAM Blocks: 30
-
-
-### Number of DSP Blocks: 8
-
-
-### Number of PLLs: 1
-
-
-### Number of IO Pins: 56
-
-
-##########################################################
-
-
-                                                         
-
-
-WARNING <35001771> - Initial value found on net collision will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net collision_left will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net collision_right will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net collision_down will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net collision_rotate will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net new_piece_code[2] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net new_piece_code[1] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net new_piece_code[0] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net new_piece_rotation[1] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net new_piece_rotation[0] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net hit_piece will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net hit_bottom will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net hit_left will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net hit_right will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net exceed_bottom will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net exceed_left will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net exceed_right will be ignored due to unrecognized driver type
-WARNING <35935049> - input port sclk_i remains unconnected for this instance. VDB-5049
-WARNING <35935049> - input port sdi_i remains unconnected for this instance. VDB-5049
-z:/es4-final/collisions_and_rotations/source/impl_1/new_modules/board_updater.vhd(33): net temp_board[16][0] does not have a driver. VDB-1002
-z:/es4-final/collisions_and_rotations/mypll/rtl/mypll.v(139): net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sclk_i does not have a driver. VDB-1002
-z:/es4-final/collisions_and_rotations/mypll/rtl/mypll.v(140): net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sdi_i does not have a driver. VDB-1002
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][0]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][1]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][2]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][3]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][4]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][5]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][6]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][7]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][8]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][9]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][10]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][11]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][12]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][13]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][14]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[16][15]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][0]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][1]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][2]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][3]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][4]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][5]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][6]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][7]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][8]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][9]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][10]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][11]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][12]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][13]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][14]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[17][15]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][0]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][1]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][2]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][3]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][4]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][5]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][6]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][7]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][8]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][9]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][10]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][11]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][12]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][13]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][14]. Patching with GND.
-######## Missing driver on net \game_logic_portmap/board_updater_portmap/temp_board[18][15]. Patching with GND.
-######## Missing driver on net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sclk_i. Patching with GND.
-######## Missing driver on net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sdi_i. Patching with GND.
-CRITICAL <35001747> - Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
-CRITICAL <35001747> - Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
-CRITICAL <35001747> - Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
-CRITICAL <35001747> - Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
-CRITICAL <35001747> - Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
-CRITICAL <35001747> - Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
-CRITICAL <35001747> - Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
-CRITICAL <35001747> - Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
-CRITICAL <35001747> - Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
-CRITICAL <35001747> - Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
-CRITICAL <35001747> - Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
-CRITICAL <35001747> - Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
-CRITICAL <35001747> - Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
-CRITICAL <35001747> - Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
-CRITICAL <35001747> - Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
-CRITICAL <35001747> - Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[1] is stuck at Zero
-CRITICAL <35001747> - Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
-CRITICAL <35001747> - Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
-CRITICAL <35001747> - Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
-CRITICAL <35001747> - Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
-CRITICAL <35001747> - Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
-CRITICAL <35001747> - Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
-CRITICAL <35001747> - Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
-CRITICAL <35001747> - Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
-CRITICAL <35001747> - Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
-CRITICAL <35001747> - Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
-CRITICAL <35001747> - Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
-CRITICAL <35001747> - Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
-CRITICAL <35001747> - Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
-CRITICAL <35001747> - Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
-CRITICAL <35001747> - Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
-CRITICAL <35001747> - Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[2] is stuck at Zero
-CRITICAL <35001747> - Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
-CRITICAL <35001747> - Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
-CRITICAL <35001747> - Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
-CRITICAL <35001747> - Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
-CRITICAL <35001747> - Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
-CRITICAL <35001747> - Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
-CRITICAL <35001747> - Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
-CRITICAL <35001747> - Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
-CRITICAL <35001747> - Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
-CRITICAL <35001747> - Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
-CRITICAL <35001747> - Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
-CRITICAL <35001747> - Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
-CRITICAL <35001747> - Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
-CRITICAL <35001747> - Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
-CRITICAL <35001747> - Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
-CRITICAL <35001747> - Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[3] is stuck at Zero
-CRITICAL <35001747> - Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
-CRITICAL <35001747> - Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
-CRITICAL <35001747> - Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
-CRITICAL <35001747> - Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
-CRITICAL <35001747> - Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
-CRITICAL <35001747> - Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
-CRITICAL <35001747> - Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
-CRITICAL <35001747> - Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
-CRITICAL <35001747> - Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
-CRITICAL <35001747> - Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
-CRITICAL <35001747> - Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
-CRITICAL <35001747> - Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
-CRITICAL <35001747> - Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
-CRITICAL <35001747> - Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
-CRITICAL <35001747> - Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
-CRITICAL <35001747> - Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[4] is stuck at Zero
-CRITICAL <35001747> - Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
-CRITICAL <35001747> - Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
-CRITICAL <35001747> - Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
-CRITICAL <35001747> - Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
-CRITICAL <35001747> - Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
-CRITICAL <35001747> - Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
-CRITICAL <35001747> - Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
-CRITICAL <35001747> - Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
-CRITICAL <35001747> - Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
-CRITICAL <35001747> - Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
-CRITICAL <35001747> - Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
-CRITICAL <35001747> - Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
-CRITICAL <35001747> - Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
-CRITICAL <35001747> - Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
-CRITICAL <35001747> - Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
-CRITICAL <35001747> - Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[5] is stuck at Zero
-CRITICAL <35001747> - Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
-CRITICAL <35001747> - Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
-CRITICAL <35001747> - Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
-CRITICAL <35001747> - Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
-CRITICAL <35001747> - Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
-CRITICAL <35001747> - Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
-CRITICAL <35001747> - Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
-CRITICAL <35001747> - Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
-CRITICAL <35001747> - Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
-CRITICAL <35001747> - Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
-CRITICAL <35001747> - Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
-CRITICAL <35001747> - Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
-CRITICAL <35001747> - Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
-CRITICAL <35001747> - Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
-CRITICAL <35001747> - Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
-CRITICAL <35001747> - Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[6] is stuck at Zero
-CRITICAL <35001747> - Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
-CRITICAL <35001747> - Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
-CRITICAL <35001747> - Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
-CRITICAL <35001747> - Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
-CRITICAL <35001747> - Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
-CRITICAL <35001747> - Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
-CRITICAL <35001747> - Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
-CRITICAL <35001747> - Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
-CRITICAL <35001747> - Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
-CRITICAL <35001747> - Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
-CRITICAL <35001747> - Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
-CRITICAL <35001747> - Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
-CRITICAL <35001747> - Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
-CRITICAL <35001747> - Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
-CRITICAL <35001747> - Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
-CRITICAL <35001747> - Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[7] is stuck at Zero
-CRITICAL <35001747> - Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
-CRITICAL <35001747> - Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
-CRITICAL <35001747> - Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
-CRITICAL <35001747> - Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
-CRITICAL <35001747> - Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
-CRITICAL <35001747> - Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
-CRITICAL <35001747> - Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
-CRITICAL <35001747> - Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
-CRITICAL <35001747> - Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
-CRITICAL <35001747> - Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
-CRITICAL <35001747> - Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
-CRITICAL <35001747> - Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
-CRITICAL <35001747> - Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
-CRITICAL <35001747> - Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
-CRITICAL <35001747> - Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
-CRITICAL <35001747> - Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[8] is stuck at Zero
-CRITICAL <35001747> - Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
-CRITICAL <35001747> - Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
-CRITICAL <35001747> - Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
-CRITICAL <35001747> - Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
-CRITICAL <35001747> - Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
-CRITICAL <35001747> - Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
-CRITICAL <35001747> - Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
-CRITICAL <35001747> - Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
-CRITICAL <35001747> - Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
-CRITICAL <35001747> - Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
-CRITICAL <35001747> - Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
-CRITICAL <35001747> - Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
-CRITICAL <35001747> - Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
-CRITICAL <35001747> - Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
-CRITICAL <35001747> - Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
-CRITICAL <35001747> - Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[9] is stuck at Zero
-CRITICAL <35001747> - Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
-CRITICAL <35001747> - Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
-CRITICAL <35001747> - Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
-CRITICAL <35001747> - Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
-CRITICAL <35001747> - Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
-CRITICAL <35001747> - Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
-CRITICAL <35001747> - Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
-CRITICAL <35001747> - Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
-CRITICAL <35001747> - Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
-CRITICAL <35001747> - Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
-CRITICAL <35001747> - Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
-CRITICAL <35001747> - Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
-CRITICAL <35001747> - Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
-CRITICAL <35001747> - Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
-CRITICAL <35001747> - Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
-CRITICAL <35001747> - Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[10] is stuck at Zero
-CRITICAL <35001747> - Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
-CRITICAL <35001747> - Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
-CRITICAL <35001747> - Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
-CRITICAL <35001747> - Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
-CRITICAL <35001747> - Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
-CRITICAL <35001747> - Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
-CRITICAL <35001747> - Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
-CRITICAL <35001747> - Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
-CRITICAL <35001747> - Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
-CRITICAL <35001747> - Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
-CRITICAL <35001747> - Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
-CRITICAL <35001747> - Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
-CRITICAL <35001747> - Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
-CRITICAL <35001747> - Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
-CRITICAL <35001747> - Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
-CRITICAL <35001747> - Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[11] is stuck at Zero
-CRITICAL <35001748> - Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at One
-CRITICAL <35001748> - Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at One
-CRITICAL <35001748> - Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at One
-CRITICAL <35001748> - Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at One
-CRITICAL <35001748> - Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at One
-CRITICAL <35001748> - Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at One
-CRITICAL <35001748> - Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at One
-CRITICAL <35001748> - Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at One
-CRITICAL <35001748> - Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at One
-CRITICAL <35001748> - Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at One
-CRITICAL <35001748> - Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at One
-CRITICAL <35001748> - Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at One
-CRITICAL <35001748> - Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at One
-CRITICAL <35001748> - Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at One
-CRITICAL <35001748> - Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at One
-CRITICAL <35001748> - Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at One
-CRITICAL <35001748> - Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at One
-CRITICAL <35001748> - Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at One
-CRITICAL <35001748> - Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at One
-CRITICAL <35001748> - Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at One
-CRITICAL <35001747> - Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
-CRITICAL <35001747> - Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
-CRITICAL <35001747> - Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
-CRITICAL <35001747> - Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
-CRITICAL <35001747> - Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
-CRITICAL <35001747> - Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
-CRITICAL <35001747> - Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
-CRITICAL <35001747> - Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
-CRITICAL <35001747> - Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
-CRITICAL <35001747> - Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
-CRITICAL <35001747> - Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
-CRITICAL <35001747> - Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
-CRITICAL <35001747> - Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
-CRITICAL <35001747> - Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
-CRITICAL <35001747> - Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
-CRITICAL <35001747> - Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[16] is stuck at Zero
-CRITICAL <35001747> - Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
-CRITICAL <35001747> - Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
-CRITICAL <35001747> - Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
-CRITICAL <35001747> - Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
-CRITICAL <35001747> - Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
-CRITICAL <35001747> - Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
-CRITICAL <35001747> - Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
-CRITICAL <35001747> - Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
-CRITICAL <35001747> - Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
-CRITICAL <35001747> - Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
-CRITICAL <35001747> - Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
-CRITICAL <35001747> - Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
-CRITICAL <35001747> - Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
-CRITICAL <35001747> - Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
-CRITICAL <35001747> - Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
-CRITICAL <35001747> - Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[17] is stuck at Zero
-CRITICAL <35001747> - Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
-CRITICAL <35001747> - Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
-CRITICAL <35001747> - Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
-CRITICAL <35001747> - Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
-CRITICAL <35001747> - Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
-CRITICAL <35001747> - Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
-CRITICAL <35001747> - Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
-CRITICAL <35001747> - Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
-CRITICAL <35001747> - Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
-CRITICAL <35001747> - Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
-CRITICAL <35001747> - Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
-CRITICAL <35001747> - Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
-CRITICAL <35001747> - Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
-CRITICAL <35001747> - Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
-CRITICAL <35001747> - Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
-CRITICAL <35001747> - Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[18] is stuck at Zero
-CRITICAL <35001747> - Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
-CRITICAL <35001747> - Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
-CRITICAL <35001747> - Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
-CRITICAL <35001747> - Bit 3 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
-CRITICAL <35001747> - Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
-CRITICAL <35001747> - Bit 5 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
-CRITICAL <35001747> - Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
-CRITICAL <35001747> - Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
-CRITICAL <35001747> - Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
-CRITICAL <35001747> - Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
-CRITICAL <35001747> - Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
-CRITICAL <35001747> - Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
-CRITICAL <35001747> - Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
-CRITICAL <35001747> - Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
-CRITICAL <35001747> - Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
-CRITICAL <35001747> - Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[0] is stuck at Zero
-CRITICAL <35001747> - Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
-CRITICAL <35001747> - Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
-CRITICAL <35001747> - Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
-CRITICAL <35001747> - Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
-CRITICAL <35001747> - Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
-CRITICAL <35001747> - Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
-CRITICAL <35001747> - Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
-CRITICAL <35001747> - Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
-CRITICAL <35001747> - Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
-CRITICAL <35001747> - Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
-CRITICAL <35001747> - Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
-CRITICAL <35001747> - Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
-CRITICAL <35001747> - Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
-CRITICAL <35001747> - Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[12] is stuck at Zero
-CRITICAL <35001747> - Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
-CRITICAL <35001747> - Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
-CRITICAL <35001747> - Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
-CRITICAL <35001747> - Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
-CRITICAL <35001747> - Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
-CRITICAL <35001747> - Bit 7 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
-CRITICAL <35001747> - Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
-CRITICAL <35001747> - Bit 9 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
-CRITICAL <35001747> - Bit 10 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
-CRITICAL <35001747> - Bit 11 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
-CRITICAL <35001747> - Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
-CRITICAL <35001747> - Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
-CRITICAL <35001747> - Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
-CRITICAL <35001747> - Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[13] is stuck at Zero
-CRITICAL <35001747> - Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at Zero
-CRITICAL <35001747> - Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at Zero
-CRITICAL <35001747> - Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at Zero
-CRITICAL <35001747> - Bit 4 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at Zero
-CRITICAL <35001747> - Bit 6 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at Zero
-CRITICAL <35001747> - Bit 8 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at Zero
-CRITICAL <35001747> - Bit 12 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at Zero
-CRITICAL <35001747> - Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at Zero
-CRITICAL <35001747> - Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at Zero
-CRITICAL <35001747> - Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[14] is stuck at Zero
-CRITICAL <35001747> - Bit 0 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at Zero
-CRITICAL <35001747> - Bit 1 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at Zero
-CRITICAL <35001747> - Bit 2 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at Zero
-CRITICAL <35001747> - Bit 13 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at Zero
-CRITICAL <35001747> - Bit 14 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at Zero
-CRITICAL <35001747> - Bit 15 of Register \game_logic_portmap/board_updater_portmap/new_board[15] is stuck at Zero
-
-
-
-Combinational loop found : 1
-
- Net down_button 
-
- Instance \nes_controller_portmap/mux_7_i3 
-
-Combinational loop found : 2
-
- Net a 
-
- Instance \nes_controller_portmap/mux_7_i7 
-
-Combinational loop found : 3
-
- Net left_button 
-
- Instance \nes_controller_portmap/mux_7_i2 
-
-Combinational loop found : 4
-
- Net right_button 
-
- Instance \nes_controller_portmap/mux_7_i1 
-
-Combinational loop found : 5
-
- Net sel 
-
- Instance \nes_controller_portmap/mux_7_i6 
-
-Combinational loop found : 6
-
- Net rotate_out_c 
-
- Instance \nes_controller_portmap/mux_7_i4 
-
-Combinational loop found : 7
-
- Net special_background[1] 
-
- Instance \game_logic_portmap/mux_11_i2 
-
- Net \game_logic_portmap/n777 
-
- Instance \game_logic_portmap/mux_10_i2 
-
- Net \game_logic_portmap/n771 
-
- Instance \game_logic_portmap/mux_9_i2 
-
- Net \game_logic_portmap/n765 
-
- Instance \game_logic_portmap/mux_7_i2 
-
-Combinational loop found : 8
-
- Net special_background[0] 
-
- Instance \game_logic_portmap/mux_11_i1 
-
- Net \game_logic_portmap/n778 
-
- Instance \game_logic_portmap/mux_10_i1 
-
- Net \game_logic_portmap/n772 
-
- Instance \game_logic_portmap/mux_9_i1 
-
-Combinational loop found : 9
-
- Net special_background[2] 
-
- Instance \game_logic_portmap/mux_11_i3 
-
- Net \game_logic_portmap/n776 
-
- Instance \game_logic_portmap/mux_10_i3 
-
-Combinational loop found : 10
-
- Net special_background[3] 
-
- Instance \game_logic_portmap/mux_11_i4 
-
- Net \game_logic_portmap/n775 
-
- Instance \game_logic_portmap/mux_10_i4 
-
- Net \game_logic_portmap/n769 
-
- Instance \game_logic_portmap/mux_9_i4 
-
- Net \equal_387/n4 
-
- Instance equal_387_i4 
-
- Net \game_logic_portmap/n763 
-
- Instance \game_logic_portmap/mux_7_i4 
-
-Combinational loop found : 11
-
- Net special_background[4] 
-
- Instance \game_logic_portmap/mux_11_i5 
-
- Net \game_logic_portmap/n774 
-
- Instance \game_logic_portmap/mux_10_i5 
-
- Net \equal_387/n4 
-
- Instance equal_387_i4 
-
- Net \game_logic_portmap/n768 
-
- Instance \game_logic_portmap/mux_9_i5 
-
-
-################### Begin Area Report (master)######################
-Number of register bits => 96 of 5280 (1 % )
-EBR_B => 1
-CCU2 => 31
-FD1P3XZ => 96
-IB => 2
-LUT4 => 419
-OB => 11
-PLL_B => 1
-################### End Area Report ##################
-Number of odd-length carry chains : 1
-Number of even-length carry chains : 3
-
-################### Begin Clock Report ######################
-Clock Nets
-Number of Clocks: 4
-  Net : nes_controller_portmap/ctrlr_clk_c, loads : 1
-  Net : clock_manager_portmap/game_clock, loads : 0
-  Net : osc_c, loads : 1
-  Net : clock_manager_portmap/pll_portmap/lscc_pll_inst/clk, loads : 0
-Clock Enable Nets
-Number of Clock Enables: 0
-Highest fanout non-clock nets
-Top 10 highest fanout non-clock nets:
-  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[0][0], loads : 43
-  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[1][0], loads : 38
-  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[0][1], loads : 36
-  Net : game_logic_portmap/collision_check_portmap/board_shadow_row_4_1__N_257, loads : 32
-  Net : nes_controller_portmap/a, loads : 28
-  Net : vga_sync_portmap/rgb_col_0__N_50, loads : 21
-  Net : game_logic_portmap/piece_rotation[0], loads : 20
-  Net : game_logic_portmap/piece_code[0], loads : 20
-  Net : clock_manager_portmap/clk_counter_0__N_351, loads : 19
-  Net : game_logic_portmap/piece_code[1], loads : 19
-################### End Clock Report ##################
-
-Peak Memory Usage: 145 MB
-
---------------------------------------------------------------
-Total CPU Time: 4 secs 
-Total REAL Time: 5 secs 
---------------------------------------------------------------
-
-
-postsyn -a iCE40UP -p iCE40UP5K -t SG48 -sp High-Performance_1.2V -oc Industrial -top -w -o collisions_and_rotations_impl_1_syn.udb collisions_and_rotations_impl_1.vm -ldc Z:/ES4-Final/collisions_and_rotations/impl_1/collisions_and_rotations_impl_1.ldc
-POSTSYN: Post Synthesis Process Radiant Software (64-bit) 2023.1.0.43.3
-Command Line: postsyn -a iCE40UP -p iCE40UP5K -t SG48 -sp High-Performance_1.2V -oc Industrial -top -w -o collisions_and_rotations_impl_1_syn.udb -ldc Z:/ES4-Final/collisions_and_rotations/impl_1/collisions_and_rotations_impl_1.ldc -gui -msgset Z:/ES4-Final/collisions_and_rotations/promote.xml collisions_and_rotations_impl_1.vm 
-   Architecture:     iCE40UP
-   Device:           iCE40UP5K
-   Package:          SG48
-   Performance:      High-Performance_1.2V
-Reading input file 'collisions_and_rotations_impl_1.vm' ...
-CPU Time to convert: 0.15625
-REAL Time to convert: 0
-convert PEAK Memory Usage: 33 MB
-convert CURRENT Memory Usage: 33 MB
-Reading constraint file 'Z:/ES4-Final/collisions_and_rotations/impl_1/collisions_and_rotations_impl_1.ldc' ...
-Removing unused logic ...
-Starting design annotation....
-WARNING <70001944> - No master clock for
-	generated clock	create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] .
- 
-Constraint Summary:
-   Total number of constraints: 1
-   Total number of constraints dropped: 0
- 
-Writing output file 'collisions_and_rotations_impl_1_syn.udb'.
-POSTSYN finished successfully.
-Total CPU Time: 0 secs 
-Total REAL Time: 0 secs 
-Peak Memory Usage: 39 MB
-
-
-map -i "collisions_and_rotations_impl_1_syn.udb" -pdc "Z:/ES4-Final/collisions_and_rotations/pins.pdc" -o "collisions_and_rotations_impl_1_map.udb" -mp "collisions_and_rotations_impl_1.mrp" -hierrpt     
-map:  version Radiant Software (64-bit) 2023.1.0.43.3
-
-Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
-Copyright (c) 1995 AT&T Corp.   All rights reserved.
-Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
-Copyright (c) 2001 Agere Systems   All rights reserved.
-Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-
-Command line:   map -i collisions_and_rotations_impl_1_syn.udb -pdc Z:/ES4-Final/collisions_and_rotations/pins.pdc -o collisions_and_rotations_impl_1_map.udb -mp collisions_and_rotations_impl_1.mrp -hierrpt -gui 
-
-Loading device for application GENERIC from file 'itpa08.nph' in environment: C:/lscc/radiant/2023.1/ispfpga.
-Package Status:                     Preliminary    Version 1.5.
-
-
-
-   Remove unused logic
-
-   Do not produce over sized UDBs.
-
-Design:  master
-Family:  iCE40UP
-Device:  iCE40UP5K
-Package: SG48
-Performance Grade:  High-Performance_1.2V
-
-Running general design DRC...
-
-Removing unused logic...
-
-Optimizing...
-
-
-
-
-Design Summary:
-   Number of slice registers:  96 out of  5280 (2%)
-   Number of I/O registers:      0 out of   117 (0%)
-   Number of LUT4s:           494 out of  5280 (9%)
-      Number of logic LUT4s:             420
-      Number of inserted feedthru LUT4s:   6
-      Number of replicated LUT4s:          6
-      Number of ripple logic:             31 (62 LUT4s)
-   Number of IO sites used:   13 out of 39 (33%)
-      Number of IO sites used for general PIO: 13
-      Number of IO sites used for I3C: 0 out of 2 (0%)
-      (note: If I3C is not used, its site can be used as general PIO)
-      Number of IO sites used for PIO+I3C: 13 out of 36 (36%)
-      Number of IO sites used for OD+RGB IO buffers: 0 out of 3 (0%)
-      (note: If RGB LED drivers are not used, sites can be used as OD outputs,
-       see TN1288 iCE40 LED Driver Usage Guide)
-      Number of IO sites used for PIO+I3C+OD+RGB: 13 out of 39 (33%)
-   Number of DSPs:             0 out of 8 (0%)
-   Number of I2Cs:             0 out of 2 (0%)
-   Number of High Speed OSCs:  0 out of 1 (0%)
-   Number of Low Speed OSCs:   0 out of 1 (0%)
-   Number of RGB PWM:          0 out of 1 (0%)
-   Number of RGB Drivers:      0 out of 1 (0%)
-   Number of SCL FILTERs:      0 out of 2 (0%)
-   Number of SRAMs:            0 out of 4 (0%)
-   Number of WARMBOOTs:        0 out of 1 (0%)
-   Number of SPIs:             0 out of 2 (0%)
-   Number of EBRs:             1 out of 30 (3%)
-   Number of PLLs:             1 out of 1 (100%)
-   Number of Clocks:  4
-      Net clk: 32 loads, 32 rising, 0 falling (Driver: Pin clock_manager_portmap.pll_portmap.lscc_pll_inst.u_PLL_B/OUTGLOBAL)
-      Net osc_c: 1 loads, 1 rising, 0 falling (Driver: Port osc)
-      Net game_clock: 34 loads, 34 rising, 0 falling (Driver: Pin clock_manager_portmap.game_clock_I_0/Q)
-      Net ctrlr_clk_c: 7 loads, 7 rising, 0 falling (Driver: Pin nes_controller_portmap.ctrlr_clk_c_I_0/Z)
-   Number of Clock Enables:  4
-      Net VCC_net: 3 loads, 0 SLICEs
-      Net vga_sync_portmap.rgb_col_0__N_50: 6 loads, 6 SLICEs
-      Net game_logic_portmap.piece_loc_1__0__N_93: 4 loads, 4 SLICEs
-      Net game_logic_portmap.piece_loc_0__0__N_105: 4 loads, 4 SLICEs
-   Number of LSRs:  5
-      Net piece_loc_0__0__N_106: 4 loads, 4 SLICEs
-      Net vga_sync_portmap.rgb_col_0__N_50: 6 loads, 6 SLICEs
-      Net vga_sync_portmap.rgb_row_0__N_30: 6 loads, 6 SLICEs
-      Net clock_manager_portmap.clk_counter_0__N_351: 10 loads, 10 SLICEs
-      Net game_logic_portmap.piece_loc_1__0__N_94: 4 loads, 4 SLICEs
-   Top 10 highest fanout non-clock nets:
-      Net game_logic_portmap.collision_check_portmap.future_piece_loc[0][0]: 44 loads
-      Net game_logic_portmap.collision_check_portmap.future_piece_loc[0][1]: 34 loads
-      Net game_logic_portmap.collision_check_portmap.future_piece_loc[1][0]: 34 loads
-      Net game_logic_portmap.collision_check_portmap.board_shadow_row_4_1__N_257: 32 loads
-      Net a: 29 loads
-      Net game_logic_portmap.collision_check_portmap.future_piece_loc[1][3]: 26 loads
-      Net game_logic_portmap.collision_check_portmap.piece_bottom_row_1__N_226: 22 loads
-      Net game_logic_portmap.piece_rotation[0]: 22 loads
-      Net game_logic_portmap.piece_code[0]: 21 loads
-      Net game_logic_portmap.piece_code[1]: 21 loads
-Running physical design DRC...
-
- 
-
-   Number of warnings:  0
-   Number of errors:    0
-
-Constraint Summary:
-   Total number of constraints: 14
-   Total number of constraints dropped: 0
-
-
-Total CPU Time: 0 secs  
-Total REAL Time: 0 secs  
-Peak Memory Usage: 64 MB
-
-
 par -f "collisions_and_rotations_impl_1.p2t" "collisions_and_rotations_impl_1_map.udb" "collisions_and_rotations_impl_1.udb"
 
 Lattice Place and Route Report for Design "collisions_and_rotations_impl_1_map.udb"
-Wed Dec  6 13:41:17 2023
+Wed Dec  6 18:44:54 2023
 
 PAR: Place And Route Radiant Software (64-bit) 2023.1.0.43.3.
 Command Line: par -w -t 1 -cores 1 -exp parPathBased=ON \
@@ -1034,13 +25,13 @@ WARNING <70001944> - No master clock for
 	generated clock	create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] .
 
 WARNING: Database constraint "create_generated_clock -name {clk} -source [get_pins clock_manager_portmap.pll_portmap.lscc_pll_inst.u_PLL_B/REFERENCECLK] -divide_by 32 -multiply_by 67 [get_pins clock_manager_portmap.pll_portmap.lscc_pll_inst.u_PLL_B/OUTGLOBAL]" does not have corresponding timing constraint. Please check if the resource objects of the constraint are valid carefully!
-Number of Signals: 661
-Number of Connections: 1940
+Number of Signals: 4721
+Number of Connections: 16342
 Device utilization summary:
 
-   SLICE (est.)     262/2640         10% used
-     LUT            494/5280          9% used
-     REG             96/5280          2% used
+   SLICE (est.)    2240/2640         85% used
+     LUT           4318/5280         82% used
+     REG            332/5280          6% used
    PIO               13/56           23% used
                      13/36           36% bonded
    IOLOGIC            0/56            0% used
@@ -1063,37 +54,37 @@ Device utilization summary:
 Pin Constraint Summary:
    13 out of 13 pins locked (100% locked).
 
-Finished Placer Phase 0 (HIER). CPU time: 1 secs , REAL time: 2 secs 
+Finished Placer Phase 0 (HIER). CPU time: 1 mins 20 secs , REAL time: 1 mins 21 secs 
 
 
 ................
-Finished Placer Phase 0 (AP).  CPU time: 1 secs , REAL time: 2 secs 
+Finished Placer Phase 0 (AP).  CPU time: 1 mins 25 secs , REAL time: 1 mins 26 secs 
 
-Starting Placer Phase 1. CPU time: 1 secs , REAL time: 2 secs 
+Starting Placer Phase 1. CPU time: 1 mins 25 secs , REAL time: 1 mins 26 secs 
 ..  ..
 ....................
 
-Placer score = 97891.
+Placer score = 1221726.
 
 Device SLICE utilization summary after final SLICE packing:
-   SLICE            262/2640          9% used
+   SLICE           2240/2640         84% used
 
 WARNING <70001944> - No master clock for
 	generated clock	create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] .
-Finished Placer Phase 1. CPU time: 9 secs , REAL time: 10 secs 
+Finished Placer Phase 1. CPU time: 1 mins 44 secs , REAL time: 1 mins 44 secs 
 
 Starting Placer Phase 2.
 .
 
-Placer score =  122073
-Finished Placer Phase 2.  CPU time: 9 secs , REAL time: 10 secs 
+Placer score =  1502556
+Finished Placer Phase 2.  CPU time: 1 mins 45 secs , REAL time: 1 mins 46 secs 
 
 
 ------------------ Clock Report ------------------
 
 Global Clocks :
   PRIMARY "clk" from OUTGLOBAL on comp "clock_manager_portmap.pll_portmap.lscc_pll_inst.u_PLL_B" on site "PLL_R13C32", clk load = 32, ce load = 0, sr load = 0
-  PRIMARY "game_clock" from Q1 on comp "clock_manager_portmap.SLICE_413" on site "R14C4A", clk load = 21, ce load = 0, sr load = 0
+  PRIMARY "game_clock" from Q1 on comp "clock_manager_portmap.SLICE_1258" on site "R12C3C", clk load = 155, ce load = 0, sr load = 0
 
   PRIMARY  : 2 out of 8 (25%)
 
@@ -1115,12 +106,12 @@ I/O Bank Usage Summary:
 | 2        | 3 / 8 ( 37%)  | 3.3V       |            |            |
 +----------+---------------+------------+------------+------------+
 
-Total Placer CPU time: 9 secs , REAL time: 10 secs 
+Total Placer CPU time: 1 mins 45 secs , REAL time: 1 mins 46 secs 
 
 Writing design to file collisions_and_rotations_impl_1_par.dir/5_1.udb ...
 
 
-Start NBR router at 13:41:27 12/06/23
+Start NBR router at 18:46:40 12/06/23
 
 *****************************************************************
 Info: NBR allows conflicts(one node used by more than one signal)
@@ -1138,14 +129,14 @@ Note: NBR uses a different method to calculate timing slacks. The
 Starting routing resource preassignment
 Preassignment Summary:
 --------------------------------------------------------------------------------
-149 connections routed with dedicated routing resources
+385 connections routed with dedicated routing resources
 2 global clock signals routed
-202 connections routed (of 1916 total) (10.54%)
+572 connections routed (of 16188 total) (3.53%)
 ---------------------------------------------------------
 Clock routing summary:
 Primary clocks (2 used out of 8 available):
-#0  Signal "game_clock"
-       Clock   loads: 21    out of    21 routed (100.00%)
+#5  Signal "game_clock"
+       Clock   loads: 155   out of   155 routed (100.00%)
 #7  Signal "clk"
        Clock   loads: 32    out of    32 routed (100.00%)
 Other clocks:
@@ -1166,26 +157,56 @@ WARNING <70001944> - No master clock for
 Routing in Serial Mode ......
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Start NBR section for initial routing at 13:41:27 12/06/23
+Start NBR section for initial routing at 18:46:41 12/06/23
 Level 4, iteration 1
-82(0.03%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 2 secs 
+1059(0.40%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 18 secs 
 
 Info: Initial congestion level at 75.00% usage is 0
 Info: Initial congestion area  at 75.00% usage is 0 (0.00%)
 
-Start NBR section for normal routing at 13:41:29 12/06/23
+Start NBR section for normal routing at 18:46:58 12/06/23
 Level 4, iteration 1
-15(0.01%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 2 secs 
+407(0.16%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 21 secs 
 Level 4, iteration 2
-11(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 2 secs 
+250(0.10%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 23 secs 
 Level 4, iteration 3
-4(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 2 secs 
+138(0.05%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 24 secs 
 Level 4, iteration 4
-2(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 2 secs 
+87(0.03%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 24 secs 
 Level 4, iteration 5
-0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 2 secs 
+51(0.02%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 25 secs 
+Level 4, iteration 6
+35(0.01%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 25 secs 
+Level 4, iteration 7
+12(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 25 secs 
+Level 4, iteration 8
+7(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 26 secs 
+Level 4, iteration 9
+6(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 26 secs 
+Level 4, iteration 10
+5(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 26 secs 
+Level 4, iteration 11
+3(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 26 secs 
+Level 4, iteration 12
+5(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 26 secs 
+Level 4, iteration 13
+4(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 26 secs 
+Level 4, iteration 14
+3(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 26 secs 
+Level 4, iteration 15
+2(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 26 secs 
+Level 4, iteration 16
+2(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 26 secs 
+Level 4, iteration 17
+1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 27 secs 
+Level 4, iteration 18
+1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 27 secs 
+Level 4, iteration 19
+2(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 27 secs 
+Level 4, iteration 20
+0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 27 secs 
 
-Start NBR section for post-routing at 13:41:29 12/06/23
+Start NBR section for post-routing at 18:47:07 12/06/23
 
 End NBR router with 0 unrouted connection
 WARNING <70001944> - No master clock for
@@ -1209,10 +230,10 @@ NBR Summary
 -----------
 
 
-Total CPU time 2 secs 
-Total REAL time: 3 secs 
+Total CPU time 29 secs 
+Total REAL time: 31 secs 
 Completely routed.
-End of route.  1916 routed (100.00%); 0 unrouted.
+End of route.  16188 routed (100.00%); 0 unrouted.
 
 Writing design to file collisions_and_rotations_impl_1_par.dir/5_1.udb ...
 
@@ -1225,9 +246,9 @@ PAR_SUMMARY::Worst  slack<hold /<ns>> = <n/a>
 PAR_SUMMARY::Timing score<hold /<ns>> = <n/a>
 PAR_SUMMARY::Number of errors = 0
 
-Total CPU  Time: 12 secs 
-Total REAL Time: 13 secs 
-Peak Memory Usage: 122.10 MB
+Total CPU  Time: 2 mins 16 secs 
+Total REAL Time: 2 mins 17 secs 
+Peak Memory Usage: 228.11 MB
 
 
 par done!
@@ -1255,7 +276,7 @@ Performance Grade:   High-Performance_1.2V
 
 
 
-Successfully loading udb, 0.06 seconds
+Successfully loading udb, 0.27 seconds
 
 Initializing timer
 Starting design annotation....
@@ -1265,15 +286,15 @@ High-Performance_1.2V
 
 Starting full timing analysis...
 Performance Hardware Data Status:   Advanced       Version 1.0.
-Connections ignored  78  counted  1763  covered  0
+Connections ignored  213  counted  14917  covered  0
 Changing speed to m;   changing temperature to -40
 
 STA Runtime and Peak Memory Usage :
-Total CPU Time: 1 secs 
-Total REAL Time: 2 secs 
-Peak Memory Usage: 98 MB
+Total CPU Time: 10 secs 
+Total REAL Time: 10 secs 
+Peak Memory Usage: 144 MB
 
- 1.651870s wall, 1.250000s user + 0.109375s system = 1.359375s CPU (82.3%)
+ 10.278862s wall, 9.843750s user + 0.187500s system = 10.031250s CPU (97.6%)
 
 
 tmcheck -par "collisions_and_rotations_impl_1.par" 
@@ -1316,17 +337,18 @@ Preference Summary:
 
 Creating bit map...
 Saving bit stream in "Z:\ES4-Final\collisions_and_rotations\impl_1\collisions_and_rotations_impl_1.bin".
+INFO <1081100> - Bitstream authenticated.
 Bitstream generation complete!
 
-Total CPU Time: 0 secs 
-Total REAL Time: 0 secs 
-Peak Memory Usage: 116 MB
+Total CPU Time: 2 secs 
+Total REAL Time: 2 secs 
+Peak Memory Usage: 165 MB
 
 
 ibisgen "collisions_and_rotations_impl_1.udb" "C:/lscc/radiant/2023.1/cae_library/ibis/iCE40UP.ibs"
 IBIS Models Generator: Lattice Radiant Software (64-bit) 2023.1.0.43.3
 
-Wed Dec  6 13:41:33 2023
+Wed Dec  6 18:47:25 2023
 
 Loading collisions_and_rotations_impl_1.udb ...
 Loading device for application GENERIC from file 'itpa08.nph' in environment: C:/lscc/radiant/2023.1/ispfpga.
@@ -1376,6 +398,6 @@ Writing a verilog netlist based on the collisions_and_rotations_impl_1 design fi
 Writing Verilog netlist to file collisions_and_rotations_impl_1_vo.vo
 Writing SDF timing to file collisions_and_rotations_impl_1_vo.sdf
 Backanno finished with 0 posted error messages.
-Total CPU Time: 1 secs 
-Total REAL Time: 0 secs 
-Peak Memory Usage: 98 MB
+Total CPU Time: 12 secs 
+Total REAL Time: 13 secs 
+Peak Memory Usage: 210 MB

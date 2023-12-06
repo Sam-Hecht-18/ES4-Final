@@ -142,11 +142,11 @@ begin
 		piece_shape
 	);
 
-	piece_picker_portmap : piece_picker port map(
-		game_clock => game_clock,
-		new_piece_code => new_piece_code,
-		new_piece_rotation => new_piece_rotation
-	);
+	--piece_picker_portmap : piece_picker port map(
+		--game_clock => game_clock,
+		--new_piece_code => new_piece_code,
+		--new_piece_rotation => new_piece_rotation
+	--);
 
 	 board_updater_portmap : board_updater port map(
 	 	game_clock => game_clock,

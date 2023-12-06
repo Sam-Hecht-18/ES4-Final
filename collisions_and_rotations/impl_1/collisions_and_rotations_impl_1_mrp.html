@@ -48,7 +48,7 @@ Package: SG48
 Performance Grade:  High-Performance_1.2V
 
 Mapper:    version Radiant Software (64-bit) 2023.1.0.43.3
-Mapped on: Wed Dec  6 13:41:16 2023
+Mapped on: Wed Dec  6 18:44:48 2023
 
 
 <A name="mrp_di"></A><B><U><big>Design Information</big></U></B>
@@ -59,10 +59,10 @@ Command line:   map -i collisions_and_rotations_impl_1_syn.udb -pdc
      collisions_and_rotations_impl_1.mrp -hierrpt -gui
 
 <A name="mrp_ds"></A><B><U><big>Design Summary</big></U></B>
-   Number of slice registers:  96 out of  5280 (2%)
+   Number of slice registers: 332 out of  5280 (6%)
    Number of I/O registers:      0 out of   117 (0%)
-   Number of LUT4s:           494 out of  5280 (9%)
-      Number of logic LUT4s:             420
+   Number of LUT4s:           4318 out of  5280 (82%)
+      Number of logic LUT4s:             4244
       Number of inserted feedthru LUT4s:   6
       Number of replicated LUT4s:          6
       Number of ripple logic:             31 (62 LUT4s)
@@ -90,41 +90,85 @@ Command line:   map -i collisions_and_rotations_impl_1_syn.udb -pdc
    Number of Clocks:  4
       Net clk: 32 loads, 32 rising, 0 falling (Driver: Pin
      clock_manager_portmap.pll_portmap.lscc_pll_inst.u_PLL_B/OUTGLOBAL)
-      Net osc_c: 1 loads, 1 rising, 0 falling (Driver: Port osc)
-      Net game_clock: 34 loads, 34 rising, 0 falling (Driver: Pin
+      Net game_clock: 270 loads, 270 rising, 0 falling (Driver: Pin
      clock_manager_portmap.game_clock_I_0/Q)
+      Net osc_c: 1 loads, 1 rising, 0 falling (Driver: Port osc)
       Net ctrlr_clk_c: 7 loads, 7 rising, 0 falling (Driver: Pin
      nes_controller_portmap.ctrlr_clk_c_I_0/Z)
-   Number of Clock Enables:  4
+   Number of Clock Enables:  21
       Net VCC_net: 3 loads, 0 SLICEs
       Net vga_sync_portmap.rgb_col_0__N_50: 6 loads, 6 SLICEs
-      Net game_logic_portmap.piece_loc_1__0__N_93: 4 loads, 4 SLICEs
+      Net game_logic_portmap.piece_loc_0__0__N_103: 4 loads, 4 SLICEs
 
-      Net game_logic_portmap.piece_loc_0__0__N_105: 4 loads, 4 SLICEs
+      Net game_logic_portmap.piece_loc_1__1__N_90: 3 loads, 3 SLICEs
+      Net game_logic_portmap.piece_loc[0][3]: 61 loads, 61 SLICEs
+      Net
+     game_logic_portmap.board_updater_portmap.temp_board_shadow_13__15__N_448: 1
+     loads, 1 SLICEs
+      Net
+     game_logic_portmap.board_updater_portmap.temp_board_shadow_2__15__N_265: 1
+     loads, 1 SLICEs
+      Net
+     game_logic_portmap.board_updater_portmap.temp_board_shadow_3__15__N_282: 1
+     loads, 1 SLICEs
+      Net
+     game_logic_portmap.board_updater_portmap.temp_board_shadow_4__15__N_299: 1
+     loads, 1 SLICEs
+      Net
+     game_logic_portmap.board_updater_portmap.temp_board_shadow_5__15__N_316: 1
+     loads, 1 SLICEs
+      Net
+     game_logic_portmap.board_updater_portmap.temp_board_shadow_6__15__N_333: 1
+     loads, 1 SLICEs
+      Net
+     game_logic_portmap.board_updater_portmap.temp_board_shadow_7__15__N_350: 1
+     loads, 1 SLICEs
+      Net
+     game_logic_portmap.board_updater_portmap.temp_board_shadow_8__15__N_367: 1
+     loads, 1 SLICEs
+      Net
+     game_logic_portmap.board_updater_portmap.temp_board_shadow_9__15__N_384: 1
+     loads, 1 SLICEs
+      Net
+     game_logic_portmap.board_updater_portmap.temp_board_shadow_10__15__N_401: 1
+     loads, 1 SLICEs
+      Net
+     game_logic_portmap.board_updater_portmap.temp_board_shadow_11__15__N_418: 1
+     loads, 1 SLICEs
+      Net
+     game_logic_portmap.board_updater_portmap.temp_board_shadow_12__15__N_433: 1
+     loads, 1 SLICEs
+      Net
+     game_logic_portmap.board_updater_portmap.temp_board_shadow_14__15__N_459: 1
+     loads, 1 SLICEs
+      Net
+     game_logic_portmap.board_updater_portmap.temp_board_shadow_15__15__N_466: 1
+     loads, 1 SLICEs
+      Net
+     game_logic_portmap.board_updater_portmap.temp_board_shadow_0__15__N_231: 1
+     loads, 1 SLICEs
+      Net
+     game_logic_portmap.board_updater_portmap.temp_board_shadow_1__15__N_248: 1
+     loads, 1 SLICEs
    Number of LSRs:  5
-      Net piece_loc_0__0__N_106: 4 loads, 4 SLICEs
+      Net clock_manager_portmap.clk_counter_0__N_619: 10 loads, 10 SLICEs
       Net vga_sync_portmap.rgb_col_0__N_50: 6 loads, 6 SLICEs
       Net vga_sync_portmap.rgb_row_0__N_30: 6 loads, 6 SLICEs
-      Net clock_manager_portmap.clk_counter_0__N_351: 10 loads, 10 SLICEs
-      Net game_logic_portmap.piece_loc_1__0__N_94: 4 loads, 4 SLICEs
+      Net piece_loc_0__0__N_104: 5 loads, 5 SLICEs
+      Net game_logic_portmap.piece_loc_1__2__N_88: 2 loads, 2 SLICEs
    Top 10 highest fanout non-clock nets:
-      Net game_logic_portmap.collision_check_portmap.future_piece_loc[0][0]: 44
+
+      Net game_logic_portmap.piece_loc[0][2]: 782 loads
+      Net game_logic_portmap.piece_loc[0][1]: 724 loads
+      Net piece_loc[0][0]: 556 loads
+      Net game_logic_portmap.board_updater_portmap.n23856: 398 loads
+      Net game_logic_portmap.piece_loc[0][3]: 336 loads
+      Net piece_loc[1][0]: 318 loads
+      Net collision_down_N_620: 249 loads
+      Net game_logic_portmap.collision_check_portmap.future_piece_loc[1][1]: 141
      loads
-      Net game_logic_portmap.collision_check_portmap.future_piece_loc[0][1]: 34
-     loads
-      Net game_logic_portmap.collision_check_portmap.future_piece_loc[1][0]: 34
-     loads
-      Net
-     game_logic_portmap.collision_check_portmap.board_shadow_row_4_1__N_257: 32
-     loads
-      Net a: 29 loads
-      Net game_logic_portmap.collision_check_portmap.future_piece_loc[1][3]: 26
-     loads
-      Net game_logic_portmap.collision_check_portmap.piece_bottom_row_1__N_226:
-     22 loads
-      Net game_logic_portmap.piece_rotation[0]: 22 loads
-      Net game_logic_portmap.piece_code[0]: 21 loads
-      Net game_logic_portmap.piece_code[1]: 21 loads
+      Net game_logic_portmap.board_updater_portmap.n12801: 116 loads
+      Net game_logic_portmap.piece_shape[15]: 105 loads
 
 
 
@@ -132,6 +176,7 @@ Command line:   map -i collisions_and_rotations_impl_1_syn.udb -pdc
    Number of warnings:  0
    Number of errors:    0
 
+   Number of errors:    0
 
 
 
@@ -160,7 +205,6 @@ Command line:   map -i collisions_and_rotations_impl_1_syn.udb -pdc
 | vsync               | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | hsync               | OUTPUT    |           |       |       |           |
-
 +---------------------+-----------+-----------+-------+-------+-----------+
 | rgb[0]              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
@@ -174,6 +218,7 @@ Command line:   map -i collisions_and_rotations_impl_1_syn.udb -pdc
 +---------------------+-----------+-----------+-------+-------+-----------+
 | rgb[5]              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
+
 
 
 
@@ -221,15 +266,12 @@ PLL 1:                                 Pin/Node Value
 
 
 
-
-
-
 <A name="mrp_asic"></A><B><U><big>ASIC Components</big></U></B>
 ---------------
 
 Instance Name: clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B
          Type: PLL
-Instance Name: game_logic_portmap/piece_library_portmap/piece_shape_15__I_0_2
+Instance Name: game_logic_portmap/piece_library_portmap/piece_shape_15__I_0
          Type: EBR
 
 
@@ -245,9 +287,26 @@ Instance Name: game_logic_portmap/piece_library_portmap/piece_shape_15__I_0_2
 <A name="mrp_runtime"></A><B><U><big>Run Time and Memory Usage</big></U></B>
 -------------------------
 
-   Total CPU Time: 0 secs
-   Total REAL Time: 0 secs
-   Peak Memory Usage: 64 MB
+   Total CPU Time: 2 secs
+
+   Total REAL Time: 2 secs
+   Peak Memory Usage: 120 MB
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

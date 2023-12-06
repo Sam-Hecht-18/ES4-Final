@@ -40,6 +40,32 @@ if (a)
 <BODY>
 
 <DIV id="content" onclick="hideTocList()"><PRE>
+<A name="pn231202191819"></A><B><U><big>pn231202191819</big></U></B>
+#Start recording tcl command: 12/2/2023 18:37:03
+#Project Location: Z:/es4/ES4-Final/collisions_and_rotations; Project name: collisions_and_rotations
+prj_create -name "collisions_and_rotations" -impl "impl_1" -dev iCE40UP5K-SG48I -performance "High-Performance_1.2V" -synthesis "lse"
+file copy -force -- "Z:/es4/ES4-Final/vhd_files/bottom_check.vhd" "Z:/es4/ES4-Final/vhd_files/clock.vhd" "Z:/es4/ES4-Final/vhd_files/master.vhd" "Z:/es4/ES4-Final/vhd_files/nes_controller.vhd" "Z:/es4/ES4-Final/vhd_files/pattern_gen.vhd" "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1"
+file copy -force -- "Z:/es4/ES4-Final/vhd_files/piece.vhd" "Z:/es4/ES4-Final/vhd_files/vga.vhd" "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1"
+prj_add_source "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/bottom_check.vhd" "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/clock.vhd" "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/master.vhd" "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/nes_controller.vhd" "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/pattern_gen.vhd" "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/piece.vhd" "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/vga.vhd"
+prj_save 
+prj_set_impl_opt -impl "impl_1" "top" "master"
+prj_set_strategy_value -strategy Strategy1 lse_vhdl2008=True
+prj_run Export -impl impl_1
+prj_add_source "Z:/es4/ES4-Final/collisions_and_rotations/pins.pdc"
+prj_enable_source "Z:/es4/ES4-Final/collisions_and_rotations/pins.pdc"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+prj_run Export -impl impl_1
+prj_add_source "Z:/es4/ES4-Final/collisions_and_rotations/mypll/mypll.ipx"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+#Stop recording: 12/2/2023 19:18:19
+
+
+
 <A name="pn231203221822"></A><B><U><big>pn231203221822</big></U></B>
 #Start recording tcl command: 12/3/2023 18:18:28
 #Project Location: Z:/es4/ES4-Final/collisions_and_rotations; Project name: collisions_and_rotations
@@ -462,10 +488,27 @@ prj_run Export -impl impl_1
 
 
 
+<A name="pn231206140828"></A><B><U><big>pn231206140828</big></U></B>
+#Start recording tcl command: 12/6/2023 11:51:36
+#Project Location: Z:/ES4-Final/collisions_and_rotations; Project name: collisions_and_rotations
+prj_open "Z:/ES4-Final/collisions_and_rotations/collisions_and_rotations.rdf"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+prj_run Export -impl impl_1
+#Stop recording: 12/6/2023 14:08:28
+
+
+
 </PRE></DIV>
 
 <DIV id="toc" class="radiant"><span onmousemove="showTocList()">Contents</span>
 <UL id="toc_list">
+<LI><A href=#pn231202191819>pn231202191819</A></LI>
 <LI><A href=#pn231203221822>pn231203221822</A></LI>
 <LI><A href=#pn231203223537>pn231203223537</A></LI>
 <LI><A href=#pn231204184726>pn231204184726</A></LI>
@@ -479,6 +522,7 @@ prj_run Export -impl impl_1
 <LI><A href=#pn231205232412>pn231205232412</A></LI>
 <LI><A href=#pn231206003210>pn231206003210</A></LI>
 <LI><A href=#pn231206003531>pn231206003531</A></LI>
+<LI><A href=#pn231206140828>pn231206140828</A></LI>
 </UL>
 </DIV>
 
