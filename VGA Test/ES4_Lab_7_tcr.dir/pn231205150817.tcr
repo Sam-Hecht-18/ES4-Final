@@ -1,0 +1,6 @@
+#Start recording tcl command: 12/5/2023 15:06:22
+#Project Location: Z:/ES4-Final/VGA Test; Project name: ES4_Lab_7
+prj_open "Z:/ES4-Final/VGA Test/ES4_Lab_7.rdf"
+prj_save 
+prj_close
+#Stop recording: 12/5/2023 15:08:17

@@ -8,8 +8,8 @@ entity clock_manager is
 
 	clk : out std_logic; -- VGA clock
 
-	game_clock : out std_logic; -- Game clock
-	game_clock_ctr : out unsigned(15 downto 0); -- Game clock counter
+	game_clock : out std_logic := '0'; -- Game clock
+	game_clock_ctr : out unsigned(15 downto 0) := 16d"0"; -- Game clock counter
 
 	NEScount : out unsigned(7 downto 0);
 	NESclk : out std_logic

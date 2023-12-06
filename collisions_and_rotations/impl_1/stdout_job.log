@@ -1,21 +1,21 @@
 {
 "Synplify Pro (R) Job Log" : {
-	"Date" : "18:05:51    05-Dec-2023",
-	"Working Directory" : "Z:/es4/ES4-Final/collisions_and_rotations/impl_1",
+	"Date" : "23:03:39    05-Dec-2023",
+	"Working Directory" : "Z:/ES4-Final/collisions_and_rotations/impl_1",
 	"Install" : "C:/lscc/radiant/2023.1/synpbase"
 },
 "hdl_info_gen" :{
-   "Start Time" : "18:05:50",
-   "Runtime" : "01s",
+   "Start Time" : "23:03:39",
+   "Runtime" : "00s",
    "Executable Run Time" : "00s",
    "hdl_info_gen" : {
       "executable" : "bin64/c_vhdl.exe",
-      "Run Directory" : "rev_1",
+      "Run Directory" : "rev_2",
       "Run State" : "Complete",
       "Return Code" : "2",
       "Has Errors" : "yes",
-      "Run Start Time" : "18:05:50",
-      "Run Time" : "01s",
+      "Run Start Time" : "23:03:39",
+      "Run Time" : "00s",
       "Exe Run Time" : "00s",
       "Memory Usage" : "-",
       "Up-to-date (run skipped)" : "no"

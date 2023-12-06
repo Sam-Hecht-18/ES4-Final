@@ -1,0 +1,71 @@
+#defaultlanguage:vhdl
+#OPTIONS:"|-top|master|-prodtype|synplify_pro|-primux|-fixsmult|-infer_seqShift|-sdff_counter|-nram|-divnmod|-nostructver|-lattice|-ice|-encrypt|-pro|-lite|-ui|-fid2|-ram|-sharing|on|-ll|2000|-autosm|-vhdl2008|-work_is_curlib|0|-ignore_undefined_lib|-lib|pmi|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-fileorder|Z:\\ES4-Final\\collisions_and_rotations\\impl_1\\rev_2\\syntmp\\hdlorder.tcl"
+#CUR:"C:\\lscc\\radiant\\2023.1\\synpbase\\bin64\\c_vhdl.exe":1685564424
+#CUR:"C:\\lscc\\radiant\\2023.1\\synpbase\\lib\\vhd2008\\location.map":1685564773
+#CUR:"C:\\lscc\\radiant\\2023.1\\synpbase\\lib\\vhd2008\\std.vhd":1685564456
+#CUR:"C:\\lscc\\radiant\\2023.1\\synpbase\\lib\\vhd\\snps_haps_pkg.vhd":1685564455
+#CUR:"C:\\lscc\\radiant\\2023.1\\synpbase\\lib\\vhd2008\\std1164.vhd":1685564456
+#CUR:"C:\\lscc\\radiant\\2023.1\\synpbase\\lib\\vhd2008\\std_textio.vhd":1685564456
+#CUR:"C:\\lscc\\radiant\\2023.1\\synpbase\\lib\\vhd2008\\numeric.vhd":1685564456
+#CUR:"C:\\lscc\\radiant\\2023.1\\synpbase\\lib\\vhd\\umr_capim.vhd":1685564455
+#CUR:"C:\\lscc\\radiant\\2023.1\\synpbase\\lib\\vhd2008\\arith.vhd":1685564456
+#CUR:"C:\\lscc\\radiant\\2023.1\\synpbase\\lib\\vhd2008\\unsigned.vhd":1685564456
+#CUR:"C:\\lscc\\radiant\\2023.1\\synpbase\\lib\\vhd\\hyperents.vhd":1685564455
+#CUR:"C:\\lscc\\radiant\\2023.1\\ip\\pmi\\pmi_iCE40UP.vhd":1648538958
+#CUR:"Z:\\ES4-Final\\collisions_and_rotations\\source\\impl_1\\master.vhd":1701834751
+#CUR:"Z:\\ES4-Final\\collisions_and_rotations\\source\\impl_1\\nes_controller.vhd":1701828477
+#CUR:"Z:\\ES4-Final\\collisions_and_rotations\\source\\impl_1\\vga.vhd":1701832301
+#CUR:"Z:\\ES4-Final\\collisions_and_rotations\\source\\impl_1\\collision_check.vhd":1701828672
+#CUR:"Z:\\ES4-Final\\collisions_and_rotations\\source\\impl_1\\game_logic.vhd":1701832450
+#CUR:"Z:\\ES4-Final\\collisions_and_rotations\\source\\impl_1\\piece_library.vhd":1701828477
+#CUR:"Z:\\ES4-Final\\collisions_and_rotations\\source\\impl_1\\renderer.vhd":1701828672
+#CUR:"Z:\\ES4-Final\\collisions_and_rotations\\source\\impl_1\\clock_manager.vhd":1701828477
+0 "C:\lscc\radiant\2023.1\ip\pmi\pmi_iCE40UP.vhd" vhdl
+1 "Z:\ES4-Final\collisions_and_rotations\source\impl_1\master.vhd" vhdl
+2 "Z:\ES4-Final\collisions_and_rotations\source\impl_1\nes_controller.vhd" vhdl
+3 "Z:\ES4-Final\collisions_and_rotations\source\impl_1\vga.vhd" vhdl
+4 "Z:\ES4-Final\collisions_and_rotations\source\impl_1\collision_check.vhd" vhdl
+5 "Z:\ES4-Final\collisions_and_rotations\source\impl_1\game_logic.vhd" vhdl
+6 "Z:\ES4-Final\collisions_and_rotations\source\impl_1\piece_library.vhd" vhdl
+7 "Z:\ES4-Final\collisions_and_rotations\source\impl_1\renderer.vhd" vhdl
+8 "Z:\ES4-Final\collisions_and_rotations\source\impl_1\clock_manager.vhd" vhdl
+
+# Dependency Lists (Uses list)
+0 -1
+1 8 3 2 7 5 4 
+2 -1
+3 -1
+4 7 5 1 
+5 6 7 4 1 
+6 -1
+7 5 4 1 
+8 -1
+
+# Dependency Lists (Users Of)
+0 -1
+1 7 5 4 
+2 1 
+3 1 
+4 7 5 1 
+5 7 4 1 
+6 5 
+7 5 4 1 
+8 1 
+
+# Design Unit to File Association
+arch work master synth 1
+module work master 1
+arch work nes_controller synth 2
+module work nes_controller 2
+arch work vga_sync synth 3
+module work vga_sync 3
+arch work collision_check synth 4
+module work collision_check 4
+arch work game_logic synth 5
+module work game_logic 5
+arch work piece_library synth 6
+module work piece_library 6
+arch work renderer synth 7
+module work renderer 7
+arch work clock_manager synth 8
+module work clock_manager 8

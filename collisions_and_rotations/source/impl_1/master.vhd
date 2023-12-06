@@ -35,6 +35,7 @@ architecture synth of master is
 		start : in std_logic;
 		
 		-- for render state
+
 		valid_rgb : in std_logic;
 		rgb_row : in unsigned(9 downto 0);
 		rgb_col : in unsigned(9 downto 0);
@@ -57,6 +58,7 @@ architecture synth of master is
 			valid_rgb: in std_logic;
 
 			press_rotate : in std_logic;
+			press_up : in std_logic;
 			press_down : in std_logic;
 			press_left : in std_logic;
 			press_right : in std_logic;
@@ -131,7 +133,7 @@ architecture synth of master is
 	signal rgb_col : unsigned(9 downto 0);
 
 	-- NES signals
-	signal press_rotate : std_logic;
+	signal up_button : std_logic;
 	signal down_button : std_logic;
 	signal left_button : std_logic;
 	signal right_button : std_logic;
@@ -199,7 +201,8 @@ begin
 		game_clock => game_clock,
 		game_clock_ctr => game_clock_ctr,
 		valid_rgb => valid_rgb,
-		press_rotate => press_rotate,
+		press_rotate => a,
+		press_up => up_button,
 		press_down => down_button,
 		press_left => left_button,
 		press_right => right_button,
@@ -207,6 +210,8 @@ begin
 		piece_loc => piece_loc,
 		piece_shape => piece_shape,
 		board => board,
+		
+		
 		special_background => special_background
 	);
 
@@ -225,7 +230,7 @@ begin
 		ctrlr_latch,
 		ctrlr_clk,
 		ctrlr_data,
-		press_rotate,
+		up_button,
 		down_button,
 		left_button,
 		right_button,
@@ -237,6 +242,7 @@ begin
 		NESclk
 	);
 
-	rotate_out <= press_rotate;
+	-- LED light for testing
+	rotate_out <= up_button;
 
 end;

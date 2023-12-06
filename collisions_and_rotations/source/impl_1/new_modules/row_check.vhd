@@ -28,7 +28,7 @@ begin
 	process(clk) begin
 		if rising_edge(clk) then
 			for i in 15 downto 0 loop
-				if (stable_board(i) = "1111111111" and i /= 0) then
+				if (stable_board(i)(12 downto 3) = "1111111111" and i /= 0) then
 					new_score <= score + 1;
 					for j in i downto 1 loop
 						new_board(j) <= stable_board(j - 1);

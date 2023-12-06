@@ -38,9 +38,6 @@ begin
         end if;
     end process;
 
-    --next_col <= col_temp + 1;
-    --next_row <= row_temp + 1;
-
 	hsync <= '1' when col_temp < 656 or col_temp >= 752 else '0'; -- 656 = visible + front porch, 752 = visible + front porch + sync
 	vsync <= '1' when row_temp < 490 or row_temp >= 492 else '0'; -- 490 = visible + front porch, 492 = visible + front porch + sync
 

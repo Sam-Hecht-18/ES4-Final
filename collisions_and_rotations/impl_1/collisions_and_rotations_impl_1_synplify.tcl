@@ -47,29 +47,26 @@ set_option -disable_io_insertion false
 add_file -constraint {collisions_and_rotations_impl_1_cpe.ldc}
 add_file -verilog {C:/lscc/radiant/2023.1/ip/pmi/pmi_iCE40UP.v}
 add_file -vhdl -lib pmi {C:/lscc/radiant/2023.1/ip/pmi/pmi_iCE40UP.vhd}
-add_file -vhdl -lib "work" {Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/master.vhd}
-add_file -vhdl -lib "work" {Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/nes_controller.vhd}
-add_file -vhdl -lib "work" {Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/vga.vhd}
-add_file -verilog -vlog_std v2001 {Z:/es4/ES4-Final/collisions_and_rotations/mypll/rtl/mypll.v}
-add_file -vhdl -lib "work" {Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/collision_check.vhd}
-add_file -vhdl -lib "work" {Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/game_logic.vhd}
-add_file -vhdl -lib "work" {Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/piece_library.vhd}
-add_file -vhdl -lib "work" {Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/renderer.vhd}
-add_file -vhdl -lib "work" {Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/clock_manager.vhd}
-add_file -vhdl -lib "work" {Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/game_over.vhd}
-add_file -vhdl -lib "work" {Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/game_state.vhd}
-add_file -vhdl -lib "work" {Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/welcome.vhd}
+add_file -vhdl -lib "work" {Z:/ES4-Final/collisions_and_rotations/source/impl_1/master.vhd}
+add_file -vhdl -lib "work" {Z:/ES4-Final/collisions_and_rotations/source/impl_1/nes_controller.vhd}
+add_file -vhdl -lib "work" {Z:/ES4-Final/collisions_and_rotations/source/impl_1/vga.vhd}
+add_file -verilog -vlog_std v2001 {Z:/ES4-Final/collisions_and_rotations/mypll/rtl/mypll.v}
+add_file -vhdl -lib "work" {Z:/ES4-Final/collisions_and_rotations/source/impl_1/collision_check.vhd}
+add_file -vhdl -lib "work" {Z:/ES4-Final/collisions_and_rotations/source/impl_1/game_logic.vhd}
+add_file -vhdl -lib "work" {Z:/ES4-Final/collisions_and_rotations/source/impl_1/piece_library.vhd}
+add_file -vhdl -lib "work" {Z:/ES4-Final/collisions_and_rotations/source/impl_1/renderer.vhd}
+add_file -vhdl -lib "work" {Z:/ES4-Final/collisions_and_rotations/source/impl_1/clock_manager.vhd}
 #-- top module name
 set_option -top_module master
-set_option -include_path {Z:/es4/ES4-Final/collisions_and_rotations}
+set_option -include_path {Z:/ES4-Final/collisions_and_rotations}
 
 #-- run Synplify with 'arrange HDL file'
 project -run hdl_info_gen -fileorder
-set_option -include_path {Z:/es4/ES4-Final/collisions_and_rotations/mypll}
+set_option -include_path {Z:/ES4-Final/collisions_and_rotations/mypll}
 
 #-- set result format/file last
 project -result_format "vm"
-project -result_file {Z:/es4/ES4-Final/collisions_and_rotations/impl_1/collisions_and_rotations_impl_1.vm}
+project -result_file {Z:/ES4-Final/collisions_and_rotations/impl_1/collisions_and_rotations_impl_1.vm}
 
 #-- error message log file
 project -log_file {collisions_and_rotations_impl_1.srf}

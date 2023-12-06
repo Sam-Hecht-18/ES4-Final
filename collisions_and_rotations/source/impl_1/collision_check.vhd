@@ -72,7 +72,8 @@ begin
 
 	-- future_piece_loc(0) <= piece_loc(0) + press_right - press_left;
 	future_piece_loc(0) <= piece_loc(0) + press_right - press_left when (move_down_auto = '0' and press_down = '0') else piece_loc(0);
-	future_piece_loc(1) <= piece_loc(1) + 1 when (press_down = '1' or move_down_auto = '1');
+	future_piece_loc(1) <= piece_loc(1) + press_down + move_down_auto;
+	--future_piece_loc(1) <= piece_loc(1) + 1 when (press_down = '1' or move_down_auto = '1') else piece_loc(1);
 
 	-- board_overlap_portmap : board_overlap port map(clk, '1', future_piece_loc, piece_shape, piece_bottom_row, overlap_row_1, overlap_row_2, overlap_row_3, overlap_row_4);
 

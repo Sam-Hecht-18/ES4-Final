@@ -102,14 +102,15 @@ begin
 	process(board_update_enable) begin
 		if rising_edge(board_update_enable) then
 			-- if board_update_enable = '1' then
-				for i in 15 downto 0 loop
-					if (temp_board(i) = "0001111111111" and i /= 0) then
+				for i in 15 downto 1 loop
+					if (temp_board(i)(3 to 12) = "1111111111" and i /= 0) then
 						new_score <= score + 1;
 						for j in i downto 1 loop
 							new_board(j) <= temp_board(j - 1);
 						end loop;
-					elsif (temp_board(i) = "0001111111111" and i = 0) then
-						new_board(i) <= "0000000000000";
+						new_board(0) <= "0000000000000000";
+					elsif (temp_board(i)(3 to 12) = "1111111111" and i = 0) then
+						new_board(i) <= "0000000000000000";
 					else
 						new_board(i) <= temp_board(i);
 					end if;

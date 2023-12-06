@@ -22,8 +22,8 @@ Running in Lattice mode
 
 Starting:    C:\lscc\radiant\2023.1\synpbase\bin64\mbin\synbatch.exe
 Install:     C:\lscc\radiant\2023.1\synpbase
-Hostname:    LAB229C
-Date:        Tue Dec  5 18:05:50 2023
+Hostname:    LAB229D
+Date:        Tue Dec  5 23:03:38 2023
 Version:     U-2023.03LR-1
 
 Arguments:   -product synplify_base -batch collisions_and_rotations_impl_1_synplify.tcl
@@ -33,23 +33,23 @@ ProductType: synplify_pro
 
 
 "force_gsr" is unrecognized option for current device
-log file: "Z:\es4\ES4-Final\collisions_and_rotations\impl_1\rev_1\welcome.srr"
+log file: "Z:\ES4-Final\collisions_and_rotations\impl_1\rev_2\clock_manager.srr"
 Running: hdl_info_gen in foreground
 
 Generating HDL info...
 
 Job: "hdl_info_gen" terminated with error status: 2
-See log file: "Z:\es4\ES4-Final\collisions_and_rotations\impl_1\rev_1\syntax.log"
-# Tue Dec  5 18:05:51 2023
+See log file: "Z:\ES4-Final\collisions_and_rotations\impl_1\rev_2\syntax.log"
+# Tue Dec  5 23:03:39 2023
 
 Return Code: 2
-Run Time:00h:00m:01s
-Error: At line 67 while processing "collisions_and_rotations_impl_1_synplify.tcl"
+Run Time:00h:00m:00s
+Error: At line 64 while processing "collisions_and_rotations_impl_1_synplify.tcl"
 2
 TCL script complete: "collisions_and_rotations_impl_1_synplify.tcl"
 TCL script had errors: "collisions_and_rotations_impl_1_synplify.tcl"
 exit status=9
 exit status=9
 Save changes for project:
-Z:\es4\ES4-Final\collisions_and_rotations\impl_1\proj_1.prj
+Z:\ES4-Final\collisions_and_rotations\impl_1\proj_1.prj
 batch mode default:no
