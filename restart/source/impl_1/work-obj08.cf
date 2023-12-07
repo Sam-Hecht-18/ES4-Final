@@ -1,0 +1,30 @@
+v 4
+file . "game_logic.vhd" "0fc5a13a0a1082f62653df1b53aac971d54c3152" "20231207005858.537":
+  entity game_logic at 1( 0) + 0 on 305;
+  architecture synth of game_logic at 26( 790) + 0 on 306;
+file . "welcome.vhd" "b86c2ea5e5000d427b455acfae7a99a0a86ddb73" "20231207005858.551":
+  entity welcome_screen at 1( 0) + 0 on 319;
+  architecture synth of welcome_screen at 14( 278) + 0 on 320;
+file . "game_state.vhd" "6f725589cceba5cc97c168f7d9ebb4a3c81dadf2" "20231207005858.541":
+  entity game_state at 1( 0) + 0 on 309;
+  architecture synth of game_state at 30( 680) + 0 on 310;
+file . "game_over.vhd" "5372fd64cd9f3719cbb26f01ea6a6a5945e1b559" "20231207005858.538":
+  entity game_over_screen at 1( 0) + 0 on 307;
+  architecture synth of game_over_screen at 16( 371) + 0 on 308;
+file . "renderer.vhd" "e4313014955b408870a841b1ddf3e5115ece1e00" "20231207005858.548":
+  entity renderer at 1( 0) + 0 on 315;
+  architecture synth of renderer at 20( 508) + 0 on 316;
+file . "clock_manager.vhd" "7659bba401e2cd1391a87beb081f2248e3c080ac" "20231207005858.534":
+  entity clock_manager at 1( 0) + 0 on 303;
+  architecture synth of clock_manager at 23( 473) + 0 on 304;
+file . "master.vhd" "5d6322fda6a4fe6cb4ac2aecf279a250bb430694" "20231207005858.543":
+  entity master at 1( 0) + 0 on 311;
+  architecture synth of master at 20( 401) + 0 on 312;
+file . "vga.vhd" "33cf377bbb1e116e152bacfb395976385b3f336c" "20231207005858.550":
+  entity vga_sync at 1( 0) + 0 on 317;
+  architecture synth of vga_sync at 16( 302) + 0 on 318;
+file . "nes_controller.vhd" "27cf61fcb6eef76122336b2d7f0143dbddaf76e4" "20231207005858.545":
+  entity nes_controller at 1( 0) + 0 on 313;
+  architecture synth of nes_controller at 23( 557) + 0 on 314;
+file . "a_package.vhd" "aca6dccde466d265c24e6b1ab16541681ccd607d" "20231207005858.532":
+  package my_types_package at 1( 0) + 0 on 302;
