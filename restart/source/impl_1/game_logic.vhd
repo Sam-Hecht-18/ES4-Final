@@ -21,7 +21,8 @@ entity game_logic is
 		piece_loc : out piece_loc_type; -- (y,x) from top left of grid to top left of piece 4x4
 		piece_shape : out std_logic_vector(15 downto 0);
 		board : out board_type;
-		special_background : out unsigned(4 downto 0);
+		piece_code : out unsigned(2 downto 0);
+		game_over: out std_logic;
 		curr_state: in State
 );
 end game_logic;
@@ -117,7 +118,6 @@ architecture synth of game_logic is
 	
 	signal next_rotation: unsigned(1 downto 0);
 	signal curr_piece_next_rotation: std_logic_vector(15 downto 0);
-	signal piece_code : unsigned(2 downto 0);
 	signal curr_rotation : unsigned(1 downto 0);
 	signal next_piece_code : unsigned(2 downto 0);
 	signal next_piece_rotation : unsigned(1 downto 0);
@@ -127,7 +127,7 @@ architecture synth of game_logic is
 	signal right_delay : unsigned(2 downto 0);
 	signal left_delay : unsigned(2 downto 0);
 	signal down_delay : unsigned(2 downto 0);
-	signal up_delay : unsigned(2 downto 0);
+	--signal up_delay : unsigned(2 downto 0);
 
 	signal collision: std_logic;
 	signal collision_left : std_logic;
@@ -225,14 +225,9 @@ begin
 	next_piece_rotation <= "00";
 
 	collision <= collision_down or collision_left or collision_right;
-	special_background <= 5d"0" when collision = '0' else 
-									      5d"1" when collision_down = '1' else
-										  5d"2" when collision_left = '1' else 
-										  5d"3" when collision_right = '1' else 
-										  5d"4";
 	-- The next rotation of the current piece
 	next_rotation <= curr_rotation + 1;
-	
+	game_over <= '0' when (board(0) = "0000000000000000") else '1';
 	--board <= new_board_embedded when advance_turn = '1' else board;
 
 	process(game_clock) begin
@@ -243,15 +238,9 @@ begin
 				-- Initialize Board and piece locations
 				if first_time = '0' then
 				
-					board(0) <= "0001111111111000";
-					for y in 1 to 11 loop
+					for y in 0 to 15 loop
 						board(y) <= 16b"0";
 					end loop;
-					
-					board(12) <= "0001010000000000";
-					board(13) <= "0001010000000000";
-					board(14) <= "0001010101110000";
-					board(15) <= "0001111111111000";
 
 					piece_loc(0) <= 4d"5";
 					piece_loc(1) <= 4d"0";
@@ -264,7 +253,7 @@ begin
 					left_delay <= "000";
 					right_delay <= "000";
 					down_delay <= "000";
-					up_delay <= "000";					
+					--up_delay <= "000";					
 										  
 					move_down_auto <= '0';
 					first_time <= '1';
@@ -288,8 +277,6 @@ begin
 						--board <= new_board_cleared_rows;
 						--clear_rows <= '0';
 					elsif game_clock_ctr(4 downto 0) = "00000" then
-						board(0) <= "0000000000000000" when board(0) = "0001111111111000" else board(0);
-					elsif game_clock_ctr(4 downto 0) = "00001" then
 						board(0) <= "0000000000000000" when board(1) = "0001111111111000" else board(0);
 						board(1) <= board(0) when board(1) = "0001111111111000" else board(1);
 					elsif game_clock_ctr(4 downto 0) = "00010" then
@@ -297,71 +284,72 @@ begin
 						for i in 1 to 2 loop
 							board(i) <= board(i - 1) when board(2) = "0001111111111000" else board(i);
 						end loop;
-					elsif game_clock_ctr(4 downto 0) = "00011" then
+					elsif game_clock_ctr(4 downto 0) = "00100" then
 						board(0) <= "0000000000000000" when board(3) = "0001111111111000" else board(0);
 						for i in 1 to 3 loop
 							board(i) <= board(i - 1) when board(3) = "0001111111111000" else board(i);
 						end loop;
-					elsif game_clock_ctr(4 downto 0) = "00100" then
+					elsif game_clock_ctr(4 downto 0) = "00110" then
 						board(0) <= "0000000000000000" when board(4) = "0001111111111000" else board(0);
 						for i in 1 to 4 loop
 							board(i) <= board(i - 1) when board(4) = "0001111111111000" else board(i);
 						end loop;
-					elsif game_clock_ctr(4 downto 0) = "00101" then
+					elsif game_clock_ctr(4 downto 0) = "01000" then
 						board(0) <= "0000000000000000" when board(5) = "0001111111111000" else board(0);
 						for i in 1 to 5 loop
 							board(i) <= board(i - 1) when board(5) = "0001111111111000" else board(i);
 						end loop;
-					elsif game_clock_ctr(4 downto 0) = "00110" then
+					elsif game_clock_ctr(4 downto 0) = "01010" then
 						board(0) <= "0000000000000000" when board(6) = "0001111111111000" else board(0);
 						for i in 1 to 6 loop
 							board(i) <= board(i - 1) when board(6) = "0001111111111000" else board(i);
 						end loop;
-					elsif game_clock_ctr(4 downto 0) = "00111" then
+					elsif game_clock_ctr(4 downto 0) = "01100" then
 						board(0) <= "0000000000000000" when board(7) = "0001111111111000" else board(0);
 						for i in 1 to 7 loop
 							board(i) <= board(i - 1) when board(7) = "0001111111111000" else board(i);
 						end loop;
-					elsif game_clock_ctr(4 downto 0) = "01000" then
+					elsif game_clock_ctr(4 downto 0) = "01110" then
 						board(0) <= "0000000000000000" when board(8) = "0001111111111000" else board(0);
 						for i in 1 to 8 loop
 							board(i) <= board(i - 1) when board(8) = "0001111111111000" else board(i);
 						end loop;
-					elsif game_clock_ctr(4 downto 0) = "01001" then
+					elsif game_clock_ctr(4 downto 0) = "10000" then
 						board(0) <= "0000000000000000" when board(9) = "0001111111111000" else board(0);
 						for i in 1 to 9 loop
 							board(i) <= board(i - 1) when board(9) = "0001111111111000" else board(i);
 						end loop;
-					elsif game_clock_ctr(4 downto 0) = "01010" then
+					elsif game_clock_ctr(4 downto 0) = "10010" then
 						board(0) <= "0000000000000000" when board(10) = "0001111111111000" else board(0);
 						for i in 1 to 10 loop
 							board(i) <= board(i - 1) when board(10) = "0001111111111000" else board(i);
 						end loop;
-					elsif game_clock_ctr(4 downto 0) = "01011" then
+					elsif game_clock_ctr(4 downto 0) = "10100" then
 						board(0) <= "0000000000000000" when board(11) = "0001111111111000" else board(0);
 						for i in 1 to 11 loop
 							board(i) <= board(i - 1) when board(11) = "0001111111111000" else board(i);
 						end loop;
-					elsif game_clock_ctr(4 downto 0) = "01100" then
+					elsif game_clock_ctr(4 downto 0) = "10110" then
 						board(0) <= "0000000000000000" when board(12) = "0001111111111000" else board(0);
 						for i in 1 to 12 loop
 							board(i) <= board(i - 1) when board(12) = "0001111111111000" else board(i);
 						end loop;
-					elsif game_clock_ctr(4 downto 0) = "01101" then
+					elsif game_clock_ctr(4 downto 0) = "11000" then
 						board(0) <= "0000000000000000" when board(13) = "0001111111111000" else board(0);
 						for i in 1 to 13 loop
 							board(i) <= board(i - 1) when board(13) = "0001111111111000" else board(i);
 						end loop;
-					elsif game_clock_ctr(4 downto 0) = "01110" then
+					elsif game_clock_ctr(4 downto 0) = "11010" then
 						board(0) <= "0000000000000000" when board(14) = "0001111111111000" else board(0);
 						for i in 1 to 14 loop
 							board(i) <= board(i - 1) when board(14) = "0001111111111000" else board(i);
 						end loop;
-					elsif game_clock_ctr(4 downto 0) = "01111" then
+					elsif game_clock_ctr(4 downto 0) = "11100" then
 						board(0) <= "0000000000000000" when board(15) = "0001111111111000" else board(0);
 						for i in 1 to 15 loop
 							board(i) <= board(i - 1) when board(15) = "0001111111111000" else board(i);
 						end loop;
+						
 					-- Automatic movement down
 					elsif move_down_auto = '1' and collision_down = '0' then
 						piece_loc(1) <= piece_loc(1) + 1;
@@ -397,9 +385,9 @@ begin
 						right_delay <= right_delay + 1;
 					
 					-- Movement up
-					elsif press_up = '1' and up_delay = 0 then
-						piece_loc(1) <= piece_loc(1) - 1;
-						up_delay <= up_delay + 1;
+					--elsif press_up = '1' and up_delay = 0 then
+						--piece_loc(1) <= piece_loc(1) - 1;
+						--up_delay <= up_delay + 1;
 					end if;
 						
 
@@ -420,9 +408,9 @@ begin
 					if swap_delay > 0 then
 						swap_delay <= swap_delay + 1;
 					end if;
-					if up_delay > 0 then
-						up_delay <= up_delay + 1;
-					end if;
+					--if up_delay > 0 then
+						--up_delay <= up_delay + 1;
+					--end if;
 					 
 				--if game_clock_ctr(5 downto 0) = "111110" then
 					--move_down_auto <= '1';
@@ -433,6 +421,26 @@ begin
 				--elsif (collision_down = '1' and game_clock_ctr(5 downto 0) = "111111") then
 					--advance_turn <= '1';
 				end if;
+			else
+				for y in 0 to 15 loop
+					board(y) <= 16b"0";
+				end loop;
+
+				piece_loc(0) <= 4d"5";
+				piece_loc(1) <= 4d"0";
+				
+				piece_code <= "000";
+				curr_rotation <= "00";
+				
+				rotate_delay <= "000";
+				swap_delay <= "000";
+				left_delay <= "000";
+				right_delay <= "000";
+				down_delay <= "000";
+				--up_delay <= "000";					
+									  
+				move_down_auto <= '0';
+				first_time <= '1';
 			end if;
 		end if;
 	end process;

@@ -20,7 +20,7 @@ entity game_state is
 	piece_loc : in piece_loc_type; -- (x, y) from top left of grid to top left of piece 4x4
 	piece_shape : in std_logic_vector(15 downto 0);
 	board : in board_type;
-	special_background : in unsigned(4 downto 0);
+	piece_code : in unsigned(2 downto 0);
 	
 	game_over : in std_logic;
 	curr_state: out State
@@ -33,8 +33,8 @@ architecture synth of game_state is
 	component welcome_screen is
 		port(
 			clk : in std_logic;
-			rgb_row: in unsigned(9 downto 0);
-			rgb_col: in unsigned(9 downto 0);
+			x_coordinate: in unsigned(7 downto 0);
+		    y_coordinate: in unsigned(6 downto 0);
 			rgb: out std_logic_vector(5 downto 0)
 		);
 	end component;
@@ -49,19 +49,19 @@ architecture synth of game_state is
 		piece_loc : in piece_loc_type; -- (x, y) from top left of grid to top left of piece 4x4
 		piece_shape : in std_logic_vector(15 downto 0);
 		board : in board_type;
-		special_background : in unsigned(4 downto 0)
+		piece_code: unsigned(2 downto 0)
 	);
 	end component;
 	
-	component game_over_screen is
-		port(
-			clk : in std_logic;
+	--component game_over_screen is
+		--port(
+			--clk : in std_logic;
 			--final_score : in unsigned(16 downto 0); -- allows maximum score of 2^17 - 1 = 131,071
-			x_coordinate: in unsigned(7 downto 0);
-			y_coordinate: in unsigned(6 downto 0);
-			rgb: out std_logic_vector(5 downto 0)
-		);
-	end component;
+			--x_coordinate: in unsigned(7 downto 0);
+			--y_coordinate: in unsigned(6 downto 0);
+			--rgb: out std_logic_vector(5 downto 0)
+		--);
+	--end component;
 	
 	
 	signal rgb_welcome : std_logic_vector(5 downto 0);
@@ -74,8 +74,8 @@ begin
 
 	welcome_portmap : welcome_screen port map(
 		clk  => clk,
-		rgb_row => rgb_row,
-		rgb_col => rgb_col,
+		x_coordinate => rgb_col(9 downto 2),
+		y_coordinate => rgb_row(8 downto 2),
 		rgb => rgb_welcome
 	);
 		
@@ -86,15 +86,15 @@ begin
 		piece_loc => piece_loc,
 		piece_shape => piece_shape,
 		board => board,
-		special_background => special_background
+		piece_code => piece_code
 	);
 		
-	game_over_portmap : game_over_screen port map(
-		clk => clk,
-		x_coordinate => rgb_row(9 downto 2),
-		y_coordinate => rgb_col(8 downto 2),
-		rgb => rgb_gameover
-	);
+	--game_over_portmap : game_over_screen port map(
+		--clk => clk,
+		--x_coordinate => rgb_row(9 downto 2),
+		--y_coordinate => rgb_col(8 downto 2),
+		--rgb => rgb_gameover
+	--);
 		
 -- port mappings
 	process(clk) begin
@@ -125,7 +125,7 @@ begin
 		   rgb_gameplay when curr_state = GAMEPLAY_STATE and valid_rgb = '1' else
 		   rgb_gameover when curr_state = GAMEOVER_STATE and valid_rgb = '1' else "000000";
 		   
-
+	rgb_gameover <= rgb_welcome;
 end;
 
 

@@ -83,7 +83,7 @@ architecture synth of master is
 		piece_loc : in piece_loc_type; -- (x, y) from top left of grid to top left of piece 4x4
 		piece_shape : in std_logic_vector(15 downto 0);
 		board : in board_type;
-		special_background : in unsigned(4 downto 0);
+		piece_code : out unsigned(2 downto 0);
 		
 		game_over : in std_logic;
 		curr_state: out State
@@ -106,7 +106,8 @@ architecture synth of master is
 			piece_loc : out piece_loc_type; -- (y,x) from top left of grid to top left of piece 4x4
 			piece_shape : out std_logic_vector(15 downto 0);
 			board : out board_type;
-			special_background : out unsigned(4 downto 0);
+			piece_code : out unsigned(2 downto 0);
+			game_over: out std_logic;
 			curr_state: in State
 		);
 	end component;
@@ -136,11 +137,12 @@ architecture synth of master is
 	
 	-- Signals for the game state
 	signal curr_state: State;
+	signal piece_code: unsigned(2 downto 0);
+	signal game_over: std_logic;
 		-- Signals for the renderer
 		signal piece_loc: piece_loc_type;
 		signal piece_shape: std_logic_vector(15 downto 0);
 		signal board: board_type;
-		signal special_background: unsigned(4 downto 0);
 
 
 
@@ -195,9 +197,9 @@ begin
 		piece_loc => piece_loc,
 		piece_shape => piece_shape,
 		board => board,
-		special_background => special_background,
+		piece_code => piece_code,
 		
-		game_over => sel,
+		game_over => game_over,
 		curr_state => curr_state
 	 );
 	 
@@ -219,7 +221,8 @@ begin
 		piece_loc => piece_loc,
 		piece_shape => piece_shape,
 		board => board,
-		special_background => special_background,
+		piece_code => piece_code,
+		game_over => game_over,
 		
 		-- Taken as input from the game state module
 		curr_state => curr_state
