@@ -262,7 +262,7 @@ begin
 						piece_code <= next_piece_code;
 						curr_rotation <= next_rotation;
 						piece_loc(0) <= 4d"5";
-						piece_loc(1) <= 4d"3";
+						piece_loc(1) <= 4d"0";
 					
 					-- Automatic movement down
 					elsif move_down_auto = '1' and collision_down = '0' then
