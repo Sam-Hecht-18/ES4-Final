@@ -8,7 +8,7 @@ entity collision_check is
   	port(
 		piece_loc : in piece_loc_type; -- (x, y) from top left of grid to top left of piece 4x4
 		piece_shape : in std_logic_vector(15 downto 0);
-		next_piece_rotation: in std_logic_vector(15 downto 0);
+		curr_piece_next_rotation: in std_logic_vector(15 downto 0);
 		stable_board : in board_type;
 		press_left : in std_logic;
 		press_right : in std_logic;
@@ -57,7 +57,7 @@ begin
 	
 	future_piece_loc(1) <= piece_loc(1) + 1 when (press_down = '1' or move_down_auto = '1') else piece_loc(1);
 	
-	shape_to_compare <= piece_shape when (press_down = '1' or move_down_auto = '1' or press_rotate = '0') else next_piece_rotation;
+	shape_to_compare <= piece_shape when (press_down = '1' or move_down_auto = '1' or press_rotate = '0') else curr_piece_next_rotation;
 
 	future_piece_loc(0) <= piece_loc(0) + press_right when (press_left = '0' and move_down_auto = '0' and press_down = '0' and press_rotate = '0') else
 						   piece_loc(0) - press_left  when (move_down_auto = '0' and press_down = '0' and press_rotate = '0') else

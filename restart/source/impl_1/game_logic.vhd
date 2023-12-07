@@ -55,24 +55,20 @@ architecture synth of game_logic is
 	  --);
 	--end component;
 
-	--component board_updater is
-		--port(
-			--game_clock : in std_logic;
-			--board_update_enable : in std_logic;
-			--score : in unsigned(23 downto 0);
-			--piece_loc: in piece_loc_type; -- (x, y) from top left of grid to top left of piece 4x4
-			--piece_shape: in std_logic_vector(15 downto 0);
-			--stable_board : in board_type;
-			--new_board : out board_type;
-			--new_score : out unsigned(23 downto 0)
-		  --);
-	--end component;
+	component place_piece_on_board is
+		port(
+			piece_loc: in piece_loc_type; -- (x, y) from top left of grid to top left of piece 4x4
+			piece_shape: in std_logic_vector(15 downto 0);
+			curr_board : in board_type;
+			new_board : out board_type
+		);
+	end component;
 
 	component collision_check is
 		port(
 			piece_loc : in piece_loc_type; -- (x, y) from top left of grid to top left of piece 4x4
 			piece_shape : in std_logic_vector(15 downto 0);
-			next_piece_rotation : in std_logic_vector(15 downto 0);
+			curr_piece_next_rotation : in std_logic_vector(15 downto 0);
 			stable_board : in board_type;
 			press_left : in std_logic;
 			press_right : in std_logic;
@@ -110,11 +106,11 @@ architecture synth of game_logic is
 	--signal frame_counter : unsigned(15 downto 0);
 	
 	signal next_rotation: unsigned(1 downto 0);
-	signal next_piece_rotation: std_logic_vector(15 downto 0);
+	signal curr_piece_next_rotation: std_logic_vector(15 downto 0);
 	signal piece_code : unsigned(2 downto 0);
 	signal curr_rotation : unsigned(1 downto 0);
-	--signal new_piece_code : unsigned(2 downto 0);
-	--signal new_piece_rotation : unsigned(1 downto 0);
+	signal next_piece_code : unsigned(2 downto 0);
+	signal next_piece_rotation : unsigned(1 downto 0);
 
 	signal rotate_delay : unsigned(2 downto 0);
 	signal swap_delay : unsigned(2 downto 0);
@@ -134,6 +130,9 @@ architecture synth of game_logic is
 	-- signal board_update_enable : std_logic;
 
 	signal first_time : std_logic;
+	
+	-- New board (has the current piece 'embedded')
+	signal new_board: board_type;
 
 
 begin
@@ -151,34 +150,30 @@ begin
 		piece_shape
 	);
 	
-	next_piece_portmap : piece_library port map(
+	curr_piece_next_rotation_portmap : piece_library port map(
 		game_clock,
 		std_logic_vector(piece_code),
 		std_logic_vector(next_rotation),
-		next_piece_rotation
+		curr_piece_next_rotation
 	);
-
+	
 	--piece_picker_portmap : piece_picker port map(
 		--game_clock => game_clock,
 		--new_piece_code => new_piece_code,
 		--new_piece_rotation => new_piece_rotation
 	--);
 
-	 --board_updater_portmap : board_updater port map(
-	 	--game_clock => game_clock,
-	 	--board_update_enable => advance_turn,
-		--score => score,
-	 	--piece_loc => piece_loc,
-	 	--piece_shape => piece_shape,
-	 	--stable_board => board,
-	 	--new_board => new_board,
-		--new_score => new_score
-	 --);
+	 place_piece_on_board_portmap : place_piece_on_board port map(
+		piece_loc,
+		piece_shape,
+		board,
+		new_board
+	);
 
 	 collision_check_portmap : collision_check port map(
 	 	piece_loc,
 	 	piece_shape,
-		next_piece_rotation,
+		curr_piece_next_rotation,
 	 	board,
 	 	press_left,
 	 	press_right,
@@ -211,6 +206,8 @@ begin
 	-- 	new_board => board,
 	-- 	new_score => score
 	-- );
+	next_piece_code <= game_clock_ctr(8 downto 6);
+	next_piece_rotation <= "00";
 
 	collision <= collision_down or collision_left or collision_right;
 	special_background <= 5d"0" when collision = '0' else 
@@ -218,7 +215,7 @@ begin
 										  5d"2" when collision_left = '1' else 
 										  5d"3" when collision_right = '1' else 
 										  5d"4";
-	-- The next rotation of the piece, output shape is next_piece_rotation
+	-- The next rotation of the current piece
 	next_rotation <= curr_rotation + 1;
 
 	process(game_clock) begin
@@ -238,7 +235,7 @@ begin
 					board(15) <= "0001111111111000";
 
 					piece_loc(0) <= 4d"5";
-					piece_loc(1) <= 4d"3";
+					piece_loc(1) <= 4d"0";
 					
 					piece_code <= "000";
 					curr_rotation <= "00";
@@ -259,6 +256,13 @@ begin
 					-- Tried to move down but collided - put on boards
 					if move_down_auto = '1' and collision_down = '1' then
 						advance_turn <= '1';
+						
+						
+						board <= new_board;
+						piece_code <= next_piece_code;
+						curr_rotation <= next_rotation;
+						piece_loc(0) <= 4d"5";
+						piece_loc(1) <= 4d"3";
 					
 					-- Automatic movement down
 					elsif move_down_auto = '1' and collision_down = '0' then

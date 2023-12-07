@@ -50,11 +50,11 @@ begin
 			when "11001" => piece_output <= "0110011000000000";
 			when "11010" => piece_output <= "0110011000000000";
 			when "11011" => piece_output <= "0110011000000000";
-			--Other inputs (should not happen)
-			when "11100" => piece_output <= "1111111111111111";
-			when "11101" => piece_output <= "1111111111111111";
-			when "11110" => piece_output <= "1111111111111111";
-			when "11111" => piece_output <= "1111111111111111";
+			--W shape
+			when "11100" => piece_output <= "0000101001010000";
+			when "11101" => piece_output <= "0010010000100100";
+			when "11110" => piece_output <= "0000101001010000";
+			when "11111" => piece_output <= "0010010000100100";
 			when others => piece_output <= "1111111111111111";
 		end case;
 	end process;
