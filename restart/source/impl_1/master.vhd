@@ -65,44 +65,51 @@ architecture synth of master is
 			NESclk : in std_logic
 		);
 	end component;
-	
-	
-	--component renderer is
-		--port(
-			--valid_rgb : in std_logic;
-			--rgb_row : in unsigned(9 downto 0);
-			--rgb_col : in unsigned(9 downto 0);
-			--rgb : out std_logic_vector(5 downto 0);
 
-			--piece_loc : in piece_loc_type; -- (x, y) from top left of grid to top left of piece 4x4
-			--piece_shape : in std_logic_vector(15 downto 0);
-			--board : in board_type;
-			--special_background : in unsigned(4 downto 0)
-		--);
-	--end component;
-	
+
 	component game_state is
-  port(
-	clk : in std_logic;
-	
-	-- for welcome and gameover states
-	start : in std_logic;
-	
-	-- for render state
-	valid_rgb : in std_logic;
-	rgb_row : in unsigned(9 downto 0);
-	rgb_col : in unsigned(9 downto 0);
-	rgb : out std_logic_vector(5 downto 0);
+	  port(
+		clk : in std_logic;
+		
+		-- for welcome and gameover states
+		start : in std_logic;
+		
+		-- for render state
+		valid_rgb : in std_logic;
+		rgb_row : in unsigned(9 downto 0);
+		rgb_col : in unsigned(9 downto 0);
+		rgb : out std_logic_vector(5 downto 0);
 
-	piece_loc : in piece_loc_type; -- (x, y) from top left of grid to top left of piece 4x4
-	piece_shape : in std_logic_vector(15 downto 0);
-	board : in board_type;
-	special_background : in unsigned(4 downto 0);
+		piece_loc : in piece_loc_type; -- (x, y) from top left of grid to top left of piece 4x4
+		piece_shape : in std_logic_vector(15 downto 0);
+		board : in board_type;
+		special_background : in unsigned(4 downto 0);
+		
+		game_over : in std_logic;
+		curr_state: out State
+	  );
+	end component;
 	
-	game_over : in std_logic
-	
-  );
-end component;
+	component game_logic is
+		port(
+			game_clock : in std_logic; -- Game clock (ticks once per frame when it finishes drawing on screen, 60 Hz)
+			game_clock_ctr : in unsigned(15 downto 0); -- Game clock counter (increments once with each game_clock tick)
+
+			press_rotate : in std_logic;
+			press_swap : in std_logic;
+			press_down : in std_logic;
+			press_left : in std_logic;
+			press_right : in std_logic;
+			press_sel : in std_logic;
+			press_up : in std_logic;
+
+			piece_loc : out piece_loc_type; -- (y,x) from top left of grid to top left of piece 4x4
+			piece_shape : out std_logic_vector(15 downto 0);
+			board : out board_type;
+			special_background : out unsigned(4 downto 0);
+			curr_state: in State
+		);
+	end component;
 	
 		
 	-- Signals for the clock manager portmap
@@ -127,14 +134,15 @@ end component;
 	signal a: std_logic;
 	signal b: std_logic;
 	
-	signal draw_white: std_logic;
-	
-	-- Signals for the renderer
-	signal piece_loc: piece_loc_type;
-	signal piece_shape: std_logic_vector(15 downto 0);
-	signal board: board_type;
-	signal special_background: unsigned(4 downto 0);
-	
+	-- Signals for the game state
+	signal curr_state: State;
+		-- Signals for the renderer
+		signal piece_loc: piece_loc_type;
+		signal piece_shape: std_logic_vector(15 downto 0);
+		signal board: board_type;
+		signal special_background: unsigned(4 downto 0);
+
+
 
 begin
 	
@@ -172,17 +180,6 @@ begin
 		NESclk
 	);
 	
-	--renderer_portmap: renderer port map(
-		--valid_rgb,
-		--rgb_row,
-		--rgb_col,
-		--rgb,
-		--piece_loc,
-		--piece_shape,
-		--board,
-		--special_background
-	--);
-	
 	game_state_portmap: game_state port map(
 		clk => clk,
 		
@@ -200,41 +197,34 @@ begin
 		board => board,
 		special_background => special_background,
 		
-		game_over => sel
-		
+		game_over => sel,
+		curr_state => curr_state
 	 );
+	 
+	 game_logic_portmap : game_logic port map(
+		-- Timing inputs
+		game_clock => game_clock,
+		game_clock_ctr => game_clock_ctr,
+
+		-- Button inputs
+		press_rotate => a,
+		press_swap => b,
+		press_down => down,
+		press_left => left,
+		press_right => right,
+		press_sel => sel,
+		press_up => up,
+
+		-- Output to the game state module for rendering purposes
+		piece_loc => piece_loc,
+		piece_shape => piece_shape,
+		board => board,
+		special_background => special_background,
+		
+		-- Taken as input from the game state module
+		curr_state => curr_state
+	);
 	
-	piece_loc(0) <= 4d"3";
-	piece_loc(1) <= 4d"0";
-	piece_shape <= "0100010001000100";
-	board(0) <= "0000000000000000";
-	board(1) <= "0000000000000000";
-	board(2) <= "0000000000000000";
-	board(3) <= "0000000000000000";
-	board(4) <= "0000000000000000";
-	board(5) <= "0000000000000000";
-	board(6) <= "0000000000000000";
-	board(7) <= "0000000000000000";
-	board(8) <= "0000000000000000";
-	board(9) <= "0000000000000000";
-	board(10) <= "0000000000000000";
-	board(11) <= "0000000000000000";
-	board(12) <= "0001010000000000";
-	board(13) <= "0001010000000000";
-	board(14) <= "0001010101110000";
-	board(15) <= "0001111111111000";
-	
-	special_background <= 5d"0";
-	
-	process (game_clock) begin
-		if rising_edge(game_clock) then
-			if (up = '1') then
-				draw_white <= '1';
-			else
-				draw_white <= '0';
-			end if;
-		end if;
-	end process;
 	
 	rotate_out <= up;
 end;

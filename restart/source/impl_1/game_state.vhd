@@ -22,7 +22,8 @@ entity game_state is
 	board : in board_type;
 	special_background : in unsigned(4 downto 0);
 	
-	game_over : in std_logic
+	game_over : in std_logic;
+	curr_state: out State
 	
   );
 end game_state;
@@ -62,7 +63,6 @@ architecture synth of game_state is
 		);
 	end component;
 	
-	signal s : State;
 	
 	signal rgb_welcome : std_logic_vector(5 downto 0);
 	signal rgb_gameplay : std_logic_vector(5 downto 0);
@@ -100,17 +100,17 @@ begin
 	process(clk) begin
 		if rising_edge(clk) then
 			if first_time = '0' then
-				s <= WELCOME_STATE;
+				curr_state <= WELCOME_STATE;
 				first_time <= '1';
-			elsif s = WELCOME_STATE and start = '1' and welcome_delay = 26d"0" then
-				s <= GAMEPLAY_STATE;
-			elsif s = GAMEPLAY_STATE and game_over = '1' then
-				s <= GAMEOVER_STATE;
-			elsif s = GAMEOVER_STATE and start = '1' then
+			elsif curr_state = WELCOME_STATE and start = '1' and welcome_delay = 26d"0" then
+				curr_state <= GAMEPLAY_STATE;
+			elsif curr_state = GAMEPLAY_STATE and game_over = '1' then
+				curr_state <= GAMEOVER_STATE;
+			elsif curr_state = GAMEOVER_STATE and start = '1' then
 				welcome_delay <= welcome_delay + 1;
-				s <= WELCOME_STATE;
+				curr_state <= WELCOME_STATE;
 			else
-				s <= s;
+				curr_state <= curr_state;
 			end if;
 			if (welcome_delay > 26d"0") then
 				welcome_delay <= welcome_delay + 1;
@@ -121,9 +121,9 @@ begin
 	end process;
 	
 	
-	rgb <= rgb_welcome when s = WELCOME_STATE and valid_rgb = '1' else
-		   rgb_gameplay when s = GAMEPLAY_STATE and valid_rgb = '1' else
-		   rgb_gameover when s = GAMEOVER_STATE and valid_rgb = '1' else "000000";
+	rgb <= rgb_welcome when curr_state = WELCOME_STATE and valid_rgb = '1' else
+		   rgb_gameplay when curr_state = GAMEPLAY_STATE and valid_rgb = '1' else
+		   rgb_gameover when curr_state = GAMEOVER_STATE and valid_rgb = '1' else "000000";
 		   
 
 end;
