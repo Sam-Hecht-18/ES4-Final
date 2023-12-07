@@ -72,6 +72,7 @@ architecture synth of game_logic is
 		port(
 			piece_loc : in piece_loc_type; -- (x, y) from top left of grid to top left of piece 4x4
 			piece_shape : in std_logic_vector(15 downto 0);
+			next_piece_rotation : in std_logic_vector(15 downto 0);
 			stable_board : in board_type;
 			press_left : in std_logic;
 			press_right : in std_logic;
@@ -80,9 +81,11 @@ architecture synth of game_logic is
 			move_down_auto : in std_logic;
 			collision_left : out std_logic;
 			collision_right : out std_logic;
-			collision_down : out std_logic
+			collision_down : out std_logic;
+			collision_rotate: out std_logic
 		);
 	end component;
+
 
 	--component row_check is
 		--port(
@@ -105,9 +108,11 @@ architecture synth of game_logic is
 
 	--signal counter : unsigned(31 downto 0);
 	--signal frame_counter : unsigned(15 downto 0);
-
+	
+	signal next_rotation: unsigned(1 downto 0);
+	signal next_piece_rotation: std_logic_vector(15 downto 0);
 	signal piece_code : unsigned(2 downto 0);
-	signal piece_rotation : unsigned(1 downto 0);
+	signal curr_rotation : unsigned(1 downto 0);
 	--signal new_piece_code : unsigned(2 downto 0);
 	--signal new_piece_rotation : unsigned(1 downto 0);
 
@@ -139,11 +144,18 @@ begin
 		--next_turn => turn -- WILL THIS WORK ???
 	--);
 
-	piece_library_portmap : piece_library port map(
+	curr_piece_library_portmap : piece_library port map(
 		game_clock,
 		std_logic_vector(piece_code),
-		std_logic_vector(piece_rotation),
+		std_logic_vector(curr_rotation),
 		piece_shape
+	);
+	
+	next_piece_portmap : piece_library port map(
+		game_clock,
+		std_logic_vector(piece_code),
+		std_logic_vector(next_rotation),
+		next_piece_rotation
 	);
 
 	--piece_picker_portmap : piece_picker port map(
@@ -166,6 +178,7 @@ begin
 	 collision_check_portmap : collision_check port map(
 	 	piece_loc,
 	 	piece_shape,
+		next_piece_rotation,
 	 	board,
 	 	press_left,
 	 	press_right,
@@ -174,7 +187,8 @@ begin
 	 	move_down_auto,
 	 	collision_left,
 	 	collision_right,
-	 	collision_down
+	 	collision_down,
+		collision_rotate
 	 );
 
 	--  collision_check_portmap_down : collision_check port map(
@@ -204,6 +218,8 @@ begin
 										  5d"2" when collision_left = '1' else 
 										  5d"3" when collision_right = '1' else 
 										  5d"4";
+	-- The next rotation of the piece, output shape is next_piece_rotation
+	next_rotation <= curr_rotation + 1;
 
 	process(game_clock) begin
 		if rising_edge(game_clock) then
@@ -225,7 +241,7 @@ begin
 					piece_loc(1) <= 4d"3";
 					
 					piece_code <= "000";
-					piece_rotation <= "00";
+					curr_rotation <= "00";
 					
 					rotate_delay <= "000";
 					swap_delay <= "000";
@@ -235,7 +251,6 @@ begin
 					up_delay <= "000";					
 										  
 					move_down_auto <= '0';
-					collision_rotate <= '0';
 					first_time <= '1';
 					
 				-- Not initializing the game - all other game logic
@@ -255,8 +270,8 @@ begin
 						move_down_auto <= '1';
 						
 					-- Rotates piece
-					elsif press_rotate = '1' and rotate_delay = 0 then
-						piece_rotation <= piece_rotation + 1;
+					elsif press_rotate = '1' and rotate_delay = 0 and collision_rotate = '0' then
+						curr_rotation <= curr_rotation + 1;
 						rotate_delay <= rotate_delay + 1;
 
 					-- Swaps falling piece (for testing)

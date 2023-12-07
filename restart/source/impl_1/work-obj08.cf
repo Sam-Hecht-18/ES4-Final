@@ -1,36 +1,36 @@
 v 4
-file . "collision_check.vhd" "dc3648534b823cb7fb2dced3f114b85413273717" "20231207025804.300":
-  entity collision_check at 1( 0) + 0 on 475;
-  architecture synth of collision_check at 23( 623) + 0 on 476;
-file . "game_logic.vhd" "2cbb2b6a2ea463485e3c7e4e678cab2639fd9cf4" "20231207025804.303":
-  entity game_logic at 1( 0) + 0 on 477;
-  architecture synth of game_logic at 29( 855) + 0 on 478;
-file . "welcome.vhd" "b86c2ea5e5000d427b455acfae7a99a0a86ddb73" "20231207025804.319":
-  entity welcome_screen at 1( 0) + 0 on 493;
-  architecture synth of welcome_screen at 14( 278) + 0 on 494;
-file . "game_state.vhd" "78b2e0f7d81f407cc88f80d195135f646a739e87" "20231207025804.307":
-  entity game_state at 1( 0) + 0 on 481;
-  architecture synth of game_state at 31( 705) + 0 on 482;
-file . "game_over.vhd" "5372fd64cd9f3719cbb26f01ea6a6a5945e1b559" "20231207025804.304":
-  entity game_over_screen at 1( 0) + 0 on 479;
-  architecture synth of game_over_screen at 16( 371) + 0 on 480;
-file . "renderer.vhd" "e4313014955b408870a841b1ddf3e5115ece1e00" "20231207025804.315":
-  entity renderer at 1( 0) + 0 on 489;
-  architecture synth of renderer at 20( 508) + 0 on 490;
-file . "clock_manager.vhd" "7659bba401e2cd1391a87beb081f2248e3c080ac" "20231207025804.286":
-  entity clock_manager at 1( 0) + 0 on 473;
-  architecture synth of clock_manager at 23( 473) + 0 on 474;
-file . "master.vhd" "d9002299a40256be0544c1262c27099dd7c9b010" "20231207025804.309":
-  entity master at 1( 0) + 0 on 483;
-  architecture synth of master at 20( 401) + 0 on 484;
-file . "vga.vhd" "33cf377bbb1e116e152bacfb395976385b3f336c" "20231207025804.317":
-  entity vga_sync at 1( 0) + 0 on 491;
-  architecture synth of vga_sync at 16( 302) + 0 on 492;
-file . "nes_controller.vhd" "27cf61fcb6eef76122336b2d7f0143dbddaf76e4" "20231207025804.311":
-  entity nes_controller at 1( 0) + 0 on 485;
-  architecture synth of nes_controller at 23( 557) + 0 on 486;
-file . "a_package.vhd" "aca6dccde466d265c24e6b1ab16541681ccd607d" "20231207025804.284":
-  package my_types_package at 1( 0) + 0 on 472;
-file . "piece_library.vhd" "9069d0f56b9dbd724d538b618b95f58d3aa26a0f" "20231207025804.313":
-  entity piece_library at 1( 0) + 0 on 487;
-  architecture synth of piece_library at 14( 336) + 0 on 488;
+file . "piece_library.vhd" "9069d0f56b9dbd724d538b618b95f58d3aa26a0f" "20231207040718.064":
+  entity piece_library at 1( 0) + 0 on 556;
+  architecture synth of piece_library at 14( 336) + 0 on 557;
+file . "a_package.vhd" "aca6dccde466d265c24e6b1ab16541681ccd607d" "20231207040718.025":
+  package my_types_package at 1( 0) + 0 on 541;
+file . "nes_controller.vhd" "27cf61fcb6eef76122336b2d7f0143dbddaf76e4" "20231207040718.062":
+  entity nes_controller at 1( 0) + 0 on 554;
+  architecture synth of nes_controller at 23( 557) + 0 on 555;
+file . "vga.vhd" "33cf377bbb1e116e152bacfb395976385b3f336c" "20231207040718.069":
+  entity vga_sync at 1( 0) + 0 on 560;
+  architecture synth of vga_sync at 16( 302) + 0 on 561;
+file . "master.vhd" "d9002299a40256be0544c1262c27099dd7c9b010" "20231207040718.061":
+  entity master at 1( 0) + 0 on 552;
+  architecture synth of master at 20( 401) + 0 on 553;
+file . "clock_manager.vhd" "7659bba401e2cd1391a87beb081f2248e3c080ac" "20231207040718.027":
+  entity clock_manager at 1( 0) + 0 on 542;
+  architecture synth of clock_manager at 23( 473) + 0 on 543;
+file . "renderer.vhd" "e4313014955b408870a841b1ddf3e5115ece1e00" "20231207040718.067":
+  entity renderer at 1( 0) + 0 on 558;
+  architecture synth of renderer at 20( 508) + 0 on 559;
+file . "game_over.vhd" "5372fd64cd9f3719cbb26f01ea6a6a5945e1b559" "20231207040718.056":
+  entity game_over_screen at 1( 0) + 0 on 548;
+  architecture synth of game_over_screen at 16( 371) + 0 on 549;
+file . "game_state.vhd" "78b2e0f7d81f407cc88f80d195135f646a739e87" "20231207040718.058":
+  entity game_state at 1( 0) + 0 on 550;
+  architecture synth of game_state at 31( 705) + 0 on 551;
+file . "welcome.vhd" "b86c2ea5e5000d427b455acfae7a99a0a86ddb73" "20231207040718.070":
+  entity welcome_screen at 1( 0) + 0 on 562;
+  architecture synth of welcome_screen at 14( 278) + 0 on 563;
+file . "game_logic.vhd" "90d5dc40cc21db27c05b1aceb0e54c7a6834fceb" "20231207040718.054":
+  entity game_logic at 1( 0) + 0 on 546;
+  architecture synth of game_logic at 29( 855) + 0 on 547;
+file . "collision_check.vhd" "075e6813c443290139d26e3be1ed770c36eb6004" "20231207040718.041":
+  entity collision_check at 1( 0) + 0 on 544;
+  architecture synth of collision_check at 25( 717) + 0 on 545;
