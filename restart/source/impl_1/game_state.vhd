@@ -57,8 +57,8 @@ architecture synth of game_state is
 		port(
 			clk : in std_logic;
 			--final_score : in unsigned(16 downto 0); -- allows maximum score of 2^17 - 1 = 131,071
-			rgb_row: in unsigned(9 downto 0);
-			rgb_col: in unsigned(9 downto 0);
+			x_coordinate: in unsigned(7 downto 0);
+			y_coordinate: in unsigned(6 downto 0);
 			rgb: out std_logic_vector(5 downto 0)
 		);
 	end component;
@@ -91,8 +91,8 @@ begin
 		
 	game_over_portmap : game_over_screen port map(
 		clk => clk,
-		rgb_row => rgb_row,
-		rgb_col => rgb_col,
+		x_coordinate => rgb_row(9 downto 2),
+		y_coordinate => rgb_col(8 downto 2),
 		rgb => rgb_gameover
 	);
 		

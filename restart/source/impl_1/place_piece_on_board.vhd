@@ -81,6 +81,62 @@ begin
 	full_overlap_row_4 <= overlap_row_4 & "000000000000";
 	
 	-- Shifted overlap rows shift the overlap to the corrcet x position on the board
+	--shifted_full_overlap_row_1 <= overlap_row_1 & "000000000000" when piece_loc(0) = 0 else
+							       --"0" & overlap_row_1 & "00000000000" when piece_loc(0) = 1 else
+							       --"00" & overlap_row_1 & "0000000000" when piece_loc(0) = 2 else
+							       --"000" & overlap_row_1 & "000000000" when piece_loc(0) = 3 else
+							       --"0000" & overlap_row_1 & "00000000" when piece_loc(0) = 4 else
+							       --"00000" & overlap_row_1 & "0000000" when piece_loc(0) = 5 else
+							       --"000000" & overlap_row_1 & "000000" when piece_loc(0) = 6 else
+							       --"0000000" & overlap_row_1 & "00000" when piece_loc(0) = 7 else
+							       --"00000000" & overlap_row_1 & "0000" when piece_loc(0) = 8 else
+							       --"000000000" & overlap_row_1 & "000" when piece_loc(0) = 9 else
+							       --"0000000000" & overlap_row_1 & "00" when piece_loc(0) = 10 else
+							       --"00000000000" & overlap_row_1 & "0" when piece_loc(0) = 11 else
+							       --"000000000000" & overlap_row_1;
+							   
+	--shifted_full_overlap_row_2 <= overlap_row_2 & "000000000000" when piece_loc(0) = 0 else
+							      --"0" & overlap_row_2 & "00000000000" when piece_loc(0) = 1 else
+							      --"00" & overlap_row_2 & "0000000000" when piece_loc(0) = 2 else
+							      --"000" & overlap_row_2 & "000000000" when piece_loc(0) = 3 else
+							      --"0000" & overlap_row_2 & "00000000" when piece_loc(0) = 4 else
+							      --"00000" & overlap_row_2 & "0000000" when piece_loc(0) = 5 else
+							      --"000000" & overlap_row_2 & "000000" when piece_loc(0) = 6 else
+							      --"0000000" & overlap_row_2 & "00000" when piece_loc(0) = 7 else
+							      --"00000000" & overlap_row_2 & "0000" when piece_loc(0) = 8 else
+							      --"000000000" & overlap_row_2 & "000" when piece_loc(0) = 9 else
+							      --"0000000000" & overlap_row_2 & "00" when piece_loc(0) = 10 else
+							      --"00000000000" & overlap_row_2 & "0" when piece_loc(0) = 11 else
+							      --"000000000000" & overlap_row_2;
+	
+	--shifted_full_overlap_row_3 <= overlap_row_3 & "000000000000" when piece_loc(0) = 0 else
+							      --"0" & overlap_row_3 & "00000000000" when piece_loc(0) = 1 else
+							      --"00" & overlap_row_3 & "0000000000" when piece_loc(0) = 2 else
+							      --"000" & overlap_row_3 & "000000000" when piece_loc(0) = 3 else
+							      --"0000" & overlap_row_3 & "00000000" when piece_loc(0) = 4 else
+							      --"00000" & overlap_row_3 & "0000000" when piece_loc(0) = 5 else
+							      --"000000" & overlap_row_3 & "000000" when piece_loc(0) = 6 else
+							      --"0000000" & overlap_row_3 & "00000" when piece_loc(0) = 7 else
+							      --"00000000" & overlap_row_3 & "0000" when piece_loc(0) = 8 else
+							      --"000000000" & overlap_row_3 & "000" when piece_loc(0) = 9 else
+							      --"0000000000" & overlap_row_3 & "00" when piece_loc(0) = 10 else
+							      --"00000000000" & overlap_row_3 & "0" when piece_loc(0) = 11 else
+							      --"000000000000" & overlap_row_3;
+							   
+	--shifted_full_overlap_row_4 <= overlap_row_4 & "000000000000" when piece_loc(0) = 0 else
+							      --"0" & overlap_row_4 & "00000000000" when piece_loc(0) = 1 else
+							      --"00" & overlap_row_4 & "0000000000" when piece_loc(0) = 2 else
+							      --"000" & overlap_row_4 & "000000000" when piece_loc(0) = 3 else
+							      --"0000" & overlap_row_4 & "00000000" when piece_loc(0) = 4 else
+							      --"00000" & overlap_row_4 & "0000000" when piece_loc(0) = 5 else
+							      --"000000" & overlap_row_4 & "000000" when piece_loc(0) = 6 else
+							      --"0000000" & overlap_row_4 & "00000" when piece_loc(0) = 7 else
+							      --"00000000" & overlap_row_4 & "0000" when piece_loc(0) = 8 else
+							      --"000000000" & overlap_row_4 & "000" when piece_loc(0) = 9 else
+							      --"0000000000" & overlap_row_4 & "00" when piece_loc(0) = 10 else
+							      --"00000000000" & overlap_row_4 & "0" when piece_loc(0) = 11 else
+							      --"000000000000" & overlap_row_4;
+								  
 	shifted_full_overlap_row_1 <= std_logic_vector(shift_right(unsigned(full_overlap_row_1), to_integer(piece_loc(0))));
 	shifted_full_overlap_row_2 <= std_logic_vector(shift_right(unsigned(full_overlap_row_2), to_integer(piece_loc(0))));
 	shifted_full_overlap_row_3 <= std_logic_vector(shift_right(unsigned(full_overlap_row_3), to_integer(piece_loc(0))));
