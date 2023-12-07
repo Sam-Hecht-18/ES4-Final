@@ -146,7 +146,10 @@ begin
 									) = '1'
 								 ) and piece_code = "111" else 								 
 		        "101010"    when (rgb_row < 256 and rgb_col < 160 and board(to_integer(board_index_y))(board_index_x_real) = '0') else
-				"111111"	when (rgb_row < 256 and rgb_col < 160 and board(to_integer(board_index_y))(board_index_x_real) = '1') else
+				"000000"	when (rgb_row < 256 and rgb_col < 160 and board(to_integer(board_index_y))(board_index_x_real) = '1' and
+									   (rgb_row(3 downto 0) = "0000" or rgb_col(3 downto 0) = "0000" or 
+										rgb_row(3 downto 0) = "1111" or rgb_col(3 downto 0) = "1111")) else
+				"111111"    when (rgb_row < 256 and rgb_col < 160 and board(to_integer(board_index_y))(board_index_x_real) = '1') else
 				"000000"; -- black
 
 

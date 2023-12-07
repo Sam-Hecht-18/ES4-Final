@@ -96,7 +96,8 @@ begin
 
 	piece_bottom_row <= 2d"3" when (piece_row_4 /= 4b"0") else 2d"2" when (piece_row_3 /= 4b"0") else 2d"1" when (piece_row_2 /= 4b"0") else 2d"0";
 	piece_bottom_row_loc <= 6b"0" + piece_loc(1) + piece_bottom_row;
-	hit_bottom <= '1' when (piece_bottom_row_loc = 5d"15") else '0';
+	hit_bottom <=   '1' when (piece_bottom_row_loc > 5d"15" and press_rotate = '1' and press_down = '0' and move_down_auto = '0') else
+					'1' when (piece_bottom_row_loc = 5d"15" and press_rotate = '0') else '0';
 
 	-- HERE: check if we have hit a piece BEFORE 4x4 hits bottom !!!
 
