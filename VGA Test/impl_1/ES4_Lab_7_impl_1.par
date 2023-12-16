@@ -1,10 +1,6 @@
 Copyright (c) 2002-2022 Lattice Semiconductor Corporation,  All rights reserved.
 
-<<<<<<< HEAD
-Sat Dec  2 17:30:08 2023
-=======
-Thu Nov 30 21:26:50 2023
->>>>>>> main
+Sun Dec  3 22:20:52 2023
 
 Command Line: par -w -n 1 -t 1 -s 1 -cores 1 -exp parPathBased=ON \
 	ES4_Lab_7_impl_1_map.udb ES4_Lab_7_impl_1.udb 
@@ -13,28 +9,16 @@ Command Line: par -w -n 1 -t 1 -s 1 -cores 1 -exp parPathBased=ON \
 Level/       Number       Worst        Timing       Worst        Timing       Run          Run
 Cost [udb]   Unrouted     Slack        Score        Slack(hold)  Score(hold)  Time         Status
 ----------   --------     -----        ------       -----------  -----------  ----         ------
-<<<<<<< HEAD
-5_1   *      0            -            0            -            0            07           Completed
+5_1   *      0            -            0            -            0            04           Completed
 
 * : Design saved.
 
-Total (real) run time for 1-seed: 8 secs 
-=======
-5_1   *      0            7.432        0            1.913        0            06           Completed
-
-* : Design saved.
-
-Total (real) run time for 1-seed: 6 secs 
->>>>>>> main
+Total (real) run time for 1-seed: 4 secs 
 
 par done!
 
 Lattice Place and Route Report for Design "ES4_Lab_7_impl_1_map.udb"
-<<<<<<< HEAD
-Sat Dec  2 17:30:08 2023
-=======
-Thu Nov 30 21:26:50 2023
->>>>>>> main
+Sun Dec  3 22:20:52 2023
 
 PAR: Place And Route Radiant Software (64-bit) 2023.1.0.43.3.
 Command Line: par -w -t 1 -cores 1 -exp parPathBased=ON \
@@ -53,37 +37,23 @@ Device:  iCE40UP5K
 Package: SG48
 Performance Grade:   High-Performance_1.2V
 WARNING <70001944> - par: No master clock for
-	generated clock	create_generated_clock -name {outglobal_o} -source [get_pins {my_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {my_pll/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] .
-WARNING <70001944> - par: No master clock for
-	generated clock	create_generated_clock -name {clk_test_c} -source [get_pins {my_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {my_pll/lscc_pll_inst/u_PLL_B/OUTCORE }] .
+	generated clock	create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] .
 
-WARNING: Database constraint "create_generated_clock -name {clk_test_c} -source [get_pins my_pll.lscc_pll_inst.u_PLL_B/REFERENCECLK] -divide_by 32 -multiply_by 67 [get_pins my_pll.lscc_pll_inst.u_PLL_B/OUTCORE]" does not have corresponding timing constraint. Please check if the resource objects of the constraint are valid carefully!
+WARNING: Database constraint "create_generated_clock -name {clk} -source [get_pins clock_manager_portmap.pll_portmap.lscc_pll_inst.u_PLL_B/REFERENCECLK] -divide_by 32 -multiply_by 67 [get_pins clock_manager_portmap.pll_portmap.lscc_pll_inst.u_PLL_B/OUTGLOBAL]" does not have corresponding timing constraint. Please check if the resource objects of the constraint are valid carefully!
 CRITICAL <71003005> - par: The clock port [osc] is assigned to a non clock dedicated pin [12], which might affect the clock performance. Use dedicated clock resources for the port.
-<<<<<<< HEAD
-Number of Signals: 248
-Number of Connections: 549
+Number of Signals: 304
+Number of Connections: 663
 Device utilization summary:
 
-   SLICE (est.)      72/2640          3% used
-     LUT            137/5280          3% used
-     REG             54/5280          1% used
-   PIO               16/56           29% used
-                     16/36           44% bonded
-=======
-Number of Signals: 230
-Number of Connections: 526
-Device utilization summary:
-
-   SLICE (est.)      68/2640          3% used
-     LUT            132/5280          3% used
-     REG             50/5280          1% used
-   PIO               11/56           20% used
-                     11/36           30% bonded
->>>>>>> main
+   SLICE (est.)      90/2640          3% used
+     LUT            169/5280          3% used
+     REG             71/5280          1% used
+   PIO               13/56           23% used
+                     13/36           36% bonded
    IOLOGIC            0/56            0% used
    DSP                0/8             0% used
    I2C                0/2             0% used
-   HFOSC              1/1           100% used
+   HFOSC              0/1             0% used
    LFOSC              0/1             0% used
    LEDDA_IP           0/1             0% used
    RGBA_DRV           0/1             0% used
@@ -91,20 +61,15 @@ Device utilization summary:
    SRAM               0/4             0% used
    WARMBOOT           0/1             0% used
    SPI                0/2             0% used
-   EBR                0/30            0% used
+   EBR                1/30            3% used
    PLL                1/1           100% used
    RGBOUTBUF          0/3             0% used
    I3C                0/2             0% used
    OPENDRAIN          0/3             0% used
 
 Pin Constraint Summary:
-   13 out of 16 pins locked (81% locked).
-.
-<<<<<<< HEAD
-...........
-=======
-.........
->>>>>>> main
+   13 out of 13 pins locked (100% locked).
+
 Finished Placer Phase 0 (HIER). CPU time: 0 secs , REAL time: 0 secs 
 
 
@@ -115,84 +80,53 @@ Starting Placer Phase 1. CPU time: 0 secs , REAL time: 0 secs
 ..  ..
 ....................
 
-<<<<<<< HEAD
-Placer score = 25372.
+Placer score = 25493.
 
 Device SLICE utilization summary after final SLICE packing:
-   SLICE             72/2640          2% used
-=======
-Placer score = 15877.
-
-Device SLICE utilization summary after final SLICE packing:
-   SLICE             68/2640          2% used
->>>>>>> main
+   SLICE             90/2640          3% used
 
 WARNING <70001944> - par: No master clock for
-	generated clock	create_generated_clock -name {outglobal_o} -source [get_pins {my_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {my_pll/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] .
-WARNING <70001944> - par: No master clock for
-	generated clock	create_generated_clock -name {clk_test_c} -source [get_pins {my_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {my_pll/lscc_pll_inst/u_PLL_B/OUTCORE }] .
-<<<<<<< HEAD
-Finished Placer Phase 1. CPU time: 5 secs , REAL time: 6 secs 
-=======
-Finished Placer Phase 1. CPU time: 2 secs , REAL time: 5 secs 
->>>>>>> main
+	generated clock	create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] .
+Finished Placer Phase 1. CPU time: 1 secs , REAL time: 3 secs 
 
 Starting Placer Phase 2.
 .
 
-<<<<<<< HEAD
-Placer score =  29550
-Finished Placer Phase 2.  CPU time: 5 secs , REAL time: 6 secs 
-=======
-Placer score =  22608
-Finished Placer Phase 2.  CPU time: 2 secs , REAL time: 5 secs 
->>>>>>> main
+Placer score =  31825
+Finished Placer Phase 2.  CPU time: 1 secs , REAL time: 3 secs 
 
 
 ------------------ Clock Report ------------------
 
 Global Clocks :
-<<<<<<< HEAD
-  PRIMARY "outglobal_o" from OUTGLOBAL on comp "my_pll.lscc_pll_inst.u_PLL_B" on site "PLL_R13C32", clk load = 31, ce load = 0, sr load = 0
-=======
-  PRIMARY "my_pattern_gen.piece_drop_clock.clk" from comp "my_pattern_gen.piece_drop_clock.osc" on site "HFOSC_R1C32", clk load = 14, ce load = 0, sr load = 0
-  PRIMARY "outglobal_o" from OUTGLOBAL on comp "my_pll.lscc_pll_inst.u_PLL_B" on site "PLL_R13C32", clk load = 12, ce load = 0, sr load = 0
->>>>>>> main
+  PRIMARY "clk" from OUTGLOBAL on comp "clock_manager_portmap.pll_portmap.lscc_pll_inst.u_PLL_B" on site "PLL_R13C32", clk load = 39, ce load = 0, sr load = 0
 
-  PRIMARY  : 2 out of 8 (25%)
+  PRIMARY  : 1 out of 8 (12%)
 
 --------------- End of Clock Report ---------------
 
 
 I/O Usage Summary (final):
-   16 out of 56 (28.6%) I/O sites used.
-   16 out of 36 (44.4%) bonded I/O sites used.
-   Number of I/O components: 16; differential: 0
+   13 out of 56 (23.2%) I/O sites used.
+   13 out of 36 (36.1%) bonded I/O sites used.
+   Number of I/O components: 13; differential: 0
    Number of Vref pins used: 0
 
 I/O Bank Usage Summary:
-+----------+----------------+------------+------------+------------+
-| I/O Bank | Usage          | Bank Vccio | Bank Vref1 | Bank Vref2 |
-+----------+----------------+------------+------------+------------+
-| 0        | 11 / 14 ( 78%) | 3.3V       |            |            |
-| 1        | 2 / 14 ( 14%)  | 3.3V       |            |            |
-| 2        | 3 / 8 ( 37%)   | 3.3V       |            |            |
-+----------+----------------+------------+------------+------------+
++----------+---------------+------------+------------+------------+
+| I/O Bank | Usage         | Bank Vccio | Bank Vref1 | Bank Vref2 |
++----------+---------------+------------+------------+------------+
+| 0        | 8 / 14 ( 57%) | 3.3V       |            |            |
+| 1        | 2 / 14 ( 14%) | 3.3V       |            |            |
+| 2        | 3 / 8 ( 37%)  | 3.3V       |            |            |
++----------+---------------+------------+------------+------------+
 
-<<<<<<< HEAD
-Total Placer CPU time: 5 secs , REAL time: 6 secs 
-=======
-Total Placer CPU time: 2 secs , REAL time: 5 secs 
->>>>>>> main
+Total Placer CPU time: 1 secs , REAL time: 3 secs 
 
 Writing design to file ES4_Lab_7_impl_1_par.dir/5_1.udb ...
 
 
-<<<<<<< HEAD
-Start NBR router at 17:30:14 12/02/23
-=======
-Start NBR router at 21:26:55 11/30/23
->>>>>>> main
+Start NBR router at 22:20:55 12/03/23
 
 *****************************************************************
 Info: NBR allows conflicts(one node used by more than one signal)
@@ -210,102 +144,62 @@ Note: NBR uses a different method to calculate timing slacks. The
 Starting routing resource preassignment
 Preassignment Summary:
 --------------------------------------------------------------------------------
-<<<<<<< HEAD
-93 connections routed with dedicated routing resources
+117 connections routed with dedicated routing resources
 1 global clock signals routed
-124 connections routed (of 541 total) (22.92%)
-=======
-95 connections routed with dedicated routing resources
-2 global clock signals routed
-121 connections routed (of 524 total) (23.09%)
->>>>>>> main
+156 connections routed (of 654 total) (23.85%)
 ---------------------------------------------------------
 Clock routing summary:
-Primary clocks (2 used out of 8 available):
-#4  Signal "my_pattern_gen.piece_drop_clock.clk"
-       Clock   loads: 14    out of    14 routed (100.00%)
-#7  Signal "outglobal_o"
-<<<<<<< HEAD
-       Clock   loads: 31    out of    31 routed (100.00%)
+Primary clocks (1 used out of 8 available):
+#7  Signal "clk"
+       Clock   loads: 39    out of    39 routed (100.00%)
 Other clocks:
     Signal "ctrlr_clk_c"
-=======
-       Clock   loads: 12    out of    12 routed (100.00%)
-Other clocks:
-    Signal "my_pattern_gen.game_clock"
->>>>>>> main
+       Clock   loads: 0     out of     2 routed (  0.00%)
+       Data    loads: 0     out of     1 routed (  0.00%)
+    Signal "game_clock"
        Clock   loads: 0     out of     2 routed (  0.00%)
        Data    loads: 0     out of     1 routed (  0.00%)
     Signal "osc_c"
        Clock   loads: 0     out of     1 routed (  0.00%)
-    Signal "my_pll.lscc_pll_inst.feedback_w"
+    Signal "clock_manager_portmap.pll_portmap.lscc_pll_inst.feedback_w"
        Clock   loads: 1     out of     1 routed (100.00%)
 ---------------------------------------------------------
 --------------------------------------------------------------------------------
 Completed routing resource preassignment
 WARNING <70001944> - par: No master clock for
-	generated clock	create_generated_clock -name {outglobal_o} -source [get_pins {my_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {my_pll/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] .
-WARNING <70001944> - par: No master clock for
-	generated clock	create_generated_clock -name {clk_test_c} -source [get_pins {my_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {my_pll/lscc_pll_inst/u_PLL_B/OUTCORE }] .
+	generated clock	create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] .
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Routing in Serial Mode ......
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-<<<<<<< HEAD
-Start NBR section for initial routing at 17:30:14 12/02/23
+Start NBR section for initial routing at 22:20:55 12/03/23
 Level 4, iteration 1
-11(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
-=======
-Start NBR section for initial routing at 21:26:55 11/30/23
-Level 4, iteration 1
-16(0.01%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 7.432ns/0.000ns; real time: 0 secs 
->>>>>>> main
+22(0.01%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
 
 Info: Initial congestion level at 75.00% usage is 0
 Info: Initial congestion area  at 75.00% usage is 0 (0.00%)
 
-<<<<<<< HEAD
-Start NBR section for normal routing at 17:30:15 12/02/23
-=======
-Start NBR section for normal routing at 21:26:55 11/30/23
->>>>>>> main
+Start NBR section for normal routing at 22:20:56 12/03/23
 Level 4, iteration 1
-1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 7.432ns/0.000ns; real time: 0 secs 
+3(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
 Level 4, iteration 2
-1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 7.432ns/0.000ns; real time: 0 secs 
+2(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
 Level 4, iteration 3
-1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 7.432ns/0.000ns; real time: 0 secs 
-Level 4, iteration 4
-0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 7.432ns/0.000ns; real time: 0 secs 
+0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
 
-<<<<<<< HEAD
-Start NBR section for post-routing at 17:30:15 12/02/23
-=======
-Start NBR section for setup/hold timing optimization with effort level 3 at 21:26:55 11/30/23
-
-Starting full timing analysis...
-
-Start NBR section for post-routing at 21:26:56 11/30/23
->>>>>>> main
+Start NBR section for post-routing at 22:20:56 12/03/23
 
 End NBR router with 0 unrouted connection
 WARNING <70001944> - par: No master clock for
-	generated clock	create_generated_clock -name {outglobal_o} -source [get_pins {my_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {my_pll/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] .
-WARNING <70001944> - par: No master clock for
-	generated clock	create_generated_clock -name {clk_test_c} -source [get_pins {my_pll/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {my_pll/lscc_pll_inst/u_PLL_B/OUTCORE }] .
+	generated clock	create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] .
 
 Starting full timing analysis...
 
 NBR Summary
 -----------
   Number of unrouted connections : 0 (0.00%)
-  Estimated worst slack<setup> : 7.432ns
-  Estimated worst slack<hold > : 1.913ns
+  Estimated worst slack<setup> : <n/a>
+  Estimated worst slack<hold > : <n/a>
   Timing score<setup> : 0
   Timing score<hold > : 0
   Number of connections with timing violations<setup> : 0 (0.00%)
@@ -313,14 +207,10 @@ NBR Summary
 -----------
 
 
-Total CPU time 1 secs 
+Total CPU time 0 secs 
 Total REAL time: 0 secs 
 Completely routed.
-<<<<<<< HEAD
-End of route.  541 routed (100.00%); 0 unrouted.
-=======
-End of route.  524 routed (100.00%); 0 unrouted.
->>>>>>> main
+End of route.  654 routed (100.00%); 0 unrouted.
 
 Writing design to file ES4_Lab_7_impl_1_par.dir/5_1.udb ...
 
@@ -330,21 +220,15 @@ All signals are completely routed.
 
 PAR_SUMMARY::Run status = Completed
 PAR_SUMMARY::Number of unrouted conns = 0
-PAR_SUMMARY::Worst  slack<setup/<ns>> = 7.432
-PAR_SUMMARY::Timing score<setup/<ns>> = 0.000
-PAR_SUMMARY::Worst  slack<hold /<ns>> = 1.913
-PAR_SUMMARY::Timing score<hold /<ns>> = 0.000
+PAR_SUMMARY::Worst  slack<setup/<ns>> = <n/a>
+PAR_SUMMARY::Timing score<setup/<ns>> = <n/a>
+PAR_SUMMARY::Worst  slack<hold /<ns>> = <n/a>
+PAR_SUMMARY::Timing score<hold /<ns>> = <n/a>
 PAR_SUMMARY::Number of errors = 0
 
-<<<<<<< HEAD
-Total CPU  Time: 7 secs 
-Total REAL Time: 8 secs 
-Peak Memory Usage: 107.44 MB
-=======
-Total CPU  Time: 2 secs 
-Total REAL Time: 6 secs 
-Peak Memory Usage: 115.31 MB
->>>>>>> main
+Total CPU  Time: 1 secs 
+Total REAL Time: 4 secs 
+Peak Memory Usage: 111.53 MB
 
 
 par done!

@@ -4,7 +4,7 @@ use IEEE.numeric_std.all;
 
 package my_types_package is
 	type piece_loc_type is array(1 downto 0) of unsigned(3 downto 0);  -- (x, y) from top left of grid to top left of piece 4x4
-	type board_type is array (15 downto 0) of std_logic_vector(0 to 9);
+	type board_type is array (15 downto 0) of std_logic_vector(0 to 12);
 end package;
 
 library IEEE;
@@ -68,15 +68,15 @@ architecture synth of pattern_gen is
 	signal down_delay : unsigned(2 downto 0);
 
 
-	signal game_clock: std_logic := '1';
+	--signal game_clock: std_logic := '1';
 	signal collision: std_logic;
 
 begin
 	piece_loc(0) <= piece_loc_x;
 	piece_loc(1) <= piece_loc_y;
-	bottom_check_portmap: bottom_check port map(clk, 8d"0", piece_loc, piece_shape, board, collision);
+	--bottom_check_portmap: bottom_check port map(clk, 8d"0", piece_loc, piece_shape, board, collision);
 
-	piece_device : piece port map(clk, std_logic_vector(piece_code), std_logic_vector(piece_rotation), curr_piece_shape);
+	piece_device : piece port map(clk, std_logic_vector(piece_code), std_logic_vector(piece_rotation), piece_shape);
 	-- piece_shape <= "1110010000000000";
 
 	generate_board_row: for y in 0 to 11 generate
@@ -134,9 +134,6 @@ begin
 				if down_delay > 0 then
 					down_delay <= down_delay + 1;
 				end if;
-
-				if  = '1' then
-
 			elsif row = 480 and col = 640 then
 				frame_counter <= frame_counter + 1;
 

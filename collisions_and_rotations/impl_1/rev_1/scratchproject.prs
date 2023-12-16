@@ -1,0 +1,103 @@
+#--  Synopsys, Inc.
+#--  Version U-2023.03LR-1
+#--  Project file Z:\es4\ES4-Final\collisions_and_rotations\impl_1\rev_1\scratchproject.prs
+
+#project files
+add_file -constraint "Z:/es4/ES4-Final/collisions_and_rotations/impl_1/collisions_and_rotations_impl_1_cpe.ldc"
+add_file -verilog "C:/lscc/radiant/2023.1/ip/pmi/pmi_iCE40UP.v"
+add_file -vhdl -lib pmi "C:/lscc/radiant/2023.1/ip/pmi/pmi_iCE40UP.vhd"
+add_file -vhdl -lib work "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/master.vhd"
+add_file -vhdl -lib work "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/nes_controller.vhd"
+add_file -vhdl -lib work "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/vga.vhd"
+add_file -verilog -vlog_std v2001 "Z:/es4/ES4-Final/collisions_and_rotations/mypll/rtl/mypll.v"
+add_file -vhdl -lib work "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/collision_check.vhd"
+add_file -vhdl -lib work "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/game_logic.vhd"
+add_file -vhdl -lib work "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/piece_library.vhd"
+add_file -vhdl -lib work "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/renderer.vhd"
+add_file -vhdl -lib work "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/clock_manager.vhd"
+add_file -vhdl -lib work "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/game_over.vhd"
+add_file -vhdl -lib work "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/game_state.vhd"
+add_file -vhdl -lib work "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/welcome.vhd"
+
+
+#implementation: "rev_1"
+impl -add Z:\es4\ES4-Final\collisions_and_rotations\impl_1\rev_1 -type fpga
+
+#
+#implementation attributes
+
+set_option -vlog_std v2001
+set_option -project_relative_includes 1
+set_option -include_path {Z:/es4/ES4-Final/collisions_and_rotations/impl_1/}
+set_option -include_path {Z:/es4/ES4-Final/collisions_and_rotations}
+
+#device options
+set_option -technology SBTICE40UP
+set_option -part iCE40UP5K
+set_option -package SG48I
+set_option -speed_grade -6
+set_option -part_companion ""
+
+#compilation/mapping options
+set_option -top_module "master"
+
+# hdl_compiler_options
+set_option -distributed_compile 0
+set_option -scm2hydra 0
+set_option -scm2hydra_preserve_rtl_sig 1
+set_option -hdl_strict_syntax 0
+set_option -rtl_xmr_naming 0
+set_option -use_module_idb 1
+
+# mapper_without_write_options
+set_option -frequency 200
+set_option -srs_instrumentation 1
+
+# mapper_options
+set_option -write_verilog 0
+set_option -write_structural_verilog 0
+set_option -write_vhdl 0
+
+# Lattice iCE40UP
+set_option -lattice_software Radiant
+set_option -maxfan 1000
+set_option -rw_check_on_ram 0
+set_option -disable_io_insertion 0
+set_option -pipe 1
+set_option -retiming 0
+set_option -update_models_cp 0
+set_option -fix_gated_and_generated_clocks 0
+set_option -run_prop_extract 1
+set_option -seqshift_no_replicate 0
+
+# NFilter
+set_option -no_sequential_opt 0
+
+# common_options
+set_option -add_dut_hierarchy 0
+set_option -prepare_readback 0
+
+# flow_options
+set_option -use_unified_compile 0
+set_option -slr_aware_debug 0
+
+# sequential_optimization_options
+set_option -symbolic_fsm_compiler 1
+
+# Compiler Options
+set_option -compiler_compatible 0
+set_option -resource_sharing 1
+set_option -multi_file_compilation_unit 1
+
+# Compiler Options
+set_option -auto_infer_blackbox 0
+
+# Compiler Options
+set_option -vhdl2008 1
+
+#automatic place and route (vendor) options
+set_option -write_apr_constraint 1
+
+#set result format/file last
+project -result_file "Z:/es4/ES4-Final/collisions_and_rotations/impl_1/rev_1/welcome.vm"
+impl -active "rev_1"

@@ -1,5 +1,5 @@
 ldc_set_location -site {46} [get_ports ctrlr_data]
-ldc_set_location -site {12} [get_ports osc]
+ldc_set_location -site {20} [get_ports osc]
 ldc_set_location -site {4} [get_ports ctrlr_clk]
 ldc_set_location -site {3} [get_ports ctrlr_latch]
 ldc_set_location -site {43} [get_ports hsync]

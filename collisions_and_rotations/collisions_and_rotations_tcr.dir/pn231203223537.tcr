@@ -1,0 +1,8 @@
+#Start recording tcl command: 12/3/2023 22:22:07
+#Project Location: Z:/es4/ES4-Final/collisions_and_rotations; Project name: collisions_and_rotations
+prj_open "Z:/es4/ES4-Final/collisions_and_rotations/collisions_and_rotations.rdf"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+prj_enable_source "Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/bottom_check.vhd"
+prj_run Export -impl impl_1
+#Stop recording: 12/3/2023 22:35:37

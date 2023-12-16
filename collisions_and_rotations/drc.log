@@ -1,3 +1,16 @@
 DRC: Design Rule Check Radiant Software (64-bit) 2023.1.0.43.3
-Sat Dec  2 18:43:07 2023
+Tue Dec  5 17:15:56 2023
 
+WARNING <71003020> - Top module port 'osc' does not connect to anything.
+WARNING <71003020> - Top module port 'rgb[5]' does not connect to anything.
+WARNING <71003020> - Top module port 'rgb[4]' does not connect to anything.
+WARNING <71003020> - Top module port 'rgb[3]' does not connect to anything.
+WARNING <71003020> - Top module port 'rgb[2]' does not connect to anything.
+WARNING <71003020> - Top module port 'rgb[1]' does not connect to anything.
+WARNING <71003020> - Top module port 'rgb[0]' does not connect to anything.
+WARNING <71003020> - Top module port 'hsync' does not connect to anything.
+WARNING <71003020> - Top module port 'vsync' does not connect to anything.
+WARNING <71003020> - Top module port 'ctrlr_latch' does not connect to anything.
+WARNING <71003020> - Top module port 'ctrlr_clk' does not connect to anything.
+WARNING <71003020> - Top module port 'rotate_out' does not connect to anything.
+WARNING <71003020> - Top module port 'ctrlr_data' does not connect to anything.

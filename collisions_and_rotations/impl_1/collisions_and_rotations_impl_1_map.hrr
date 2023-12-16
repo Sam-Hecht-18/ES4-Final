@@ -3,43 +3,37 @@ Report for cell master
    Instance path: master
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	        204        100.0
-                               LUTGATE	        150        100.0
-                                LUTCCU	         54        100.0
+                                  LUT4	        454        100.0
+                               LUTGATE	        392        100.0
+                                LUTCCU	         62        100.0
                                  IOBUF	         13        100.0
-                                PFUREG	         71        100.0
+                                PFUREG	         92        100.0
                                    EBR	          1        100.0
 SUB MODULES
                                   cell	      count    LUT4 Usage(%)
-                         clock_manager	          1        12.7
-                        nes_controller	          1         4.9
-                           pattern_gen	          1        45.1
-                                   vga	          1        27.0
+                         clock_manager	          1        12.1
+                            game_logic	          1        51.8
+                        nes_controller	          1         2.6
+                              renderer	          1        15.0
+                              vga_sync	          1        10.1
 ---------------------------------------------------
-Report for cell vga
-   Instance path: master/vga_portmap
+Report for cell vga_sync
+   Instance path: master/vga_sync_portmap
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	         55        27.0
-                               LUTGATE	         31        20.7
-                                LUTCCU	         24        44.4
-                                PFUREG	         20        28.2
----------------------------------------------------
-Report for cell nes_controller
-   Instance path: master/nes_controller_portmap
-                     Cell usage:
-                                  cell	      count    Res Usage(%)
-                                  LUT4	         10         4.9
-                               LUTGATE	         10         6.7
-                                PFUREG	          4         5.6
+                                  LUT4	         46        10.1
+                               LUTGATE	         22         5.6
+                                LUTCCU	         24        38.7
+                                PFUREG	         20        21.7
 ---------------------------------------------------
 Report for cell clock_manager
    Instance path: master/clock_manager_portmap
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	         26        12.7
-                                LUTCCU	         26        48.1
-                                PFUREG	         25        35.2
+                                  LUT4	         55        12.1
+                               LUTGATE	         17         4.3
+                                LUTCCU	         38        61.3
+                                PFUREG	         36        39.1
 SUB MODULES
                                   cell	      count    LUT4 Usage(%)
                                  mypll	          1         0.0
@@ -57,31 +51,45 @@ Report for cell mypll_ipgen_lscc_pll(DIVR="0",DIVF="66",DIVQ="5",FILTER_RANGE="1
                      Cell usage:
                                   cell	      count    Res Usage(%)
 ---------------------------------------------------
-Report for cell pattern_gen
-   Instance path: master/pattern_gen_portmap
+Report for cell game_logic
+   Instance path: master/game_logic_portmap
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	         92        45.1
-                               LUTGATE	         88        58.7
-                                LUTCCU	          4         7.4
-                                PFUREG	         22        31.0
+                                  LUT4	        235        51.8
+                               LUTGATE	        235        59.9
+                                PFUREG	         30        32.6
                                    EBR	          1        100.0
 SUB MODULES
                                   cell	      count    LUT4 Usage(%)
-                          bottom_check	          1         9.8
-                                 piece	          1         1.5
+                       collision_check	          1        38.1
+                         piece_library	          1         0.2
 ---------------------------------------------------
-Report for cell piece
-   Instance path: master/pattern_gen_portmap/piece_device
+Report for cell piece_library
+   Instance path: master/game_logic_portmap/piece_library_portmap
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	          3         1.5
-                               LUTGATE	          3         2.0
+                                  LUT4	          1         0.2
+                               LUTGATE	          1         0.3
                                    EBR	          1        100.0
 ---------------------------------------------------
-Report for cell bottom_check
-   Instance path: master/pattern_gen_portmap/bottom_check_portmap
+Report for cell collision_check
+   Instance path: master/game_logic_portmap/collision_check_portmap
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	         20         9.8
-                               LUTGATE	         20        13.3
+                                  LUT4	        173        38.1
+                               LUTGATE	        173        44.1
+---------------------------------------------------
+Report for cell renderer
+   Instance path: master/renderer_portmap
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	         68        15.0
+                               LUTGATE	         68        17.3
+---------------------------------------------------
+Report for cell nes_controller
+   Instance path: master/nes_controller_portmap
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	         12         2.6
+                               LUTGATE	         12         3.1
+                                PFUREG	          6         6.5

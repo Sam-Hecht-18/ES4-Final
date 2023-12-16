@@ -2,29 +2,50 @@
 <RadiantProject version="4.2" radiant="2023.1.0.43.3" title="collisions_and_rotations" device="iCE40UP5K-SG48I" performance_grade="High-Performance_1.2V" default_implementation="impl_1">
     <Options/>
     <Implementation title="impl_1" dir="impl_1" description="impl_1" synthesis="lse" default_strategy="Strategy1">
-        <Options def_top="master" top="master"/>
-        <Source name="source/impl_1/bottom_check.vhd" type="VHDL" type_short="VHDL">
-            <Options/>
-        </Source>
-        <Source name="source/impl_1/clock.vhd" type="VHDL" type_short="VHDL">
-            <Options/>
-        </Source>
+        <Options def_top="vga_sync_clk" top="master"/>
         <Source name="source/impl_1/master.vhd" type="VHDL" type_short="VHDL">
             <Options top_module="master"/>
         </Source>
         <Source name="source/impl_1/nes_controller.vhd" type="VHDL" type_short="VHDL">
             <Options/>
         </Source>
-        <Source name="source/impl_1/pattern_gen.vhd" type="VHDL" type_short="VHDL">
-            <Options/>
-        </Source>
-        <Source name="source/impl_1/piece.vhd" type="VHDL" type_short="VHDL">
-            <Options/>
-        </Source>
         <Source name="source/impl_1/vga.vhd" type="VHDL" type_short="VHDL">
             <Options/>
         </Source>
         <Source name="mypll/mypll.ipx" type="IPX_Module" type_short="IPX">
+            <Options/>
+        </Source>
+        <Source name="source/impl_1/collision_check.vhd" type="VHDL" type_short="VHDL">
+            <Options/>
+        </Source>
+        <Source name="source/impl_1/game_logic.vhd" type="VHDL" type_short="VHDL">
+            <Options/>
+        </Source>
+        <Source name="source/impl_1/piece_library.vhd" type="VHDL" type_short="VHDL">
+            <Options/>
+        </Source>
+        <Source name="source/impl_1/renderer.vhd" type="VHDL" type_short="VHDL">
+            <Options/>
+        </Source>
+        <Source name="source/impl_1/new_modules/board_updater.vhd" type="VHDL" type_short="VHDL">
+            <Options/>
+        </Source>
+        <Source name="source/impl_1/new_modules/piece_picker.vhd" type="VHDL" type_short="VHDL">
+            <Options/>
+        </Source>
+        <Source name="source/impl_1/new_modules/row_check.vhd" type="VHDL" type_short="VHDL">
+            <Options/>
+        </Source>
+        <Source name="source/impl_1/new_modules/turn_manager.vhd" type="VHDL" type_short="VHDL">
+            <Options/>
+        </Source>
+        <Source name="source/impl_1/new_modules/board_overlap.vhd" type="VHDL" type_short="VHDL" excluded="TRUE">
+            <Options/>
+        </Source>
+        <Source name="source/impl_1/vga_sync_clk.vhd" type="VHDL" type_short="VHDL">
+            <Options/>
+        </Source>
+        <Source name="source/impl_1/clock_manager.vhd" type="VHDL" type_short="VHDL">
             <Options/>
         </Source>
         <Source name="pins.pdc" type="Physical Constraints File" type_short="PDC">

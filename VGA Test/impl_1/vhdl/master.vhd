@@ -91,12 +91,12 @@ architecture synth of master is
 
 begin
 
-	clock_device : clock port map(outglobal_o, game_clock, counter, NEScount, NESclk); 
+	--clock_device : clock_manager port map(outglobal_o, game_clock, counter, NEScount, NESclk); 
 
 	clock_manager_portmap : clock_manager port map(osc, clk, game_clock, counter, NEScount, NESclk);
 	
 	pattern_gen_portmap : pattern_gen port map(
-		clk => outglobal_o,
+		clk => clk,
 		game_clock => game_clock,
 		valid => valid,
 		row => row,
@@ -105,7 +105,7 @@ begin
 		rotate => rotate,
 		down => down_button);
 	
-	vga_portmap : vga port map(outglobal_o, valid, row, col, hsync, vsync);
+	vga_portmap : vga port map(clk, valid, row, col, hsync, vsync);
 
 	nes_controller_portmap : nes_controller port map
 	(ctrlr_latch, 

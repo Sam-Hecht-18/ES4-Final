@@ -48,7 +48,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-Sat Dec  2 19:01:02 2023
+Tue Dec  5 19:05:24 2023
 
 
 Command Line:  C:\lscc\radiant\2023.1\ispfpga\bin\nt64\synthesis.exe -f collisions_and_rotations_impl_1_lattice.synproj -gui -msgset Z:/es4/ES4-Final/collisions_and_rotations/promote.xml 
@@ -123,19 +123,21 @@ Verilog design file = Z:/es4/ES4-Final/collisions_and_rotations/mypll/rtl/mypll.
 VHDL library = pmi
 VHDL design file = C:/lscc/radiant/2023.1/ip/pmi/pmi_iCE40UP.vhd
 VHDL library = work
-VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/bottom_check.vhd
-VHDL library = work
-VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/clock.vhd
-VHDL library = work
 VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/master.vhd
 VHDL library = work
 VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/nes_controller.vhd
 VHDL library = work
-VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/pattern_gen.vhd
-VHDL library = work
-VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/piece.vhd
-VHDL library = work
 VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/vga.vhd
+VHDL library = work
+VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/collision_check.vhd
+VHDL library = work
+VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/game_logic.vhd
+VHDL library = work
+VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/piece_library.vhd
+VHDL library = work
+VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/renderer.vhd
+VHDL library = work
+VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/clock_manager.vhd
 The -r option is OFF. [ Remove LOC Properties is OFF. ]
 WARNING <35935050> - synthesis: input port TRIM9 is not connected on this instance. VDB-5050
 WARNING <35935050> - synthesis: input port TRIM8 is not connected on this instance. VDB-5050
@@ -189,43 +191,52 @@ Analyzing VHDL file c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.vhd. VHDL-1481
 Analyzing VHDL file c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.vhd
 
 INFO <35921014> - synthesis: c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.vhd(4): analyzing package components. VHDL-1014
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/bottom_check.vhd. VHDL-1481
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/bottom_check.vhd
-
-INFO <35921014> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/bottom_check.vhd(5): analyzing package my_types_package. VHDL-1014
-INFO <35921012> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/bottom_check.vhd(15): analyzing entity bottom_check. VHDL-1012
-INFO <35921010> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/bottom_check.vhd(26): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock.vhd. VHDL-1481
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock.vhd
-
-INFO <35921012> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock.vhd(5): analyzing entity clock_manager. VHDL-1012
-INFO <35921010> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock.vhd(16): analyzing architecture synth. VHDL-1010
 Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/master.vhd. VHDL-1481
 Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/master.vhd
 
-INFO <35921012> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/master.vhd(5): analyzing entity master. VHDL-1012
-INFO <35921010> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/master.vhd(18): analyzing architecture synth. VHDL-1010
+INFO <35921014> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/master.vhd(5): analyzing package my_types_package. VHDL-1014
+INFO <35921012> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/master.vhd(15): analyzing entity master. VHDL-1012
+INFO <35921010> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/master.vhd(28): analyzing architecture synth. VHDL-1010
 Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd. VHDL-1481
 Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd
 
 INFO <35921012> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd(5): analyzing entity nes_controller. VHDL-1012
 INFO <35921010> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd(23): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd. VHDL-1481
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd
-
-INFO <35921014> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd(5): analyzing package my_types_package. VHDL-1014
-INFO <35921012> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd(15): analyzing entity pattern_gen. VHDL-1012
-INFO <35921010> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd(28): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece.vhd. VHDL-1481
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece.vhd
-
-INFO <35921012> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece.vhd(5): analyzing entity piece. VHDL-1012
-INFO <35921010> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece.vhd(15): analyzing architecture synth. VHDL-1010
 Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/vga.vhd. VHDL-1481
 Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/vga.vhd
 
-INFO <35921012> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/vga.vhd(5): analyzing entity vga. VHDL-1012
+INFO <35921012> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/vga.vhd(5): analyzing entity vga_sync. VHDL-1012
 INFO <35921010> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/vga.vhd(16): analyzing architecture synth. VHDL-1010
+Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd. VHDL-1481
+Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd
+
+INFO <35921014> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(5): analyzing package my_types_package. VHDL-1014
+INFO <35921012> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(15): analyzing entity collision_check. VHDL-1012
+INFO <35921010> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(34): analyzing architecture synth. VHDL-1010
+Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd. VHDL-1481
+Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd
+
+INFO <35921014> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(5): analyzing package my_types_package. VHDL-1014
+INFO <35921012> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(15): analyzing entity game_logic. VHDL-1012
+INFO <35921010> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(34): analyzing architecture synth. VHDL-1010
+INFO <35929000> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(159): input pin game_clock_ctr has no actual or default value. VHDL-9000
+INFO <35921259> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(48): game_clock_ctr is declared here. VHDL-1259
+Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd. VHDL-1481
+Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd
+
+INFO <35921012> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd(5): analyzing entity piece_library. VHDL-1012
+INFO <35921010> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd(14): analyzing architecture synth. VHDL-1010
+Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd. VHDL-1481
+Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd
+
+INFO <35921014> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd(5): analyzing package my_types_package. VHDL-1014
+INFO <35921012> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd(15): analyzing entity renderer. VHDL-1012
+INFO <35921010> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd(29): analyzing architecture synth. VHDL-1010
+Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd. VHDL-1481
+Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd
+
+INFO <35921012> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd(5): analyzing entity clock_manager. VHDL-1012
+INFO <35921010> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd(20): analyzing architecture synth. VHDL-1010
 INFO <35921504> - synthesis: The default VHDL library search path is now "Z:/es4/ES4-Final/collisions_and_rotations/impl_1". VHDL-1504
 Top module language type = VHDL.
 WARNING <35935049> - synthesis: input port sclk_i remains unconnected for this instance. VDB-5049
@@ -255,32 +266,19 @@ Top module name (VHDL, mixed language): master
                                                          
 
 
-WARNING <35001771> - synthesis: Initial value found on net collision_temp will be ignored due to unrecognized driver type
+WARNING <35001771> - synthesis: Initial value found on net collision will be ignored due to unrecognized driver type
+WARNING <35001771> - synthesis: Initial value found on net collision_left will be ignored due to unrecognized driver type
+WARNING <35001771> - synthesis: Initial value found on net collision_right will be ignored due to unrecognized driver type
+WARNING <35001771> - synthesis: Initial value found on net collision_down will be ignored due to unrecognized driver type
+WARNING <35001771> - synthesis: Initial value found on net collision_rotate will be ignored due to unrecognized driver type
+WARNING <35001771> - synthesis: Initial value found on net hit_piece will be ignored due to unrecognized driver type
 WARNING <35001771> - synthesis: Initial value found on net hit_bottom will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net next_col[9] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net next_col[8] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net next_col[7] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net next_col[6] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net next_col[5] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net next_col[4] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net next_col[3] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net next_col[2] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net next_col[1] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net next_col[0] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net next_row[9] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net next_row[8] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net next_row[7] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net next_row[6] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net next_row[5] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net next_row[4] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net next_row[3] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net next_row[2] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net next_row[1] will be ignored due to unrecognized driver type
-WARNING <35001771> - synthesis: Initial value found on net next_row[0] will be ignored due to unrecognized driver type
 WARNING <35935049> - synthesis: input port sclk_i remains unconnected for this instance. VDB-5049
 WARNING <35935049> - synthesis: input port sdi_i remains unconnected for this instance. VDB-5049
+WARNING <35931002> - synthesis: z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(132): net \game_logic_portmap/collision_rotate does not have a driver. VDB-1002
 WARNING <35931002> - synthesis: z:/es4/es4-final/collisions_and_rotations/mypll/rtl/mypll.v(139): net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sclk_i does not have a driver. VDB-1002
 WARNING <35931002> - synthesis: z:/es4/es4-final/collisions_and_rotations/mypll/rtl/mypll.v(140): net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sdi_i does not have a driver. VDB-1002
+######## Missing driver on net \game_logic_portmap/collision_rotate. Patching with GND.
 ######## Missing driver on net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sclk_i. Patching with GND.
 ######## Missing driver on net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sdi_i. Patching with GND.
 
@@ -288,32 +286,156 @@ WARNING <35931002> - synthesis: z:/es4/es4-final/collisions_and_rotations/mypll/
 
 Combinational loop found : 1
 
+ Net down_button 
+
+ Instance \nes_controller_portmap/mux_7_i3 
+
+Combinational loop found : 2
+
+ Net left_button 
+
+ Instance \nes_controller_portmap/mux_7_i2 
+
+Combinational loop found : 3
+
+ Net right_button 
+
+ Instance \nes_controller_portmap/mux_7_i1 
+
+Combinational loop found : 4
+
+ Net \game_logic_portmap/collision_check_portmap/future_piece_loc[1][0] 
+
+ Instance \game_logic_portmap/collision_check_portmap/mux_11_i1 
+
+Combinational loop found : 5
+
+ Net \game_logic_portmap/collision_check_portmap/future_piece_loc[1][1] 
+
+ Instance \game_logic_portmap/collision_check_portmap/mux_11_i2 
+
+Combinational loop found : 6
+
+ Net \game_logic_portmap/collision_check_portmap/future_piece_loc[1][2] 
+
+ Instance \game_logic_portmap/collision_check_portmap/mux_11_i3 
+
+Combinational loop found : 7
+
+ Net \game_logic_portmap/collision_check_portmap/future_piece_loc[1][3] 
+
+ Instance \game_logic_portmap/collision_check_portmap/mux_11_i4 
+
+Combinational loop found : 8
+
  Net rotate_out_c 
 
  Instance \nes_controller_portmap/mux_7_i4 
 
-Combinational loop found : 2
+Combinational loop found : 9
 
- Net down_button 
+ Net sel 
 
- Instance \nes_controller_portmap/mux_7_i3 
+ Instance \nes_controller_portmap/mux_7_i6 
+
+Combinational loop found : 10
+
+ Net special_background[1] 
+
+ Instance \game_logic_portmap/mux_11_i2 
+
+ Net \game_logic_portmap/n931 
+
+ Instance \game_logic_portmap/mux_10_i2 
+
+ Net \game_logic_portmap/n925 
+
+ Instance \game_logic_portmap/mux_9_i2 
+
+ Net \game_logic_portmap/n919 
+
+ Instance \game_logic_portmap/mux_7_i2 
+
+Combinational loop found : 11
+
+ Net special_background[0] 
+
+ Instance \game_logic_portmap/mux_11_i1 
+
+ Net \game_logic_portmap/n932 
+
+ Instance \game_logic_portmap/mux_10_i1 
+
+ Net \game_logic_portmap/n926 
+
+ Instance \game_logic_portmap/mux_9_i1 
+
+Combinational loop found : 12
+
+ Net special_background[2] 
+
+ Instance \game_logic_portmap/mux_11_i3 
+
+ Net \game_logic_portmap/n930 
+
+ Instance \game_logic_portmap/mux_10_i3 
+
+Combinational loop found : 13
+
+ Net special_background[3] 
+
+ Instance \game_logic_portmap/mux_11_i4 
+
+ Net \game_logic_portmap/n929 
+
+ Instance \game_logic_portmap/mux_10_i4 
+
+ Net \game_logic_portmap/n923 
+
+ Instance \game_logic_portmap/mux_9_i4 
+
+ Net \renderer_portmap/equal_66/n7 
+
+ Instance \renderer_portmap/equal_66_i7 
+
+ Net \game_logic_portmap/n917 
+
+ Instance \game_logic_portmap/mux_7_i4 
+
+Combinational loop found : 14
+
+ Net special_background[4] 
+
+ Instance \game_logic_portmap/mux_11_i5 
+
+ Net \game_logic_portmap/n928 
+
+ Instance \game_logic_portmap/mux_10_i5 
+
+ Net \renderer_portmap/equal_66/n7 
+
+ Instance \renderer_portmap/equal_66_i7 
+
+ Net \game_logic_portmap/n922 
+
+ Instance \game_logic_portmap/mux_9_i5 
 
 
 
 <A name="lse_area"></A><B><U><big>Area Report</big></U></B>
 
 ################### Begin Area Report (master)######################
-Number of register bits => 71 of 5280 (1 % )
+Number of register bits => 92 of 5280 (1 % )
 EBR_B => 1
-CCU2 => 27
-FD1P3XZ => 71
+CCU2 => 31
+FD1P3XZ => 92
 IB => 2
-LUT4 => 136
+LUT4 => 380
 OB => 11
 PLL_B => 1
 ################### End Area Report ##################
-Number of odd-length carry chains : 2
-Number of even-length carry chains : 2
+Number of odd-length carry chains : 1
+Number of even-length carry chains : 3
 
 
 <A name="lse_clock"></A><B><U><big>Clock Report</big></U></B>
@@ -322,29 +444,29 @@ Number of even-length carry chains : 2
 Clock Nets
 Number of Clocks: 4
   Net : nes_controller_portmap/ctrlr_clk_c, loads : 1
-  Net : clock_manager_portmap/pll_portmap/lscc_pll_inst/clk, loads : 0
+  Net : clock_manager_portmap/game_clock, loads : 0
   Net : osc_c, loads : 1
-  Net : clock_manager_portmap/game_clock, loads : 1
+  Net : clock_manager_portmap/pll_portmap/lscc_pll_inst/clk, loads : 0
 Clock Enable Nets
 Number of Clock Enables: 0
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : pattern_gen_portmap/piece_loc_y[0], loads : 23
-  Net : vga_portmap/col_0__N_50, loads : 21
-  Net : vga_portmap/col[5], loads : 20
-  Net : pattern_gen_portmap/piece_loc_y[1], loads : 17
-  Net : vga_portmap/row[4], loads : 11
-  Net : vga_portmap/col[6], loads : 10
-  Net : vga_portmap/row_0__N_30, loads : 10
-  Net : vga_portmap/col[7], loads : 9
-  Net : vga_portmap/col[4], loads : 9
-  Net : pattern_gen_portmap/piece_loc_y[2], loads : 9
+  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[0][0], loads : 55
+  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[0][1], loads : 44
+  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[1][0], loads : 36
+  Net : game_logic_portmap/collision_check_portmap/board_shadow_row_4_1__N_281, loads : 28
+  Net : renderer_portmap/future_piece_loc[1][1], loads : 26
+  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[1][2], loads : 25
+  Net : vga_sync_portmap/rgb_col[4], loads : 23
+  Net : game_logic_portmap/piece_loc[0][0], loads : 22
+  Net : vga_sync_portmap/rgb_col_0__N_50, loads : 21
+  Net : game_logic_portmap/collision_check_portmap/overlap_row_3_2__N_288, loads : 20
 ################### End Clock Report ##################
 
-Peak Memory Usage: 119 MB
+Peak Memory Usage: 132 MB
 
 --------------------------------------------------------------
-Total CPU Time: 3 secs 
+Total CPU Time: 4 secs 
 Total REAL Time: 5 secs 
 --------------------------------------------------------------
 

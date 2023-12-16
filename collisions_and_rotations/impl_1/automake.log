@@ -54,7 +54,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2023 Lattice Semiconductor Corporation,  All rights reserved.
-Sat Dec  2 19:01:02 2023
+Tue Dec  5 19:05:24 2023
 
 
 Command Line:  C:\lscc\radiant\2023.1\ispfpga\bin\nt64\synthesis.exe -f collisions_and_rotations_impl_1_lattice.synproj -gui -msgset Z:/es4/ES4-Final/collisions_and_rotations/promote.xml 
@@ -130,19 +130,21 @@ Verilog design file = Z:/es4/ES4-Final/collisions_and_rotations/mypll/rtl/mypll.
 VHDL library = pmi
 VHDL design file = C:/lscc/radiant/2023.1/ip/pmi/pmi_iCE40UP.vhd
 VHDL library = work
-VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/bottom_check.vhd
-VHDL library = work
-VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/clock.vhd
-VHDL library = work
 VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/master.vhd
 VHDL library = work
 VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/nes_controller.vhd
 VHDL library = work
-VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/pattern_gen.vhd
-VHDL library = work
-VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/piece.vhd
-VHDL library = work
 VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/vga.vhd
+VHDL library = work
+VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/collision_check.vhd
+VHDL library = work
+VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/game_logic.vhd
+VHDL library = work
+VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/piece_library.vhd
+VHDL library = work
+VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/renderer.vhd
+VHDL library = work
+VHDL design file = Z:/es4/ES4-Final/collisions_and_rotations/source/impl_1/clock_manager.vhd
 The -r option is OFF. [ Remove LOC Properties is OFF. ]
 WARNING <35935050> - input port TRIM9 is not connected on this instance. VDB-5050
 WARNING <35935050> - input port TRIM8 is not connected on this instance. VDB-5050
@@ -196,43 +198,52 @@ Analyzing VHDL file c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.vhd. VHDL-1481
 Analyzing VHDL file c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.vhd
 
 INFO <35921014> - c:/lscc/radiant/2023.1/ip/pmi/pmi_ice40up.vhd(4): analyzing package components. VHDL-1014
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/bottom_check.vhd. VHDL-1481
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/bottom_check.vhd
-
-INFO <35921014> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/bottom_check.vhd(5): analyzing package my_types_package. VHDL-1014
-INFO <35921012> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/bottom_check.vhd(15): analyzing entity bottom_check. VHDL-1012
-INFO <35921010> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/bottom_check.vhd(26): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock.vhd. VHDL-1481
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock.vhd
-
-INFO <35921012> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock.vhd(5): analyzing entity clock_manager. VHDL-1012
-INFO <35921010> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock.vhd(16): analyzing architecture synth. VHDL-1010
 Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/master.vhd. VHDL-1481
 Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/master.vhd
 
-INFO <35921012> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/master.vhd(5): analyzing entity master. VHDL-1012
-INFO <35921010> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/master.vhd(18): analyzing architecture synth. VHDL-1010
+INFO <35921014> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/master.vhd(5): analyzing package my_types_package. VHDL-1014
+INFO <35921012> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/master.vhd(15): analyzing entity master. VHDL-1012
+INFO <35921010> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/master.vhd(28): analyzing architecture synth. VHDL-1010
 Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd. VHDL-1481
 Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd
 
 INFO <35921012> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd(5): analyzing entity nes_controller. VHDL-1012
 INFO <35921010> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/nes_controller.vhd(23): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd. VHDL-1481
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd
-
-INFO <35921014> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd(5): analyzing package my_types_package. VHDL-1014
-INFO <35921012> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd(15): analyzing entity pattern_gen. VHDL-1012
-INFO <35921010> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/pattern_gen.vhd(28): analyzing architecture synth. VHDL-1010
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece.vhd. VHDL-1481
-Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece.vhd
-
-INFO <35921012> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece.vhd(5): analyzing entity piece. VHDL-1012
-INFO <35921010> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece.vhd(15): analyzing architecture synth. VHDL-1010
 Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/vga.vhd. VHDL-1481
 Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/vga.vhd
 
-INFO <35921012> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/vga.vhd(5): analyzing entity vga. VHDL-1012
+INFO <35921012> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/vga.vhd(5): analyzing entity vga_sync. VHDL-1012
 INFO <35921010> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/vga.vhd(16): analyzing architecture synth. VHDL-1010
+Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd. VHDL-1481
+Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd
+
+INFO <35921014> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(5): analyzing package my_types_package. VHDL-1014
+INFO <35921012> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(15): analyzing entity collision_check. VHDL-1012
+INFO <35921010> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/collision_check.vhd(34): analyzing architecture synth. VHDL-1010
+Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd. VHDL-1481
+Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd
+
+INFO <35921014> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(5): analyzing package my_types_package. VHDL-1014
+INFO <35921012> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(15): analyzing entity game_logic. VHDL-1012
+INFO <35921010> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(34): analyzing architecture synth. VHDL-1010
+INFO <35929000> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(159): input pin game_clock_ctr has no actual or default value. VHDL-9000
+INFO <35921259> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(48): game_clock_ctr is declared here. VHDL-1259
+Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd. VHDL-1481
+Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd
+
+INFO <35921012> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd(5): analyzing entity piece_library. VHDL-1012
+INFO <35921010> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/piece_library.vhd(14): analyzing architecture synth. VHDL-1010
+Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd. VHDL-1481
+Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd
+
+INFO <35921014> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd(5): analyzing package my_types_package. VHDL-1014
+INFO <35921012> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd(15): analyzing entity renderer. VHDL-1012
+INFO <35921010> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/renderer.vhd(29): analyzing architecture synth. VHDL-1010
+Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd. VHDL-1481
+Analyzing VHDL file z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd
+
+INFO <35921012> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd(5): analyzing entity clock_manager. VHDL-1012
+INFO <35921010> - z:/es4/es4-final/collisions_and_rotations/source/impl_1/clock_manager.vhd(20): analyzing architecture synth. VHDL-1010
 The default VHDL library search path is now "Z:/es4/ES4-Final/collisions_and_rotations/impl_1". VHDL-1504
 Top module language type = VHDL.
 WARNING <35935049> - input port sclk_i remains unconnected for this instance. VDB-5049
@@ -262,32 +273,19 @@ Top module name (VHDL, mixed language): master
                                                          
 
 
-WARNING <35001771> - Initial value found on net collision_temp will be ignored due to unrecognized driver type
+WARNING <35001771> - Initial value found on net collision will be ignored due to unrecognized driver type
+WARNING <35001771> - Initial value found on net collision_left will be ignored due to unrecognized driver type
+WARNING <35001771> - Initial value found on net collision_right will be ignored due to unrecognized driver type
+WARNING <35001771> - Initial value found on net collision_down will be ignored due to unrecognized driver type
+WARNING <35001771> - Initial value found on net collision_rotate will be ignored due to unrecognized driver type
+WARNING <35001771> - Initial value found on net hit_piece will be ignored due to unrecognized driver type
 WARNING <35001771> - Initial value found on net hit_bottom will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_col[9] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_col[8] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_col[7] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_col[6] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_col[5] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_col[4] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_col[3] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_col[2] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_col[1] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_col[0] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_row[9] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_row[8] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_row[7] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_row[6] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_row[5] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_row[4] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_row[3] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_row[2] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_row[1] will be ignored due to unrecognized driver type
-WARNING <35001771> - Initial value found on net next_row[0] will be ignored due to unrecognized driver type
 WARNING <35935049> - input port sclk_i remains unconnected for this instance. VDB-5049
 WARNING <35935049> - input port sdi_i remains unconnected for this instance. VDB-5049
+z:/es4/es4-final/collisions_and_rotations/source/impl_1/game_logic.vhd(132): net \game_logic_portmap/collision_rotate does not have a driver. VDB-1002
 z:/es4/es4-final/collisions_and_rotations/mypll/rtl/mypll.v(139): net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sclk_i does not have a driver. VDB-1002
 z:/es4/es4-final/collisions_and_rotations/mypll/rtl/mypll.v(140): net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sdi_i does not have a driver. VDB-1002
+######## Missing driver on net \game_logic_portmap/collision_rotate. Patching with GND.
 ######## Missing driver on net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sclk_i. Patching with GND.
 ######## Missing driver on net \clock_manager_portmap/pll_portmap/lscc_pll_inst/sdi_i. Patching with GND.
 
@@ -295,57 +293,181 @@ z:/es4/es4-final/collisions_and_rotations/mypll/rtl/mypll.v(140): net \clock_man
 
 Combinational loop found : 1
 
- Net rotate_out_c 
-
- Instance \nes_controller_portmap/mux_7_i4 
-
-Combinational loop found : 2
-
  Net down_button 
 
  Instance \nes_controller_portmap/mux_7_i3 
 
+Combinational loop found : 2
+
+ Net left_button 
+
+ Instance \nes_controller_portmap/mux_7_i2 
+
+Combinational loop found : 3
+
+ Net right_button 
+
+ Instance \nes_controller_portmap/mux_7_i1 
+
+Combinational loop found : 4
+
+ Net \game_logic_portmap/collision_check_portmap/future_piece_loc[1][0] 
+
+ Instance \game_logic_portmap/collision_check_portmap/mux_11_i1 
+
+Combinational loop found : 5
+
+ Net \game_logic_portmap/collision_check_portmap/future_piece_loc[1][1] 
+
+ Instance \game_logic_portmap/collision_check_portmap/mux_11_i2 
+
+Combinational loop found : 6
+
+ Net \game_logic_portmap/collision_check_portmap/future_piece_loc[1][2] 
+
+ Instance \game_logic_portmap/collision_check_portmap/mux_11_i3 
+
+Combinational loop found : 7
+
+ Net \game_logic_portmap/collision_check_portmap/future_piece_loc[1][3] 
+
+ Instance \game_logic_portmap/collision_check_portmap/mux_11_i4 
+
+Combinational loop found : 8
+
+ Net rotate_out_c 
+
+ Instance \nes_controller_portmap/mux_7_i4 
+
+Combinational loop found : 9
+
+ Net sel 
+
+ Instance \nes_controller_portmap/mux_7_i6 
+
+Combinational loop found : 10
+
+ Net special_background[1] 
+
+ Instance \game_logic_portmap/mux_11_i2 
+
+ Net \game_logic_portmap/n931 
+
+ Instance \game_logic_portmap/mux_10_i2 
+
+ Net \game_logic_portmap/n925 
+
+ Instance \game_logic_portmap/mux_9_i2 
+
+ Net \game_logic_portmap/n919 
+
+ Instance \game_logic_portmap/mux_7_i2 
+
+Combinational loop found : 11
+
+ Net special_background[0] 
+
+ Instance \game_logic_portmap/mux_11_i1 
+
+ Net \game_logic_portmap/n932 
+
+ Instance \game_logic_portmap/mux_10_i1 
+
+ Net \game_logic_portmap/n926 
+
+ Instance \game_logic_portmap/mux_9_i1 
+
+Combinational loop found : 12
+
+ Net special_background[2] 
+
+ Instance \game_logic_portmap/mux_11_i3 
+
+ Net \game_logic_portmap/n930 
+
+ Instance \game_logic_portmap/mux_10_i3 
+
+Combinational loop found : 13
+
+ Net special_background[3] 
+
+ Instance \game_logic_portmap/mux_11_i4 
+
+ Net \game_logic_portmap/n929 
+
+ Instance \game_logic_portmap/mux_10_i4 
+
+ Net \game_logic_portmap/n923 
+
+ Instance \game_logic_portmap/mux_9_i4 
+
+ Net \renderer_portmap/equal_66/n7 
+
+ Instance \renderer_portmap/equal_66_i7 
+
+ Net \game_logic_portmap/n917 
+
+ Instance \game_logic_portmap/mux_7_i4 
+
+Combinational loop found : 14
+
+ Net special_background[4] 
+
+ Instance \game_logic_portmap/mux_11_i5 
+
+ Net \game_logic_portmap/n928 
+
+ Instance \game_logic_portmap/mux_10_i5 
+
+ Net \renderer_portmap/equal_66/n7 
+
+ Instance \renderer_portmap/equal_66_i7 
+
+ Net \game_logic_portmap/n922 
+
+ Instance \game_logic_portmap/mux_9_i5 
+
 
 ################### Begin Area Report (master)######################
-Number of register bits => 71 of 5280 (1 % )
+Number of register bits => 92 of 5280 (1 % )
 EBR_B => 1
-CCU2 => 27
-FD1P3XZ => 71
+CCU2 => 31
+FD1P3XZ => 92
 IB => 2
-LUT4 => 136
+LUT4 => 380
 OB => 11
 PLL_B => 1
 ################### End Area Report ##################
-Number of odd-length carry chains : 2
-Number of even-length carry chains : 2
+Number of odd-length carry chains : 1
+Number of even-length carry chains : 3
 
 ################### Begin Clock Report ######################
 Clock Nets
 Number of Clocks: 4
   Net : nes_controller_portmap/ctrlr_clk_c, loads : 1
-  Net : clock_manager_portmap/pll_portmap/lscc_pll_inst/clk, loads : 0
+  Net : clock_manager_portmap/game_clock, loads : 0
   Net : osc_c, loads : 1
-  Net : clock_manager_portmap/game_clock, loads : 1
+  Net : clock_manager_portmap/pll_portmap/lscc_pll_inst/clk, loads : 0
 Clock Enable Nets
 Number of Clock Enables: 0
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : pattern_gen_portmap/piece_loc_y[0], loads : 23
-  Net : vga_portmap/col_0__N_50, loads : 21
-  Net : vga_portmap/col[5], loads : 20
-  Net : pattern_gen_portmap/piece_loc_y[1], loads : 17
-  Net : vga_portmap/row[4], loads : 11
-  Net : vga_portmap/col[6], loads : 10
-  Net : vga_portmap/row_0__N_30, loads : 10
-  Net : vga_portmap/col[7], loads : 9
-  Net : vga_portmap/col[4], loads : 9
-  Net : pattern_gen_portmap/piece_loc_y[2], loads : 9
+  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[0][0], loads : 55
+  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[0][1], loads : 44
+  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[1][0], loads : 36
+  Net : game_logic_portmap/collision_check_portmap/board_shadow_row_4_1__N_281, loads : 28
+  Net : renderer_portmap/future_piece_loc[1][1], loads : 26
+  Net : game_logic_portmap/collision_check_portmap/future_piece_loc[1][2], loads : 25
+  Net : vga_sync_portmap/rgb_col[4], loads : 23
+  Net : game_logic_portmap/piece_loc[0][0], loads : 22
+  Net : vga_sync_portmap/rgb_col_0__N_50, loads : 21
+  Net : game_logic_portmap/collision_check_portmap/overlap_row_3_2__N_288, loads : 20
 ################### End Clock Report ##################
 
-Peak Memory Usage: 119 MB
+Peak Memory Usage: 132 MB
 
 --------------------------------------------------------------
-Total CPU Time: 3 secs 
+Total CPU Time: 4 secs 
 Total REAL Time: 5 secs 
 --------------------------------------------------------------
 
@@ -360,8 +482,8 @@ Command Line: postsyn -a iCE40UP -p iCE40UP5K -t SG48 -sp High-Performance_1.2V 
 Reading input file 'collisions_and_rotations_impl_1.vm' ...
 CPU Time to convert: 0.125
 REAL Time to convert: 0
-convert PEAK Memory Usage: 30 MB
-convert CURRENT Memory Usage: 30 MB
+convert PEAK Memory Usage: 31 MB
+convert CURRENT Memory Usage: 31 MB
 Reading constraint file 'Z:/es4/ES4-Final/collisions_and_rotations/impl_1/collisions_and_rotations_impl_1.ldc' ...
 Removing unused logic ...
 Starting design annotation....
@@ -415,13 +537,13 @@ Optimizing...
 
 
 Design Summary:
-   Number of slice registers:  71 out of  5280 (1%)
+   Number of slice registers:  92 out of  5280 (2%)
    Number of I/O registers:      0 out of   117 (0%)
-   Number of LUT4s:           204 out of  5280 (4%)
-      Number of logic LUT4s:             135
-      Number of inserted feedthru LUT4s:  10
-      Number of replicated LUT4s:          5
-      Number of ripple logic:             27 (54 LUT4s)
+   Number of LUT4s:           454 out of  5280 (9%)
+      Number of logic LUT4s:             381
+      Number of inserted feedthru LUT4s:   5
+      Number of replicated LUT4s:          6
+      Number of ripple logic:             31 (62 LUT4s)
    Number of IO sites used:   13 out of 39 (33%)
       Number of IO sites used for general PIO: 13
       Number of IO sites used for I3C: 0 out of 2 (0%)
@@ -444,32 +566,32 @@ Design Summary:
    Number of EBRs:             1 out of 30 (3%)
    Number of PLLs:             1 out of 1 (100%)
    Number of Clocks:  4
-      Net clk: 44 loads, 44 rising, 0 falling (Driver: Pin clock_manager_portmap.pll_portmap.lscc_pll_inst.u_PLL_B/OUTGLOBAL)
-      Net ctrlr_clk_c: 4 loads, 4 rising, 0 falling (Driver: Pin nes_controller_portmap.ctrlr_clk_c_I_0/Z)
-      Net game_clock: 4 loads, 4 rising, 0 falling (Driver: Pin clock_manager_portmap.NEScount_7__I_37/Q)
+      Net clk: 32 loads, 32 rising, 0 falling (Driver: Pin clock_manager_portmap.pll_portmap.lscc_pll_inst.u_PLL_B/OUTGLOBAL)
       Net osc_c: 1 loads, 1 rising, 0 falling (Driver: Port osc)
+      Net game_clock: 31 loads, 31 rising, 0 falling (Driver: Pin clock_manager_portmap.game_clock_I_0/Q)
+      Net ctrlr_clk_c: 6 loads, 6 rising, 0 falling (Driver: Pin nes_controller_portmap.ctrlr_clk_c_I_0/Z)
    Number of Clock Enables:  3
       Net VCC_net: 3 loads, 0 SLICEs
-      Net vga_portmap.col_0__N_50: 6 loads, 6 SLICEs
-      Net pattern_gen_portmap.n349: 2 loads, 2 SLICEs
-   Number of LSRs:  3
-      Net vga_portmap.col_0__N_50: 6 loads, 6 SLICEs
-      Net vga_portmap.row_0__N_30: 6 loads, 6 SLICEs
-      Net pattern_gen_portmap.frame_counter_2__N_144[2]: 1 loads, 1 SLICEs
+      Net vga_sync_portmap.rgb_col_0__N_50: 6 loads, 6 SLICEs
+      Net game_logic_portmap.piece_loc_0__0__N_105: 8 loads, 8 SLICEs
+   Number of LSRs:  4
+      Net vga_sync_portmap.rgb_col_0__N_50: 6 loads, 6 SLICEs
+      Net vga_sync_portmap.rgb_row_0__N_30: 6 loads, 6 SLICEs
+      Net clock_manager_portmap.clk_counter_0__N_352: 10 loads, 10 SLICEs
+      Net piece_loc_0__0__N_106: 8 loads, 8 SLICEs
    Top 10 highest fanout non-clock nets:
-      Net piece_loc_y[0]: 24 loads
-      Net col[5]: 21 loads
-      Net piece_loc_y[1]: 19 loads
-      Net pattern_gen_portmap.piece_loc_y[2]_2: 14 loads
-      Net vga_portmap.col_0__N_50: 13 loads
-      Net row[4]: 12 loads
-      Net col[6]: 11 loads
-      Net col[4]: 10 loads
-      Net col[7]: 10 loads
-      Net pattern_gen_portmap.n39: 9 loads
+      Net game_logic_portmap.collision_check_portmap.future_piece_loc[0][0]: 55 loads
+      Net game_logic_portmap.collision_check_portmap.future_piece_loc[0][1]: 41 loads
+      Net game_logic_portmap.collision_check_portmap.future_piece_loc[1][0]: 38 loads
+      Net future_piece_loc[1][1]: 33 loads
+      Net game_logic_portmap.collision_check_portmap.future_piece_loc[1][2]: 30 loads
+      Net game_logic_portmap.collision_check_portmap.board_shadow_row_4_1__N_281: 28 loads
+      Net game_logic_portmap.collision_check_portmap.future_piece_loc[1][3]: 27 loads
+      Net rgb_col[4]: 25 loads
+      Net piece_loc[0][0]: 23 loads
+      Net game_logic_portmap.collision_check_portmap.overlap_row_3_2__N_288: 20 loads
 Running physical design DRC...
 
-CRITICAL <71003005> - The clock port [osc] is assigned to a non clock dedicated pin [12], which might affect the clock performance. Use dedicated clock resources for the port.
  
 
    Number of warnings:  0
@@ -482,13 +604,13 @@ Constraint Summary:
 
 Total CPU Time: 0 secs  
 Total REAL Time: 0 secs  
-Peak Memory Usage: 60 MB
+Peak Memory Usage: 62 MB
 
 
 par -f "collisions_and_rotations_impl_1.p2t" "collisions_and_rotations_impl_1_map.udb" "collisions_and_rotations_impl_1.udb"
 
 Lattice Place and Route Report for Design "collisions_and_rotations_impl_1_map.udb"
-Sat Dec  2 19:01:08 2023
+Tue Dec  5 19:05:31 2023
 
 PAR: Place And Route Radiant Software (64-bit) 2023.1.0.43.3.
 Command Line: par -w -t 1 -cores 1 -exp parPathBased=ON \
@@ -511,14 +633,13 @@ WARNING <70001944> - No master clock for
 	generated clock	create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] .
 
 WARNING: Database constraint "create_generated_clock -name {clk} -source [get_pins clock_manager_portmap.pll_portmap.lscc_pll_inst.u_PLL_B/REFERENCECLK] -divide_by 32 -multiply_by 67 [get_pins clock_manager_portmap.pll_portmap.lscc_pll_inst.u_PLL_B/OUTGLOBAL]" does not have corresponding timing constraint. Please check if the resource objects of the constraint are valid carefully!
-CRITICAL <71003005> - The clock port [osc] is assigned to a non clock dedicated pin [12], which might affect the clock performance. Use dedicated clock resources for the port.
-Number of Signals: 339
-Number of Connections: 800
+Number of Signals: 617
+Number of Connections: 1783
 Device utilization summary:
 
-   SLICE (est.)     109/2640          4% used
-     LUT            204/5280          4% used
-     REG             71/5280          1% used
+   SLICE (est.)     238/2640          9% used
+     LUT            454/5280          9% used
+     REG             92/5280          2% used
    PIO               13/56           23% used
                      13/36           36% bonded
    IOLOGIC            0/56            0% used
@@ -541,38 +662,39 @@ Device utilization summary:
 Pin Constraint Summary:
    13 out of 13 pins locked (100% locked).
 
-Finished Placer Phase 0 (HIER). CPU time: 0 secs , REAL time: 0 secs 
+Finished Placer Phase 0 (HIER). CPU time: 1 secs , REAL time: 0 secs 
 
 
 ................
-Finished Placer Phase 0 (AP).  CPU time: 0 secs , REAL time: 0 secs 
+Finished Placer Phase 0 (AP).  CPU time: 1 secs , REAL time: 2 secs 
 
-Starting Placer Phase 1. CPU time: 0 secs , REAL time: 0 secs 
+Starting Placer Phase 1. CPU time: 1 secs , REAL time: 2 secs 
 ..  ..
 ....................
 
-Placer score = 31708.
+Placer score = 85226.
 
 Device SLICE utilization summary after final SLICE packing:
-   SLICE            109/2640          4% used
+   SLICE            238/2640          9% used
 
 WARNING <70001944> - No master clock for
 	generated clock	create_generated_clock -name {clk} -source [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 67 -divide_by 32 [get_pins {clock_manager_portmap/pll_portmap/lscc_pll_inst/u_PLL_B/OUTGLOBAL }] .
-Finished Placer Phase 1. CPU time: 6 secs , REAL time: 7 secs 
+Finished Placer Phase 1. CPU time: 9 secs , REAL time: 9 secs 
 
 Starting Placer Phase 2.
 .
 
-Placer score =  37721
-Finished Placer Phase 2.  CPU time: 6 secs , REAL time: 7 secs 
+Placer score =  114839
+Finished Placer Phase 2.  CPU time: 9 secs , REAL time: 9 secs 
 
 
 ------------------ Clock Report ------------------
 
 Global Clocks :
-  PRIMARY "clk" from OUTGLOBAL on comp "clock_manager_portmap.pll_portmap.lscc_pll_inst.u_PLL_B" on site "PLL_R13C32", clk load = 38, ce load = 0, sr load = 0
+  PRIMARY "clk" from OUTGLOBAL on comp "clock_manager_portmap.pll_portmap.lscc_pll_inst.u_PLL_B" on site "PLL_R13C32", clk load = 32, ce load = 0, sr load = 0
+  PRIMARY "game_clock" from Q1 on comp "clock_manager_portmap.SLICE_188" on site "R13C4D", clk load = 19, ce load = 0, sr load = 0
 
-  PRIMARY  : 1 out of 8 (12%)
+  PRIMARY  : 2 out of 8 (25%)
 
 --------------- End of Clock Report ---------------
 
@@ -592,12 +714,12 @@ I/O Bank Usage Summary:
 | 2        | 3 / 8 ( 37%)  | 3.3V       |            |            |
 +----------+---------------+------------+------------+------------+
 
-Total Placer CPU time: 6 secs , REAL time: 7 secs 
+Total Placer CPU time: 9 secs , REAL time: 9 secs 
 
 Writing design to file collisions_and_rotations_impl_1_par.dir/5_1.udb ...
 
 
-Start NBR router at 19:01:15 12/02/23
+Start NBR router at 19:05:41 12/05/23
 
 *****************************************************************
 Info: NBR allows conflicts(one node used by more than one signal)
@@ -615,25 +737,24 @@ Note: NBR uses a different method to calculate timing slacks. The
 Starting routing resource preassignment
 Preassignment Summary:
 --------------------------------------------------------------------------------
-117 connections routed with dedicated routing resources
-1 global clock signals routed
-155 connections routed (of 789 total) (19.65%)
+145 connections routed with dedicated routing resources
+2 global clock signals routed
+196 connections routed (of 1760 total) (11.14%)
 ---------------------------------------------------------
 Clock routing summary:
-Primary clocks (1 used out of 8 available):
+Primary clocks (2 used out of 8 available):
+#5  Signal "game_clock"
+       Clock   loads: 19    out of    19 routed (100.00%)
 #7  Signal "clk"
-       Clock   loads: 38    out of    38 routed (100.00%)
+       Clock   loads: 32    out of    32 routed (100.00%)
 Other clocks:
-    Signal "ctrlr_clk_c"
-       Clock   loads: 0     out of     2 routed (  0.00%)
-       Data    loads: 0     out of     1 routed (  0.00%)
-    Signal "game_clock"
-       Clock   loads: 0     out of     2 routed (  0.00%)
-       Data    loads: 0     out of     1 routed (  0.00%)
     Signal "osc_c"
        Clock   loads: 0     out of     1 routed (  0.00%)
     Signal "clock_manager_portmap.pll_portmap.lscc_pll_inst.feedback_w"
        Clock   loads: 1     out of     1 routed (100.00%)
+    Signal "ctrlr_clk_c"
+       Clock   loads: 0     out of     3 routed (  0.00%)
+       Data    loads: 0     out of     1 routed (  0.00%)
 ---------------------------------------------------------
 --------------------------------------------------------------------------------
 Completed routing resource preassignment
@@ -644,24 +765,26 @@ WARNING <70001944> - No master clock for
 Routing in Serial Mode ......
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Start NBR section for initial routing at 19:01:15 12/02/23
+Start NBR section for initial routing at 19:05:41 12/05/23
 Level 4, iteration 1
-26(0.01%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
+82(0.03%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
 
 Info: Initial congestion level at 75.00% usage is 0
 Info: Initial congestion area  at 75.00% usage is 0 (0.00%)
 
-Start NBR section for normal routing at 19:01:16 12/02/23
+Start NBR section for normal routing at 19:05:42 12/05/23
 Level 4, iteration 1
-3(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
+12(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
 Level 4, iteration 2
-3(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
+8(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
 Level 4, iteration 3
 1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
 Level 4, iteration 4
+1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
+Level 4, iteration 5
 0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 0 (nbr) score; real time: 0 secs 
 
-Start NBR section for post-routing at 19:01:16 12/02/23
+Start NBR section for post-routing at 19:05:42 12/05/23
 
 End NBR router with 0 unrouted connection
 WARNING <70001944> - No master clock for
@@ -685,10 +808,10 @@ NBR Summary
 -----------
 
 
-Total CPU time 1 secs 
+Total CPU time 2 secs 
 Total REAL time: 2 secs 
 Completely routed.
-End of route.  789 routed (100.00%); 0 unrouted.
+End of route.  1760 routed (100.00%); 0 unrouted.
 
 Writing design to file collisions_and_rotations_impl_1_par.dir/5_1.udb ...
 
@@ -701,9 +824,9 @@ PAR_SUMMARY::Worst  slack<hold /<ns>> = <n/a>
 PAR_SUMMARY::Timing score<hold /<ns>> = <n/a>
 PAR_SUMMARY::Number of errors = 0
 
-Total CPU  Time: 8 secs 
-Total REAL Time: 9 secs 
-Peak Memory Usage: 109.79 MB
+Total CPU  Time: 12 secs 
+Total REAL Time: 12 secs 
+Peak Memory Usage: 119.84 MB
 
 
 par done!
@@ -731,7 +854,7 @@ Performance Grade:   High-Performance_1.2V
 
 
 
-Successfully loading udb, 0.06 seconds
+Successfully loading udb, 0.05 seconds
 
 Initializing timer
 Starting design annotation....
@@ -741,15 +864,15 @@ High-Performance_1.2V
 
 Starting full timing analysis...
 Performance Hardware Data Status:   Advanced       Version 1.0.
-Connections ignored  58  counted  655  covered  0
+Connections ignored  114  counted  1548  covered  0
 Changing speed to m;   changing temperature to -40
 
 STA Runtime and Peak Memory Usage :
 Total CPU Time: 1 secs 
-Total REAL Time: 0 secs 
-Peak Memory Usage: 94 MB
+Total REAL Time: 2 secs 
+Peak Memory Usage: 96 MB
 
- 1.321342s wall, 0.921875s user + 0.125000s system = 1.046875s CPU (79.2%)
+ 1.606672s wall, 1.218750s user + 0.140625s system = 1.359375s CPU (84.6%)
 
 
 tmcheck -par "collisions_and_rotations_impl_1.par" 
@@ -792,18 +915,17 @@ Preference Summary:
 
 Creating bit map...
 Saving bit stream in "Z:\es4\ES4-Final\collisions_and_rotations\impl_1\collisions_and_rotations_impl_1.bin".
-INFO <1081100> - Bitstream authenticated.
 Bitstream generation complete!
 
 Total CPU Time: 0 secs 
 Total REAL Time: 0 secs 
-Peak Memory Usage: 113 MB
+Peak Memory Usage: 114 MB
 
 
 ibisgen "collisions_and_rotations_impl_1.udb" "C:/lscc/radiant/2023.1/cae_library/ibis/iCE40UP.ibs"
 IBIS Models Generator: Lattice Radiant Software (64-bit) 2023.1.0.43.3
 
-Sat Dec  2 19:01:19 2023
+Tue Dec  5 19:05:46 2023
 
 Loading collisions_and_rotations_impl_1.udb ...
 Loading device for application GENERIC from file 'itpa08.nph' in environment: C:/lscc/radiant/2023.1/ispfpga.
@@ -853,6 +975,6 @@ Writing a verilog netlist based on the collisions_and_rotations_impl_1 design fi
 Writing Verilog netlist to file collisions_and_rotations_impl_1_vo.vo
 Writing SDF timing to file collisions_and_rotations_impl_1_vo.sdf
 Backanno finished with 0 posted error messages.
-Total CPU Time: 0 secs 
-Total REAL Time: 0 secs 
-Peak Memory Usage: 87 MB
+Total CPU Time: 1 secs 
+Total REAL Time: 2 secs 
+Peak Memory Usage: 95 MB
