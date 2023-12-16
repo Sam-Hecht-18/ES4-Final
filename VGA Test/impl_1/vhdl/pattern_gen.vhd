@@ -134,7 +134,6 @@ begin
 				if down_delay > 0 then
 					down_delay <= down_delay + 1;
 				end if;
-
 			elsif row = 480 and col = 640 then
 				frame_counter <= frame_counter + 1;
 
